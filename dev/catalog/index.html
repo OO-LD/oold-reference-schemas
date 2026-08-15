@@ -410,6 +410,53 @@
   
   
   
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  quantities
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  quantities
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
       <a href="./quantities-quantityvalue/" class="md-nav__link">
         
@@ -445,7 +492,7 @@
   <span class="md-ellipsis">
     
   
-  Time
+  Time (extends QuantityValue)
 
     
   </span>
@@ -453,6 +500,14 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -623,30 +678,17 @@
 <p>One page per schema: what it is for, the schema itself, how each of its terms reads in RDF, and
 the decisions behind it. The schema files are embedded from the repository, so a page always
 shows what is actually published rather than a description of it that can go stale.</p>
-<table>
-<thead>
-<tr>
-<th>schema</th>
-<th>module</th>
-<th>version</th>
-<th>page</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>QuantityValue</td>
-<td><code>quantities</code></td>
-<td>1.0.0</td>
-<td><a href="quantities-quantityvalue/">QuantityValue</a></td>
-</tr>
-<tr>
-<td>Time</td>
-<td><code>quantities</code></td>
-<td>1.0.0</td>
-<td><a href="quantities-time/">Time</a></td>
-</tr>
-</tbody>
-</table>
+<p>Schemas are listed by inheritance: a subschema appears under the schema it extends, because
+that is how the terms and mappings are inherited too.</p>
+<ul>
+<li><strong><code>quantities</code></strong><ul>
+<li><a href="quantities-quantityvalue/">QuantityValue</a>, a number with a unit and optional uncertainty<ul>
+<li><a href="quantities-time/">Time</a>, restricted to time units, with its unit individuals aliased</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <p>Published files for a module are listed at its versioned path, for example
 <a href="../quantities/1.0/"><code>quantities/1.0/</code></a>.</p>
 

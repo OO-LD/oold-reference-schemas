@@ -16,19 +16,31 @@
       ]
     },
     "value": {
-      "type": "number"
+      "type": "number",
+      "examples": [
+        12.7
+      ]
     },
     "unit": {
       "type": "string",
-      "format": "iri-reference"
+      "format": "iri-reference",
+      "examples": [
+        "http://qudt.org/vocab/unit/SEC"
+      ]
     },
     "standard_uncertainty": {
       "type": "number",
-      "description": "Standard uncertainty, expressed in the unit of value (GUM convention)"
+      "description": "Standard uncertainty, expressed in the unit of value (GUM convention)",
+      "examples": [
+        0.05
+      ]
     },
     "relative_standard_uncertainty": {
       "type": "number",
-      "description": "Dimensionless ratio, NOT percent; ratio-scale quantities only, undefined at value 0; redundant with standard_uncertainty (u = r * |v|), give only one"
+      "description": "Dimensionless ratio, NOT percent; ratio-scale quantities only, undefined at value 0; redundant with standard_uncertainty (u = r * |v|), give only one",
+      "examples": [
+        0.004
+      ]
     }
   },
   "required": [
