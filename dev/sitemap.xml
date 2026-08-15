@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+      <url>
+        <loc>https://schemas.oo-ld.org/dev/</loc>
+      </url>
+      <url>
+        <loc>https://schemas.oo-ld.org/dev/introduction/</loc>
+      </url>
+      <url>
+        <loc>https://schemas.oo-ld.org/dev/modules/</loc>
+      </url>
+      <url>
+        <loc>https://schemas.oo-ld.org/dev/catalog/</loc>
+      </url>
+      <url>
+        <loc>https://schemas.oo-ld.org/dev/catalog/quantities-quantityvalue/</loc>
+      </url>
+      <url>
+        <loc>https://schemas.oo-ld.org/dev/catalog/quantities-time/</loc>
+      </url>
+      <url>
+        <loc>https://schemas.oo-ld.org/dev/mapping-profiles/</loc>
+      </url>
+      <url>
+        <loc>https://schemas.oo-ld.org/dev/conformance/</loc>
+      </url>
+      <url>
+        <loc>https://schemas.oo-ld.org/dev/mapping-sets/</loc>
+      </url>
+      <url>
+        <loc>https://schemas.oo-ld.org/dev/ontologies/</loc>
+      </url>
+</urlset>
