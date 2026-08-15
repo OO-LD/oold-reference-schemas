@@ -1,0 +1,56 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "conformsTo": { "@id": "https://w3id.org/ro/crate/1.1" },
+      "about": { "@id": "./" },
+      "dateCreated": "2026-08-01T00:00:00+02:00",
+      "sdPublisher": { "@id": "#publisher" },
+      "version": "1.0"
+    },
+    {
+      "@id": "#publisher",
+      "@type": "Organization",
+      "name": "OO-LD Scientific Profile (example)"
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "hasPart": [{ "@id": "./m1/" }]
+    },
+    {
+      "@id": "./m1/",
+      "@type": "Dataset",
+      "name": "m1 duration measurement",
+      "author": { "@id": "#author" },
+      "dateCreated": "2026-08-01T00:00:00+02:00",
+      "genre": "experiment",
+      "description": "Experiment entry as a flat .eln Dataset: experiments are Datasets and direct children of the root (no Process as mainEntity, no nested Datasets; cf. TheELNFileFormat and ELN issue 116). The .eln projection of the OO-LD Time instance uses the schema.org branch of the validated QuantityValue mappings: variableMeasured/PropertyValue with schema:value and the URL form of schema:unitCode. The crate context stays pure RO-Crate 1.1, since layering the OO-LD context would re-map value to qudt:value on the PropertyValue node; the full OO-LD instance rides as a File part with its own context for lossless resolution (storage mode B).",
+      "variableMeasured": [{ "@id": "#m1/duration-pv" }],
+      "hasPart": [{ "@id": "./m1/duration.data.json" }]
+    },
+    {
+      "@id": "#author",
+      "@type": "Person",
+      "name": "Example Author"
+    },
+    {
+      "@id": "#m1/duration-pv",
+      "@type": "PropertyValue",
+      "name": "duration",
+      "propertyID": "http://qudt.org/vocab/quantitykind/Time",
+      "value": 12.7,
+      "unitCode": "http://qudt.org/vocab/unit/SEC"
+    },
+    {
+      "@id": "./m1/duration.data.json",
+      "@type": "File",
+      "name": "duration.data.json",
+      "encodingFormat": "application/ld+json",
+      "contentSize": "256",
+      "description": "Full OO-LD Time instance (lossless payload); an OO-LD-aware loader resolves and inlines it."
+    }
+  ]
+}

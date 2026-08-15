@@ -1,0 +1,43 @@
+{
+  "@context": [
+    "https://w3id.org/ro/crate/1.3/context",
+    "https://schemas.oo-ld.org/quantities/1.0/Time.schema.json"
+  ],
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "conformsTo": { "@id": "https://w3id.org/ro/crate/1.3" },
+      "about": { "@id": "./" }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "name": "Minimal OO-LD quantity crate (m1 duration)",
+      "description": "Minimal RO-Crate 1.3 packaging of an OO-LD Time (QuantityValue) instance. The OO-LD schema is the second entry of the @context array (RO-Crate 1.3 allows extra terms; note this makes the OO-LD term definitions, e.g. value -> qudt:value, apply crate-wide). The mainEntity is the instance inline in the graph (storage mode A); its keys are OO-LD terms, and since the schema aliases type to @type, the entity is typed after expansion. data/m1-duration.data.json holds the same payload externalized (storage mode B): a generic reader sees a plain File, an OO-LD-aware loader dereferences and inlines it against the crate root (see https://github.com/OO-LD/oold-schema/issues/109).",
+      "datePublished": "2026-07-28",
+      "license": { "@id": "https://creativecommons.org/licenses/by/4.0/" },
+      "mainEntity": { "@id": "#m1-duration" },
+      "hasPart": [{ "@id": "data/m1-duration.data.json" }]
+    },
+    {
+      "@id": "#m1-duration",
+      "type": ["Time"],
+      "value": 12.7,
+      "unit": "SEC",
+      "standard_uncertainty": 0.05
+    },
+    {
+      "@id": "data/m1-duration.data.json",
+      "@type": "File",
+      "name": "m1 duration (OO-LD instance, storage mode B)",
+      "encodingFormat": "application/ld+json",
+      "description": "Externalized OO-LD payload, identical content to #m1-duration."
+    },
+    {
+      "@id": "https://creativecommons.org/licenses/by/4.0/",
+      "@type": "CreativeWork",
+      "name": "CC BY 4.0"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+title: OO-LD Reference Schemas
+message: If you use these schemas, please cite them.
+type: software
+authors:
+  - name: The OO-LD contributors
+repository-code: https://github.com/OO-LD/oold-reference-schemas
+url: https://schemas.oo-ld.org/
+license: CC-BY-4.0
+keywords:
+  - linked data
+  - JSON Schema
+  - JSON-LD
+  - reference schemas
+  - ontology mapping
+  - SSSOM
+  - materials science and engineering

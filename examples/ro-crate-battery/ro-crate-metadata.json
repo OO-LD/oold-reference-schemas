@@ -1,0 +1,58 @@
+{
+  "@context": [
+    "https://w3id.org/ro/crate/1.3/context",
+    {
+      "ElectrochemicalTest": "https://w3id.org/emmo/domain/electrochemistry#electrochemistry_435b22d4_c441_45ea_8c79_0cbec11fd287",
+      "BatteryCell": "https://w3id.org/emmo/domain/battery#battery_68ed592a_7924_45d0_a108_94d6275d57f0",
+      "BatteryCyclingDataset": "https://schemas.oo-ld.org/quantities/1.0/BatteryCyclingDataset"
+    }
+  ],
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "conformsTo": { "@id": "https://w3id.org/ro/crate/1.3" },
+      "about": { "@id": "./" }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "name": "Battery cycling test package (paper mockup)",
+      "description": "The package dataset of the OO-LD profiles paper mockup: the crate is about the producing process (mainEntity), the hasPart tree projects the model's parts and distributions edges with files as leaves. Domain types resolve through the context extension: ElectrochemicalTest maps to the BattINFO-stack class CyclingTest (domain-electrochemistry 0.34.0) and BatteryCell to the domain-battery 0.19.0 class, both validated against pinned ontology snapshots.",
+      "datePublished": "2026-08-01",
+      "license": { "@id": "https://creativecommons.org/licenses/by/4.0/" },
+      "mainEntity": { "@id": "#test-17" },
+      "hasPart": [{ "@id": "#dataset-cell42" }]
+    },
+    {
+      "@id": "#test-17",
+      "@type": ["CreateAction", "ElectrochemicalTest"],
+      "object": { "@id": "#cell42" },
+      "result": { "@id": "#dataset-cell42" }
+    },
+    {
+      "@id": "#cell42",
+      "@type": ["Thing", "BatteryCell"],
+      "name": "cell 42"
+    },
+    {
+      "@id": "#dataset-cell42",
+      "@type": ["Dataset", "BatteryCyclingDataset"],
+      "about": { "@id": "#cell42" },
+      "conformsTo": { "@id": "https://schemas.oo-ld.org/quantities/1.0/BatteryCyclingDataset" },
+      "hasPart": [{ "@id": "cell42-raw.csv" }]
+    },
+    {
+      "@id": "cell42-raw.csv",
+      "@type": "File",
+      "name": "cell42-raw.csv",
+      "encodingFormat": "text/csv",
+      "conformsTo": { "@id": "https://schemas.oo-ld.org/quantities/1.0/CyclingDataRow" }
+    },
+    {
+      "@id": "https://creativecommons.org/licenses/by/4.0/",
+      "@type": "CreativeWork",
+      "name": "CC BY 4.0"
+    }
+  ]
+}

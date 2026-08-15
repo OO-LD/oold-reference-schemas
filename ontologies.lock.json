@@ -1,0 +1,150 @@
+{
+  "emmo": {
+    "version": "1.0.4",
+    "repository": "https://github.com/emmo-repo/EMMO",
+    "ref": "12492654851d51d427d33de9f569abf3d76490d3",
+    "base": "https://raw.githubusercontent.com/emmo-repo/EMMO/12492654851d51d427d33de9f569abf3d76490d3/",
+    "files": {
+      "disciplines/isq.ttl": {
+        "path": "disciplines/isq.ttl",
+        "sha256": "0964834ea83f6384cc0b3af8ba707e434ff3d1ea9aadf15a65c561f667d6f152",
+        "bytes": 610864
+      },
+      "disciplines/metrology.ttl": {
+        "path": "disciplines/metrology.ttl",
+        "sha256": "d45ff7c5ce3b81efa2af15e2f7340cca7f05a422599052ba1e3920286e36ac7b",
+        "bytes": 86285
+      },
+      "disciplines/units/prefixedsiunits-abox.ttl": {
+        "path": "disciplines/units/prefixedsiunits-abox.ttl",
+        "sha256": "18db13587b60e80a20f24d538bd9b70be32821cba13c82352518b19848839e97",
+        "bytes": 131475
+      },
+      "disciplines/units/siacceptedspecialunits-abox.ttl": {
+        "path": "disciplines/units/siacceptedspecialunits-abox.ttl",
+        "sha256": "5e16947ff652ce0d8ee64a0b100226c73938c5bd4161654e8926a2c6a906e332",
+        "bytes": 23991
+      },
+      "disciplines/units/siunits-abox.ttl": {
+        "path": "disciplines/units/siunits-abox.ttl",
+        "sha256": "166ec7304cc756ec22a03f03898ac06ec5d2a571fed77f7d262994ef8c78597e",
+        "bytes": 38328
+      }
+    },
+    "note": "1.0.4 development branch; the published w3id build lagged this commit",
+    "license": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "iao": {
+    "version": "2026-03-30",
+    "repository": "http://purl.obolibrary.org/obo/iao.owl",
+    "ref": "2026-03-30",
+    "base": "http://purl.obolibrary.org/obo/iao/2026-03-30/",
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "files": {
+      "iao.owl": {
+        "path": "iao.owl",
+        "sha256": "c27ff2964a2ad8165bc365698b628aae95108411384aa4450e6e1b1e82bf0f41",
+        "bytes": 609839
+      }
+    }
+  },
+  "obi": {
+    "version": "2026-07-27",
+    "repository": "http://purl.obolibrary.org/obo/obi.owl",
+    "ref": "2026-07-27",
+    "base": "http://purl.obolibrary.org/obo/obi/2026-07-27/",
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "files": {
+      "obi.owl": {
+        "path": "obi.owl",
+        "sha256": "8874abcca971ee26b4e4442198387916d788d14af3519e1040474908ed12b946",
+        "bytes": 9980280
+      }
+    }
+  },
+  "pato": {
+    "version": "2025-05-14",
+    "repository": "http://purl.obolibrary.org/obo/pato.owl",
+    "ref": "2025-05-14",
+    "base": "http://purl.obolibrary.org/obo/pato/releases/2025-05-14/",
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "files": {
+      "pato.owl": {
+        "path": "pato.owl",
+        "sha256": "73a80487130a81a3696f1e03c551288f741ed1be5a07639e69e7ecd8b6f0371c",
+        "bytes": 21082041
+      }
+    }
+  },
+  "pmdco": {
+    "version": "3.0.0",
+    "repository": "https://github.com/materialdigital/core-ontology",
+    "ref": "v3.0.0",
+    "base": "https://raw.githubusercontent.com/materialdigital/core-ontology/v3.0.0/",
+    "files": {
+      "pmdco.ttl": {
+        "path": "pmdco.ttl",
+        "sha256": "7796b95976a629ffb5efa7b66d5db9bfb9940679038f83e86b3fa34bb89b09d5",
+        "bytes": 900950
+      }
+    },
+    "license": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "qudt": {
+    "version": "3.4.0",
+    "repository": "https://github.com/qudt/qudt-public-repo",
+    "ref": "v3.4.0",
+    "base": "https://raw.githubusercontent.com/qudt/qudt-public-repo/v3.4.0/",
+    "files": {
+      "SCHEMA_QUDT.ttl": {
+        "path": "src/main/rdf/schema/SCHEMA_QUDT.ttl",
+        "sha256": "ba6b4ae9ab0b3f3e4ae324d3ad7ca49061e3b39615df39ae5aa96a6de8b52bd9",
+        "bytes": 159527
+      },
+      "VOCAB_QUDT-UNITS-ALL.ttl": {
+        "path": "src/main/rdf/vocab/unit/VOCAB_QUDT-UNITS-ALL.ttl",
+        "sha256": "a43b7d36f6829ef0fbcd327ee768a07f1f286038dd60e1630d8cb6b6b29fe79b",
+        "bytes": 3129853
+      },
+      "VOCAB_QUDT-QUANTITY-KINDS-ALL.ttl": {
+        "path": "src/main/rdf/vocab/quantitykinds/VOCAB_QUDT-QUANTITY-KINDS-ALL.ttl",
+        "sha256": "389d6ada4841f77403d00068637d978add83e3a64c389697293e1a71500bcf54",
+        "bytes": 1169399
+      }
+    },
+    "license": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "schemaorg": {
+    "version": "30.0",
+    "repository": "https://github.com/schemaorg/schemaorg",
+    "ref": "v30.0",
+    "base": "https://raw.githubusercontent.com/schemaorg/schemaorg/v30.0/",
+    "files": {
+      "schemaorg-current-https.ttl": {
+        "path": "data/releases/30.0/schemaorg-current-https.ttl",
+        "sha256": "320938f0945d717fc317f822c707f10944e7a7a0097018665a3b95dcf475b39d",
+        "bytes": 1104341
+      },
+      "schemaorg-current-http.ttl": {
+        "path": "data/releases/30.0/schemaorg-current-http.ttl",
+        "sha256": "4cb282b953da1c57b584bdb4b16e11ee62719992b9347c43d11c978cecea7f34",
+        "bytes": 1102670
+      }
+    },
+    "license": "https://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  "uo": {
+    "version": "2026-07-31",
+    "repository": "http://purl.obolibrary.org/obo/uo.owl",
+    "ref": "2026-07-31",
+    "base": "http://purl.obolibrary.org/obo/uo/releases/2026-07-31/",
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "files": {
+      "uo.owl": {
+        "path": "uo.owl",
+        "sha256": "7a15ca852b92a321f72d4a9dd653bf4ecee125b2aa904e50aad1d49643bae9c7",
+        "bytes": 647954
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+@prefix qkind: <http://qudt.org/vocab/quantitykind/> .
+@prefix qunit: <http://qudt.org/vocab/unit/> .
+@prefix schema1: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://example.org/instance> a qkind:Diameter ;
+    schema1:unitCode qunit:MilliM ;
+    schema1:value 2.01e+01 .

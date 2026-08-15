@@ -1,0 +1,10 @@
+{
+  "@context": "Length.schema.json",
+  "$schema": "Length.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "Length"
+  ],
+  "value": 0.0254,
+  "unit": "M"
+}

@@ -1,0 +1,226 @@
+name: validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    # Weekly, for the ontology drift check: upstream can move under a pin at any time,
+    # and the sooner that is visible the smaller the re-checking job.
+    - cron: "17 5 * * 1"
+
+# Pinned so a docs build is reproducible and a bump is a visible change.
+env:
+  # The validator and the specification these schemas conform to are one release.
+  OOLD_VERSION: "v1.0.0-rc.2"
+  ZENSICAL_VERSION: "0.0.46"
+  MIKE_SPEC: "git+https://github.com/squidfunk/mike.git@2.2.0+zensical-0.1.0"
+
+permissions:
+  contents: read
+
+jobs:
+  schemas:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      # The validator is a dependency, not a copy maintained here.
+      # See https://github.com/OO-LD/oold-schema/issues/91
+      - name: Check out the OO-LD validator
+        uses: actions/checkout@v4
+        with:
+          repository: OO-LD/oold-schema
+          ref: ${{ env.OOLD_VERSION }}
+          path: .oold-schema
+      - name: Install validator dependencies
+        run: npm ci --prefix .oold-schema || npm install --prefix .oold-schema
+
+      - name: Validate each module
+        run: |
+          set -e
+          for dir in modules/*/; do
+            if ls "$dir"*.schema.json >/dev/null 2>&1; then
+              echo "== $dir"
+              node .oold-schema/scripts/validate.mjs "$dir"
+            else
+              echo "== $dir (no schemas yet, skipped)"
+            fi
+          done
+
+      - uses: astral-sh/setup-uv@v6
+      - name: Mapping-set views round-trip losslessly
+        run: uv run --with pyld scripts/effective_views.py modules/quantities
+
+  # The pinned ontology files, verified against ontologies.lock.json. Not needed to build
+  # anything, since the labels they supply are committed; run so that a moved tag or an
+  # edited file is a failing job rather than a mapping that quietly changed meaning.
+  ontologies:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - name: Fetch and verify the pinned ontologies
+        run: uv run scripts/fetch_ontologies.py
+
+      # Reported, not enforced: the redirect is owned by w3id.org, so this states whether
+      # the promise currently holds. A release enforces it.
+      - name: Conformance IRIs resolve
+        run: uv run scripts/check_identifiers.py
+
+  docs:
+    runs-on: ubuntu-latest
+    needs: schemas
+    steps:
+      # Full history and tags: the version floors are computed against the last release.
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: astral-sh/setup-uv@v6
+
+      # Everything derived from the schemas is regenerated and compared: a schema change
+      # that was not accompanied by its mapping sets, RDF readings or schema page is a
+      # tree that disagrees with itself.
+      - name: Bundle the mapping sets
+        run: uv run scripts/build_mappings.py
+      - name: Publish the schemas and render the RDF readings
+        run: uv run --with pyld --with rdflib scripts/build_docs.py
+      - name: Seed and check the schema pages
+        run: uv run scripts/build_pages.py --check
+
+      # A version is a compatibility promise, so the level is computed from the diff and
+      # the declared bump has to reach it. The floor is provable; the level is the
+      # author's call, and only a bump that is too small fails here.
+      - name: Versions cover what changed
+        run: |
+          uv run scripts/level.py --check
+          uv run scripts/release.py --check
+      - name: Check the generated artefacts are up to date
+        run: git diff --exit-code generated/ docs/ zensical.toml
+
+      - name: Build the site
+        run: uvx --with pyyaml==6.0.2 zensical@${{ env.ZENSICAL_VERSION }} build --clean
+
+      # A macro that raises is swallowed by the renderer: the build succeeds and the page
+      # publishes with the call visible as text. Nothing else notices, so check.
+      - name: Every macro call rendered
+        run: |
+          if grep -rnE '\{\{+ *(oold_|schema_|inline_file|example|vocabulary|render_schema|sssom_|mapping_|download)' site/; then
+            echo "unrendered macro call in the built site" >&2
+            exit 1
+          fi
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: site
+          path: site/
+          retention-days: 7
+
+  # Versioned deploy to the gh-pages branch with mike: main publishes `dev`, a vX.Y.Z tag
+  # publishes X.Y and moves the `latest` alias. Documentation for a release therefore stays
+  # readable after the schemas move on.
+  #
+  # The schema files are published at the site ROOT, not inside a docs version, because a
+  # conformance IRI must never move: /quantities/1.0/QuantityValue.schema.json is permanent and
+  # carries its own version, independent of how the surrounding prose is versioned.
+  deploy:
+    if: github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/tags/v')
+    runs-on: ubuntu-latest
+    needs: docs
+    permissions:
+      contents: write
+    concurrency:
+      group: gh-pages
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: astral-sh/setup-uv@v6
+      - name: Configure the committer
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+      # A release mints identifiers that must keep resolving forever, so it does not
+      # proceed while one of them does not resolve at all.
+      - name: Conformance IRIs resolve
+        if: startsWith(github.ref, 'refs/tags/v')
+        run: uv run scripts/check_identifiers.py --require
+
+      - run: uv run scripts/build_mappings.py
+      - run: uv run --with pyld --with rdflib scripts/build_docs.py
+
+      - name: Publish the docs version
+        run: |
+          set -e
+          if [[ "${GITHUB_REF}" == refs/tags/v* ]]; then
+            VERSION="${GITHUB_REF#refs/tags/v}"
+            VERSION="${VERSION%.*}"          # v1.2.3 -> 1.2
+            uvx --with pyyaml==6.0.2 --with "$MIKE" mike deploy --push --update-aliases "$VERSION" latest
+            uvx --with pyyaml==6.0.2 --with "$MIKE" mike set-default --push latest
+          else
+            uvx --with pyyaml==6.0.2 --with "$MIKE" mike deploy --push dev
+          fi
+        env:
+          MIKE: ${{ env.MIKE_SPEC }}
+
+      # The default version's root redirect. A release owns it once one exists, so main only
+      # claims it while there is no `latest` alias yet.
+      - name: Point the site root at a default version
+        run: |
+          set -e
+          git fetch origin gh-pages
+          if git show origin/gh-pages:versions.json 2>/dev/null | grep -q '"latest"'; then
+            echo "a release already owns the root redirect"
+          else
+            uvx --with pyyaml==6.0.2 --with "$MIKE" mike set-default --push dev
+          fi
+        env:
+          MIKE: ${{ env.MIKE_SPEC }}
+
+      # Schemas at stable root paths, so the conformance IRIs resolve to the schema itself,
+      # plus the CNAME, which GitHub only honours at the root of the published branch.
+      - name: Publish the schemas at their permanent paths
+        run: |
+          set -e
+          git fetch origin gh-pages
+          git worktree add /tmp/pages gh-pages
+          # Before anything is written: an exact release is never rewritten, and a
+          # compatibility line only moves within itself.
+          uv run scripts/check_publish.py /tmp/pages
+          # Three kinds of path. <module>/<x.y.z>/ is an exact release, written once and
+          # never rewritten. <module>/<x.y>/ is an alias for the newest patch of that
+          # compatibility line, which is what a conformance IRI names. <module>/dev/ is the
+          # tip of main and no conformance target at all, so merging work does not stake
+          # out an official path.
+          for module in modules/*/; do
+            name=$(basename "$module")
+            for versiondir in docs/$name/*/; do
+              [ -d "$versiondir" ] || continue
+              version=$(basename "$versiondir")
+              mkdir -p "/tmp/pages/$name"
+              if [[ "${GITHUB_REF}" == refs/tags/v* ]]; then
+                rm -rf "/tmp/pages/$name/$version"
+                cp -r "$versiondir" "/tmp/pages/$name/$version"
+              else
+                rm -rf "/tmp/pages/$name/dev"
+                cp -r "$versiondir" "/tmp/pages/$name/dev"
+              fi
+            done
+          done
+          # The mapping sets resolve at the identifier their mapping_set_id names.
+          # The sets themselves, at the paths their mapping_set_id names. The pages about
+          # them are documentation and are published with the rest of it.
+          mkdir -p /tmp/pages/mappings/crosswalks
+          cp docs/mappings/*.sssom.tsv /tmp/pages/mappings/
+          cp docs/mappings/crosswalks/*.sssom.tsv /tmp/pages/mappings/crosswalks/
+          cp docs/CNAME /tmp/pages/CNAME
+          touch /tmp/pages/.nojekyll
+          cd /tmp/pages
+          git add -A
+          git diff --cached --quiet || git commit -m "Publish schemas and site root files"
+          git push origin gh-pages

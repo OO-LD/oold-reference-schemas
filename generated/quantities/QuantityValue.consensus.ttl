@@ -1,0 +1,8 @@
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix qunit: <http://qudt.org/vocab/unit/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://example.org/instance> a qudt:QuantityValue ;
+    qudt:hasUnit qunit:SEC ;
+    qudt:standardUncertainty 5e-02 ;
+    qudt:value 1.27e+01 .

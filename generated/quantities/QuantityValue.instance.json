@@ -1,0 +1,11 @@
+{
+  "@context": "QuantityValue.schema.json",
+  "$schema": "QuantityValue.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "QuantityValue"
+  ],
+  "value": 12.7,
+  "unit": "http://qudt.org/vocab/unit/SEC",
+  "standard_uncertainty": 0.05
+}
