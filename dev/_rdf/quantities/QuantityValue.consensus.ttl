@@ -4,6 +4,5 @@
 
 <https://example.org/instance> a qudt:QuantityValue ;
     qudt:hasUnit qunit:SEC ;
-    qudt:relativeStandardUncertainty 4e-03 ;
     qudt:standardUncertainty 5e-02 ;
     qudt:value 1.27e+01 .

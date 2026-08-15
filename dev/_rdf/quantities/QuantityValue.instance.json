@@ -3,8 +3,7 @@
   "type": [
     "QuantityValue"
   ],
-  "unit": "http://qudt.org/vocab/unit/SEC",
   "value": 12.7,
-  "standard_uncertainty": 0.05,
-  "relative_standard_uncertainty": 0.004
+  "unit": "http://qudt.org/vocab/unit/SEC",
+  "standard_uncertainty": 0.05
 }

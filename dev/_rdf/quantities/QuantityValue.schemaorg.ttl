@@ -4,7 +4,6 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://example.org/instance> a schema1:QuantitativeValue ;
-    qudt:relativeStandardUncertainty 4e-03 ;
     qudt:standardUncertainty 5e-02 ;
     schema1:unitCode qunit:SEC ;
     schema1:value 1.27e+01 .

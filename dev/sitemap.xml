@@ -13,10 +13,16 @@
         <loc>https://schemas.oo-ld.org/dev/catalog/</loc>
       </url>
       <url>
-        <loc>https://schemas.oo-ld.org/dev/catalog/quantities-quantityvalue/</loc>
+        <loc>https://schemas.oo-ld.org/dev/catalog/quantityvalue/</loc>
       </url>
       <url>
-        <loc>https://schemas.oo-ld.org/dev/catalog/quantities-time/</loc>
+        <loc>https://schemas.oo-ld.org/dev/catalog/quantityvalue/time/</loc>
+      </url>
+      <url>
+        <loc>https://schemas.oo-ld.org/dev/catalog/quantityvalue/length/</loc>
+      </url>
+      <url>
+        <loc>https://schemas.oo-ld.org/dev/catalog/quantityvalue/length/diameter/</loc>
       </url>
       <url>
         <loc>https://schemas.oo-ld.org/dev/mapping-profiles/</loc>
