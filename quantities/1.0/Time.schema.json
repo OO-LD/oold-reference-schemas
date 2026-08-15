@@ -4,6 +4,16 @@
   "x-oold-uuid": "d06f35fd-0b42-54db-a2e6-1c329204346d",
   "x-oold-version": "1.0.0",
   "title": "Time",
+  "examples": [
+    {
+      "type": [
+        "Time"
+      ],
+      "value": 12.7,
+      "unit": "SEC",
+      "standard_uncertainty": 0.05
+    }
+  ],
   "allOf": [
     {
       "$ref": "QuantityValue.schema.json"

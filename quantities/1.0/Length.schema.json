@@ -1,0 +1,120 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Length.schema.json",
+  "x-oold-uuid": "7c1d5a80-b42f-5dd5-ace8-3ae6841f3faf",
+  "x-oold-version": "1.0.0",
+  "title": "Length",
+  "description": "A length: a QuantityValue restricted to length units.",
+  "examples": [
+    {
+      "type": [
+        "Length"
+      ],
+      "value": 0.0254,
+      "unit": "M"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Length": "qkind:Length",
+      "M": "qunit:M",
+      "MilliM": "qunit:MilliM",
+      "MicroM": "qunit:MicroM"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Length"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "M",
+        "MilliM",
+        "MicroM"
+      ],
+      "default": "M",
+      "x-enum-varnames": [
+        "metre",
+        "milli_metre",
+        "micro_metre"
+      ]
+    },
+    "value": {}
+  },
+  "x-oold-context": {
+    "Length": {
+      "emmo:EMMO_cd2cd0de_e0cc_4ef1_b27e_2e88db027bac": {
+        "x-sssom": {
+          "predicate_id": "skos:exactMatch",
+          "mapping_set_id": "https://example.org/mappings/emmo",
+          "object_source_version": "https://w3id.org/emmo/1.0.4",
+          "comment": "EMMO Length, ISO 80000 item 3-1.1"
+        }
+      },
+      "obo:PATO_0000122": {
+        "x-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://example.org/mappings/pmdco",
+          "comment": "PATO length is a quality inhering in a bearer, not a value with a unit"
+        }
+      }
+    },
+    "M": {
+      "emmo:Metre": {
+        "x-sssom": {
+          "predicate_id": "skos:exactMatch",
+          "mapping_set_id": "https://example.org/mappings/emmo",
+          "object_source_version": "https://w3id.org/emmo/1.0.4"
+        }
+      },
+      "obo:UO_0000008": {
+        "x-sssom": {
+          "predicate_id": "skos:exactMatch",
+          "mapping_set_id": "https://example.org/mappings/pmdco",
+          "comment": "UO meter; UO units are classes, punning as in EMMO#377"
+        }
+      }
+    },
+    "MilliM": {
+      "emmo:MilliMetre": {
+        "x-sssom": {
+          "predicate_id": "skos:exactMatch",
+          "mapping_set_id": "https://example.org/mappings/emmo",
+          "object_source_version": "https://w3id.org/emmo/1.0.4"
+        }
+      },
+      "obo:UO_0000016": {
+        "x-sssom": {
+          "predicate_id": "skos:exactMatch",
+          "mapping_set_id": "https://example.org/mappings/pmdco",
+          "comment": "UO millimeter; UO units are classes, punning as in EMMO#377"
+        }
+      }
+    },
+    "MicroM": {
+      "emmo:MicroMetre": {
+        "x-sssom": {
+          "predicate_id": "skos:exactMatch",
+          "mapping_set_id": "https://example.org/mappings/emmo",
+          "object_source_version": "https://w3id.org/emmo/1.0.4"
+        }
+      },
+      "obo:UO_0000017": {
+        "x-sssom": {
+          "predicate_id": "skos:exactMatch",
+          "mapping_set_id": "https://example.org/mappings/pmdco",
+          "comment": "UO micrometer; UO units are classes, punning as in EMMO#377"
+        }
+      }
+    }
+  }
+}

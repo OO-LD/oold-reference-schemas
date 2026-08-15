@@ -4,6 +4,16 @@
   "x-oold-uuid": "0d241e1a-9bf9-5441-81ff-5313948143c0",
   "x-oold-version": "1.0.0",
   "title": "QuantityValue",
+  "examples": [
+    {
+      "type": [
+        "QuantityValue"
+      ],
+      "value": 12.7,
+      "unit": "http://qudt.org/vocab/unit/SEC",
+      "standard_uncertainty": 0.05
+    }
+  ],
   "type": "object",
   "properties": {
     "type": {
@@ -16,31 +26,19 @@
       ]
     },
     "value": {
-      "type": "number",
-      "examples": [
-        12.7
-      ]
+      "type": "number"
     },
     "unit": {
       "type": "string",
-      "format": "iri-reference",
-      "examples": [
-        "http://qudt.org/vocab/unit/SEC"
-      ]
+      "format": "iri-reference"
     },
     "standard_uncertainty": {
       "type": "number",
-      "description": "Standard uncertainty, expressed in the unit of value (GUM convention)",
-      "examples": [
-        0.05
-      ]
+      "description": "Standard uncertainty, expressed in the unit of value (GUM convention)"
     },
     "relative_standard_uncertainty": {
       "type": "number",
-      "description": "Dimensionless ratio, NOT percent; ratio-scale quantities only, undefined at value 0; redundant with standard_uncertainty (u = r * |v|), give only one",
-      "examples": [
-        0.004
-      ]
+      "description": "Dimensionless ratio, NOT percent; ratio-scale quantities only, undefined at value 0; redundant with standard_uncertainty (u = r * |v|), give only one"
     }
   },
   "required": [
