@@ -44,7 +44,11 @@
    schema inherits. A checkbox plus :has(), because <details> is not a valid table section.
    Without :has() support the rows stay visible, which is the safe direction. */
 
-.md-typeset tbody:has(.toggle input:not(:checked)) tr.hideable {
+.md-typeset tbody:has(.section-toggle input:not(:checked)) tr.section-row {
+  display: none;
+}
+
+.md-typeset tbody:has(.values-toggle input:not(:checked)) tr.values-row {
   display: none;
 }
 
@@ -73,7 +77,7 @@
   transition: transform 125ms;
 }
 
-.md-typeset tbody:has(.toggle input:checked) tr.toggle label::before {
+.md-typeset tr.toggle:has(input:checked) label::before {
   transform: rotate(90deg);
 }
 
