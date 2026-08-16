@@ -1076,8 +1076,18 @@
 
 
 <h1 id="conformance-iris">Conformance IRIs<a class="headerlink" href="#conformance-iris" title="Permanent link">&para;</a></h1>
-<p>Conformance to the notation itself is defined by the <a href="https://oo-ld.org/latest/spec/">OO-LD specification</a>; this page is about conforming to a module
+<p>Conformance to the notation itself is defined by the
+<a href="https://oo-ld.org/latest/spec/">OO-LD specification</a>; this page is about conforming to a module
 published here.</p>
+<div class="admonition note">
+<p class="admonition-title">The <code>w3id.org</code> redirect is pending</p>
+<p>A conformance IRI is written <code>https://w3id.org/oo-ld/schemas/&lt;module&gt;/&lt;version&gt;</code>, which is
+the identifier to cite and to declare, because it is independent of where the files are
+hosted. The redirect that makes it dereference is filed as
+<a href="https://github.com/perma-id/w3id.org/pull/6556">perma-id/w3id.org#6556</a> and not yet merged,
+so until it is, fetch through <code>https://schemas.oo-ld.org/&lt;module&gt;/&lt;version&gt;/</code> directly. No
+version has been released while this is open, so no published identifier is affected.</p>
+</div>
 <p>Each module is conformable on its own; bundles aggregate modules at pinned versions so a domain
 consumer can claim one thing rather than several. Instances declare conformance with
 <code>dct:conformsTo</code> (or the RFC 6906 media-type <code>profile</code> parameter).</p>
