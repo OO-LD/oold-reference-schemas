@@ -52,6 +52,22 @@
   display: none;
 }
 
+/* Depth carries meaning in this table: everything in an inherited section belongs to that
+   section, and a value list belongs to the property above it. Without the indent the two
+   toggles read as siblings. */
+
+.md-typeset tr.section-row > td:first-child {
+  padding-left: 1.2rem;
+}
+
+.md-typeset tr.values-toggle > td {
+  padding-left: 1.2rem;
+}
+
+.md-typeset tr.section-row.values-toggle > td {
+  padding-left: 2.4rem;
+}
+
 .md-typeset tr.toggle input {
   position: absolute;
   opacity: 0;
