@@ -1031,6 +1031,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#maintaining-the-lock" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Maintaining the lock
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1124,6 +1135,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#maintaining-the-lock" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Maintaining the lock
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1156,33 +1178,73 @@ drift detected when an upstream release lands. Every synonym additionally record
 <tr>
 <th>ontology</th>
 <th>version</th>
+<th>files</th>
+<th>size</th>
 <th>note</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>QUDT</td>
-<td>3.4.0</td>
-<td>release tag; the main branch carries unresolved version placeholders</td>
+<td><code>emmo</code></td>
+<td>1.0.4</td>
+<td>5</td>
+<td>0.8 MB</td>
+<td>the 1.0.4 development branch at that commit; the published w3id build lagged it</td>
 </tr>
 <tr>
-<td>EMMO</td>
-<td>1.0.4 (branch snapshot, commit <code>1249265</code>)</td>
-<td>adds unit individuals and the VIM4 data properties; the published w3id build for it lagged this commit</td>
+<td><code>iao</code></td>
+<td>2026-03-30</td>
+<td>1</td>
+<td>0.6 MB</td>
+<td>information artifacts, an OBO release</td>
 </tr>
 <tr>
-<td>PMDco</td>
+<td><code>obi</code></td>
+<td>2026-07-27</td>
+<td>1</td>
+<td>9.5 MB</td>
+<td>biomedical investigations, an OBO release</td>
+</tr>
+<tr>
+<td><code>pato</code></td>
+<td>2025-05-14</td>
+<td>1</td>
+<td>20.1 MB</td>
+<td>qualities, an OBO release</td>
+</tr>
+<tr>
+<td><code>pmdco</code></td>
 <td>3.0.0</td>
+<td>1</td>
+<td>0.9 MB</td>
 <td></td>
 </tr>
 <tr>
-<td>BattINFO</td>
-<td>0.7.0</td>
-<td>an import manifest; the terms live in domain-battery 0.19.0 and domain-electrochemistry 0.34.0</td>
+<td><code>qudt</code></td>
+<td>3.4.0</td>
+<td>3</td>
+<td>4.3 MB</td>
+<td>release tag; schema, units and quantity kinds</td>
+</tr>
+<tr>
+<td><code>schemaorg</code></td>
+<td>30.0</td>
+<td>2</td>
+<td>2.1 MB</td>
+<td>both namespace files, because the mappings use the http form</td>
+</tr>
+<tr>
+<td><code>uo</code></td>
+<td>2026-07-31</td>
+<td>1</td>
+<td>0.6 MB</td>
+<td>units of measurement, an OBO release</td>
 </tr>
 </tbody>
 </table>
-<p>Versions are added as modules start using them, rather than mirrored wholesale.</p>
+<p>An ontology is pinned once a mapping targets it, rather than mirrored wholesale. OBO
+terms come from their versioned release artefacts, so the pin is a release rather than
+whatever <code>latest</code> resolves to today.</p>
 <h2 id="how-the-pin-is-enforced">How the pin is enforced<a class="headerlink" href="#how-the-pin-is-enforced" title="Permanent link">&para;</a></h2>
 <p>The files themselves are not carried here. They belong to other projects, and nothing in the
 documentation build reads them: the labels they supply are committed, so the site builds
@@ -1191,6 +1253,17 @@ repository, ref and a SHA-256 per file.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>make ontologies    fetch the pinned files into .ontologies/ and verify every hash
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>make labels        refresh the committed labels from them
 </code></pre></div>
+<h2 id="maintaining-the-lock">Maintaining the lock<a class="headerlink" href="#maintaining-the-lock" title="Permanent link">&para;</a></h2>
+<p>Pin a versioned artefact, never a <code>latest</code> URL. A moving target makes every upstream release
+look like tampering, and a check that cries wolf is a check nobody reads.</p>
+<p>To add an ontology, write its entry in <code>ontologies.lock.json</code> with the version, repository,
+ref, base URL, licence and the files a mapping needs, then fill in the hashes:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>python scripts/fetch_ontologies.py --update
+</code></pre></div>
+<p>Changing a pin is the same act with one step more: edit the ref, run <code>--update</code>, and before
+committing the new hashes, re-check the mappings that target the ontology and record the new
+<code>object_source_version</code> on each synonym. <code>--update</code> reports what moved and changes nothing
+else, so the decision stays with a person.</p>
 <p>A hash mismatch is the point of the exercise. A tag that moves, a file edited in place or a
 published build that lags its own branch each fail loudly here, rather than leaving a mapping
 that quietly means something else. Updating a pin is therefore a deliberate act: change the ref

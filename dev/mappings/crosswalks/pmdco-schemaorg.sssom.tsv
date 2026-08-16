@@ -8,6 +8,6 @@
 #   semapv: https://w3id.org/semapv/vocab/
 #   skos: http://www.w3.org/2004/02/skos/core#
 subject_id	subject_label	predicate_id	object_id	object_label	mapping_justification	subject_source	object_source	object_source_version	comment
-http://purl.obolibrary.org/obo/IAO_0000039	has measurement unit label	skos:closeMatch	http://schema.org/unitCode		semapv:MappingChaining	https://w3id.org/oo-ld/schemas/mappings/pmdco.sssom.tsv	https://w3id.org/oo-ld/schemas/mappings/schemaorg.sssom.tsv		chained through unit
-http://purl.obolibrary.org/obo/OBI_0001937	has specified numeric value	skos:exactMatch	http://schema.org/value		semapv:MappingChaining	https://w3id.org/oo-ld/schemas/mappings/pmdco.sssom.tsv	https://w3id.org/oo-ld/schemas/mappings/schemaorg.sssom.tsv		chained through value
+http://purl.obolibrary.org/obo/IAO_0000039	has measurement unit label	skos:closeMatch	http://schema.org/unitCode	unitCode	semapv:MappingChaining	https://w3id.org/oo-ld/schemas/mappings/pmdco.sssom.tsv	https://w3id.org/oo-ld/schemas/mappings/schemaorg.sssom.tsv		chained through unit
+http://purl.obolibrary.org/obo/OBI_0001937	has specified numeric value	skos:exactMatch	http://schema.org/value	value	semapv:MappingChaining	https://w3id.org/oo-ld/schemas/mappings/pmdco.sssom.tsv	https://w3id.org/oo-ld/schemas/mappings/schemaorg.sssom.tsv		chained through value
 http://purl.obolibrary.org/obo/OBI_0001931	scalar value specification	skos:closeMatch	http://schema.org/QuantitativeValue	QuantitativeValue	semapv:MappingChaining	https://w3id.org/oo-ld/schemas/mappings/pmdco.sssom.tsv	https://w3id.org/oo-ld/schemas/mappings/schemaorg.sssom.tsv		chained through QuantityValue

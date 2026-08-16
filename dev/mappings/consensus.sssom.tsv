@@ -10,17 +10,17 @@
 #   semapv: https://w3id.org/semapv/vocab/
 #   skos: http://www.w3.org/2004/02/skos/core#
 subject_id	subject_label	predicate_id	object_id	object_label	mapping_justification	subject_source	object_source	object_source_version	comment
-https://w3id.org/oo-ld/schemas/quantities/0.1#Diameter	Diameter	skos:exactMatch	qkind:Diameter		semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/quantities/0.1			
-https://w3id.org/oo-ld/schemas/quantities/0.1#HR	HR	skos:exactMatch	qunit:HR		semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/quantities/0.1			
-https://w3id.org/oo-ld/schemas/quantities/0.1#KiloM	KiloM	skos:exactMatch	qunit:KiloM		semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/quantities/0.1			
-https://w3id.org/oo-ld/schemas/quantities/0.1#Length	Length	skos:exactMatch	qkind:Length	LENGTH	semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/quantities/0.1			
-https://w3id.org/oo-ld/schemas/quantities/0.1#M	M	skos:exactMatch	qunit:M		semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/quantities/0.1			
-https://w3id.org/oo-ld/schemas/quantities/0.1#MicroM	MicroM	skos:exactMatch	qunit:MicroM		semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/quantities/0.1			
-https://w3id.org/oo-ld/schemas/quantities/0.1#MilliM	MilliM	skos:exactMatch	qunit:MilliM		semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/quantities/0.1			
-https://w3id.org/oo-ld/schemas/quantities/0.1#MilliSEC	MilliSEC	skos:exactMatch	qunit:MilliSEC		semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/quantities/0.1			
+https://w3id.org/oo-ld/schemas/quantities/0.1#Diameter	Diameter	skos:exactMatch	qkind:Diameter	Diameter	semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/quantities/0.1			
+https://w3id.org/oo-ld/schemas/quantities/0.1#HR	HR	skos:exactMatch	qunit:HR	Hour	semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/quantities/0.1			
+https://w3id.org/oo-ld/schemas/quantities/0.1#KiloM	KiloM	skos:exactMatch	qunit:KiloM	Kilometre	semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/quantities/0.1			
+https://w3id.org/oo-ld/schemas/quantities/0.1#Length	Length	skos:exactMatch	qkind:Length	Length	semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/quantities/0.1			
+https://w3id.org/oo-ld/schemas/quantities/0.1#M	M	skos:exactMatch	qunit:M	Metre	semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/quantities/0.1			
+https://w3id.org/oo-ld/schemas/quantities/0.1#MicroM	MicroM	skos:exactMatch	qunit:MicroM	Micrometre	semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/quantities/0.1			
+https://w3id.org/oo-ld/schemas/quantities/0.1#MilliM	MilliM	skos:exactMatch	qunit:MilliM	Millimetre	semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/quantities/0.1			
+https://w3id.org/oo-ld/schemas/quantities/0.1#MilliSEC	MilliSEC	skos:exactMatch	qunit:MilliSEC	Millisecond	semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/quantities/0.1			
 https://w3id.org/oo-ld/schemas/quantities/0.1#QuantityValue	QuantityValue	skos:exactMatch	qudt:QuantityValue	Quantity value	semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/quantities/0.1			
-https://w3id.org/oo-ld/schemas/quantities/0.1#SEC	SEC	skos:exactMatch	qunit:SEC		semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/quantities/0.1			
-https://w3id.org/oo-ld/schemas/quantities/0.1#Time	Time	skos:exactMatch	qkind:Time	TIME	semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/quantities/0.1			
+https://w3id.org/oo-ld/schemas/quantities/0.1#SEC	SEC	skos:exactMatch	qunit:SEC	Second	semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/quantities/0.1			
+https://w3id.org/oo-ld/schemas/quantities/0.1#Time	Time	skos:exactMatch	qkind:Time	Time	semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/quantities/0.1			
 https://w3id.org/oo-ld/schemas/quantities/0.1#relative_standard_uncertainty	relative_standard_uncertainty	skos:exactMatch	qudt:relativeStandardUncertainty	relative standard uncertainty	semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/quantities/0.1			
 https://w3id.org/oo-ld/schemas/quantities/0.1#standard_uncertainty	standard_uncertainty	skos:exactMatch	qudt:standardUncertainty	standard uncertainty	semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/quantities/0.1			
 https://w3id.org/oo-ld/schemas/quantities/0.1#unit	unit	skos:exactMatch	qudt:hasUnit	has unit	semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/quantities/0.1			

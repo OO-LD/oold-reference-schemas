@@ -1320,7 +1320,9 @@ snapshot where a published version IRI is stale. The files are not carried here;
 pinned by hash in <code>ontologies.lock.json</code>. <code>make ontologies</code> fetches and verifies them, and
 <code>make labels</code> rereads the human-readable labels for the terms the schemas map. A hash
 mismatch means upstream moved under the pin, so the mappings that target it need re-checking
-before the lock is updated. See <a href="../ontologies/">Pinned ontologies</a>.</p>
+before the lock is updated; <code>python scripts/fetch_ontologies.py --update</code> refetches and
+rewrites the hashes once you have decided the mappings still hold. See
+<a href="../ontologies/">Pinned ontologies</a> for how a pin is added or moved.</p>
 <h2 id="versions">Versions<a class="headerlink" href="#versions" title="Permanent link">&para;</a></h2>
 <p>Three number lines, each with a different job:</p>
 <ul>
