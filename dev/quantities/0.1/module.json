@@ -1,0 +1,7 @@
+{
+  "name": "quantities",
+  "title": "Quantities",
+  "version": "0.1.0",
+  "status": "example",
+  "scope": "Quantity values, units, uncertainty and value specifications. Neutral: a quantity with a unit means the same to a laboratory, an engineer and a customs declaration."
+}

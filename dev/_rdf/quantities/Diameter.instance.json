@@ -1,8 +1,0 @@
-{
-  "@id": "https://example.org/instance",
-  "type": [
-    "Diameter"
-  ],
-  "value": 20.1,
-  "unit": "MilliM"
-}
