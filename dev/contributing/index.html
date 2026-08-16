@@ -1343,6 +1343,9 @@ too small fails review rather than shipping.</p>
 <p><code>make release</code> stamps the dated release, records which module version it documents in
 <code>generated/versions.json</code>, and regenerates. The schema pages read that index back, which is
 how a reader finds the documentation for a module version that is no longer current.</p>
+<p>Publishing checks both promises before it writes: <code>scripts/check_publish.py</code> refuses to
+rewrite an exact release and refuses to move a compatibility line with anything above a patch,
+so a forgotten bump fails the deploy rather than changing what someone already fetched.</p>
 <p>Between releases, schemas may run ahead of their module. That state is published at
 <code>&lt;module&gt;/dev/</code>, which is explicitly not a conformance target. A released version is
 written once at <code>&lt;module&gt;/&lt;major.minor&gt;/</code> and is never rewritten by anything above a patch,
