@@ -1,9 +1,10 @@
 # Quantities 0.1.0
 
-Files published under `https://schemas.oo-ld.org/quantities/0.1/`, referenced
-by the conformance IRI `https://w3id.org/oo-ld/schemas/quantities/0.1`. That path
-tracks the newest patch of 0.1; the exact release is also published, immutably,
-at `https://schemas.oo-ld.org/quantities/0.1.0/`.
+Referenced by the conformance IRI
+`https://w3id.org/oo-ld/schemas/quantities/0.1`, which tracks the newest patch of
+0.1. A release publishes these files at `https://schemas.oo-ld.org/quantities/0.1/`
+and, immutably, at `https://schemas.oo-ld.org/quantities/0.1.0/`; until then the tip
+of main is served at `https://schemas.oo-ld.org/quantities/dev/`.
 
 | file |
 |---|
