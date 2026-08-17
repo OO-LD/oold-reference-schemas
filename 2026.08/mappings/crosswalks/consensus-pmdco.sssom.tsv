@@ -1,0 +1,22 @@
+# mapping_set_id: https://w3id.org/oo-ld/schemas/mappings/crosswalks/consensus-pmdco.sssom.tsv
+# mapping_set_version: 2026.08.17
+# mapping_set_title: consensus-pmdco mappings for the OO-LD reference schemas
+# comment: derived by chaining the curated sets, not curated
+# license: https://creativecommons.org/publicdomain/zero/1.0/
+# mapping_provider: https://github.com/OO-LD/oold-reference-schemas
+# curie_map:
+#   semapv: https://w3id.org/semapv/vocab/
+#   skos: http://www.w3.org/2004/02/skos/core#
+subject_id	subject_label	predicate_id	object_id	object_label	mapping_justification	subject_source	subject_source_version	object_source	object_source_version	comment
+http://qudt.org/vocab/quantitykind/Diameter	Diameter	skos:closeMatch	http://purl.obolibrary.org/obo/PATO_0001334	diameter	semapv:MappingChaining	https://w3id.org/oo-ld/schemas/mappings/consensus.sssom.tsv		https://w3id.org/oo-ld/schemas/mappings/pmdco.sssom.tsv		chained through Diameter
+http://qudt.org/vocab/unit/HR	Hour	skos:exactMatch	http://purl.obolibrary.org/obo/UO_0000032	hour	semapv:MappingChaining	https://w3id.org/oo-ld/schemas/mappings/consensus.sssom.tsv		https://w3id.org/oo-ld/schemas/mappings/pmdco.sssom.tsv		chained through HR
+http://qudt.org/vocab/unit/KiloM	Kilometre	skos:exactMatch	http://purl.obolibrary.org/obo/UO_0010066	kilometer	semapv:MappingChaining	https://w3id.org/oo-ld/schemas/mappings/consensus.sssom.tsv		https://w3id.org/oo-ld/schemas/mappings/pmdco.sssom.tsv		chained through KiloM
+http://qudt.org/vocab/quantitykind/Length	Length	skos:closeMatch	http://purl.obolibrary.org/obo/PATO_0000122	length	semapv:MappingChaining	https://w3id.org/oo-ld/schemas/mappings/consensus.sssom.tsv		https://w3id.org/oo-ld/schemas/mappings/pmdco.sssom.tsv		chained through Length
+http://qudt.org/vocab/unit/M	Metre	skos:exactMatch	http://purl.obolibrary.org/obo/UO_0000008	meter	semapv:MappingChaining	https://w3id.org/oo-ld/schemas/mappings/consensus.sssom.tsv		https://w3id.org/oo-ld/schemas/mappings/pmdco.sssom.tsv		chained through M
+http://qudt.org/vocab/unit/MicroM	Micrometre	skos:exactMatch	http://purl.obolibrary.org/obo/UO_0000017	micrometer	semapv:MappingChaining	https://w3id.org/oo-ld/schemas/mappings/consensus.sssom.tsv		https://w3id.org/oo-ld/schemas/mappings/pmdco.sssom.tsv		chained through MicroM
+http://qudt.org/vocab/unit/MilliM	Millimetre	skos:exactMatch	http://purl.obolibrary.org/obo/UO_0000016	millimeter	semapv:MappingChaining	https://w3id.org/oo-ld/schemas/mappings/consensus.sssom.tsv		https://w3id.org/oo-ld/schemas/mappings/pmdco.sssom.tsv		chained through MilliM
+http://qudt.org/vocab/unit/MilliSEC	Millisecond	skos:exactMatch	http://purl.obolibrary.org/obo/UO_0000028	millisecond	semapv:MappingChaining	https://w3id.org/oo-ld/schemas/mappings/consensus.sssom.tsv		https://w3id.org/oo-ld/schemas/mappings/pmdco.sssom.tsv		chained through MilliSEC
+http://qudt.org/schema/qudt/QuantityValue	Quantity value	skos:exactMatch	http://purl.obolibrary.org/obo/OBI_0001931	scalar value specification	semapv:MappingChaining	https://w3id.org/oo-ld/schemas/mappings/consensus.sssom.tsv		https://w3id.org/oo-ld/schemas/mappings/pmdco.sssom.tsv		chained through QuantityValue
+http://qudt.org/vocab/unit/SEC	Second	skos:exactMatch	http://purl.obolibrary.org/obo/UO_0000010	second	semapv:MappingChaining	https://w3id.org/oo-ld/schemas/mappings/consensus.sssom.tsv		https://w3id.org/oo-ld/schemas/mappings/pmdco.sssom.tsv		chained through SEC
+http://qudt.org/schema/qudt/hasUnit	has unit	skos:closeMatch	http://purl.obolibrary.org/obo/IAO_0000039	has measurement unit label	semapv:MappingChaining	https://w3id.org/oo-ld/schemas/mappings/consensus.sssom.tsv		https://w3id.org/oo-ld/schemas/mappings/pmdco.sssom.tsv		chained through unit
+http://qudt.org/schema/qudt/value	value	skos:exactMatch	http://purl.obolibrary.org/obo/OBI_0001937	has specified numeric value	semapv:MappingChaining	https://w3id.org/oo-ld/schemas/mappings/consensus.sssom.tsv		https://w3id.org/oo-ld/schemas/mappings/pmdco.sssom.tsv		chained through value

@@ -1,0 +1,143 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "QuantityValue.schema.json",
+  "x-oold-uuid": "0d241e1a-9bf9-5441-81ff-5313948143c0",
+  "x-oold-version": "0.1.0",
+  "title": "QuantityValue",
+  "examples": [
+    {
+      "type": [
+        "QuantityValue"
+      ],
+      "value": 12.7,
+      "unit": "http://qudt.org/vocab/unit/SEC",
+      "standard_uncertainty": 0.05
+    }
+  ],
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "QuantityValue"
+      ]
+    },
+    "value": {
+      "type": "number"
+    },
+    "unit": {
+      "type": "string",
+      "format": "iri-reference"
+    },
+    "standard_uncertainty": {
+      "type": "number",
+      "description": "Standard uncertainty, expressed in the unit of value (GUM convention)"
+    },
+    "relative_standard_uncertainty": {
+      "type": "number",
+      "description": "Dimensionless ratio, not percent; ratio-scale quantities only, undefined at value 0; redundant with standard_uncertainty (u = r * |v|), give only one"
+    }
+  },
+  "required": [
+    "value"
+  ],
+  "@context": {
+    "@version": 1.1,
+    "qudt": "http://qudt.org/schema/qudt/",
+    "qunit": "http://qudt.org/vocab/unit/",
+    "schema": "http://schema.org/",
+    "obo": "http://purl.obolibrary.org/obo/",
+    "emmo": "https://w3id.org/emmo#",
+    "type": {
+      "@id": "@type",
+      "@container": "@set"
+    },
+    "QuantityValue": "qudt:QuantityValue",
+    "value": "qudt:value",
+    "unit": {
+      "@id": "qudt:hasUnit",
+      "@type": "@vocab"
+    },
+    "standard_uncertainty": "qudt:standardUncertainty",
+    "relative_standard_uncertainty": "qudt:relativeStandardUncertainty"
+  },
+  "x-oold-context": {
+    "value": {
+      "schema:value": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:exactMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/schemaorg.sssom.tsv"
+        }
+      },
+      "obo:OBI_0001937": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:exactMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/pmdco.sssom.tsv"
+        }
+      }
+    },
+    "unit": {
+      "schema:unitCode": {
+        "@type": "@vocab",
+        "x-oold-sssom": {
+          "predicate_id": "skos:exactMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/schemaorg.sssom.tsv",
+          "comment": "URL branch of schema:unitCode, carrying the QUDT unit IRI"
+        }
+      },
+      "obo:IAO_0000039": {
+        "@type": "@vocab",
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/pmdco.sssom.tsv",
+          "comment": "range is iao:measurement unit label; unit-label vs QUDT-IRI mapping needed"
+        }
+      },
+      "emmo:EMMO_eeb06032_dd4f_476e_9da6_aa24302b7588": {
+        "@type": "@vocab",
+        "x-oold-sssom": {
+          "predicate_id": "skos:exactMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/emmo.sssom.tsv",
+          "object_source": "https://w3id.org/emmo",
+          "object_source_version": "https://w3id.org/emmo/1.0.4",
+          "comment": "hasReferencePart; pinned 1.0.4 branch snapshot (units are individuals there)"
+        }
+      }
+    },
+    "standard_uncertainty": {
+      "emmo:EMMO_bba7f0f0_3707_42b9_b3fa_fd04610ef147": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:exactMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/emmo.sssom.tsv",
+          "object_source_version": "https://w3id.org/emmo/1.0.4",
+          "comment": "standardUncertainty (VIM4 3.6); 1.0.4 branch only"
+        }
+      }
+    },
+    "QuantityValue": {
+      "schema:QuantitativeValue": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/schemaorg.sssom.tsv",
+          "comment": "broader: also covers intervals/ranges"
+        }
+      },
+      "obo:OBI_0001931": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:exactMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/pmdco.sssom.tsv"
+        }
+      },
+      "emmo:EMMO_f658c301_ce93_46cf_9639_4eace2c5d1d5": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/emmo.sssom.tsv",
+          "comment": "EMMO QuantityValue requires a nested numerical part (EMMO#376)"
+        }
+      }
+    }
+  }
+}
