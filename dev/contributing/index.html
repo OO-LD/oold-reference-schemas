@@ -1299,6 +1299,9 @@ request. <code>make check</code> is what CI runs.</p>
    deliberately leaves out, and why a mapping is a close match rather than an exact one.</li>
 <li>Run <code>make validate</code>. A schema that does not round-trip through RDF is not finished.</li>
 </ol>
+<p>An instance file starts with <code>$schema</code>. Editors read it to offer validation while the file is
+being edited, and some stop looking after the first key, so the order is not cosmetic.
+<code>make check</code> enforces it.</p>
 <p>Pages are seeded once and never overwritten. If a page stops documenting the schema its
 location claims, or documents a schema that no longer exists, <code>make check</code> says so rather
 than silently rewriting your prose. A page that has to move because its schema gained a
