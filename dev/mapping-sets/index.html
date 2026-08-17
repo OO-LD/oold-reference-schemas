@@ -1306,10 +1306,12 @@ of one document rather than approximations of each other. Terms with no synonym 
 set fall back to the consensus mapping, so a partial alignment stays usable.</p>
 <h2 id="limits">Limits<a class="headerlink" href="#limits" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Structural mismatch cannot be bridged by term mapping.</strong> Where an ontology models a value as
-  a nested node rather than a literal, no <code>@context</code> entry can produce it. Those mappings are
-  delegated to SSSOM or rule level and the term keeps the consensus reading. EMMO's quantity
-  value is the standing example.</li>
+<li><strong>Structure is bridged in the document, not in the graph.</strong> A mapping set decides which graph
+  a document produces, including a differently shaped one, as
+  <a href="#shapes-not-only-names">Shapes, not only names</a> shows. It cannot reshape a graph that already
+  exists, so arriving RDF is framed with the schema first. Where a schema states a term as a
+  literal and another community needs a node, the correspondence belongs to the schema that
+  carries the node: this one keeps its consensus reading, and the pair is recorded in SSSOM.</li>
 <li><strong>Vocabulary coercion needs guards.</strong> Value-level aliases use <code>@type: @vocab</code>, which mints an
   IRI from an unknown string. A schema that uses it constrains the values with an <code>enum</code>.</li>
 <li><strong>A mapping is only as current as its pin.</strong> Synonyms carry the exact ontology version they
