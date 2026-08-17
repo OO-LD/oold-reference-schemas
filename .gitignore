@@ -10,6 +10,7 @@ site/
 # only mean reviewing every schema change twice.
 docs/*/[0-9]*/
 docs/mappings/**/*.sssom.tsv
+docs/module-versions.json
 
 # The SSSOM sets: a row is the schema's own mapping metadata transposed into columns, so
 # committing them would put a mechanical restatement in every review beside the change it

@@ -7,7 +7,7 @@ site_author = "OO-LD Contributors"
 edit_uri = "edit/main/docs/"
 repo_name = "OO-LD/oold-reference-schemas"
 extra_css = ["stylesheets/extra.css"]
-extra_javascript = ["javascripts/mapping-sets.js"]
+extra_javascript = ["javascripts/mapping-sets.js", "javascripts/module-version.js"]
 copyright = 'Maintained by <a href="https://github.com/OO-LD">OO-LD</a>.'
 
 nav = [

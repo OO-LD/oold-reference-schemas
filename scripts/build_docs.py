@@ -164,6 +164,23 @@ def write_rdf(module: str, name: str, schema_files: list[Path], instance: Path |
     return written
 
 
+def write_module_versions() -> int:
+    """Publish, for each module, the documentation snapshot that carries each of its
+    versions, so a page can offer the reader a module version rather than a site version."""
+    index = read(GENERATED / "versions.json") if (GENERATED / "versions.json").exists() else {}
+    catalogue = {}
+    for module in module_names():
+        if not any((MODULES / module).glob("*.schema.json")):
+            continue
+        entries = [{"label": ".".join(e["module"].split(".")[:2]), "docs": e["docs"]}
+                   for e in index.get(module, [])]
+        entries.append({"label": "dev", "docs": "dev"})
+        catalogue[module] = {"current": module_version(module), "versions": entries}
+    (DOCS / "module-versions.json").write_text(json.dumps(catalogue, indent=2) + "\n",
+                                               encoding="utf-8", newline="\n")
+    return len(catalogue)
+
+
 def stage_mappings() -> int:
     """Copy the generated SSSOM sets to the path their mapping_set_id points at."""
     src = GENERATED / "mappings"
@@ -270,6 +287,7 @@ def main() -> None:
             rdf += write_rdf(module, name, lineage, built)
 
     mappings = stage_mappings()
+    write_module_versions()
     print(f"published {published} schema files, {rdf} RDF readings, "
           f"{mappings} mapping sets")
 

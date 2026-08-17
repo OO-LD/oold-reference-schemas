@@ -568,6 +568,28 @@ def _channel():
     return "release" if os.environ.get("OOLD_CHANNEL") == "release" else "dev"
 
 
+def _module_versions(module, page):
+    """Where else this page exists, one entry per version of its module.
+
+    A documentation snapshot documents one state of a module, so switching module version
+    means switching snapshot: `dev` for the tip of main, and the dated release that
+    documented each published version. The release index holds that mapping.
+    """
+    if not page:
+        return []
+    url = _url(page)
+    entries = []
+    path = os.path.join(GENERATED, "versions.json")
+    if os.path.exists(path):
+        with open(path, encoding="utf-8") as fh:
+            for entry in json.load(fh).get(module) or []:
+                short = ".".join(entry["module"].split(".")[:2])
+                entries.append((short, f"/{entry['docs']}/{url}/"))
+    entries.append(("dev", f"/dev/{url}/"))
+    current = "dev" if _channel() == "dev" else module_version(module)
+    return [(label, href, label == current) for label, href in entries]
+
+
 def _earlier(module, version):
     """Module versions released before this one, with the dated docs that described them.
 
@@ -619,6 +641,11 @@ def oold_schema_meta_data(module, name):
     channel = version if _channel() == "release" else "dev"
     lines = [f"- module: [`{module}`](/{module}/{channel}/) "
              f"{module_version(module, full=True)}"]
+    versions = _module_versions(module, page)
+    if len(versions) > 1:
+        lines.append("- module version: " + " &middot; ".join(
+            f"**{label}**" if current else f"[{label}]({href})"
+            for label, href, current in versions))
     parents = _parents(module, name)
     if parents:
         lines.append("- extends: " + ", ".join(link(p) for p in parents) + " (`allOf`)")
