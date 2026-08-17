@@ -3,6 +3,9 @@ name: validate
 on:
   push:
     branches: [main]
+    # A release is a tag, and the deploy publishes version paths only for one, so the
+    # workflow has to run for tags as well.
+    tags: ["v*"]
   pull_request:
   workflow_dispatch:
   schedule:
