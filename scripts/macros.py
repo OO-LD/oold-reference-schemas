@@ -207,10 +207,13 @@ def _published_refs(text, module):
 
     A committed instance points at the schema beside it, so it validates in a checkout
     without a network. What a reader should copy is the published identifier, so the
-    documentation shows that instead of the repository-local path.
+    documentation shows that instead of the repository-local path, for the same tree the
+    rest of the page links: `dev` while reading the development snapshot, the frozen
+    version while reading a release.
     """
     doc = json.loads(text)
-    base = f"{IRI_BASE}/{module}/{module_version(module)}/"
+    channel = module_version(module) if _channel() == "release" else "dev"
+    base = f"{IRI_BASE}/{module}/{channel}/"
 
     def absolute(value):
         if isinstance(value, str) and value.endswith(".schema.json")                 and not value.startswith(("http://", "https://")):
@@ -613,7 +616,9 @@ def oold_schema_meta_data(module, name):
         href = _page_link(module, other, page)
         return f"[{other}]({href})" if href else f"`{other}`"
 
-    lines = [f"- module: `{module}` {module_version(module, full=True)}"]
+    channel = version if _channel() == "release" else "dev"
+    lines = [f"- module: [`{module}`](/{module}/{channel}/) "
+             f"{module_version(module, full=True)}"]
     parents = _parents(module, name)
     if parents:
         lines.append("- extends: " + ", ".join(link(p) for p in parents) + " (`allOf`)")
@@ -626,16 +631,8 @@ def oold_schema_meta_data(module, name):
     # Rooted, not relative: these are published at the site root and must not move when the
     # surrounding documentation is versioned. Which tree they point at follows the build,
     # so a page always links what it describes.
-    channel = version if _channel() == "release" else "dev"
-    # Conformance is per module: the schemas of a module share one context and are not
-    # meaningful apart from it, so the module version is what an instance declares with
-    # `dct:conformsTo` and what a consumer pins. The schema itself is named by its file.
-    lines.append(f"- conforms to: [`{IRI_BASE}/{module}/{version}`](/{module}/{channel}/), "
-                 "the module at this version")
     path = f"/{module}/{channel}/{name}.schema.json"
-    note = "" if channel != "dev" else (f" (the tip of main, which this page documents; "
-                                        f"a release freezes it at `/{module}/{version}/`)")
-    lines.append(f"- schema file: [`{path}`]({path}){note}")
+    lines.append(f"- schema file: [`{path}`]({path})")
     earlier = _earlier(module, module_version(module, full=True))
     if earlier:
         # the docs for an older module version are the dated site release that shipped it
