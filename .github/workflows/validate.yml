@@ -160,7 +160,7 @@ jobs:
           if [[ "${GITHUB_REF}" == refs/tags/v* ]]; then
             VERSION="${GITHUB_REF#refs/tags/v}"
             VERSION="${VERSION%.*}"          # v1.2.3 -> 1.2
-            uvx --with pyyaml==6.0.2 --with "$MIKE" mike deploy --push --update-aliases "$VERSION" latest
+            OOLD_CHANNEL=release uvx --with pyyaml==6.0.2 --with "$MIKE" mike deploy --push --update-aliases "$VERSION" latest
             uvx --with pyyaml==6.0.2 --with "$MIKE" mike set-default --push latest
           else
             uvx --with pyyaml==6.0.2 --with "$MIKE" mike deploy --push dev

@@ -219,6 +219,29 @@ def main() -> None:
         (target / "index.md").write_text("\n".join(listing) + "\n",
                                          encoding="utf-8", newline="\n")
 
+        # A manifest at the version directory itself. The schemas are files and resolve on
+        # their own; the module is only ever this listing, so without it a conformance IRI
+        # dereferences to nothing.
+        meta_file = MODULES / module / "module.json"
+        manifest = {
+            "@context": {
+                "dcterms": "http://purl.org/dc/terms/",
+                "owl": "http://www.w3.org/2002/07/owl#",
+                "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+                "title": "dcterms:title",
+                "description": "dcterms:description",
+                "version": "owl:versionInfo",
+                "schemas": {"@id": "rdfs:member", "@type": "@id"},
+            },
+            "@id": f"https://w3id.org/oo-ld/schemas/{module}/{line}",
+            "title": f"{title} {line}",
+            "version": exact,
+            "description": read(meta_file).get("scope", "") if meta_file.exists() else "",
+            "schemas": [f.name for f in files if f.name.endswith(".schema.json")],
+        }
+        (target / "index.json").write_text(json.dumps(manifest, indent=2) + "\n",
+                                           encoding="utf-8", newline="\n")
+
         # Instance and RDF readings for the schema page tabs, one reading per mapping set.
         # A committed instance wins; otherwise one is built from the schema's own examples
         # and defaults, so every schema page can show the same four views.

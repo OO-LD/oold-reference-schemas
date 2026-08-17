@@ -37,8 +37,25 @@ def resolves(url: str) -> tuple[bool, str]:
         return False, str(error)
 
 
+def redirect_works() -> bool:
+    """Whether the w3id redirect resolves at all, tested on a path that always exists.
+
+    A released version and the redirect fail the same way, with a 404, and the fix for
+    each is different: one waits for a release, the other for a namespace change.
+    """
+    for module_dir in sorted(d for d in MODULES.iterdir() if d.is_dir()):
+        schemas = sorted(module_dir.glob("*.schema.json"))
+        if schemas:
+            # a file rather than a directory: a directory without its trailing slash is a
+            # 404 on the hosting side, which would look like a broken redirect
+            ok, _ = resolves(f"{IRI_BASE}/{module_dir.name}/dev/{schemas[0].name}")
+            return ok
+    return False
+
+
 def main() -> None:
     require = "--require" in sys.argv
+    redirect = redirect_works()
     failures = 0
     for module_dir in sorted(d for d in MODULES.iterdir() if d.is_dir()):
         module = module_dir.name
@@ -53,10 +70,12 @@ def main() -> None:
             print(f"  {'ok  ' if ok else 'fail'} {url} -> {detail}")
             failures += not ok
 
-    if failures:
-        print(f"{failures} identifier(s) do not resolve. The w3id redirect is filed as "
-              "https://github.com/perma-id/w3id.org/pull/6556; until it is merged, dereference "
-              "through https://schemas.oo-ld.org/ instead.")
+    if failures and redirect:
+        print(f"{failures} identifier(s) do not resolve, though the w3id redirect itself does: "
+              "these versions have not been released yet, so only <module>/dev/ is published.")
+    elif failures:
+        print(f"{failures} identifier(s) do not resolve, and neither does the redirect itself. "
+              "Check the oo-ld namespace at https://github.com/perma-id/w3id.org.")
     if failures and require:
         sys.exit(1)
 

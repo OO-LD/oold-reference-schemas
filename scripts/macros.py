@@ -553,19 +553,16 @@ def _children(module, name):
     return out
 
 
-def _released(module, version):
-    """Whether a module version has been published, per the release index.
+def _channel():
+    """Which published tree this build documents: `dev` or a release.
 
-    Until a release records it, the only path that resolves is `dev`, so a page that
-    linked the version path would advertise a 404.
+    A documentation snapshot describes the state it was built from, so its links belong to
+    that state: the `dev` snapshot documents the tip of main, served at `<module>/dev/`,
+    and a snapshot built for a release documents the frozen files at `<module>/<version>/`.
+    Deciding it from the release index instead would make the `dev` pages link released
+    files as soon as any release exists, while describing unreleased ones.
     """
-    path = os.path.join(GENERATED, "versions.json")
-    if not os.path.exists(path):
-        return False
-    with open(path, encoding="utf-8") as fh:
-        entries = json.load(fh).get(module) or []
-    short = ".".join(version.split(".")[:2])
-    return any(".".join(e["module"].split(".")[:2]) == short for e in entries)
+    return "release" if os.environ.get("OOLD_CHANNEL") == "release" else "dev"
 
 
 def _earlier(module, version):
@@ -626,13 +623,18 @@ def oold_schema_meta_data(module, name):
     walk = _walkthrough(module, name, page)
     if walk:
         lines.append(f"- explained in: [How it works]({walk})")
-    lines.append(f"- conformance IRI: `{IRI_BASE}/{module}/{version}`")
-    # rooted, not relative: the schema is published at the site root and must not move
-    # when the surrounding documentation is versioned. Before a release only `dev` exists,
-    # and linking the version path would advertise a 404.
-    released = _released(module, module_version(module, full=True))
-    path = f"/{module}/{version if released else 'dev'}/{name}.schema.json"
-    note = "" if released else " (unreleased: `dev` is the only path that resolves yet)"
+    # Rooted, not relative: these are published at the site root and must not move when the
+    # surrounding documentation is versioned. Which tree they point at follows the build,
+    # so a page always links what it describes.
+    channel = version if _channel() == "release" else "dev"
+    # Conformance is per module: the schemas of a module share one context and are not
+    # meaningful apart from it, so the module version is what an instance declares with
+    # `dct:conformsTo` and what a consumer pins. The schema itself is named by its file.
+    lines.append(f"- conforms to: [`{IRI_BASE}/{module}/{version}`](/{module}/{channel}/), "
+                 "the module at this version")
+    path = f"/{module}/{channel}/{name}.schema.json"
+    note = "" if channel != "dev" else (f" (the tip of main, which this page documents; "
+                                        f"a release freezes it at `/{module}/{version}/`)")
     lines.append(f"- schema file: [`{path}`]({path}){note}")
     earlier = _earlier(module, module_version(module, full=True))
     if earlier:
