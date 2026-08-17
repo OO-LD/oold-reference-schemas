@@ -787,6 +787,34 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#shapes-not-only-names" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Shapes, not only names
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Shapes, not only names">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-has-to-be-a-graph-operation" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        What has to be a graph operation
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#crosswalks-between-communities" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
@@ -1158,6 +1186,34 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#shapes-not-only-names" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Shapes, not only names
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Shapes, not only names">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-has-to-be-a-graph-operation" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        What has to be a graph operation
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#crosswalks-between-communities" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
@@ -1259,6 +1315,49 @@ set fall back to the consensus mapping, so a partial alignment stays usable.</p>
 <li><strong>A mapping is only as current as its pin.</strong> Synonyms carry the exact ontology version they
   were checked against, because an upstream release can move a term out from under a mapping.</li>
 </ul>
+<h2 id="shapes-not-only-names">Shapes, not only names<a class="headerlink" href="#shapes-not-only-names" title="Permanent link">&para;</a></h2>
+<p>Communities disagree about structure as well as vocabulary. EMMO models a quantity value as a
+node carrying a numerical part; QUDT puts the number on the quantity itself. A mapping set can
+carry that difference too, because JSON structure is not semantics: a term defined as <code>@nest</code>
+groups keys in the document and contributes nothing to the graph.</p>
+<p>A synonym fragment may therefore carry <code>@nest</code>, and selection promotes it like any other term
+definition. The same document then produces either shape:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span><span class="w"> </span><span class="nt">&quot;@id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://example.org/m1&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;numerical&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">12.7</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>selected</th>
+<th>graph</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>the schema's own context, <code>value</code> an object property</td>
+<td><code>m1 emmo:hasQuantityValuePart _:b0</code>, <code>_:b0 emmo:hasNumericalValue 12.7</code></td>
+</tr>
+<tr>
+<td>a set defining <code>value</code> as <code>@nest</code> and <code>numerical</code> as <code>qudt:value</code></td>
+<td><code>m1 qudt:value 12.7</code></td>
+</tr>
+</tbody>
+</table>
+<p>The reverse import works the same way: a schema whose <code>value</code> is an object declares, in its
+mapping set for the flat vocabulary, that <code>qudt:value</code> nests under <code>value</code>. Flat data then
+compacts into the nested document that schema expects.</p>
+<h3 id="what-has-to-be-a-graph-operation">What has to be a graph operation<a class="headerlink" href="#what-has-to-be-a-graph-operation" title="Permanent link">&para;</a></h3>
+<p>A context can decide which graph a document produces. It cannot rewrite a graph you already
+have: <code>@nest</code> may only point at a term that is itself <code>@nest</code>, and a processor rejects anything
+else with <code>invalid @nest value</code>. Dropping an intermediate node and reattaching its literal is an
+assertion, not a reformatting.</p>
+<p>Arriving RDF is therefore framed first, into the document shape the schema expects, and read
+from there. The frame follows from the schema, so this is a build step rather than a decision:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>nested RDF  -&gt;  frame with the schema  -&gt;  document  -&gt;  read under a mapping set  -&gt;  either graph
+</code></pre></div>
+<p>Compaction alone does not do it: it yields a flat list of node objects, with the inner node
+still separate. What makes the flat reading legitimate is that the schema declares the
+correspondence, so the assertion carries the provenance of a mapping rather than appearing from
+nowhere.</p>
 <h2 id="crosswalks-between-communities">Crosswalks between communities<a class="headerlink" href="#crosswalks-between-communities" title="Permanent link">&para;</a></h2>
 <p>Two sets that map the same term give a mapping between those two communities, chained through
 the term they share. They are derived rather than authored, and are listed together on the

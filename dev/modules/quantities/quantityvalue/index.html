@@ -1468,9 +1468,11 @@ because that keyword materializes <em>all</em> declared types on every export. T
 consensus co-typing and wrong for either/or community alignments, where the point is to pick
 one.</p>
 <p><strong>EMMO has no synonym for <code>value</code>.</strong> EMMO models a quantity value as a node with a nested
-numerical part, and no JSON-LD term definition can produce a nested node from a literal. That is
-a structural mismatch, not an oversight, so the EMMO reading falls back to <code>qudt:value</code> and the
-correspondence is left to rule or SSSOM level. See
+numerical part, and this schema's <code>value</code> is a literal, so no term definition on <em>this</em> schema
+can produce it: the EMMO reading falls back to <code>qudt:value</code>. The correspondence is not lost,
+it belongs to the other side. A schema whose <code>value</code> is an object can declare, in its mapping
+set for QUDT, that <code>qudt:value</code> nests under it, and then reads this schema's data as its own
+nested shape. See <a href="../../../mapping-sets/#shapes-not-only-names">Shapes, not only names</a> and
 <a href="https://github.com/emmo-repo/EMMO/issues/376">emmo-repo/EMMO#376</a>.</p>
 <details class="note">
 <summary>Notes for implementers</summary>
