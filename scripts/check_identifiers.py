@@ -5,13 +5,16 @@ by a redirect this repository does not own, so it can be true today and false to
 nothing else in the build would notice: the schemas are published to their own host, and
 every internal link points there.
 
-Reports by default and fails only with --require, which is what a release runs: publishing a
-version whose conformance IRI does not resolve mints a broken promise that then has to be
-kept forever.
+Reports by default. `--require` is the pre-release gate and asks the only question that can
+be answered before a release exists: does the redirect itself work. A version path cannot
+resolve until the release publishes it, so requiring that beforehand would make the first
+release impossible. `--verify` is the mirror, run after publishing, and requires every
+version path to resolve.
 
 Usage:
-  python scripts/check_identifiers.py             report
-  python scripts/check_identifiers.py --require   exit non-zero if one does not resolve
+  python scripts/check_identifiers.py           report
+  python scripts/check_identifiers.py --require the redirect resolves (before a release)
+  python scripts/check_identifiers.py --verify  every version path resolves (after one)
 """
 
 from __future__ import annotations
@@ -55,6 +58,7 @@ def redirect_works() -> bool:
 
 def main() -> None:
     require = "--require" in sys.argv
+    verify = "--verify" in sys.argv
     redirect = redirect_works()
     failures = 0
     for module_dir in sorted(d for d in MODULES.iterdir() if d.is_dir()):
@@ -76,7 +80,12 @@ def main() -> None:
     elif failures:
         print(f"{failures} identifier(s) do not resolve, and neither does the redirect itself. "
               "Check the oo-ld namespace at https://github.com/perma-id/w3id.org.")
-    if failures and require:
+    if require and not redirect:
+        print("the w3id redirect does not resolve, so a release would mint identifiers that "
+              "answer nothing. Check the oo-ld namespace at "
+              "https://github.com/perma-id/w3id.org.")
+        sys.exit(1)
+    if verify and failures:
         sys.exit(1)
 
 

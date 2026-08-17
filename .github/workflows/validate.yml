@@ -224,3 +224,8 @@ jobs:
           git add -A
           git diff --cached --quiet || git commit -m "Publish schemas and site root files"
           git push origin gh-pages
+
+      # After publishing, the promise the release just made must hold.
+      - name: Conformance IRIs resolve
+        if: startsWith(github.ref, 'refs/tags/v')
+        run: sleep 60 && uv run scripts/check_identifiers.py --verify
