@@ -1,6 +1,6 @@
 {
-  "@context": "Diameter.schema.json",
   "$schema": "Diameter.schema.json",
+  "@context": "Diameter.schema.json",
   "@id": "https://example.org/instance",
   "type": [
     "Diameter"

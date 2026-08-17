@@ -1,6 +1,6 @@
 {
-  "@context": "Length.schema.json",
   "$schema": "Length.schema.json",
+  "@context": "Length.schema.json",
   "@id": "https://example.org/instance",
   "type": [
     "Length"

@@ -72,7 +72,8 @@ def synth_instance(name: str, schema: dict, schemas: list[dict]) -> dict | None:
         if isinstance(s.get("examples"), list) and s["examples"]:
             ex = s["examples"][0]
             if isinstance(ex, dict):
-                return {"@context": f"{name}.schema.json", "$schema": f"{name}.schema.json",
+                return {"$schema": f"{name}.schema.json",
+                        "@context": f"{name}.schema.json",
                         "@id": "https://example.org/instance", **ex}
 
     props: dict = {}
@@ -94,7 +95,7 @@ def synth_instance(name: str, schema: dict, schemas: list[dict]) -> dict | None:
         return None
     if not doc:
         return None
-    return {"@context": f"{name}.schema.json", "$schema": f"{name}.schema.json",
+    return {"$schema": f"{name}.schema.json", "@context": f"{name}.schema.json",
             "@id": "https://example.org/instance", **doc}
 
 

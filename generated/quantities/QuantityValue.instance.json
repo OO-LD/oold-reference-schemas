@@ -1,6 +1,6 @@
 {
-  "@context": "QuantityValue.schema.json",
   "$schema": "QuantityValue.schema.json",
+  "@context": "QuantityValue.schema.json",
   "@id": "https://example.org/instance",
   "type": [
     "QuantityValue"

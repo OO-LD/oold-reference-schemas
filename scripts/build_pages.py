@@ -143,6 +143,23 @@ def seed_mapping_pages(check: bool, problems: list[str]) -> int:
     return seeded
 
 
+def check_instances(problems: list[str]) -> None:
+    """`$schema` must be the first key of an instance.
+
+    Editors pick up validation from it, and some stop looking after the first key, so an
+    instance that carries it late is an instance nobody gets help editing. Cheap to keep
+    right, invisible when it is wrong.
+    """
+    for path in sorted(MODULES.rglob("*.instance.json")):
+        text = path.read_text(encoding="utf-8")
+        keys = list(json.loads(text).keys())
+        if "$schema" not in keys:
+            problems.append(f"{path.relative_to(ROOT)} has no $schema")
+        elif keys[0] != "$schema":
+            problems.append(f"{path.relative_to(ROOT)} starts with `{keys[0]}`: $schema must "
+                            "come first, or an editor will not validate it")
+
+
 def read(path: Path) -> dict:
     return json.loads(path.read_text(encoding="utf-8"))
 
@@ -308,6 +325,7 @@ def main() -> None:
                         "which no longer exists")
 
     seeded += seed_mapping_pages(check, problems)
+    check_instances(problems)
     text = nav(all_chains)
     if check:
         changed = text not in CONFIG.read_text(encoding="utf-8")

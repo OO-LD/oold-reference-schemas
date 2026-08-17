@@ -30,6 +30,10 @@ request. `make check` is what CI runs.
    deliberately leaves out, and why a mapping is a close match rather than an exact one.
 4. Run `make validate`. A schema that does not round-trip through RDF is not finished.
 
+An instance file starts with `$schema`. Editors read it to offer validation while the file is
+being edited, and some stop looking after the first key, so the order is not cosmetic.
+`make check` enforces it.
+
 Pages are seeded once and never overwritten. If a page stops documenting the schema its
 location claims, or documents a schema that no longer exists, `make check` says so rather
 than silently rewriting your prose. A page that has to move because its schema gained a
