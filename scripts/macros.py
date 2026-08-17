@@ -749,7 +749,7 @@ def _constraints(spec, enum=True):
 
 
 _PAGES = None
-_CALL = re.compile(r"schema_(?:tabs|terms)\(\s*[\"']([^\"']+)[\"']\s*,\s*[\"']([^\"']+)[\"']")
+_CALL = re.compile(r"oold_schema_(?:renderer|terms)\(\s*[\"']([^\"']+)[\"']\s*,\s*[\"']([^\"']+)[\"']")
 
 
 def _pages():

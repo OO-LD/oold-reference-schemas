@@ -24,11 +24,13 @@ from __future__ import annotations
 
 import json
 import re
+import sys
 import subprocess
 import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 MODULES = ROOT / "modules"
 PAGES = ROOT / "docs" / "modules"
 MAPPINGS = ROOT / "docs" / "mappings"
@@ -141,6 +143,28 @@ def seed_mapping_pages(check: bool, problems: list[str]) -> int:
                           encoding="utf-8", newline="\n")
         seeded += 1
     return seeded
+
+
+def check_links(problems: list[str]) -> None:
+    """Every schema with a parent or a child renders a link to it.
+
+    The page index is found by searching the pages for macro calls, so a renamed macro
+    leaves it empty and every lineage link silently becomes plain text. Nothing raises,
+    the build stays green, and the pages quietly lose their navigation.
+    """
+    import macros  # noqa: PLC0415 - imported here so the check follows the real renderer
+
+    for module in modules():
+        chains = lineage(module)
+        for name, chain in chains.items():
+            kids = [k for k, c in chains.items() if c and c[-1] == name]
+            if not chain and not kids:
+                continue
+            meta = macros.oold_schema_meta_data(module, name)
+            for label, expected in (("extends", chain[-1:]), ("extended by", kids)):
+                for other in expected:
+                    if f"[{other}](" not in meta:
+                        problems.append(f"{module}/{name}: {label} {other} is not a link")
 
 
 def check_instances(problems: list[str]) -> None:
@@ -326,6 +350,7 @@ def main() -> None:
 
     seeded += seed_mapping_pages(check, problems)
     check_instances(problems)
+    check_links(problems)
     text = nav(all_chains)
     if check:
         changed = text not in CONFIG.read_text(encoding="utf-8")
