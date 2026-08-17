@@ -17,7 +17,6 @@ aliases.
 
 {{ oold_schema_meta_data("quantities", "Time") }}
 
-
 {{ oold_schema_renderer("quantities", "Time") }}
 
 ## Where the unit aliases come from

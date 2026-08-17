@@ -28,6 +28,18 @@ Look at the `unit` row in the Terms tab. The property maps to `qudt:hasUnit`, an
 it sit the permitted values, each mapping to a unit individual of its own. That two-level
 structure is what lets a community rename both the property and the units it points at.
 
+??? note "Notes for implementers"
+
+    **Examples sit at the schema root, not on individual properties.** A root-level `examples`
+    entry is a whole example instance, which is what the keyword is for, and it is what the
+    documentation and the generated instance tab use. It also avoids
+    [oold-schema#134](https://github.com/OO-LD/oold-schema/issues/134): the validator's depth
+    guard truncates anything below six levels, so a per-property `examples` becomes `{}` once a
+    schema is three inheritance levels deep, and a valid schema is reported as invalid.
+
+    **`type` declares `@container: @set`.** A strictly array-typed property without it comes
+    back from RDF as a scalar when it holds a single element, and then fails its own schema.
+
 ## Time: constraining the units
 
 `Time` restricts `QuantityValue` to time units. It is the pattern every quantity kind

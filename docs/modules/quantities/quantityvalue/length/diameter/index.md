@@ -10,7 +10,6 @@ example, and inherits its units, terms and mappings from `Length` and `QuantityV
 
 {{ oold_schema_meta_data("quantities", "Diameter") }}
 
-
 {{ oold_schema_renderer("quantities", "Diameter") }}
 
 ## On the mappings

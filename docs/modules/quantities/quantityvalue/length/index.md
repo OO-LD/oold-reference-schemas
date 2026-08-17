@@ -10,7 +10,6 @@ units, defaults to the SI unit, and names the quantity kind in each community's 
 
 {{ oold_schema_meta_data("quantities", "Length") }}
 
-
 {{ oold_schema_renderer("quantities", "Length") }}
 
 ## Why PATO is only a close match

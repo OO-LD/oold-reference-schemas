@@ -10,7 +10,6 @@ other quantity in this module extends.
 
 {{ oold_schema_meta_data("quantities", "QuantityValue") }}
 
-
 {{ oold_schema_renderer("quantities", "QuantityValue") }}
 
 ## Decisions
@@ -47,18 +46,6 @@ it belongs to the other side. A schema whose `value` is an object can declare, i
 set for QUDT, that `qudt:value` nests under it, and then reads this schema's data as its own
 nested shape. See [Shapes, not only names](../../../mapping-sets.md#shapes-not-only-names) and
 [emmo-repo/EMMO#376](https://github.com/emmo-repo/EMMO/issues/376).
-
-??? note "Notes for implementers"
-
-    **Examples sit at the schema root, not on individual properties.** A root-level `examples`
-    entry is a whole example instance, which is what the keyword is for, and it is what the
-    documentation and the generated instance tab use. It also avoids
-    [oold-schema#134](https://github.com/OO-LD/oold-schema/issues/134): the validator's depth
-    guard truncates anything below six levels, so a per-property `examples` becomes `{}` once a
-    schema is three inheritance levels deep, and a valid schema is reported as invalid.
-
-    **`type` declares `@container: @set`.** A strictly array-typed property without it comes
-    back from RDF as a scalar when it holds a single element, and then fails its own schema.
 
 ## Where the mappings come from
 
