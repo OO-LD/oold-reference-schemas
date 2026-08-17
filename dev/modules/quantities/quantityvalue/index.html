@@ -1127,7 +1127,6 @@ other quantity in this module extends.</p>
 <li>extended by: <a href="length/">Length</a>, <a href="time/">Time</a></li>
 <li>schema file: <a href="/quantities/dev/QuantityValue.schema.json"><code>/quantities/dev/QuantityValue.schema.json</code></a></li>
 </ul>
-<p></p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:5"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><input id="__tabbed_1_5" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Terms</label><label for="__tabbed_1_2">JSON</label><label for="__tabbed_1_3">YAML</label><label for="__tabbed_1_4">Instance</label><label for="__tabbed_1_5">RDF</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -1473,17 +1472,6 @@ it belongs to the other side. A schema whose <code>value</code> is an object can
 set for QUDT, that <code>qudt:value</code> nests under it, and then reads this schema's data as its own
 nested shape. See <a href="../../../mapping-sets/#shapes-not-only-names">Shapes, not only names</a> and
 <a href="https://github.com/emmo-repo/EMMO/issues/376">emmo-repo/EMMO#376</a>.</p>
-<details class="note">
-<summary>Notes for implementers</summary>
-<p><strong>Examples sit at the schema root, not on individual properties.</strong> A root-level <code>examples</code>
-entry is a whole example instance, which is what the keyword is for, and it is what the
-documentation and the generated instance tab use. It also avoids
-<a href="https://github.com/OO-LD/oold-schema/issues/134">oold-schema#134</a>: the validator's depth
-guard truncates anything below six levels, so a per-property <code>examples</code> becomes <code>{}</code> once a
-schema is three inheritance levels deep, and a valid schema is reported as invalid.</p>
-<p><strong><code>type</code> declares <code>@container: @set</code>.</strong> A strictly array-typed property without it comes
-back from RDF as a scalar when it holds a single element, and then fails its own schema.</p>
-</details>
 <h2 id="where-the-mappings-come-from">Where the mappings come from<a class="headerlink" href="#where-the-mappings-come-from" title="Permanent link">&para;</a></h2>
 <p>Each synonym records the ontology and the exact version it was checked against. The EMMO
 mappings target the 1.0.4 development branch rather than the 1.0.3 release, because that is

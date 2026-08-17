@@ -1626,6 +1626,17 @@ the mapping set, which is the whole point of the exercise: one file, several rea
 <p>Look at the <code>unit</code> row in the Terms tab. The property maps to <code>qudt:hasUnit</code>, and underneath
 it sit the permitted values, each mapping to a unit individual of its own. That two-level
 structure is what lets a community rename both the property and the units it points at.</p>
+<details class="note">
+<summary>Notes for implementers</summary>
+<p><strong>Examples sit at the schema root, not on individual properties.</strong> A root-level <code>examples</code>
+entry is a whole example instance, which is what the keyword is for, and it is what the
+documentation and the generated instance tab use. It also avoids
+<a href="https://github.com/OO-LD/oold-schema/issues/134">oold-schema#134</a>: the validator's depth
+guard truncates anything below six levels, so a per-property <code>examples</code> becomes <code>{}</code> once a
+schema is three inheritance levels deep, and a valid schema is reported as invalid.</p>
+<p><strong><code>type</code> declares <code>@container: @set</code>.</strong> A strictly array-typed property without it comes
+back from RDF as a scalar when it holds a single element, and then fails its own schema.</p>
+</details>
 <h2 id="time-constraining-the-units">Time: constraining the units<a class="headerlink" href="#time-constraining-the-units" title="Permanent link">&para;</a></h2>
 <p><code>Time</code> restricts <code>QuantityValue</code> to time units. It is the pattern every quantity kind
 follows.</p>
