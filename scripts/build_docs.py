@@ -201,7 +201,6 @@ def main() -> None:
                 shutil.copy2(f, target / f.name)
                 published += 1
         version = line
-        target = DOCS / module / line
         title = (read(MODULES / module / "module.json").get("title", module)
                  if (MODULES / module / "module.json").exists() else module)
         listing = [
@@ -217,8 +216,9 @@ def main() -> None:
             "|---|",
         ]
         listing += [f"| [`{f.name}`]({f.name}) |" for f in files]
-        (target / "index.md").write_text("\n".join(listing) + "\n",
-                                         encoding="utf-8", newline="\n")
+        for directory in (DOCS / module / exact, DOCS / module / line):
+            (directory / "index.md").write_text("\n".join(listing) + "\n",
+                                                encoding="utf-8", newline="\n")
 
         # A manifest at the version directory itself. The schemas are files and resolve on
         # their own; the module is only ever this listing, so without it a conformance IRI
@@ -240,8 +240,11 @@ def main() -> None:
             "description": read(meta_file).get("scope", "") if meta_file.exists() else "",
             "schemas": [f.name for f in files if f.name.endswith(".schema.json")],
         }
-        (target / "index.json").write_text(json.dumps(manifest, indent=2) + "\n",
-                                           encoding="utf-8", newline="\n")
+        # Both directories: an exact release is a citable artefact of its own, and a reader
+        # who pinned it should find the same description there.
+        for directory in (DOCS / module / exact, DOCS / module / line):
+            (directory / "index.json").write_text(json.dumps(manifest, indent=2) + "\n",
+                                                  encoding="utf-8", newline="\n")
 
         # Instance and RDF readings for the schema page tabs, one reading per mapping set.
         # A committed instance wins; otherwise one is built from the schema's own examples

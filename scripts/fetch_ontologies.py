@@ -27,6 +27,8 @@ from __future__ import annotations
 import hashlib
 import json
 import sys
+import time
+import urllib.error
 import urllib.request
 from pathlib import Path
 
@@ -39,6 +41,21 @@ def digest(data: bytes) -> str:
     return hashlib.sha256(data).hexdigest()
 
 
+def fetch(url: str, attempts: int = 4) -> bytes:
+    """Fetch a file, retrying with backoff while a host rate-limits."""
+    for attempt in range(attempts):
+        try:
+            with urllib.request.urlopen(url, timeout=300) as response:
+                return response.read()
+        except urllib.error.HTTPError as error:
+            if error.code not in (429, 503) or attempt == attempts - 1:
+                raise
+            wait = 5 * 2 ** attempt
+            print(f"  {error.code} for {url}, retrying in {wait}s", file=sys.stderr)
+            time.sleep(wait)
+    raise RuntimeError(url)
+
+
 def update(lock: dict) -> None:
     """Refetch every file in the lock and write back its hash and size.
 
@@ -48,8 +65,7 @@ def update(lock: dict) -> None:
     for name, entry in sorted(lock.items()):
         for relative, spec in sorted(entry["files"].items()):
             url = entry["base"] + spec["path"]
-            with urllib.request.urlopen(url, timeout=600) as response:
-                data = response.read()
+            data = fetch(url)
             new = digest(data)
             state = "unchanged" if new == spec.get("sha256") else "CHANGED"
             print(f"  {name}/{relative}: {len(data) / 1024 / 1024:.1f} MB, {state}")
@@ -83,8 +99,7 @@ def main() -> None:
                 continue
 
             url = entry["base"] + spec["path"]
-            with urllib.request.urlopen(url, timeout=180) as response:
-                data = response.read()
+            data = fetch(url)
             if digest(data) != spec["sha256"]:
                 problems.append(f"{url} does not match the lock: upstream has changed under "
                                 f"the pin, so the mappings need re-checking before the lock "
