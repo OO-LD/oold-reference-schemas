@@ -50,12 +50,15 @@ civil engineering, manufacturing or trade can adopt `quantities` without taking 
 domain-specific. Domain modules sit on top of neutral ones rather than replacing them. See
 [Modules](modules/) for the full set and their status.
 
-Each schema is published at a versioned, dereferenceable path, so a conformance IRI resolves to
-the schema itself rather than only to a page about it:
+Modules and schemas are published at versioned, dereferenceable paths, so an identifier
+answers with the artefact rather than with a page about it:
 
 ```
-https://w3id.org/oo-ld/schemas/quantities/1.0
-  -> https://schemas.oo-ld.org/quantities/1.0/QuantityValue.schema.json
+https://w3id.org/oo-ld/schemas/quantities/0.1
+  -> the module manifest: title, version and the schemas it holds
+
+https://w3id.org/oo-ld/schemas/quantities/0.1/QuantityValue.schema.json
+  -> the schema itself
 ```
 
 Because structure and semantics sit in one document, the schemas are also the source for
@@ -80,3 +83,10 @@ pattern.
 
 Everything published here is checked in CI: schemas against the OO-LD meta-schema, instances
 against their schemas, and every mapping-set reading for a lossless round-trip through RDF.
+
+## Funding
+
+These reference schemas are a domain adaptation of OO-LD for science and engineering, funded by
+the European Union's Horizon Europe research and innovation programme under grant agreement
+No. 101293545, [MaterialsCommons](https://materialscommons.eu/). The generic OO-LD framework is
+funded separately; see [OO-LD funding](https://github.com/OO-LD#funding).

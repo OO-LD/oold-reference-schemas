@@ -45,4 +45,4 @@ that is how its terms and mappings are inherited too.
             - [Diameter](quantities/quantityvalue/length/diameter/), `Length` across a round object
 
 Published files for a module are listed at its versioned path, for example
-[`quantities/1.0/`](/quantities/1.0/).
+[`quantities/0.1/`](/quantities/0.1/).

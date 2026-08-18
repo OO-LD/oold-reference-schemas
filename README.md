@@ -19,15 +19,15 @@ research; domain modules sit on top of them.
 | module | scope | status |
 |---|---|---|
 | [`quantities`](modules/quantities) | QuantityValue, units, uncertainty, value specifications | example |
-| [`datasets`](schemas/datasets) | Dataset, Distribution, storage modes, tabular data, data services | planned |
-| [`processes`](schemas/processes) | processes and chains, inputs/outputs, plans, recipes, workflows | planned |
-| [`measurement`](schemas/measurement) | measurement, assay, calibration, measurement datum | planned |
-| [`time`](schemas/time) | temporal regions, durations, process start/end, temporalized qualities | planned |
-| [`qualities`](schemas/qualities) | qualities, dispositions, realizable entities, roles | planned |
-| [`materials`](schemas/materials) | composition, microstructure, material properties | planned |
-| [`devices`](schemas/devices) | device specification, settings, identifiers | planned |
-| [`simulation`](schemas/simulation) | simulated entities, digital counterparts, computation provenance | planned |
-| [`foundations`](schemas/foundations) | upper-ontology structure and object-property inventories | planned |
+| [`datasets`](modules/datasets) | Dataset, Distribution, storage modes, tabular data, data services | planned |
+| [`processes`](modules/processes) | processes and chains, inputs/outputs, plans, recipes, workflows | planned |
+| [`measurement`](modules/measurement) | measurement, assay, calibration, measurement datum | planned |
+| [`time`](modules/time) | temporal regions, durations, process start/end, temporalized qualities | planned |
+| [`qualities`](modules/qualities) | qualities, dispositions, realizable entities, roles | planned |
+| [`materials`](modules/materials) | composition, microstructure, material properties | planned |
+| [`devices`](modules/devices) | device specification, settings, identifiers | planned |
+| [`simulation`](modules/simulation) | simulated entities, digital counterparts, computation provenance | planned |
+| [`foundations`](modules/foundations) | upper-ontology structure and object-property inventories | planned |
 
 ## One syntax, tiered semantics
 
@@ -48,16 +48,16 @@ losslessly under all three readings.
 ## Layout
 
 ```
-schemas/   reference schemas, one directory per module; instances sit beside them
+modules/   the source: one directory per module, instances beside the schemas
 examples/  packaging examples (RO-Crate, .eln)
-docs/      the site: hand-written pages, seeded schema pages, conformance
-           IRIs, mapping sets, pinned ontologies
+generated/ derived artefacts: RDF readings, ontology labels
+docs/      the site: hand-written pages, seeded schema pages, mapping sets
 scripts/   generation, versioning and release tooling
 ```
 
-Published at [schemas.oo-ld.org](https://schemas.oo-ld.org/), where each schema is also
-dereferenceable at its versioned path, so a conformance IRI resolves to the schema itself and not
-only to a page about it.
+Published at [schemas.oo-ld.org](https://schemas.oo-ld.org/), where a conformance IRI answers
+with the module manifest, listing the version and the schemas it holds, and each schema is
+dereferenceable at its own versioned path.
 
 ## Validation
 
@@ -70,6 +70,28 @@ make validate
 make check
 ```
 
+## Contributing
+
+`modules/` is the source. The documentation pages, the SSSOM mapping sets and the RDF readings
+are generated from it, so a schema is edited in one place.
+
+1. Add `modules/<module>/<Name>.schema.json`, and an instance beside it so CI can round-trip it.
+2. Run `make generate`. It seeds the schema's documentation page and the navigation entry.
+3. Write the prose on that page: what the schema decides, and why a mapping is a close match
+   rather than an exact one. A seeded page is never overwritten.
+4. Run `make check` and `make validate` before opening a pull request.
+
+Versions are computed rather than typed: `make bump` raises each schema and its module by the
+level of what changed since the last release. The full guide is
+[schemas.oo-ld.org/contributing](https://schemas.oo-ld.org/contributing/).
+
 ## Licence
 
 Schemas and specification text CC-BY-4.0, code MIT. See [LICENSE](LICENSE).
+
+## Funding
+
+These reference schemas are a domain adaptation of OO-LD for science and engineering, funded by
+the European Union's Horizon Europe research and innovation programme under grant agreement
+No. 101293545, [MaterialsCommons](https://materialscommons.eu/). The generic OO-LD framework is
+funded separately; see [OO-LD funding](https://github.com/OO-LD#funding).

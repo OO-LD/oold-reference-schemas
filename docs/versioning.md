@@ -6,9 +6,9 @@ The rules for setting versions are in [Contributing](contributing.md).
 ## What an identifier names
 
 ```
-https://w3id.org/oo-ld/modules/quantities/1.0
+https://w3id.org/oo-ld/schemas/quantities/0.1
   resolves to
-https://schemas.oo-ld.org/quantities/1.0/QuantityValue.schema.json
+https://schemas.oo-ld.org/quantities/0.1/QuantityValue.schema.json
 ```
 
 A conformance identifier names a **module at a version**, not a single schema. That is the unit to
@@ -41,7 +41,7 @@ module underwent:
   mapping, a new schema in the module. Documents valid against the old version stay valid.
 - **Patch.** Descriptions, comments, examples. Nothing an instance can observe.
 
-A patch release keeps the same path, so `quantities/1.0` can gain a clearer description
+A patch release keeps the same path, so `quantities/0.1` can gain a clearer description
 without moving. Anything above patch gets its own path, and the old one keeps serving the
 bytes it always served.
 
