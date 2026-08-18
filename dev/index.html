@@ -357,6 +357,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#funding" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Funding
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1208,6 +1219,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#funding" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Funding
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1270,10 +1292,13 @@ they can be reviewed, cited and reused by people who never open a JSON Schema.</
 civil engineering, manufacturing or trade can adopt <code>quantities</code> without taking on anything
 domain-specific. Domain modules sit on top of neutral ones rather than replacing them. See
 <a href="modules/">Modules</a> for the full set and their status.</p>
-<p>Each schema is published at a versioned, dereferenceable path, so a conformance IRI resolves to
-the schema itself rather than only to a page about it:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>https://w3id.org/oo-ld/schemas/quantities/1.0
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  -&gt; https://schemas.oo-ld.org/quantities/1.0/QuantityValue.schema.json
+<p>Modules and schemas are published at versioned, dereferenceable paths, so an identifier
+answers with the artefact rather than with a page about it:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>https://w3id.org/oo-ld/schemas/quantities/0.1
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  -&gt; the module manifest: title, version and the schemas it holds
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>https://w3id.org/oo-ld/schemas/quantities/0.1/QuantityValue.schema.json
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>  -&gt; the schema itself
 </code></pre></div>
 <p>Because structure and semantics sit in one document, the schemas are also the source for
 generated assets: typed code bindings, schema-driven user interfaces, API descriptions, and the
@@ -1292,6 +1317,11 @@ modules carry a scope note and are open for contribution, in any domain that sha
 pattern.</p>
 <p>Everything published here is checked in CI: schemas against the OO-LD meta-schema, instances
 against their schemas, and every mapping-set reading for a lossless round-trip through RDF.</p>
+<h2 id="funding">Funding<a class="headerlink" href="#funding" title="Permanent link">&para;</a></h2>
+<p>These reference schemas are a domain adaptation of OO-LD for science and engineering, funded by
+the European Union's Horizon Europe research and innovation programme under grant agreement
+No. 101293545, <a href="https://materialscommons.eu/">MaterialsCommons</a>. The generic OO-LD framework is
+funded separately; see <a href="https://github.com/OO-LD#funding">OO-LD funding</a>.</p>
 
 
 
@@ -1329,7 +1359,7 @@ against their schemas, and every mapping-set reading for a lossless round-trip t
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Maintained by <a href="https://github.com/OO-LD">OO-LD</a>.
+      Maintained by <a href="https://github.com/OO-LD">OO-LD</a> and <a href="https://materialscommons.eu/">MaterialsCommons</a>.
     </div>
   
   
