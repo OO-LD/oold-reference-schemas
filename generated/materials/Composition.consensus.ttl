@@ -1,0 +1,23 @@
+@prefix mat: <https://w3id.org/materialsDCAT-AP/profile#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix qunit: <http://qudt.org/vocab/unit/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://example.org/material/no27_14> mat:Component <http://example.org/base/Material> ;
+    mat:hasComposition [ mat:Component <http://example.org/base/ChemicalComposition> ;
+            mat:hasComponent [ mat:Component <http://example.org/base/Component> ;
+                    mat:hasAmount [ qudt:hasUnit qunit:PPM ;
+                            qudt:value 120 ;
+                            mat:Component <http://example.org/base/MassFraction> ] ;
+                    mat:hasConstituent <http://example.org/base/C> ],
+                [ mat:Component <http://example.org/base/Component> ;
+                    mat:hasAmount [ qudt:hasUnit qunit:PERCENT ;
+                            qudt:value 9.67e+01 ;
+                            mat:Component <http://example.org/base/MassFraction> ] ;
+                    mat:hasConstituent <http://example.org/base/Fe> ],
+                [ mat:Component <http://example.org/base/Component> ;
+                    mat:hasAmount [ qudt:hasUnit qunit:PERCENT ;
+                            qudt:standardUncertainty 1e-01 ;
+                            qudt:value 3.3e+00 ;
+                            mat:Component <http://example.org/base/MassFraction> ] ;
+                    mat:hasConstituent <http://example.org/base/Si> ] ] .
