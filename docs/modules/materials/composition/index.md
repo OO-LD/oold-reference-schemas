@@ -33,14 +33,15 @@ The example below shows how the chemical composition can be specified for a subs
 
 It should result generic RDF representation:
 
+{% raw %}
 ```mermaid
 flowchart LR
     a{{substance1}}--> |a| A([Substance])
-    b{{composition1}}--> |a| B([Composition])
+    b{{composition1}}--> |a| B([ChemicalComposition])
     c1{{comp_Fe}} & c2{{comp_Si}} & c3{{comp_C}}--> |a| C([Component])
-    d1{{Fe}} & d2{{Si}} & d3{{C}}--> |a| D([Constituent])
-    e1{{wt_Al}} & e2{{wt_Mg}} & e3{{wt_Si}}--> |a| E1([MassFraction])-->|subClassOf| E2([ChemicalCompositionQuantity])
-    g1{{%}} & g2{{ppm}}--> |a| G([FractionUnit])
+    d1{{Fe}} & d2{{Si}} & d3{{C}}--> |a| D([ChemicalSpecies])
+    e1{{wt_Fe}} & e2{{wt_Si}} & e3{{wt_C}}--> |a| E1([MassFraction])-->|subClassOf| E2([ChemicalCompositionQuantity])
+    g1{{%}} & g2{{ppm}}--> |a| G([MassFractionUnit])
 
     a -->|composition| b
     b -->|components| c1 & c2 & c3
@@ -50,7 +51,7 @@ flowchart LR
     c1 -->|amount| e1
     c2 -->|amount| e2
     c3 -->|amount| e3
-    e1 -->|value| f1[99.33]
+    e1 -->|value| f1[96.7]
     e2 -->|value| f2[3.3]
     e3 -->|value| f3[120]
     e2 -->|standard_uncertainty| f4[0.1]
@@ -66,3 +67,4 @@ flowchart LR
     class a,b,c1,c2,c3,d1,d2,d3,e1,e2,e3,g1,g2 indv
     class f1,f2,f3,f4 literal
 ```
+{% endraw %}
