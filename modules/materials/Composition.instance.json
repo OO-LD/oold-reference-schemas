@@ -1,7 +1,7 @@
 {
   "$schema": "Composition.schema.json",
   "@context": "Composition.schema.json",
-  "id": "https://example.org/material/no27_14",
+  "@id": "https://example.org/material/no27_14",
   "type": ["Material"],
   "composition": {
     "type": ["ChemicalComposition"],

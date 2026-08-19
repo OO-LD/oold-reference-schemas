@@ -1,14 +1,60 @@
 {
   "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
-  "@id": "Context.schema.json",
+  "$id": "Context.schema.json",
   "title": "Composition",
   "description": "Chemical composition of a substance.",
   "type": "object",
+  "properties": {
+    "composition": {
+      "type": "object",
+      "description": "Chemical composition of a substance.",
+      "properties": {
+        "components": {
+          "type": "array",
+          "description": "Array of components of a composition.",
+          "properties": {
+            "constituent": {
+              "type": "string",
+              "description": "Chemical constituent or species.",
+              "examples": ["Fe", "CH4"]
+            },
+            "amount": {
+              "type": "object",
+              "description": "Physical quantity that the express the amount of the constituent.",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "description": "Name of physical quantity expressing the amount of the constituent.",
+                  "examples": ["MassFraction", "AtomFraction"]
+                },
+                "value": {
+                  "type": "number",
+                  "description": "Value of the amount.",
+                  "examples": [0.32]
+                },
+                "unit": {
+                  "type": "string",
+                  "description": "Measurement unit.",
+                  "examples": ["PERCENT", "PPM"]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
   "@context": {
+    "@version": 1.1,
     "xsd": "http://www.w3.org/2001/XMLSchema#",
-    "unit": "http://qudt.org/vocab/unit/",
+    "qudt": "http://qudt.org/schema/qudt/",
+    "qunit": "http://qudt.org/vocab/unit/",
     "mat": "https://w3id.org/materialsDCAT-AP/profile#",
-    "component": {
+    "composition": {
+      "@id": "mat:hasComposition",
+      "@type": "@id"
+    },
+    "components": {
       "@id": "mat:hasComponent",
       "@type": "@id"
     },
@@ -20,15 +66,30 @@
       "@id": "mat:hasAmount",
       "@type": "@id"
     },
-    "value": {
-      "@id": "mat:dataValue",
-      "@type": "xsd:double"
-    },
-    "unit": {
-      "@id": "mat:hasMeasurementUnit",
+    "type": {
+      "@id": "mat:Component",
       "@type": "@id"
     },
+    "value": "qudt:value",
+    "standard_uncertainty": "qudt:standardUncertainty",
+    "relative_standard_uncertainty": "qudt:relativeStandardUncertainty",
+    "unit": {
+      "@id": "qudt:hasUnit",
+      "@type": "@vocab"
+    },
 
+    "Material": {
+      "@id": "mat:Material",
+      "@type": "@id"
+    },
+    "ChemicalComposition": {
+      "@id": "mat:ChemicalComposition",
+      "@type": "@id"
+    },
+    "Constituent": {
+      "@id": "mat:Constituent",
+      "@type": "@id"
+    },
     "MassFraction": {
       "@id": "mat:MassFraction",
       "@type": "@id"
@@ -38,47 +99,12 @@
       "@type": "@id"
     },
     "PERCENT": {
-      "@id": "unit:PERCENT",
+      "@id": "qunit:PERCENT",
       "@type": "@id"
     },
     "PPM": {
-      "@id": "unit:PPM",
+      "@id": "qunit:PPM",
       "@type": "@id"
-    }
-
-  },
-  "properties": {
-    "component": {
-      "type": "object",
-      "description": "A component of a composition.",
-      "properties": {
-        "constituent": {
-          "type": "string",
-          "description": "Chemical constituent or species.",
-          "examples": ["Fe", "CH4"]
-        },
-        "amount": {
-          "type": "object",
-          "description": "Physical quantity that the express the amount of the constituent.",
-          "properties": {
-            "type": {
-              "type": "string",
-              "description": "Name of physical quantity expressing the amount of the constituent.",
-              "examples": ["MassFraction", "AtomFraction"]
-            },
-            "value": {
-              "type": "number",
-              "description": "Value of the amount.",
-              "examples": [0.32]
-            },
-            "unit": {
-              "type": "string",
-              "description": "Measurement unit.",
-              "examples": ["PERCENT", "PPM"]
-            }
-          }
-        }
-      }
     }
   }
 }
