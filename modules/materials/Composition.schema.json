@@ -151,6 +151,7 @@
     "emmo": "https://w3id.org/emmo#",
     "obo": "http://purl.obolibrary.org/obo/",
     "pmd": "https://w3id.org/pmd/co/",
+    "schema": "http://schema.org/",
     "self": {
       "@id": "https://w3id.org/oo-ld/schemas/materials/0.1/Composition.schema.json#",
       "@prefix": true

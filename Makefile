@@ -1,7 +1,9 @@
 SHELL := /bin/sh
 
 ZENSICAL := uvx --with pyyaml==6.0.2 zensical@0.0.46
-PY := uv run --with pyld --with rdflib
+# pinned: the serializer's prefix numbering and blank node handling differ
+# between rdflib releases, and the generated readings are compared byte-wise
+PY := uv run --with pyld --with rdflib==7.6.0
 # rdflib groups statements by hashing terms, so a blank node changes place between
 # runs unless the seed is pinned; generated Turtle has to be byte-stable for check
 export PYTHONHASHSEED = 0
@@ -46,7 +48,7 @@ ontologies:
 ONTOLOGIES ?= $(wildcard .ontologies/*/*)
 
 labels: ontologies
-	uv run --with rdflib scripts/extract_labels.py $(ONTOLOGIES) --fetch-missing
+	uv run --with rdflib==7.6.0 scripts/extract_labels.py $(ONTOLOGIES) --fetch-missing
 
 # Computed from the last release rather than incremented, so running it twice is a no-op.
 bump:

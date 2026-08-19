@@ -134,7 +134,7 @@ def write_rdf(module: str, name: str, schema_files: list[Path], instance: Path |
     """
     try:
         from pyld import jsonld  # noqa: PLC0415
-        from rdflib import Graph  # noqa: PLC0415
+        from rdflib import Graph, URIRef  # noqa: PLC0415
     except ImportError:
         return 0
 
@@ -167,6 +167,15 @@ def write_rdf(module: str, name: str, schema_files: list[Path], instance: Path |
             for prefix, iri in base_ctx.items():
                 if isinstance(iri, str) and iri.endswith(("#", "/", ":")) and prefix.isalpha():
                     graph.bind(prefix, iri)
+            # rdflib invents ns1, ns2 ... for whatever is left, in discovery order, which
+            # differs between machines; bind them here so the file is the same everywhere
+            bound = {str(ns) for _, ns in graph.namespace_manager.namespaces()}
+            rest = sorted({str(term).rsplit(sep, 1)[0] + sep
+                           for triple in graph for term in triple
+                           if isinstance(term, URIRef)
+                           for sep in ("#" if "#" in str(term) else "/",)} - bound)
+            for number, namespace in enumerate(rest, start=1):
+                graph.bind(f"ns{number}", namespace)
             # longturtle sorts its output; plain turtle groups by hash and so moves
             # blank nodes around between runs, which check reads as a stale artefact
             ttl = graph.serialize(format="longturtle")

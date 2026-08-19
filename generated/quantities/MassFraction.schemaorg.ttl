@@ -1,9 +1,10 @@
+PREFIX ns1: <https://example.org/>
 PREFIX qkind: <http://qudt.org/vocab/quantitykind/>
 PREFIX qunit: <http://qudt.org/vocab/unit/>
 PREFIX schema1: <http://schema.org/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
-<https://example.org/steel-c-content>
+ns1:steel-c-content
     a qkind:MassFraction ;
     schema1:unitCode qunit:PPM ;
     schema1:value 120 ;

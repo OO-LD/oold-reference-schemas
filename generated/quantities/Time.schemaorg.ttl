@@ -1,10 +1,11 @@
+PREFIX ns1: <https://example.org/>
 PREFIX qkind: <http://qudt.org/vocab/quantitykind/>
 PREFIX qudt: <http://qudt.org/schema/qudt/>
 PREFIX qunit: <http://qudt.org/vocab/unit/>
 PREFIX schema1: <http://schema.org/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
-<https://example.org/m1-duration>
+ns1:m1-duration
     a qkind:Time ;
     qudt:standardUncertainty 5e-02 ;
     schema1:unitCode qunit:SEC ;
