@@ -6,6 +6,7 @@
   "type": "object",
   "@context": {
     "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "unit": "http://qudt.org/vocab/unit/",
     "mat": "https://w3id.org/materialsDCAT-AP/profile#",
     "component": {
       "@id": "mat:hasComponent",
@@ -37,11 +38,11 @@
       "@type": "@id"
     },
     "PERCENT": {
-      "@id": "???",
+      "@id": "unit:PERCENT",
       "@type": "@id"
     },
     "PPM": {
-      "@id": "???",
+      "@id": "unit:PPM",
       "@type": "@id"
     }
 
