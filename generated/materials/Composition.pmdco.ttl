@@ -1,8 +1,8 @@
 PREFIX emmo: <https://w3id.org/emmo#>
 PREFIX ns1: <https://example.org/material/>
 PREFIX ns2: <https://schemas.oo-ld.org/.well-known/genid/>
+PREFIX ns3: <https://w3id.org/oo-ld/schemas/materials/0.1/Composition.schema.json#/$defs/ChemicalComposition/properties/>
 PREFIX ns4: <https://w3id.org/oo-ld/schemas/materials/0.1/Composition.schema.json#/$defs/Component/properties/>
-PREFIX ns5: <https://w3id.org/oo-ld/schemas/materials/0.1/Composition.schema.json#/$defs/ChemicalComposition/properties/>
 PREFIX obo: <http://purl.obolibrary.org/obo/>
 PREFIX pmd: <https://w3id.org/pmd/co/>
 PREFIX qudt: <http://qudt.org/schema/qudt/>
@@ -11,7 +11,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 ns2:c14n2
     a pmd:PMD_0000551 ;
     obo:RO_0000080 ns1:no27_14 ;
-    ns5:components
+    ns3:components
         ns2:c14n0 ,
         ns2:c14n4 ,
         ns2:c14n5 ;

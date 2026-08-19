@@ -167,17 +167,15 @@ def write_rdf(module: str, name: str, schema_files: list[Path], instance: Path |
             for prefix, iri in base_ctx.items():
                 if isinstance(iri, str) and iri.endswith(("#", "/", ":")) and prefix.isalpha():
                     graph.bind(prefix, iri)
-            # rdflib invents ns1, ns2 ... for whatever is left, in discovery order, which
-            # differs between machines; bind them here so the file is the same everywhere
-            bound = {str(ns) for _, ns in graph.namespace_manager.namespaces()}
-            rest = sorted({str(term).rsplit(sep, 1)[0] + sep
-                           for triple in graph for term in triple
-                           if isinstance(term, URIRef)
-                           for sep in ("#" if "#" in str(term) else "/",)} - bound)
-            for number, namespace in enumerate(rest, start=1):
-                graph.bind(f"ns{number}", namespace)
-            # longturtle sorts its output; plain turtle groups by hash and so moves
-            # blank nodes around between runs, which check reads as a stale artefact
+            # rdflib invents ns1, ns2 ... for whatever is left, numbered in the order
+            # it meets them, which differs between machines. Resolving every term in
+            # sorted order first pins that numbering to the data, not to the traversal.
+            for term in sorted({str(t) for triple in graph for t in triple
+                                if isinstance(t, URIRef)}):
+                try:
+                    graph.namespace_manager.compute_qname(term)
+                except Exception:  # noqa: BLE001 - a term with no split point stays full
+                    pass
             ttl = graph.serialize(format="longturtle")
         except Exception as exc:  # a broken mapping should fail loudly in CI, not here
             print(f"  ! {module}/{name} [{label}]: {exc}")
