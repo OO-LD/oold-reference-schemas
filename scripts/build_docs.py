@@ -44,7 +44,11 @@ def promote(base_ctx: dict, schemas: list[dict], set_id: str | None) -> dict:
                 if (frag.get("x-oold-sssom") or {}).get("mapping_set_id") != set_id:
                     continue
                 rest = {k: v for k, v in frag.items() if k != "x-oold-sssom"}
-                if rest:
+                if "@reverse" in rest:
+                    # the community states the edge in the other direction, so the synonym
+                    # is the reverse property and carries no @id of its own
+                    ctx[term] = rest
+                elif rest:
                     ctx[term] = {"@id": iri, **rest}
                 else:
                     prim = ctx.get(term)
