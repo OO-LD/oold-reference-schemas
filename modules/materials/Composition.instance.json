@@ -1,0 +1,39 @@
+{
+  "$schema": "Composition.schema.json",
+  "@context": "Composition.schema.json",
+  "id": "https://example.org/material/no27_14",
+  "type": ["Material"],
+  "composition": {
+    "type": ["ChemicalComposition"],
+    "components": [
+      {
+        "type": ["Component"],
+        "constituent": "Fe",
+        "amount": {
+          "type": ["MassFraction"],
+          "value": 96.7,
+          "unit": "PERCENT"
+        }
+      },
+      {
+        "type": ["Component"],
+        "constituent": "Si",
+        "amount": {
+          "type": ["MassFraction"],
+          "value": 3.3,
+          "unit": "PERCENT",
+          "standard_uncertainty": 0.1
+        }
+      },
+      {
+        "type": ["Component"],
+        "constituent": "C",
+        "amount": {
+          "type": ["MassFraction"],
+          "value": 120,
+          "unit": "PPM"
+        }
+      }
+    ]
+  }
+}

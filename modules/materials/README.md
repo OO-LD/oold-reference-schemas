@@ -2,8 +2,8 @@
 
 Chemical composition, structure and microstructure, material properties, object-vs-material duality.
 
-- status: planned
-- owner: unassigned
+- status: in-progress
+- owner: @jesper-friis, @simontaurus, @BerndBaylerlein, @joergwa
 - conformance IRI: assigned with the module's first release
 
 > Not to be confused with MaterialsDCAT-AP, which is an application profile
