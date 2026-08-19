@@ -199,11 +199,12 @@
   },
   "x-oold-context": {
     "Material": {
-      "emmo:EMMO_4207e895_8b83_4318_996a_72cfb32acd94": {
+      "emmo:EMMO_bc37743c_37c4_4ec7_9d58_d1aae5567352": {
         "x-oold-sssom": {
           "predicate_id": "skos:exactMatch",
           "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/emmo.sssom.tsv",
-          "object_source_version": "https://w3id.org/emmo/1.0.4"
+          "object_source_version": "https://w3id.org/emmo/1.0.4",
+          "comment": "Substance, not Material: Material is ordinary matter with bonds, so it excludes gases and solutions"
         }
       },
       "pmd:PMD_0000000": {
@@ -215,11 +216,11 @@
       }
     },
     "ChemicalComposition": {
-      "emmo:EMMO_0eabfde6_c6c5_4b1f_bf10_e4e0e06e9b2e": {
+      "emmo:EMMO_7efd64d1_05a1_49cd_a7f0_783ca050d4f3": {
         "x-oold-sssom": {
-          "predicate_id": "skos:closeMatch",
+          "predicate_id": "skos:exactMatch",
           "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/emmo.sssom.tsv",
-          "comment": "TotalComposition; PartialComposition where the components do not cover the whole"
+          "comment": "ChemicalComposition, the union of total, partial and single component: a composition need not be complete"
         }
       },
       "pmd:PMD_0000551": {
