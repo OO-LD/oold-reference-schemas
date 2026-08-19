@@ -72,7 +72,7 @@
             },
             "unit": {
               "type": "string",
-              "description": "Measurement unit."
+              "description": "Measurement unit.",
               "examples": ["PERCENT", "PPM"]
             }
           }
