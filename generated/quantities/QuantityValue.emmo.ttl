@@ -1,9 +1,12 @@
-@prefix emmo: <https://w3id.org/emmo#> .
-@prefix qudt: <http://qudt.org/schema/qudt/> .
-@prefix qunit: <http://qudt.org/vocab/unit/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+PREFIX emmo: <https://w3id.org/emmo#>
+PREFIX ns1: <https://example.org/>
+PREFIX qudt: <http://qudt.org/schema/qudt/>
+PREFIX qunit: <http://qudt.org/vocab/unit/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
-<https://example.org/instance> a emmo:EMMO_f658c301_ce93_46cf_9639_4eace2c5d1d5 ;
+ns1:instance
+    a emmo:EMMO_f658c301_ce93_46cf_9639_4eace2c5d1d5 ;
     qudt:value 1.27e+01 ;
     emmo:EMMO_bba7f0f0_3707_42b9_b3fa_fd04610ef147 5e-02 ;
-    emmo:EMMO_eeb06032_dd4f_476e_9da6_aa24302b7588 qunit:SEC .
+    emmo:EMMO_eeb06032_dd4f_476e_9da6_aa24302b7588 qunit:SEC ;
+.

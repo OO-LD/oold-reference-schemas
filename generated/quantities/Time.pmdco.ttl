@@ -1,9 +1,12 @@
-@prefix obo: <http://purl.obolibrary.org/obo/> .
-@prefix qkind: <http://qudt.org/vocab/quantitykind/> .
-@prefix qudt: <http://qudt.org/schema/qudt/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+PREFIX ns1: <https://example.org/>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX qkind: <http://qudt.org/vocab/quantitykind/>
+PREFIX qudt: <http://qudt.org/schema/qudt/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
-<https://example.org/m1-duration> a qkind:Time ;
+ns1:m1-duration
+    a qkind:Time ;
     obo:IAO_0000039 obo:UO_0000010 ;
     obo:OBI_0001937 1.27e+01 ;
-    qudt:standardUncertainty 5e-02 .
+    qudt:standardUncertainty 5e-02 ;
+.

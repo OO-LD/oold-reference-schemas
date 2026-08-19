@@ -1,0 +1,63 @@
+PREFIX emmo: <https://w3id.org/emmo#>
+PREFIX ns1: <https://example.org/material/>
+PREFIX ns2: <https://schemas.oo-ld.org/.well-known/genid/>
+PREFIX ns3: <https://w3id.org/oo-ld/schemas/materials/0.1/>
+PREFIX ns4: <https://w3id.org/oo-ld/schemas/materials/0.1/Composition.schema.json#/$defs/>
+PREFIX ns5: <https://w3id.org/oo-ld/schemas/materials/0.1/Composition.schema.json#/$defs/ChemicalComposition/properties/>
+PREFIX ns6: <https://w3id.org/oo-ld/schemas/materials/0.1/Composition.schema.json#/$defs/Component/properties/>
+PREFIX ns7: <https://w3id.org/oo-ld/schemas/materials/0.1/Composition.schema.json#/properties/>
+PREFIX qkind: <http://qudt.org/vocab/quantitykind/>
+PREFIX qudt: <http://qudt.org/schema/qudt/>
+PREFIX qunit: <http://qudt.org/vocab/unit/>
+PREFIX schema1: <http://schema.org/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+ns1:no27_14
+    a ns3:Composition.schema.json ;
+    ns7:composition ns2:c14n2 ;
+.
+
+ns2:c14n0
+    a ns4:Component ;
+    ns6:amount ns2:c14n1 ;
+    ns6:constituent emmo:EMMO_71b5082d-9908-5011-8ad0-b2ab70ffd08c ;
+.
+
+ns2:c14n1
+    a qkind:MassFraction ;
+    schema1:unitCode qunit:PERCENT ;
+    schema1:value 9.67e+01 ;
+.
+
+ns2:c14n2
+    a ns4:ChemicalComposition ;
+    ns5:components
+        ns2:c14n0 ,
+        ns2:c14n3 ,
+        ns2:c14n5 ;
+.
+
+ns2:c14n3
+    a ns4:Component ;
+    ns6:amount ns2:c14n6 ;
+    ns6:constituent emmo:EMMO_4f9670f5-14ca-53da-a1ea-9b0550a61035 ;
+.
+
+ns2:c14n4
+    a qkind:MassFraction ;
+    schema1:unitCode qunit:PPM ;
+    schema1:value 120 ;
+.
+
+ns2:c14n5
+    a ns4:Component ;
+    ns6:amount ns2:c14n4 ;
+    ns6:constituent emmo:EMMO_a7180b5f-d46d-5751-b3bc-ae28a6655992 ;
+.
+
+ns2:c14n6
+    a qkind:MassFraction ;
+    qudt:standardUncertainty 1e-01 ;
+    schema1:unitCode qunit:PERCENT ;
+    schema1:value 3.3e+00 ;
+.

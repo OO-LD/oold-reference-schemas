@@ -1,7 +1,10 @@
-@prefix emmo: <https://w3id.org/emmo#> .
-@prefix qudt: <http://qudt.org/schema/qudt/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+PREFIX emmo: <https://w3id.org/emmo#>
+PREFIX ns1: <https://example.org/>
+PREFIX qudt: <http://qudt.org/schema/qudt/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
-<https://example.org/instance> a emmo:EMMO_c1c8ac3c_8a1c_4777_8e0b_14c1f9f9b0c6 ;
+ns1:instance
+    a emmo:EMMO_c1c8ac3c_8a1c_4777_8e0b_14c1f9f9b0c6 ;
     qudt:value 2.01e+01 ;
-    emmo:EMMO_eeb06032_dd4f_476e_9da6_aa24302b7588 emmo:MilliMetre .
+    emmo:EMMO_eeb06032_dd4f_476e_9da6_aa24302b7588 emmo:MilliMetre ;
+.
