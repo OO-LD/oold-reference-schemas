@@ -1,0 +1,22 @@
+@prefix emmo: <https://w3id.org/emmo#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://example.org/material/no27_14> a emmo:EMMO_4207e895_8b83_4318_996a_72cfb32acd94 ;
+    emmo:EMMO_51f426a6_af4a_4e91_a392_2b0bb635e2d5 [ a emmo:EMMO_0eabfde6_c6c5_4b1f_bf10_e4e0e06e9b2e ;
+            emmo:EMMO_b2282816_b7a3_44c6_b2cb_3feff1ceb7fe [ a emmo:EMMO_172e2c96_180b_40f8_a3e7_b624471f40c2 ;
+                    emmo:EMMO_18fdd2cd_4b0a_43a5_a938_66d8290a066c emmo:EMMO_4f9670f5-14ca-53da-a1ea-9b0550a61035 ;
+                    emmo:EMMO_95d706e4_8b16_48a1_8dfd_40ccd4df1c12 [ a emmo:EMMO_7c055d65_2929_40e1_af4f_4bf10995ad50 ;
+                            qudt:value 3.3e+00 ;
+                            emmo:EMMO_bba7f0f0_3707_42b9_b3fa_fd04610ef147 1e-01 ;
+                            emmo:EMMO_eeb06032_dd4f_476e_9da6_aa24302b7588 emmo:WeightPercent ] ],
+                [ a emmo:EMMO_172e2c96_180b_40f8_a3e7_b624471f40c2 ;
+                    emmo:EMMO_18fdd2cd_4b0a_43a5_a938_66d8290a066c emmo:EMMO_71b5082d-9908-5011-8ad0-b2ab70ffd08c ;
+                    emmo:EMMO_95d706e4_8b16_48a1_8dfd_40ccd4df1c12 [ a emmo:EMMO_7c055d65_2929_40e1_af4f_4bf10995ad50 ;
+                            qudt:value 9.67e+01 ;
+                            emmo:EMMO_eeb06032_dd4f_476e_9da6_aa24302b7588 emmo:WeightPercent ] ],
+                [ a emmo:EMMO_172e2c96_180b_40f8_a3e7_b624471f40c2 ;
+                    emmo:EMMO_18fdd2cd_4b0a_43a5_a938_66d8290a066c emmo:EMMO_a7180b5f-d46d-5751-b3bc-ae28a6655992 ;
+                    emmo:EMMO_95d706e4_8b16_48a1_8dfd_40ccd4df1c12 [ a emmo:EMMO_7c055d65_2929_40e1_af4f_4bf10995ad50 ;
+                            qudt:value 120 ;
+                            emmo:EMMO_eeb06032_dd4f_476e_9da6_aa24302b7588 emmo:PartPerMillion ] ] ] .

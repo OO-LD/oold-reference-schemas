@@ -1,23 +1,27 @@
-@prefix mat: <https://w3id.org/materialsDCAT-AP/profile#> .
+@prefix emmo: <https://w3id.org/emmo#> .
+@prefix ns1: <https://w3id.org/oo-ld/schemas/materials/0.1/Composition.schema.json#/$defs/ChemicalComposition/properties/> .
+@prefix ns2: <https://w3id.org/oo-ld/schemas/materials/0.1/Composition.schema.json#/$defs/Component/properties/> .
+@prefix ns3: <https://w3id.org/oo-ld/schemas/materials/0.1/Composition.schema.json#/properties/> .
+@prefix qkind: <http://qudt.org/vocab/quantitykind/> .
 @prefix qudt: <http://qudt.org/schema/qudt/> .
 @prefix qunit: <http://qudt.org/vocab/unit/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://example.org/material/no27_14> mat:Component <http://example.org/base/Material> ;
-    mat:hasComposition [ mat:Component <http://example.org/base/ChemicalComposition> ;
-            mat:hasComponent [ mat:Component <http://example.org/base/Component> ;
-                    mat:hasAmount [ qudt:hasUnit qunit:PPM ;
-                            qudt:value 120 ;
-                            mat:Component <http://example.org/base/MassFraction> ] ;
-                    mat:hasConstituent <http://example.org/base/C> ],
-                [ mat:Component <http://example.org/base/Component> ;
-                    mat:hasAmount [ qudt:hasUnit qunit:PERCENT ;
-                            qudt:value 9.67e+01 ;
-                            mat:Component <http://example.org/base/MassFraction> ] ;
-                    mat:hasConstituent <http://example.org/base/Fe> ],
-                [ mat:Component <http://example.org/base/Component> ;
-                    mat:hasAmount [ qudt:hasUnit qunit:PERCENT ;
+<https://example.org/material/no27_14> a <https://w3id.org/oo-ld/schemas/materials/0.1/Composition.schema.json> ;
+    ns3:composition [ a <https://w3id.org/oo-ld/schemas/materials/0.1/Composition.schema.json#/$defs/ChemicalComposition> ;
+            ns1:components [ a <https://w3id.org/oo-ld/schemas/materials/0.1/Composition.schema.json#/$defs/Component> ;
+                    ns2:amount [ a qkind:MassFraction ;
+                            qudt:hasUnit qunit:PERCENT ;
+                            qudt:value 9.67e+01 ] ;
+                    ns2:constituent emmo:EMMO_71b5082d-9908-5011-8ad0-b2ab70ffd08c ],
+                [ a <https://w3id.org/oo-ld/schemas/materials/0.1/Composition.schema.json#/$defs/Component> ;
+                    ns2:amount [ a qkind:MassFraction ;
+                            qudt:hasUnit qunit:PERCENT ;
                             qudt:standardUncertainty 1e-01 ;
-                            qudt:value 3.3e+00 ;
-                            mat:Component <http://example.org/base/MassFraction> ] ;
-                    mat:hasConstituent <http://example.org/base/Si> ] ] .
+                            qudt:value 3.3e+00 ] ;
+                    ns2:constituent emmo:EMMO_4f9670f5-14ca-53da-a1ea-9b0550a61035 ],
+                [ a <https://w3id.org/oo-ld/schemas/materials/0.1/Composition.schema.json#/$defs/Component> ;
+                    ns2:amount [ a qkind:MassFraction ;
+                            qudt:hasUnit qunit:PPM ;
+                            qudt:value 120 ] ;
+                    ns2:constituent emmo:EMMO_a7180b5f-d46d-5751-b3bc-ae28a6655992 ] ] .
