@@ -1,28 +1,57 @@
-@prefix emmo: <https://w3id.org/emmo#> .
-@prefix ns1: <https://w3id.org/oo-ld/schemas/materials/0.1/Composition.schema.json#/$defs/ChemicalComposition/properties/> .
-@prefix ns2: <https://w3id.org/oo-ld/schemas/materials/0.1/Composition.schema.json#/$defs/Component/properties/> .
-@prefix obo: <http://purl.obolibrary.org/obo/> .
-@prefix pmd: <https://w3id.org/pmd/co/> .
-@prefix qudt: <http://qudt.org/schema/qudt/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+PREFIX emmo: <https://w3id.org/emmo#>
+PREFIX ns1: <https://w3id.org/oo-ld/schemas/materials/0.1/Composition.schema.json#/$defs/Component/properties/>
+PREFIX ns2: <https://w3id.org/oo-ld/schemas/materials/0.1/Composition.schema.json#/$defs/ChemicalComposition/properties/>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX pmd: <https://w3id.org/pmd/co/>
+PREFIX qudt: <http://qudt.org/schema/qudt/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
-<https://example.org/material/no27_14> a pmd:PMD_0000000 .
-
-[] a pmd:PMD_0000551 ;
+<https://schemas.oo-ld.org/.well-known/genid/c14n2>
+    a pmd:PMD_0000551 ;
     obo:RO_0000080 <https://example.org/material/no27_14> ;
-    ns1:components [ a pmd:PMD_0020102 ;
-            ns2:constituent emmo:EMMO_a7180b5f-d46d-5751-b3bc-ae28a6655992 ;
-            pmd:PMD_0000077 [ a pmd:PMD_0025997 ;
-                    obo:IAO_0000039 obo:UO_0000169 ;
-                    obo:OBI_0001937 120 ] ],
-        [ a pmd:PMD_0020102 ;
-            ns2:constituent emmo:EMMO_71b5082d-9908-5011-8ad0-b2ab70ffd08c ;
-            pmd:PMD_0000077 [ a pmd:PMD_0025997 ;
-                    obo:IAO_0000039 obo:UO_0000163 ;
-                    obo:OBI_0001937 9.67e+01 ] ],
-        [ a pmd:PMD_0020102 ;
-            ns2:constituent emmo:EMMO_4f9670f5-14ca-53da-a1ea-9b0550a61035 ;
-            pmd:PMD_0000077 [ a pmd:PMD_0025997 ;
-                    obo:IAO_0000039 obo:UO_0000163 ;
-                    obo:OBI_0001937 3.3e+00 ;
-                    qudt:standardUncertainty 1e-01 ] ] .
+    ns2:components
+        <https://schemas.oo-ld.org/.well-known/genid/c14n0> ,
+        <https://schemas.oo-ld.org/.well-known/genid/c14n4> ,
+        <https://schemas.oo-ld.org/.well-known/genid/c14n5> ;
+.
+
+<https://example.org/material/no27_14>
+    a pmd:PMD_0000000 ;
+.
+
+<https://schemas.oo-ld.org/.well-known/genid/c14n0>
+    a pmd:PMD_0020102 ;
+    ns1:constituent emmo:EMMO_71b5082d-9908-5011-8ad0-b2ab70ffd08c ;
+    pmd:PMD_0000077 <https://schemas.oo-ld.org/.well-known/genid/c14n3> ;
+.
+
+<https://schemas.oo-ld.org/.well-known/genid/c14n1>
+    a pmd:PMD_0025997 ;
+    obo:IAO_0000039 obo:UO_0000163 ;
+    obo:OBI_0001937 3.3e+00 ;
+    qudt:standardUncertainty 1e-01 ;
+.
+
+<https://schemas.oo-ld.org/.well-known/genid/c14n3>
+    a pmd:PMD_0025997 ;
+    obo:IAO_0000039 obo:UO_0000163 ;
+    obo:OBI_0001937 9.67e+01 ;
+.
+
+<https://schemas.oo-ld.org/.well-known/genid/c14n4>
+    a pmd:PMD_0020102 ;
+    ns1:constituent emmo:EMMO_4f9670f5-14ca-53da-a1ea-9b0550a61035 ;
+    pmd:PMD_0000077 <https://schemas.oo-ld.org/.well-known/genid/c14n1> ;
+.
+
+<https://schemas.oo-ld.org/.well-known/genid/c14n5>
+    a pmd:PMD_0020102 ;
+    ns1:constituent emmo:EMMO_a7180b5f-d46d-5751-b3bc-ae28a6655992 ;
+    pmd:PMD_0000077 <https://schemas.oo-ld.org/.well-known/genid/c14n6> ;
+.
+
+<https://schemas.oo-ld.org/.well-known/genid/c14n6>
+    a pmd:PMD_0025997 ;
+    obo:IAO_0000039 obo:UO_0000169 ;
+    obo:OBI_0001937 120 ;
+.

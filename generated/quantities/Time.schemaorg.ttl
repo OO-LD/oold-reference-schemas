@@ -1,10 +1,12 @@
-@prefix qkind: <http://qudt.org/vocab/quantitykind/> .
-@prefix qudt: <http://qudt.org/schema/qudt/> .
-@prefix qunit: <http://qudt.org/vocab/unit/> .
-@prefix schema1: <http://schema.org/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+PREFIX qkind: <http://qudt.org/vocab/quantitykind/>
+PREFIX qudt: <http://qudt.org/schema/qudt/>
+PREFIX qunit: <http://qudt.org/vocab/unit/>
+PREFIX schema1: <http://schema.org/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
-<https://example.org/m1-duration> a qkind:Time ;
+<https://example.org/m1-duration>
+    a qkind:Time ;
     qudt:standardUncertainty 5e-02 ;
     schema1:unitCode qunit:SEC ;
-    schema1:value 1.27e+01 .
+    schema1:value 1.27e+01 ;
+.

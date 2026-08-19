@@ -1,8 +1,10 @@
-@prefix qkind: <http://qudt.org/vocab/quantitykind/> .
-@prefix qunit: <http://qudt.org/vocab/unit/> .
-@prefix schema1: <http://schema.org/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+PREFIX qkind: <http://qudt.org/vocab/quantitykind/>
+PREFIX qunit: <http://qudt.org/vocab/unit/>
+PREFIX schema1: <http://schema.org/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
-<https://example.org/instance> a qkind:Length ;
+<https://example.org/instance>
+    a qkind:Length ;
     schema1:unitCode qunit:M ;
-    schema1:value 2.54e-02 .
+    schema1:value 2.54e-02 ;
+.

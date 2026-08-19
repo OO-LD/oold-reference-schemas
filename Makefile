@@ -2,6 +2,10 @@ SHELL := /bin/sh
 
 ZENSICAL := uvx --with pyyaml==6.0.2 zensical@0.0.46
 PY := uv run --with pyld --with rdflib
+# rdflib groups statements by hashing terms, so a blank node changes place between
+# runs unless the seed is pinned; generated Turtle has to be byte-stable for check
+export PYTHONHASHSEED = 0
+
 VALIDATOR ?= .oold-schema
 OOLD_VERSION ?= v1.0.0-rc.2
 

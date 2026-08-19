@@ -13,6 +13,7 @@ Usage: python scripts/build_docs.py
 from __future__ import annotations
 
 import json
+import re
 import shutil
 from pathlib import Path
 
@@ -153,12 +154,22 @@ def write_rdf(module: str, name: str, schema_files: list[Path], instance: Path |
         label = "consensus" if set_id is None else set_name(set_id)
         payload = {**doc, "@context": promote(base_ctx, schemas, set_id)}
         try:
-            nq = jsonld.to_rdf(payload, {"format": "application/n-quads"})
+            # canonical quads (URDNA2015): stable blank node labels and a stable
+            # order, so a regenerated reading is byte-identical and check can diff it
+            nq = jsonld.normalize(payload, {"algorithm": "URDNA2015",
+                                            "format": "application/n-quads"})
+            # rdflib gives every parsed blank node a fresh random identifier and orders
+            # siblings by it, so the canonical labels are turned into IRIs first: the
+            # reading then comes out byte-identical every time
+            nq = re.sub(r"_:(c14n\d+)",
+                        lambda m: f"<https://schemas.oo-ld.org/.well-known/genid/{m[1]}>", nq)
             graph = Graph().parse(data=nq, format="nquads")
             for prefix, iri in base_ctx.items():
                 if isinstance(iri, str) and iri.endswith(("#", "/", ":")) and prefix.isalpha():
                     graph.bind(prefix, iri)
-            ttl = graph.serialize(format="turtle")
+            # longturtle sorts its output; plain turtle groups by hash and so moves
+            # blank nodes around between runs, which check reads as a stale artefact
+            ttl = graph.serialize(format="longturtle")
         except Exception as exc:  # a broken mapping should fail loudly in CI, not here
             print(f"  ! {module}/{name} [{label}]: {exc}")
             continue

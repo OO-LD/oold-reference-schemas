@@ -1,7 +1,9 @@
-@prefix emmo: <https://w3id.org/emmo#> .
-@prefix qudt: <http://qudt.org/schema/qudt/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+PREFIX emmo: <https://w3id.org/emmo#>
+PREFIX qudt: <http://qudt.org/schema/qudt/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
-<https://example.org/steel-c-content> a emmo:EMMO_7c055d65_2929_40e1_af4f_4bf10995ad50 ;
+<https://example.org/steel-c-content>
+    a emmo:EMMO_7c055d65_2929_40e1_af4f_4bf10995ad50 ;
     qudt:value 120 ;
-    emmo:EMMO_eeb06032_dd4f_476e_9da6_aa24302b7588 emmo:PartPerMillion .
+    emmo:EMMO_eeb06032_dd4f_476e_9da6_aa24302b7588 emmo:PartPerMillion ;
+.

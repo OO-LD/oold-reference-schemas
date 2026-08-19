@@ -1,6 +1,8 @@
-@prefix obo: <http://purl.obolibrary.org/obo/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
-<https://example.org/steel-c-content> a <pmd:PMD_0025997> ;
+<https://example.org/steel-c-content>
+    a <pmd:PMD_0025997> ;
     obo:IAO_0000039 obo:UO_0000169 ;
-    obo:OBI_0001937 120 .
+    obo:OBI_0001937 120 ;
+.
