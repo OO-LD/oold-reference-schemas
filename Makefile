@@ -65,6 +65,7 @@ check:
 	test "$$before" = "$$(git status --porcelain)" || { \
 		echo 'generated artefacts are stale: run make generate' >&2; exit 1; }
 	python scripts/build_pages.py --check
+	python scripts/check_enums.py
 	python scripts/level.py --check
 	python scripts/release.py --check
 	$(ZENSICAL) build --clean

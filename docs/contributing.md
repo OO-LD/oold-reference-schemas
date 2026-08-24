@@ -47,6 +47,27 @@ A mapping is authored next to the term it maps, never in a separate file:
 - every community alternative goes in `x-oold-context`, tagged with its
   `mapping_set_id` and the exact ontology version it was checked against.
 
+A value alias is a term whose values are vocabulary entries rather than free text, coerced
+with `@vocab`: `unit` is one, and `SEC` or `PERCENT` are its members. List them as an `enum`
+of the vocabulary's own local names, and give each one a name in `x-enum-varnames`, in the
+same order:
+
+```json
+"unit": {
+  "enum": ["SEC", "MilliSEC", "HR"],
+  "x-enum-varnames": ["second", "milli_second", "hour"]
+}
+```
+
+The names are what a generated binding uses, so they must be lower case ASCII identifiers
+and unique within the enum. Where the value is already such a name (`second`, `milli_metre`),
+it is the name and `x-enum-varnames` is not needed. `make check` enforces that. Write the
+names out rather than deriving them: no standardised representation for arbitrary units is both canonical and ASCII. UCUM
+is ASCII but not canonical, since `L/(m2.s)` and `L.m-2.s-1` are the same unit; SI symbols
+are canonical but not ASCII. For a composed unit, normalise the
+[siunitx](https://ctan.org/pkg/siunitx) spelling, so `\liter\per\meter\squared\per\second`
+becomes `liter_per_meter_squared_per_second`.
+
 The SSSOM sets in `generated/mappings/` are built from those declarations. Do not edit
 them; edit the schema and regenerate. Each set is published as SSSOM TSV at the identifier
 its `mapping_set_id` names, so `https://w3id.org/oo-ld/schemas/mappings/emmo.sssom.tsv`
