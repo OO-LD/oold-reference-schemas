@@ -3,6 +3,10 @@
     "current": "0.1",
     "versions": [
       {
+        "label": "0.1",
+        "docs": "2026.08.24"
+      },
+      {
         "label": "dev",
         "docs": "dev"
       }
@@ -14,6 +18,10 @@
       {
         "label": "0.1",
         "docs": "2026.08.17"
+      },
+      {
+        "label": "0.2",
+        "docs": "2026.08.24"
       },
       {
         "label": "dev",
