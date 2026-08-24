@@ -1,0 +1,39 @@
+PREFIX csvw: <http://www.w3.org/ns/csvw#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX emmo: <https://w3id.org/emmo#>
+PREFIX ns1: <https://example.org/cell/>
+PREFIX ns2: <https://example.org/>
+PREFIX ns3: <https://schemas.oo-ld.org/.well-known/genid/>
+PREFIX ns4: <https://w3id.org/oo-ld/schemas/datasets/0.1/CyclingTable.schema.json#/properties/>
+PREFIX qudt: <http://qudt.org/schema/qudt/>
+
+ns2:instance
+    a csvw:Schema ;
+    dcterms:subject ns1:LFP-042 ;
+    csvw:column
+        ns3:c14n0 ,
+        ns3:c14n1 ,
+        ns3:c14n2 ;
+    ns4:protocol "CC-CV charge at 1C to 3.65 V, rest 10 min, CC discharge at 1C to 2.5 V" ;
+.
+
+ns3:c14n0
+    a csvw:Column ;
+    qudt:hasQuantityKind emmo:EMMO_c995ae70_3b84_4ebb_bcfc_69e6a281bb88 ;
+    qudt:hasUnit emmo:MilliAmpere ;
+    csvw:name "current" ;
+.
+
+ns3:c14n1
+    a csvw:Column ;
+    qudt:hasQuantityKind emmo:EMMO_17b031fb_4695_49b6_bb69_189ec63df3ee ;
+    qudt:hasUnit emmo:Volt ;
+    csvw:name "voltage" ;
+.
+
+ns3:c14n2
+    a csvw:Column ;
+    qudt:hasQuantityKind emmo:EMMO_d4f7d378_5e3b_468a_baa1_a7e98358cda7 ;
+    qudt:hasUnit emmo:Second ;
+    csvw:name "time" ;
+.

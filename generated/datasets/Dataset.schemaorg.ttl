@@ -1,0 +1,59 @@
+PREFIX csvw: <http://www.w3.org/ns/csvw#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX ns1: <https://example.org/cell/>
+PREFIX ns2: <https://example.org/data/>
+PREFIX ns3: <https://example.org/dataset/>
+PREFIX ns4: <https://schemas.oo-ld.org/.well-known/genid/>
+PREFIX ns5: <https://w3id.org/oo-ld/schemas/datasets/0.1/CyclingTable.schema.json#/properties/>
+PREFIX qkind: <http://qudt.org/vocab/quantitykind/>
+PREFIX qudt: <http://qudt.org/schema/qudt/>
+PREFIX qunit: <http://qudt.org/vocab/unit/>
+PREFIX schema1: <http://schema.org/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+ns3:LFP-042-2026-08-20
+    a schema1:Dataset ;
+    dcterms:issued "2026-08-20"^^xsd:date ;
+    schema1:description "Constant current cycling at 1C, 200 cycles" ;
+    schema1:distribution ns4:c14n3 ;
+    schema1:license <https://creativecommons.org/licenses/by/4.0/> ;
+    schema1:name "Cycling of cell LFP-042" ;
+.
+
+ns4:c14n0
+    a csvw:Column ;
+    qudt:hasQuantityKind qkind:Voltage ;
+    qudt:hasUnit qunit:V ;
+    csvw:name "voltage" ;
+.
+
+ns4:c14n1
+    a csvw:Column ;
+    qudt:hasQuantityKind qkind:Time ;
+    qudt:hasUnit qunit:SEC ;
+    csvw:name "time" ;
+.
+
+ns4:c14n2
+    a csvw:Column ;
+    qudt:hasQuantityKind qkind:ElectricCurrent ;
+    qudt:hasUnit qunit:MilliA ;
+    csvw:name "current" ;
+.
+
+ns4:c14n3
+    a schema1:DataDownload ;
+    schema1:contentUrl ns2:LFP-042-cycling.csv ;
+    schema1:encodingFormat "text/csv" ;
+    csvw:tableSchema ns4:c14n4 ;
+.
+
+ns4:c14n4
+    a csvw:Table ;
+    schema1:about ns1:LFP-042 ;
+    csvw:column
+        ns4:c14n0 ,
+        ns4:c14n1 ,
+        ns4:c14n2 ;
+    ns5:protocol "CC-CV charge at 1C to 3.65 V, rest 10 min, CC discharge at 1C to 2.5 V" ;
+.

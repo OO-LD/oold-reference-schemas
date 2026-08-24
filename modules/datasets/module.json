@@ -1,0 +1,7 @@
+{
+  "name": "datasets",
+  "title": "Datasets",
+  "version": "0.1.0",
+  "status": "draft",
+  "scope": "Dataset, distribution, tabular data and time series. Neutral: how data is packaged and described is the same question in every domain."
+}

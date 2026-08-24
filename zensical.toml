@@ -22,6 +22,11 @@ nav = [
     # BEGIN generated nav
     { "Modules" = [
         { "Overview" = "modules/index.md" },
+        { "Datasets" = [
+            { "CyclingTable" = "modules/datasets/cyclingtable/index.md" },
+            { "Dataset" = "modules/datasets/dataset/index.md" },
+            { "Distribution" = "modules/datasets/distribution/index.md" },
+        ]},
         { "Materials" = [
             { "Composition" = [
                 "modules/materials/composition/index.md",

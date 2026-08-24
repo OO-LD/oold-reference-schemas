@@ -1,0 +1,314 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "CyclingTable.schema.json",
+  "x-oold-version": "0.1.0",
+  "title": "CyclingTable",
+  "x-oold-instance-rdf-type": [
+    "csvw:Schema"
+  ],
+  "description": "What the columns of a battery cycling file mean, and which cell and protocol produced it. It describes the rows; the file itself is a Distribution and the publication around it is a Dataset.",
+  "examples": [
+    {
+      "type": [
+        "CyclingTable"
+      ],
+      "cell": "https://example.org/cell/LFP-042",
+      "protocol": "CC-CV charge at 1C to 3.65 V, rest 10 min, CC discharge at 1C to 2.5 V",
+      "columns": [
+        {
+          "type": [
+            "Column"
+          ],
+          "name": "time",
+          "quantity": "Time",
+          "unit": "second"
+        },
+        {
+          "type": [
+            "Column"
+          ],
+          "name": "voltage",
+          "quantity": "Voltage",
+          "unit": "volt"
+        },
+        {
+          "type": [
+            "Column"
+          ],
+          "name": "current",
+          "quantity": "ElectricCurrent",
+          "unit": "milli_ampere"
+        }
+      ]
+    }
+  ],
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "CyclingTable"
+      ]
+    },
+    "cell": {
+      "type": "string",
+      "format": "iri-reference",
+      "description": "IRI of the cell the run measured"
+    },
+    "protocol": {
+      "type": "string",
+      "description": "The cycling procedure, as text until a protocol schema exists"
+    },
+    "columns": {
+      "type": "array",
+      "minItems": 1,
+      "description": "One entry per column of the recorded table",
+      "items": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "default": [
+              "Column"
+            ]
+          },
+          "name": {
+            "type": "string",
+            "description": "Column header as it appears in the file"
+          },
+          "quantity": {
+            "type": "string",
+            "enum": [
+              "Time",
+              "Voltage",
+              "ElectricCurrent"
+            ],
+            "description": "What the column measures"
+          },
+          "unit": {
+            "type": "string",
+            "enum": [
+              "second",
+              "hour",
+              "volt",
+              "milli_volt",
+              "ampere",
+              "milli_ampere"
+            ],
+            "description": "Unit the column is recorded in"
+          }
+        },
+        "required": [
+          "type",
+          "name",
+          "quantity",
+          "unit"
+        ]
+      }
+    }
+  },
+  "required": [
+    "type",
+    "cell",
+    "columns"
+  ],
+  "@context": {
+    "@version": 1.1,
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "csvw": "http://www.w3.org/ns/csvw#",
+    "qudt": "http://qudt.org/schema/qudt/",
+    "qunit": "http://qudt.org/vocab/unit/",
+    "qkind": "http://qudt.org/vocab/quantitykind/",
+    "emmo": "https://w3id.org/emmo#",
+    "obo": "http://purl.obolibrary.org/obo/",
+    "schema": "http://schema.org/",
+    "cyc": {
+      "@id": "https://w3id.org/oo-ld/schemas/datasets/0.1/CyclingTable.schema.json#",
+      "@prefix": true
+    },
+    "id": "@id",
+    "type": {
+      "@id": "@type",
+      "@container": "@set"
+    },
+    "Column": "csvw:Column",
+    "Time": "qkind:Time",
+    "Voltage": "qkind:Voltage",
+    "ElectricCurrent": "qkind:ElectricCurrent",
+    "second": "qunit:SEC",
+    "hour": "qunit:HR",
+    "volt": "qunit:V",
+    "milli_volt": "qunit:MilliV",
+    "ampere": "qunit:A",
+    "milli_ampere": "qunit:MilliA",
+    "cell": {
+      "@id": "dcterms:subject",
+      "@type": "@id"
+    },
+    "protocol": "cyc:/properties/protocol",
+    "columns": {
+      "@id": "csvw:column",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "name": "csvw:name",
+    "quantity": {
+      "@id": "qudt:hasQuantityKind",
+      "@type": "@vocab"
+    },
+    "unit": {
+      "@id": "qudt:hasUnit",
+      "@type": "@vocab"
+    },
+    "media_type": "dcat:mediaType",
+    "CyclingTable": "csvw:Schema",
+    "table_schema": {
+      "@id": "csvw:tableSchema",
+      "@type": "@id"
+    }
+  },
+  "x-oold-context": {
+    "cell": {
+      "schema:about": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/schemaorg.sssom.tsv",
+          "comment": "the dataset is about the cell it was recorded from"
+        }
+      }
+    },
+    "Time": {
+      "emmo:EMMO_d4f7d378_5e3b_468a_baa1_a7e98358cda7": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:exactMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/emmo.sssom.tsv",
+          "object_source_version": "https://w3id.org/emmo/1.0.4"
+        }
+      }
+    },
+    "Voltage": {
+      "emmo:EMMO_17b031fb_4695_49b6_bb69_189ec63df3ee": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:exactMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/emmo.sssom.tsv",
+          "object_source_version": "https://w3id.org/emmo/1.0.4"
+        }
+      }
+    },
+    "ElectricCurrent": {
+      "emmo:EMMO_c995ae70_3b84_4ebb_bcfc_69e6a281bb88": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:exactMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/emmo.sssom.tsv",
+          "object_source_version": "https://w3id.org/emmo/1.0.4"
+        }
+      }
+    },
+    "second": {
+      "emmo:Second": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:exactMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/emmo.sssom.tsv",
+          "object_source_version": "https://w3id.org/emmo/1.0.4"
+        }
+      },
+      "obo:UO_0000010": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:exactMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/pmdco.sssom.tsv"
+        }
+      }
+    },
+    "hour": {
+      "emmo:Hour": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:exactMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/emmo.sssom.tsv",
+          "object_source_version": "https://w3id.org/emmo/1.0.4"
+        }
+      },
+      "obo:UO_0000032": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:exactMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/pmdco.sssom.tsv"
+        }
+      }
+    },
+    "volt": {
+      "emmo:Volt": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:exactMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/emmo.sssom.tsv",
+          "object_source_version": "https://w3id.org/emmo/1.0.4"
+        }
+      },
+      "obo:UO_0000218": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:exactMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/pmdco.sssom.tsv"
+        }
+      }
+    },
+    "milli_volt": {
+      "emmo:MilliVolt": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:exactMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/emmo.sssom.tsv",
+          "object_source_version": "https://w3id.org/emmo/1.0.4"
+        }
+      },
+      "obo:UO_0000247": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:exactMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/pmdco.sssom.tsv"
+        }
+      }
+    },
+    "ampere": {
+      "emmo:Ampere": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:exactMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/emmo.sssom.tsv",
+          "object_source_version": "https://w3id.org/emmo/1.0.4"
+        }
+      },
+      "obo:UO_0000011": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:exactMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/pmdco.sssom.tsv"
+        }
+      }
+    },
+    "milli_ampere": {
+      "emmo:MilliAmpere": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:exactMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/emmo.sssom.tsv",
+          "object_source_version": "https://w3id.org/emmo/1.0.4"
+        }
+      },
+      "obo:UO_0000037": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:exactMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/pmdco.sssom.tsv"
+        }
+      }
+    },
+    "CyclingTable": {
+      "csvw:Table": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/schemaorg.sssom.tsv",
+          "comment": "a table and its schema are one thing here, as they are in a CSV file"
+        }
+      }
+    }
+  }
+}

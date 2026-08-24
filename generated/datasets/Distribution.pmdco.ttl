@@ -1,0 +1,9 @@
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX ns1: <https://example.org/data/>
+PREFIX ns2: <https://example.org/>
+
+ns2:instance
+    a dcat:Distribution ;
+    dcat:accessURL ns1:LFP-042-cycling.csv ;
+    dcat:mediaType "text/csv" ;
+.

@@ -1,0 +1,137 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Distribution.schema.json",
+  "x-oold-version": "0.1.0",
+  "title": "Distribution",
+  "x-oold-instance-rdf-type": [
+    "dcat:Distribution"
+  ],
+  "description": "One file of a dataset: where it is, in which format, and, where it is tabular, what its columns mean.",
+  "examples": [
+    {
+      "type": [
+        "Distribution"
+      ],
+      "access_url": "https://example.org/data/LFP-042-cycling.csv",
+      "media_type": "text/csv"
+    }
+  ],
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "Distribution"
+      ]
+    },
+    "access_url": {
+      "type": "string",
+      "format": "iri-reference"
+    },
+    "media_type": {
+      "type": "string",
+      "examples": [
+        "text/csv",
+        "application/parquet"
+      ]
+    },
+    "table_schema": {
+      "$ref": "CyclingTable.schema.json"
+    }
+  },
+  "required": [
+    "type",
+    "access_url"
+  ],
+  "@context": {
+    "@version": 1.1,
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "csvw": "http://www.w3.org/ns/csvw#",
+    "qudt": "http://qudt.org/schema/qudt/",
+    "qunit": "http://qudt.org/vocab/unit/",
+    "qkind": "http://qudt.org/vocab/quantitykind/",
+    "emmo": "https://w3id.org/emmo#",
+    "obo": "http://purl.obolibrary.org/obo/",
+    "schema": "http://schema.org/",
+    "cyc": {
+      "@id": "https://w3id.org/oo-ld/schemas/datasets/0.1/CyclingTable.schema.json#",
+      "@prefix": true
+    },
+    "id": "@id",
+    "type": {
+      "@id": "@type",
+      "@container": "@set"
+    },
+    "Column": "csvw:Column",
+    "Time": "qkind:Time",
+    "Voltage": "qkind:Voltage",
+    "ElectricCurrent": "qkind:ElectricCurrent",
+    "second": "qunit:SEC",
+    "hour": "qunit:HR",
+    "volt": "qunit:V",
+    "milli_volt": "qunit:MilliV",
+    "ampere": "qunit:A",
+    "milli_ampere": "qunit:MilliA",
+    "cell": {
+      "@id": "dcterms:subject",
+      "@type": "@id"
+    },
+    "protocol": "cyc:/properties/protocol",
+    "columns": {
+      "@id": "csvw:column",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "name": "csvw:name",
+    "quantity": {
+      "@id": "qudt:hasQuantityKind",
+      "@type": "@vocab"
+    },
+    "unit": {
+      "@id": "qudt:hasUnit",
+      "@type": "@vocab"
+    },
+    "media_type": "dcat:mediaType",
+    "CyclingTable": "csvw:Schema",
+    "table_schema": {
+      "@id": "csvw:tableSchema",
+      "@type": "@id"
+    },
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "Distribution": "dcat:Distribution",
+    "access_url": {
+      "@id": "dcat:accessURL",
+      "@type": "@id"
+    }
+  },
+  "x-oold-context": {
+    "Distribution": {
+      "schema:DataDownload": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/schemaorg.sssom.tsv"
+        }
+      }
+    },
+    "access_url": {
+      "schema:contentUrl": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/schemaorg.sssom.tsv"
+        }
+      }
+    },
+    "media_type": {
+      "schema:encodingFormat": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/schemaorg.sssom.tsv"
+        }
+      }
+    }
+  }
+}

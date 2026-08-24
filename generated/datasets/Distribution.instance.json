@@ -1,0 +1,10 @@
+{
+  "$schema": "Distribution.schema.json",
+  "@context": "Distribution.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "Distribution"
+  ],
+  "access_url": "https://example.org/data/LFP-042-cycling.csv",
+  "media_type": "text/csv"
+}

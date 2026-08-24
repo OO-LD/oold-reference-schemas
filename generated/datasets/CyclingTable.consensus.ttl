@@ -1,0 +1,40 @@
+PREFIX csvw: <http://www.w3.org/ns/csvw#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX ns1: <https://example.org/cell/>
+PREFIX ns2: <https://example.org/>
+PREFIX ns3: <https://schemas.oo-ld.org/.well-known/genid/>
+PREFIX ns4: <https://w3id.org/oo-ld/schemas/datasets/0.1/CyclingTable.schema.json#/properties/>
+PREFIX qkind: <http://qudt.org/vocab/quantitykind/>
+PREFIX qudt: <http://qudt.org/schema/qudt/>
+PREFIX qunit: <http://qudt.org/vocab/unit/>
+
+ns2:instance
+    a csvw:Schema ;
+    dcterms:subject ns1:LFP-042 ;
+    csvw:column
+        ns3:c14n0 ,
+        ns3:c14n1 ,
+        ns3:c14n2 ;
+    ns4:protocol "CC-CV charge at 1C to 3.65 V, rest 10 min, CC discharge at 1C to 2.5 V" ;
+.
+
+ns3:c14n0
+    a csvw:Column ;
+    qudt:hasQuantityKind qkind:Voltage ;
+    qudt:hasUnit qunit:V ;
+    csvw:name "voltage" ;
+.
+
+ns3:c14n1
+    a csvw:Column ;
+    qudt:hasQuantityKind qkind:Time ;
+    qudt:hasUnit qunit:SEC ;
+    csvw:name "time" ;
+.
+
+ns3:c14n2
+    a csvw:Column ;
+    qudt:hasQuantityKind qkind:ElectricCurrent ;
+    qudt:hasUnit qunit:MilliA ;
+    csvw:name "current" ;
+.

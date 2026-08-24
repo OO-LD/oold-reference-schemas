@@ -1,0 +1,9 @@
+PREFIX ns1: <https://example.org/data/>
+PREFIX ns2: <https://example.org/>
+PREFIX schema1: <http://schema.org/>
+
+ns2:instance
+    a schema1:DataDownload ;
+    schema1:contentUrl ns1:LFP-042-cycling.csv ;
+    schema1:encodingFormat "text/csv" ;
+.

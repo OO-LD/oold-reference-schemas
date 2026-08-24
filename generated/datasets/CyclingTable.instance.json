@@ -1,0 +1,36 @@
+{
+  "$schema": "CyclingTable.schema.json",
+  "@context": "CyclingTable.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "CyclingTable"
+  ],
+  "cell": "https://example.org/cell/LFP-042",
+  "protocol": "CC-CV charge at 1C to 3.65 V, rest 10 min, CC discharge at 1C to 2.5 V",
+  "columns": [
+    {
+      "type": [
+        "Column"
+      ],
+      "name": "time",
+      "quantity": "Time",
+      "unit": "second"
+    },
+    {
+      "type": [
+        "Column"
+      ],
+      "name": "voltage",
+      "quantity": "Voltage",
+      "unit": "volt"
+    },
+    {
+      "type": [
+        "Column"
+      ],
+      "name": "current",
+      "quantity": "ElectricCurrent",
+      "unit": "milli_ampere"
+    }
+  ]
+}

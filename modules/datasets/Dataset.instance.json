@@ -1,0 +1,54 @@
+{
+  "$schema": "Dataset.schema.json",
+  "@context": "Dataset.schema.json",
+  "id": "https://example.org/dataset/LFP-042-2026-08-20",
+  "type": [
+    "Dataset"
+  ],
+  "title": "Cycling of cell LFP-042",
+  "description": "Constant current cycling at 1C, 200 cycles",
+  "issued": "2026-08-20",
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "distribution": [
+    {
+      "type": [
+        "Distribution"
+      ],
+      "access_url": "https://example.org/data/LFP-042-cycling.csv",
+      "media_type": "text/csv",
+      "table_schema": {
+        "type": [
+          "CyclingTable"
+        ],
+        "cell": "https://example.org/cell/LFP-042",
+        "protocol": "CC-CV charge at 1C to 3.65 V, rest 10 min, CC discharge at 1C to 2.5 V",
+        "columns": [
+          {
+            "type": [
+              "Column"
+            ],
+            "name": "time",
+            "quantity": "Time",
+            "unit": "second"
+          },
+          {
+            "type": [
+              "Column"
+            ],
+            "name": "voltage",
+            "quantity": "Voltage",
+            "unit": "volt"
+          },
+          {
+            "type": [
+              "Column"
+            ],
+            "name": "current",
+            "quantity": "ElectricCurrent",
+            "unit": "milli_ampere"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,192 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Dataset.schema.json",
+  "x-oold-version": "0.1.0",
+  "title": "Dataset",
+  "x-oold-instance-rdf-type": [
+    "dcat:Dataset"
+  ],
+  "description": "Data published as one thing: what it is, who may use it, and where the files are. The files themselves are distributions, and what their columns mean is the table schema of a distribution.",
+  "examples": [
+    {
+      "type": [
+        "Dataset"
+      ],
+      "title": "Cycling of cell LFP-042",
+      "description": "Constant current cycling at 1C, 200 cycles",
+      "issued": "2026-08-20",
+      "license": "https://creativecommons.org/licenses/by/4.0/"
+    }
+  ],
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "Dataset"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "issued": {
+      "type": "string",
+      "format": "date"
+    },
+    "license": {
+      "type": "string",
+      "format": "iri-reference"
+    },
+    "distribution": {
+      "type": "array",
+      "items": {
+        "$ref": "Distribution.schema.json"
+      }
+    }
+  },
+  "required": [
+    "type",
+    "title"
+  ],
+  "@context": {
+    "@version": 1.1,
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "csvw": "http://www.w3.org/ns/csvw#",
+    "qudt": "http://qudt.org/schema/qudt/",
+    "qunit": "http://qudt.org/vocab/unit/",
+    "qkind": "http://qudt.org/vocab/quantitykind/",
+    "emmo": "https://w3id.org/emmo#",
+    "obo": "http://purl.obolibrary.org/obo/",
+    "schema": "http://schema.org/",
+    "cyc": {
+      "@id": "https://w3id.org/oo-ld/schemas/datasets/0.1/CyclingTable.schema.json#",
+      "@prefix": true
+    },
+    "id": "@id",
+    "type": {
+      "@id": "@type",
+      "@container": "@set"
+    },
+    "Column": "csvw:Column",
+    "Time": "qkind:Time",
+    "Voltage": "qkind:Voltage",
+    "ElectricCurrent": "qkind:ElectricCurrent",
+    "second": "qunit:SEC",
+    "hour": "qunit:HR",
+    "volt": "qunit:V",
+    "milli_volt": "qunit:MilliV",
+    "ampere": "qunit:A",
+    "milli_ampere": "qunit:MilliA",
+    "cell": {
+      "@id": "dcterms:subject",
+      "@type": "@id"
+    },
+    "protocol": "cyc:/properties/protocol",
+    "columns": {
+      "@id": "csvw:column",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "name": "csvw:name",
+    "quantity": {
+      "@id": "qudt:hasQuantityKind",
+      "@type": "@vocab"
+    },
+    "unit": {
+      "@id": "qudt:hasUnit",
+      "@type": "@vocab"
+    },
+    "media_type": "dcat:mediaType",
+    "CyclingTable": "csvw:Schema",
+    "table_schema": {
+      "@id": "csvw:tableSchema",
+      "@type": "@id"
+    },
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "Distribution": "dcat:Distribution",
+    "access_url": {
+      "@id": "dcat:accessURL",
+      "@type": "@id"
+    },
+    "Dataset": "dcat:Dataset",
+    "title": "dcterms:title",
+    "description": "dcterms:description",
+    "issued": {
+      "@id": "dcterms:issued",
+      "@type": "xsd:date"
+    },
+    "license": {
+      "@id": "dcterms:license",
+      "@type": "@id"
+    },
+    "distribution": {
+      "@id": "dcat:distribution",
+      "@type": "@id",
+      "@container": "@set"
+    }
+  },
+  "x-oold-context": {
+    "Dataset": {
+      "schema:Dataset": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:exactMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/schemaorg.sssom.tsv"
+        }
+      },
+      "obo:IAO_0000100": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/pmdco.sssom.tsv",
+          "comment": "homogenous data collection"
+        }
+      },
+      "emmo:EMMO_194e367c_9783_4bf5_96d0_9ad597d48d9a": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/emmo.sssom.tsv",
+          "object_source_version": "https://w3id.org/emmo/1.0.4",
+          "comment": "Dataset"
+        }
+      }
+    },
+    "title": {
+      "schema:name": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:exactMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/schemaorg.sssom.tsv"
+        }
+      }
+    },
+    "description": {
+      "schema:description": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:exactMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/schemaorg.sssom.tsv"
+        }
+      }
+    },
+    "license": {
+      "schema:license": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:exactMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/schemaorg.sssom.tsv"
+        }
+      }
+    },
+    "distribution": {
+      "schema:distribution": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:exactMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/schemaorg.sssom.tsv"
+        }
+      }
+    }
+  }
+}
