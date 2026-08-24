@@ -22,6 +22,9 @@ nav = [
     # BEGIN generated nav
     { "Modules" = [
         { "Overview" = "modules/index.md" },
+        { "Materials" = [
+            { "Composition" = "modules/materials/composition/index.md" },
+        ]},
         { "Quantities" = [
             { "QuantityValue" = [
                 "modules/quantities/quantityvalue/index.md",
@@ -29,6 +32,7 @@ nav = [
                     "modules/quantities/quantityvalue/length/index.md",
                     { "Diameter" = "modules/quantities/quantityvalue/length/diameter/index.md" },
                 ]},
+                { "MassFraction" = "modules/quantities/quantityvalue/massfraction/index.md" },
                 { "Time" = "modules/quantities/quantityvalue/time/index.md" },
             ]},
         ]},

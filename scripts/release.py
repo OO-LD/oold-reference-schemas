@@ -62,7 +62,13 @@ def main() -> None:
             declared = read(MODULES / module / "module.json").get("version")
             recorded = [entry["module"] for entry in index.get(module, [])]
             if declared and recorded and declared not in recorded:
-                problems.append(f"{module} is at {declared}, which no release recorded")
+                # A version ahead of the newest release is the normal state between
+                # releases: the bump lands with the change, the release mints the path.
+                # What is wrong is a declared version the release cannot reach any more.
+                order = lambda v: tuple(int(part) for part in v.split("."))  # noqa: E731
+                if order(declared) <= max(order(v) for v in recorded):
+                    problems.append(f"{module} is at {declared}, behind or beside "
+                                    f"the released {sorted(recorded, key=order)[-1]}")
         for problem in problems:
             print(f"  ! {problem}")
         sys.exit(1 if problems else 0)

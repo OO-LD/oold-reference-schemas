@@ -4,8 +4,8 @@ PREFIX qudt: <http://qudt.org/schema/qudt/>
 PREFIX qunit: <http://qudt.org/vocab/unit/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
-ns1:instance
-    a qkind:Diameter ;
-    qudt:hasUnit qunit:MilliM ;
-    qudt:value 2.01e+01 ;
+ns1:steel-c-content
+    a qkind:MassFraction ;
+    qudt:hasUnit qunit:PPM ;
+    qudt:value 120 ;
 .

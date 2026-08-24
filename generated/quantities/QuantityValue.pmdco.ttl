@@ -1,9 +1,12 @@
-@prefix obo: <http://purl.obolibrary.org/obo/> .
-@prefix qudt: <http://qudt.org/schema/qudt/> .
-@prefix qunit: <http://qudt.org/vocab/unit/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+PREFIX ns1: <https://example.org/>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX qudt: <http://qudt.org/schema/qudt/>
+PREFIX qunit: <http://qudt.org/vocab/unit/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
-<https://example.org/instance> a obo:OBI_0001931 ;
+ns1:instance
+    a obo:OBI_0001931 ;
     obo:IAO_0000039 qunit:SEC ;
     obo:OBI_0001937 1.27e+01 ;
-    qudt:standardUncertainty 5e-02 .
+    qudt:standardUncertainty 5e-02 ;
+.
