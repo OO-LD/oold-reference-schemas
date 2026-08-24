@@ -60,8 +60,9 @@ same order:
 ```
 
 The names are what a generated binding uses, so they must be lower case ASCII identifiers
-and unique within the enum. `make check` enforces that. Write them out rather than deriving
-them: no standardised representation for arbitrary units is both canonical and ASCII. UCUM
+and unique within the enum. Where the value is already such a name (`second`, `milli_metre`),
+it is the name and `x-enum-varnames` is not needed. `make check` enforces that. Write the
+names out rather than deriving them: no standardised representation for arbitrary units is both canonical and ASCII. UCUM
 is ASCII but not canonical, since `L/(m2.s)` and `L.m-2.s-1` are the same unit; SI symbols
 are canonical but not ASCII. For a composed unit, normalise the
 [siunitx](https://ctan.org/pkg/siunitx) spelling, so `\liter\per\meter\squared\per\second`

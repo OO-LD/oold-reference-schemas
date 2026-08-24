@@ -76,7 +76,11 @@ def check(schema_file: Path) -> tuple[list[str], int]:
         members = spec["enum"]
         names = spec.get("x-enum-varnames")
         if names is None:
-            problems.append(f"{path}: enum on a @vocab term without x-enum-varnames")
+            # the value may already be the name, which is the normalised unit case
+            unnamed = [m for m in members if not (isinstance(m, str) and NAME.match(m))]
+            if unnamed:
+                problems.append(f"{path}: {unnamed} are not identifiers and have no "
+                                f"x-enum-varnames")
             continue
         if len(names) != len(members):
             problems.append(f"{path}: {len(names)} names for {len(members)} enum members")
