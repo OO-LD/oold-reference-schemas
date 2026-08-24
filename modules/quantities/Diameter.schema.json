@@ -2,7 +2,7 @@
   "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
   "$id": "Diameter.schema.json",
   "x-oold-uuid": "805bf901-6ac5-5933-bcb2-f133b0b1b9bf",
-  "x-oold-version": "0.1.0",
+  "x-oold-version": "0.1.1",
   "title": "Diameter",
   "description": "Length taken across a round object through its centre.",
   "examples": [
@@ -11,7 +11,7 @@
         "Diameter"
       ],
       "value": 20.1,
-      "unit": "MilliM"
+      "unit": "milli_metre"
     }
   ],
   "allOf": [
