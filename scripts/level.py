@@ -165,7 +165,9 @@ def compare(old: dict, new: dict) -> tuple[str, list[str]]:
 def raise_to(version: str, level: str) -> str:
     major, minor, patch = (int(p) for p in version.split(".")[:3])
     if level == "major":
-        return f"{major + 1}.0.0"
+        # Below 1.0.0 nothing is promised yet, so a break raises the minor rather than
+        # declaring the module stable, which is what 1.0.0 would say.
+        return f"{major + 1}.0.0" if major else f"0.{minor + 1}.0"
     if level == "minor":
         return f"{major}.{minor + 1}.0"
     if level == "patch":

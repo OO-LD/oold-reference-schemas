@@ -9,17 +9,17 @@
       {
         "type": ["Component"],
         "constituent": "Fe",
-        "amount": {"type": ["MassFraction"], "value": 96.7, "unit": "PERCENT"}
+        "amount": {"type": ["MassFraction"], "value": 96.7, "unit": "percent"}
       },
       {
         "type": ["Component"],
         "constituent": "Si",
-        "amount": {"type": ["MassFraction"], "value": 3.3, "unit": "PERCENT", "standard_uncertainty": 0.1}
+        "amount": {"type": ["MassFraction"], "value": 3.3, "unit": "percent", "standard_uncertainty": 0.1}
       },
       {
         "type": ["Component"],
         "constituent": "C",
-        "amount": {"type": ["MassFraction"], "value": 120, "unit": "PPM"}
+        "amount": {"type": ["MassFraction"], "value": 120, "unit": "part_per_million"}
       }
     ]
   }

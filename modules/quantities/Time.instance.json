@@ -6,6 +6,6 @@
     "Time"
   ],
   "value": 12.7,
-  "unit": "SEC",
+  "unit": "second",
   "standard_uncertainty": 0.05
 }
