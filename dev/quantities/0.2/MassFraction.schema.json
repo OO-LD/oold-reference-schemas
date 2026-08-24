@@ -10,7 +10,7 @@
         "MassFraction"
       ],
       "value": 96.7,
-      "unit": "PERCENT"
+      "unit": "percent"
     }
   ],
   "allOf": [
@@ -23,8 +23,8 @@
     {
       "qkind": "http://qudt.org/vocab/quantitykind/",
       "MassFraction": "qkind:MassFraction",
-      "PERCENT": "qunit:PERCENT",
-      "PPM": "qunit:PPM"
+      "percent": "qunit:PERCENT",
+      "part_per_million": "qunit:PPM"
     }
   ],
   "properties": {
@@ -35,14 +35,10 @@
     },
     "unit": {
       "enum": [
-        "PERCENT",
-        "PPM"
+        "percent",
+        "part_per_million"
       ],
-      "default": "PERCENT",
-      "x-enum-varnames": [
-        "weight_percent",
-        "parts_per_million"
-      ]
+      "default": "percent"
     }
   },
   "x-oold-context": {
@@ -64,7 +60,7 @@
         }
       }
     },
-    "PERCENT": {
+    "percent": {
       "emmo:WeightPercent": {
         "x-oold-sssom": {
           "predicate_id": "skos:exactMatch",
@@ -80,7 +76,7 @@
         }
       }
     },
-    "PPM": {
+    "part_per_million": {
       "emmo:PartPerMillion": {
         "x-oold-sssom": {
           "predicate_id": "skos:exactMatch",

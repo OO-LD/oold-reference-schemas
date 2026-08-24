@@ -24,7 +24,7 @@
                 "MassFraction"
               ],
               "value": 96.7,
-              "unit": "PERCENT"
+              "unit": "percent"
             }
           }
         ]
@@ -118,14 +118,10 @@
             },
             "unit": {
               "enum": [
-                "PERCENT",
-                "PPM"
+                "percent",
+                "part_per_million"
               ],
-              "default": "PERCENT",
-              "x-enum-varnames": [
-                "weight_percent",
-                "parts_per_million"
-              ]
+              "default": "percent"
             },
             "standard_uncertainty": {
               "type": "number",
@@ -194,8 +190,8 @@
     "standard_uncertainty": "qudt:standardUncertainty",
     "qkind": "http://qudt.org/vocab/quantitykind/",
     "MassFraction": "qkind:MassFraction",
-    "PERCENT": "qunit:PERCENT",
-    "PPM": "qunit:PPM"
+    "percent": "qunit:PERCENT",
+    "part_per_million": "qunit:PPM"
   },
   "x-oold-context": {
     "Material": {
@@ -319,38 +315,6 @@
         }
       }
     },
-    "PERCENT": {
-      "emmo:WeightPercent": {
-        "x-oold-sssom": {
-          "predicate_id": "skos:exactMatch",
-          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/emmo.sssom.tsv",
-          "comment": "the quantity decides that percent is by mass, so the same alias resolves differently in a VolumeFraction"
-        }
-      },
-      "obo:UO_0000163": {
-        "x-oold-sssom": {
-          "predicate_id": "skos:exactMatch",
-          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/pmdco.sssom.tsv",
-          "comment": "UO mass percentage"
-        }
-      }
-    },
-    "PPM": {
-      "emmo:PartPerMillion": {
-        "x-oold-sssom": {
-          "predicate_id": "skos:exactMatch",
-          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/emmo.sssom.tsv",
-          "object_source_version": "https://w3id.org/emmo/1.0.4"
-        }
-      },
-      "obo:UO_0000169": {
-        "x-oold-sssom": {
-          "predicate_id": "skos:exactMatch",
-          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/pmdco.sssom.tsv",
-          "comment": "UO parts per million"
-        }
-      }
-    },
     "value": {
       "schema:value": {
         "x-oold-sssom": {
@@ -400,6 +364,38 @@
           "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/emmo.sssom.tsv",
           "object_source_version": "https://w3id.org/emmo/1.0.4",
           "comment": "standardUncertainty (VIM4 3.6); 1.0.4 branch only"
+        }
+      }
+    },
+    "percent": {
+      "emmo:WeightPercent": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:exactMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/emmo.sssom.tsv",
+          "comment": "the quantity decides that percent is by mass, so the same alias resolves differently in a VolumeFraction"
+        }
+      },
+      "obo:UO_0000163": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:exactMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/pmdco.sssom.tsv",
+          "comment": "UO mass percentage"
+        }
+      }
+    },
+    "part_per_million": {
+      "emmo:PartPerMillion": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:exactMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/emmo.sssom.tsv",
+          "object_source_version": "https://w3id.org/emmo/1.0.4"
+        }
+      },
+      "obo:UO_0000169": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:exactMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/pmdco.sssom.tsv",
+          "comment": "UO parts per million"
         }
       }
     }

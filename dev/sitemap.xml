@@ -16,6 +16,9 @@
         <loc>https://schemas.oo-ld.org/dev/modules/quantities/quantityvalue/</loc>
       </url>
       <url>
+        <loc>https://schemas.oo-ld.org/dev/modules/quantities/quantityvalue/electriccurrent/</loc>
+      </url>
+      <url>
         <loc>https://schemas.oo-ld.org/dev/modules/quantities/quantityvalue/length/</loc>
       </url>
       <url>
@@ -26,6 +29,9 @@
       </url>
       <url>
         <loc>https://schemas.oo-ld.org/dev/modules/quantities/quantityvalue/time/</loc>
+      </url>
+      <url>
+        <loc>https://schemas.oo-ld.org/dev/modules/quantities/quantityvalue/voltage/</loc>
       </url>
       <url>
         <loc>https://schemas.oo-ld.org/dev/mapping-sets/</loc>

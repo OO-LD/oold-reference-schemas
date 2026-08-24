@@ -2,7 +2,7 @@
   "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
   "$id": "Time.schema.json",
   "x-oold-uuid": "d06f35fd-0b42-54db-a2e6-1c329204346d",
-  "x-oold-version": "0.1.0",
+  "x-oold-version": "0.2.0",
   "title": "Time",
   "examples": [
     {
@@ -10,7 +10,7 @@
         "Time"
       ],
       "value": 12.7,
-      "unit": "SEC",
+      "unit": "second",
       "standard_uncertainty": 0.05
     }
   ],
@@ -24,9 +24,9 @@
     {
       "qkind": "http://qudt.org/vocab/quantitykind/",
       "Time": "qkind:Time",
-      "SEC": "qunit:SEC",
-      "MilliSEC": "qunit:MilliSEC",
-      "HR": "qunit:HR"
+      "second": "qunit:SEC",
+      "milli_second": "qunit:MilliSEC",
+      "hour": "qunit:HR"
     }
   ],
   "properties": {
@@ -37,16 +37,11 @@
     },
     "unit": {
       "enum": [
-        "SEC",
-        "MilliSEC",
-        "HR"
-      ],
-      "default": "SEC",
-      "x-enum-varnames": [
         "second",
         "milli_second",
         "hour"
-      ]
+      ],
+      "default": "second"
     }
   },
   "x-oold-context": {
@@ -60,7 +55,7 @@
         }
       }
     },
-    "SEC": {
+    "second": {
       "emmo:Second": {
         "x-oold-sssom": {
           "predicate_id": "skos:exactMatch",
@@ -75,7 +70,7 @@
         }
       }
     },
-    "MilliSEC": {
+    "milli_second": {
       "emmo:MilliSecond": {
         "x-oold-sssom": {
           "predicate_id": "skos:exactMatch",
@@ -90,7 +85,7 @@
         }
       }
     },
-    "HR": {
+    "hour": {
       "emmo:Hour": {
         "x-oold-sssom": {
           "predicate_id": "skos:exactMatch",
