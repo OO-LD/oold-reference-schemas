@@ -34,6 +34,24 @@ def canonical(value):
     return value
 
 
+def undefined_terms(node, context: dict) -> set:
+    """Keys an instance uses that the context does not define.
+
+    The round-trip cannot see these on its own: an undefined term is dropped on the way
+    out and missing on the way back, so both sides agree on a graph that lost the data.
+    """
+    missing = set()
+    if isinstance(node, list):
+        for item in node:
+            missing |= undefined_terms(item, context)
+    elif isinstance(node, dict):
+        for key, value in node.items():
+            if not key.startswith(("@", "$")) and key not in context:
+                missing.add(key)
+            missing |= undefined_terms(value, context)
+    return missing
+
+
 def views(module_dir: Path) -> int:
     from pyld import jsonld  # noqa: PLC0415
 
@@ -62,13 +80,30 @@ def views(module_dir: Path) -> int:
             quads = jsonld.to_rdf(document, {"format": "application/n-quads"})
             back = jsonld.from_rdf(quads, {"format": "application/n-quads",
                                            "useNativeTypes": True})
-            restored = jsonld.compact(back, context)
-            lossless = canonical(instance) == canonical(restored)
+            # RDF has no nesting, so the tree comes back only when the graph is framed
+            # on the root type; compaction alone yields a flat @graph of blank nodes
+            frame = {"@context": context, "@embed": "@always"}
+            root_type = instance.get("type") or instance.get("@type")
+            if root_type:
+                frame["@type"] = root_type
+            flat = jsonld.compact(back, context)
+            restored = jsonld.frame(back, frame)
+            # A reading may legitimately change the document's shape: where a community
+            # states an edge in the other direction, the tree hangs off another node and
+            # no frame rooted at the instance's type reaches it. So the test is that the
+            # graph survives, canonicalised; the framed form is what a failure prints.
+            opts = {"algorithm": "URDNA2015", "format": "application/n-quads"}
+            missing = undefined_terms(instance, context)
+            lossless = not missing and (
+                canonical(instance) == canonical(restored)
+                or jsonld.normalize(document, opts) == jsonld.normalize(flat, opts))
             triples = len([q for q in quads.strip().split("\n") if q])
             print(f"   {label}: {'LOSSLESS' if lossless else 'LOSSY'} "
                   f"round-trip, {triples} triples")
             if not lossless:
                 failures += 1
+                if missing:
+                    print(f"     terms not defined in the context: {sorted(missing)}")
                 print(f"     declared:  {json.dumps(canonical(instance), sort_keys=True)}")
                 print(f"     restored:  {json.dumps(canonical(restored), sort_keys=True)}")
     return failures
