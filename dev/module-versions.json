@@ -1,6 +1,15 @@
 {
-  "quantities": {
+  "materials": {
     "current": "0.1",
+    "versions": [
+      {
+        "label": "dev",
+        "docs": "dev"
+      }
+    ]
+  },
+  "quantities": {
+    "current": "0.2",
     "versions": [
       {
         "label": "0.1",

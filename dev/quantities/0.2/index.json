@@ -1,0 +1,25 @@
+{
+  "@context": {
+    "dcterms": "http://purl.org/dc/terms/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "title": "dcterms:title",
+    "description": "dcterms:description",
+    "version": "owl:versionInfo",
+    "schemas": {
+      "@id": "rdfs:member",
+      "@type": "@id"
+    }
+  },
+  "@id": "https://w3id.org/oo-ld/schemas/quantities/0.2",
+  "title": "Quantities 0.2",
+  "version": "0.2.0",
+  "description": "Quantity values, units, uncertainty and value specifications. Neutral: a quantity with a unit means the same to a laboratory, an engineer and a customs declaration.",
+  "schemas": [
+    "Diameter.schema.json",
+    "Length.schema.json",
+    "MassFraction.schema.json",
+    "QuantityValue.schema.json",
+    "Time.schema.json"
+  ]
+}

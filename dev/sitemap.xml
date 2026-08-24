@@ -10,6 +10,9 @@
         <loc>https://schemas.oo-ld.org/dev/modules/</loc>
       </url>
       <url>
+        <loc>https://schemas.oo-ld.org/dev/modules/materials/composition/</loc>
+      </url>
+      <url>
         <loc>https://schemas.oo-ld.org/dev/modules/quantities/quantityvalue/</loc>
       </url>
       <url>
@@ -17,6 +20,9 @@
       </url>
       <url>
         <loc>https://schemas.oo-ld.org/dev/modules/quantities/quantityvalue/length/diameter/</loc>
+      </url>
+      <url>
+        <loc>https://schemas.oo-ld.org/dev/modules/quantities/quantityvalue/massfraction/</loc>
       </url>
       <url>
         <loc>https://schemas.oo-ld.org/dev/modules/quantities/quantityvalue/time/</loc>
