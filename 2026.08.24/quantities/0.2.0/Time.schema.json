@@ -1,0 +1,104 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Time.schema.json",
+  "x-oold-uuid": "d06f35fd-0b42-54db-a2e6-1c329204346d",
+  "x-oold-version": "0.2.0",
+  "title": "Time",
+  "examples": [
+    {
+      "type": [
+        "Time"
+      ],
+      "value": 12.7,
+      "unit": "second",
+      "standard_uncertainty": 0.05
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Time": "qkind:Time",
+      "second": "qunit:SEC",
+      "milli_second": "qunit:MilliSEC",
+      "hour": "qunit:HR"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Time"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "second",
+        "milli_second",
+        "hour"
+      ],
+      "default": "second"
+    }
+  },
+  "x-oold-context": {
+    "Time": {
+      "emmo:EMMO_d4f7d378_5e3b_468a_baa1_a7e98358cda7": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:exactMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/emmo.sssom.tsv",
+          "object_source_version": "https://w3id.org/emmo/1.0.4",
+          "comment": "Time (ISO 80000 item 3-7); Duration (EMMO_0adabf6f) is its subclass"
+        }
+      }
+    },
+    "second": {
+      "emmo:Second": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:exactMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/emmo.sssom.tsv"
+        }
+      },
+      "obo:UO_0000010": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:exactMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/pmdco.sssom.tsv",
+          "comment": "UO second; UO units are classes, punning like EMMO#377"
+        }
+      }
+    },
+    "milli_second": {
+      "emmo:MilliSecond": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:exactMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/emmo.sssom.tsv"
+        }
+      },
+      "obo:UO_0000028": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:exactMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/pmdco.sssom.tsv",
+          "comment": "UO millisecond"
+        }
+      }
+    },
+    "hour": {
+      "emmo:Hour": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:exactMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/emmo.sssom.tsv"
+        }
+      },
+      "obo:UO_0000032": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:exactMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/pmdco.sssom.tsv",
+          "comment": "UO hour"
+        }
+      }
+    }
+  }
+}

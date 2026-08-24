@@ -1,0 +1,11 @@
+{
+  "$schema": "Time.schema.json",
+  "@context": "Time.schema.json",
+  "@id": "https://example.org/m1-duration",
+  "type": [
+    "Time"
+  ],
+  "value": 12.7,
+  "unit": "second",
+  "standard_uncertainty": 0.05
+}

@@ -1,0 +1,53 @@
+# mapping_set_id: https://w3id.org/oo-ld/schemas/mappings/consensus.sssom.tsv
+# mapping_set_version: 2026.08.24
+# mapping_set_title: consensus mappings for the OO-LD reference schemas
+# license: https://creativecommons.org/publicdomain/zero/1.0/
+# mapping_provider: https://github.com/OO-LD/oold-reference-schemas
+# curie_map:
+#   emmo: https://w3id.org/emmo#
+#   qkind: http://qudt.org/vocab/quantitykind/
+#   qudt: http://qudt.org/schema/qudt/
+#   qunit: http://qudt.org/vocab/unit/
+#   semapv: https://w3id.org/semapv/vocab/
+#   skos: http://www.w3.org/2004/02/skos/core#
+subject_id	subject_label	predicate_id	object_id	object_label	mapping_justification	subject_source	subject_source_version	object_source	object_source_version	comment
+https://w3id.org/oo-ld/schemas/materials#C	C	skos:exactMatch	emmo:EMMO_a7180b5f-d46d-5751-b3bc-ae28a6655992		semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/materials	0.1.0			
+https://w3id.org/oo-ld/schemas/materials#ChemicalComposition	ChemicalComposition	skos:exactMatch	self:/$defs/ChemicalComposition		semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/materials	0.1.0			
+https://w3id.org/oo-ld/schemas/materials#Component	Component	skos:exactMatch	self:/$defs/Component		semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/materials	0.1.0			
+https://w3id.org/oo-ld/schemas/quantities#Diameter	Diameter	skos:exactMatch	qkind:Diameter	Diameter	semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/quantities	0.2.0			
+https://w3id.org/oo-ld/schemas/quantities#ElectricCurrent	ElectricCurrent	skos:exactMatch	qkind:ElectricCurrent		semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/quantities	0.2.0			
+https://w3id.org/oo-ld/schemas/materials#Fe	Fe	skos:exactMatch	emmo:EMMO_71b5082d-9908-5011-8ad0-b2ab70ffd08c		semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/materials	0.1.0			
+https://w3id.org/oo-ld/schemas/quantities#Length	Length	skos:exactMatch	qkind:Length	Length	semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/quantities	0.2.0			
+https://w3id.org/oo-ld/schemas/materials#MassFraction	MassFraction	skos:exactMatch	qkind:MassFraction		semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/materials	0.1.0			
+https://w3id.org/oo-ld/schemas/quantities#MassFraction	MassFraction	skos:exactMatch	qkind:MassFraction		semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/quantities	0.2.0			
+https://w3id.org/oo-ld/schemas/materials#Material	Material	skos:exactMatch	https://w3id.org/oo-ld/schemas/materials/0.1/Composition.schema.json		semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/materials	0.1.0			
+https://w3id.org/oo-ld/schemas/quantities#QuantityValue	QuantityValue	skos:exactMatch	qudt:QuantityValue	Quantity value	semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/quantities	0.2.0			
+https://w3id.org/oo-ld/schemas/materials#Si	Si	skos:exactMatch	emmo:EMMO_4f9670f5-14ca-53da-a1ea-9b0550a61035		semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/materials	0.1.0			
+https://w3id.org/oo-ld/schemas/quantities#Time	Time	skos:exactMatch	qkind:Time	Time	semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/quantities	0.2.0			
+https://w3id.org/oo-ld/schemas/quantities#Voltage	Voltage	skos:exactMatch	qkind:Voltage		semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/quantities	0.2.0			
+https://w3id.org/oo-ld/schemas/materials#amount	amount	skos:exactMatch	self:/$defs/Component/properties/amount		semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/materials	0.1.0			
+https://w3id.org/oo-ld/schemas/quantities#ampere	ampere	skos:exactMatch	qunit:A		semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/quantities	0.2.0			
+https://w3id.org/oo-ld/schemas/materials#components	components	skos:exactMatch	self:/$defs/ChemicalComposition/properties/components		semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/materials	0.1.0			
+https://w3id.org/oo-ld/schemas/materials#composition	composition	skos:exactMatch	self:/properties/composition		semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/materials	0.1.0			
+https://w3id.org/oo-ld/schemas/materials#constituent	constituent	skos:exactMatch	self:/$defs/Component/properties/constituent		semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/materials	0.1.0			
+https://w3id.org/oo-ld/schemas/quantities#hour	hour	skos:exactMatch	qunit:HR	Hour	semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/quantities	0.2.0			
+https://w3id.org/oo-ld/schemas/quantities#kilo_metre	kilo_metre	skos:exactMatch	qunit:KiloM	Kilometre	semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/quantities	0.2.0			
+https://w3id.org/oo-ld/schemas/quantities#metre	metre	skos:exactMatch	qunit:M	Metre	semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/quantities	0.2.0			
+https://w3id.org/oo-ld/schemas/quantities#micro_metre	micro_metre	skos:exactMatch	qunit:MicroM	Micrometre	semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/quantities	0.2.0			
+https://w3id.org/oo-ld/schemas/quantities#milli_ampere	milli_ampere	skos:exactMatch	qunit:MilliA		semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/quantities	0.2.0			
+https://w3id.org/oo-ld/schemas/quantities#milli_metre	milli_metre	skos:exactMatch	qunit:MilliM	Millimetre	semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/quantities	0.2.0			
+https://w3id.org/oo-ld/schemas/quantities#milli_second	milli_second	skos:exactMatch	qunit:MilliSEC	Millisecond	semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/quantities	0.2.0			
+https://w3id.org/oo-ld/schemas/quantities#milli_volt	milli_volt	skos:exactMatch	qunit:MilliV		semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/quantities	0.2.0			
+https://w3id.org/oo-ld/schemas/materials#part_per_million	part_per_million	skos:exactMatch	qunit:PPM		semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/materials	0.1.0			
+https://w3id.org/oo-ld/schemas/quantities#part_per_million	part_per_million	skos:exactMatch	qunit:PPM		semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/quantities	0.2.0			
+https://w3id.org/oo-ld/schemas/materials#percent	percent	skos:exactMatch	qunit:PERCENT		semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/materials	0.1.0			
+https://w3id.org/oo-ld/schemas/quantities#percent	percent	skos:exactMatch	qunit:PERCENT		semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/quantities	0.2.0			
+https://w3id.org/oo-ld/schemas/quantities#relative_standard_uncertainty	relative_standard_uncertainty	skos:exactMatch	qudt:relativeStandardUncertainty	relative standard uncertainty	semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/quantities	0.2.0			
+https://w3id.org/oo-ld/schemas/quantities#second	second	skos:exactMatch	qunit:SEC	Second	semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/quantities	0.2.0			
+https://w3id.org/oo-ld/schemas/materials#standard_uncertainty	standard_uncertainty	skos:exactMatch	qudt:standardUncertainty	standard uncertainty	semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/materials	0.1.0			
+https://w3id.org/oo-ld/schemas/quantities#standard_uncertainty	standard_uncertainty	skos:exactMatch	qudt:standardUncertainty	standard uncertainty	semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/quantities	0.2.0			
+https://w3id.org/oo-ld/schemas/materials#unit	unit	skos:exactMatch	qudt:hasUnit	has unit	semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/materials	0.1.0			
+https://w3id.org/oo-ld/schemas/quantities#unit	unit	skos:exactMatch	qudt:hasUnit	has unit	semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/quantities	0.2.0			
+https://w3id.org/oo-ld/schemas/materials#value	value	skos:exactMatch	qudt:value	value	semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/materials	0.1.0			
+https://w3id.org/oo-ld/schemas/quantities#value	value	skos:exactMatch	qudt:value	value	semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/quantities	0.2.0			
+https://w3id.org/oo-ld/schemas/quantities#volt	volt	skos:exactMatch	qunit:V		semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/quantities	0.2.0			
