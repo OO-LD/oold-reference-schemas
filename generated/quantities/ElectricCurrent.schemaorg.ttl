@@ -1,0 +1,11 @@
+PREFIX ns1: <https://example.org/>
+PREFIX qkind: <http://qudt.org/vocab/quantitykind/>
+PREFIX qunit: <http://qudt.org/vocab/unit/>
+PREFIX schema1: <http://schema.org/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+ns1:electriccurrent-example
+    a qkind:ElectricCurrent ;
+    schema1:unitCode qunit:A ;
+    schema1:value -7.5e-01 ;
+.

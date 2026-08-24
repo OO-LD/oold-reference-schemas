@@ -1,0 +1,10 @@
+PREFIX emmo: <https://w3id.org/emmo#>
+PREFIX ns1: <https://example.org/>
+PREFIX qudt: <http://qudt.org/schema/qudt/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+ns1:electriccurrent-example
+    a emmo:EMMO_c995ae70_3b84_4ebb_bcfc_69e6a281bb88 ;
+    qudt:value -7.5e-01 ;
+    emmo:EMMO_eeb06032_dd4f_476e_9da6_aa24302b7588 emmo:Ampere ;
+.
