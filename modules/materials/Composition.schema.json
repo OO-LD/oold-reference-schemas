@@ -3,34 +3,7 @@
   "$id": "Composition.schema.json",
   "x-oold-version": "0.1.0",
   "title": "Composition",
-  "description": "A material and its chemical composition: one entry per constituent, with the amount as a typed quantity. Terms in this schema's own IRI space are placeholders for a vocabulary that is not agreed yet, not a third ontology: they carry no axioms, and each records what it means in EMMO and in PMDco.",
-  "examples": [
-    {
-      "type": [
-        "Material"
-      ],
-      "composition": {
-        "type": [
-          "ChemicalComposition"
-        ],
-        "components": [
-          {
-            "type": [
-              "Component"
-            ],
-            "constituent": "Fe",
-            "amount": {
-              "type": [
-                "MassFraction"
-              ],
-              "value": 96.7,
-              "unit": "percent"
-            }
-          }
-        ]
-      }
-    }
-  ],
+  "description": "What every composition shares: components, each with an amount. The constituent is what differs, so it is declared by the subschemas. Terms in this schema's own IRI space are placeholders for a vocabulary that is not agreed yet, not a third ontology: they carry no axioms, and each records what it means in EMMO and in PMDco.",
   "type": "object",
   "properties": {
     "type": {
@@ -39,47 +12,15 @@
         "type": "string"
       },
       "default": [
-        "Material"
+        "Composition"
       ]
-    },
-    "composition": {
-      "$ref": "#/$defs/ChemicalComposition"
     }
   },
-  "required": [
-    "composition"
-  ],
   "$defs": {
-    "ChemicalComposition": {
-      "type": "object",
-      "title": "ChemicalComposition",
-      "description": "The constituents of a material and how much of each.",
-      "properties": {
-        "type": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          },
-          "default": [
-            "ChemicalComposition"
-          ]
-        },
-        "components": {
-          "type": "array",
-          "minItems": 1,
-          "items": {
-            "$ref": "#/$defs/Component"
-          }
-        }
-      },
-      "required": [
-        "components"
-      ]
-    },
     "Component": {
       "type": "object",
       "title": "Component",
-      "description": "One constituent and its amount.",
+      "description": "One constituent of a composition and how much of it there is.",
       "properties": {
         "type": {
           "type": "array",
@@ -88,15 +29,6 @@
           },
           "default": [
             "Component"
-          ]
-        },
-        "constituent": {
-          "type": "string",
-          "description": "The chemical species or compound this component is made of",
-          "examples": [
-            "Fe",
-            "Si",
-            "C"
           ]
         },
         "amount": {
@@ -137,7 +69,6 @@
       },
       "required": [
         "type",
-        "constituent",
         "amount"
       ]
     }
@@ -147,8 +78,11 @@
     "emmo": "https://w3id.org/emmo#",
     "obo": "http://purl.obolibrary.org/obo/",
     "pmd": "https://w3id.org/pmd/co/",
+    "qudt": "http://qudt.org/schema/qudt/",
+    "qunit": "http://qudt.org/vocab/unit/",
+    "qkind": "http://qudt.org/vocab/quantitykind/",
     "schema": "http://schema.org/",
-    "self": {
+    "comp": {
       "@id": "https://w3id.org/oo-ld/schemas/materials/0.1/Composition.schema.json#",
       "@prefix": true
     },
@@ -157,129 +91,23 @@
       "@id": "@type",
       "@container": "@set"
     },
-    "Material": "https://w3id.org/oo-ld/schemas/materials/0.1/Composition.schema.json",
-    "ChemicalComposition": "self:/$defs/ChemicalComposition",
-    "Component": "self:/$defs/Component",
-    "Fe": "emmo:EMMO_71b5082d-9908-5011-8ad0-b2ab70ffd08c",
-    "Si": "emmo:EMMO_4f9670f5-14ca-53da-a1ea-9b0550a61035",
-    "C": "emmo:EMMO_a7180b5f-d46d-5751-b3bc-ae28a6655992",
-    "composition": {
-      "@id": "self:/properties/composition",
-      "@type": "@id"
-    },
-    "components": {
-      "@id": "self:/$defs/ChemicalComposition/properties/components",
-      "@type": "@id",
-      "@container": "@set"
-    },
-    "constituent": {
-      "@id": "self:/$defs/Component/properties/constituent",
-      "@type": "@vocab"
-    },
+    "Composition": "https://w3id.org/oo-ld/schemas/materials/0.1/Composition.schema.json",
+    "Component": "comp:/$defs/Component",
+    "MassFraction": "qkind:MassFraction",
+    "percent": "qunit:PERCENT",
+    "part_per_million": "qunit:PPM",
     "amount": {
-      "@id": "self:/$defs/Component/properties/amount",
+      "@id": "comp:/$defs/Component/properties/amount",
       "@type": "@id"
     },
-    "qudt": "http://qudt.org/schema/qudt/",
-    "qunit": "http://qudt.org/vocab/unit/",
     "value": "qudt:value",
     "unit": {
       "@id": "qudt:hasUnit",
       "@type": "@vocab"
     },
-    "standard_uncertainty": "qudt:standardUncertainty",
-    "qkind": "http://qudt.org/vocab/quantitykind/",
-    "MassFraction": "qkind:MassFraction",
-    "percent": "qunit:PERCENT",
-    "part_per_million": "qunit:PPM"
+    "standard_uncertainty": "qudt:standardUncertainty"
   },
   "x-oold-context": {
-    "Material": {
-      "emmo:EMMO_bc37743c_37c4_4ec7_9d58_d1aae5567352": {
-        "x-oold-sssom": {
-          "predicate_id": "skos:exactMatch",
-          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/emmo.sssom.tsv",
-          "object_source_version": "https://w3id.org/emmo/1.0.4",
-          "comment": "Substance, not Material: Material is ordinary matter with bonds, so it excludes gases and solutions"
-        }
-      },
-      "pmd:PMD_0000000": {
-        "x-oold-sssom": {
-          "predicate_id": "skos:exactMatch",
-          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/pmdco.sssom.tsv",
-          "object_source_version": "https://w3id.org/pmd/co/3.1.0"
-        }
-      }
-    },
-    "ChemicalComposition": {
-      "emmo:EMMO_7efd64d1_05a1_49cd_a7f0_783ca050d4f3": {
-        "x-oold-sssom": {
-          "predicate_id": "skos:exactMatch",
-          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/emmo.sssom.tsv",
-          "comment": "ChemicalComposition, the union of total, partial and single component: a composition need not be complete"
-        }
-      },
-      "pmd:PMD_0000551": {
-        "x-oold-sssom": {
-          "predicate_id": "skos:closeMatch",
-          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/pmdco.sssom.tsv",
-          "comment": "chemical composition is a quality of the material, not a symbolic construct"
-        }
-      }
-    },
-    "Component": {
-      "emmo:EMMO_172e2c96_180b_40f8_a3e7_b624471f40c2": {
-        "x-oold-sssom": {
-          "predicate_id": "skos:closeMatch",
-          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/emmo.sssom.tsv",
-          "comment": "SingleComponentComposition"
-        }
-      },
-      "pmd:PMD_0020102": {
-        "x-oold-sssom": {
-          "predicate_id": "skos:closeMatch",
-          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/pmdco.sssom.tsv",
-          "comment": "mass ratio, renamed from mass proportion in 3.1.0; holds while the amount is a mass fraction"
-        }
-      }
-    },
-    "composition": {
-      "emmo:EMMO_51f426a6_af4a_4e91_a392_2b0bb635e2d5": {
-        "x-oold-sssom": {
-          "predicate_id": "skos:exactMatch",
-          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/emmo.sssom.tsv",
-          "comment": "hasChemicalComposition"
-        }
-      },
-      "obo:RO_0000080": {
-        "@reverse": "obo:RO_0000080",
-        "x-oold-sssom": {
-          "predicate_id": "skos:exactMatch",
-          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/pmdco.sssom.tsv",
-          "comment": "quality of, stated from the composition, so the term promotes as a reverse property"
-        }
-      }
-    },
-    "components": {
-      "emmo:EMMO_b2282816_b7a3_44c6_b2cb_3feff1ceb7fe": {
-        "x-oold-sssom": {
-          "predicate_id": "skos:exactMatch",
-          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/emmo.sssom.tsv",
-          "comment": "hasSpatialTile; PMDco reaches the fractions through the specification instead, so it keeps the placeholder term"
-        }
-      }
-    },
-    "constituent": {
-      "emmo:EMMO_18fdd2cd_4b0a_43a5_a938_66d8290a066c": {
-        "@type": "@vocab",
-        "x-oold-sssom": {
-          "predicate_id": "skos:exactMatch",
-          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/emmo.sssom.tsv",
-          "object_source_version": "https://w3id.org/emmo/1.0.4",
-          "comment": "hasSpeciesPart, 1.0.4 only; PMDco carries the species in the portion's class, which needs a node this schema does not mint"
-        }
-      }
-    },
     "amount": {
       "emmo:EMMO_95d706e4_8b16_48a1_8dfd_40ccd4df1c12": {
         "x-oold-sssom": {

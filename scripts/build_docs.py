@@ -17,7 +17,7 @@ import re
 import shutil
 from pathlib import Path
 
-from _shared import context_of, mapping_sets, module_version, read, set_name
+from _shared import chain, context_of, mapping_sets, module_version, read, set_name
 
 ROOT = Path(__file__).resolve().parent.parent
 DOCS = ROOT / "docs"
@@ -102,28 +102,6 @@ def synth_instance(name: str, schema: dict, schemas: list[dict]) -> dict | None:
         return None
     return {"$schema": f"{name}.schema.json", "@context": f"{name}.schema.json",
             "@id": "https://example.org/instance", **doc}
-
-
-def chain(schema_file: Path) -> list[Path]:
-    """A schema's inheritance chain, base first, by following allOf $refs.
-
-    The RDF readings need the whole chain: a subschema inherits the terms and the mappings
-    of everything it extends, and expanding an instance against its own context alone
-    produces an empty graph.
-    """
-    out: list[Path] = []
-
-    def walk(f: Path) -> None:
-        if not f.is_file() or f in out:
-            return
-        d = json.loads(f.read_text(encoding="utf-8"))
-        for ref in (d.get("allOf") or []):
-            if isinstance(ref, dict) and isinstance(ref.get("$ref"), str):
-                walk(f.parent / ref["$ref"])
-        out.append(f)
-
-    walk(schema_file)
-    return out
 
 
 def write_rdf(module: str, name: str, schema_files: list[Path], instance: Path | dict) -> int:

@@ -1,0 +1,23 @@
+{
+  "$schema": "ChemicalComposition.schema.json",
+  "@context": "ChemicalComposition.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "ChemicalComposition"
+  ],
+  "components": [
+    {
+      "type": [
+        "ChemicalComponent"
+      ],
+      "species": "Fe",
+      "amount": {
+        "type": [
+          "MassFraction"
+        ],
+        "value": 96.7,
+        "unit": "percent"
+      }
+    }
+  ]
+}

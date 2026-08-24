@@ -1,0 +1,130 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Material.schema.json",
+  "x-oold-version": "0.1.0",
+  "title": "Material",
+  "description": "A material and what it is made of. The two compositions are separate claims: an elemental analysis names species, a recipe names ingredients, and a material may carry either or both.",
+  "examples": [
+    {
+      "type": [
+        "Material"
+      ],
+      "chemical_composition": {
+        "type": [
+          "ChemicalComposition"
+        ],
+        "components": [
+          {
+            "type": [
+              "ChemicalComponent"
+            ],
+            "species": "Fe",
+            "amount": {
+              "type": [
+                "MassFraction"
+              ],
+              "value": 96.7,
+              "unit": "percent"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "Material"
+      ]
+    },
+    "chemical_composition": {
+      "$ref": "ChemicalComposition.schema.json"
+    },
+    "material_composition": {
+      "$ref": "MaterialComposition.schema.json"
+    }
+  },
+  "anyOf": [
+    {
+      "required": [
+        "chemical_composition"
+      ]
+    },
+    {
+      "required": [
+        "material_composition"
+      ]
+    }
+  ],
+  "@context": [
+    "ChemicalComposition.schema.json",
+    "MaterialComposition.schema.json",
+    {
+      "mat": {
+        "@id": "https://w3id.org/oo-ld/schemas/materials/0.1/Material.schema.json#",
+        "@prefix": true
+      },
+      "Material": "https://w3id.org/oo-ld/schemas/materials/0.1/Material.schema.json",
+      "chemical_composition": {
+        "@id": "mat:/properties/chemical_composition",
+        "@type": "@id"
+      },
+      "material_composition": {
+        "@id": "mat:/properties/material_composition",
+        "@type": "@id"
+      }
+    }
+  ],
+  "x-oold-context": {
+    "Material": {
+      "emmo:EMMO_bc37743c_37c4_4ec7_9d58_d1aae5567352": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:exactMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/emmo.sssom.tsv",
+          "object_source_version": "https://w3id.org/emmo/1.0.4",
+          "comment": "Substance, not Material: Material is ordinary matter with bonds, so it excludes gases and solutions"
+        }
+      },
+      "pmd:PMD_0000000": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:exactMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/pmdco.sssom.tsv",
+          "object_source_version": "https://w3id.org/pmd/co/3.1.0"
+        }
+      }
+    },
+    "chemical_composition": {
+      "emmo:EMMO_51f426a6_af4a_4e91_a392_2b0bb635e2d5": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:exactMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/emmo.sssom.tsv",
+          "object_source_version": "https://w3id.org/emmo/1.0.4",
+          "comment": "hasChemicalComposition"
+        }
+      },
+      "obo:RO_0000080": {
+        "@reverse": "obo:RO_0000080",
+        "x-oold-sssom": {
+          "predicate_id": "skos:exactMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/pmdco.sssom.tsv",
+          "comment": "quality of, stated from the composition"
+        }
+      }
+    },
+    "material_composition": {
+      "obo:RO_0000080": {
+        "@reverse": "obo:RO_0000080",
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/pmdco.sssom.tsv",
+          "comment": "quality of; EMMO has no composition over portions"
+        }
+      }
+    }
+  }
+}

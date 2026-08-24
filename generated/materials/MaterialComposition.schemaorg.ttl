@@ -1,0 +1,29 @@
+PREFIX ns1: <https://example.org/>
+PREFIX ns2: <https://example.org/material/>
+PREFIX ns3: <https://schemas.oo-ld.org/.well-known/genid/>
+PREFIX ns4: <https://w3id.org/oo-ld/schemas/materials/0.1/Composition.schema.json#/$defs/Component/properties/>
+PREFIX ns5: <https://w3id.org/oo-ld/schemas/materials/0.1/>
+PREFIX ns6: <https://w3id.org/oo-ld/schemas/materials/0.1/MaterialComposition.schema.json#/properties/>
+PREFIX ns7: <https://w3id.org/oo-ld/schemas/materials/0.1/MaterialComposition.schema.json#/properties/constituents/>
+PREFIX ns8: <https://w3id.org/oo-ld/schemas/materials/0.1/MaterialComposition.schema.json#/properties/constituents/items/properties/>
+PREFIX qkind: <http://qudt.org/vocab/quantitykind/>
+PREFIX qunit: <http://qudt.org/vocab/unit/>
+PREFIX schema1: <http://schema.org/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+ns1:instance
+    a ns5:MaterialComposition.schema.json ;
+    ns6:constituents ns3:c14n0 ;
+.
+
+ns3:c14n0
+    a ns7:items ;
+    ns4:amount ns3:c14n1 ;
+    ns8:material ns2:batch1 ;
+.
+
+ns3:c14n1
+    a qkind:MassFraction ;
+    schema1:unitCode qunit:PERCENT ;
+    schema1:value 9.67e+01 ;
+.

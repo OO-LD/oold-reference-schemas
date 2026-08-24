@@ -23,7 +23,12 @@ nav = [
     { "Modules" = [
         { "Overview" = "modules/index.md" },
         { "Materials" = [
-            { "Composition" = "modules/materials/composition/index.md" },
+            { "Composition" = [
+                "modules/materials/composition/index.md",
+                { "ChemicalComposition" = "modules/materials/composition/chemicalcomposition/index.md" },
+                { "MaterialComposition" = "modules/materials/composition/materialcomposition/index.md" },
+            ]},
+            { "Material" = "modules/materials/material/index.md" },
         ]},
         { "Quantities" = [
             { "QuantityValue" = [

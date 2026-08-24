@@ -1,0 +1,25 @@
+PREFIX emmo: <https://w3id.org/emmo#>
+PREFIX ns1: <https://example.org/>
+PREFIX ns2: <https://schemas.oo-ld.org/.well-known/genid/>
+PREFIX ns3: <https://w3id.org/oo-ld/schemas/materials/0.1/ChemicalComposition.schema.json#/properties/>
+PREFIX ns4: <https://w3id.org/oo-ld/schemas/materials/0.1/ChemicalComposition.schema.json#/properties/components/items/properties/>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX pmd: <https://w3id.org/pmd/co/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+ns1:instance
+    a pmd:PMD_0000551 ;
+    ns3:components ns2:c14n0 ;
+.
+
+ns2:c14n0
+    a pmd:PMD_0020102 ;
+    ns4:species emmo:EMMO_71b5082d-9908-5011-8ad0-b2ab70ffd08c ;
+    pmd:PMD_0000077 ns2:c14n1 ;
+.
+
+ns2:c14n1
+    a pmd:PMD_0025997 ;
+    obo:IAO_0000039 obo:UO_0000163 ;
+    obo:OBI_0001937 9.67e+01 ;
+.

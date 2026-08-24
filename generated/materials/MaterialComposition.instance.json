@@ -1,0 +1,23 @@
+{
+  "$schema": "MaterialComposition.schema.json",
+  "@context": "MaterialComposition.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "MaterialComposition"
+  ],
+  "constituents": [
+    {
+      "type": [
+        "MaterialComponent"
+      ],
+      "material": "https://example.org/material/batch1",
+      "amount": {
+        "type": [
+          "MassFraction"
+        ],
+        "value": 96.7,
+        "unit": "percent"
+      }
+    }
+  ]
+}

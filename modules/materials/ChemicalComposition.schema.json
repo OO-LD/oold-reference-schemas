@@ -1,0 +1,163 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ChemicalComposition.schema.json",
+  "x-oold-version": "0.1.0",
+  "title": "ChemicalComposition",
+  "description": "The chemical species a substance is made of and how much of each. As analysed, typically: an elemental analysis names species, not ingredients.",
+  "examples": [
+    {
+      "type": [
+        "ChemicalComposition"
+      ],
+      "components": [
+        {
+          "type": [
+            "ChemicalComponent"
+          ],
+          "species": "Fe",
+          "amount": {
+            "type": [
+              "MassFraction"
+            ],
+            "value": 96.7,
+            "unit": "percent"
+          }
+        }
+      ]
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Composition.schema.json"
+    }
+  ],
+  "@context": [
+    "Composition.schema.json",
+    {
+      "chem": {
+        "@id": "https://w3id.org/oo-ld/schemas/materials/0.1/ChemicalComposition.schema.json#",
+        "@prefix": true
+      },
+      "ChemicalComposition": "https://w3id.org/oo-ld/schemas/materials/0.1/ChemicalComposition.schema.json",
+      "ChemicalComponent": "chem:/properties/components/items",
+      "Fe": "emmo:EMMO_71b5082d-9908-5011-8ad0-b2ab70ffd08c",
+      "Si": "emmo:EMMO_4f9670f5-14ca-53da-a1ea-9b0550a61035",
+      "C": "emmo:EMMO_a7180b5f-d46d-5751-b3bc-ae28a6655992",
+      "components": {
+        "@id": "chem:/properties/components",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "species": {
+        "@id": "chem:/properties/components/items/properties/species",
+        "@type": "@vocab"
+      }
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ChemicalComposition"
+      ]
+    },
+    "components": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "allOf": [
+          {
+            "$ref": "Composition.schema.json#/$defs/Component"
+          }
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "default": [
+              "ChemicalComponent"
+            ]
+          },
+          "species": {
+            "type": "string",
+            "description": "The chemical species or compound, as a species alias",
+            "examples": [
+              "Fe",
+              "Si",
+              "C"
+            ]
+          }
+        },
+        "required": [
+          "type",
+          "species",
+          "amount"
+        ]
+      }
+    }
+  },
+  "required": [
+    "components"
+  ],
+  "x-oold-context": {
+    "ChemicalComposition": {
+      "emmo:EMMO_7efd64d1_05a1_49cd_a7f0_783ca050d4f3": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:exactMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/emmo.sssom.tsv",
+          "object_source_version": "https://w3id.org/emmo/1.0.4",
+          "comment": "ChemicalComposition, the union of total, partial and single component"
+        }
+      },
+      "pmd:PMD_0000551": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/pmdco.sssom.tsv",
+          "object_source_version": "https://w3id.org/pmd/co/3.1.0",
+          "comment": "chemical composition is a quality of the material, not a symbolic construct"
+        }
+      }
+    },
+    "ChemicalComponent": {
+      "emmo:EMMO_172e2c96_180b_40f8_a3e7_b624471f40c2": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/emmo.sssom.tsv",
+          "object_source_version": "https://w3id.org/emmo/1.0.4",
+          "comment": "SingleComponentComposition"
+        }
+      },
+      "pmd:PMD_0020102": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/pmdco.sssom.tsv",
+          "object_source_version": "https://w3id.org/pmd/co/3.1.0",
+          "comment": "mass ratio, while the amount is a mass fraction"
+        }
+      }
+    },
+    "components": {
+      "emmo:EMMO_b2282816_b7a3_44c6_b2cb_3feff1ceb7fe": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:exactMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/emmo.sssom.tsv",
+          "object_source_version": "https://w3id.org/emmo/1.0.4",
+          "comment": "hasSpatialTile"
+        }
+      }
+    },
+    "species": {
+      "emmo:EMMO_18fdd2cd_4b0a_43a5_a938_66d8290a066c": {
+        "@type": "@vocab",
+        "x-oold-sssom": {
+          "predicate_id": "skos:exactMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/emmo.sssom.tsv",
+          "object_source_version": "https://w3id.org/emmo/1.0.4",
+          "comment": "hasSpeciesPart, 1.0.4 only"
+        }
+      }
+    }
+  }
+}

@@ -22,6 +22,46 @@ def read(path: Path) -> dict:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+def chain(schema_file: Path) -> list[Path]:
+    """A schema and every schema whose terms it needs, base first.
+
+    A reading needs every term the document can use, and a schema reaches terms three ways:
+    it extends a base with `allOf`, it lists another schema in its `@context`, and it points
+    a property at another schema with `$ref`. Following only `allOf` leaves the terms of an
+    embedded object undefined, so those keys are silently dropped on the way to RDF.
+    """
+    out: list[Path] = []
+
+    def refs(node) -> list[str]:
+        found = []
+        if isinstance(node, dict):
+            target = node.get("$ref")
+            if isinstance(target, str) and target.endswith(".schema.json"):
+                found.append(target.split("#", 1)[0])
+            for value in node.values():
+                found += refs(value)
+        elif isinstance(node, list):
+            for value in node:
+                found += refs(value)
+        return found
+
+    def walk(f: Path) -> None:
+        if not f.is_file() or f in out:
+            return
+        schema = read(f)
+        context = schema.get("@context")
+        parts = context if isinstance(context, list) else [context]
+        for entry in parts:
+            if isinstance(entry, str) and entry.endswith(".schema.json"):
+                walk(f.parent / entry)
+        for target in refs(schema):
+            walk(f.parent / target)
+        out.append(f)
+
+    walk(schema_file)
+    return out
+
+
 def set_name(iri: str) -> str:
     """Short name of a mapping set, from its identifier."""
     return iri.rstrip("/").rsplit("/", 1)[-1].removesuffix(".sssom.tsv")

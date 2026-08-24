@@ -16,25 +16,9 @@ import re
 import sys
 from pathlib import Path
 
-from _shared import MODULES, context_of, read
+from _shared import MODULES, chain, context_of, read
 
 NAME = re.compile(r"^[a-z][a-z0-9_]*$")
-
-
-def chain(schema_file: Path) -> list[Path]:
-    """A schema and everything it extends, base first."""
-    out: list[Path] = []
-
-    def walk(f: Path) -> None:
-        if not f.is_file() or f in out:
-            return
-        for ref in (read(f).get("allOf") or []):
-            if isinstance(ref, dict) and isinstance(ref.get("$ref"), str):
-                walk(f.parent / ref["$ref"])
-        out.append(f)
-
-    walk(schema_file)
-    return out
 
 
 def coercion(context: dict, term: str) -> str | None:

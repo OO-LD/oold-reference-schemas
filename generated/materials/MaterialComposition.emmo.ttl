@@ -1,0 +1,27 @@
+PREFIX emmo: <https://w3id.org/emmo#>
+PREFIX ns1: <https://example.org/>
+PREFIX ns2: <https://example.org/material/>
+PREFIX ns3: <https://schemas.oo-ld.org/.well-known/genid/>
+PREFIX ns4: <https://w3id.org/oo-ld/schemas/materials/0.1/>
+PREFIX ns5: <https://w3id.org/oo-ld/schemas/materials/0.1/MaterialComposition.schema.json#/properties/>
+PREFIX ns6: <https://w3id.org/oo-ld/schemas/materials/0.1/MaterialComposition.schema.json#/properties/constituents/>
+PREFIX ns7: <https://w3id.org/oo-ld/schemas/materials/0.1/MaterialComposition.schema.json#/properties/constituents/items/properties/>
+PREFIX qudt: <http://qudt.org/schema/qudt/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+ns1:instance
+    a ns4:MaterialComposition.schema.json ;
+    ns5:constituents ns3:c14n0 ;
+.
+
+ns3:c14n0
+    a ns6:items ;
+    emmo:EMMO_95d706e4_8b16_48a1_8dfd_40ccd4df1c12 ns3:c14n1 ;
+    ns7:material ns2:batch1 ;
+.
+
+ns3:c14n1
+    a emmo:EMMO_7c055d65_2929_40e1_af4f_4bf10995ad50 ;
+    qudt:value 9.67e+01 ;
+    emmo:EMMO_eeb06032_dd4f_476e_9da6_aa24302b7588 emmo:WeightPercent ;
+.
