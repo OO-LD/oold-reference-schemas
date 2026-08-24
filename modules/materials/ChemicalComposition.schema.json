@@ -35,10 +35,10 @@
     "Composition.schema.json",
     {
       "chem": {
-        "@id": "https://w3id.org/oo-ld/schemas/materials/0.1/ChemicalComposition.schema.json#",
+        "@id": "https://w3id.org/oo-ld/schemas/materials/0.2/ChemicalComposition.schema.json#",
         "@prefix": true
       },
-      "ChemicalComposition": "https://w3id.org/oo-ld/schemas/materials/0.1/ChemicalComposition.schema.json",
+      "ChemicalComposition": "https://w3id.org/oo-ld/schemas/materials/0.2/ChemicalComposition.schema.json",
       "ChemicalComponent": "chem:/properties/components/items",
       "Fe": "emmo:EMMO_71b5082d-9908-5011-8ad0-b2ab70ffd08c",
       "Si": "emmo:EMMO_4f9670f5-14ca-53da-a1ea-9b0550a61035",

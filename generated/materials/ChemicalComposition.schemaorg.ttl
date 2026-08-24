@@ -1,11 +1,11 @@
 PREFIX emmo: <https://w3id.org/emmo#>
 PREFIX ns1: <https://example.org/>
 PREFIX ns2: <https://schemas.oo-ld.org/.well-known/genid/>
-PREFIX ns3: <https://w3id.org/oo-ld/schemas/materials/0.1/>
-PREFIX ns4: <https://w3id.org/oo-ld/schemas/materials/0.1/ChemicalComposition.schema.json#/properties/>
-PREFIX ns5: <https://w3id.org/oo-ld/schemas/materials/0.1/ChemicalComposition.schema.json#/properties/components/>
-PREFIX ns6: <https://w3id.org/oo-ld/schemas/materials/0.1/ChemicalComposition.schema.json#/properties/components/items/properties/>
-PREFIX ns7: <https://w3id.org/oo-ld/schemas/materials/0.1/Composition.schema.json#/$defs/Component/properties/>
+PREFIX ns3: <https://w3id.org/oo-ld/schemas/materials/0.2/>
+PREFIX ns4: <https://w3id.org/oo-ld/schemas/materials/0.2/ChemicalComposition.schema.json#/properties/>
+PREFIX ns5: <https://w3id.org/oo-ld/schemas/materials/0.2/ChemicalComposition.schema.json#/properties/components/>
+PREFIX ns6: <https://w3id.org/oo-ld/schemas/materials/0.2/ChemicalComposition.schema.json#/properties/components/items/properties/>
+PREFIX ns7: <https://w3id.org/oo-ld/schemas/materials/0.2/Composition.schema.json#/$defs/Component/properties/>
 PREFIX qkind: <http://qudt.org/vocab/quantitykind/>
 PREFIX qunit: <http://qudt.org/vocab/unit/>
 PREFIX schema1: <http://schema.org/>

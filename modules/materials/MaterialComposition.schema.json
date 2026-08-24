@@ -35,10 +35,10 @@
     "Composition.schema.json",
     {
       "matcomp": {
-        "@id": "https://w3id.org/oo-ld/schemas/materials/0.1/MaterialComposition.schema.json#",
+        "@id": "https://w3id.org/oo-ld/schemas/materials/0.2/MaterialComposition.schema.json#",
         "@prefix": true
       },
-      "MaterialComposition": "https://w3id.org/oo-ld/schemas/materials/0.1/MaterialComposition.schema.json",
+      "MaterialComposition": "https://w3id.org/oo-ld/schemas/materials/0.2/MaterialComposition.schema.json",
       "MaterialComponent": "matcomp:/properties/constituents/items",
       "constituents": {
         "@id": "matcomp:/properties/constituents",

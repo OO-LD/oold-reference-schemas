@@ -1,6 +1,10 @@
+PREFIX emmo: <https://w3id.org/emmo#>
 PREFIX ns1: <https://example.org/>
-PREFIX ns2: <https://w3id.org/oo-ld/schemas/materials/0.1/>
+PREFIX qudt: <http://qudt.org/schema/qudt/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 ns1:instance
-    a ns2:Composition.schema.json ;
+    a emmo:EMMO_7c055d65_2929_40e1_af4f_4bf10995ad50 ;
+    qudt:value 9.67e+01 ;
+    emmo:EMMO_eeb06032_dd4f_476e_9da6_aa24302b7588 emmo:WeightPercent ;
 .

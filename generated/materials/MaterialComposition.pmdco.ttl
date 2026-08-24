@@ -1,8 +1,8 @@
 PREFIX ns1: <https://example.org/>
 PREFIX ns2: <https://example.org/material/>
 PREFIX ns3: <https://schemas.oo-ld.org/.well-known/genid/>
-PREFIX ns4: <https://w3id.org/oo-ld/schemas/materials/0.1/>
-PREFIX ns5: <https://w3id.org/oo-ld/schemas/materials/0.1/MaterialComposition.schema.json#/properties/>
+PREFIX ns4: <https://w3id.org/oo-ld/schemas/materials/0.2/>
+PREFIX ns5: <https://w3id.org/oo-ld/schemas/materials/0.2/MaterialComposition.schema.json#/properties/>
 PREFIX obo: <http://purl.obolibrary.org/obo/>
 PREFIX pmd: <https://w3id.org/pmd/co/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>

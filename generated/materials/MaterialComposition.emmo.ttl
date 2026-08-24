@@ -2,10 +2,10 @@ PREFIX emmo: <https://w3id.org/emmo#>
 PREFIX ns1: <https://example.org/>
 PREFIX ns2: <https://example.org/material/>
 PREFIX ns3: <https://schemas.oo-ld.org/.well-known/genid/>
-PREFIX ns4: <https://w3id.org/oo-ld/schemas/materials/0.1/>
-PREFIX ns5: <https://w3id.org/oo-ld/schemas/materials/0.1/MaterialComposition.schema.json#/properties/>
-PREFIX ns6: <https://w3id.org/oo-ld/schemas/materials/0.1/MaterialComposition.schema.json#/properties/constituents/>
-PREFIX ns7: <https://w3id.org/oo-ld/schemas/materials/0.1/MaterialComposition.schema.json#/properties/constituents/items/properties/>
+PREFIX ns4: <https://w3id.org/oo-ld/schemas/materials/0.2/>
+PREFIX ns5: <https://w3id.org/oo-ld/schemas/materials/0.2/MaterialComposition.schema.json#/properties/>
+PREFIX ns6: <https://w3id.org/oo-ld/schemas/materials/0.2/MaterialComposition.schema.json#/properties/constituents/>
+PREFIX ns7: <https://w3id.org/oo-ld/schemas/materials/0.2/MaterialComposition.schema.json#/properties/constituents/items/properties/>
 PREFIX qudt: <http://qudt.org/schema/qudt/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 

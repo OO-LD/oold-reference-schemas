@@ -1,7 +1,7 @@
 {
   "name": "materials",
   "title": "Materials",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "status": "draft",
   "scope": "Chemical composition, structure and microstructure, material properties. Domain-specific: it sits on top of the neutral modules rather than replacing them."
 }

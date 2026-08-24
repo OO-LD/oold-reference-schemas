@@ -1,11 +1,11 @@
 PREFIX ns1: <https://example.org/>
 PREFIX ns2: <https://example.org/material/>
 PREFIX ns3: <https://schemas.oo-ld.org/.well-known/genid/>
-PREFIX ns4: <https://w3id.org/oo-ld/schemas/materials/0.1/Composition.schema.json#/$defs/Component/properties/>
-PREFIX ns5: <https://w3id.org/oo-ld/schemas/materials/0.1/>
-PREFIX ns6: <https://w3id.org/oo-ld/schemas/materials/0.1/MaterialComposition.schema.json#/properties/>
-PREFIX ns7: <https://w3id.org/oo-ld/schemas/materials/0.1/MaterialComposition.schema.json#/properties/constituents/>
-PREFIX ns8: <https://w3id.org/oo-ld/schemas/materials/0.1/MaterialComposition.schema.json#/properties/constituents/items/properties/>
+PREFIX ns4: <https://w3id.org/oo-ld/schemas/materials/0.2/Composition.schema.json#/$defs/Component/properties/>
+PREFIX ns5: <https://w3id.org/oo-ld/schemas/materials/0.2/>
+PREFIX ns6: <https://w3id.org/oo-ld/schemas/materials/0.2/MaterialComposition.schema.json#/properties/>
+PREFIX ns7: <https://w3id.org/oo-ld/schemas/materials/0.2/MaterialComposition.schema.json#/properties/constituents/>
+PREFIX ns8: <https://w3id.org/oo-ld/schemas/materials/0.2/MaterialComposition.schema.json#/properties/constituents/items/properties/>
 PREFIX qkind: <http://qudt.org/vocab/quantitykind/>
 PREFIX qunit: <http://qudt.org/vocab/unit/>
 PREFIX schema1: <http://schema.org/>

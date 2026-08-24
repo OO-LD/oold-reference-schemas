@@ -9,7 +9,11 @@ PY := uv run --with pyld --with rdflib==7.6.0
 export PYTHONHASHSEED = 0
 
 VALIDATOR ?= .oold-schema
-OOLD_VERSION ?= v1.0.0-rc.2
+# The validator is a dependency, not a copy kept here. oold-python resolves a remote
+# $$ref through its redirect, which the Node validator does not, and cross-module references
+# are how a module reuses another one's schemas.
+OOLD_PY_VERSION ?= 0.18.0
+OOLD := uvx --from "oold[validation]==$(OOLD_PY_VERSION)" oold
 
 .PHONY: all generate mappings docs pages ontologies labels bump check validate serve clean release help
 
@@ -73,13 +77,13 @@ check:
 	@if grep -rnE '\{\{+ *(oold_|inline_file|example|vocabulary|render_schema|sssom_|mapping_|download)' site/; then 		echo "unrendered macro call in the built site" >&2; exit 1; 	fi
 
 validate:
-	@test -d $(VALIDATOR) || git clone --quiet --depth 1 --branch $(OOLD_VERSION) \
-		https://github.com/OO-LD/oold-schema.git $(VALIDATOR)
-	@npm ci --prefix $(VALIDATOR) --silent || npm install --prefix $(VALIDATOR) --silent
 	@for dir in modules/*/; do \
 		ls $$dir*.schema.json >/dev/null 2>&1 || continue; \
-		node $(VALIDATOR)/scripts/validate.mjs $$dir || exit 1; \
-		ls $$dir*.instance.json >/dev/null 2>&1 || continue; \
+		$(OOLD) validate $$dir || exit 1; \
+		for instance in $$dir*.instance.json; do \
+			test -e "$$instance" || continue; \
+			$(OOLD) validate-instance $$instance || exit 1; \
+		done; \
 		uv run --with pyld scripts/effective_views.py $$dir || exit 1; \
 	done
 

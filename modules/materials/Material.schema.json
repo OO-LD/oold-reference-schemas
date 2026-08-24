@@ -66,10 +66,10 @@
     "MaterialComposition.schema.json",
     {
       "mat": {
-        "@id": "https://w3id.org/oo-ld/schemas/materials/0.1/Material.schema.json#",
+        "@id": "https://w3id.org/oo-ld/schemas/materials/0.2/Material.schema.json#",
         "@prefix": true
       },
-      "Material": "https://w3id.org/oo-ld/schemas/materials/0.1/Material.schema.json",
+      "Material": "https://w3id.org/oo-ld/schemas/materials/0.2/Material.schema.json",
       "chemical_composition": {
         "@id": "mat:/properties/chemical_composition",
         "@type": "@id"

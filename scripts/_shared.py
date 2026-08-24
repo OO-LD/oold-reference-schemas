@@ -36,7 +36,7 @@ def chain(schema_file: Path) -> list[Path]:
         found = []
         if isinstance(node, dict):
             target = node.get("$ref")
-            if isinstance(target, str) and target.endswith(".schema.json"):
+            if isinstance(target, str) and ".schema.json" in target:
                 found.append(target.split("#", 1)[0])
             for value in node.values():
                 found += refs(value)
@@ -45,6 +45,23 @@ def chain(schema_file: Path) -> list[Path]:
                 found += refs(value)
         return found
 
+    def local(f: Path, target: str) -> Path:
+        """Where a reference lives in this tree.
+
+        A cross-module reference names the published IRI, since that is what resolves for a
+        consumer. In the working tree the same schema is a file, and the file is the source
+        of truth, so a published IRI of a module kept here is read from disk rather than
+        fetched: the checks stay offline and see the version being edited.
+        """
+        if target.startswith("https://w3id.org/oo-ld/schemas/"):
+            parts = target[len("https://w3id.org/oo-ld/schemas/"):].split("/")
+            if len(parts) == 3:
+                module, _version, name = parts
+                candidate = MODULES / module / name
+                if candidate.is_file():
+                    return candidate
+        return f.parent / target
+
     def walk(f: Path) -> None:
         if not f.is_file() or f in out:
             return
@@ -52,10 +69,10 @@ def chain(schema_file: Path) -> list[Path]:
         context = schema.get("@context")
         parts = context if isinstance(context, list) else [context]
         for entry in parts:
-            if isinstance(entry, str) and entry.endswith(".schema.json"):
-                walk(f.parent / entry)
+            if isinstance(entry, str) and ".schema.json" in entry:
+                walk(local(f, entry))
         for target in refs(schema):
-            walk(f.parent / target)
+            walk(local(f, target))
         out.append(f)
 
     walk(schema_file)

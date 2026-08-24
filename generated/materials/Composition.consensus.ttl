@@ -1,6 +1,11 @@
 PREFIX ns1: <https://example.org/>
-PREFIX ns2: <https://w3id.org/oo-ld/schemas/materials/0.1/>
+PREFIX qkind: <http://qudt.org/vocab/quantitykind/>
+PREFIX qudt: <http://qudt.org/schema/qudt/>
+PREFIX qunit: <http://qudt.org/vocab/unit/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 ns1:instance
-    a ns2:Composition.schema.json ;
+    a qkind:MassFraction ;
+    qudt:hasUnit qunit:PERCENT ;
+    qudt:value 9.67e+01 ;
 .

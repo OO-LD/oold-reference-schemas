@@ -1,8 +1,10 @@
 {
-  "$schema": "type.schema.json",
-  "@context": "type.schema.json",
+  "$schema": "Composition.schema.json",
+  "@context": "Composition.schema.json",
   "@id": "https://example.org/instance",
   "type": [
-    "Composition"
-  ]
+    "MassFraction"
+  ],
+  "value": 96.7,
+  "unit": "percent"
 }
