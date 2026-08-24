@@ -1,0 +1,10 @@
+{
+  "$schema": "MassFraction.schema.json",
+  "@context": "MassFraction.schema.json",
+  "@id": "https://example.org/steel-c-content",
+  "type": [
+    "MassFraction"
+  ],
+  "value": 120,
+  "unit": "part_per_million"
+}

@@ -1,0 +1,54 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Diameter.schema.json",
+  "x-oold-uuid": "805bf901-6ac5-5933-bcb2-f133b0b1b9bf",
+  "x-oold-version": "0.1.1",
+  "title": "Diameter",
+  "description": "Length taken across a round object through its centre.",
+  "examples": [
+    {
+      "type": [
+        "Diameter"
+      ],
+      "value": 20.1,
+      "unit": "milli_metre"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Length.schema.json"
+    }
+  ],
+  "@context": [
+    "Length.schema.json",
+    {
+      "Diameter": "qkind:Diameter"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Diameter"
+      ]
+    }
+  },
+  "x-oold-context": {
+    "Diameter": {
+      "emmo:EMMO_c1c8ac3c_8a1c_4777_8e0b_14c1f9f9b0c6": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:exactMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/emmo.sssom.tsv",
+          "object_source_version": "https://w3id.org/emmo/1.0.4",
+          "comment": "EMMO Diameter, ISO 80000 item 3-1.5"
+        }
+      },
+      "obo:PATO_0001334": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/pmdco.sssom.tsv",
+          "comment": "PATO diameter is a length quality of a bearer, not a value with a unit"
+        }
+      }
+    }
+  }
+}
