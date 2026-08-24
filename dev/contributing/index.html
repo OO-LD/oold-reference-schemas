@@ -1409,6 +1409,23 @@ parent is moved with its content intact.</p>
 <li>every community alternative goes in <code>x-oold-context</code>, tagged with its
   <code>mapping_set_id</code> and the exact ontology version it was checked against.</li>
 </ul>
+<p>A value alias is a term whose values are vocabulary entries rather than free text, coerced
+with <code>@vocab</code>: <code>unit</code> is one, and <code>SEC</code> or <code>PERCENT</code> are its members. List them as an <code>enum</code>
+of the vocabulary's own local names, and give each one a name in <code>x-enum-varnames</code>, in the
+same order:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">"unit"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">"enum"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"SEC"</span><span class="p">,</span><span class="w"> </span><span class="s2">"MilliSEC"</span><span class="p">,</span><span class="w"> </span><span class="s2">"HR"</span><span class="p">],</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nt">"x-enum-varnames"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"second"</span><span class="p">,</span><span class="w"> </span><span class="s2">"milli_second"</span><span class="p">,</span><span class="w"> </span><span class="s2">"hour"</span><span class="p">]</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="p">}</span>
+</code></pre></div>
+<p>The names are what a generated binding uses, so they must be lower case ASCII identifiers
+and unique within the enum. Where the value is already such a name (<code>second</code>, <code>milli_metre</code>),
+it is the name and <code>x-enum-varnames</code> is not needed. <code>make check</code> enforces that. Write the
+names out rather than deriving them: no standardised representation for arbitrary units is both canonical and ASCII. UCUM
+is ASCII but not canonical, since <code>L/(m2.s)</code> and <code>L.m-2.s-1</code> are the same unit; SI symbols
+are canonical but not ASCII. For a composed unit, normalise the
+<a href="https://ctan.org/pkg/siunitx">siunitx</a> spelling, so <code>\liter\per\meter\squared\per\second</code>
+becomes <code>liter_per_meter_squared_per_second</code>.</p>
 <p>The SSSOM sets in <code>generated/mappings/</code> are built from those declarations. Do not edit
 them; edit the schema and regenerate. Each set is published as SSSOM TSV at the identifier
 its <code>mapping_set_id</code> names, so <code>https://w3id.org/oo-ld/schemas/mappings/emmo.sssom.tsv</code>
