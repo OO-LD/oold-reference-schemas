@@ -9,10 +9,14 @@ of main is served at `https://schemas.oo-ld.org/quantities/dev/`.
 | file |
 |---|
 | [`Diameter.schema.json`](Diameter.schema.json) |
+| [`ElectricCurrent.instance.json`](ElectricCurrent.instance.json) |
+| [`ElectricCurrent.schema.json`](ElectricCurrent.schema.json) |
 | [`Length.schema.json`](Length.schema.json) |
 | [`MassFraction.instance.json`](MassFraction.instance.json) |
 | [`MassFraction.schema.json`](MassFraction.schema.json) |
 | [`QuantityValue.schema.json`](QuantityValue.schema.json) |
 | [`Time.instance.json`](Time.instance.json) |
 | [`Time.schema.json`](Time.schema.json) |
+| [`Voltage.instance.json`](Voltage.instance.json) |
+| [`Voltage.schema.json`](Voltage.schema.json) |
 | [`module.json`](module.json) |

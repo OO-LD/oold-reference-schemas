@@ -17,9 +17,11 @@
   "description": "Quantity values, units, uncertainty and value specifications. Neutral: a quantity with a unit means the same to a laboratory, an engineer and a customs declaration.",
   "schemas": [
     "Diameter.schema.json",
+    "ElectricCurrent.schema.json",
     "Length.schema.json",
     "MassFraction.schema.json",
     "QuantityValue.schema.json",
-    "Time.schema.json"
+    "Time.schema.json",
+    "Voltage.schema.json"
   ]
 }

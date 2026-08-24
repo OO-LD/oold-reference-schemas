@@ -1,16 +1,16 @@
 {
   "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
-  "$id": "MassFraction.schema.json",
+  "$id": "Voltage.schema.json",
   "x-oold-version": "0.1.0",
-  "title": "MassFraction",
-  "description": "Mass of a constituent over the mass of the whole. The quantity, not the unit, says that a percentage is by mass.",
+  "title": "Voltage",
+  "description": "Electric potential difference between two points, the quantity a cell tester records as cell voltage.",
   "examples": [
     {
       "type": [
-        "MassFraction"
+        "Voltage"
       ],
-      "value": 96.7,
-      "unit": "percent"
+      "value": 3.65,
+      "unit": "volt"
     }
   ],
   "allOf": [
@@ -22,73 +22,64 @@
     "QuantityValue.schema.json",
     {
       "qkind": "http://qudt.org/vocab/quantitykind/",
-      "MassFraction": "qkind:MassFraction",
-      "percent": "qunit:PERCENT",
-      "part_per_million": "qunit:PPM"
+      "Voltage": "qkind:Voltage",
+      "volt": "qunit:V",
+      "milli_volt": "qunit:MilliV"
     }
   ],
   "properties": {
     "type": {
       "default": [
-        "MassFraction"
+        "Voltage"
       ]
     },
     "unit": {
       "enum": [
-        "percent",
-        "part_per_million"
+        "volt",
+        "milli_volt"
       ],
-      "default": "percent"
+      "default": "volt"
     }
   },
   "x-oold-context": {
-    "MassFraction": {
-      "emmo:EMMO_7c055d65_2929_40e1_af4f_4bf10995ad50": {
+    "Voltage": {
+      "emmo:EMMO_17b031fb_4695_49b6_bb69_189ec63df3ee": {
         "x-oold-sssom": {
           "predicate_id": "skos:exactMatch",
           "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/emmo.sssom.tsv",
-          "object_source_version": "https://w3id.org/emmo/1.0.4",
-          "comment": "MassFraction, a ChemicalCompositionQuantity"
-        }
-      },
-      "pmd:PMD_0025997": {
-        "x-oold-sssom": {
-          "predicate_id": "skos:closeMatch",
-          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/pmdco.sssom.tsv",
-          "object_source_version": "https://w3id.org/pmd/co/3.1.0",
-          "comment": "fraction value specification is an information entity, so the match is close rather than exact"
+          "object_source_version": "https://w3id.org/emmo/1.0.4"
         }
       }
     },
-    "percent": {
-      "emmo:WeightPercent": {
-        "x-oold-sssom": {
-          "predicate_id": "skos:exactMatch",
-          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/emmo.sssom.tsv",
-          "comment": "the quantity decides that percent is by mass, so the same alias resolves differently in a VolumeFraction"
-        }
-      },
-      "obo:UO_0000163": {
-        "x-oold-sssom": {
-          "predicate_id": "skos:exactMatch",
-          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/pmdco.sssom.tsv",
-          "comment": "UO mass percentage"
-        }
-      }
-    },
-    "part_per_million": {
-      "emmo:PartPerMillion": {
+    "volt": {
+      "emmo:Volt": {
         "x-oold-sssom": {
           "predicate_id": "skos:exactMatch",
           "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/emmo.sssom.tsv",
           "object_source_version": "https://w3id.org/emmo/1.0.4"
         }
       },
-      "obo:UO_0000169": {
+      "obo:UO_0000218": {
         "x-oold-sssom": {
           "predicate_id": "skos:exactMatch",
           "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/pmdco.sssom.tsv",
-          "comment": "UO parts per million"
+          "comment": "UO volt"
+        }
+      }
+    },
+    "milli_volt": {
+      "emmo:MilliVolt": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:exactMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/emmo.sssom.tsv",
+          "object_source_version": "https://w3id.org/emmo/1.0.4"
+        }
+      },
+      "obo:UO_0000247": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:exactMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/pmdco.sssom.tsv",
+          "comment": "UO milli volt"
         }
       }
     }

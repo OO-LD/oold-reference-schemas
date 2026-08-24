@@ -2,7 +2,7 @@
   "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
   "$id": "Length.schema.json",
   "x-oold-uuid": "7c1d5a80-b42f-5dd5-ace8-3ae6841f3faf",
-  "x-oold-version": "0.1.0",
+  "x-oold-version": "0.2.0",
   "title": "Length",
   "description": "QuantityValue restricted to length units.",
   "examples": [
@@ -11,7 +11,7 @@
         "Length"
       ],
       "value": 0.0254,
-      "unit": "M"
+      "unit": "metre"
     }
   ],
   "allOf": [
@@ -24,10 +24,10 @@
     {
       "qkind": "http://qudt.org/vocab/quantitykind/",
       "Length": "qkind:Length",
-      "KiloM": "qunit:KiloM",
-      "M": "qunit:M",
-      "MilliM": "qunit:MilliM",
-      "MicroM": "qunit:MicroM"
+      "kilo_metre": "qunit:KiloM",
+      "metre": "qunit:M",
+      "milli_metre": "qunit:MilliM",
+      "micro_metre": "qunit:MicroM"
     }
   ],
   "properties": {
@@ -38,18 +38,12 @@
     },
     "unit": {
       "enum": [
-        "KiloM",
-        "M",
-        "MilliM",
-        "MicroM"
-      ],
-      "default": "M",
-      "x-enum-varnames": [
         "kilo_metre",
         "metre",
         "milli_metre",
         "micro_metre"
-      ]
+      ],
+      "default": "metre"
     }
   },
   "x-oold-context": {
@@ -70,7 +64,7 @@
         }
       }
     },
-    "KiloM": {
+    "kilo_metre": {
       "emmo:KiloMetre": {
         "x-oold-sssom": {
           "predicate_id": "skos:exactMatch",
@@ -86,7 +80,7 @@
         }
       }
     },
-    "M": {
+    "metre": {
       "emmo:Metre": {
         "x-oold-sssom": {
           "predicate_id": "skos:exactMatch",
@@ -102,7 +96,7 @@
         }
       }
     },
-    "MilliM": {
+    "milli_metre": {
       "emmo:MilliMetre": {
         "x-oold-sssom": {
           "predicate_id": "skos:exactMatch",
@@ -118,7 +112,7 @@
         }
       }
     },
-    "MicroM": {
+    "micro_metre": {
       "emmo:MicroMetre": {
         "x-oold-sssom": {
           "predicate_id": "skos:exactMatch",
