@@ -1,0 +1,8 @@
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX ns1: <https://example.org/>
+PREFIX ns2: <https://w3id.org/oo-ld/schemas/datasets/0.1/>
+
+ns1:instance
+    a ns2:TabularDataset.schema.json ;
+    dcterms:title "A table" ;
+.

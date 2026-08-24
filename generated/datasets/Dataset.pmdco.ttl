@@ -1,0 +1,9 @@
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX ns1: <https://example.org/>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+
+ns1:instance
+    a obo:IAO_0000100 ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:title "Cycling of cell LFP-042" ;
+.

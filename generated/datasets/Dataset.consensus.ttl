@@ -1,0 +1,9 @@
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX ns1: <https://example.org/>
+
+ns1:instance
+    a dcat:Dataset ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:title "Cycling of cell LFP-042" ;
+.

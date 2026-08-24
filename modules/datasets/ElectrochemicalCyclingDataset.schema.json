@@ -1,0 +1,307 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ElectrochemicalCyclingDataset.schema.json",
+  "x-oold-version": "0.1.0",
+  "title": "ElectrochemicalCyclingDataset",
+  "x-oold-instance-rdf-type": [
+    "https://w3id.org/oo-ld/schemas/datasets/0.1/ElectrochemicalCyclingDataset.schema.json"
+  ],
+  "description": "A battery cycling run. The rows are the data; a distribution is the file the instrument wrote, and it conforms to this schema.",
+  "allOf": [
+    {
+      "$ref": "TabularDataset.schema.json"
+    }
+  ],
+  "examples": [
+    {
+      "type": [
+        "ElectrochemicalCyclingDataset"
+      ],
+      "title": "Cycling of cell LFP-042",
+      "about": "https://example.org/cell/LFP-042",
+      "data": [
+        {
+          "type": [
+            "ElectrochemicalCyclingDataRow"
+          ],
+          "test_time": {
+            "type": [
+              "TestTime"
+            ],
+            "value": 3600,
+            "unit": "second"
+          },
+          "voltage": {
+            "type": [
+              "CellVoltage"
+            ],
+            "value": 3.65,
+            "unit": "volt"
+          },
+          "current": {
+            "type": [
+              "CellCurrent"
+            ],
+            "value": -750,
+            "unit": "milli_ampere"
+          }
+        }
+      ]
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ElectrochemicalCyclingDataset"
+      ]
+    },
+    "data": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/ElectrochemicalCyclingDataRow"
+      }
+    }
+  },
+  "@context": [
+    "TabularDataset.schema.json",
+    {
+      "@version": 1.1,
+      "dcat": "http://www.w3.org/ns/dcat#",
+      "dcterms": "http://purl.org/dc/terms/",
+      "prov": "http://www.w3.org/ns/prov#",
+      "csvw": "http://www.w3.org/ns/csvw#",
+      "schema": "http://schema.org/",
+      "qudt": "http://qudt.org/schema/qudt/",
+      "qunit": "http://qudt.org/vocab/unit/",
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "emmo": "https://w3id.org/emmo#",
+      "echem": "https://w3id.org/emmo/domain/electrochemistry#",
+      "obo": "http://purl.obolibrary.org/obo/",
+      "xsd": "http://www.w3.org/2001/XMLSchema#",
+      "id": "@id",
+      "type": {
+        "@id": "@type",
+        "@container": "@set"
+      },
+      "ElectrochemicalCyclingDataRow": "https://w3id.org/oo-ld/schemas/datasets/0.1/ElectrochemicalCyclingDataset.schema.json#/$defs/ElectrochemicalCyclingDataRow",
+      "TestTime": "qkind:Time",
+      "CellVoltage": "qkind:Voltage",
+      "CellCurrent": "qkind:ElectricCurrent",
+      "second": "qunit:SEC",
+      "hour": "qunit:HR",
+      "volt": "qunit:V",
+      "milli_volt": "qunit:MilliV",
+      "ampere": "qunit:A",
+      "milli_ampere": "qunit:MilliA",
+      "test_time": {
+        "@id": "row:properties/test_time",
+        "@type": "@id"
+      },
+      "voltage": {
+        "@id": "row:properties/voltage",
+        "@type": "@id"
+      },
+      "current": {
+        "@id": "row:properties/current",
+        "@type": "@id"
+      },
+      "value": "qudt:value",
+      "unit": {
+        "@id": "qudt:hasUnit",
+        "@type": "@vocab"
+      },
+      "standard_uncertainty": "qudt:standardUncertainty",
+      "electrochemicalcyclingdataset": {
+        "@id": "https://w3id.org/oo-ld/schemas/datasets/0.1/ElectrochemicalCyclingDataset.schema.json#",
+        "@prefix": true
+      },
+      "ElectrochemicalCyclingDataset": "https://w3id.org/oo-ld/schemas/datasets/0.1/ElectrochemicalCyclingDataset.schema.json",
+      "row": {
+        "@id": "https://w3id.org/oo-ld/schemas/datasets/0.1/ElectrochemicalCyclingDataset.schema.json#/$defs/ElectrochemicalCyclingDataRow/",
+        "@prefix": true
+      }
+    }
+  ],
+  "x-oold-context": {
+    "ElectrochemicalCyclingDataset": {
+      "schema:Dataset": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:broadMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/schemaorg.sssom.tsv",
+          "comment": "a dataset of this kind is one of these, which have no term for the kind"
+        }
+      },
+      "obo:IAO_0000100": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:broadMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/pmdco.sssom.tsv",
+          "comment": "a dataset of this kind is one of these, which have no term for the kind"
+        }
+      },
+      "emmo:EMMO_194e367c_9783_4bf5_96d0_9ad597d48d9a": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:broadMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/emmo.sssom.tsv",
+          "object_source_version": "https://w3id.org/emmo/1.0.4",
+          "comment": "a dataset of this kind is one of these, which have no term for the kind"
+        }
+      }
+    }
+  },
+  "$defs": {
+    "ElectrochemicalCyclingDataRow": {
+      "title": "ElectrochemicalCyclingDataRow",
+      "x-oold-instance-rdf-type": [
+        "https://w3id.org/oo-ld/schemas/datasets/0.1/ElectrochemicalCyclingDataset.schema.json#/$defs/ElectrochemicalCyclingDataRow"
+      ],
+      "description": "One row of a battery cycling run: the time since the test started, the cell voltage and the cell current at that moment. The fields are quantities, so a row states its units rather than leaving them to a header.",
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "const": "ElectrochemicalCyclingDataRow"
+          },
+          "default": [
+            "ElectrochemicalCyclingDataRow"
+          ],
+          "minItems": 1
+        },
+        "test_time": {
+          "type": "object",
+          "title": "TestTime",
+          "properties": {
+            "type": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "default": [
+                "TestTime"
+              ]
+            },
+            "value": {
+              "type": "number"
+            },
+            "unit": {
+              "enum": [
+                "second",
+                "hour"
+              ],
+              "default": "second"
+            },
+            "standard_uncertainty": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "type",
+            "value",
+            "unit"
+          ]
+        },
+        "voltage": {
+          "type": "object",
+          "title": "CellVoltage",
+          "properties": {
+            "type": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "default": [
+                "CellVoltage"
+              ]
+            },
+            "value": {
+              "type": "number"
+            },
+            "unit": {
+              "enum": [
+                "volt",
+                "milli_volt"
+              ],
+              "default": "volt"
+            },
+            "standard_uncertainty": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "type",
+            "value",
+            "unit"
+          ]
+        },
+        "current": {
+          "type": "object",
+          "title": "CellCurrent",
+          "properties": {
+            "type": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "default": [
+                "CellCurrent"
+              ]
+            },
+            "value": {
+              "type": "number"
+            },
+            "unit": {
+              "enum": [
+                "ampere",
+                "milli_ampere"
+              ],
+              "default": "ampere"
+            },
+            "standard_uncertainty": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "type",
+            "value",
+            "unit"
+          ]
+        }
+      },
+      "required": [
+        "type",
+        "test_time",
+        "voltage",
+        "current"
+      ],
+      "examples": [
+        {
+          "type": [
+            "ElectrochemicalCyclingDataRow"
+          ],
+          "test_time": {
+            "type": [
+              "TestTime"
+            ],
+            "value": 3600,
+            "unit": "second"
+          },
+          "voltage": {
+            "type": [
+              "CellVoltage"
+            ],
+            "value": 3.65,
+            "unit": "volt"
+          },
+          "current": {
+            "type": [
+              "CellCurrent"
+            ],
+            "value": -750,
+            "unit": "milli_ampere"
+          }
+        }
+      ]
+    }
+  }
+}

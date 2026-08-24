@@ -1,0 +1,147 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Distribution.schema.json",
+  "x-oold-version": "0.1.0",
+  "title": "Distribution",
+  "x-oold-instance-rdf-type": [
+    "dcat:Distribution"
+  ],
+  "description": "A serialisation of a dataset: where the bytes are, in which format, and which schema they embody. Storage, not content: `conforms_to` points back at the dataset schema the bytes are an encoding of.",
+  "examples": [
+    {
+      "type": [
+        "Distribution"
+      ],
+      "download_url": "https://example.org/data/LFP-042-cycling.csv",
+      "media_type": "text/csv"
+    }
+  ],
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "Distribution"
+      ]
+    },
+    "download_url": {
+      "type": "string",
+      "format": "iri-reference"
+    },
+    "access_url": {
+      "type": "string",
+      "format": "iri-reference",
+      "description": "Landing page where the file is reached indirectly"
+    },
+    "media_type": {
+      "type": "string",
+      "examples": [
+        "text/csv",
+        "application/x-hdf5"
+      ]
+    },
+    "byte_size": {
+      "type": "integer"
+    },
+    "package_format": {
+      "type": "string",
+      "examples": [
+        "application/zip"
+      ]
+    },
+    "conforms_to": {
+      "type": "string",
+      "format": "iri-reference",
+      "description": "IRI of the dataset schema these bytes embody"
+    },
+    "table_schema": {
+      "type": "string",
+      "format": "iri-reference",
+      "description": "IRI of the row schema, where the serialisation is tabular"
+    },
+    "selector": {
+      "type": "string",
+      "description": "The part within a container: sheet, HDF path, SQL table, archive member"
+    }
+  },
+  "required": [
+    "type"
+  ],
+  "@context": {
+    "@version": 1.1,
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "prov": "http://www.w3.org/ns/prov#",
+    "csvw": "http://www.w3.org/ns/csvw#",
+    "schema": "http://schema.org/",
+    "qudt": "http://qudt.org/schema/qudt/",
+    "qunit": "http://qudt.org/vocab/unit/",
+    "qkind": "http://qudt.org/vocab/quantitykind/",
+    "emmo": "https://w3id.org/emmo#",
+    "echem": "https://w3id.org/emmo/domain/electrochemistry#",
+    "obo": "http://purl.obolibrary.org/obo/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "distribution": {
+      "@id": "https://w3id.org/oo-ld/schemas/datasets/0.1/Distribution.schema.json#",
+      "@prefix": true
+    },
+    "id": "@id",
+    "type": {
+      "@id": "@type",
+      "@container": "@set"
+    },
+    "Distribution": "dcat:Distribution",
+    "download_url": {
+      "@id": "dcat:downloadURL",
+      "@type": "@id"
+    },
+    "access_url": {
+      "@id": "dcat:accessURL",
+      "@type": "@id"
+    },
+    "media_type": "dcat:mediaType",
+    "byte_size": "dcat:byteSize",
+    "package_format": {
+      "@id": "dcat:packageFormat",
+      "@type": "@id"
+    },
+    "conforms_to": {
+      "@id": "dcterms:conformsTo",
+      "@type": "@id"
+    },
+    "table_schema": {
+      "@id": "csvw:tableSchema",
+      "@type": "@id"
+    },
+    "selector": "distribution:/properties/selector"
+  },
+  "x-oold-context": {
+    "Distribution": {
+      "schema:DataDownload": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/schemaorg.sssom.tsv"
+        }
+      }
+    },
+    "download_url": {
+      "schema:contentUrl": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/schemaorg.sssom.tsv"
+        }
+      }
+    },
+    "media_type": {
+      "schema:encodingFormat": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/schemaorg.sssom.tsv"
+        }
+      }
+    }
+  }
+}

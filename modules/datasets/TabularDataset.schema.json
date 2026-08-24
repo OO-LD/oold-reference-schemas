@@ -1,0 +1,71 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "TabularDataset.schema.json",
+  "x-oold-version": "0.1.0",
+  "title": "TabularDataset",
+  "x-oold-instance-rdf-type": [
+    "https://w3id.org/oo-ld/schemas/datasets/0.1/TabularDataset.schema.json"
+  ],
+  "description": "A dataset whose payload is a list of rows, each row a typed object. The row type is the schema of the data, and a wide table with a Time-typed column is already a time series, so no separate class is needed for one.",
+  "allOf": [
+    {
+      "$ref": "Dataset.schema.json"
+    }
+  ],
+  "examples": [
+    {
+      "type": [
+        "TabularDataset"
+      ],
+      "title": "A table",
+      "data": []
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "TabularDataset"
+      ]
+    },
+    "data": {
+      "type": "array",
+      "description": "The rows. A subschema fixes the row type, which is what makes the type of the data the schema"
+    }
+  },
+  "@context": [
+    "Dataset.schema.json",
+    {
+      "tabulardataset": {
+        "@id": "https://w3id.org/oo-ld/schemas/datasets/0.1/TabularDataset.schema.json#",
+        "@prefix": true
+      },
+      "TabularDataset": "https://w3id.org/oo-ld/schemas/datasets/0.1/TabularDataset.schema.json"
+    }
+  ],
+  "x-oold-context": {
+    "TabularDataset": {
+      "schema:Dataset": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:broadMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/schemaorg.sssom.tsv",
+          "comment": "a dataset of this kind is one of these, which have no term for the kind"
+        }
+      },
+      "obo:IAO_0000100": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:broadMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/pmdco.sssom.tsv",
+          "comment": "a dataset of this kind is one of these, which have no term for the kind"
+        }
+      },
+      "emmo:EMMO_194e367c_9783_4bf5_96d0_9ad597d48d9a": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:broadMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/emmo.sssom.tsv",
+          "object_source_version": "https://w3id.org/emmo/1.0.4",
+          "comment": "a dataset of this kind is one of these, which have no term for the kind"
+        }
+      }
+    }
+  }
+}

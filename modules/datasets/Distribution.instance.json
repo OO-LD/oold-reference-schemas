@@ -1,0 +1,13 @@
+{
+  "$schema": "Distribution.schema.json",
+  "@context": "Distribution.schema.json",
+  "id": "https://example.org/distribution/LFP-042-cycling-csv",
+  "type": [
+    "Distribution"
+  ],
+  "download_url": "https://example.org/data/LFP-042-cycling.csv",
+  "media_type": "text/csv",
+  "byte_size": 48213004,
+  "conforms_to": "https://w3id.org/oo-ld/schemas/datasets/0.1/ElectrochemicalCyclingDataset.schema.json",
+  "table_schema": "https://w3id.org/oo-ld/schemas/datasets/0.1/ElectrochemicalCyclingDataRow.schema.json"
+}

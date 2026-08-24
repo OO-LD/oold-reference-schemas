@@ -1,0 +1,8 @@
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX emmo: <https://w3id.org/emmo#>
+PREFIX ns1: <https://example.org/>
+
+ns1:instance
+    a emmo:EMMO_194e367c_9783_4bf5_96d0_9ad597d48d9a ;
+    dcterms:title "A table" ;
+.

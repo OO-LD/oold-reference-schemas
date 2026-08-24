@@ -1,0 +1,17 @@
+PREFIX csvw: <http://www.w3.org/ns/csvw#>
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX ns1: <https://example.org/data/>
+PREFIX ns2: <https://example.org/distribution/>
+PREFIX ns3: <https://w3id.org/oo-ld/schemas/datasets/0.1/>
+PREFIX schema1: <http://schema.org/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+ns2:LFP-042-cycling-csv
+    a schema1:DataDownload ;
+    dcterms:conformsTo ns3:ElectrochemicalCyclingDataset.schema.json ;
+    schema1:contentUrl ns1:LFP-042-cycling.csv ;
+    schema1:encodingFormat "text/csv" ;
+    csvw:tableSchema ns3:ElectrochemicalCyclingDataRow.schema.json ;
+    dcat:byteSize 48213004 ;
+.
