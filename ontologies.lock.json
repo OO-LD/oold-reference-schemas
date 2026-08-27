@@ -1,4 +1,61 @@
 {
+  "csvw": {
+    "version": "2015-12-17",
+    "repository": "https://www.w3.org/ns",
+    "ref": "2015-12-17",
+    "base": "https://www.w3.org/ns/",
+    "files": {
+      "csvw.ttl": {
+        "path": "csvw.ttl",
+        "sha256": "ad9296569d3203c771a0ca51ac7c4180d8ad2bdd85adec5c7881555ddb409f3a",
+        "bytes": 26702
+      }
+    },
+    "note": "the CSV on the Web namespace document"
+  },
+  "dcat": {
+    "version": "3",
+    "repository": "https://www.w3.org/ns",
+    "ref": "3",
+    "base": "https://www.w3.org/ns/",
+    "files": {
+      "dcat.ttl": {
+        "path": "dcat.ttl",
+        "sha256": "d1624d3bbf364f6fc1d43b9a188bbb9e67639b1a7d46a5cb7ea3f5d47d02b62f",
+        "bytes": 200345
+      }
+    },
+    "note": "the DCAT 3 namespace document"
+  },
+  "dcterms": {
+    "version": "2020-01-20",
+    "repository": "https://www.dublincore.org/specifications/dublin-core/dcmi-terms",
+    "ref": "2020-01-20",
+    "base": "https://www.dublincore.org/specifications/dublin-core/dcmi-terms/",
+    "files": {
+      "dublin_core_terms.ttl": {
+        "path": "dublin_core_terms.ttl",
+        "sha256": "13df401072dd7015bf9d75162f3e41c8138075304b7b9cc1aa1e9c16db976797",
+        "bytes": 47834
+      }
+    },
+    "note": "DCMI Metadata Terms"
+  },
+  "electrochemistry": {
+    "version": "0.37.2",
+    "repository": "https://github.com/emmo-repo/domain-electrochemistry",
+    "ref": "0.37.2",
+    "base": "https://raw.githubusercontent.com/emmo-repo/domain-electrochemistry/0.37.2/",
+    "files": {
+      "reference/electrochemistry-quantities.ttl": {
+        "path": "reference/electrochemistry-quantities.ttl",
+        "sha256": "87efdb1a890a28174be307d68132f442d89f33ab849c4801015acfa0bdd11961",
+        "bytes": 415668
+      }
+    },
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "note": "quantity reference of the EMMO electrochemistry domain"
+  },
   "emmo": {
     "version": "1.0.4",
     "repository": "https://github.com/emmo-repo/EMMO",
@@ -75,6 +132,11 @@
         "sha256": "0122ce3bb10fbc7d259174f9e4a8ed1a6abde84ef2d919ab09ae01757d6ed3bf",
         "bytes": 42321
       },
+      "reference/data.ttl": {
+        "path": "reference/data.ttl",
+        "sha256": "d5208e86ceb493f9981eca941e921435b4145e21f1e433054a5b9ed55d358f99",
+        "bytes": 10149
+      },
       "foundation/mereocausality.ttl": {
         "path": "foundation/mereocausality.ttl",
         "sha256": "35014bbaa407c57f4c24c9c8f07592aad6df29472fca7210047efcae2e39e3aa",
@@ -83,21 +145,6 @@
     },
     "note": "the 1.0.4 development branch at that commit; the published w3id build lagged it",
     "license": "https://creativecommons.org/licenses/by/4.0/"
-  },
-  "electrochemistry": {
-    "version": "0.37.2",
-    "repository": "https://github.com/emmo-repo/domain-electrochemistry",
-    "ref": "0.37.2",
-    "base": "https://raw.githubusercontent.com/emmo-repo/domain-electrochemistry/0.37.2/",
-    "files": {
-      "reference/electrochemistry-quantities.ttl": {
-        "path": "reference/electrochemistry-quantities.ttl",
-        "sha256": "87efdb1a890a28174be307d68132f442d89f33ab849c4801015acfa0bdd11961",
-        "bytes": 415668
-      }
-    },
-    "license": "https://creativecommons.org/licenses/by/4.0/",
-    "note": "quantity reference of the EMMO electrochemistry domain"
   },
   "iao": {
     "version": "2026-03-30",
@@ -157,6 +204,20 @@
       }
     },
     "license": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "prov": {
+    "version": "2013-04-30",
+    "repository": "https://www.w3.org/ns",
+    "ref": "2013-04-30",
+    "base": "https://www.w3.org/ns/",
+    "files": {
+      "prov.ttl": {
+        "path": "prov.ttl",
+        "sha256": "d7ea634dbcd31347eba38157197f69d314077ef7f88fd4f90e4f24a78bfe1097",
+        "bytes": 112777
+      }
+    },
+    "note": "the PROV-O namespace document"
   },
   "qudt": {
     "version": "3.4.0",

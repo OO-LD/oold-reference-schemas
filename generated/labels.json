@@ -79,17 +79,29 @@
   "label": "kilometer",
   "source": "uo/2026-07-31/uo.owl"
  },
+ "http://purl.org/dc/terms/conformsTo": {
+  "label": "Conforms To",
+  "source": "dcterms/2020-01-20/dublin_core_terms.ttl"
+ },
  "http://purl.org/dc/terms/description": {
-  "label": "description",
-  "source": "qudt/3.4.0/SCHEMA_QUDT.ttl"
+  "label": "Description",
+  "source": "dcterms/2020-01-20/dublin_core_terms.ttl"
+ },
+ "http://purl.org/dc/terms/hasPart": {
+  "label": "Has Part",
+  "source": "dcterms/2020-01-20/dublin_core_terms.ttl"
+ },
+ "http://purl.org/dc/terms/issued": {
+  "label": "Date Issued",
+  "source": "dcterms/2020-01-20/dublin_core_terms.ttl"
  },
  "http://purl.org/dc/terms/license": {
-  "label": "dcterms:license",
-  "source": "pmdco/3.1.0/pmdco.ttl"
+  "label": "License",
+  "source": "dcterms/2020-01-20/dublin_core_terms.ttl"
  },
  "http://purl.org/dc/terms/title": {
-  "label": "title",
-  "source": "qudt/3.4.0/SCHEMA_QUDT.ttl"
+  "label": "Title",
+  "source": "dcterms/2020-01-20/dublin_core_terms.ttl"
  },
  "http://qudt.org/schema/qudt/QuantityValue": {
   "label": "Quantity value",
@@ -235,13 +247,45 @@
   "label": "value",
   "source": "schemaorg/30.0/schemaorg-current-http.ttl"
  },
+ "http://www.w3.org/ns/csvw#tableSchema": {
+  "label": "table schema",
+  "source": "csvw/2015-12-17/csvw.ttl"
+ },
  "http://www.w3.org/ns/dcat#Dataset": {
   "label": "Dataset",
-  "source": "ols4"
+  "source": "dcat/3/dcat.ttl"
  },
  "http://www.w3.org/ns/dcat#Distribution": {
   "label": "Distribution",
-  "source": "ols4"
+  "source": "dcat/3/dcat.ttl"
+ },
+ "http://www.w3.org/ns/dcat#accessURL": {
+  "label": "access address",
+  "source": "dcat/3/dcat.ttl"
+ },
+ "http://www.w3.org/ns/dcat#byteSize": {
+  "label": "byte size",
+  "source": "dcat/3/dcat.ttl"
+ },
+ "http://www.w3.org/ns/dcat#distribution": {
+  "label": "distribution",
+  "source": "dcat/3/dcat.ttl"
+ },
+ "http://www.w3.org/ns/dcat#downloadURL": {
+  "label": "download URL",
+  "source": "dcat/3/dcat.ttl"
+ },
+ "http://www.w3.org/ns/dcat#mediaType": {
+  "label": "media type",
+  "source": "dcat/3/dcat.ttl"
+ },
+ "http://www.w3.org/ns/dcat#packageFormat": {
+  "label": "packaging format",
+  "source": "dcat/3/dcat.ttl"
+ },
+ "http://www.w3.org/ns/prov#wasGeneratedBy": {
+  "label": "wasGeneratedBy",
+  "source": "prov/2013-04-30/prov.ttl"
  },
  "https://w3id.org/emmo#Ampere": {
   "label": "Ampere",
@@ -258,6 +302,10 @@
  "https://w3id.org/emmo#EMMO_18fdd2cd_4b0a_43a5_a938_66d8290a066c": {
   "label": "hasSpeciesPart",
   "source": "emmo/1.0.4/disciplines/chemistry.ttl"
+ },
+ "https://w3id.org/emmo#EMMO_194e367c_9783_4bf5_96d0_9ad597d48d9a": {
+  "label": "Dataset",
+  "source": "emmo/1.0.4/reference/data.ttl"
  },
  "https://w3id.org/emmo#EMMO_4f9670f5-14ca-53da-a1ea-9b0550a61035": {
   "label": "SiliconSymbol",
