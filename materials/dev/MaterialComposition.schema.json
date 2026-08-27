@@ -1,0 +1,112 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MaterialComposition.schema.json",
+  "x-oold-uuid": "5490e369-afe0-5e5c-8a76-ac9bc3a0f10f",
+  "x-oold-version": "0.1.0",
+  "title": "MaterialComposition",
+  "description": "The materials a material is made of and how much of each. As specified, typically: a recipe names ingredients, which are materials with a composition of their own, and that is not the same claim as an elemental analysis.",
+  "$comment": "`components` embeds an object of this module, and its terms are kept apart by the scope the composition term carries in Material.schema.json. Scoping Composition here as well would layer the base's plain `constituent` over this schema's own and lose both its coercion and its mapping, so OOLD-CMP-5266 is answered one level up.",
+  "examples": [
+    {
+      "type": [
+        "MaterialComposition"
+      ],
+      "components": [
+        {
+          "type": [
+            "MaterialComponent"
+          ],
+          "constituent": "https://example.org/material/batch1",
+          "amount": {
+            "type": [
+              "MassFraction"
+            ],
+            "value": 96.7,
+            "unit": "percent"
+          }
+        }
+      ]
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Composition.schema.json"
+    }
+  ],
+  "@context": [
+    "Composition.schema.json",
+    {
+      "matcomp": {
+        "@id": "https://w3id.org/oo-ld/schemas/materials/0.2/MaterialComposition.schema.json#",
+        "@prefix": true
+      },
+      "MaterialComposition": "https://w3id.org/oo-ld/schemas/materials/0.2/MaterialComposition.schema.json",
+      "MaterialComponent": "matcomp:/properties/components/items",
+      "constituent": {
+        "@id": "matcomp:/properties/components/items/properties/constituent",
+        "@type": "@id"
+      },
+      "components": {
+        "@id": "matcomp:/properties/components",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "MaterialComposition"
+      ]
+    },
+    "components": {
+      "items": {
+        "allOf": [
+          {
+            "$ref": "Composition.schema.json#/$defs/Component"
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "default": [
+              "MaterialComponent"
+            ]
+          },
+          "constituent": {
+            "type": "string",
+            "format": "iri-reference",
+            "x-oold-range": "Material.schema.json",
+            "description": "IRI of the material this component is made of"
+          }
+        }
+      }
+    }
+  },
+  "x-oold-context": {
+    "MaterialComponent": {
+      "pmd:PMD_0020102": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/pmdco.sssom.tsv",
+          "object_source_version": "https://w3id.org/pmd/co/3.1.0",
+          "comment": "mass ratio; the constituent is the portion it is a quality of"
+        }
+      }
+    },
+    "constituent": {
+      "pmd:PMD_0025999": {
+        "@type": "@id",
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/pmdco.sssom.tsv",
+          "object_source_version": "https://w3id.org/pmd/co/3.1.0",
+          "comment": "relational quality of; a Material is a portion of matter in PMDco"
+        }
+      }
+    }
+  }
+}

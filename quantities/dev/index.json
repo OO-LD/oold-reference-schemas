@@ -11,9 +11,9 @@
       "@type": "@id"
     }
   },
-  "@id": "https://w3id.org/oo-ld/schemas/quantities/0.2",
-  "title": "Quantities 0.2",
-  "version": "0.2.0",
+  "@id": "https://w3id.org/oo-ld/schemas/quantities/0.3",
+  "title": "Quantities 0.3",
+  "version": "0.3.0",
   "description": "Quantity values, units, uncertainty and value specifications. Neutral: a quantity with a unit means the same to a laboratory, an engineer and a customs declaration.",
   "schemas": [
     "Diameter.schema.json",

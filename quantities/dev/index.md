@@ -1,9 +1,9 @@
-# Quantities 0.2.0
+# Quantities 0.3.0
 
 Referenced by the conformance IRI
-`https://w3id.org/oo-ld/schemas/quantities/0.2`, which tracks the newest patch of
-0.2. A release publishes these files at `https://schemas.oo-ld.org/quantities/0.2/`
-and, immutably, at `https://schemas.oo-ld.org/quantities/0.2.0/`; until then the tip
+`https://w3id.org/oo-ld/schemas/quantities/0.3`, which tracks the newest patch of
+0.3. A release publishes these files at `https://schemas.oo-ld.org/quantities/0.3/`
+and, immutably, at `https://schemas.oo-ld.org/quantities/0.3.0/`; until then the tip
 of main is served at `https://schemas.oo-ld.org/quantities/dev/`.
 
 | file |
