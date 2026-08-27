@@ -1,0 +1,10 @@
+{
+  "$schema": "TabularDataset.schema.json",
+  "@context": "TabularDataset.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "TabularDataset"
+  ],
+  "title": "A table",
+  "data": []
+}

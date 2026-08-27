@@ -22,6 +22,17 @@ nav = [
     # BEGIN generated nav
     { "Modules" = [
         { "Overview" = "modules/index.md" },
+        { "datasets" = [
+            "modules/datasets/index.md",
+            { "Dataset" = [
+                "modules/datasets/dataset/index.md",
+                { "TabularDataset" = [
+                    "modules/datasets/dataset/tabulardataset/index.md",
+                    { "ElectrochemicalCyclingDataset" = "modules/datasets/dataset/tabulardataset/electrochemicalcyclingdataset/index.md" },
+                ]},
+            ]},
+            { "Distribution" = "modules/datasets/distribution/index.md" },
+        ]},
         { "materials" = [
             "modules/materials/index.md",
             { "Composition" = [

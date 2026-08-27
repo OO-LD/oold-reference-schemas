@@ -1,0 +1,8 @@
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX ex: <https://example.org/>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+
+ex:instance
+    a obo:IAO_0000100 ;
+    dcterms:title "A table" ;
+.

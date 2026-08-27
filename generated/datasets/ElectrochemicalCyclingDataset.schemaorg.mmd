@@ -1,0 +1,68 @@
+flowchart LR
+  n0["LFP-042-2026-08-20<br>schema:Dataset"]
+  n1[/"2026-08-20"/]
+  n2["LFP-042"]
+  n3[/"Constant current cycling at 1C, first three samples"/]
+  n4["https://creativecommons.org/licenses/by/4.0/"]
+  n5[/"Cycling of cell LFP-042"/]
+  n6["LFP-042-cycling"]
+  n7["blank node<br>electrochemicalcyclingdataset:ElectrochemicalCyclingDataRow"]
+  n8["blank node<br>electrochemicalcyclingdataset:ElectrochemicalCyclingDataRow"]
+  n9["blank node<br>electrochemicalcyclingdataset:ElectrochemicalCyclingDataRow"]
+  n10["blank node<br>row:TestTime"]
+  n11["qunit:Second"]
+  n12[/"60"/]
+  n13["blank node<br>row:CellVoltage"]
+  n14["qunit:Volt"]
+  n15[/"3.51"/]
+  n16["blank node<br>row:CellCurrent"]
+  n17["blank node<br>row:TestTime"]
+  n18["blank node<br>row:CellVoltage"]
+  n19["qunit:Milliampere"]
+  n20[/"750"/]
+  n21["blank node<br>row:CellCurrent"]
+  n22[/"0"/]
+  n23[/"120"/]
+  n24[/"0.002"/]
+  n25[/"3.58"/]
+  n26["blank node<br>row:TestTime"]
+  n27["blank node<br>row:CellVoltage"]
+  n28[/"3.42"/]
+  n29["blank node<br>row:CellCurrent"]
+  n0 -->|dcterms:issued| n1
+  n0 -->|schema:about| n2
+  n0 -->|schema:description| n3
+  n0 -->|schema:license| n4
+  n0 -->|schema:name| n5
+  n0 -->|prov:wasGeneratedBy| n6
+  n0 -->|dataset:data| n7
+  n0 -->|dataset:data| n8
+  n0 -->|dataset:data| n9
+  n10 -->|schema:unitCode| n11
+  n10 -->|schema:value| n12
+  n13 -->|schema:unitCode| n14
+  n13 -->|schema:value| n15
+  n7 -->|row:current| n16
+  n7 -->|row:test_time| n17
+  n7 -->|row:voltage| n18
+  n16 -->|schema:unitCode| n19
+  n16 -->|schema:value| n20
+  n21 -->|schema:unitCode| n19
+  n21 -->|schema:value| n22
+  n17 -->|schema:unitCode| n11
+  n17 -->|schema:value| n23
+  n18 -->|qudt:standard uncertainty| n24
+  n18 -->|schema:unitCode| n14
+  n18 -->|schema:value| n25
+  n26 -->|schema:unitCode| n11
+  n26 -->|schema:value| n22
+  n27 -->|schema:unitCode| n14
+  n27 -->|schema:value| n28
+  n8 -->|row:current| n21
+  n8 -->|row:test_time| n26
+  n8 -->|row:voltage| n27
+  n9 -->|row:current| n29
+  n9 -->|row:test_time| n10
+  n9 -->|row:voltage| n13
+  n29 -->|schema:unitCode| n19
+  n29 -->|schema:value| n20

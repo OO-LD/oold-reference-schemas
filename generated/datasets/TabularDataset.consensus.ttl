@@ -1,0 +1,8 @@
+PREFIX datasets: <https://w3id.org/oo-ld/schemas/datasets/0.1/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX ex: <https://example.org/>
+
+ex:instance
+    a datasets:TabularDataset.schema.json ;
+    dcterms:title "A table" ;
+.

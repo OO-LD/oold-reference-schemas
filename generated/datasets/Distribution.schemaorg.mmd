@@ -1,0 +1,12 @@
+flowchart LR
+  n0["LFP-042-cycling-csv<br>schema:DataDownload"]
+  n1["ElectrochemicalCyclingDataset.schema.json"]
+  n2["LFP-042-cycling.csv"]
+  n3[/"text/csv"/]
+  n4["ElectrochemicalCyclingDataRow.schema.json"]
+  n5[/"48213004"/]
+  n0 -->|dcterms:conformsTo| n1
+  n0 -->|schema:contentUrl| n2
+  n0 -->|schema:encodingFormat| n3
+  n0 -->|csvw:tableSchema| n4
+  n0 -->|dcat:byteSize| n5

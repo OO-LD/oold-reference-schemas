@@ -1,0 +1,9 @@
+PREFIX creativecommons_licenses_by_4_0: <https://creativecommons.org/licenses/by/4.0/>
+PREFIX ex: <https://example.org/>
+PREFIX schema1: <http://schema.org/>
+
+ex:instance
+    a schema1:Dataset ;
+    schema1:license creativecommons_licenses_by_4_0: ;
+    schema1:name "Cycling of cell LFP-042" ;
+.

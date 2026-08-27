@@ -1,0 +1,10 @@
+{
+  "$schema": "Dataset.schema.json",
+  "@context": "Dataset.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "Dataset"
+  ],
+  "title": "Cycling of cell LFP-042",
+  "license": "https://creativecommons.org/licenses/by/4.0/"
+}

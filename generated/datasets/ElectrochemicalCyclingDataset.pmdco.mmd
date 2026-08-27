@@ -1,0 +1,68 @@
+flowchart LR
+  n0["LFP-042-2026-08-20<br>obo:IAO_0000100"]
+  n1[/"Constant current cycling at 1C, first three samples"/]
+  n2[/"2026-08-20"/]
+  n3["https://creativecommons.org/licenses/by/4.0/"]
+  n4[/"Cycling of cell LFP-042"/]
+  n5["LFP-042"]
+  n6["LFP-042-cycling"]
+  n7["blank node<br>electrochemicalcyclingdataset:ElectrochemicalCyclingDataRow"]
+  n8["blank node<br>electrochemicalcyclingdataset:ElectrochemicalCyclingDataRow"]
+  n9["blank node<br>electrochemicalcyclingdataset:ElectrochemicalCyclingDataRow"]
+  n10["blank node<br>row:CellVoltage"]
+  n11["obo:volt"]
+  n12[/"3.51"/]
+  n13["blank node<br>row:CellCurrent"]
+  n14["obo:milliampere"]
+  n15[/"0"/]
+  n16["blank node<br>row:CellCurrent"]
+  n17["blank node<br>row:TestTime"]
+  n18[/"750"/]
+  n19["obo:second"]
+  n20[/"60"/]
+  n21["blank node<br>row:TestTime"]
+  n22["blank node<br>row:CellVoltage"]
+  n23[/"3.58"/]
+  n24[/"0.002"/]
+  n25["blank node<br>row:TestTime"]
+  n26[/"120"/]
+  n27["blank node<br>row:CellVoltage"]
+  n28[/"3.42"/]
+  n29["blank node<br>row:CellCurrent"]
+  n0 -->|dcterms:description| n1
+  n0 -->|dcterms:issued| n2
+  n0 -->|dcterms:license| n3
+  n0 -->|dcterms:title| n4
+  n0 -->|schema:about| n5
+  n0 -->|prov:wasGeneratedBy| n6
+  n0 -->|dataset:data| n7
+  n0 -->|dataset:data| n8
+  n0 -->|dataset:data| n9
+  n10 -->|obo:has measurement unit label| n11
+  n10 -->|obo:has specified numeric value| n12
+  n13 -->|obo:has measurement unit label| n14
+  n13 -->|obo:has specified numeric value| n15
+  n7 -->|row:current| n16
+  n7 -->|row:test_time| n17
+  n7 -->|row:voltage| n10
+  n16 -->|obo:has measurement unit label| n14
+  n16 -->|obo:has specified numeric value| n18
+  n17 -->|obo:has measurement unit label| n19
+  n17 -->|obo:has specified numeric value| n20
+  n21 -->|obo:has measurement unit label| n19
+  n21 -->|obo:has specified numeric value| n15
+  n22 -->|obo:has measurement unit label| n11
+  n22 -->|obo:has specified numeric value| n23
+  n22 -->|qudt:standard uncertainty| n24
+  n25 -->|obo:has measurement unit label| n19
+  n25 -->|obo:has specified numeric value| n26
+  n27 -->|obo:has measurement unit label| n11
+  n27 -->|obo:has specified numeric value| n28
+  n8 -->|row:current| n13
+  n8 -->|row:test_time| n21
+  n8 -->|row:voltage| n27
+  n9 -->|row:current| n29
+  n9 -->|row:test_time| n25
+  n9 -->|row:voltage| n22
+  n29 -->|obo:has measurement unit label| n14
+  n29 -->|obo:has specified numeric value| n18
