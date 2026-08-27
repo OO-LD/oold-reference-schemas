@@ -81,8 +81,23 @@
         "bytes": 107169
       }
     },
-    "note": "1.0.4 development branch; the published w3id build lagged this commit",
+    "note": "the 1.0.4 development branch at that commit; the published w3id build lagged it",
     "license": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "electrochemistry": {
+    "version": "0.37.2",
+    "repository": "https://github.com/emmo-repo/domain-electrochemistry",
+    "ref": "0.37.2",
+    "base": "https://raw.githubusercontent.com/emmo-repo/domain-electrochemistry/0.37.2/",
+    "files": {
+      "reference/electrochemistry-quantities.ttl": {
+        "path": "reference/electrochemistry-quantities.ttl",
+        "sha256": "87efdb1a890a28174be307d68132f442d89f33ab849c4801015acfa0bdd11961",
+        "bytes": 415668
+      }
+    },
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "note": "quantity reference of the EMMO electrochemistry domain"
   },
   "iao": {
     "version": "2026-03-30",
@@ -96,7 +111,8 @@
         "sha256": "c27ff2964a2ad8165bc365698b628aae95108411384aa4450e6e1b1e82bf0f41",
         "bytes": 609839
       }
-    }
+    },
+    "note": "information artifacts, an OBO release"
   },
   "obi": {
     "version": "2026-07-27",
@@ -110,7 +126,8 @@
         "sha256": "8874abcca971ee26b4e4442198387916d788d14af3519e1040474908ed12b946",
         "bytes": 9980280
       }
-    }
+    },
+    "note": "biomedical investigations, an OBO release"
   },
   "pato": {
     "version": "2025-05-14",
@@ -124,7 +141,8 @@
         "sha256": "73a80487130a81a3696f1e03c551288f741ed1be5a07639e69e7ecd8b6f0371c",
         "bytes": 21082041
       }
-    }
+    },
+    "note": "qualities, an OBO release"
   },
   "pmdco": {
     "version": "3.1.0",
@@ -162,7 +180,8 @@
         "bytes": 1169399
       }
     },
-    "license": "https://creativecommons.org/licenses/by/4.0/"
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "note": "release tag; schema, units and quantity kinds"
   },
   "schemaorg": {
     "version": "30.0",
@@ -181,7 +200,8 @@
         "bytes": 1102670
       }
     },
-    "license": "https://creativecommons.org/licenses/by-sa/3.0/"
+    "license": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "note": "both namespace files, because the mappings use the http form"
   },
   "uo": {
     "version": "2026-07-31",
@@ -195,6 +215,7 @@
         "sha256": "7a15ca852b92a321f72d4a9dd653bf4ecee125b2aa904e50aad1d49643bae9c7",
         "bytes": 647954
       }
-    }
+    },
+    "note": "units of measurement, an OBO release"
   }
 }

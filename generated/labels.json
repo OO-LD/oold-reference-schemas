@@ -3,6 +3,10 @@
   "label": "has measurement unit label",
   "source": "iao/2026-03-30/iao.owl"
  },
+ "http://purl.obolibrary.org/obo/IAO_0000100": {
+  "label": "homogenous data collection",
+  "source": "iao/2026-03-30/iao.owl"
+ },
  "http://purl.obolibrary.org/obo/OBI_0001931": {
   "label": "scalar value specification",
   "source": "obi/2026-07-27/obi.owl"
@@ -74,6 +78,18 @@
  "http://purl.obolibrary.org/obo/UO_0010066": {
   "label": "kilometer",
   "source": "uo/2026-07-31/uo.owl"
+ },
+ "http://purl.org/dc/terms/description": {
+  "label": "description",
+  "source": "qudt/3.4.0/SCHEMA_QUDT.ttl"
+ },
+ "http://purl.org/dc/terms/license": {
+  "label": "dcterms:license",
+  "source": "pmdco/3.1.0/pmdco.ttl"
+ },
+ "http://purl.org/dc/terms/title": {
+  "label": "title",
+  "source": "qudt/3.4.0/SCHEMA_QUDT.ttl"
  },
  "http://qudt.org/schema/qudt/QuantityValue": {
   "label": "Quantity value",
@@ -171,8 +187,44 @@
   "label": "Volt",
   "source": "qudt/3.4.0/VOCAB_QUDT-UNITS-ALL.ttl"
  },
+ "http://schema.org/DataDownload": {
+  "label": "DataDownload",
+  "source": "schemaorg/30.0/schemaorg-current-http.ttl"
+ },
+ "http://schema.org/Dataset": {
+  "label": "Dataset",
+  "source": "schemaorg/30.0/schemaorg-current-http.ttl"
+ },
  "http://schema.org/QuantitativeValue": {
   "label": "QuantitativeValue",
+  "source": "schemaorg/30.0/schemaorg-current-http.ttl"
+ },
+ "http://schema.org/about": {
+  "label": "about",
+  "source": "schemaorg/30.0/schemaorg-current-http.ttl"
+ },
+ "http://schema.org/contentUrl": {
+  "label": "contentUrl",
+  "source": "schemaorg/30.0/schemaorg-current-http.ttl"
+ },
+ "http://schema.org/description": {
+  "label": "description",
+  "source": "schemaorg/30.0/schemaorg-current-http.ttl"
+ },
+ "http://schema.org/distribution": {
+  "label": "distribution",
+  "source": "schemaorg/30.0/schemaorg-current-http.ttl"
+ },
+ "http://schema.org/encodingFormat": {
+  "label": "encodingFormat",
+  "source": "schemaorg/30.0/schemaorg-current-http.ttl"
+ },
+ "http://schema.org/license": {
+  "label": "license",
+  "source": "schemaorg/30.0/schemaorg-current-http.ttl"
+ },
+ "http://schema.org/name": {
+  "label": "name",
   "source": "schemaorg/30.0/schemaorg-current-http.ttl"
  },
  "http://schema.org/unitCode": {
@@ -182,6 +234,14 @@
  "http://schema.org/value": {
   "label": "value",
   "source": "schemaorg/30.0/schemaorg-current-http.ttl"
+ },
+ "http://www.w3.org/ns/dcat#Dataset": {
+  "label": "Dataset",
+  "source": "ols4"
+ },
+ "http://www.w3.org/ns/dcat#Distribution": {
+  "label": "Distribution",
+  "source": "ols4"
  },
  "https://w3id.org/emmo#Ampere": {
   "label": "Ampere",
@@ -310,6 +370,18 @@
  "https://w3id.org/emmo#WeightPercent": {
   "label": "WeightPercent",
   "source": "emmo/1.0.4/disciplines/units/otherunits-abox.ttl"
+ },
+ "https://w3id.org/emmo/domain/electrochemistry#electrochemistry_27b3799c_250c_4332_8b71_7992c4a7bb05": {
+  "label": "TestTime",
+  "source": "electrochemistry/0.37.2/reference/electrochemistry-quantities.ttl"
+ },
+ "https://w3id.org/emmo/domain/electrochemistry#electrochemistry_4ebe2ef1_eea8_4b10_822d_7a68215bd24d": {
+  "label": "CellVoltage",
+  "source": "electrochemistry/0.37.2/reference/electrochemistry-quantities.ttl"
+ },
+ "https://w3id.org/emmo/domain/electrochemistry#electrochemistry_637ee9c4_4b3f_4d3a_975b_c0572dfe53ce": {
+  "label": "CellCurrent",
+  "source": "electrochemistry/0.37.2/reference/electrochemistry-quantities.ttl"
  },
  "https://w3id.org/pmd/co/PMD_0000000": {
   "label": "material",

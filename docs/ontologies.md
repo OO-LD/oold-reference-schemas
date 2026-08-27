@@ -4,16 +4,7 @@ The ontology versions each mapping was validated against, so a mapping can be re
 drift detected when an upstream release lands. Every synonym additionally records its own
 `object_source_version`, so the pin travels with the mapping rather than only with this page.
 
-| ontology | version | files | size | note |
-|---|---|---|---|---|
-| `emmo` | 1.0.4 | 5 | 0.8 MB | the 1.0.4 development branch at that commit; the published w3id build lagged it |
-| `iao` | 2026-03-30 | 1 | 0.6 MB | information artifacts, an OBO release |
-| `obi` | 2026-07-27 | 1 | 9.5 MB | biomedical investigations, an OBO release |
-| `pato` | 2025-05-14 | 1 | 20.1 MB | qualities, an OBO release |
-| `pmdco` | 3.0.0 | 1 | 0.9 MB |  |
-| `qudt` | 3.4.0 | 3 | 4.3 MB | release tag; schema, units and quantity kinds |
-| `schemaorg` | 30.0 | 2 | 2.1 MB | both namespace files, because the mappings use the http form |
-| `uo` | 2026-07-31 | 1 | 0.6 MB | units of measurement, an OBO release |
+{{ oold_pinned_ontologies() }}
 
 An ontology is pinned once a mapping targets it, rather than mirrored wholesale. OBO
 terms come from their versioned release artefacts, so the pin is a release rather than

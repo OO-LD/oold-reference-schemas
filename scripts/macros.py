@@ -1215,6 +1215,26 @@ def _readings(chain, base_ctx=None, base_syn=None):
     return ctx, syn
 
 
+def oold_pinned_ontologies():
+    """The pinned ontologies as a table, read from the lock.
+
+    The lock is what the fetch and the hash check use, so a table written beside it goes
+    stale the moment a pin moves, and a stale pin is exactly the thing this page exists to
+    make checkable.
+    """
+    lock_file = Path(ROOT) / "ontologies.lock.json"
+    if not lock_file.is_file():
+        return ""
+    lock = _read(lock_file)
+    rows = ["| ontology | version | files | size | note |", "|---|---|---|---|---|"]
+    for name, entry in sorted(lock.items()):
+        files = entry.get("files") or {}
+        megabytes = sum(f.get("bytes", 0) for f in files.values()) / (1024 * 1024)
+        rows.append(f'| `{name}` | {entry.get("version", "")} | {len(files)} | '
+                    f'{megabytes:.1f} MB | {entry.get("note", "")} |')
+    return NL.join(rows)
+
+
 def oold_module_page(module, page=None):
     """A module's whole page: what it is, where it is published, and what it holds.
 
@@ -1392,6 +1412,7 @@ def _embedded_href(source, module, page):
 
 SHARED_MACROS = [download, example, inline_file, mapping_crosswalks,
                  oold_module_meta_data, oold_module_page,
+                 oold_pinned_ontologies,
                  oold_module_schemas,
                  mapping_crosswalk_table, oold_schema_meta_data,
                  oold_schema_renderer, oold_schema_terms, render_schema,
