@@ -1,7 +1,8 @@
 {
   "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
   "$id": "MassFraction.schema.json",
-  "x-oold-version": "0.1.0",
+  "x-oold-uuid": "078fd588-b1f0-5741-9ec3-664bcd077ff0",
+  "x-oold-version": "0.1.1",
   "title": "MassFraction",
   "description": "Mass of a constituent over the mass of the whole. The quantity, not the unit, says that a percentage is by mass.",
   "examples": [

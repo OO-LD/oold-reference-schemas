@@ -1,7 +1,7 @@
 {
   "$schema": "Voltage.schema.json",
   "@context": "Voltage.schema.json",
-  "@id": "https://example.org/voltage-example",
+  "id": "https://example.org/voltage-example",
   "type": [
     "Voltage"
   ],
