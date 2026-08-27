@@ -29,6 +29,56 @@
         "path": "disciplines/units/siunits-abox.ttl",
         "sha256": "166ec7304cc756ec22a03f03898ac06ec5d2a571fed77f7d262994ef8c78597e",
         "bytes": 38328
+      },
+      "disciplines/units/unclassifiedunits-abox.ttl": {
+        "path": "disciplines/units/unclassifiedunits-abox.ttl",
+        "sha256": "9795b9e7d6142dba9865c0d52dbc3c9d493cadb2efd792042d4509fb78b8a39a",
+        "bytes": 619336
+      },
+      "disciplines/units/otherunits-abox.ttl": {
+        "path": "disciplines/units/otherunits-abox.ttl",
+        "sha256": "a24ee02e0ef470f074ccd98bd22fee030cd532c1b1f62082ed8bc856db607cb4",
+        "bytes": 183274
+      },
+      "disciplines/chemistry.ttl": {
+        "path": "disciplines/chemistry.ttl",
+        "sha256": "bc1390af693b30f5b276af19329dffbf631bd8c0897082e63cccbc9e893ac5d8",
+        "bytes": 34789
+      },
+      "disciplines/materials.ttl": {
+        "path": "disciplines/materials.ttl",
+        "sha256": "7224eb10e04a6fd12e8d21f9f86d0bc752a20b3705a4447b85b94fca4db8dda8",
+        "bytes": 52954
+      },
+      "disciplines/periodictable.ttl": {
+        "path": "disciplines/periodictable.ttl",
+        "sha256": "4ebb46a264760966cd4e334d58c041f867fce739ae4db6acd87e9a57b0d103f2",
+        "bytes": 275285
+      },
+      "perspectives/holistic.ttl": {
+        "path": "perspectives/holistic.ttl",
+        "sha256": "cd33ad7946e05520cc9434258f61fe4b5a419e8c27f5e633387e2a3c4f5fc776",
+        "bytes": 17187
+      },
+      "perspectives/reductionistic.ttl": {
+        "path": "perspectives/reductionistic.ttl",
+        "sha256": "330823908f69765ef98bef92e05a83c5ba1ca566936abf74a18b321180e015e7",
+        "bytes": 30695
+      },
+      "perspectives/structural.ttl": {
+        "path": "perspectives/structural.ttl",
+        "sha256": "e25c75be254fd3a5bfd1316af4ec73d2ec81b210f13a127d854b9ca79fcb3274",
+        "bytes": 13009
+      },
+      "reference/physicalistic.ttl": {
+        "path": "reference/physicalistic.ttl",
+        "sha256": "0122ce3bb10fbc7d259174f9e4a8ed1a6abde84ef2d919ab09ae01757d6ed3bf",
+        "bytes": 42321
+      },
+      "foundation/mereocausality.ttl": {
+        "path": "foundation/mereocausality.ttl",
+        "sha256": "35014bbaa407c57f4c24c9c8f07592aad6df29472fca7210047efcae2e39e3aa",
+        "bytes": 107169
       }
     },
     "note": "1.0.4 development branch; the published w3id build lagged this commit",
@@ -77,15 +127,15 @@
     }
   },
   "pmdco": {
-    "version": "3.0.0",
+    "version": "3.1.0",
     "repository": "https://github.com/materialdigital/core-ontology",
-    "ref": "v3.0.0",
-    "base": "https://raw.githubusercontent.com/materialdigital/core-ontology/v3.0.0/",
+    "ref": "v3.1.0",
+    "base": "https://raw.githubusercontent.com/materialdigital/core-ontology/v3.1.0/",
     "files": {
       "pmdco.ttl": {
         "path": "pmdco.ttl",
-        "sha256": "7796b95976a629ffb5efa7b66d5db9bfb9940679038f83e86b3fa34bb89b09d5",
-        "bytes": 900950
+        "sha256": "6a2eaee33c4f8aeac7aa67773ecbeaeb6f5c5e35e2f16488ac8a92ee414a28db",
+        "bytes": 1434549
       }
     },
     "license": "https://creativecommons.org/licenses/by/4.0/"

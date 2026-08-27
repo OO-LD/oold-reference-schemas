@@ -19,12 +19,20 @@
   "label": "diameter",
   "source": "pato/2025-05-14/pato.owl"
  },
+ "http://purl.obolibrary.org/obo/RO_0000080": {
+  "label": "quality of",
+  "source": "iao/2026-03-30/iao.owl"
+ },
  "http://purl.obolibrary.org/obo/UO_0000008": {
   "label": "meter",
   "source": "uo/2026-07-31/uo.owl"
  },
  "http://purl.obolibrary.org/obo/UO_0000010": {
   "label": "second",
+  "source": "uo/2026-07-31/uo.owl"
+ },
+ "http://purl.obolibrary.org/obo/UO_0000011": {
+  "label": "ampere",
   "source": "uo/2026-07-31/uo.owl"
  },
  "http://purl.obolibrary.org/obo/UO_0000016": {
@@ -41,6 +49,26 @@
  },
  "http://purl.obolibrary.org/obo/UO_0000032": {
   "label": "hour",
+  "source": "uo/2026-07-31/uo.owl"
+ },
+ "http://purl.obolibrary.org/obo/UO_0000037": {
+  "label": "milliampere",
+  "source": "uo/2026-07-31/uo.owl"
+ },
+ "http://purl.obolibrary.org/obo/UO_0000163": {
+  "label": "mass percentage",
+  "source": "uo/2026-07-31/uo.owl"
+ },
+ "http://purl.obolibrary.org/obo/UO_0000169": {
+  "label": "parts per million",
+  "source": "uo/2026-07-31/uo.owl"
+ },
+ "http://purl.obolibrary.org/obo/UO_0000218": {
+  "label": "volt",
+  "source": "uo/2026-07-31/uo.owl"
+ },
+ "http://purl.obolibrary.org/obo/UO_0000247": {
+  "label": "millivolt",
   "source": "uo/2026-07-31/uo.owl"
  },
  "http://purl.obolibrary.org/obo/UO_0010066": {
@@ -71,13 +99,29 @@
   "label": "Diameter",
   "source": "qudt/3.4.0/VOCAB_QUDT-QUANTITY-KINDS-ALL.ttl"
  },
+ "http://qudt.org/vocab/quantitykind/ElectricCurrent": {
+  "label": "Electric Current",
+  "source": "qudt/3.4.0/VOCAB_QUDT-QUANTITY-KINDS-ALL.ttl"
+ },
  "http://qudt.org/vocab/quantitykind/Length": {
   "label": "Length",
+  "source": "qudt/3.4.0/VOCAB_QUDT-QUANTITY-KINDS-ALL.ttl"
+ },
+ "http://qudt.org/vocab/quantitykind/MassFraction": {
+  "label": "Mass Fraction",
   "source": "qudt/3.4.0/VOCAB_QUDT-QUANTITY-KINDS-ALL.ttl"
  },
  "http://qudt.org/vocab/quantitykind/Time": {
   "label": "Time",
   "source": "qudt/3.4.0/VOCAB_QUDT-QUANTITY-KINDS-ALL.ttl"
+ },
+ "http://qudt.org/vocab/quantitykind/Voltage": {
+  "label": "Voltage",
+  "source": "qudt/3.4.0/VOCAB_QUDT-QUANTITY-KINDS-ALL.ttl"
+ },
+ "http://qudt.org/vocab/unit/A": {
+  "label": "Ampere",
+  "source": "qudt/3.4.0/VOCAB_QUDT-UNITS-ALL.ttl"
  },
  "http://qudt.org/vocab/unit/HR": {
   "label": "Hour",
@@ -95,6 +139,10 @@
   "label": "Micrometre",
   "source": "qudt/3.4.0/VOCAB_QUDT-UNITS-ALL.ttl"
  },
+ "http://qudt.org/vocab/unit/MilliA": {
+  "label": "Milliampere",
+  "source": "qudt/3.4.0/VOCAB_QUDT-UNITS-ALL.ttl"
+ },
  "http://qudt.org/vocab/unit/MilliM": {
   "label": "Millimetre",
   "source": "qudt/3.4.0/VOCAB_QUDT-UNITS-ALL.ttl"
@@ -103,8 +151,24 @@
   "label": "Millisecond",
   "source": "qudt/3.4.0/VOCAB_QUDT-UNITS-ALL.ttl"
  },
+ "http://qudt.org/vocab/unit/MilliV": {
+  "label": "Millivolt",
+  "source": "qudt/3.4.0/VOCAB_QUDT-UNITS-ALL.ttl"
+ },
+ "http://qudt.org/vocab/unit/PERCENT": {
+  "label": "Percent",
+  "source": "qudt/3.4.0/VOCAB_QUDT-UNITS-ALL.ttl"
+ },
+ "http://qudt.org/vocab/unit/PPM": {
+  "label": "Parts per Million",
+  "source": "qudt/3.4.0/VOCAB_QUDT-UNITS-ALL.ttl"
+ },
  "http://qudt.org/vocab/unit/SEC": {
   "label": "Second",
+  "source": "qudt/3.4.0/VOCAB_QUDT-UNITS-ALL.ttl"
+ },
+ "http://qudt.org/vocab/unit/V": {
+  "label": "Volt",
   "source": "qudt/3.4.0/VOCAB_QUDT-UNITS-ALL.ttl"
  },
  "http://schema.org/QuantitativeValue": {
@@ -119,12 +183,68 @@
   "label": "value",
   "source": "schemaorg/30.0/schemaorg-current-http.ttl"
  },
+ "https://w3id.org/emmo#Ampere": {
+  "label": "Ampere",
+  "source": "emmo/1.0.4/disciplines/units/siunits-abox.ttl"
+ },
+ "https://w3id.org/emmo#EMMO_172e2c96_180b_40f8_a3e7_b624471f40c2": {
+  "label": "SingleComponentComposition",
+  "source": "emmo/1.0.4/disciplines/chemistry.ttl"
+ },
+ "https://w3id.org/emmo#EMMO_17b031fb_4695_49b6_bb69_189ec63df3ee": {
+  "label": "Voltage",
+  "source": "emmo/1.0.4/disciplines/isq.ttl"
+ },
+ "https://w3id.org/emmo#EMMO_18fdd2cd_4b0a_43a5_a938_66d8290a066c": {
+  "label": "hasSpeciesPart",
+  "source": "emmo/1.0.4/disciplines/chemistry.ttl"
+ },
+ "https://w3id.org/emmo#EMMO_4f9670f5-14ca-53da-a1ea-9b0550a61035": {
+  "label": "SiliconSymbol",
+  "source": "emmo/1.0.4/disciplines/periodictable.ttl"
+ },
+ "https://w3id.org/emmo#EMMO_51f426a6_af4a_4e91_a392_2b0bb635e2d5": {
+  "label": "hasChemicalComposition",
+  "source": "emmo/1.0.4/disciplines/chemistry.ttl"
+ },
+ "https://w3id.org/emmo#EMMO_71b5082d-9908-5011-8ad0-b2ab70ffd08c": {
+  "label": "IronSymbol",
+  "source": "emmo/1.0.4/disciplines/periodictable.ttl"
+ },
+ "https://w3id.org/emmo#EMMO_7c055d65_2929_40e1_af4f_4bf10995ad50": {
+  "label": "MassFraction",
+  "source": "emmo/1.0.4/disciplines/isq.ttl"
+ },
+ "https://w3id.org/emmo#EMMO_7efd64d1_05a1_49cd_a7f0_783ca050d4f3": {
+  "label": "ChemicalComposition",
+  "source": "emmo/1.0.4/disciplines/chemistry.ttl"
+ },
+ "https://w3id.org/emmo#EMMO_95d706e4_8b16_48a1_8dfd_40ccd4df1c12": {
+  "label": "hasQuantityPart",
+  "source": "emmo/1.0.4/disciplines/chemistry.ttl"
+ },
+ "https://w3id.org/emmo#EMMO_a7180b5f-d46d-5751-b3bc-ae28a6655992": {
+  "label": "CarbonSymbol",
+  "source": "emmo/1.0.4/disciplines/periodictable.ttl"
+ },
+ "https://w3id.org/emmo#EMMO_b2282816_b7a3_44c6_b2cb_3feff1ceb7fe": {
+  "label": "hasSpatialTile",
+  "source": "emmo/1.0.4/perspectives/reductionistic.ttl"
+ },
  "https://w3id.org/emmo#EMMO_bba7f0f0_3707_42b9_b3fa_fd04610ef147": {
   "label": "standardUncertainty",
   "source": "emmo/1.0.4/disciplines/metrology.ttl"
  },
+ "https://w3id.org/emmo#EMMO_bc37743c_37c4_4ec7_9d58_d1aae5567352": {
+  "label": "Substance",
+  "source": "emmo/1.0.4/reference/physicalistic.ttl"
+ },
  "https://w3id.org/emmo#EMMO_c1c8ac3c_8a1c_4777_8e0b_14c1f9f9b0c6": {
   "label": "Diameter",
+  "source": "emmo/1.0.4/disciplines/isq.ttl"
+ },
+ "https://w3id.org/emmo#EMMO_c995ae70_3b84_4ebb_bcfc_69e6a281bb88": {
+  "label": "ElectricCurrent",
   "source": "emmo/1.0.4/disciplines/isq.ttl"
  },
  "https://w3id.org/emmo#EMMO_cd2cd0de_e0cc_4ef1_b27e_2e88db027bac": {
@@ -159,6 +279,10 @@
   "label": "MicroMetre",
   "source": "emmo/1.0.4/disciplines/units/prefixedsiunits-abox.ttl"
  },
+ "https://w3id.org/emmo#MilliAmpere": {
+  "label": "MilliAmpere",
+  "source": "emmo/1.0.4/disciplines/units/prefixedsiunits-abox.ttl"
+ },
  "https://w3id.org/emmo#MilliMetre": {
   "label": "MilliMetre",
   "source": "emmo/1.0.4/disciplines/units/prefixedsiunits-abox.ttl"
@@ -167,8 +291,48 @@
   "label": "MilliSecond",
   "source": "emmo/1.0.4/disciplines/units/prefixedsiunits-abox.ttl"
  },
+ "https://w3id.org/emmo#MilliVolt": {
+  "label": "MilliVolt",
+  "source": "emmo/1.0.4/disciplines/units/prefixedsiunits-abox.ttl"
+ },
+ "https://w3id.org/emmo#PartPerMillion": {
+  "label": "PartPerMillion",
+  "source": "emmo/1.0.4/disciplines/units/unclassifiedunits-abox.ttl"
+ },
  "https://w3id.org/emmo#Second": {
   "label": "Second",
   "source": "emmo/1.0.4/disciplines/units/siunits-abox.ttl"
+ },
+ "https://w3id.org/emmo#Volt": {
+  "label": "Volt",
+  "source": "emmo/1.0.4/disciplines/units/siunits-abox.ttl"
+ },
+ "https://w3id.org/emmo#WeightPercent": {
+  "label": "WeightPercent",
+  "source": "emmo/1.0.4/disciplines/units/otherunits-abox.ttl"
+ },
+ "https://w3id.org/pmd/co/PMD_0000000": {
+  "label": "material",
+  "source": "pmdco/3.1.0/pmdco.ttl"
+ },
+ "https://w3id.org/pmd/co/PMD_0000077": {
+  "label": "specified by value",
+  "source": "pmdco/3.1.0/pmdco.ttl"
+ },
+ "https://w3id.org/pmd/co/PMD_0000551": {
+  "label": "chemical composition",
+  "source": "pmdco/3.1.0/pmdco.ttl"
+ },
+ "https://w3id.org/pmd/co/PMD_0020102": {
+  "label": "mass ratio",
+  "source": "pmdco/3.1.0/pmdco.ttl"
+ },
+ "https://w3id.org/pmd/co/PMD_0025997": {
+  "label": "fraction value specification",
+  "source": "pmdco/3.1.0/pmdco.ttl"
+ },
+ "https://w3id.org/pmd/co/PMD_0025999": {
+  "label": "relational quality of",
+  "source": "pmdco/3.1.0/pmdco.ttl"
  }
 }

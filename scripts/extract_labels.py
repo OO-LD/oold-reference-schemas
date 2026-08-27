@@ -27,6 +27,10 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "generated" / "labels.json"
 
+# A term of this repository has no ontology label to find: it is a placeholder for a
+# vocabulary that does not exist yet, and the schema is where it is described.
+OWN = "https://w3id.org/oo-ld/schemas/"
+
 QUERY = """
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
@@ -116,6 +120,8 @@ def fetch_missing(labels: dict[str, dict[str, str]]) -> None:
     import urllib.request  # noqa: PLC0415
 
     for iri in sorted(mapped_iris() - set(labels)):
+        if iri.startswith(OWN):
+            continue
         url = ("https://www.ebi.ac.uk/ols4/api/terms?iri="
                + urllib.parse.quote(iri, safe=""))
         try:
@@ -130,8 +136,16 @@ def fetch_missing(labels: dict[str, dict[str, str]]) -> None:
 
 
 def iri_prefix(ontology: str) -> str:
-    """The namespace an ontology IRI covers, so a term can be matched to its owner."""
-    return ontology.rstrip("/").rsplit("/", 1)[0] + "/" if ontology else ""
+    """The namespace an ontology IRI covers, so a term can be matched to its owner.
+
+    A build that leaves its version placeholder unsubstituted, as the QUDT release does with
+    `$$QUDT_VERSION$$`, would otherwise cover nothing and let whichever importing file sorts
+    first claim its terms.
+    """
+    if not ontology:
+        return ""
+    parts = [p for p in ontology.rstrip("/").split("/") if not p.startswith("$$")]
+    return "/".join(parts[:-1]) + "/"
 
 
 def owns(ontology: str, term: str) -> bool:
@@ -188,7 +202,7 @@ def main() -> None:
     # a megabyte that changes whenever an ontology is repinned.
     wanted = mapped_iris()
     labels = {iri: entry for iri, entry in labels.items() if iri in wanted}
-    missing = sorted(wanted - set(labels))
+    missing = sorted(i for i in wanted - set(labels) if not i.startswith(OWN))
     for iri in missing:
         print(f"  no label for {iri}", file=sys.stderr)
 
