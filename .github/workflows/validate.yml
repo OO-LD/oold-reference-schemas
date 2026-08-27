@@ -16,7 +16,7 @@ on:
 # Pinned so a docs build is reproducible and a bump is a visible change.
 env:
   # The validator and the specification these schemas conform to are one release.
-  OOLD_PY_VERSION: "0.18.0"
+  OOLD_PY_VERSION: "0.18.1"
   ZENSICAL_VERSION: "0.0.46"
   MIKE_SPEC: "git+https://github.com/squidfunk/mike.git@2.2.0+zensical-0.1.0"
 
