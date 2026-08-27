@@ -1,98 +1,98 @@
+PREFIX chem_components: <https://w3id.org/oo-ld/schemas/materials/0.2/ChemicalComposition.schema.json#/properties/components/>
+PREFIX chem_components_items: <https://w3id.org/oo-ld/schemas/materials/0.2/ChemicalComposition.schema.json#/properties/components/items/properties/>
+PREFIX chem_properties: <https://w3id.org/oo-ld/schemas/materials/0.2/ChemicalComposition.schema.json#/properties/>
+PREFIX comp_Component: <https://w3id.org/oo-ld/schemas/materials/0.2/Composition.schema.json#/$defs/Component/properties/>
 PREFIX emmo: <https://w3id.org/emmo#>
-PREFIX ns1: <https://example.org/material/>
-PREFIX ns10: <https://w3id.org/oo-ld/schemas/materials/0.2/MaterialComposition.schema.json#/properties/constituents/>
-PREFIX ns11: <https://w3id.org/oo-ld/schemas/materials/0.2/MaterialComposition.schema.json#/properties/constituents/items/properties/>
-PREFIX ns2: <https://schemas.oo-ld.org/.well-known/genid/>
-PREFIX ns3: <https://w3id.org/oo-ld/schemas/materials/0.2/>
-PREFIX ns4: <https://w3id.org/oo-ld/schemas/materials/0.2/ChemicalComposition.schema.json#/properties/>
-PREFIX ns5: <https://w3id.org/oo-ld/schemas/materials/0.2/ChemicalComposition.schema.json#/properties/components/>
-PREFIX ns6: <https://w3id.org/oo-ld/schemas/materials/0.2/ChemicalComposition.schema.json#/properties/components/items/properties/>
-PREFIX ns7: <https://w3id.org/oo-ld/schemas/materials/0.2/Composition.schema.json#/$defs/Component/properties/>
-PREFIX ns8: <https://w3id.org/oo-ld/schemas/materials/0.2/Material.schema.json#/properties/>
-PREFIX ns9: <https://w3id.org/oo-ld/schemas/materials/0.2/MaterialComposition.schema.json#/properties/>
+PREFIX ex_material: <https://example.org/material/>
+PREFIX genid: <https://schemas.oo-ld.org/.well-known/genid/>
+PREFIX mat_properties: <https://w3id.org/oo-ld/schemas/materials/0.2/Material.schema.json#/properties/>
+PREFIX matcomp_components: <https://w3id.org/oo-ld/schemas/materials/0.2/MaterialComposition.schema.json#/properties/components/>
+PREFIX matcomp_components_items: <https://w3id.org/oo-ld/schemas/materials/0.2/MaterialComposition.schema.json#/properties/components/items/properties/>
+PREFIX matcomp_properties: <https://w3id.org/oo-ld/schemas/materials/0.2/MaterialComposition.schema.json#/properties/>
+PREFIX materials: <https://w3id.org/oo-ld/schemas/materials/0.2/>
 PREFIX qkind: <http://qudt.org/vocab/quantitykind/>
 PREFIX qudt: <http://qudt.org/schema/qudt/>
 PREFIX qunit: <http://qudt.org/vocab/unit/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
-ns1:no27_14
-    a ns3:Material.schema.json ;
-    ns8:chemical_composition ns2:c14n5 ;
-    ns8:material_composition ns2:c14n3 ;
+ex_material:no27_14
+    a materials:Material.schema.json ;
+    mat_properties:chemical_composition genid:c14n5 ;
+    mat_properties:material_composition genid:c14n7 ;
 .
 
-ns2:c14n0
+genid:c14n0
     a qkind:MassFraction ;
     qudt:hasUnit qunit:PERCENT ;
     qudt:standardUncertainty 1e-01 ;
     qudt:value 3.3e+00 ;
 .
 
-ns2:c14n1
-    a ns10:items ;
-    ns7:amount ns2:c14n8 ;
-    ns11:material ns1:batch1 ;
+genid:c14n1
+    a chem_components:items ;
+    chem_components_items:constituent emmo:EMMO_71b5082d-9908-5011-8ad0-b2ab70ffd08c ;
+    comp_Component:amount genid:c14n6 ;
 .
 
-ns2:c14n10
-    a ns5:items ;
-    ns6:species emmo:EMMO_4f9670f5-14ca-53da-a1ea-9b0550a61035 ;
-    ns7:amount ns2:c14n0 ;
+genid:c14n10
+    a matcomp_components:items ;
+    comp_Component:amount genid:c14n9 ;
+    matcomp_components_items:constituent ex_material:batch1 ;
 .
 
-ns2:c14n11
+genid:c14n11
     a qkind:MassFraction ;
     qudt:hasUnit qunit:PERCENT ;
     qudt:value 20 ;
 .
 
-ns2:c14n2
-    a ns5:items ;
-    ns6:species emmo:EMMO_71b5082d-9908-5011-8ad0-b2ab70ffd08c ;
-    ns7:amount ns2:c14n6 ;
+genid:c14n2
+    a chem_components:items ;
+    chem_components_items:constituent emmo:EMMO_4f9670f5-14ca-53da-a1ea-9b0550a61035 ;
+    comp_Component:amount genid:c14n0 ;
 .
 
-ns2:c14n3
-    a ns3:MaterialComposition.schema.json ;
-    ns9:constituents
-        ns2:c14n1 ,
-        ns2:c14n7 ;
-.
-
-ns2:c14n4
+genid:c14n3
     a qkind:MassFraction ;
     qudt:hasUnit qunit:PPM ;
     qudt:value 120 ;
 .
 
-ns2:c14n5
-    a ns3:ChemicalComposition.schema.json ;
-    ns4:components
-        ns2:c14n10 ,
-        ns2:c14n2 ,
-        ns2:c14n9 ;
+genid:c14n4
+    a chem_components:items ;
+    chem_components_items:constituent emmo:EMMO_a7180b5f-d46d-5751-b3bc-ae28a6655992 ;
+    comp_Component:amount genid:c14n3 ;
 .
 
-ns2:c14n6
+genid:c14n5
+    a materials:ChemicalComposition.schema.json ;
+    chem_properties:components
+        genid:c14n1 ,
+        genid:c14n2 ,
+        genid:c14n4 ;
+.
+
+genid:c14n6
     a qkind:MassFraction ;
     qudt:hasUnit qunit:PERCENT ;
     qudt:value 9.67e+01 ;
 .
 
-ns2:c14n7
-    a ns10:items ;
-    ns7:amount ns2:c14n11 ;
-    ns11:material ns1:masterbatch7 ;
+genid:c14n7
+    a materials:MaterialComposition.schema.json ;
+    matcomp_properties:components
+        genid:c14n10 ,
+        genid:c14n8 ;
 .
 
-ns2:c14n8
+genid:c14n8
+    a matcomp_components:items ;
+    comp_Component:amount genid:c14n11 ;
+    matcomp_components_items:constituent ex_material:masterbatch7 ;
+.
+
+genid:c14n9
     a qkind:MassFraction ;
     qudt:hasUnit qunit:PERCENT ;
     qudt:value 80 ;
-.
-
-ns2:c14n9
-    a ns5:items ;
-    ns6:species emmo:EMMO_a7180b5f-d46d-5751-b3bc-ae28a6655992 ;
-    ns7:amount ns2:c14n4 ;
 .

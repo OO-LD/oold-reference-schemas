@@ -1,9 +1,9 @@
-PREFIX ns1: <https://example.org/>
+PREFIX ex: <https://example.org/>
 PREFIX obo: <http://purl.obolibrary.org/obo/>
 PREFIX qkind: <http://qudt.org/vocab/quantitykind/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
-ns1:voltage-example
+ex:voltage-example
     a qkind:Voltage ;
     obo:IAO_0000039 obo:UO_0000218 ;
     obo:OBI_0001937 3.65e+00 ;

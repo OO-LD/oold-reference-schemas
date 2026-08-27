@@ -5,12 +5,12 @@
   "type": [
     "MaterialComposition"
   ],
-  "constituents": [
+  "components": [
     {
       "type": [
         "MaterialComponent"
       ],
-      "material": "https://example.org/material/batch1",
+      "constituent": "https://example.org/material/batch1",
       "amount": {
         "type": [
           "MassFraction"

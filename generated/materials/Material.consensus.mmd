@@ -1,0 +1,55 @@
+flowchart LR
+  n0["no27_14<br>Material"]
+  n1["blank node<br>ChemicalComposition"]
+  n2["blank node<br>MaterialComposition"]
+  n3["blank node<br>qkind:Mass Fraction"]
+  n4["qunit:Percent"]
+  n5[/"0.1"/]
+  n6[/"3.3"/]
+  n7["blank node<br>chem:ChemicalComponent"]
+  n8["emmo:IronSymbol"]
+  n9["blank node<br>qkind:Mass Fraction"]
+  n10["blank node<br>matcomp:MaterialComponent"]
+  n11["blank node<br>qkind:Mass Fraction"]
+  n12["batch1"]
+  n13["blank node<br>qkind:Mass Fraction"]
+  n14[/"20"/]
+  n15["blank node<br>chem:ChemicalComponent"]
+  n16["emmo:SiliconSymbol"]
+  n17["blank node<br>qkind:Mass Fraction"]
+  n18["qunit:Parts per Million"]
+  n19[/"120"/]
+  n20["blank node<br>chem:ChemicalComponent"]
+  n21["emmo:CarbonSymbol"]
+  n22[/"96.7"/]
+  n23["blank node<br>matcomp:MaterialComponent"]
+  n24["masterbatch7"]
+  n25[/"80"/]
+  n0 -->|mat:chemical_composition| n1
+  n0 -->|mat:material_composition| n2
+  n3 -->|qudt:has unit| n4
+  n3 -->|qudt:standard uncertainty| n5
+  n3 -->|qudt:value| n6
+  n7 -->|chem:constituent| n8
+  n7 -->|comp:amount| n9
+  n10 -->|comp:amount| n11
+  n10 -->|matcomp:constituent| n12
+  n13 -->|qudt:has unit| n4
+  n13 -->|qudt:value| n14
+  n15 -->|chem:constituent| n16
+  n15 -->|comp:amount| n3
+  n17 -->|qudt:has unit| n18
+  n17 -->|qudt:value| n19
+  n20 -->|chem:constituent| n21
+  n20 -->|comp:amount| n17
+  n1 -->|chem:components| n7
+  n1 -->|chem:components| n15
+  n1 -->|chem:components| n20
+  n9 -->|qudt:has unit| n4
+  n9 -->|qudt:value| n22
+  n2 -->|matcomp:components| n10
+  n2 -->|matcomp:components| n23
+  n23 -->|comp:amount| n13
+  n23 -->|matcomp:constituent| n24
+  n11 -->|qudt:has unit| n4
+  n11 -->|qudt:value| n25

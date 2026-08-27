@@ -10,7 +10,7 @@
       "type": [
         "ChemicalComponent"
       ],
-      "species": "Fe",
+      "constituent": "Fe",
       "amount": {
         "type": [
           "MassFraction"

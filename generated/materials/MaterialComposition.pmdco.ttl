@@ -1,25 +1,25 @@
-PREFIX ns1: <https://example.org/>
-PREFIX ns2: <https://example.org/material/>
-PREFIX ns3: <https://schemas.oo-ld.org/.well-known/genid/>
-PREFIX ns4: <https://w3id.org/oo-ld/schemas/materials/0.2/>
-PREFIX ns5: <https://w3id.org/oo-ld/schemas/materials/0.2/MaterialComposition.schema.json#/properties/>
+PREFIX ex: <https://example.org/>
+PREFIX ex_material: <https://example.org/material/>
+PREFIX genid: <https://schemas.oo-ld.org/.well-known/genid/>
+PREFIX matcomp_properties: <https://w3id.org/oo-ld/schemas/materials/0.2/MaterialComposition.schema.json#/properties/>
+PREFIX materials: <https://w3id.org/oo-ld/schemas/materials/0.2/>
 PREFIX obo: <http://purl.obolibrary.org/obo/>
 PREFIX pmd: <https://w3id.org/pmd/co/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
-ns1:instance
-    a ns4:MaterialComposition.schema.json ;
-    ns5:constituents ns3:c14n1 ;
+ex:instance
+    a materials:MaterialComposition.schema.json ;
+    matcomp_properties:components genid:c14n1 ;
 .
 
-ns3:c14n0
+genid:c14n0
     a pmd:PMD_0025997 ;
     obo:IAO_0000039 obo:UO_0000163 ;
     obo:OBI_0001937 9.67e+01 ;
 .
 
-ns3:c14n1
+genid:c14n1
     a pmd:PMD_0020102 ;
-    pmd:PMD_0000077 ns3:c14n0 ;
-    pmd:PMD_0025999 ns2:batch1 ;
+    pmd:PMD_0000077 genid:c14n0 ;
+    pmd:PMD_0025999 ex_material:batch1 ;
 .

@@ -1,29 +1,29 @@
+PREFIX chem_components: <https://w3id.org/oo-ld/schemas/materials/0.2/ChemicalComposition.schema.json#/properties/components/>
+PREFIX chem_components_items: <https://w3id.org/oo-ld/schemas/materials/0.2/ChemicalComposition.schema.json#/properties/components/items/properties/>
+PREFIX chem_properties: <https://w3id.org/oo-ld/schemas/materials/0.2/ChemicalComposition.schema.json#/properties/>
+PREFIX comp_Component: <https://w3id.org/oo-ld/schemas/materials/0.2/Composition.schema.json#/$defs/Component/properties/>
 PREFIX emmo: <https://w3id.org/emmo#>
-PREFIX ns1: <https://example.org/>
-PREFIX ns2: <https://schemas.oo-ld.org/.well-known/genid/>
-PREFIX ns3: <https://w3id.org/oo-ld/schemas/materials/0.2/>
-PREFIX ns4: <https://w3id.org/oo-ld/schemas/materials/0.2/ChemicalComposition.schema.json#/properties/>
-PREFIX ns5: <https://w3id.org/oo-ld/schemas/materials/0.2/ChemicalComposition.schema.json#/properties/components/>
-PREFIX ns6: <https://w3id.org/oo-ld/schemas/materials/0.2/ChemicalComposition.schema.json#/properties/components/items/properties/>
-PREFIX ns7: <https://w3id.org/oo-ld/schemas/materials/0.2/Composition.schema.json#/$defs/Component/properties/>
+PREFIX ex: <https://example.org/>
+PREFIX genid: <https://schemas.oo-ld.org/.well-known/genid/>
+PREFIX materials: <https://w3id.org/oo-ld/schemas/materials/0.2/>
 PREFIX qkind: <http://qudt.org/vocab/quantitykind/>
 PREFIX qudt: <http://qudt.org/schema/qudt/>
 PREFIX qunit: <http://qudt.org/vocab/unit/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
-ns1:instance
-    a ns3:ChemicalComposition.schema.json ;
-    ns4:components ns2:c14n1 ;
+ex:instance
+    a materials:ChemicalComposition.schema.json ;
+    chem_properties:components genid:c14n1 ;
 .
 
-ns2:c14n0
+genid:c14n0
     a qkind:MassFraction ;
     qudt:hasUnit qunit:PERCENT ;
     qudt:value 9.67e+01 ;
 .
 
-ns2:c14n1
-    a ns5:items ;
-    ns6:species emmo:EMMO_71b5082d-9908-5011-8ad0-b2ab70ffd08c ;
-    ns7:amount ns2:c14n0 ;
+genid:c14n1
+    a chem_components:items ;
+    chem_components_items:constituent emmo:EMMO_71b5082d-9908-5011-8ad0-b2ab70ffd08c ;
+    comp_Component:amount genid:c14n0 ;
 .
