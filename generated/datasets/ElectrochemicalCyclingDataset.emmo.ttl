@@ -1,6 +1,7 @@
 PREFIX creativecommons_licenses_by_4_0: <https://creativecommons.org/licenses/by/4.0/>
 PREFIX dataset_properties: <https://w3id.org/oo-ld/schemas/datasets/0.1/Dataset.schema.json#/properties/>
 PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX echem: <https://w3id.org/emmo/domain/electrochemistry#>
 PREFIX electrochemicalcyclingdataset__defs: <https://w3id.org/oo-ld/schemas/datasets/0.1/ElectrochemicalCyclingDataset.schema.json#/$defs/>
 PREFIX emmo: <https://w3id.org/emmo#>
 PREFIX ex_cell: <https://example.org/cell/>
@@ -9,7 +10,6 @@ PREFIX ex_process: <https://example.org/process/>
 PREFIX genid: <https://schemas.oo-ld.org/.well-known/genid/>
 PREFIX prov: <http://www.w3.org/ns/prov#>
 PREFIX qudt: <http://qudt.org/schema/qudt/>
-PREFIX row: <https://w3id.org/oo-ld/schemas/datasets/0.1/ElectrochemicalCyclingDataset.schema.json#/$defs/ElectrochemicalCyclingDataRow/>
 PREFIX row_properties: <https://w3id.org/oo-ld/schemas/datasets/0.1/ElectrochemicalCyclingDataset.schema.json#/$defs/ElectrochemicalCyclingDataRow/properties/>
 PREFIX schema1: <http://schema.org/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
@@ -23,83 +23,83 @@ ex_dataset:LFP-042-2026-08-20
     schema1:about ex_cell:LFP-042 ;
     prov:wasGeneratedBy ex_process:LFP-042-cycling ;
     dataset_properties:data
-        genid:c14n11 ,
+        genid:c14n10 ,
         genid:c14n7 ,
-        genid:c14n9 ;
+        genid:c14n8 ;
 .
 
 genid:c14n0
-    a row:TestTime ;
-    qudt:value 0 ;
-    emmo:EMMO_eeb06032_dd4f_476e_9da6_aa24302b7588 emmo:Second ;
-.
-
-genid:c14n1
-    a row:TestTime ;
-    qudt:value 60 ;
-    emmo:EMMO_eeb06032_dd4f_476e_9da6_aa24302b7588 emmo:Second ;
-.
-
-genid:c14n10
-    a row:CellCurrent ;
-    qudt:value 750 ;
-    emmo:EMMO_eeb06032_dd4f_476e_9da6_aa24302b7588 emmo:MilliAmpere ;
-.
-
-genid:c14n11
-    a electrochemicalcyclingdataset__defs:ElectrochemicalCyclingDataRow ;
-    row_properties:current genid:c14n2 ;
-    row_properties:test_time genid:c14n0 ;
-    row_properties:voltage genid:c14n5 ;
-.
-
-genid:c14n2
-    a row:CellCurrent ;
-    qudt:value 0 ;
-    emmo:EMMO_eeb06032_dd4f_476e_9da6_aa24302b7588 emmo:MilliAmpere ;
-.
-
-genid:c14n3
-    a row:CellVoltage ;
-    qudt:value 3.51e+00 ;
-    emmo:EMMO_eeb06032_dd4f_476e_9da6_aa24302b7588 emmo:Volt ;
-.
-
-genid:c14n4
-    a row:TestTime ;
-    qudt:value 120 ;
-    emmo:EMMO_eeb06032_dd4f_476e_9da6_aa24302b7588 emmo:Second ;
-.
-
-genid:c14n5
-    a row:CellVoltage ;
+    a echem:electrochemistry_4ebe2ef1_eea8_4b10_822d_7a68215bd24d ;
     qudt:value 3.42e+00 ;
     emmo:EMMO_eeb06032_dd4f_476e_9da6_aa24302b7588 emmo:Volt ;
 .
 
-genid:c14n6
-    a row:CellVoltage ;
+genid:c14n1
+    a echem:electrochemistry_4ebe2ef1_eea8_4b10_822d_7a68215bd24d ;
+    qudt:value 3.51e+00 ;
+    emmo:EMMO_eeb06032_dd4f_476e_9da6_aa24302b7588 emmo:Volt ;
+.
+
+genid:c14n10
+    a electrochemicalcyclingdataset__defs:ElectrochemicalCyclingDataRow ;
+    row_properties:current genid:c14n11 ;
+    row_properties:test_time genid:c14n2 ;
+    row_properties:voltage genid:c14n5 ;
+.
+
+genid:c14n11
+    a echem:electrochemistry_637ee9c4_4b3f_4d3a_975b_c0572dfe53ce ;
+    qudt:value 750 ;
+    emmo:EMMO_eeb06032_dd4f_476e_9da6_aa24302b7588 emmo:MilliAmpere ;
+.
+
+genid:c14n2
+    a echem:electrochemistry_27b3799c_250c_4332_8b71_7992c4a7bb05 ;
+    qudt:value 120 ;
+    emmo:EMMO_eeb06032_dd4f_476e_9da6_aa24302b7588 emmo:Second ;
+.
+
+genid:c14n3
+    a echem:electrochemistry_27b3799c_250c_4332_8b71_7992c4a7bb05 ;
+    qudt:value 0 ;
+    emmo:EMMO_eeb06032_dd4f_476e_9da6_aa24302b7588 emmo:Second ;
+.
+
+genid:c14n4
+    a echem:electrochemistry_27b3799c_250c_4332_8b71_7992c4a7bb05 ;
+    qudt:value 60 ;
+    emmo:EMMO_eeb06032_dd4f_476e_9da6_aa24302b7588 emmo:Second ;
+.
+
+genid:c14n5
+    a echem:electrochemistry_4ebe2ef1_eea8_4b10_822d_7a68215bd24d ;
     qudt:value 3.58e+00 ;
     emmo:EMMO_bba7f0f0_3707_42b9_b3fa_fd04610ef147 2e-03 ;
     emmo:EMMO_eeb06032_dd4f_476e_9da6_aa24302b7588 emmo:Volt ;
 .
 
-genid:c14n7
-    a electrochemicalcyclingdataset__defs:ElectrochemicalCyclingDataRow ;
-    row_properties:current genid:c14n8 ;
-    row_properties:test_time genid:c14n4 ;
-    row_properties:voltage genid:c14n6 ;
-.
-
-genid:c14n8
-    a row:CellCurrent ;
-    qudt:value 750 ;
+genid:c14n6
+    a echem:electrochemistry_637ee9c4_4b3f_4d3a_975b_c0572dfe53ce ;
+    qudt:value 0 ;
     emmo:EMMO_eeb06032_dd4f_476e_9da6_aa24302b7588 emmo:MilliAmpere ;
 .
 
-genid:c14n9
+genid:c14n7
     a electrochemicalcyclingdataset__defs:ElectrochemicalCyclingDataRow ;
-    row_properties:current genid:c14n10 ;
-    row_properties:test_time genid:c14n1 ;
-    row_properties:voltage genid:c14n3 ;
+    row_properties:current genid:c14n6 ;
+    row_properties:test_time genid:c14n3 ;
+    row_properties:voltage genid:c14n0 ;
+.
+
+genid:c14n8
+    a electrochemicalcyclingdataset__defs:ElectrochemicalCyclingDataRow ;
+    row_properties:current genid:c14n9 ;
+    row_properties:test_time genid:c14n4 ;
+    row_properties:voltage genid:c14n1 ;
+.
+
+genid:c14n9
+    a echem:electrochemistry_637ee9c4_4b3f_4d3a_975b_c0572dfe53ce ;
+    qudt:value 750 ;
+    emmo:EMMO_eeb06032_dd4f_476e_9da6_aa24302b7588 emmo:MilliAmpere ;
 .

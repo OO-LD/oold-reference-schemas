@@ -9,29 +9,29 @@ flowchart LR
   n7["blank node<br>electrochemicalcyclingdataset:ElectrochemicalCyclingDataRow"]
   n8["blank node<br>electrochemicalcyclingdataset:ElectrochemicalCyclingDataRow"]
   n9["blank node<br>electrochemicalcyclingdataset:ElectrochemicalCyclingDataRow"]
-  n10["blank node<br>row:TestTime"]
-  n11[/"0"/]
-  n12["emmo:Second"]
-  n13["blank node<br>row:TestTime"]
-  n14[/"60"/]
-  n15["blank node<br>row:CellCurrent"]
-  n16[/"750"/]
-  n17["emmo:MilliAmpere"]
-  n18["blank node<br>row:CellCurrent"]
-  n19["blank node<br>row:CellVoltage"]
-  n20["blank node<br>row:CellVoltage"]
-  n21[/"3.51"/]
-  n22["emmo:Volt"]
-  n23["blank node<br>row:TestTime"]
-  n24[/"120"/]
-  n25[/"3.42"/]
-  n26["blank node<br>row:CellVoltage"]
-  n27[/"3.58"/]
-  n28[/"0.002"/]
-  n29["blank node<br>row:CellCurrent"]
+  n10["blank node<br>echem:CellVoltage"]
+  n11[/"3.42"/]
+  n12["emmo:Volt"]
+  n13["blank node<br>echem:CellVoltage"]
+  n14[/"3.51"/]
+  n15["blank node<br>echem:CellCurrent"]
+  n16["blank node<br>echem:TestTime"]
+  n17["blank node<br>echem:CellVoltage"]
+  n18[/"750"/]
+  n19["emmo:MilliAmpere"]
+  n20[/"120"/]
+  n21["emmo:Second"]
+  n22["blank node<br>echem:TestTime"]
+  n23[/"0"/]
+  n24["blank node<br>echem:TestTime"]
+  n25[/"60"/]
+  n26[/"3.58"/]
+  n27[/"0.002"/]
+  n28["blank node<br>echem:CellCurrent"]
+  n29["blank node<br>echem:CellCurrent"]
   n0 -->|dcterms:description| n1
   n0 -->|dcterms:issued| n2
-  n0 -->|dcterms:license| n3
+  n0 -->|dcterms:dcterms:license| n3
   n0 -->|dcterms:title| n4
   n0 -->|schema:about| n5
   n0 -->|prov:wasGeneratedBy| n6
@@ -42,27 +42,27 @@ flowchart LR
   n10 -->|emmo:hasReferencePart| n12
   n13 -->|qudt:value| n14
   n13 -->|emmo:hasReferencePart| n12
-  n15 -->|qudt:value| n16
-  n15 -->|emmo:hasReferencePart| n17
-  n7 -->|row:current| n18
-  n7 -->|row:test_time| n10
-  n7 -->|row:voltage| n19
-  n18 -->|qudt:value| n11
-  n18 -->|emmo:hasReferencePart| n17
-  n20 -->|qudt:value| n21
-  n20 -->|emmo:hasReferencePart| n22
-  n23 -->|qudt:value| n24
-  n23 -->|emmo:hasReferencePart| n12
-  n19 -->|qudt:value| n25
-  n19 -->|emmo:hasReferencePart| n22
-  n26 -->|qudt:value| n27
-  n26 -->|emmo:standardUncertainty| n28
-  n26 -->|emmo:hasReferencePart| n22
-  n8 -->|row:current| n29
-  n8 -->|row:test_time| n23
-  n8 -->|row:voltage| n26
-  n29 -->|qudt:value| n16
-  n29 -->|emmo:hasReferencePart| n17
-  n9 -->|row:current| n15
-  n9 -->|row:test_time| n13
-  n9 -->|row:voltage| n20
+  n7 -->|row:current| n15
+  n7 -->|row:test_time| n16
+  n7 -->|row:voltage| n17
+  n15 -->|qudt:value| n18
+  n15 -->|emmo:hasReferencePart| n19
+  n16 -->|qudt:value| n20
+  n16 -->|emmo:hasReferencePart| n21
+  n22 -->|qudt:value| n23
+  n22 -->|emmo:hasReferencePart| n21
+  n24 -->|qudt:value| n25
+  n24 -->|emmo:hasReferencePart| n21
+  n17 -->|qudt:value| n26
+  n17 -->|emmo:standardUncertainty| n27
+  n17 -->|emmo:hasReferencePart| n12
+  n28 -->|qudt:value| n23
+  n28 -->|emmo:hasReferencePart| n19
+  n8 -->|row:current| n28
+  n8 -->|row:test_time| n22
+  n8 -->|row:voltage| n10
+  n9 -->|row:current| n29
+  n9 -->|row:test_time| n24
+  n9 -->|row:voltage| n13
+  n29 -->|qudt:value| n18
+  n29 -->|emmo:hasReferencePart| n19
