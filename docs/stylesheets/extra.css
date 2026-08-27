@@ -6,6 +6,30 @@
   vertical-align: top;
 }
 
+/* An identifier is one long unbreakable token, and a table cell holding several of them
+   pushes the table past the page and squeezes the term column to nothing. Breaking inside
+   an identifier costs a reader nothing here: the full IRI is the link target. */
+
+.md-typeset table:not([class]) code {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.md-typeset table:not([class]) {
+  table-layout: fixed;
+  width: 100%;
+}
+
+.md-typeset table:not([class]) th:first-child,
+.md-typeset table:not([class]) td:first-child {
+  width: 30%;
+}
+
+.md-typeset table:not([class]) th:nth-child(2),
+.md-typeset table:not([class]) td:nth-child(2) {
+  width: 16%;
+}
+
 .md-typeset .mappings {
   margin: 0;
   padding-left: 1em;

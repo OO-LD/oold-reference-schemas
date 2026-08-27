@@ -44,9 +44,13 @@ def digest(data: bytes) -> str:
 
 def fetch(url: str, attempts: int = 4) -> bytes:
     """Fetch a file, retrying with backoff while a host rate-limits."""
+    # some publishers refuse a request without a user agent, and an ontology that cannot be
+    # fetched cannot be pinned
+    request = urllib.request.Request(
+        url, headers={"User-Agent": "oold-reference-schemas", "Accept": "text/turtle, */*"})
     for attempt in range(attempts):
         try:
-            with urllib.request.urlopen(url, timeout=300) as response:
+            with urllib.request.urlopen(request, timeout=300) as response:
                 return response.read()
         except urllib.error.HTTPError as error:
             if error.code not in (429, 503) or attempt == attempts - 1:
