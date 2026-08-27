@@ -1,4 +1,13 @@
 {
+  "datasets": {
+    "current": "0.1",
+    "versions": [
+      {
+        "label": "dev",
+        "docs": "dev"
+      }
+    ]
+  },
   "materials": {
     "current": "0.2",
     "versions": [

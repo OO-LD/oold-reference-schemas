@@ -1,0 +1,196 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Dataset.schema.json",
+  "x-oold-uuid": "c13190a3-cb8d-58d9-a58f-5b4b0193332b",
+  "x-oold-version": "0.1.0",
+  "title": "Dataset",
+  "x-oold-instance-rdf-type": [
+    "Dataset"
+  ],
+  "description": "Data published as one thing. Metadata lives in the fields; `data` is the interpreted payload, and the type of `data` is the schema, so there is no separate schema object. A distribution is a serialisation of the same dataset.",
+  "examples": [
+    {
+      "type": [
+        "Dataset"
+      ],
+      "title": "Cycling of cell LFP-042",
+      "license": "https://creativecommons.org/licenses/by/4.0/"
+    }
+  ],
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "Dataset"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "issued": {
+      "type": "string",
+      "format": "date"
+    },
+    "license": {
+      "type": "string",
+      "format": "iri-reference"
+    },
+    "about": {
+      "type": "string",
+      "format": "iri-reference",
+      "description": "IRI of what the data is about, the sample or device it was taken from"
+    },
+    "generated_by": {
+      "type": "string",
+      "format": "iri-reference",
+      "description": "IRI of the process that produced it"
+    },
+    "data": {
+      "description": "The interpreted payload. Its type is the schema, so a subschema restricts it; absent where the payload lives in a distribution"
+    },
+    "distributions": {
+      "type": "array",
+      "items": {
+        "$ref": "Distribution.schema.json"
+      },
+      "description": "Serialisations of this dataset"
+    },
+    "parts": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference"
+      },
+      "x-oold-range": "Dataset.schema.json",
+      "description": "IRIs of sub-datasets"
+    }
+  },
+  "required": [
+    "type"
+  ],
+  "@context": [
+    "Distribution.schema.json",
+    {
+      "@version": 1.1,
+      "dcat": "http://www.w3.org/ns/dcat#",
+      "dcterms": "http://purl.org/dc/terms/",
+      "prov": "http://www.w3.org/ns/prov#",
+      "csvw": "http://www.w3.org/ns/csvw#",
+      "schema": "http://schema.org/",
+      "qudt": "http://qudt.org/schema/qudt/",
+      "qunit": "http://qudt.org/vocab/unit/",
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "emmo": "https://w3id.org/emmo#",
+      "echem": "https://w3id.org/emmo/domain/electrochemistry#",
+      "obo": "http://purl.obolibrary.org/obo/",
+      "xsd": "http://www.w3.org/2001/XMLSchema#",
+      "dataset": {
+        "@id": "https://w3id.org/oo-ld/schemas/datasets/0.1/Dataset.schema.json#",
+        "@prefix": true
+      },
+      "id": "@id",
+      "type": {
+        "@id": "@type",
+        "@container": "@set"
+      },
+      "Dataset": "dcat:Dataset",
+      "title": "dcterms:title",
+      "description": "dcterms:description",
+      "issued": {
+        "@id": "dcterms:issued",
+        "@type": "xsd:date"
+      },
+      "license": {
+        "@id": "dcterms:license",
+        "@type": "@id"
+      },
+      "about": {
+        "@id": "schema:about",
+        "@type": "@id"
+      },
+      "generated_by": {
+        "@id": "prov:wasGeneratedBy",
+        "@type": "@id"
+      },
+      "data": {
+        "@id": "dataset:/properties/data",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "distributions": {
+        "@id": "dcat:distribution",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "parts": {
+        "@id": "dcterms:hasPart",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "x-oold-context": {
+    "Dataset": {
+      "schema:Dataset": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:exactMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/schemaorg.sssom.tsv"
+        }
+      },
+      "obo:IAO_0000100": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/pmdco.sssom.tsv",
+          "comment": "homogenous data collection"
+        }
+      },
+      "emmo:EMMO_194e367c_9783_4bf5_96d0_9ad597d48d9a": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/emmo.sssom.tsv",
+          "object_source_version": "https://w3id.org/emmo/1.0.4",
+          "comment": "Dataset"
+        }
+      }
+    },
+    "title": {
+      "schema:name": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:exactMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/schemaorg.sssom.tsv"
+        }
+      }
+    },
+    "description": {
+      "schema:description": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:exactMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/schemaorg.sssom.tsv"
+        }
+      }
+    },
+    "license": {
+      "schema:license": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:exactMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/schemaorg.sssom.tsv"
+        }
+      }
+    },
+    "distributions": {
+      "schema:distribution": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:exactMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/schemaorg.sssom.tsv"
+        }
+      }
+    }
+  }
+}

@@ -10,6 +10,21 @@
         <loc>https://schemas.oo-ld.org/dev/modules/</loc>
       </url>
       <url>
+        <loc>https://schemas.oo-ld.org/dev/modules/datasets/</loc>
+      </url>
+      <url>
+        <loc>https://schemas.oo-ld.org/dev/modules/datasets/dataset/</loc>
+      </url>
+      <url>
+        <loc>https://schemas.oo-ld.org/dev/modules/datasets/dataset/tabulardataset/</loc>
+      </url>
+      <url>
+        <loc>https://schemas.oo-ld.org/dev/modules/datasets/dataset/tabulardataset/electrochemicalcyclingdataset/</loc>
+      </url>
+      <url>
+        <loc>https://schemas.oo-ld.org/dev/modules/datasets/distribution/</loc>
+      </url>
+      <url>
         <loc>https://schemas.oo-ld.org/dev/modules/materials/</loc>
       </url>
       <url>

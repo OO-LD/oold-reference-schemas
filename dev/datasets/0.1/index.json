@@ -1,0 +1,24 @@
+{
+  "@context": {
+    "dcterms": "http://purl.org/dc/terms/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "title": "dcterms:title",
+    "description": "dcterms:description",
+    "version": "owl:versionInfo",
+    "schemas": {
+      "@id": "rdfs:member",
+      "@type": "@id"
+    }
+  },
+  "@id": "https://w3id.org/oo-ld/schemas/datasets/0.1",
+  "title": "datasets 0.1",
+  "version": "0.1.0",
+  "description": "",
+  "schemas": [
+    "Dataset.schema.json",
+    "Distribution.schema.json",
+    "ElectrochemicalCyclingDataset.schema.json",
+    "TabularDataset.schema.json"
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "$schema": "ElectrochemicalCyclingDataset.schema.json",
+  "@context": "ElectrochemicalCyclingDataset.schema.json",
+  "id": "https://example.org/dataset/LFP-042-2026-08-20",
+  "type": [
+    "ElectrochemicalCyclingDataset"
+  ],
+  "title": "Cycling of cell LFP-042",
+  "description": "Constant current cycling at 1C, first three samples",
+  "issued": "2026-08-20",
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "about": "https://example.org/cell/LFP-042",
+  "generated_by": "https://example.org/process/LFP-042-cycling",
+  "data": [
+    {
+      "type": [
+        "ElectrochemicalCyclingDataRow"
+      ],
+      "test_time": {
+        "type": [
+          "TestTime"
+        ],
+        "value": 0,
+        "unit": "second"
+      },
+      "voltage": {
+        "type": [
+          "CellVoltage"
+        ],
+        "value": 3.42,
+        "unit": "volt"
+      },
+      "current": {
+        "type": [
+          "CellCurrent"
+        ],
+        "value": 0,
+        "unit": "milli_ampere"
+      }
+    },
+    {
+      "type": [
+        "ElectrochemicalCyclingDataRow"
+      ],
+      "test_time": {
+        "type": [
+          "TestTime"
+        ],
+        "value": 60,
+        "unit": "second"
+      },
+      "voltage": {
+        "type": [
+          "CellVoltage"
+        ],
+        "value": 3.51,
+        "unit": "volt"
+      },
+      "current": {
+        "type": [
+          "CellCurrent"
+        ],
+        "value": 750,
+        "unit": "milli_ampere"
+      }
+    },
+    {
+      "type": [
+        "ElectrochemicalCyclingDataRow"
+      ],
+      "test_time": {
+        "type": [
+          "TestTime"
+        ],
+        "value": 120,
+        "unit": "second"
+      },
+      "voltage": {
+        "type": [
+          "CellVoltage"
+        ],
+        "value": 3.58,
+        "unit": "volt",
+        "standard_uncertainty": 0.002
+      },
+      "current": {
+        "type": [
+          "CellCurrent"
+        ],
+        "value": 750,
+        "unit": "milli_ampere"
+      }
+    }
+  ]
+}
