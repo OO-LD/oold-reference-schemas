@@ -1,0 +1,8 @@
+flowchart LR
+  n0["instance<br>schema:QuantitativeValue"]
+  n1[/"0.05"/]
+  n2["qunit:Second"]
+  n3[/"12.7"/]
+  n0 -->|qudt:standard uncertainty| n1
+  n0 -->|schema:unitCode| n2
+  n0 -->|schema:value| n3

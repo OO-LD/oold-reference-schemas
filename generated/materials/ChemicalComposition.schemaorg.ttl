@@ -1,0 +1,29 @@
+PREFIX chem_components: <https://w3id.org/oo-ld/schemas/materials/0.2/ChemicalComposition.schema.json#/properties/components/>
+PREFIX chem_components_items: <https://w3id.org/oo-ld/schemas/materials/0.2/ChemicalComposition.schema.json#/properties/components/items/properties/>
+PREFIX chem_properties: <https://w3id.org/oo-ld/schemas/materials/0.2/ChemicalComposition.schema.json#/properties/>
+PREFIX comp_Component: <https://w3id.org/oo-ld/schemas/materials/0.2/Composition.schema.json#/$defs/Component/properties/>
+PREFIX emmo: <https://w3id.org/emmo#>
+PREFIX ex: <https://example.org/>
+PREFIX genid: <https://schemas.oo-ld.org/.well-known/genid/>
+PREFIX materials: <https://w3id.org/oo-ld/schemas/materials/0.2/>
+PREFIX qkind: <http://qudt.org/vocab/quantitykind/>
+PREFIX qunit: <http://qudt.org/vocab/unit/>
+PREFIX schema1: <http://schema.org/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+ex:instance
+    a materials:ChemicalComposition.schema.json ;
+    chem_properties:components genid:c14n1 ;
+.
+
+genid:c14n0
+    a qkind:MassFraction ;
+    schema1:unitCode qunit:PERCENT ;
+    schema1:value 9.67e+01 ;
+.
+
+genid:c14n1
+    a chem_components:items ;
+    chem_components_items:constituent emmo:EMMO_71b5082d-9908-5011-8ad0-b2ab70ffd08c ;
+    comp_Component:amount genid:c14n0 ;
+.

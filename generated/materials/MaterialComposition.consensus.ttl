@@ -1,0 +1,29 @@
+PREFIX comp_Component: <https://w3id.org/oo-ld/schemas/materials/0.2/Composition.schema.json#/$defs/Component/properties/>
+PREFIX ex: <https://example.org/>
+PREFIX ex_material: <https://example.org/material/>
+PREFIX genid: <https://schemas.oo-ld.org/.well-known/genid/>
+PREFIX matcomp_components: <https://w3id.org/oo-ld/schemas/materials/0.2/MaterialComposition.schema.json#/properties/components/>
+PREFIX matcomp_components_items: <https://w3id.org/oo-ld/schemas/materials/0.2/MaterialComposition.schema.json#/properties/components/items/properties/>
+PREFIX matcomp_properties: <https://w3id.org/oo-ld/schemas/materials/0.2/MaterialComposition.schema.json#/properties/>
+PREFIX materials: <https://w3id.org/oo-ld/schemas/materials/0.2/>
+PREFIX qkind: <http://qudt.org/vocab/quantitykind/>
+PREFIX qudt: <http://qudt.org/schema/qudt/>
+PREFIX qunit: <http://qudt.org/vocab/unit/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+ex:instance
+    a materials:MaterialComposition.schema.json ;
+    matcomp_properties:components genid:c14n0 ;
+.
+
+genid:c14n0
+    a matcomp_components:items ;
+    comp_Component:amount genid:c14n1 ;
+    matcomp_components_items:constituent ex_material:batch1 ;
+.
+
+genid:c14n1
+    a qkind:MassFraction ;
+    qudt:hasUnit qunit:PERCENT ;
+    qudt:value 9.67e+01 ;
+.

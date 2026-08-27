@@ -1,10 +1,10 @@
-PREFIX ns1: <https://example.org/>
+PREFIX ex: <https://example.org/>
 PREFIX obo: <http://purl.obolibrary.org/obo/>
 PREFIX qudt: <http://qudt.org/schema/qudt/>
 PREFIX qunit: <http://qudt.org/vocab/unit/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
-ns1:instance
+ex:instance
     a obo:OBI_0001931 ;
     obo:IAO_0000039 qunit:SEC ;
     obo:OBI_0001937 1.27e+01 ;

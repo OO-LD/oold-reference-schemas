@@ -1,0 +1,8 @@
+flowchart LR
+  n0["instance<br>obo:scalar value specification"]
+  n1["qunit:Second"]
+  n2[/"12.7"/]
+  n3[/"0.05"/]
+  n0 -->|obo:has measurement unit label| n1
+  n0 -->|obo:has specified numeric value| n2
+  n0 -->|qudt:standard uncertainty| n3

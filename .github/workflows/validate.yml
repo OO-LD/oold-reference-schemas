@@ -16,7 +16,7 @@ on:
 # Pinned so a docs build is reproducible and a bump is a visible change.
 env:
   # The validator and the specification these schemas conform to are one release.
-  OOLD_VERSION: "v1.0.0-rc.2"
+  OOLD_PY_VERSION: "0.18.1"
   ZENSICAL_VERSION: "0.0.46"
   MIKE_SPEC: "git+https://github.com/squidfunk/mike.git@2.2.0+zensical-0.1.0"
 
@@ -32,32 +32,33 @@ jobs:
         with:
           node-version: "20"
 
-      # The validator is a dependency, not a copy maintained here.
-      # See https://github.com/OO-LD/oold-schema/issues/91
-      - name: Check out the OO-LD validator
-        uses: actions/checkout@v4
-        with:
-          repository: OO-LD/oold-schema
-          ref: ${{ env.OOLD_VERSION }}
-          path: .oold-schema
-      - name: Install validator dependencies
-        run: npm ci --prefix .oold-schema || npm install --prefix .oold-schema
+      - uses: astral-sh/setup-uv@v6
 
+      # The validator is a dependency, not a copy kept here.
+      # See https://github.com/OO-LD/oold-schema/issues/91
       - name: Validate each module
         run: |
           set -e
           for dir in modules/*/; do
             if ls "$dir"*.schema.json >/dev/null 2>&1; then
               echo "== $dir"
-              node .oold-schema/scripts/validate.mjs "$dir"
+              uvx --from "oold[validation]==${OOLD_PY_VERSION}" oold validate "$dir"
+              for instance in "$dir"*.instance.json; do
+                [ -e "$instance" ] || continue
+                uvx --from "oold[validation]==${OOLD_PY_VERSION}" oold validate-instance "$instance"
+              done
             else
               echo "== $dir (no schemas yet, skipped)"
             fi
           done
 
-      - uses: astral-sh/setup-uv@v6
       - name: Mapping-set views round-trip losslessly
-        run: uv run --with pyld scripts/effective_views.py modules/quantities
+        run: |
+          set -e
+          for dir in modules/*/; do
+            ls "$dir"*.instance.json >/dev/null 2>&1 || continue
+            uv run --with pyld scripts/effective_views.py "$dir"
+          done
 
   # The pinned ontology files, verified against ontologies.lock.json. Not needed to build
   # anything, since the labels they supply are committed; run so that a moved tag or an

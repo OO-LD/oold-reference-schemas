@@ -20,6 +20,7 @@ Usage: python scripts/build_mappings.py
 from __future__ import annotations
 
 import json
+import re
 from pathlib import Path
 
 from _shared import context_of, module_version, read, set_name
@@ -56,8 +57,25 @@ def labels() -> dict[str, dict[str, str]]:
 
 
 def prefixes(ctx: dict) -> dict[str, str]:
-    return {k: v for k, v in ctx.items()
-            if isinstance(v, str) and v.endswith(("#", "/", ":")) and k.isalnum()}
+    """The namespaces a context declares, in both forms it may declare them.
+
+    A schema declares its own namespace as a term definition with `@prefix`, not as a plain
+    string, and those are exactly the namespaces this library's placeholder terms live in:
+    reading only the string form leaves every one of its own terms unexpandable.
+    """
+    out = {}
+    for term, definition in ctx.items():
+        if term.startswith("@") or not term.isalnum():
+            continue
+        if isinstance(definition, str):
+            target_iri, declared = definition, False
+        elif isinstance(definition, dict):
+            target_iri, declared = definition.get("@id"), bool(definition.get("@prefix"))
+        else:
+            continue
+        if isinstance(target_iri, str) and (declared or target_iri.endswith(("#", "/", ":"))):
+            out[term] = target_iri
+    return out
 
 
 def expand(iri: str, curie_map: dict[str, str]) -> str:
@@ -107,11 +125,11 @@ def crosswalk(a: str, rows_a: list[dict], b: str, rows_b: list[dict],
     """Mappings between two communities, chained through the terms they both map."""
     by_term: dict[str, list[dict]] = {}
     for row in rows_b:
-        by_term.setdefault(row["subject_label"], []).append(row)
+        by_term.setdefault(row["subject_id"], []).append(row)
 
     out = []
     for left in rows_a:
-        for right in by_term.get(left["subject_label"], []):
+        for right in by_term.get(left["subject_id"], []):
             if left["object_id"] == right["object_id"]:
                 continue
             predicate = compose(INVERSE.get(left["predicate_id"], left["predicate_id"]),
@@ -157,11 +175,11 @@ def collect() -> tuple[dict[str, list[dict]], dict[str, str]]:
             merged_ctx.update(context_of(read(path)))
         curie_map.update(prefixes(merged_ctx))
 
-        def row(term, predicate, obj, comment="", source="", version=""):
+        def row(term, subject, predicate, obj, comment="", source="", version=""):
             full = expand(obj, curie_map)
             entry = label_map.get(full) or {}
             return {
-                "subject_id": f"{subject_source}#{term}",
+                "subject_id": subject,
                 "subject_label": term,
                 "predicate_id": predicate,
                 "object_id": obj,
@@ -174,14 +192,34 @@ def collect() -> tuple[dict[str, list[dict]], dict[str, str]]:
                 "comment": comment,
             }
 
+        def subject_of(ctx, term):
+            """What the row is about.
+
+            A term name alone does not identify a term: two schemas of one module may spell
+            the same key and mean different edges, and joining their mappings on the name
+            would chain two communities through a term neither of them shares. Where the
+            term maps to a placeholder of this library, that placeholder is the identity,
+            since it belongs to exactly one schema.
+            """
+            iri = expand(target(ctx.get(term)) or "", curie_map)
+            if not iri.startswith(f"{IRI_BASE}/"):
+                return f"{subject_source}#{term}"
+            # without the version, for the reason the module subject drops it: a term keeps
+            # its identity across releases, and the version has its own SSSOM column
+            return re.sub(rf"^({re.escape(IRI_BASE)}/[^/]+)/[^/]+/", r"/", iri)
+
         for path in schemas:
             schema = read(path)
             ctx = context_of(schema)
             for term, defn in ctx.items():
                 iri = target(defn)
                 if iri and not iri.endswith(("#", "/", ":")):
-                    sets.setdefault("consensus", []).append(
-                        row(term, "skos:exactMatch", iri))
+                    subject = subject_of(ctx, term)
+                    # a placeholder is its own subject, and stating that it matches itself
+                    # would say nothing
+                    if expand(iri, curie_map) != subject:
+                        sets.setdefault("consensus", []).append(
+                            row(term, subject, "skos:exactMatch", iri))
             for term, synonyms in (schema.get("x-oold-context") or {}).items():
                 for iri, fragment in (synonyms or {}).items():
                     if not isinstance(fragment, dict):
@@ -193,6 +231,7 @@ def collect() -> tuple[dict[str, list[dict]], dict[str, str]]:
                     name = set_name(set_id)
                     sets.setdefault(name, []).append(row(
                         term,
+                        subject_of(ctx, term),
                         meta.get("predicate_id", "skos:exactMatch"),
                         iri,
                         meta.get("comment", ""),

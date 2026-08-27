@@ -1,7 +1,8 @@
 {
   "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
   "$id": "Voltage.schema.json",
-  "x-oold-version": "0.1.0",
+  "x-oold-uuid": "461f22a8-6c71-5908-b1c4-8e0c9cf46229",
+  "x-oold-version": "0.1.1",
   "title": "Voltage",
   "description": "Electric potential difference between two points, the quantity a cell tester records as cell voltage.",
   "examples": [

@@ -1,0 +1,22 @@
+PREFIX emmo: <https://w3id.org/emmo#>
+PREFIX ex: <https://example.org/>
+PREFIX genid: <https://schemas.oo-ld.org/.well-known/genid/>
+PREFIX qudt: <http://qudt.org/schema/qudt/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+ex:instance
+    a emmo:EMMO_7efd64d1_05a1_49cd_a7f0_783ca050d4f3 ;
+    emmo:EMMO_b2282816_b7a3_44c6_b2cb_3feff1ceb7fe genid:c14n0 ;
+.
+
+genid:c14n0
+    a emmo:EMMO_172e2c96_180b_40f8_a3e7_b624471f40c2 ;
+    emmo:EMMO_18fdd2cd_4b0a_43a5_a938_66d8290a066c emmo:EMMO_71b5082d-9908-5011-8ad0-b2ab70ffd08c ;
+    emmo:EMMO_95d706e4_8b16_48a1_8dfd_40ccd4df1c12 genid:c14n1 ;
+.
+
+genid:c14n1
+    a emmo:EMMO_7c055d65_2929_40e1_af4f_4bf10995ad50 ;
+    qudt:value 9.67e+01 ;
+    emmo:EMMO_eeb06032_dd4f_476e_9da6_aa24302b7588 emmo:WeightPercent ;
+.

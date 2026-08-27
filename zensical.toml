@@ -22,10 +22,17 @@ nav = [
     # BEGIN generated nav
     { "Modules" = [
         { "Overview" = "modules/index.md" },
-        { "Materials" = [
-            { "Composition" = "modules/materials/composition/index.md" },
+        { "materials" = [
+            "modules/materials/index.md",
+            { "Composition" = [
+                "modules/materials/composition/index.md",
+                { "ChemicalComposition" = "modules/materials/composition/chemicalcomposition/index.md" },
+                { "MaterialComposition" = "modules/materials/composition/materialcomposition/index.md" },
+            ]},
+            { "Material" = "modules/materials/material/index.md" },
         ]},
-        { "Quantities" = [
+        { "quantities" = [
+            "modules/quantities/index.md",
             { "QuantityValue" = [
                 "modules/quantities/quantityvalue/index.md",
                 { "ElectricCurrent" = "modules/quantities/quantityvalue/electriccurrent/index.md" },
@@ -85,7 +92,7 @@ toggle = { icon = "material/brightness-4", name = "Switch to light mode" }
 [project.markdown_extensions]
 "admonition" = {}
 "pymdownx.details" = {}
-"pymdownx.superfences" = {}
+"pymdownx.superfences" = { custom_fences = [{ name = "mermaid", class = "mermaid", format = "pymdownx.superfences.fence_code_format" }] }
 "pymdownx.tabbed" = { alternate_style = true }
 "pymdownx.highlight" = { anchor_linenums = true }
 "attr_list" = {}

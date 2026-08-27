@@ -21,7 +21,7 @@ from pathlib import Path
 from _shared import context_of, mapping_sets, set_name
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from build_docs import chain, promote  # noqa: E402
+from build_docs import chain, inline_scoped, promote  # noqa: E402
 
 
 def canonical(value):
@@ -73,7 +73,8 @@ def views(module_dir: Path) -> int:
         print(f"== {instance_path.name}")
         for set_id in [None, *mapping_sets(schemas)]:
             label = "consensus (declared)" if set_id is None else f"mapping set {set_name(set_id)}"
-            context = promote(declared, schemas, set_id)
+            context = inline_scoped(promote(declared, schemas, set_id), lineage[-1],
+                                    set_id)
             document = {k: v for k, v in instance.items() if k != "$schema"}
             document["@context"] = context
 

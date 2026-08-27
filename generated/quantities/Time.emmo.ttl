@@ -1,9 +1,9 @@
 PREFIX emmo: <https://w3id.org/emmo#>
-PREFIX ns1: <https://example.org/>
+PREFIX ex: <https://example.org/>
 PREFIX qudt: <http://qudt.org/schema/qudt/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
-ns1:m1-duration
+ex:m1-duration
     a emmo:EMMO_d4f7d378_5e3b_468a_baa1_a7e98358cda7 ;
     qudt:value 1.27e+01 ;
     emmo:EMMO_bba7f0f0_3707_42b9_b3fa_fd04610ef147 5e-02 ;

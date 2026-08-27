@@ -1,0 +1,12 @@
+flowchart LR
+  n0["instance<br>ChemicalComposition"]
+  n1["blank node<br>chem:ChemicalComponent"]
+  n2["blank node<br>qkind:Mass Fraction"]
+  n3["qunit:Percent"]
+  n4[/"96.7"/]
+  n5["emmo:IronSymbol"]
+  n0 -->|chem:components| n1
+  n2 -->|qudt:has unit| n3
+  n2 -->|qudt:value| n4
+  n1 -->|chem:constituent| n5
+  n1 -->|comp:amount| n2

@@ -1,0 +1,12 @@
+flowchart LR
+  n0["instance<br>MaterialComposition"]
+  n1["blank node<br>matcomp:MaterialComponent"]
+  n2["blank node<br>emmo:MassFraction"]
+  n3["batch1"]
+  n4[/"96.7"/]
+  n5["emmo:WeightPercent"]
+  n0 -->|matcomp:components| n1
+  n1 -->|emmo:hasQuantityPart| n2
+  n1 -->|matcomp:constituent| n3
+  n2 -->|qudt:value| n4
+  n2 -->|emmo:hasReferencePart| n5
