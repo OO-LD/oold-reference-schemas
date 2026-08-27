@@ -1,16 +1,16 @@
 PREFIX csvw: <http://www.w3.org/ns/csvw#>
+PREFIX datasets: <https://w3id.org/oo-ld/schemas/datasets/0.1/>
 PREFIX dcat: <http://www.w3.org/ns/dcat#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
-PREFIX ns1: <https://example.org/data/>
-PREFIX ns2: <https://example.org/distribution/>
-PREFIX ns3: <https://w3id.org/oo-ld/schemas/datasets/0.1/>
+PREFIX ex_data: <https://example.org/data/>
+PREFIX ex_distribution: <https://example.org/distribution/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
-ns2:LFP-042-cycling-csv
+ex_distribution:LFP-042-cycling-csv
     a dcat:Distribution ;
-    dcterms:conformsTo ns3:ElectrochemicalCyclingDataset.schema.json ;
-    csvw:tableSchema ns3:ElectrochemicalCyclingDataRow.schema.json ;
+    dcterms:conformsTo datasets:ElectrochemicalCyclingDataset.schema.json ;
+    csvw:tableSchema datasets:ElectrochemicalCyclingDataRow.schema.json ;
     dcat:byteSize 48213004 ;
-    dcat:downloadURL ns1:LFP-042-cycling.csv ;
+    dcat:downloadURL ex_data:LFP-042-cycling.csv ;
     dcat:mediaType "text/csv" ;
 .

@@ -1,10 +1,11 @@
 {
   "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
   "$id": "TabularDataset.schema.json",
+  "x-oold-uuid": "042a8f90-b41d-5381-a7d1-97d507c404b1",
   "x-oold-version": "0.1.0",
   "title": "TabularDataset",
   "x-oold-instance-rdf-type": [
-    "https://w3id.org/oo-ld/schemas/datasets/0.1/TabularDataset.schema.json"
+    "TabularDataset"
   ],
   "description": "A dataset whose payload is a list of rows, each row a typed object. The row type is the schema of the data, and a wide table with a Time-typed column is already a time series, so no separate class is needed for one.",
   "allOf": [

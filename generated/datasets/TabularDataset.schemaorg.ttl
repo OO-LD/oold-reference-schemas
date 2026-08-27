@@ -1,7 +1,7 @@
-PREFIX ns1: <https://example.org/>
+PREFIX ex: <https://example.org/>
 PREFIX schema1: <http://schema.org/>
 
-ns1:instance
+ex:instance
     a schema1:Dataset ;
     schema1:name "A table" ;
 .

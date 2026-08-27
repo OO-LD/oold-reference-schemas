@@ -1,10 +1,11 @@
 {
   "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
   "$id": "Distribution.schema.json",
+  "x-oold-uuid": "48afb1c5-af8b-5e6d-a6c9-11de0aec2ca5",
   "x-oold-version": "0.1.0",
   "title": "Distribution",
   "x-oold-instance-rdf-type": [
-    "dcat:Distribution"
+    "Distribution"
   ],
   "description": "A serialisation of a dataset: where the bytes are, in which format, and which schema they embody. Storage, not content: `conforms_to` points back at the dataset schema the bytes are an encoding of.",
   "examples": [

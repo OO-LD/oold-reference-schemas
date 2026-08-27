@@ -1,9 +1,10 @@
+PREFIX creativecommons_licenses_by_4_0: <https://creativecommons.org/licenses/by/4.0/>
 PREFIX dcterms: <http://purl.org/dc/terms/>
-PREFIX ns1: <https://example.org/>
+PREFIX ex: <https://example.org/>
 PREFIX obo: <http://purl.obolibrary.org/obo/>
 
-ns1:instance
+ex:instance
     a obo:IAO_0000100 ;
-    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:license creativecommons_licenses_by_4_0: ;
     dcterms:title "Cycling of cell LFP-042" ;
 .

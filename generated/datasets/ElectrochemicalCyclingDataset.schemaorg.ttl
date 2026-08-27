@@ -1,104 +1,105 @@
+PREFIX creativecommons_licenses_by_4_0: <https://creativecommons.org/licenses/by/4.0/>
+PREFIX dataset_properties: <https://w3id.org/oo-ld/schemas/datasets/0.1/Dataset.schema.json#/properties/>
 PREFIX dcterms: <http://purl.org/dc/terms/>
-PREFIX ns1: <https://example.org/cell/>
-PREFIX ns2: <https://example.org/dataset/>
-PREFIX ns3: <https://example.org/process/>
-PREFIX ns4: <https://schemas.oo-ld.org/.well-known/genid/>
-PREFIX ns5: <https://w3id.org/oo-ld/schemas/datasets/0.1/Dataset.schema.json#/properties/>
-PREFIX ns6: <https://w3id.org/oo-ld/schemas/datasets/0.1/ElectrochemicalCyclingDataset.schema.json#/$defs/>
-PREFIX ns7: <https://w3id.org/oo-ld/schemas/datasets/0.1/ElectrochemicalCyclingDataset.schema.json#/$defs/ElectrochemicalCyclingDataRow/properties/>
+PREFIX electrochemicalcyclingdataset__defs: <https://w3id.org/oo-ld/schemas/datasets/0.1/ElectrochemicalCyclingDataset.schema.json#/$defs/>
+PREFIX ex_cell: <https://example.org/cell/>
+PREFIX ex_dataset: <https://example.org/dataset/>
+PREFIX ex_process: <https://example.org/process/>
+PREFIX genid: <https://schemas.oo-ld.org/.well-known/genid/>
 PREFIX prov: <http://www.w3.org/ns/prov#>
-PREFIX qkind: <http://qudt.org/vocab/quantitykind/>
 PREFIX qudt: <http://qudt.org/schema/qudt/>
 PREFIX qunit: <http://qudt.org/vocab/unit/>
+PREFIX row: <https://w3id.org/oo-ld/schemas/datasets/0.1/ElectrochemicalCyclingDataset.schema.json#/$defs/ElectrochemicalCyclingDataRow/>
+PREFIX row_properties: <https://w3id.org/oo-ld/schemas/datasets/0.1/ElectrochemicalCyclingDataset.schema.json#/$defs/ElectrochemicalCyclingDataRow/properties/>
 PREFIX schema1: <http://schema.org/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
-ns2:LFP-042-2026-08-20
+ex_dataset:LFP-042-2026-08-20
     a schema1:Dataset ;
     dcterms:issued "2026-08-20"^^xsd:date ;
-    schema1:about ns1:LFP-042 ;
+    schema1:about ex_cell:LFP-042 ;
     schema1:description "Constant current cycling at 1C, first three samples" ;
-    schema1:license <https://creativecommons.org/licenses/by/4.0/> ;
+    schema1:license creativecommons_licenses_by_4_0: ;
     schema1:name "Cycling of cell LFP-042" ;
-    prov:wasGeneratedBy ns3:LFP-042-cycling ;
-    ns5:data
-        ns4:c14n11 ,
-        ns4:c14n7 ,
-        ns4:c14n9 ;
+    prov:wasGeneratedBy ex_process:LFP-042-cycling ;
+    dataset_properties:data
+        genid:c14n10 ,
+        genid:c14n7 ,
+        genid:c14n8 ;
 .
 
-ns4:c14n0
-    a qkind:ElectricCurrent ;
-    qudt:hasUnit qunit:MilliA ;
-    qudt:value 0 ;
+genid:c14n0
+    a row:TestTime ;
+    schema1:unitCode qunit:SEC ;
+    schema1:value 60 ;
 .
 
-ns4:c14n1
-    a qkind:Time ;
-    qudt:hasUnit qunit:SEC ;
-    qudt:value 60 ;
+genid:c14n1
+    a row:CellVoltage ;
+    schema1:unitCode qunit:V ;
+    schema1:value 3.51e+00 ;
 .
 
-ns4:c14n10
-    a qkind:ElectricCurrent ;
-    qudt:hasUnit qunit:MilliA ;
-    qudt:value 750 ;
+genid:c14n10
+    a electrochemicalcyclingdataset__defs:ElectrochemicalCyclingDataRow ;
+    row_properties:current genid:c14n11 ;
+    row_properties:test_time genid:c14n3 ;
+    row_properties:voltage genid:c14n4 ;
 .
 
-ns4:c14n11
-    a ns6:ElectrochemicalCyclingDataRow ;
-    ns7:current ns4:c14n0 ;
-    ns7:test_time ns4:c14n2 ;
-    ns7:voltage ns4:c14n3 ;
+genid:c14n11
+    a row:CellCurrent ;
+    schema1:unitCode qunit:MilliA ;
+    schema1:value 750 ;
 .
 
-ns4:c14n2
-    a qkind:Time ;
-    qudt:hasUnit qunit:SEC ;
-    qudt:value 0 ;
+genid:c14n2
+    a row:CellCurrent ;
+    schema1:unitCode qunit:MilliA ;
+    schema1:value 0 ;
 .
 
-ns4:c14n3
-    a qkind:Voltage ;
-    qudt:hasUnit qunit:V ;
-    qudt:value 3.42e+00 ;
+genid:c14n3
+    a row:TestTime ;
+    schema1:unitCode qunit:SEC ;
+    schema1:value 120 ;
 .
 
-ns4:c14n4
-    a qkind:Voltage ;
-    qudt:hasUnit qunit:V ;
-    qudt:value 3.51e+00 ;
-.
-
-ns4:c14n5
-    a qkind:Time ;
-    qudt:hasUnit qunit:SEC ;
-    qudt:value 120 ;
-.
-
-ns4:c14n6
-    a qkind:Voltage ;
-    qudt:hasUnit qunit:V ;
+genid:c14n4
+    a row:CellVoltage ;
     qudt:standardUncertainty 2e-03 ;
-    qudt:value 3.58e+00 ;
+    schema1:unitCode qunit:V ;
+    schema1:value 3.58e+00 ;
 .
 
-ns4:c14n7
-    a ns6:ElectrochemicalCyclingDataRow ;
-    ns7:current ns4:c14n8 ;
-    ns7:test_time ns4:c14n1 ;
-    ns7:voltage ns4:c14n4 ;
+genid:c14n5
+    a row:TestTime ;
+    schema1:unitCode qunit:SEC ;
+    schema1:value 0 ;
 .
 
-ns4:c14n8
-    a qkind:ElectricCurrent ;
-    qudt:hasUnit qunit:MilliA ;
-    qudt:value 750 ;
+genid:c14n6
+    a row:CellVoltage ;
+    schema1:unitCode qunit:V ;
+    schema1:value 3.42e+00 ;
 .
 
-ns4:c14n9
-    a ns6:ElectrochemicalCyclingDataRow ;
-    ns7:current ns4:c14n10 ;
-    ns7:test_time ns4:c14n5 ;
-    ns7:voltage ns4:c14n6 ;
+genid:c14n7
+    a electrochemicalcyclingdataset__defs:ElectrochemicalCyclingDataRow ;
+    row_properties:current genid:c14n2 ;
+    row_properties:test_time genid:c14n5 ;
+    row_properties:voltage genid:c14n6 ;
+.
+
+genid:c14n8
+    a electrochemicalcyclingdataset__defs:ElectrochemicalCyclingDataRow ;
+    row_properties:current genid:c14n9 ;
+    row_properties:test_time genid:c14n0 ;
+    row_properties:voltage genid:c14n1 ;
+.
+
+genid:c14n9
+    a row:CellCurrent ;
+    schema1:unitCode qunit:MilliA ;
+    schema1:value 750 ;
 .

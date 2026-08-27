@@ -1,8 +1,9 @@
-PREFIX ns1: <https://example.org/>
+PREFIX creativecommons_licenses_by_4_0: <https://creativecommons.org/licenses/by/4.0/>
+PREFIX ex: <https://example.org/>
 PREFIX schema1: <http://schema.org/>
 
-ns1:instance
+ex:instance
     a schema1:Dataset ;
-    schema1:license <https://creativecommons.org/licenses/by/4.0/> ;
+    schema1:license creativecommons_licenses_by_4_0: ;
     schema1:name "Cycling of cell LFP-042" ;
 .

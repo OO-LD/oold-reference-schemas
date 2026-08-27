@@ -1,10 +1,11 @@
 {
   "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
   "$id": "Dataset.schema.json",
+  "x-oold-uuid": "c13190a3-cb8d-58d9-a58f-5b4b0193332b",
   "x-oold-version": "0.1.0",
   "title": "Dataset",
   "x-oold-instance-rdf-type": [
-    "dcat:Dataset"
+    "Dataset"
   ],
   "description": "Data published as one thing. Metadata lives in the fields; `data` is the interpreted payload, and the type of `data` is the schema, so there is no separate schema object. A distribution is a serialisation of the same dataset.",
   "examples": [
