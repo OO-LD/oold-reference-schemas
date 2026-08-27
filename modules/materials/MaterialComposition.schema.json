@@ -1,20 +1,22 @@
 {
   "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
   "$id": "MaterialComposition.schema.json",
+  "x-oold-uuid": "5490e369-afe0-5e5c-8a76-ac9bc3a0f10f",
   "x-oold-version": "0.1.0",
   "title": "MaterialComposition",
   "description": "The materials a material is made of and how much of each. As specified, typically: a recipe names ingredients, which are materials with a composition of their own, and that is not the same claim as an elemental analysis.",
+  "$comment": "`components` embeds an object of this module, and its terms are kept apart by the scope the composition term carries in Material.schema.json. Scoping Composition here as well would layer the base's plain `constituent` over this schema's own and lose both its coercion and its mapping, so OOLD-CMP-5266 is answered one level up.",
   "examples": [
     {
       "type": [
         "MaterialComposition"
       ],
-      "constituents": [
+      "components": [
         {
           "type": [
             "MaterialComponent"
           ],
-          "material": "https://example.org/material/batch1",
+          "constituent": "https://example.org/material/batch1",
           "amount": {
             "type": [
               "MassFraction"
@@ -39,15 +41,15 @@
         "@prefix": true
       },
       "MaterialComposition": "https://w3id.org/oo-ld/schemas/materials/0.2/MaterialComposition.schema.json",
-      "MaterialComponent": "matcomp:/properties/constituents/items",
-      "constituents": {
-        "@id": "matcomp:/properties/constituents",
+      "MaterialComponent": "matcomp:/properties/components/items",
+      "constituent": {
+        "@id": "matcomp:/properties/components/items/properties/constituent",
+        "@type": "@id"
+      },
+      "components": {
+        "@id": "matcomp:/properties/components",
         "@type": "@id",
         "@container": "@set"
-      },
-      "material": {
-        "@id": "matcomp:/properties/constituents/items/properties/material",
-        "@type": "@id"
       }
     }
   ],
@@ -57,16 +59,13 @@
         "MaterialComposition"
       ]
     },
-    "constituents": {
-      "type": "array",
-      "minItems": 1,
+    "components": {
       "items": {
         "allOf": [
           {
             "$ref": "Composition.schema.json#/$defs/Component"
           }
         ],
-        "type": "object",
         "properties": {
           "type": {
             "type": "array",
@@ -77,24 +76,16 @@
               "MaterialComponent"
             ]
           },
-          "material": {
+          "constituent": {
             "type": "string",
             "format": "iri-reference",
             "x-oold-range": "Material.schema.json",
             "description": "IRI of the material this component is made of"
           }
-        },
-        "required": [
-          "type",
-          "material",
-          "amount"
-        ]
+        }
       }
     }
   },
-  "required": [
-    "constituents"
-  ],
   "x-oold-context": {
     "MaterialComponent": {
       "pmd:PMD_0020102": {
@@ -106,7 +97,7 @@
         }
       }
     },
-    "material": {
+    "constituent": {
       "pmd:PMD_0025999": {
         "@type": "@id",
         "x-oold-sssom": {

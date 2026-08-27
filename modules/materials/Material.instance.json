@@ -14,7 +14,7 @@
         "type": [
           "ChemicalComponent"
         ],
-        "species": "Fe",
+        "constituent": "Fe",
         "amount": {
           "type": [
             "MassFraction"
@@ -27,7 +27,7 @@
         "type": [
           "ChemicalComponent"
         ],
-        "species": "Si",
+        "constituent": "Si",
         "amount": {
           "type": [
             "MassFraction"
@@ -41,7 +41,7 @@
         "type": [
           "ChemicalComponent"
         ],
-        "species": "C",
+        "constituent": "C",
         "amount": {
           "type": [
             "MassFraction"
@@ -56,12 +56,12 @@
     "type": [
       "MaterialComposition"
     ],
-    "constituents": [
+    "components": [
       {
         "type": [
           "MaterialComponent"
         ],
-        "material": "https://example.org/material/batch1",
+        "constituent": "https://example.org/material/batch1",
         "amount": {
           "type": [
             "MassFraction"
@@ -74,7 +74,7 @@
         "type": [
           "MaterialComponent"
         ],
-        "material": "https://example.org/material/masterbatch7",
+        "constituent": "https://example.org/material/masterbatch7",
         "amount": {
           "type": [
             "MassFraction"

@@ -5,18 +5,20 @@ hide:
 
 # Composition
 
-What every composition shares: a list of components, each carrying an amount. What differs is
-the constituent, so that is left to the two subschemas,
-[ChemicalComposition](chemicalcomposition/) and [MaterialComposition](materialcomposition/).
+What every composition is: a list of components, each a constituent with an amount. Both are
+required here, and what a constituent may be is what the two subschemas fix,
+[ChemicalComposition](chemicalcomposition/) and [MaterialComposition](materialcomposition/): a
+chemical species there, another material here. Both spell the term `constituent`, and each
+scopes its own context onto it, so one JSON key carries two predicates without either schema
+restating the list.
 
 {{ oold_schema_meta_data("materials", "Composition") }}
 
 {{ oold_schema_renderer("materials", "Composition") }}
 
-The amount mirrors `quantities/MassFraction` rather than referencing it, because a cross-module
-`$ref` does not resolve until that module is released. The quantity, not the unit, decides that
-a percentage is by mass, so the same `percent` reads as `emmo:WeightPercent` here and would read
-as `emmo:VolumePercent` under a volume fraction.
+The amount references `quantities/MassFraction` at its published IRI. The quantity, not the
+unit, decides that a percentage is by mass, so the same `percent` reads as `emmo:WeightPercent`
+here and would read as `emmo:VolumePercent` under a volume fraction.
 
 Terms in a schema's own IRI space are placeholders for a vocabulary that is not agreed yet, not
 a third ontology. They carry no axioms, they dereference to the schema that defines them, and

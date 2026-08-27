@@ -1,9 +1,11 @@
 {
   "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
   "$id": "ChemicalComposition.schema.json",
+  "x-oold-uuid": "1fd3fc76-9606-522f-83e4-665ce088f0a8",
   "x-oold-version": "0.1.0",
   "title": "ChemicalComposition",
   "description": "The chemical species a substance is made of and how much of each. As analysed, typically: an elemental analysis names species, not ingredients.",
+  "$comment": "`components` embeds an object of this module, and its terms are kept apart by the scope the composition term carries in Material.schema.json. Scoping Composition here as well would layer the base's plain `constituent` over this schema's own and lose both its coercion and its mapping, so OOLD-CMP-5266 is answered one level up.",
   "examples": [
     {
       "type": [
@@ -14,7 +16,7 @@
           "type": [
             "ChemicalComponent"
           ],
-          "species": "Fe",
+          "constituent": "Fe",
           "amount": {
             "type": [
               "MassFraction"
@@ -48,8 +50,8 @@
         "@type": "@id",
         "@container": "@set"
       },
-      "species": {
-        "@id": "chem:/properties/components/items/properties/species",
+      "constituent": {
+        "@id": "chem:/properties/components/items/properties/constituent",
         "@type": "@vocab"
       }
     }
@@ -61,15 +63,12 @@
       ]
     },
     "components": {
-      "type": "array",
-      "minItems": 1,
       "items": {
         "allOf": [
           {
             "$ref": "Composition.schema.json#/$defs/Component"
           }
         ],
-        "type": "object",
         "properties": {
           "type": {
             "type": "array",
@@ -80,7 +79,7 @@
               "ChemicalComponent"
             ]
           },
-          "species": {
+          "constituent": {
             "type": "string",
             "description": "The chemical species or compound, as a species alias",
             "examples": [
@@ -89,18 +88,10 @@
               "C"
             ]
           }
-        },
-        "required": [
-          "type",
-          "species",
-          "amount"
-        ]
+        }
       }
     }
   },
-  "required": [
-    "components"
-  ],
   "x-oold-context": {
     "ChemicalComposition": {
       "emmo:EMMO_7efd64d1_05a1_49cd_a7f0_783ca050d4f3": {
@@ -148,7 +139,7 @@
         }
       }
     },
-    "species": {
+    "constituent": {
       "emmo:EMMO_18fdd2cd_4b0a_43a5_a938_66d8290a066c": {
         "@type": "@vocab",
         "x-oold-sssom": {

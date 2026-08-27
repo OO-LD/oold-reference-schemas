@@ -14,7 +14,7 @@ elemental analysis names species, not ingredients.
 
 EMMO fits this case exactly. A composition there is a language construct, and
 `SingleComponentComposition` is the smallest sub-expression that still says something: one
-species, one fraction. `components` is EMMO's `hasSpatialTile`, `species` its `hasSpeciesPart`,
+species, one fraction. `components` is EMMO's `hasSpatialTile`, `constituent` its `hasSpeciesPart`,
 whose range `ChemicalSpecies` is `ChemicalElement or ChemicalNomenclature or ChemicalFormula`,
 so `Fe` and `SiC` both fit.
 
@@ -33,9 +33,9 @@ flowchart LR
 
     a -->|composition| b
     b -->|components| c1 & c2 & c3
-    c1 -->|species| d1
-    c2 -->|species| d2
-    c3 -->|species| d3
+    c1 -->|constituent| d1
+    c2 -->|constituent| d2
+    c3 -->|constituent| d3
     c1 -->|amount| e1
     c2 -->|amount| e2
     c3 -->|amount| e3
