@@ -8,4 +8,5 @@
 #   semapv: https://w3id.org/semapv/vocab/
 #   skos: http://www.w3.org/2004/02/skos/core#
 subject_id	subject_label	predicate_id	object_id	object_label	mapping_justification	subject_source	subject_source_version	object_source	object_source_version	comment
+https://w3id.org/emmo#EMMO_194e367c_9783_4bf5_96d0_9ad597d48d9a		skos:closeMatch	http://schema.org/Dataset		semapv:MappingChaining	https://w3id.org/oo-ld/schemas/mappings/emmo.sssom.tsv	https://w3id.org/emmo/1.0.4	https://w3id.org/oo-ld/schemas/mappings/schemaorg.sssom.tsv		chained through Dataset
 https://w3id.org/emmo#EMMO_eeb06032_dd4f_476e_9da6_aa24302b7588	hasReferencePart	skos:exactMatch	http://schema.org/unitCode	unitCode	semapv:MappingChaining	https://w3id.org/oo-ld/schemas/mappings/emmo.sssom.tsv	https://w3id.org/emmo/1.0.4	https://w3id.org/oo-ld/schemas/mappings/schemaorg.sssom.tsv		chained through unit

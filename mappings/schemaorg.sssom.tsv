@@ -8,6 +8,16 @@
 #   semapv: https://w3id.org/semapv/vocab/
 #   skos: http://www.w3.org/2004/02/skos/core#
 subject_id	subject_label	predicate_id	object_id	object_label	mapping_justification	subject_source	subject_source_version	object_source	object_source_version	comment
+https://w3id.org/oo-ld/schemas/datasets#Dataset	Dataset	skos:exactMatch	schema:Dataset		semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/datasets	0.1.0			
+https://w3id.org/oo-ld/schemas/datasets#Distribution	Distribution	skos:closeMatch	schema:DataDownload		semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/datasets	0.1.0			
+/ElectrochemicalCyclingDataset.schema.json	ElectrochemicalCyclingDataset	skos:broadMatch	schema:Dataset		semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/datasets	0.1.0			a dataset of this kind is one of these, which have no term for the kind
 https://w3id.org/oo-ld/schemas/quantities#QuantityValue	QuantityValue	skos:closeMatch	schema:QuantitativeValue	QuantitativeValue	semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/quantities	0.3.0			broader: also covers intervals/ranges
+/TabularDataset.schema.json	TabularDataset	skos:broadMatch	schema:Dataset		semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/datasets	0.1.0			a dataset of this kind is one of these, which have no term for the kind
+https://w3id.org/oo-ld/schemas/datasets#description	description	skos:exactMatch	schema:description		semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/datasets	0.1.0			
+https://w3id.org/oo-ld/schemas/datasets#distributions	distributions	skos:exactMatch	schema:distribution		semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/datasets	0.1.0			
+https://w3id.org/oo-ld/schemas/datasets#download_url	download_url	skos:closeMatch	schema:contentUrl		semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/datasets	0.1.0			
+https://w3id.org/oo-ld/schemas/datasets#license	license	skos:exactMatch	schema:license		semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/datasets	0.1.0			
+https://w3id.org/oo-ld/schemas/datasets#media_type	media_type	skos:closeMatch	schema:encodingFormat		semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/datasets	0.1.0			
+https://w3id.org/oo-ld/schemas/datasets#title	title	skos:exactMatch	schema:name		semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/datasets	0.1.0			
 https://w3id.org/oo-ld/schemas/quantities#unit	unit	skos:exactMatch	schema:unitCode	unitCode	semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/quantities	0.3.0			URL branch of schema:unitCode, carrying the QUDT unit IRI
 https://w3id.org/oo-ld/schemas/quantities#value	value	skos:exactMatch	schema:value	value	semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/quantities	0.3.0			
