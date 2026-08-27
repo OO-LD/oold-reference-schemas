@@ -356,7 +356,7 @@ def _set_link(name, from_page):
     target = _set_page(name)
     if not os.path.exists(target) or not from_page:
         return None
-    return os.path.relpath(_url(target), _url(from_page)).replace(os.sep, "/") + "/"
+    return _relative(target, from_page)
 
 
 def _all_contexts():
@@ -654,8 +654,8 @@ def _walkthrough(module, name, from_page):
         if line.startswith("## "):
             heading = line[3:].strip()
     slug = re.sub(r"[^a-z0-9]+", "-", heading.lower()).strip("-")
-    rel = os.path.relpath(_url(source), _url(from_page)).replace(os.sep, "/")
-    return f"{rel}/#{slug}" if slug else f"{rel}/"
+    rel = _relative(source, from_page)
+    return f"{rel}#{slug}" if slug else rel
 
 
 def oold_schema_meta_data(module, name):
@@ -826,6 +826,23 @@ def _pages():
     return found
 
 
+def _relative(target, from_page):
+    """Link from one page to another, written relative to the source file that holds it.
+
+    The renderer maps a source path to its URL and rewrites the links it finds accordingly,
+    so a link measured against the URL is adjusted a second time: a page written flat
+    (`how-it-works.md`) is published one level deep (`/how-it-works/`), and every link on it
+    would land one level too high.
+    """
+    directory = os.path.dirname(target)
+    name = os.path.basename(target)[: -len(".md")]
+    rel = os.path.relpath(directory, os.path.dirname(from_page)).replace(os.sep, "/")
+    parts = [] if rel == "." else [rel]
+    if name != "index":
+        parts.append(name)
+    return "/".join(parts) + "/" if parts else "./"
+
+
 def _page_link(module, schema, from_page):
     """Relative link to a schema's page, or None when it has no page."""
     global _PAGES
@@ -834,10 +851,7 @@ def _page_link(module, schema, from_page):
     target = _PAGES.get((module, schema))
     if not target or not from_page or target == from_page:
         return None
-    # relative to the rendered URL, not to the source file: a leaf page gets its own
-    # directory (page.md -> page/), so the two differ by one level
-    rel = os.path.relpath(_url(target), _url(from_page)).replace(os.sep, "/")
-    return rel + "/"
+    return _relative(target, from_page)
 
 
 def _url(path):
@@ -1175,8 +1189,24 @@ def _page_source(page):
     """
     if page is None:
         return None
-    src = getattr(getattr(page, "file", None), "src_path", None) or page
-    return os.path.join(ROOT, "docs", str(src).replace("\\", "/"))
+    # each renderer names it differently: a source path, a rendered URL, or an object that
+    # carries one of the two
+    src = (getattr(getattr(page, "file", None), "src_path", None)
+           or getattr(page, "path", None) or getattr(page, "url", None) or page)
+    text = str(src).replace("\\", "/").strip("/")
+    # a caller may hand over the rendered URL instead of the source file, and the two differ
+    # by a level: `how-it-works/index.html` is written as `how-it-works.md`, and measuring a
+    # relative link from the wrong one puts every link on the page one level too deep
+    if text.endswith(".html"):
+        text = text[: -len(".html")] + ".md"
+    elif not text.endswith(".md"):
+        text += "/index.md"
+    if text.endswith("/index.md"):
+        flat = os.path.join(ROOT, "docs", text[: -len("/index.md")] + ".md")
+        if os.path.exists(flat):
+            return flat
+    import sys as _s2; print(os.path.join(ROOT, "docs", text), file=_s2.stderr)
+    return os.path.join(ROOT, "docs", text)
 
 
 def _chain_of(path):
@@ -1276,7 +1306,8 @@ def oold_module_meta_data(module, page=None):
         lines.append(f'- status: {meta["status"]}')
     lines.append(f"- schemas: {len(schemas)}, with {len(instances)} committed "
                  f"instance{'' if len(instances) == 1 else 's'}")
-    versions = _module_versions(module, _page_source(page))
+    versions = _module_versions(
+        module, _page_source(page) or os.path.join(ROOT, "docs", "modules", module, "index.md"))
     if len(versions) > 1:
         lines.append("- module version: " + " &middot; ".join(
             f"**{label}**" if current else f"[{label}]({href})"
@@ -1286,8 +1317,10 @@ def oold_module_meta_data(module, page=None):
     sets = sorted({f.name.split(".")[-2] for f in Path(GENERATED, module).glob("*.ttl")}
                   - {"consensus"}) if Path(GENERATED, module).is_dir() else []
     if sets:
+        here = _page_source(page) or os.path.join(ROOT, "docs", "modules", module, "index.md")
         lines.append("- mapping sets: " + ", ".join(
-            f"[{name}]({_set_link(name, _page_source(page))})" for name in sets))
+            f"[{name}]({_set_link(name, here)})" if _set_link(name, here) else name
+            for name in sets))
     return NL.join(lines)
 
 
@@ -1301,7 +1334,8 @@ def oold_module_schemas(module, page=None):
     base_dir = os.path.join(ROOT, "modules", module)
     if not os.path.isdir(base_dir):
         return ""
-    page = _page_source(page)
+    # the module's own page is where this is rendered when no caller says otherwise
+    page = _page_source(page) or os.path.join(ROOT, "docs", "modules", module, "index.md")
     parents, titles, leads = {}, {}, {}
     for path in sorted(Path(base_dir).glob("*.schema.json")):
         name = path.name[: -len(".schema.json")]
@@ -1314,7 +1348,8 @@ def oold_module_schemas(module, page=None):
         indent = "    " * depth
         href = _page_link(module, name, page)
         lead = f", {leads[name]}" if leads[name] else ""
-        lines = [f'{indent}- [{titles[name]}]({href}){lead.rstrip(".")}']
+        title = f"[{titles[name]}]({href})" if href else titles[name]
+        lines = [f'{indent}- {title}{lead.rstrip(".")}']
         for child in sorted(n for n, ps in parents.items() if ps and ps[-1] == name):
             lines += branch(child, depth + 1)
         return lines
