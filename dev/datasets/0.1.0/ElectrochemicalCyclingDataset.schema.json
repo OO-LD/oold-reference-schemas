@@ -136,6 +136,39 @@
           "comment": "a dataset of this kind is one of these, which have no term for the kind"
         }
       }
+    },
+    "TestTime": {
+      "echem:electrochemistry_27b3799c_250c_4332_8b71_7992c4a7bb05": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:exactMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/emmo.sssom.tsv",
+          "object_source": "https://w3id.org/emmo/domain/electrochemistry",
+          "object_source_version": "https://w3id.org/emmo/domain/electrochemistry/0.37.2",
+          "comment": "TestTime, the time since the test started"
+        }
+      }
+    },
+    "CellVoltage": {
+      "echem:electrochemistry_4ebe2ef1_eea8_4b10_822d_7a68215bd24d": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:exactMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/emmo.sssom.tsv",
+          "object_source": "https://w3id.org/emmo/domain/electrochemistry",
+          "object_source_version": "https://w3id.org/emmo/domain/electrochemistry/0.37.2",
+          "comment": "CellVoltage, the voltage across the cell terminals"
+        }
+      }
+    },
+    "CellCurrent": {
+      "echem:electrochemistry_637ee9c4_4b3f_4d3a_975b_c0572dfe53ce": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:exactMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/emmo.sssom.tsv",
+          "object_source": "https://w3id.org/emmo/domain/electrochemistry",
+          "object_source_version": "https://w3id.org/emmo/domain/electrochemistry/0.37.2",
+          "comment": "CellCurrent, positive on charge and negative on discharge here"
+        }
+      }
     }
   },
   "$defs": {
