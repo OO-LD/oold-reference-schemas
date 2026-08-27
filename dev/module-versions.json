@@ -1,6 +1,6 @@
 {
   "materials": {
-    "current": "0.1",
+    "current": "0.2",
     "versions": [
       {
         "label": "0.1",
@@ -13,7 +13,7 @@
     ]
   },
   "quantities": {
-    "current": "0.2",
+    "current": "0.3",
     "versions": [
       {
         "label": "0.1",

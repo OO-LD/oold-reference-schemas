@@ -10,7 +10,22 @@
         <loc>https://schemas.oo-ld.org/dev/modules/</loc>
       </url>
       <url>
+        <loc>https://schemas.oo-ld.org/dev/modules/materials/</loc>
+      </url>
+      <url>
         <loc>https://schemas.oo-ld.org/dev/modules/materials/composition/</loc>
+      </url>
+      <url>
+        <loc>https://schemas.oo-ld.org/dev/modules/materials/composition/chemicalcomposition/</loc>
+      </url>
+      <url>
+        <loc>https://schemas.oo-ld.org/dev/modules/materials/composition/materialcomposition/</loc>
+      </url>
+      <url>
+        <loc>https://schemas.oo-ld.org/dev/modules/materials/material/</loc>
+      </url>
+      <url>
+        <loc>https://schemas.oo-ld.org/dev/modules/quantities/</loc>
       </url>
       <url>
         <loc>https://schemas.oo-ld.org/dev/modules/quantities/quantityvalue/</loc>

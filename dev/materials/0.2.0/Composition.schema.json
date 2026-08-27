@@ -1,0 +1,117 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Composition.schema.json",
+  "x-oold-uuid": "21e7c9d7-bf27-5c8f-a02d-03ae1075d090",
+  "x-oold-version": "0.2.0",
+  "title": "Composition",
+  "description": "What every composition is: a list of components, each a constituent with an amount. What a constituent may be is what differs, so the subschemas declare it. Terms in this schema's own IRI space are placeholders for a vocabulary that is not agreed yet, not a third ontology: they carry no axioms, and each records what it means in EMMO and in PMDco.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "Composition"
+      ]
+    },
+    "components": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/Component"
+      }
+    }
+  },
+  "$defs": {
+    "Component": {
+      "type": "object",
+      "title": "Component",
+      "description": "One constituent of a composition and how much of it there is. What may be a constituent is what the subschemas fix: a chemical species, or another material.",
+      "properties": {
+        "type": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [
+            "Component"
+          ]
+        },
+        "constituent": {
+          "type": "string",
+          "description": "What the component is made of. Which kind of thing that may be is what a composition fixes: a chemical species, or another material."
+        },
+        "amount": {
+          "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/MassFraction.schema.json"
+        }
+      },
+      "required": [
+        "type",
+        "constituent",
+        "amount"
+      ]
+    }
+  },
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/MassFraction.schema.json",
+    {
+      "@version": 1.1,
+      "emmo": "https://w3id.org/emmo#",
+      "obo": "http://purl.obolibrary.org/obo/",
+      "pmd": "https://w3id.org/pmd/co/",
+      "qudt": "http://qudt.org/schema/qudt/",
+      "qunit": "http://qudt.org/vocab/unit/",
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "schema": "http://schema.org/",
+      "comp": {
+        "@id": "https://w3id.org/oo-ld/schemas/materials/0.2/Composition.schema.json#",
+        "@prefix": true
+      },
+      "id": "@id",
+      "type": {
+        "@id": "@type",
+        "@container": "@set"
+      },
+      "Composition": "https://w3id.org/oo-ld/schemas/materials/0.2/Composition.schema.json",
+      "Component": "comp:/$defs/Component",
+      "components": {
+        "@id": "comp:/properties/components",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "constituent": {
+        "@id": "comp:/$defs/Component/properties/constituent"
+      },
+      "amount": {
+        "@id": "comp:/$defs/Component/properties/amount",
+        "@type": "@id",
+        "@context": "https://w3id.org/oo-ld/schemas/quantities/0.2/MassFraction.schema.json"
+      }
+    }
+  ],
+  "x-oold-context": {
+    "amount": {
+      "emmo:EMMO_95d706e4_8b16_48a1_8dfd_40ccd4df1c12": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:exactMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/emmo.sssom.tsv",
+          "object_source_version": "https://w3id.org/emmo/1.0.4",
+          "comment": "hasQuantityPart, 1.0.4 only"
+        }
+      },
+      "pmd:PMD_0000077": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:exactMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/pmdco.sssom.tsv",
+          "comment": "specified by value"
+        }
+      }
+    }
+  },
+  "required": [
+    "components"
+  ],
+  "$comment": "`components` reaches an object of this same document, so its terms are in scope already and a scoped @context would only name the document being read. OOLD-CMP-5266 permits the flattening for that case; declaring the scope instead makes the embed graph read as cyclic and skips the round-trip checks."
+}

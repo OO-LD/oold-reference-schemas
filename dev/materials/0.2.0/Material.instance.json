@@ -1,0 +1,88 @@
+{
+  "$schema": "Material.schema.json",
+  "@context": "Material.schema.json",
+  "id": "https://example.org/material/no27_14",
+  "type": [
+    "Material"
+  ],
+  "chemical_composition": {
+    "type": [
+      "ChemicalComposition"
+    ],
+    "components": [
+      {
+        "type": [
+          "ChemicalComponent"
+        ],
+        "constituent": "Fe",
+        "amount": {
+          "type": [
+            "MassFraction"
+          ],
+          "value": 96.7,
+          "unit": "percent"
+        }
+      },
+      {
+        "type": [
+          "ChemicalComponent"
+        ],
+        "constituent": "Si",
+        "amount": {
+          "type": [
+            "MassFraction"
+          ],
+          "value": 3.3,
+          "unit": "percent",
+          "standard_uncertainty": 0.1
+        }
+      },
+      {
+        "type": [
+          "ChemicalComponent"
+        ],
+        "constituent": "C",
+        "amount": {
+          "type": [
+            "MassFraction"
+          ],
+          "value": 120,
+          "unit": "part_per_million"
+        }
+      }
+    ]
+  },
+  "material_composition": {
+    "type": [
+      "MaterialComposition"
+    ],
+    "components": [
+      {
+        "type": [
+          "MaterialComponent"
+        ],
+        "constituent": "https://example.org/material/batch1",
+        "amount": {
+          "type": [
+            "MassFraction"
+          ],
+          "value": 80,
+          "unit": "percent"
+        }
+      },
+      {
+        "type": [
+          "MaterialComponent"
+        ],
+        "constituent": "https://example.org/material/masterbatch7",
+        "amount": {
+          "type": [
+            "MassFraction"
+          ],
+          "value": 20,
+          "unit": "percent"
+        }
+      }
+    ]
+  }
+}

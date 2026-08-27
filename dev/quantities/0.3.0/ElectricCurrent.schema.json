@@ -1,0 +1,88 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ElectricCurrent.schema.json",
+  "x-oold-uuid": "4b3a3c92-4aad-5cce-a132-aee3d57e439b",
+  "x-oold-version": "0.1.1",
+  "title": "ElectricCurrent",
+  "description": "Electric current, positive on charge and negative on discharge by the usual cell convention.",
+  "examples": [
+    {
+      "type": [
+        "ElectricCurrent"
+      ],
+      "value": -0.75,
+      "unit": "ampere"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ElectricCurrent": "qkind:ElectricCurrent",
+      "ampere": "qunit:A",
+      "milli_ampere": "qunit:MilliA"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ElectricCurrent"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "ampere",
+        "milli_ampere"
+      ],
+      "default": "ampere"
+    }
+  },
+  "x-oold-context": {
+    "ElectricCurrent": {
+      "emmo:EMMO_c995ae70_3b84_4ebb_bcfc_69e6a281bb88": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:exactMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/emmo.sssom.tsv",
+          "object_source_version": "https://w3id.org/emmo/1.0.4"
+        }
+      }
+    },
+    "ampere": {
+      "emmo:Ampere": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:exactMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/emmo.sssom.tsv",
+          "object_source_version": "https://w3id.org/emmo/1.0.4"
+        }
+      },
+      "obo:UO_0000011": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:exactMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/pmdco.sssom.tsv",
+          "comment": "UO ampere"
+        }
+      }
+    },
+    "milli_ampere": {
+      "emmo:MilliAmpere": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:exactMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/emmo.sssom.tsv",
+          "object_source_version": "https://w3id.org/emmo/1.0.4"
+        }
+      },
+      "obo:UO_0000037": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:exactMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/mappings/pmdco.sssom.tsv",
+          "comment": "UO milli ampere"
+        }
+      }
+    }
+  }
+}

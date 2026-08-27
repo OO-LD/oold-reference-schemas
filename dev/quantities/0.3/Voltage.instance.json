@@ -1,0 +1,10 @@
+{
+  "$schema": "Voltage.schema.json",
+  "@context": "Voltage.schema.json",
+  "id": "https://example.org/voltage-example",
+  "type": [
+    "Voltage"
+  ],
+  "value": 3.65,
+  "unit": "volt"
+}
