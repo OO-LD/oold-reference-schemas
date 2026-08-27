@@ -1,7 +1,7 @@
 {
   "$schema": "MassFraction.schema.json",
   "@context": "MassFraction.schema.json",
-  "@id": "https://example.org/steel-c-content",
+  "id": "https://example.org/steel-c-content",
   "type": [
     "MassFraction"
   ],

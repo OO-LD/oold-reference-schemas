@@ -1,6 +1,0 @@
-PREFIX ns1: <https://example.org/>
-PREFIX ns2: <https://w3id.org/oo-ld/schemas/materials/0.1/>
-
-ns1:instance
-    a ns2:Composition.schema.json ;
-.

@@ -1,0 +1,12 @@
+flowchart LR
+  n0["instance<br>MaterialComposition"]
+  n1["blank node<br>matcomp:MaterialComponent"]
+  n2["blank node<br>qkind:Mass Fraction"]
+  n3["batch1"]
+  n4["qunit:Percent"]
+  n5[/"96.7"/]
+  n0 -->|matcomp:components| n1
+  n1 -->|comp:amount| n2
+  n1 -->|matcomp:constituent| n3
+  n2 -->|qudt:has unit| n4
+  n2 -->|qudt:value| n5

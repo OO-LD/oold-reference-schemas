@@ -1,0 +1,55 @@
+flowchart LR
+  n0["blank node<br>pmd:fraction value specification"]
+  n1["obo:mass percentage"]
+  n2[/"20"/]
+  n3["blank node<br>pmd:chemical composition"]
+  n4["no27_14<br>pmd:material"]
+  n5["blank node<br>pmd:mass ratio"]
+  n6["blank node<br>pmd:mass ratio"]
+  n7["blank node<br>pmd:mass ratio"]
+  n8["blank node<br>pmd:fraction value specification"]
+  n9["obo:parts per million"]
+  n10[/"120"/]
+  n11["emmo:CarbonSymbol"]
+  n12["emmo:SiliconSymbol"]
+  n13["blank node<br>pmd:fraction value specification"]
+  n14[/"3.3"/]
+  n15[/"0.1"/]
+  n16["emmo:IronSymbol"]
+  n17["blank node<br>pmd:fraction value specification"]
+  n18["blank node<br>pmd:fraction value specification"]
+  n19[/"80"/]
+  n20[/"96.7"/]
+  n21["blank node<br>pmd:mass ratio"]
+  n22["masterbatch7"]
+  n23["blank node<br>pmd:mass ratio"]
+  n24["batch1"]
+  n25["blank node<br>MaterialComposition"]
+  n0 -->|obo:has measurement unit label| n1
+  n0 -->|obo:has specified numeric value| n2
+  n3 -->|obo:quality of| n4
+  n3 -->|chem:components| n5
+  n3 -->|chem:components| n6
+  n3 -->|chem:components| n7
+  n8 -->|obo:has measurement unit label| n9
+  n8 -->|obo:has specified numeric value| n10
+  n5 -->|chem:constituent| n11
+  n5 -->|pmd:specified by value| n8
+  n6 -->|chem:constituent| n12
+  n6 -->|pmd:specified by value| n13
+  n13 -->|obo:has measurement unit label| n1
+  n13 -->|obo:has specified numeric value| n14
+  n13 -->|qudt:standard uncertainty| n15
+  n7 -->|chem:constituent| n16
+  n7 -->|pmd:specified by value| n17
+  n18 -->|obo:has measurement unit label| n1
+  n18 -->|obo:has specified numeric value| n19
+  n17 -->|obo:has measurement unit label| n1
+  n17 -->|obo:has specified numeric value| n20
+  n21 -->|pmd:specified by value| n0
+  n21 -->|pmd:relational quality of| n22
+  n23 -->|pmd:specified by value| n18
+  n23 -->|pmd:relational quality of| n24
+  n25 -->|obo:quality of| n4
+  n25 -->|matcomp:components| n21
+  n25 -->|matcomp:components| n23

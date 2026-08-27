@@ -24,7 +24,7 @@ research; domain modules sit on top of them.
 | [`measurement`](modules/measurement) | measurement, assay, calibration, measurement datum | planned |
 | [`time`](modules/time) | temporal regions, durations, process start/end, temporalized qualities | planned |
 | [`qualities`](modules/qualities) | qualities, dispositions, realizable entities, roles | planned |
-| [`materials`](modules/materials) | composition, microstructure, material properties | planned |
+| [`materials`](modules/materials) | composition, microstructure, material properties | in progress |
 | [`devices`](modules/devices) | device specification, settings, identifiers | planned |
 | [`simulation`](modules/simulation) | simulated entities, digital counterparts, computation provenance | planned |
 | [`foundations`](modules/foundations) | upper-ontology structure and object-property inventories | planned |
@@ -50,7 +50,7 @@ losslessly under all three readings.
 ```
 modules/   the source: one directory per module, instances beside the schemas
 examples/  packaging examples (RO-Crate, .eln)
-generated/ derived artefacts: RDF readings, ontology labels
+generated/ derived artefacts: RDF readings and diagrams, sample instances, ontology labels
 docs/      the site: hand-written pages, seeded schema pages, mapping sets
 scripts/   generation, versioning and release tooling
 ```

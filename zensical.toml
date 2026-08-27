@@ -22,17 +22,8 @@ nav = [
     # BEGIN generated nav
     { "Modules" = [
         { "Overview" = "modules/index.md" },
-        { "datasets" = [
-            { "Dataset" = [
-                "modules/datasets/dataset/index.md",
-                { "TabularDataset" = [
-                    "modules/datasets/dataset/tabulardataset/index.md",
-                    { "ElectrochemicalCyclingDataset" = "modules/datasets/dataset/tabulardataset/electrochemicalcyclingdataset/index.md" },
-                ]},
-            ]},
-            { "Distribution" = "modules/datasets/distribution/index.md" },
-        ]},
-        { "Materials" = [
+        { "materials" = [
+            "modules/materials/index.md",
             { "Composition" = [
                 "modules/materials/composition/index.md",
                 { "ChemicalComposition" = "modules/materials/composition/chemicalcomposition/index.md" },
@@ -40,7 +31,8 @@ nav = [
             ]},
             { "Material" = "modules/materials/material/index.md" },
         ]},
-        { "Quantities" = [
+        { "quantities" = [
+            "modules/quantities/index.md",
             { "QuantityValue" = [
                 "modules/quantities/quantityvalue/index.md",
                 { "ElectricCurrent" = "modules/quantities/quantityvalue/electriccurrent/index.md" },
@@ -100,7 +92,7 @@ toggle = { icon = "material/brightness-4", name = "Switch to light mode" }
 [project.markdown_extensions]
 "admonition" = {}
 "pymdownx.details" = {}
-"pymdownx.superfences" = {}
+"pymdownx.superfences" = { custom_fences = [{ name = "mermaid", class = "mermaid", format = "pymdownx.superfences.fence_code_format" }] }
 "pymdownx.tabbed" = { alternate_style = true }
 "pymdownx.highlight" = { anchor_linenums = true }
 "attr_list" = {}

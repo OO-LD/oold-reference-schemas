@@ -40,32 +40,38 @@
   padding-left: .8em;
 }
 
-/* Rows that a toggle shows or hides: the permitted values of an enum, and the terms a
-   schema inherits. A checkbox plus :has(), because <details> is not a valid table section.
-   Without :has() support the rows stay visible, which is the safe direction. */
+/* Which rows a toggle hides is generated with the table, because a rule has to name the
+   checkbox by id: a row belongs to every group it sits inside, so closing a section closes
+   the sections nested in it. Without :has() support the rows stay visible, which is the
+   safe direction. */
 
-.md-typeset tbody:has(.section-toggle input:not(:checked)) tr.section-row {
-  display: none;
-}
+/* Depth carries meaning in this table: a term belongs to the section above it, and a
+   section belongs to the term that reaches it. One indent per level, and a section header
+   sits at the level of the term it opens, so the terms it brings are one step further in.
+   Without the indent the two read as siblings. */
 
-.md-typeset tbody:has(.values-toggle input:not(:checked)) tr.values-row {
-  display: none;
-}
-
-/* Depth carries meaning in this table: everything in an inherited section belongs to that
-   section, and a value list belongs to the property above it. Without the indent the two
-   toggles read as siblings. */
-
-.md-typeset tr.section-row > td:first-child {
+.md-typeset tr.level-1 > td:first-child {
   padding-left: 1.2rem;
 }
 
-.md-typeset tr.values-toggle > td {
-  padding-left: 1.2rem;
-}
-
-.md-typeset tr.section-row.values-toggle > td {
+.md-typeset tr.level-2 > td:first-child {
   padding-left: 2.4rem;
+}
+
+.md-typeset tr.level-3 > td:first-child {
+  padding-left: 3.6rem;
+}
+
+.md-typeset tr.level-4 > td:first-child {
+  padding-left: 4.8rem;
+}
+
+.md-typeset tr.level-5 > td:first-child {
+  padding-left: 6rem;
+}
+
+.md-typeset tr.level-6 > td:first-child {
+  padding-left: 7.2rem;
 }
 
 .md-typeset tr.toggle input {
@@ -136,4 +142,35 @@
 
 .md-typeset .tabbed-block > p:empty {
   display: none;
+}
+
+/* An embedded object is a schema of its own, so its header reads as a link into that
+   schema rather than as a heading of this one. */
+
+.md-typeset tr.toggle.embedded label {
+  color: var(--md-default-fg-color--light);
+}
+
+/* A term that opens a schema stays a term: the marker sits in the text flow of the first
+   cell instead of turning the row into a heading, so the description below it keeps its
+   own line. */
+
+.md-typeset tr.term-toggle label {
+  display: block;
+  position: relative;
+  padding-left: 1em;
+  color: inherit;
+}
+
+.md-typeset tr.term-toggle label::before {
+  position: absolute;
+  left: 0;
+  top: .45em;
+}
+
+/* A layer whose every term is refined further out: the lineage still belongs in the table,
+   but there is nothing behind it to open. */
+
+.md-typeset tr.section-note > td {
+  color: var(--md-default-fg-color--light);
 }

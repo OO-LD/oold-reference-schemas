@@ -1,10 +1,10 @@
-PREFIX ns1: <https://example.org/>
-PREFIX ns2: <pmd:>
+PREFIX ex: <https://example.org/>
 PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX pmd: <https://w3id.org/pmd/co/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
-ns1:steel-c-content
-    a ns2:PMD_0025997 ;
+ex:steel-c-content
+    a pmd:PMD_0025997 ;
     obo:IAO_0000039 obo:UO_0000169 ;
     obo:OBI_0001937 120 ;
 .

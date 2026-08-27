@@ -26,6 +26,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import shutil
 import sys
 import time
 import urllib.error
@@ -74,6 +75,29 @@ def update(lock: dict) -> None:
                     encoding="utf-8", newline="\n")
 
 
+def prune(lock: dict, check: bool) -> tuple[int, list[str]]:
+    """Drop a snapshot the lock no longer pins.
+
+    The cache is read as a whole, by the label extractor among others, so a version left
+    behind by a repin keeps answering for terms the lock no longer describes, and the older
+    label silently wins wherever it sorts first.
+    """
+    problems, removed = [], 0
+    for directory in sorted(TARGET.glob("*/*")):
+        if not directory.is_dir():
+            continue
+        if lock.get(directory.parent.name, {}).get("version") == directory.name:
+            continue
+        if check:
+            problems.append(f"{directory.relative_to(ROOT)} is not pinned by the lock")
+            continue
+        shutil.rmtree(directory)
+        if not any(directory.parent.iterdir()):
+            directory.parent.rmdir()
+        removed += 1
+    return removed, problems
+
+
 def main() -> None:
     check = "--check" in sys.argv
     if not LOCK.exists():
@@ -109,7 +133,11 @@ def main() -> None:
             local.write_bytes(data)
             fetched += 1
 
-    print(f"ontologies: {fetched} fetched, {verified} verified, in {TARGET.name}/")
+    removed, unpinned = prune(lock, check)
+    problems += unpinned
+
+    print(f"ontologies: {fetched} fetched, {verified} verified, "
+          f"{removed} stale removed, in {TARGET.name}/")
     for problem in problems:
         print(f"  ! {problem}")
     if problems:

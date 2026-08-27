@@ -1,7 +1,7 @@
 {
   "$schema": "ElectricCurrent.schema.json",
   "@context": "ElectricCurrent.schema.json",
-  "@id": "https://example.org/electriccurrent-example",
+  "id": "https://example.org/electriccurrent-example",
   "type": [
     "ElectricCurrent"
   ],

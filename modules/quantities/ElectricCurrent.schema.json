@@ -1,7 +1,8 @@
 {
   "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
   "$id": "ElectricCurrent.schema.json",
-  "x-oold-version": "0.1.0",
+  "x-oold-uuid": "4b3a3c92-4aad-5cce-a132-aee3d57e439b",
+  "x-oold-version": "0.1.1",
   "title": "ElectricCurrent",
   "description": "Electric current, positive on charge and negative on discharge by the usual cell convention.",
   "examples": [

@@ -1,0 +1,8 @@
+flowchart LR
+  n0["instance<br>emmo:QuantityValue"]
+  n1[/"12.7"/]
+  n2[/"0.05"/]
+  n3["qunit:Second"]
+  n0 -->|qudt:value| n1
+  n0 -->|emmo:standardUncertainty| n2
+  n0 -->|emmo:hasReferencePart| n3

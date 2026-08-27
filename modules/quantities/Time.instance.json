@@ -1,7 +1,7 @@
 {
   "$schema": "Time.schema.json",
   "@context": "Time.schema.json",
-  "@id": "https://example.org/m1-duration",
+  "id": "https://example.org/m1-duration",
   "type": [
     "Time"
   ],

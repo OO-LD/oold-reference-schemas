@@ -1,9 +1,9 @@
-PREFIX ns1: <https://example.org/>
+PREFIX ex: <https://example.org/>
 PREFIX qudt: <http://qudt.org/schema/qudt/>
 PREFIX qunit: <http://qudt.org/vocab/unit/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
-ns1:instance
+ex:instance
     a qudt:QuantityValue ;
     qudt:hasUnit qunit:SEC ;
     qudt:standardUncertainty 5e-02 ;

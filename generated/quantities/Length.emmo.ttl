@@ -1,9 +1,9 @@
 PREFIX emmo: <https://w3id.org/emmo#>
-PREFIX ns1: <https://example.org/>
+PREFIX ex: <https://example.org/>
 PREFIX qudt: <http://qudt.org/schema/qudt/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
-ns1:instance
+ex:instance
     a emmo:EMMO_cd2cd0de_e0cc_4ef1_b27e_2e88db027bac ;
     qudt:value 2.54e-02 ;
     emmo:EMMO_eeb06032_dd4f_476e_9da6_aa24302b7588 emmo:Metre ;

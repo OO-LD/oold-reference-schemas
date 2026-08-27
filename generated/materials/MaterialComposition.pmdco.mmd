@@ -1,0 +1,12 @@
+flowchart LR
+  n0["instance<br>MaterialComposition"]
+  n1["blank node<br>pmd:mass ratio"]
+  n2["blank node<br>pmd:fraction value specification"]
+  n3["obo:mass percentage"]
+  n4[/"96.7"/]
+  n5["batch1"]
+  n0 -->|matcomp:components| n1
+  n2 -->|obo:has measurement unit label| n3
+  n2 -->|obo:has specified numeric value| n4
+  n1 -->|pmd:specified by value| n2
+  n1 -->|pmd:relational quality of| n5

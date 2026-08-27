@@ -1,8 +1,8 @@
-PREFIX ns1: <https://example.org/>
+PREFIX ex: <https://example.org/>
 PREFIX obo: <http://purl.obolibrary.org/obo/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
-ns1:instance
+ex:instance
     a obo:PATO_0000122 ;
     obo:IAO_0000039 obo:UO_0000008 ;
     obo:OBI_0001937 2.54e-02 ;

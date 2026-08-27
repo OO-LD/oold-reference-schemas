@@ -2,7 +2,7 @@
   "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
   "$id": "QuantityValue.schema.json",
   "x-oold-uuid": "0d241e1a-9bf9-5441-81ff-5313948143c0",
-  "x-oold-version": "0.1.0",
+  "x-oold-version": "0.2.0",
   "title": "QuantityValue",
   "examples": [
     {
@@ -51,6 +51,8 @@
     "schema": "http://schema.org/",
     "obo": "http://purl.obolibrary.org/obo/",
     "emmo": "https://w3id.org/emmo#",
+    "pmd": "https://w3id.org/pmd/co/",
+    "id": "@id",
     "type": {
       "@id": "@type",
       "@container": "@set"

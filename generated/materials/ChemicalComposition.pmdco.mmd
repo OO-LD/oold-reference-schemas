@@ -1,0 +1,12 @@
+flowchart LR
+  n0["instance<br>pmd:chemical composition"]
+  n1["blank node<br>pmd:mass ratio"]
+  n2["emmo:IronSymbol"]
+  n3["blank node<br>pmd:fraction value specification"]
+  n4["obo:mass percentage"]
+  n5[/"96.7"/]
+  n0 -->|chem:components| n1
+  n1 -->|chem:constituent| n2
+  n1 -->|pmd:specified by value| n3
+  n3 -->|obo:has measurement unit label| n4
+  n3 -->|obo:has specified numeric value| n5

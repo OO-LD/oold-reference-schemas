@@ -24,7 +24,6 @@ from __future__ import annotations
 
 import json
 import re
-import sys
 import subprocess
 import sys
 from pathlib import Path
@@ -105,10 +104,39 @@ the [Crosswalks](../crosswalks/) page.
 """
 
 
+MODULE_STUB = """{{{{ oold_module_page("{name}") }}}}
+"""
+
+
 def mapping_sets() -> list[str]:
     if not SETS.is_dir():
         return []
     return sorted(f.name[: -len(".sssom.tsv")] for f in SETS.glob("*.sssom.tsv"))
+
+
+def seed_module_pages(check: bool, problems: list[str]) -> int:
+    """One page per module, so the menu entry of a module is the module.
+
+    Without a page of its own the theme has nothing to put in that slot and promotes one of
+    the module's schemas into it, which reads as if the schema were the module. The page
+    states no facts of its own: the metadata and the schema tree are generated.
+    """
+    seeded = 0
+    for module_dir in sorted(d for d in MODULES.iterdir() if d.is_dir()):
+        if not any(module_dir.glob("*.schema.json")):
+            continue
+        module = module_dir.name
+        target = PAGES / module / "index.md"
+        if target.exists():
+            continue
+        if check:
+            problems.append(f"{target.relative_to(ROOT)} is missing")
+            continue
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_text(MODULE_STUB.format(name=module),
+                          encoding="utf-8", newline=chr(10))
+        seeded += 1
+    return seeded
 
 
 def seed_mapping_pages(check: bool, problems: list[str]) -> int:
@@ -261,9 +289,12 @@ def nav(all_chains: dict[str, dict[str, list[str]]]) -> str:
              '        { "Overview" = "modules/index.md" },']
     for module, chains in all_chains.items():
         roots = sorted(n for n, chain in chains.items() if not chain)
-        title = read(MODULES / module / "module.json")["title"] if (
-            MODULES / module / "module.json").exists() else module
-        lines.append(f'        {{ "{title}" = [')
+        # A module is written the way it is published, in lower case, and a schema is
+        # written as the class it defines. Spelling both the same way makes "Materials" and
+        # "Material" read as one kind of thing, and a reader then takes a schema of the
+        # module for the module itself.
+        lines.append(f'        {{ "{module}" = [')
+        lines.append(f'            "modules/{module}/index.md",')
         for root in roots:
             lines += nav_entry(module, root, {"chains": chains}, 1)
         lines.append("        ]},")
@@ -348,6 +379,7 @@ def main() -> None:
         problems.append(f"{path.relative_to(ROOT)} documents {module}/{name}, "
                         "which no longer exists")
 
+    seeded += seed_module_pages(check, problems)
     seeded += seed_mapping_pages(check, problems)
     check_instances(problems)
     check_links(problems)

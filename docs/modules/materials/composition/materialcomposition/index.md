@@ -17,7 +17,7 @@ ingredient is an entity with its own identity, and embedding a material inside a
 close a cycle that JSON-LD cannot resolve.
 
 Here the two ontologies swap places. PMDco fits: its proportion is a relational quality of a
-portion of matter, and a portion may be of any substance, so `material` is
+portion of matter, and a portion may be of any substance, so `constituent` is
 `relational quality of` unchanged. EMMO does not: `hasSpeciesPart` ranges over species, and
 while EMMO has `Mixture` and `hasPortionPart`, nothing attaches a fraction to a portion, so
 these terms keep their placeholder IRIs in the EMMO reading.

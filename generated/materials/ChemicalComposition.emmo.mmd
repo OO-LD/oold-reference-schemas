@@ -1,0 +1,12 @@
+flowchart LR
+  n0["instance<br>emmo:ChemicalComposition"]
+  n1["blank node<br>emmo:SingleComponentComposition"]
+  n2["emmo:IronSymbol"]
+  n3["blank node<br>emmo:MassFraction"]
+  n4[/"96.7"/]
+  n5["emmo:WeightPercent"]
+  n0 -->|emmo:hasSpatialTile| n1
+  n1 -->|emmo:hasSpeciesPart| n2
+  n1 -->|emmo:hasQuantityPart| n3
+  n3 -->|qudt:value| n4
+  n3 -->|emmo:hasReferencePart| n5
