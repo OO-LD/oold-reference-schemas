@@ -49,47 +49,47 @@ https://w3id.org/oo-ld/schemas/materials#Si	Si	skos:exactMatch	emmo:EMMO_4f9670f
 https://w3id.org/oo-ld/schemas/quantities#Time	Time	skos:exactMatch	qkind:Time	Time	semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/quantities	0.3.0			
 https://w3id.org/oo-ld/schemas/quantities#Voltage	Voltage	skos:exactMatch	qkind:Voltage	Voltage	semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/quantities	0.3.0			
 https://w3id.org/oo-ld/schemas/datasets#about	about	skos:exactMatch	schema:about	about	semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/datasets	0.1.0			
-https://w3id.org/oo-ld/schemas/datasets#access_url	access_url	skos:exactMatch	dcat:accessURL		semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/datasets	0.1.0			
+https://w3id.org/oo-ld/schemas/datasets#access_url	access_url	skos:exactMatch	dcat:accessURL	access address	semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/datasets	0.1.0			
 /Composition.schema.json#/$defs/Component/properties/amount	amount	skos:exactMatch	comp:/$defs/Component/properties/amount		semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/materials	0.2.0			
 https://w3id.org/oo-ld/schemas/quantities#ampere	ampere	skos:exactMatch	qunit:A	Ampere	semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/quantities	0.3.0			
-https://w3id.org/oo-ld/schemas/datasets#byte_size	byte_size	skos:exactMatch	dcat:byteSize		semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/datasets	0.1.0			
+https://w3id.org/oo-ld/schemas/datasets#byte_size	byte_size	skos:exactMatch	dcat:byteSize	byte size	semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/datasets	0.1.0			
 /Material.schema.json#/properties/chemical_composition	chemical_composition	skos:exactMatch	mat:/properties/chemical_composition		semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/materials	0.2.0			
 /ChemicalComposition.schema.json#/properties/components	components	skos:exactMatch	chem:/properties/components		semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/materials	0.2.0			
 /Composition.schema.json#/properties/components	components	skos:exactMatch	comp:/properties/components		semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/materials	0.2.0			
 /MaterialComposition.schema.json#/properties/components	components	skos:exactMatch	matcomp:/properties/components		semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/materials	0.2.0			
-https://w3id.org/oo-ld/schemas/datasets#conforms_to	conforms_to	skos:exactMatch	dcterms:conformsTo		semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/datasets	0.1.0			
+https://w3id.org/oo-ld/schemas/datasets#conforms_to	conforms_to	skos:exactMatch	dcterms:conformsTo	Conforms To	semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/datasets	0.1.0			
 /ChemicalComposition.schema.json#/properties/components/items/properties/constituent	constituent	skos:exactMatch	chem:/properties/components/items/properties/constituent		semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/materials	0.2.0			
 /Composition.schema.json#/$defs/Component/properties/constituent	constituent	skos:exactMatch	comp:/$defs/Component/properties/constituent		semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/materials	0.2.0			
 /MaterialComposition.schema.json#/properties/components/items/properties/constituent	constituent	skos:exactMatch	matcomp:/properties/components/items/properties/constituent		semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/materials	0.2.0			
 /ElectrochemicalCyclingDataset.schema.json#/$defs/ElectrochemicalCyclingDataRow/properties/current	current	skos:exactMatch	row:properties/current		semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/datasets	0.1.0			
 /Dataset.schema.json#/properties/data	data	skos:exactMatch	dataset:/properties/data		semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/datasets	0.1.0			
-https://w3id.org/oo-ld/schemas/datasets#description	description	skos:exactMatch	dcterms:description	description	semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/datasets	0.1.0			
-https://w3id.org/oo-ld/schemas/datasets#distributions	distributions	skos:exactMatch	dcat:distribution		semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/datasets	0.1.0			
-https://w3id.org/oo-ld/schemas/datasets#download_url	download_url	skos:exactMatch	dcat:downloadURL		semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/datasets	0.1.0			
-https://w3id.org/oo-ld/schemas/datasets#generated_by	generated_by	skos:exactMatch	prov:wasGeneratedBy		semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/datasets	0.1.0			
+https://w3id.org/oo-ld/schemas/datasets#description	description	skos:exactMatch	dcterms:description	Description	semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/datasets	0.1.0			
+https://w3id.org/oo-ld/schemas/datasets#distributions	distributions	skos:exactMatch	dcat:distribution	distribution	semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/datasets	0.1.0			
+https://w3id.org/oo-ld/schemas/datasets#download_url	download_url	skos:exactMatch	dcat:downloadURL	download URL	semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/datasets	0.1.0			
+https://w3id.org/oo-ld/schemas/datasets#generated_by	generated_by	skos:exactMatch	prov:wasGeneratedBy	wasGeneratedBy	semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/datasets	0.1.0			
 https://w3id.org/oo-ld/schemas/quantities#hour	hour	skos:exactMatch	qunit:HR	Hour	semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/quantities	0.3.0			
-https://w3id.org/oo-ld/schemas/datasets#issued	issued	skos:exactMatch	dcterms:issued		semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/datasets	0.1.0			
+https://w3id.org/oo-ld/schemas/datasets#issued	issued	skos:exactMatch	dcterms:issued	Date Issued	semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/datasets	0.1.0			
 https://w3id.org/oo-ld/schemas/quantities#kilo_metre	kilo_metre	skos:exactMatch	qunit:KiloM	Kilometre	semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/quantities	0.3.0			
-https://w3id.org/oo-ld/schemas/datasets#license	license	skos:exactMatch	dcterms:license	dcterms:license	semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/datasets	0.1.0			
+https://w3id.org/oo-ld/schemas/datasets#license	license	skos:exactMatch	dcterms:license	License	semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/datasets	0.1.0			
 /Material.schema.json#/properties/material_composition	material_composition	skos:exactMatch	mat:/properties/material_composition		semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/materials	0.2.0			
-https://w3id.org/oo-ld/schemas/datasets#media_type	media_type	skos:exactMatch	dcat:mediaType		semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/datasets	0.1.0			
+https://w3id.org/oo-ld/schemas/datasets#media_type	media_type	skos:exactMatch	dcat:mediaType	media type	semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/datasets	0.1.0			
 https://w3id.org/oo-ld/schemas/quantities#metre	metre	skos:exactMatch	qunit:M	Metre	semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/quantities	0.3.0			
 https://w3id.org/oo-ld/schemas/quantities#micro_metre	micro_metre	skos:exactMatch	qunit:MicroM	Micrometre	semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/quantities	0.3.0			
 https://w3id.org/oo-ld/schemas/quantities#milli_ampere	milli_ampere	skos:exactMatch	qunit:MilliA	Milliampere	semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/quantities	0.3.0			
 https://w3id.org/oo-ld/schemas/quantities#milli_metre	milli_metre	skos:exactMatch	qunit:MilliM	Millimetre	semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/quantities	0.3.0			
 https://w3id.org/oo-ld/schemas/quantities#milli_second	milli_second	skos:exactMatch	qunit:MilliSEC	Millisecond	semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/quantities	0.3.0			
 https://w3id.org/oo-ld/schemas/quantities#milli_volt	milli_volt	skos:exactMatch	qunit:MilliV	Millivolt	semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/quantities	0.3.0			
-https://w3id.org/oo-ld/schemas/datasets#package_format	package_format	skos:exactMatch	dcat:packageFormat		semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/datasets	0.1.0			
+https://w3id.org/oo-ld/schemas/datasets#package_format	package_format	skos:exactMatch	dcat:packageFormat	packaging format	semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/datasets	0.1.0			
 https://w3id.org/oo-ld/schemas/quantities#part_per_million	part_per_million	skos:exactMatch	qunit:PPM	Parts per Million	semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/quantities	0.3.0			
-https://w3id.org/oo-ld/schemas/datasets#parts	parts	skos:exactMatch	dcterms:hasPart		semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/datasets	0.1.0			
+https://w3id.org/oo-ld/schemas/datasets#parts	parts	skos:exactMatch	dcterms:hasPart	Has Part	semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/datasets	0.1.0			
 https://w3id.org/oo-ld/schemas/quantities#percent	percent	skos:exactMatch	qunit:PERCENT	Percent	semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/quantities	0.3.0			
 https://w3id.org/oo-ld/schemas/quantities#relative_standard_uncertainty	relative_standard_uncertainty	skos:exactMatch	qudt:relativeStandardUncertainty	relative standard uncertainty	semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/quantities	0.3.0			
 https://w3id.org/oo-ld/schemas/quantities#second	second	skos:exactMatch	qunit:SEC	Second	semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/quantities	0.3.0			
 /Distribution.schema.json#/properties/selector	selector	skos:exactMatch	distribution:/properties/selector		semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/datasets	0.1.0			
 https://w3id.org/oo-ld/schemas/quantities#standard_uncertainty	standard_uncertainty	skos:exactMatch	qudt:standardUncertainty	standard uncertainty	semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/quantities	0.3.0			
-https://w3id.org/oo-ld/schemas/datasets#table_schema	table_schema	skos:exactMatch	csvw:tableSchema		semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/datasets	0.1.0			
+https://w3id.org/oo-ld/schemas/datasets#table_schema	table_schema	skos:exactMatch	csvw:tableSchema	table schema	semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/datasets	0.1.0			
 /ElectrochemicalCyclingDataset.schema.json#/$defs/ElectrochemicalCyclingDataRow/properties/test_time	test_time	skos:exactMatch	row:properties/test_time		semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/datasets	0.1.0			
-https://w3id.org/oo-ld/schemas/datasets#title	title	skos:exactMatch	dcterms:title	title	semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/datasets	0.1.0			
+https://w3id.org/oo-ld/schemas/datasets#title	title	skos:exactMatch	dcterms:title	Title	semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/datasets	0.1.0			
 https://w3id.org/oo-ld/schemas/quantities#unit	unit	skos:exactMatch	qudt:hasUnit	has unit	semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/quantities	0.3.0			
 https://w3id.org/oo-ld/schemas/quantities#value	value	skos:exactMatch	qudt:value	value	semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/quantities	0.3.0			
 https://w3id.org/oo-ld/schemas/quantities#volt	volt	skos:exactMatch	qunit:V	Volt	semapv:ManualMappingCuration	https://w3id.org/oo-ld/schemas/quantities	0.3.0			
