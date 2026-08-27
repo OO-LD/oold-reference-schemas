@@ -22,6 +22,24 @@ def read(path: Path) -> dict:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+def resolve(origin: Path, target: str) -> Path:
+    """Where a reference lives in this tree.
+
+    A cross-module reference names the published IRI, since that is what resolves for a
+    consumer. In the working tree the same schema is a file, and the file is the source of
+    truth, so a published IRI of a module kept here is read from disk rather than fetched:
+    the checks stay offline and see the version being edited.
+    """
+    if target.startswith("https://w3id.org/oo-ld/schemas/"):
+        parts = target[len("https://w3id.org/oo-ld/schemas/"):].split("/")
+        if len(parts) == 3:
+            module, _version, name = parts
+            candidate = MODULES / module / name
+            if candidate.is_file():
+                return candidate
+    return origin.parent / target
+
+
 def chain(schema_file: Path) -> list[Path]:
     """A schema and every schema whose terms it needs, base first.
 
@@ -45,23 +63,6 @@ def chain(schema_file: Path) -> list[Path]:
                 found += refs(value)
         return found
 
-    def local(f: Path, target: str) -> Path:
-        """Where a reference lives in this tree.
-
-        A cross-module reference names the published IRI, since that is what resolves for a
-        consumer. In the working tree the same schema is a file, and the file is the source
-        of truth, so a published IRI of a module kept here is read from disk rather than
-        fetched: the checks stay offline and see the version being edited.
-        """
-        if target.startswith("https://w3id.org/oo-ld/schemas/"):
-            parts = target[len("https://w3id.org/oo-ld/schemas/"):].split("/")
-            if len(parts) == 3:
-                module, _version, name = parts
-                candidate = MODULES / module / name
-                if candidate.is_file():
-                    return candidate
-        return f.parent / target
-
     def walk(f: Path) -> None:
         if not f.is_file() or f in out:
             return
@@ -70,9 +71,9 @@ def chain(schema_file: Path) -> list[Path]:
         parts = context if isinstance(context, list) else [context]
         for entry in parts:
             if isinstance(entry, str) and ".schema.json" in entry:
-                walk(local(f, entry))
+                walk(resolve(f, entry))
         for target in refs(schema):
-            walk(local(f, target))
+            walk(resolve(f, target))
         out.append(f)
 
     walk(schema_file)
