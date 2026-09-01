@@ -4,6 +4,7 @@ PREFIX dcat: <http://www.w3.org/ns/dcat#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX ex_data: <https://example.org/data/>
 PREFIX ex_distribution: <https://example.org/distribution/>
+PREFIX iana_text: <http://www.iana.org/assignments/media-types/text/>
 PREFIX schema1: <http://schema.org/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
@@ -11,7 +12,7 @@ ex_distribution:LFP-042-cycling-csv
     a schema1:DataDownload ;
     dcterms:conformsTo datasets:ElectrochemicalCyclingDataset.schema.json ;
     schema1:contentUrl ex_data:LFP-042-cycling.csv ;
-    schema1:encodingFormat "text/csv" ;
+    schema1:encodingFormat iana_text:csv ;
     csvw:tableSchema datasets:ElectrochemicalCyclingDataRow.schema.json ;
     dcat:byteSize 48213004 ;
 .

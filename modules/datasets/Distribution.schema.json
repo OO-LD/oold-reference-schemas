@@ -39,13 +39,14 @@
     },
     "media_type": {
       "type": "string",
+      "description": "IANA media type of the bytes, written as the media type itself. dcat:mediaType ranges over dcterms:MediaType and DCAT-AP requires the IANA vocabulary, so the term resolves the value against that namespace.",
       "examples": [
-        "text/csv",
-        "application/x-hdf5"
+        "text/csv"
       ]
     },
     "byte_size": {
-      "type": "integer"
+      "type": "integer",
+      "description": "Size in bytes. DCAT-AP types this xsd:nonNegativeInteger; the term is left uncoerced because a pinned datatype does not survive the RDF round trip: fromRDF with native types drops it, and the term no longer matches on the way back."
     },
     "package_format": {
       "type": "string",
@@ -66,6 +67,12 @@
     "selector": {
       "type": "string",
       "description": "The part within a container: sheet, HDF path, SQL table, archive member"
+    },
+    "access_service": {
+      "type": "string",
+      "format": "iri-reference",
+      "x-oold-range": "DataService.schema.json",
+      "description": "IRI of the service through which these bytes are reached."
     }
   },
   "required": [
@@ -84,6 +91,7 @@
     "emmo": "https://w3id.org/emmo#",
     "echem": "https://w3id.org/emmo/domain/electrochemistry#",
     "obo": "http://purl.obolibrary.org/obo/",
+    "iana": "http://www.iana.org/assignments/media-types/",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "distribution": {
       "@id": "https://w3id.org/oo-ld/schemas/datasets/0.1/Distribution.schema.json#",
@@ -103,7 +111,13 @@
       "@id": "dcat:accessURL",
       "@type": "@id"
     },
-    "media_type": "dcat:mediaType",
+    "media_type": {
+      "@id": "dcat:mediaType",
+      "@type": "@vocab",
+      "@context": {
+        "@vocab": "http://www.iana.org/assignments/media-types/"
+      }
+    },
     "byte_size": "dcat:byteSize",
     "package_format": {
       "@id": "dcat:packageFormat",
@@ -117,7 +131,11 @@
       "@id": "csvw:tableSchema",
       "@type": "@id"
     },
-    "selector": "distribution:/properties/selector"
+    "selector": "distribution:/properties/selector",
+    "access_service": {
+      "@id": "dcat:accessService",
+      "@type": "@id"
+    }
   },
   "x-oold-context": {
     "Distribution": {
@@ -144,5 +162,6 @@
         }
       }
     }
-  }
+  },
+  "$comment": "dcterms:format is reserved: the Dataspace Protocol claims it for the transfer channel (values such as HttpData-PULL), so the file format goes on dcat:mediaType and the schema the bytes embody on dcterms:conformsTo."
 }

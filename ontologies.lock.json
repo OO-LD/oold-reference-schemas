@@ -176,6 +176,20 @@
     },
     "note": "biomedical investigations, an OBO release"
   },
+  "odrl": {
+    "version": "2.2",
+    "repository": "https://www.w3.org/ns/odrl/2",
+    "ref": "2018-02-15",
+    "base": "https://www.w3.org/ns/odrl/2/",
+    "files": {
+      "ODRL22.ttl": {
+        "path": "ODRL22.ttl",
+        "sha256": "7895765e80d86d1d0349d945a28b8a2479f03169572345080a5b3e561ef31457",
+        "bytes": 91012
+      }
+    },
+    "note": "ODRL Vocabulary and Expression 2.2, the policy terms a data space catalogue uses"
+  },
   "pato": {
     "version": "2025-05-14",
     "repository": "http://purl.obolibrary.org/obo/pato.owl",
