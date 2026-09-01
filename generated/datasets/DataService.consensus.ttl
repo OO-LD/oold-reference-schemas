@@ -1,0 +1,10 @@
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX ex: <https://example.org/>
+PREFIX ex_api: <https://example.org/api/>
+
+ex:instance
+    a dcat:DataService ;
+    dcterms:title "Cycling data endpoint" ;
+    dcat:endpointURL ex_api: ;
+.

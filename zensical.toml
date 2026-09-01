@@ -24,6 +24,7 @@ nav = [
         { "Overview" = "modules/index.md" },
         { "datasets" = [
             "modules/datasets/index.md",
+            { "DataService" = "modules/datasets/dataservice/index.md" },
             { "Dataset" = [
                 "modules/datasets/dataset/index.md",
                 { "TabularDataset" = [
