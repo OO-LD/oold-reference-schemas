@@ -1,12 +1,19 @@
 flowchart LR
-  n0["LFP-042-cycling-csv<br>schema:DataDownload"]
+  n0["LFP-042-cycling-h5<br>schema:DataDownload"]
   n1["ElectrochemicalCyclingDataset.schema.json"]
-  n2["LFP-042-cycling.csv"]
-  n3["iana:csv"]
+  n2["run.h5"]
+  n3["iana:x-hdf5"]
   n4["ElectrochemicalCyclingDataRow.schema.json"]
   n5[/"48213004"/]
+  n6["blank node<br>oa:FragmentSelector"]
+  n7["_h5_d__u_g.html"]
+  n8[/"/cell42/cycling"/]
   n0 -->|dcterms:Conforms To| n1
+  n0 -->|schema:associatedMedia| n2
   n0 -->|schema:contentUrl| n2
   n0 -->|schema:encodingFormat| n3
   n0 -->|csvw:table schema| n4
   n0 -->|dcat:byte size| n5
+  n0 -->|oa:hasSelector| n6
+  n6 -->|dcterms:Conforms To| n7
+  n6 -->|rdf:value| n8

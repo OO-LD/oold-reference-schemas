@@ -1,13 +1,21 @@
 {
   "$schema": "Distribution.schema.json",
   "@context": "Distribution.schema.json",
-  "id": "https://example.org/distribution/LFP-042-cycling-csv",
+  "id": "https://example.org/distribution/LFP-042-cycling-h5",
   "type": [
     "Distribution"
   ],
-  "download_url": "https://example.org/data/LFP-042-cycling.csv",
-  "media_type": "text/csv",
+  "download_url": "https://example.org/data/run.h5",
+  "media_type": "application/x-hdf5",
   "byte_size": 48213004,
   "conforms_to": "https://w3id.org/oo-ld/schemas/datasets/0.1/ElectrochemicalCyclingDataset.schema.json",
-  "table_schema": "https://w3id.org/oo-ld/schemas/datasets/0.1/ElectrochemicalCyclingDataRow.schema.json"
+  "table_schema": "https://w3id.org/oo-ld/schemas/datasets/0.1/ElectrochemicalCyclingDataRow.schema.json",
+  "file": "https://example.org/data/run.h5",
+  "selector": {
+    "type": [
+      "FragmentSelector"
+    ],
+    "fragment": "/cell42/cycling",
+    "conforms_to": "https://docs.hdfgroup.org/hdf5/develop/_h5_d__u_g.html"
+  }
 }

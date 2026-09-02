@@ -1,0 +1,9 @@
+flowchart LR
+  n0["run.h5<br>schema:MediaObject"]
+  n1[/"48213004"/]
+  n2[/"application/x-hdf5"/]
+  n3[/"9f2c7b1e5d4a3c8f6b0e2d7a4c9f1b3e5d8a6c0f2b4e7d9a1c3f5b8e0d2a4c6f"/]
+  n0 -->|schema:contentSize| n1
+  n0 -->|schema:contentUrl| n0
+  n0 -->|schema:encodingFormat| n2
+  n0 -->|schema:sha256| n3

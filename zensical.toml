@@ -33,6 +33,7 @@ nav = [
                 ]},
             ]},
             { "Distribution" = "modules/datasets/distribution/index.md" },
+            { "File" = "modules/datasets/file/index.md" },
         ]},
         { "materials" = [
             "modules/materials/index.md",

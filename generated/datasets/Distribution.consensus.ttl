@@ -2,16 +2,29 @@ PREFIX csvw: <http://www.w3.org/ns/csvw#>
 PREFIX datasets: <https://w3id.org/oo-ld/schemas/datasets/0.1/>
 PREFIX dcat: <http://www.w3.org/ns/dcat#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX docs_hdf5_develop: <https://docs.hdfgroup.org/hdf5/develop/>
 PREFIX ex_data: <https://example.org/data/>
 PREFIX ex_distribution: <https://example.org/distribution/>
-PREFIX iana_text: <http://www.iana.org/assignments/media-types/text/>
+PREFIX genid: <https://schemas.oo-ld.org/.well-known/genid/>
+PREFIX iana_application: <http://www.iana.org/assignments/media-types/application/>
+PREFIX oa: <http://www.w3.org/ns/oa#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX schema1: <http://schema.org/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
-ex_distribution:LFP-042-cycling-csv
+ex_distribution:LFP-042-cycling-h5
     a dcat:Distribution ;
     dcterms:conformsTo datasets:ElectrochemicalCyclingDataset.schema.json ;
+    schema1:associatedMedia ex_data:run.h5 ;
     csvw:tableSchema datasets:ElectrochemicalCyclingDataRow.schema.json ;
     dcat:byteSize 48213004 ;
-    dcat:downloadURL ex_data:LFP-042-cycling.csv ;
-    dcat:mediaType iana_text:csv ;
+    dcat:downloadURL ex_data:run.h5 ;
+    dcat:mediaType iana_application:x-hdf5 ;
+    oa:hasSelector genid:c14n0 ;
+.
+
+genid:c14n0
+    a oa:FragmentSelector ;
+    dcterms:conformsTo docs_hdf5_develop:_h5_d__u_g.html ;
+    rdf:value "/cell42/cycling" ;
 .

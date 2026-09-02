@@ -1,0 +1,11 @@
+PREFIX ex_data: <https://example.org/data/>
+PREFIX schema1: <http://schema.org/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+ex_data:run.h5
+    a schema1:MediaObject ;
+    schema1:contentSize 48213004 ;
+    schema1:contentUrl ex_data:run.h5 ;
+    schema1:encodingFormat "application/x-hdf5" ;
+    schema1:sha256 "9f2c7b1e5d4a3c8f6b0e2d7a4c9f1b3e5d8a6c0f2b4e7d9a1c3f5b8e0d2a4c6f" ;
+.

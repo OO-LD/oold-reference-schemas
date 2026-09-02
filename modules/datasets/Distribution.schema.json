@@ -54,6 +54,12 @@
         "application/zip"
       ]
     },
+    "file": {
+      "type": "string",
+      "format": "iri-reference",
+      "x-oold-range": "File.schema.json",
+      "description": "IRI of the bytes this distribution serves. Two datasets over one file are two distributions naming one file, so the checksum is stated once and the properties that hold only for one reading stay on the distribution."
+    },
     "conforms_to": {
       "type": "string",
       "format": "iri-reference",
@@ -65,8 +71,12 @@
       "description": "IRI of the row schema, where the serialisation is tabular"
     },
     "selector": {
-      "type": "string",
-      "description": "The part within a container: sheet, HDF path, SQL table, archive member"
+      "allOf": [
+        {
+          "$ref": "#/$defs/FragmentSelector"
+        }
+      ],
+      "description": "The part of the container this dataset is, where no fragment syntax covers the case. Where one does, RFC 7111 for CSV or Media Fragments for media, put it in download_url instead and leave this out."
     },
     "access_service": {
       "type": "string",
@@ -91,6 +101,8 @@
     "emmo": "https://w3id.org/emmo#",
     "echem": "https://w3id.org/emmo/domain/electrochemistry#",
     "obo": "http://purl.obolibrary.org/obo/",
+    "oa": "http://www.w3.org/ns/oa#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "iana": "http://www.iana.org/assignments/media-types/",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "distribution": {
@@ -123,6 +135,10 @@
       "@id": "dcat:packageFormat",
       "@type": "@id"
     },
+    "file": {
+      "@id": "schema:associatedMedia",
+      "@type": "@id"
+    },
     "conforms_to": {
       "@id": "dcterms:conformsTo",
       "@type": "@id"
@@ -131,7 +147,9 @@
       "@id": "csvw:tableSchema",
       "@type": "@id"
     },
-    "selector": "distribution:/properties/selector",
+    "selector": "oa:hasSelector",
+    "FragmentSelector": "oa:FragmentSelector",
+    "fragment": "rdf:value",
     "access_service": {
       "@id": "dcat:accessService",
       "@type": "@id"
@@ -163,5 +181,40 @@
       }
     }
   },
-  "$comment": "dcterms:format is reserved: the Dataspace Protocol claims it for the transfer channel (values such as HttpData-PULL), so the file format goes on dcat:mediaType and the schema the bytes embody on dcterms:conformsTo."
+  "$comment": "dcterms:format is reserved: the Dataspace Protocol claims it for the transfer channel (values such as HttpData-PULL), so the file format goes on dcat:mediaType and the schema the bytes embody on dcterms:conformsTo.",
+  "$defs": {
+    "FragmentSelector": {
+      "type": "object",
+      "title": "FragmentSelector",
+      "description": "A part of a resource, and the syntax the expression is written in.",
+      "properties": {
+        "type": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [
+            "FragmentSelector"
+          ]
+        },
+        "fragment": {
+          "type": "string",
+          "description": "The expression that picks the part.",
+          "examples": [
+            "/cell42/cycling"
+          ]
+        },
+        "conforms_to": {
+          "type": "string",
+          "format": "iri-reference",
+          "description": "IRI of the specification the expression follows."
+        }
+      },
+      "required": [
+        "type",
+        "fragment",
+        "conforms_to"
+      ]
+    }
+  }
 }
