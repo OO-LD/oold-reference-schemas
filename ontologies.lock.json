@@ -161,6 +161,20 @@
     },
     "note": "information artifacts, an OBO release"
   },
+  "oa": {
+    "version": "2017-02-23",
+    "repository": "https://www.w3.org/ns",
+    "ref": "2017-02-23",
+    "base": "https://www.w3.org/ns/",
+    "files": {
+      "oa.ttl": {
+        "path": "oa.ttl",
+        "sha256": "f661e37d33bf29176390101687711734a7e33a716bdecfb66b90c732373d7af5",
+        "bytes": 21632
+      }
+    },
+    "note": "Web Annotation, which defines how to name a part of a resource"
+  },
   "obi": {
     "version": "2026-07-27",
     "repository": "http://purl.obolibrary.org/obo/obi.owl",
@@ -257,6 +271,20 @@
     },
     "license": "https://creativecommons.org/licenses/by/4.0/",
     "note": "release tag; schema, units and quantity kinds"
+  },
+  "rdf": {
+    "version": "2014-02-25",
+    "repository": "https://www.w3.org/1999/02",
+    "ref": "2014-02-25",
+    "base": "https://www.w3.org/1999/02/",
+    "files": {
+      "22-rdf-syntax-ns.ttl": {
+        "path": "22-rdf-syntax-ns.ttl",
+        "sha256": "93d52b1a5824c7dd6504ca79c16205c0b740a0ba68b7a14952780f52561186a2",
+        "bytes": 6004
+      }
+    },
+    "note": "the RDF vocabulary, for rdf:value carrying a selector expression"
   },
   "schemaorg": {
     "version": "30.0",

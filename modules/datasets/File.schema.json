@@ -1,0 +1,89 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "File.schema.json",
+  "x-oold-uuid": "778f3f3d-9a66-56ae-b764-934f216c2404",
+  "x-oold-version": "0.1.0",
+  "title": "File",
+  "description": "The bytes themselves, named once however many datasets read them. What is true of a file regardless of who reads it lives here; what is true of it as one dataset's representation lives on the Distribution that references it.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "File"
+      ]
+    },
+    "content_url": {
+      "type": "string",
+      "format": "iri-reference",
+      "description": "Where the bytes are fetched from."
+    },
+    "media_type": {
+      "type": "string",
+      "description": "IANA media type of the bytes.",
+      "examples": [
+        "text/csv"
+      ]
+    },
+    "byte_size": {
+      "type": "integer",
+      "description": "Size in bytes."
+    },
+    "sha256": {
+      "type": "string",
+      "description": "SHA-256 of the bytes, which is what makes a file the same file across datasets and across copies."
+    }
+  },
+  "required": [
+    "type"
+  ],
+  "examples": [
+    {
+      "type": [
+        "File"
+      ],
+      "content_url": "https://example.org/data/LFP-042-cycling.csv",
+      "media_type": "text/csv",
+      "byte_size": 48213004,
+      "sha256": "9f2c7b1e5d4a3c8f6b0e2d7a4c9f1b3e5d8a6c0f2b4e7d9a1c3f5b8e0d2a4c6f"
+    }
+  ],
+  "@context": {
+    "@version": 1.1,
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "prov": "http://www.w3.org/ns/prov#",
+    "csvw": "http://www.w3.org/ns/csvw#",
+    "schema": "http://schema.org/",
+    "qudt": "http://qudt.org/schema/qudt/",
+    "qunit": "http://qudt.org/vocab/unit/",
+    "qkind": "http://qudt.org/vocab/quantitykind/",
+    "emmo": "https://w3id.org/emmo#",
+    "echem": "https://w3id.org/emmo/domain/electrochemistry#",
+    "obo": "http://purl.obolibrary.org/obo/",
+    "iana": "http://www.iana.org/assignments/media-types/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "file": {
+      "@id": "https://w3id.org/oo-ld/schemas/datasets/0.1/File.schema.json#",
+      "@prefix": true
+    },
+    "id": "@id",
+    "type": {
+      "@id": "@type",
+      "@container": "@set"
+    },
+    "File": "schema:MediaObject",
+    "content_url": {
+      "@id": "schema:contentUrl",
+      "@type": "@id"
+    },
+    "media_type": {
+      "@id": "schema:encodingFormat"
+    },
+    "byte_size": "schema:contentSize",
+    "sha256": "schema:sha256"
+  }
+}

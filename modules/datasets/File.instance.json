@@ -1,0 +1,12 @@
+{
+  "$schema": "File.schema.json",
+  "@context": "File.schema.json",
+  "id": "https://example.org/data/run.h5",
+  "type": [
+    "File"
+  ],
+  "content_url": "https://example.org/data/run.h5",
+  "media_type": "application/x-hdf5",
+  "byte_size": 48213004,
+  "sha256": "9f2c7b1e5d4a3c8f6b0e2d7a4c9f1b3e5d8a6c0f2b4e7d9a1c3f5b8e0d2a4c6f"
+}

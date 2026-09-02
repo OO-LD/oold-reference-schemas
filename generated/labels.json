@@ -207,12 +207,24 @@
   "label": "Dataset",
   "source": "schemaorg/30.0/schemaorg-current-http.ttl"
  },
+ "http://schema.org/MediaObject": {
+  "label": "MediaObject",
+  "source": "schemaorg/30.0/schemaorg-current-http.ttl"
+ },
  "http://schema.org/QuantitativeValue": {
   "label": "QuantitativeValue",
   "source": "schemaorg/30.0/schemaorg-current-http.ttl"
  },
  "http://schema.org/about": {
   "label": "about",
+  "source": "schemaorg/30.0/schemaorg-current-http.ttl"
+ },
+ "http://schema.org/associatedMedia": {
+  "label": "associatedMedia",
+  "source": "schemaorg/30.0/schemaorg-current-http.ttl"
+ },
+ "http://schema.org/contentSize": {
+  "label": "contentSize",
   "source": "schemaorg/30.0/schemaorg-current-http.ttl"
  },
  "http://schema.org/contentUrl": {
@@ -239,6 +251,10 @@
   "label": "name",
   "source": "schemaorg/30.0/schemaorg-current-http.ttl"
  },
+ "http://schema.org/sha256": {
+  "label": "sha256",
+  "source": "schemaorg/30.0/schemaorg-current-http.ttl"
+ },
  "http://schema.org/unitCode": {
   "label": "unitCode",
   "source": "schemaorg/30.0/schemaorg-current-http.ttl"
@@ -246,6 +262,10 @@
  "http://schema.org/value": {
   "label": "value",
   "source": "schemaorg/30.0/schemaorg-current-http.ttl"
+ },
+ "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": {
+  "label": "value",
+  "source": "rdf/2014-02-25/22-rdf-syntax-ns.ttl"
  },
  "http://www.w3.org/ns/csvw#tableSchema": {
   "label": "table schema",
@@ -298,6 +318,14 @@
  "http://www.w3.org/ns/dcat#packageFormat": {
   "label": "packaging format",
   "source": "dcat/3/dcat.ttl"
+ },
+ "http://www.w3.org/ns/oa#FragmentSelector": {
+  "label": "FragmentSelector",
+  "source": "oa/2017-02-23/oa.ttl"
+ },
+ "http://www.w3.org/ns/oa#hasSelector": {
+  "label": "hasSelector",
+  "source": "oa/2017-02-23/oa.ttl"
  },
  "http://www.w3.org/ns/odrl/2/hasPolicy": {
   "label": "Target Policy",
