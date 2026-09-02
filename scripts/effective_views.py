@@ -46,9 +46,15 @@ def undefined_terms(node, context: dict) -> set:
             missing |= undefined_terms(item, context)
     elif isinstance(node, dict):
         for key, value in node.items():
-            if not key.startswith(("@", "$")) and key not in context:
+            definition = context.get(key)
+            if not key.startswith(("@", "$")) and definition is None:
                 missing.add(key)
-            missing |= undefined_terms(value, context)
+            # a term may scope a context onto its own value, and inside that value the scoped
+            # definitions are what count: reading the enclosing context alone reports a term
+            # as undefined although the processor resolves it
+            scoped = definition.get("@context") if isinstance(definition, dict) else None
+            within = {**context, **scoped} if isinstance(scoped, dict) else context
+            missing |= undefined_terms(value, within)
     return missing
 
 
