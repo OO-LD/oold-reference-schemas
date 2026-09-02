@@ -31,11 +31,25 @@ term no longer matches on the way back. The value is an integer either way.
 
 ## Naming a part of a container
 
-Where a fragment syntax exists, the part belongs in the URL and no property is needed: RFC 7111
-addresses rows and columns of a CSV, Media Fragments addresses time and regions of media. Two
+Where a fragment syntax exists, the part belongs in the URL and no property is needed. Two
 datasets over one CSV are then two distributions with two fragment URLs and one file.
 
-Where none exists, an HDF5 group, a sheet, a table in a database, `selector` names the part the
-way the Web Annotation model does: an expression plus the specification it follows. An opaque
-string would be a private convention that no consumer can parse, and `conforms_to` on the
-selector is what says whose convention it is.
+Where none exists, `selector` names the part the way the Web Annotation model does: an expression,
+a class saying which language it is in, and `conforms_to` naming the specification or convention
+where the class does not fix it. An opaque string would be a private convention that no consumer
+can parse.
+
+| the part | how to name it |
+|---|---|
+| rows or columns of a CSV | `download_url` with an RFC 7111 fragment, `run.csv#col=1,3` |
+| a region or an interval of an image, audio or video | `download_url` with a Media Fragments fragment, `scan.mp4#t=10,20` |
+| a group or dataset in HDF5 | `FragmentSelector`, value `/cell42/cycling`, `conforms_to` the HDF5 path documentation |
+| a sheet in a spreadsheet | `FragmentSelector`, value `Sheet1`, `conforms_to` the convention the reader applies |
+| a table or a query in a database | `FragmentSelector`, value `SELECT * FROM cycling WHERE cell = 42`, `conforms_to` the SQL dialect |
+| an element in XML | `XPathSelector`, value `//measurement[@cell='42']`, class fixes the language |
+| an element in HTML | `CssSelector`, value `#results table.cycling` |
+| a passage in text | `TextQuoteSelector` or `DataPositionSelector` |
+
+The expression is carried by `rdf:value` in every case, which is what the Web Annotation model
+does, so a consumer reads the class to know how to interpret it. The JSON calls it `value`, scoped
+to the selector, so it does not collide with the `value` of a quantity in the same document.

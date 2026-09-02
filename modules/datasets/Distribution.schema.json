@@ -73,7 +73,7 @@
     "selector": {
       "allOf": [
         {
-          "$ref": "#/$defs/FragmentSelector"
+          "$ref": "#/$defs/Selector"
         }
       ],
       "description": "The part of the container this dataset is, where no fragment syntax covers the case. Where one does, RFC 7111 for CSV or Media Fragments for media, put it in download_url instead and leave this out."
@@ -147,9 +147,17 @@
       "@id": "csvw:tableSchema",
       "@type": "@id"
     },
-    "selector": "oa:hasSelector",
-    "FragmentSelector": "oa:FragmentSelector",
-    "fragment": "rdf:value",
+    "selector": {
+      "@id": "oa:hasSelector",
+      "@context": {
+        "value": "rdf:value",
+        "FragmentSelector": "oa:FragmentSelector",
+        "XPathSelector": "oa:XPathSelector",
+        "CssSelector": "oa:CssSelector",
+        "TextQuoteSelector": "oa:TextQuoteSelector",
+        "DataPositionSelector": "oa:DataPositionSelector"
+      }
+    },
     "access_service": {
       "@id": "dcat:accessService",
       "@type": "@id"
@@ -183,37 +191,44 @@
   },
   "$comment": "dcterms:format is reserved: the Dataspace Protocol claims it for the transfer channel (values such as HttpData-PULL), so the file format goes on dcat:mediaType and the schema the bytes embody on dcterms:conformsTo.",
   "$defs": {
-    "FragmentSelector": {
+    "Selector": {
       "type": "object",
-      "title": "FragmentSelector",
-      "description": "A part of a resource, and the syntax the expression is written in.",
+      "title": "Selector",
+      "description": "A part of a container, and how the expression that picks it is to be read. The class says which language the expression is in; where none of the standard ones fits, FragmentSelector plus conforms_to names the specification or the convention that does.",
       "properties": {
         "type": {
           "type": "array",
           "items": {
-            "type": "string"
+            "type": "string",
+            "enum": [
+              "FragmentSelector",
+              "XPathSelector",
+              "CssSelector",
+              "TextQuoteSelector",
+              "DataPositionSelector"
+            ]
           },
           "default": [
             "FragmentSelector"
           ]
         },
-        "fragment": {
+        "value": {
           "type": "string",
           "description": "The expression that picks the part.",
           "examples": [
-            "/cell42/cycling"
+            "/cell42/cycling",
+            "SELECT * FROM cycling WHERE cell = 42"
           ]
         },
         "conforms_to": {
           "type": "string",
           "format": "iri-reference",
-          "description": "IRI of the specification the expression follows."
+          "description": "IRI of the specification or convention the expression follows. Needed whenever the class does not fix it, which is every FragmentSelector."
         }
       },
       "required": [
         "type",
-        "fragment",
-        "conforms_to"
+        "value"
       ]
     }
   }

@@ -15,7 +15,7 @@
     "type": [
       "FragmentSelector"
     ],
-    "fragment": "/cell42/cycling",
+    "value": "/cell42/cycling",
     "conforms_to": "https://docs.hdfgroup.org/hdf5/develop/_h5_d__u_g.html"
   }
 }
