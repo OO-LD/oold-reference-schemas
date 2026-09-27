@@ -12,7 +12,7 @@ VALIDATOR ?= .oold-schema
 # The validator is a dependency, not a copy kept here. oold-python resolves a remote
 # $$ref through its redirect, which the Node validator does not, and cross-module references
 # are how a module reuses another one's schemas.
-OOLD_PY_VERSION ?= 0.18.1
+OOLD_PY_VERSION ?= 2.0.0
 OOLD := uvx --from "oold[validation]==$(OOLD_PY_VERSION)" oold
 
 .PHONY: all generate mappings docs pages ontologies labels bump check validate serve clean release help
