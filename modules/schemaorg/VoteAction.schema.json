@@ -1,0 +1,51 @@
+{
+  "@context": [
+    "ChooseAction.schema.json",
+    {
+      "candidate": {
+        "@id": "schema:candidate",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "ChooseAction.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "VoteAction.schema.json",
+  "x-oold-uuid": "4489fd2f-5fea-5ff5-bd94-bf1a830aca6c",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/VoteAction",
+  "x-oold-instance-rdf-type": [
+    "schema:VoteAction"
+  ],
+  "title": "VoteAction",
+  "description": "The act of expressing a preference from a fixed/finite/structured set of choices/options.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:VoteAction"
+      ]
+    },
+    "candidate": {
+      "title": "Candidate",
+      "description": "A sub property of object. The candidate subject of this action.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Person.schema.json"
+      }
+    }
+  }
+}

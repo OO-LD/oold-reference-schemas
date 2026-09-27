@@ -1,0 +1,8 @@
+{
+  "$schema": "PresentationDigitalDocument.schema.json",
+  "@context": "PresentationDigitalDocument.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:PresentationDigitalDocument"
+  ]
+}

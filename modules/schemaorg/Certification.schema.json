@@ -1,0 +1,247 @@
+{
+  "@context": [
+    "CreativeWork.schema.json",
+    {
+      "about": {
+        "@id": "schema:about",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "auditDate": {
+        "@id": "schema:auditDate",
+        "@container": "@set"
+      },
+      "certificationIdentification": {
+        "@id": "schema:certificationIdentification",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "certificationIdentification_text": {
+        "@id": "schema:certificationIdentification",
+        "@container": "@set"
+      },
+      "certificationRating": {
+        "@id": "schema:certificationRating",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "certificationStatus": {
+        "@id": "schema:certificationStatus",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "datePublished": {
+        "@id": "schema:datePublished",
+        "@container": "@set"
+      },
+      "expires": {
+        "@id": "schema:expires",
+        "@container": "@set"
+      },
+      "hasMeasurement": {
+        "@id": "schema:hasMeasurement",
+        "@container": "@set"
+      },
+      "issuedBy": {
+        "@id": "schema:issuedBy",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "logo": {
+        "@id": "schema:logo",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "validFrom": {
+        "@id": "schema:validFrom",
+        "@container": "@set"
+      },
+      "validIn": {
+        "@id": "schema:validIn",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "CreativeWork.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Certification.schema.json",
+  "x-oold-uuid": "51096181-e33d-5148-94b7-2232b636ff66",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Certification",
+  "x-oold-instance-rdf-type": [
+    "schema:Certification"
+  ],
+  "title": "Certification",
+  "description": "A Certification is an official and authoritative statement about a subject, for example a product, service, person, or organization. A certification is typically issued by an indendent certification body, for example a professional organization or government. It formally attests certain characteristics about the subject, for example Organizations can be ISO certified, Food products can be certified Organic or Vegan, a Person can be a certified professional, a Place can be certified for food processing. There are certifications for many domains: regulatory, organizational, recycling, food, efficiency, educational, ecological, etc. A certification is a form of credential, as are accreditations and licenses. Mapped from the [gs1:CertificationDetails](https://www.gs1.org/voc/CertificationDetails) class in the GS1 Web Vocabulary.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Certification"
+      ]
+    },
+    "about": {
+      "title": "About",
+      "description": "The subject matter of an object.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Thing.schema.json"
+      }
+    },
+    "auditDate": {
+      "title": "Audit Date",
+      "description": "Date when a certification was last audited. See also  [gs1:certificationAuditDate](https://www.gs1.org/voc/certificationAuditDate).",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Date.schema.json"
+          },
+          {
+            "$ref": "DateTime.schema.json"
+          }
+        ]
+      }
+    },
+    "certificationIdentification": {
+      "title": "Certification Identification",
+      "description": "Identifier of a certification instance (as registered with an independent certification body). Typically this identifier can be used to consult and verify the certification instance. See also [gs1:certificationIdentification](https://www.gs1.org/voc/certificationIdentification).",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "DefinedTerm.schema.json"
+      }
+    },
+    "certificationIdentification_text": {
+      "title": "Certification Identification (text)",
+      "description": "Identifier of a certification instance (as registered with an independent certification body). Typically this identifier can be used to consult and verify the certification instance. See also [gs1:certificationIdentification](https://www.gs1.org/voc/certificationIdentification).",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "certificationRating": {
+      "title": "Certification Rating",
+      "description": "Rating of a certification instance (as defined by an independent certification body). Typically this rating can be used to rate the level to which the requirements of the certification instance are fulfilled. See also [gs1:certificationValue](https://www.gs1.org/voc/certificationValue).",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Rating.schema.json"
+      }
+    },
+    "certificationStatus": {
+      "title": "Certification Status",
+      "description": "Indicates the current status of a certification: active or inactive. See also  [gs1:certificationStatus](https://www.gs1.org/voc/certificationStatus).",
+      "type": "array",
+      "items": {
+        "$ref": "CertificationStatusEnumeration.schema.json#/$defs/member",
+        "x-oold-range": "CertificationStatusEnumeration.schema.json"
+      }
+    },
+    "datePublished": {
+      "title": "Date Published",
+      "description": "Date of first publication or broadcast. For example the date a [[CreativeWork]] was broadcast or a [[Certification]] was issued.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Date.schema.json"
+          },
+          {
+            "$ref": "DateTime.schema.json"
+          }
+        ]
+      }
+    },
+    "expires": {
+      "title": "Expires",
+      "description": "Date the content expires and is no longer useful or available. For example a [[VideoObject]] or [[NewsArticle]] whose availability or relevance is time-limited, a [[ClaimReview]] fact check whose publisher wants to indicate that it may no longer be relevant (or helpful to highlight) after some date, or a [[Certification]] the validity has expired.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Date.schema.json"
+          },
+          {
+            "$ref": "DateTime.schema.json"
+          }
+        ]
+      }
+    },
+    "hasMeasurement": {
+      "title": "Has Measurement",
+      "description": "A measurement of an item, For example, the inseam of pants, the wheel size of a bicycle, the gauge of a screw, or the carbon footprint measured for certification by an authority. Usually an exact measurement, but can also be a range of measurements for adjustable products, for example belts and ski bindings.",
+      "type": "array",
+      "items": {
+        "$ref": "QuantitativeValue.schema.json"
+      }
+    },
+    "issuedBy": {
+      "title": "Issued By",
+      "description": "The organization issuing the item, for example a [[Permit]], [[Ticket]], or [[Certification]].",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Organization.schema.json"
+      }
+    },
+    "logo": {
+      "title": "Logo",
+      "description": "An associated logo.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "URL.schema.json"
+          },
+          {
+            "type": "string",
+            "format": "iri-reference",
+            "x-oold-range": "ImageObject.schema.json"
+          }
+        ]
+      }
+    },
+    "validFrom": {
+      "title": "Valid From",
+      "description": "The date when the item becomes valid.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Date.schema.json"
+          },
+          {
+            "$ref": "DateTime.schema.json"
+          }
+        ]
+      }
+    },
+    "validIn": {
+      "title": "Valid In",
+      "description": "The geographic area where the item is valid. Applies for example to a [[Permit]], a [[Certification]], or an [[EducationalOccupationalCredential]]. ",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "AdministrativeArea.schema.json"
+      }
+    }
+  }
+}

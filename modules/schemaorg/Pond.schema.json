@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "BodyOfWater.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "BodyOfWater.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Pond.schema.json",
+  "x-oold-uuid": "ab68296b-f591-5d04-94a9-65446104ab42",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Pond",
+  "x-oold-instance-rdf-type": [
+    "schema:Pond"
+  ],
+  "title": "Pond",
+  "description": "A pond.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Pond"
+      ]
+    }
+  }
+}

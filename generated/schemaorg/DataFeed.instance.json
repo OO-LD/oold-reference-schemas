@@ -1,0 +1,8 @@
+{
+  "$schema": "DataFeed.schema.json",
+  "@context": "DataFeed.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:DataFeed"
+  ]
+}

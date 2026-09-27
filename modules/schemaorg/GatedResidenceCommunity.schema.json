@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Residence.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Residence.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "GatedResidenceCommunity.schema.json",
+  "x-oold-uuid": "0e55d8bb-5dbf-5e2e-a8e5-48ae8125e857",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/GatedResidenceCommunity",
+  "x-oold-instance-rdf-type": [
+    "schema:GatedResidenceCommunity"
+  ],
+  "title": "GatedResidenceCommunity",
+  "description": "Residence type: Gated community.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:GatedResidenceCommunity"
+      ]
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "FoodEstablishment.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "FoodEstablishment.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Distillery.schema.json",
+  "x-oold-uuid": "e613603b-40ae-5162-a6b0-2240b1026f3f",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Distillery",
+  "x-oold-instance-rdf-type": [
+    "schema:Distillery"
+  ],
+  "title": "Distillery",
+  "description": "A distillery.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Distillery"
+      ]
+    }
+  }
+}

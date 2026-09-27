@@ -1,0 +1,100 @@
+{
+  "@context": [
+    "CivicStructure.schema.json",
+    "EmergencyService.schema.json",
+    "MedicalOrganization.schema.json",
+    {
+      "availableService": {
+        "@id": "schema:availableService",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "healthcareReportingData": {
+        "@id": "schema:healthcareReportingData",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "medicalSpecialty": {
+        "@id": "schema:medicalSpecialty",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "CivicStructure.schema.json"
+    },
+    {
+      "$ref": "EmergencyService.schema.json"
+    },
+    {
+      "$ref": "MedicalOrganization.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Hospital.schema.json",
+  "x-oold-uuid": "1853be2c-c8f7-565b-b449-e3489fa426bc",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Hospital",
+  "x-oold-instance-rdf-type": [
+    "schema:Hospital"
+  ],
+  "title": "Hospital",
+  "description": "A hospital.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Hospital"
+      ]
+    },
+    "availableService": {
+      "title": "Available Service",
+      "description": "A medical service available from this provider.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "MedicalProcedure.schema.json",
+          "MedicalTest.schema.json",
+          "MedicalTherapy.schema.json"
+        ]
+      }
+    },
+    "healthcareReportingData": {
+      "title": "Healthcare Reporting Data",
+      "description": "Indicates data describing a hospital, e.g. a CDC [[CDCPMDRecord]] or as some kind of [[Dataset]].",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: CDCPMDRecord [value-type]: CDCPMDRecord -> StructuredValue -> Intangible -> Thing; Dataset [entity]: Dataset -> CreativeWork -> Thing",
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "iri-reference",
+            "x-oold-range": "Dataset.schema.json"
+          },
+          {
+            "$ref": "CDCPMDRecord.schema.json"
+          }
+        ]
+      }
+    },
+    "medicalSpecialty": {
+      "title": "Medical Specialty",
+      "description": "A medical specialty of the provider.",
+      "type": "array",
+      "items": {
+        "$ref": "MedicalSpecialty.schema.json#/$defs/member",
+        "x-oold-range": "MedicalSpecialty.schema.json"
+      }
+    }
+  }
+}

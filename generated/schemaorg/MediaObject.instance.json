@@ -1,0 +1,8 @@
+{
+  "$schema": "MediaObject.schema.json",
+  "@context": "MediaObject.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:MediaObject"
+  ]
+}

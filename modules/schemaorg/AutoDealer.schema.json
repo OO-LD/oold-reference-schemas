@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "AutomotiveBusiness.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "AutomotiveBusiness.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "AutoDealer.schema.json",
+  "x-oold-uuid": "6bc684b0-9be8-54ee-8a03-4188f7f95d26",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/AutoDealer",
+  "x-oold-instance-rdf-type": [
+    "schema:AutoDealer"
+  ],
+  "title": "AutoDealer",
+  "description": "An car dealership.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:AutoDealer"
+      ]
+    }
+  }
+}

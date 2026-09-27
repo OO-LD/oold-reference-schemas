@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "PlaceOfWorship.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "PlaceOfWorship.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Mosque.schema.json",
+  "x-oold-uuid": "f7d2c21b-2077-5e07-b315-b0c2f197b558",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Mosque",
+  "x-oold-instance-rdf-type": [
+    "schema:Mosque"
+  ],
+  "title": "Mosque",
+  "description": "A mosque.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Mosque"
+      ]
+    }
+  }
+}

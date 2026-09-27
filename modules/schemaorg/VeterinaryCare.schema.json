@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "MedicalOrganization.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "MedicalOrganization.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "VeterinaryCare.schema.json",
+  "x-oold-uuid": "2ee6767b-bf37-5a83-a6cb-ebcb8124a744",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/VeterinaryCare",
+  "x-oold-instance-rdf-type": [
+    "schema:VeterinaryCare"
+  ],
+  "title": "VeterinaryCare",
+  "description": "A vet's office.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:VeterinaryCare"
+      ]
+    }
+  }
+}

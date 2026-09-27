@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "CivicStructure.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "CivicStructure.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Bridge.schema.json",
+  "x-oold-uuid": "5a9d5d4f-e846-5bc6-9f82-9c328ac533b5",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Bridge",
+  "x-oold-instance-rdf-type": [
+    "schema:Bridge"
+  ],
+  "title": "Bridge",
+  "description": "A bridge.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Bridge"
+      ]
+    }
+  }
+}

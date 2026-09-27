@@ -1,0 +1,97 @@
+{
+  "@context": [
+    "Event.schema.json",
+    {
+      "courseMode": {
+        "@id": "schema:courseMode",
+        "@container": "@set"
+      },
+      "courseSchedule": {
+        "@id": "schema:courseSchedule",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "courseWorkload": {
+        "@id": "schema:courseWorkload",
+        "@container": "@set"
+      },
+      "instructor": {
+        "@id": "schema:instructor",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Event.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "CourseInstance.schema.json",
+  "x-oold-uuid": "cd9455fd-3b43-5c23-bdc7-f697cba1adbc",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/CourseInstance",
+  "x-oold-instance-rdf-type": [
+    "schema:CourseInstance"
+  ],
+  "title": "CourseInstance",
+  "description": "An instance of a [[Course]] which is distinct from other instances because it is offered at a different time or location or through different media or modes of study or to a specific section of students.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:CourseInstance"
+      ]
+    },
+    "courseMode": {
+      "title": "Course Mode",
+      "description": "The medium or means of delivery of the course instance or the mode of study, either as a text label (e.g. \"online\", \"onsite\" or \"blended\"; \"synchronous\" or \"asynchronous\"; \"full-time\" or \"part-time\") or as a URL reference to a term from a controlled vocabulary (e.g. https://ceds.ed.gov/element/001311#Asynchronous).",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Text.schema.json"
+          },
+          {
+            "$ref": "URL.schema.json"
+          }
+        ]
+      }
+    },
+    "courseSchedule": {
+      "title": "Course Schedule",
+      "description": "Represents the length and pace of a course, expressed as a [[Schedule]].",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Schedule.schema.json"
+      }
+    },
+    "courseWorkload": {
+      "title": "Course Workload",
+      "description": "The amount of work expected of students taking the course, often provided as a figure per week or per month, and may be broken down by type. For example, \"2 hours of lectures, 1 hour of lab work and 3 hours of independent study per week\".",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "instructor": {
+      "title": "Instructor",
+      "description": "A person assigned to instruct or provide instructional assistance for the [[CourseInstance]].",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Person.schema.json"
+      }
+    }
+  }
+}

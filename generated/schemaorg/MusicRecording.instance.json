@@ -1,0 +1,8 @@
+{
+  "$schema": "MusicRecording.schema.json",
+  "@context": "MusicRecording.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:MusicRecording"
+  ]
+}

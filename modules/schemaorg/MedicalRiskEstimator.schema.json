@@ -1,0 +1,66 @@
+{
+  "@context": [
+    "MedicalEntity.schema.json",
+    {
+      "estimatesRiskOf": {
+        "@id": "schema:estimatesRiskOf",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "includedRiskFactor": {
+        "@id": "schema:includedRiskFactor",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "MedicalEntity.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MedicalRiskEstimator.schema.json",
+  "x-oold-uuid": "59899a6a-fd35-5c24-99bc-8d68a3276fac",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/MedicalRiskEstimator",
+  "x-oold-instance-rdf-type": [
+    "schema:MedicalRiskEstimator"
+  ],
+  "title": "MedicalRiskEstimator",
+  "description": "Any rule set or interactive tool for estimating the risk of developing a complication or condition.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:MedicalRiskEstimator"
+      ]
+    },
+    "estimatesRiskOf": {
+      "title": "Estimates Risk Of",
+      "description": "The condition, complication, or symptom whose risk is being estimated.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "MedicalEntity.schema.json"
+      }
+    },
+    "includedRiskFactor": {
+      "title": "Included Risk Factor",
+      "description": "A modifiable or non-modifiable risk factor included in the calculation, e.g. age, coexisting condition.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "MedicalRiskFactor.schema.json"
+      }
+    }
+  }
+}

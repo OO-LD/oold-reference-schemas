@@ -1,0 +1,59 @@
+{
+  "@context": [
+    "Enumeration.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Enumeration.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "BookFormatType.schema.json",
+  "x-oold-uuid": "f90e89c9-357a-598a-be8d-2309337e67b6",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/BookFormatType",
+  "x-oold-instance-rdf-type": [
+    "schema:BookFormatType"
+  ],
+  "title": "BookFormatType",
+  "description": "The publication format of the book.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:BookFormatType"
+      ]
+    }
+  },
+  "$defs": {
+    "member": {
+      "title": "BookFormatType member",
+      "description": "One of the 6 member instances of BookFormatType.",
+      "type": "string",
+      "format": "iri-reference",
+      "enum": [
+        "schema:AudiobookFormat",
+        "schema:EBook",
+        "schema:GraphicNovel",
+        "schema:Hardcover",
+        "schema:Pamphlet",
+        "schema:Paperback"
+      ],
+      "x-oold-ui-enum-titles": [
+        "AudiobookFormat",
+        "EBook",
+        "GraphicNovel",
+        "Hardcover",
+        "Pamphlet",
+        "Paperback"
+      ]
+    }
+  }
+}

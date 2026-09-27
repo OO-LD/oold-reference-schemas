@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "AdministrativeArea.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "AdministrativeArea.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "SchoolDistrict.schema.json",
+  "x-oold-uuid": "94557aeb-34ac-5a8f-9071-30bea0f771bd",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/SchoolDistrict",
+  "x-oold-instance-rdf-type": [
+    "schema:SchoolDistrict"
+  ],
+  "title": "SchoolDistrict",
+  "description": "A School District is an administrative area for the administration of schools.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:SchoolDistrict"
+      ]
+    }
+  }
+}

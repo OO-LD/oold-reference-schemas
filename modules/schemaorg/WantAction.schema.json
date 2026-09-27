@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "ReactAction.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "ReactAction.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "WantAction.schema.json",
+  "x-oold-uuid": "9443459f-af3d-55a5-a875-93d3af50e1a4",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/WantAction",
+  "x-oold-instance-rdf-type": [
+    "schema:WantAction"
+  ],
+  "title": "WantAction",
+  "description": "The act of expressing a desire about the object. An agent wants an object.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:WantAction"
+      ]
+    }
+  }
+}

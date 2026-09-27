@@ -1,0 +1,8 @@
+{
+  "$schema": "SearchAction.schema.json",
+  "@context": "SearchAction.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:SearchAction"
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "MedicalTherapy.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "MedicalTherapy.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "OccupationalTherapy.schema.json",
+  "x-oold-uuid": "cf2c9de7-16ff-5ccb-a7a1-3184d6d99352",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/OccupationalTherapy",
+  "x-oold-instance-rdf-type": [
+    "schema:OccupationalTherapy"
+  ],
+  "title": "OccupationalTherapy",
+  "description": "A treatment of people with physical, emotional, or social problems, using purposeful activity to help them overcome or learn to deal with their problems.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:OccupationalTherapy"
+      ]
+    }
+  }
+}

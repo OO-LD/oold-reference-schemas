@@ -1,0 +1,105 @@
+{
+  "@context": [
+    "CreativeWork.schema.json",
+    {
+      "issueNumber": {
+        "@id": "schema:issueNumber",
+        "@container": "@set"
+      },
+      "pageEnd": {
+        "@id": "schema:pageEnd",
+        "@container": "@set"
+      },
+      "pageStart": {
+        "@id": "schema:pageStart",
+        "@container": "@set"
+      },
+      "pagination": {
+        "@id": "schema:pagination",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "CreativeWork.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "PublicationIssue.schema.json",
+  "x-oold-uuid": "298bfee6-45c2-5985-a935-3bb88b017ea4",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/PublicationIssue",
+  "x-oold-instance-rdf-type": [
+    "schema:PublicationIssue"
+  ],
+  "title": "PublicationIssue",
+  "description": "A part of a successively published publication such as a periodical or publication volume, often numbered, usually containing a grouping of works such as articles.\\n\\nSee also [blog post](https://blog-schema.org/2014/09/02/schema-org-support-for-bibliographic-relationships-and-periodicals/).",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:PublicationIssue"
+      ]
+    },
+    "issueNumber": {
+      "title": "Issue Number",
+      "description": "Identifies the issue of publication; for example, \"iii\" or \"2\".",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Integer.schema.json"
+          },
+          {
+            "$ref": "Text.schema.json"
+          }
+        ]
+      }
+    },
+    "pageEnd": {
+      "title": "Page End",
+      "description": "The page on which the work ends; for example \"138\" or \"xvi\".",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Integer.schema.json"
+          },
+          {
+            "$ref": "Text.schema.json"
+          }
+        ]
+      }
+    },
+    "pageStart": {
+      "title": "Page Start",
+      "description": "The page on which the work starts; for example \"135\" or \"xiii\".",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Integer.schema.json"
+          },
+          {
+            "$ref": "Text.schema.json"
+          }
+        ]
+      }
+    },
+    "pagination": {
+      "title": "Pagination",
+      "description": "Any description of pages that is not separated into pageStart and pageEnd; for example, \"1-6, 9, 55\" or \"10-12, 46-49\".",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    }
+  }
+}

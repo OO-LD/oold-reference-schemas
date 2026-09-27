@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Intangible.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Intangible.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "VirtualLocation.schema.json",
+  "x-oold-uuid": "0f073fd5-053e-5979-879a-a7f9a9ceb34f",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/VirtualLocation",
+  "x-oold-instance-rdf-type": [
+    "schema:VirtualLocation"
+  ],
+  "title": "VirtualLocation",
+  "description": "An online or virtual location for attending events. For example, one may attend an online seminar or educational event. While a virtual location may be used as the location of an event, virtual locations should not be confused with physical locations in the real world.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:VirtualLocation"
+      ]
+    }
+  }
+}

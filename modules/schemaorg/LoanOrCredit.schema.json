@@ -1,0 +1,175 @@
+{
+  "@context": [
+    "FinancialProduct.schema.json",
+    {
+      "amount": {
+        "@id": "schema:amount",
+        "@container": "@set"
+      },
+      "currency": {
+        "@id": "schema:currency",
+        "@container": "@set"
+      },
+      "gracePeriod": {
+        "@id": "schema:gracePeriod",
+        "@type": "xsd:duration",
+        "@container": "@set"
+      },
+      "loanRepaymentForm": {
+        "@id": "schema:loanRepaymentForm",
+        "@container": "@set"
+      },
+      "loanTerm": {
+        "@id": "schema:loanTerm",
+        "@container": "@set"
+      },
+      "loanType": {
+        "@id": "schema:loanType",
+        "@container": "@set"
+      },
+      "recourseLoan": {
+        "@id": "schema:recourseLoan",
+        "@container": "@set"
+      },
+      "renegotiableLoan": {
+        "@id": "schema:renegotiableLoan",
+        "@container": "@set"
+      },
+      "requiredCollateral": {
+        "@id": "schema:requiredCollateral",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "requiredCollateral_text": {
+        "@id": "schema:requiredCollateral",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "FinancialProduct.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "LoanOrCredit.schema.json",
+  "x-oold-uuid": "7d51995f-f932-502c-acae-0196a76637d0",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/LoanOrCredit",
+  "x-oold-instance-rdf-type": [
+    "schema:LoanOrCredit"
+  ],
+  "title": "LoanOrCredit",
+  "description": "A financial product for the loaning of an amount of money, or line of credit, under agreed terms and charges.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:LoanOrCredit"
+      ]
+    },
+    "amount": {
+      "title": "Amount",
+      "description": "The amount of money.",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: MonetaryAmount [value-type]: MonetaryAmount -> StructuredValue -> Intangible -> Thing",
+        "anyOf": [
+          {
+            "$ref": "Number.schema.json"
+          },
+          {
+            "$ref": "MonetaryAmount.schema.json"
+          }
+        ]
+      }
+    },
+    "currency": {
+      "title": "Currency",
+      "description": "The currency in which the monetary amount is expressed.\\n\\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217), e.g. \"USD\"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies, e.g. \"BTC\"; well known names for [Local Exchange Trading Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types, e.g. \"Ithaca HOUR\".",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "gracePeriod": {
+      "title": "Grace Period",
+      "description": "The period of time after any due date that the borrower has to fulfil its obligations before a default (failure to pay) is deemed to have occurred.",
+      "type": "array",
+      "items": {
+        "$ref": "Duration.schema.json"
+      }
+    },
+    "loanRepaymentForm": {
+      "title": "Loan Repayment Form",
+      "description": "A form of paying back money previously borrowed from a lender. Repayment usually takes the form of periodic payments that normally include part principal plus interest in each payment.",
+      "type": "array",
+      "items": {
+        "$ref": "RepaymentSpecification.schema.json"
+      }
+    },
+    "loanTerm": {
+      "title": "Loan Term",
+      "description": "The duration of the loan or credit agreement.",
+      "type": "array",
+      "items": {
+        "$ref": "QuantitativeValue.schema.json"
+      }
+    },
+    "loanType": {
+      "title": "Loan Type",
+      "description": "The type of a loan or credit.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Text.schema.json"
+          },
+          {
+            "$ref": "URL.schema.json"
+          }
+        ]
+      }
+    },
+    "recourseLoan": {
+      "title": "Recourse Loan",
+      "description": "The only way you get the money back in the event of default is the security. Recourse is where you still have the opportunity to go back to the borrower for the rest of the money.",
+      "type": "array",
+      "items": {
+        "$ref": "Boolean.schema.json"
+      }
+    },
+    "renegotiableLoan": {
+      "title": "Renegotiable Loan",
+      "description": "Whether the terms for payment of interest can be renegotiated during the life of the loan.",
+      "type": "array",
+      "items": {
+        "$ref": "Boolean.schema.json"
+      }
+    },
+    "requiredCollateral": {
+      "title": "Required Collateral",
+      "description": "Assets required to secure loan or credit repayments. It may take form of third party pledge, goods, financial instruments (cash, securities, etc.)",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Thing.schema.json"
+      }
+    },
+    "requiredCollateral_text": {
+      "title": "Required Collateral (text)",
+      "description": "Assets required to secure loan or credit repayments. It may take form of third party pledge, goods, financial instruments (cash, securities, etc.)",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    }
+  }
+}

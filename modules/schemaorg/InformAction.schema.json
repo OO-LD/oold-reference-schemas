@@ -1,0 +1,51 @@
+{
+  "@context": [
+    "CommunicateAction.schema.json",
+    {
+      "event": {
+        "@id": "schema:event",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "CommunicateAction.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "InformAction.schema.json",
+  "x-oold-uuid": "97576a3c-de78-5a11-9f0c-586e33987593",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/InformAction",
+  "x-oold-instance-rdf-type": [
+    "schema:InformAction"
+  ],
+  "title": "InformAction",
+  "description": "The act of notifying someone of information pertinent to them, with no expectation of a response.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:InformAction"
+      ]
+    },
+    "event": {
+      "title": "Event",
+      "description": "Upcoming or past event associated with this place, organization, or action.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Event.schema.json"
+      }
+    }
+  }
+}

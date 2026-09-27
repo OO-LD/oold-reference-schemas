@@ -1,0 +1,8 @@
+{
+  "$schema": "AnatomicalSystem.schema.json",
+  "@context": "AnatomicalSystem.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:AnatomicalSystem"
+  ]
+}

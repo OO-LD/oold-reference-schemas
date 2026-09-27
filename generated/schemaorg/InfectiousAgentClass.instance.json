@@ -1,0 +1,8 @@
+{
+  "$schema": "InfectiousAgentClass.schema.json",
+  "@context": "InfectiousAgentClass.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:InfectiousAgentClass"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "$schema": "ContactPoint.schema.json",
+  "@context": "ContactPoint.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:ContactPoint"
+  ]
+}

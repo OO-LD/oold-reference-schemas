@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Store.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Store.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MensClothingStore.schema.json",
+  "x-oold-uuid": "1ab29fad-a2bf-5a7b-a9fd-daa12c9f49c5",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/MensClothingStore",
+  "x-oold-instance-rdf-type": [
+    "schema:MensClothingStore"
+  ],
+  "title": "MensClothingStore",
+  "description": "A men's clothing store.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:MensClothingStore"
+      ]
+    }
+  }
+}

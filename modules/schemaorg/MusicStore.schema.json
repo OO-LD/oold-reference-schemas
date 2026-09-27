@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Store.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Store.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MusicStore.schema.json",
+  "x-oold-uuid": "44691a13-d2d1-5bbe-b95b-7c153bf8c072",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/MusicStore",
+  "x-oold-instance-rdf-type": [
+    "schema:MusicStore"
+  ],
+  "title": "MusicStore",
+  "description": "A music store.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:MusicStore"
+      ]
+    }
+  }
+}

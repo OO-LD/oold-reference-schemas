@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "SportsActivityLocation.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "SportsActivityLocation.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "SportsClub.schema.json",
+  "x-oold-uuid": "c50f76fd-9365-5468-9191-2eb75ef5107a",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/SportsClub",
+  "x-oold-instance-rdf-type": [
+    "schema:SportsClub"
+  ],
+  "title": "SportsClub",
+  "description": "A sports club.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:SportsClub"
+      ]
+    }
+  }
+}

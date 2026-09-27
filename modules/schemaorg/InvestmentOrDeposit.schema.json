@@ -1,0 +1,56 @@
+{
+  "@context": [
+    "FinancialProduct.schema.json",
+    {
+      "amount": {
+        "@id": "schema:amount",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "FinancialProduct.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "InvestmentOrDeposit.schema.json",
+  "x-oold-uuid": "2262a08e-78de-5c79-aff6-afa3ccccf281",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/InvestmentOrDeposit",
+  "x-oold-instance-rdf-type": [
+    "schema:InvestmentOrDeposit"
+  ],
+  "title": "InvestmentOrDeposit",
+  "description": "A type of financial product that typically requires the client to transfer funds to a financial service in return for potential beneficial financial return.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:InvestmentOrDeposit"
+      ]
+    },
+    "amount": {
+      "title": "Amount",
+      "description": "The amount of money.",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: MonetaryAmount [value-type]: MonetaryAmount -> StructuredValue -> Intangible -> Thing",
+        "anyOf": [
+          {
+            "$ref": "Number.schema.json"
+          },
+          {
+            "$ref": "MonetaryAmount.schema.json"
+          }
+        ]
+      }
+    }
+  }
+}

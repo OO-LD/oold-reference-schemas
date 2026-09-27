@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "ConsumeAction.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "ConsumeAction.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "UseAction.schema.json",
+  "x-oold-uuid": "33b94d09-e815-5cf4-88ad-0f2806f3bdeb",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/UseAction",
+  "x-oold-instance-rdf-type": [
+    "schema:UseAction"
+  ],
+  "title": "UseAction",
+  "description": "The act of applying an object to its intended purpose.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:UseAction"
+      ]
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "CreativeWork.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "CreativeWork.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ShortStory.schema.json",
+  "x-oold-uuid": "49e6a6b3-f903-5e08-bf62-e4acf1ac4e1b",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/ShortStory",
+  "x-oold-instance-rdf-type": [
+    "schema:ShortStory"
+  ],
+  "title": "ShortStory",
+  "description": "Short story or tale. A brief work of literature, usually written in narrative prose.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:ShortStory"
+      ]
+    }
+  }
+}

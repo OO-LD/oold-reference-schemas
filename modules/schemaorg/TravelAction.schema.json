@@ -1,0 +1,48 @@
+{
+  "@context": [
+    "MoveAction.schema.json",
+    {
+      "distance": {
+        "@id": "schema:distance",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "MoveAction.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "TravelAction.schema.json",
+  "x-oold-uuid": "33797dd4-b521-5832-91ab-f0bf5ad1fbc0",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/TravelAction",
+  "x-oold-instance-rdf-type": [
+    "schema:TravelAction"
+  ],
+  "title": "TravelAction",
+  "description": "The act of traveling from a fromLocation to a destination by a specified mode of transport, optionally with participants.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:TravelAction"
+      ]
+    },
+    "distance": {
+      "title": "Distance",
+      "description": "The distance travelled, e.g. exercising or travelling.",
+      "type": "array",
+      "items": {
+        "$ref": "Distance.schema.json"
+      }
+    }
+  }
+}

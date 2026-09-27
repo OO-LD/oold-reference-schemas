@@ -1,0 +1,53 @@
+{
+  "@context": [
+    "StatusEnumeration.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "StatusEnumeration.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "LegalForceStatus.schema.json",
+  "x-oold-uuid": "b46c2af1-1e7f-5a2a-9901-aeac8860885d",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/LegalForceStatus",
+  "x-oold-instance-rdf-type": [
+    "schema:LegalForceStatus"
+  ],
+  "title": "LegalForceStatus",
+  "description": "A list of possible statuses for the legal force of a legislation.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:LegalForceStatus"
+      ]
+    }
+  },
+  "$defs": {
+    "member": {
+      "title": "LegalForceStatus member",
+      "description": "One of the 3 member instances of LegalForceStatus.",
+      "type": "string",
+      "format": "iri-reference",
+      "enum": [
+        "schema:InForce",
+        "schema:NotInForce",
+        "schema:PartiallyInForce"
+      ],
+      "x-oold-ui-enum-titles": [
+        "InForce",
+        "NotInForce",
+        "PartiallyInForce"
+      ]
+    }
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "@context": [
+    "Action.schema.json",
+    {
+      "fromLocation": {
+        "@id": "schema:fromLocation",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "toLocation": {
+        "@id": "schema:toLocation",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Action.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "TransferAction.schema.json",
+  "x-oold-uuid": "4757c88a-ed69-5fbb-a62a-fe9b20ced3a8",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/TransferAction",
+  "x-oold-instance-rdf-type": [
+    "schema:TransferAction"
+  ],
+  "title": "TransferAction",
+  "description": "The act of transferring/moving (abstract or concrete) animate or inanimate objects from one place to another.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:TransferAction"
+      ]
+    },
+    "fromLocation": {
+      "title": "From Location",
+      "description": "A sub property of location. The original location of the object or the agent before the action.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Place.schema.json"
+      }
+    },
+    "toLocation": {
+      "title": "To Location",
+      "description": "A sub property of location. The final location of the object or the agent after the action.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Place.schema.json"
+      }
+    }
+  }
+}

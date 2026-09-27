@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Review.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Review.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "EmployerReview.schema.json",
+  "x-oold-uuid": "9c63a323-1681-54a8-bd5f-47218d483fd1",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/EmployerReview",
+  "x-oold-instance-rdf-type": [
+    "schema:EmployerReview"
+  ],
+  "title": "EmployerReview",
+  "description": "An [[EmployerReview]] is a review of an [[Organization]] regarding its role as an employer, written by a current or former employee of that organization.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:EmployerReview"
+      ]
+    }
+  }
+}

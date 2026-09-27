@@ -1,0 +1,67 @@
+{
+  "@context": [
+    "Enumeration.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Enumeration.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "AdultOrientedEnumeration.schema.json",
+  "x-oold-uuid": "160779b2-34ca-5846-b98a-0e0d45118a3b",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/AdultOrientedEnumeration",
+  "x-oold-instance-rdf-type": [
+    "schema:AdultOrientedEnumeration"
+  ],
+  "title": "AdultOrientedEnumeration",
+  "description": "Enumeration of considerations that make a product relevant or potentially restricted for adults only.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:AdultOrientedEnumeration"
+      ]
+    }
+  },
+  "$defs": {
+    "member": {
+      "title": "AdultOrientedEnumeration member",
+      "description": "One of the 10 member instances of AdultOrientedEnumeration.",
+      "type": "string",
+      "format": "iri-reference",
+      "enum": [
+        "schema:AlcoholConsideration",
+        "schema:DangerousGoodConsideration",
+        "schema:HealthcareConsideration",
+        "schema:NarcoticConsideration",
+        "schema:ReducedRelevanceForChildrenConsideration",
+        "schema:SexualContentConsideration",
+        "schema:TobaccoNicotineConsideration",
+        "schema:UnclassifiedAdultConsideration",
+        "schema:ViolenceConsideration",
+        "schema:WeaponConsideration"
+      ],
+      "x-oold-ui-enum-titles": [
+        "AlcoholConsideration",
+        "DangerousGoodConsideration",
+        "HealthcareConsideration",
+        "NarcoticConsideration",
+        "ReducedRelevanceForChildrenConsideration",
+        "SexualContentConsideration",
+        "TobaccoNicotineConsideration",
+        "UnclassifiedAdultConsideration",
+        "ViolenceConsideration",
+        "WeaponConsideration"
+      ]
+    }
+  }
+}

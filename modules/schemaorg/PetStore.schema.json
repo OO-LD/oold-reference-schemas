@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Store.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Store.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "PetStore.schema.json",
+  "x-oold-uuid": "a7bb4711-fcfc-56c4-8433-29fe76a1d105",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/PetStore",
+  "x-oold-instance-rdf-type": [
+    "schema:PetStore"
+  ],
+  "title": "PetStore",
+  "description": "A pet store.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:PetStore"
+      ]
+    }
+  }
+}

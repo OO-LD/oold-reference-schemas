@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "AutomotiveBusiness.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "AutomotiveBusiness.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "AutoWash.schema.json",
+  "x-oold-uuid": "c894da63-f692-5a54-bf50-c02f6ba472ce",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/AutoWash",
+  "x-oold-instance-rdf-type": [
+    "schema:AutoWash"
+  ],
+  "title": "AutoWash",
+  "description": "A car wash business.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:AutoWash"
+      ]
+    }
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "@context": [
+    "HowToItem.schema.json",
+    {
+      "estimatedCost": {
+        "@id": "schema:estimatedCost",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "HowToItem.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "HowToSupply.schema.json",
+  "x-oold-uuid": "696ac699-effb-5f12-b164-d15d0f734366",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/HowToSupply",
+  "x-oold-instance-rdf-type": [
+    "schema:HowToSupply"
+  ],
+  "title": "HowToSupply",
+  "description": "A supply consumed when performing the instructions for how to achieve a result.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:HowToSupply"
+      ]
+    },
+    "estimatedCost": {
+      "title": "Estimated Cost",
+      "description": "The estimated cost of the supply or supplies consumed when performing instructions.",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: MonetaryAmount [value-type]: MonetaryAmount -> StructuredValue -> Intangible -> Thing",
+        "anyOf": [
+          {
+            "$ref": "Text.schema.json"
+          },
+          {
+            "$ref": "MonetaryAmount.schema.json"
+          }
+        ]
+      }
+    }
+  }
+}

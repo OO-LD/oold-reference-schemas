@@ -1,0 +1,162 @@
+{
+  "@context": [
+    "StructuredValue.schema.json",
+    {
+      "address": {
+        "@id": "schema:address",
+        "@container": "@set"
+      },
+      "addressCountry": {
+        "@id": "schema:addressCountry",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "addressCountry_text": {
+        "@id": "schema:addressCountry",
+        "@container": "@set"
+      },
+      "box": {
+        "@id": "schema:box",
+        "@container": "@set"
+      },
+      "circle": {
+        "@id": "schema:circle",
+        "@container": "@set"
+      },
+      "elevation": {
+        "@id": "schema:elevation",
+        "@container": "@set"
+      },
+      "line": {
+        "@id": "schema:line",
+        "@container": "@set"
+      },
+      "polygon": {
+        "@id": "schema:polygon",
+        "@container": "@set"
+      },
+      "postalCode": {
+        "@id": "schema:postalCode",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "StructuredValue.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "GeoShape.schema.json",
+  "x-oold-uuid": "de07e39f-ed4a-54e9-95ce-32b7989738b9",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/GeoShape",
+  "x-oold-instance-rdf-type": [
+    "schema:GeoShape"
+  ],
+  "title": "GeoShape",
+  "description": "The geographic shape of a place. A GeoShape can be described using several properties whose values are based on latitude/longitude pairs. Either whitespace or commas can be used to separate latitude and longitude; whitespace should be used when writing a list of several such points.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:GeoShape"
+      ]
+    },
+    "address": {
+      "title": "Address",
+      "description": "Physical address of the item.",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: PostalAddress [value-type]: PostalAddress -> ContactPoint -> StructuredValue -> Intangible -> Thing",
+        "anyOf": [
+          {
+            "$ref": "Text.schema.json"
+          },
+          {
+            "$ref": "PostalAddress.schema.json"
+          }
+        ]
+      }
+    },
+    "addressCountry": {
+      "title": "Address Country",
+      "description": "The country. Recommended to be in 2-letter [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1) format, for example \"US\". For backward compatibility, a 3-letter [ISO 3166-1 alpha-3](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3) country code such as \"SGP\" or a full country name such as \"Singapore\" can also be used.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Country.schema.json"
+      }
+    },
+    "addressCountry_text": {
+      "title": "Address Country (text)",
+      "description": "The country. Recommended to be in 2-letter [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1) format, for example \"US\". For backward compatibility, a 3-letter [ISO 3166-1 alpha-3](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3) country code such as \"SGP\" or a full country name such as \"Singapore\" can also be used.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "box": {
+      "title": "Box",
+      "description": "A box is the area enclosed by the rectangle formed by two points. The first point is the lower corner, the second point is the upper corner. A box is expressed as two points separated by a space character.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "circle": {
+      "title": "Circle",
+      "description": "A circle is the circular region of a specified radius centered at a specified latitude and longitude. A circle is expressed as a pair followed by a radius in meters.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "elevation": {
+      "title": "Elevation",
+      "description": "The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT\\_OF\\_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Number.schema.json"
+          },
+          {
+            "$ref": "Text.schema.json"
+          }
+        ]
+      }
+    },
+    "line": {
+      "title": "Line",
+      "description": "A line is a point-to-point path consisting of two or more points. A line is expressed as a series of two or more point objects separated by space.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "polygon": {
+      "title": "Polygon",
+      "description": "A polygon is the area enclosed by a point-to-point path for which the starting and ending points are the same. A polygon is expressed as a series of four or more space delimited points where the first and final points are identical.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "postalCode": {
+      "title": "Postal Code",
+      "description": "The postal code. For example, 94043.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    }
+  }
+}

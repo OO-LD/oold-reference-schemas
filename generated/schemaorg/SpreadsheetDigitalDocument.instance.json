@@ -1,0 +1,8 @@
+{
+  "$schema": "SpreadsheetDigitalDocument.schema.json",
+  "@context": "SpreadsheetDigitalDocument.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:SpreadsheetDigitalDocument"
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "@context": [
+    "Trip.schema.json",
+    {
+      "arrivalBoatTerminal": {
+        "@id": "schema:arrivalBoatTerminal",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "departureBoatTerminal": {
+        "@id": "schema:departureBoatTerminal",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Trip.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "BoatTrip.schema.json",
+  "x-oold-uuid": "7a46eb7d-a0c1-5fbf-b6ca-897a1124c995",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/BoatTrip",
+  "x-oold-instance-rdf-type": [
+    "schema:BoatTrip"
+  ],
+  "title": "BoatTrip",
+  "description": "A trip on a commercial ferry line.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:BoatTrip"
+      ]
+    },
+    "arrivalBoatTerminal": {
+      "title": "Arrival Boat Terminal",
+      "description": "The terminal or port from which the boat arrives.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "BoatTerminal.schema.json"
+      }
+    },
+    "departureBoatTerminal": {
+      "title": "Departure Boat Terminal",
+      "description": "The terminal or port from which the boat departs.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "BoatTerminal.schema.json"
+      }
+    }
+  }
+}

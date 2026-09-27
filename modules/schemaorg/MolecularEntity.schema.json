@@ -1,0 +1,166 @@
+{
+  "@context": [
+    "BioChemEntity.schema.json",
+    {
+      "chemicalRole": {
+        "@id": "schema:chemicalRole",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "inChI": {
+        "@id": "schema:inChI",
+        "@container": "@set"
+      },
+      "inChIKey": {
+        "@id": "schema:inChIKey",
+        "@container": "@set"
+      },
+      "iupacName": {
+        "@id": "schema:iupacName",
+        "@container": "@set"
+      },
+      "molecularFormula": {
+        "@id": "schema:molecularFormula",
+        "@container": "@set"
+      },
+      "molecularWeight": {
+        "@id": "schema:molecularWeight",
+        "@container": "@set"
+      },
+      "monoisotopicMolecularWeight": {
+        "@id": "schema:monoisotopicMolecularWeight",
+        "@container": "@set"
+      },
+      "potentialUse": {
+        "@id": "schema:potentialUse",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "smiles": {
+        "@id": "schema:smiles",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "BioChemEntity.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MolecularEntity.schema.json",
+  "x-oold-uuid": "6a4816ac-d1ac-503d-bffd-e67817d1f925",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/MolecularEntity",
+  "x-oold-instance-rdf-type": [
+    "schema:MolecularEntity"
+  ],
+  "title": "MolecularEntity",
+  "description": "Any constitutionally or isotopically distinct atom, molecule, ion, ion pair, radical, radical ion, complex, conformer etc., identifiable as a separately distinguishable entity.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:MolecularEntity"
+      ]
+    },
+    "chemicalRole": {
+      "title": "Chemical Role",
+      "description": "A role played by the BioChemEntity within a chemical context.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "DefinedTerm.schema.json"
+      }
+    },
+    "inChI": {
+      "title": "In Ch I",
+      "description": "Non-proprietary identifier for molecular entity that can be used in printed and electronic data sources thus enabling easier linking of diverse data compilations.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "inChIKey": {
+      "title": "In Ch I Key",
+      "description": "InChIKey is a hashed version of the full InChI (using the SHA-256 algorithm).",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "iupacName": {
+      "title": "Iupac Name",
+      "description": "Systematic method of naming chemical compounds as recommended by the International Union of Pure and Applied Chemistry (IUPAC).",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "molecularFormula": {
+      "title": "Molecular Formula",
+      "description": "The empirical formula is the simplest whole number ratio of all the atoms in a molecule.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "molecularWeight": {
+      "title": "Molecular Weight",
+      "description": "This is the molecular weight of the entity being described, not of the parent. Units should be included in the form '&lt;Number&gt; &lt;unit&gt;', for example '12 amu' or as '&lt;QuantitativeValue&gt;.",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: QuantitativeValue [value-type]: QuantitativeValue -> StructuredValue -> Intangible -> Thing",
+        "anyOf": [
+          {
+            "$ref": "Text.schema.json"
+          },
+          {
+            "$ref": "QuantitativeValue.schema.json"
+          }
+        ]
+      }
+    },
+    "monoisotopicMolecularWeight": {
+      "title": "Monoisotopic Molecular Weight",
+      "description": "The monoisotopic mass is the sum of the masses of the atoms in a molecule using the unbound, ground-state, rest mass of the principal (most abundant) isotope for each element instead of the isotopic average mass. Please include the units in the form '&lt;Number&gt; &lt;unit&gt;', for example '770.230488 g/mol' or as '&lt;QuantitativeValue&gt;.",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: QuantitativeValue [value-type]: QuantitativeValue -> StructuredValue -> Intangible -> Thing",
+        "anyOf": [
+          {
+            "$ref": "Text.schema.json"
+          },
+          {
+            "$ref": "QuantitativeValue.schema.json"
+          }
+        ]
+      }
+    },
+    "potentialUse": {
+      "title": "Potential Use",
+      "description": "Intended use of the BioChemEntity by humans.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "DefinedTerm.schema.json"
+      }
+    },
+    "smiles": {
+      "title": "Smiles",
+      "description": "A specification in form of a line notation for describing the structure of chemical species using short ASCII strings.  Double bond stereochemistry \\ indicators may need to be escaped in the string in formats where the backslash is an escape character.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    }
+  }
+}

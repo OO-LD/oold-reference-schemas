@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "CommunicateAction.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "CommunicateAction.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "CheckOutAction.schema.json",
+  "x-oold-uuid": "7ef05828-89d0-5be4-a12a-d0b2a54d6a7f",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/CheckOutAction",
+  "x-oold-instance-rdf-type": [
+    "schema:CheckOutAction"
+  ],
+  "title": "CheckOutAction",
+  "description": "The act of an agent communicating (service provider, social media, etc) their departure of a previously reserved service (e.g. flight check-in) or place (e.g. hotel).\\n\\nRelated actions:\\n\\n* [[CheckInAction]]: The antonym of CheckOutAction.\\n* [[DepartAction]]: Unlike DepartAction, CheckOutAction implies that the agent is informing/confirming the end of a previously reserved service.\\n* [[CancelAction]]: Unlike CancelAction, CheckOutAction implies that the agent is informing/confirming the end of a previously reserved service.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:CheckOutAction"
+      ]
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "AutomotiveBusiness.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "AutomotiveBusiness.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "AutoBodyShop.schema.json",
+  "x-oold-uuid": "8936aaeb-6973-5af5-a39d-caa2992bc566",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/AutoBodyShop",
+  "x-oold-instance-rdf-type": [
+    "schema:AutoBodyShop"
+  ],
+  "title": "AutoBodyShop",
+  "description": "Auto body shop.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:AutoBodyShop"
+      ]
+    }
+  }
+}

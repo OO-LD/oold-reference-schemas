@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "LocalBusiness.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "LocalBusiness.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "TelevisionStation.schema.json",
+  "x-oold-uuid": "05229ff9-4daa-5288-aa1a-0d174591a84f",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/TelevisionStation",
+  "x-oold-instance-rdf-type": [
+    "schema:TelevisionStation"
+  ],
+  "title": "TelevisionStation",
+  "description": "A television station.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:TelevisionStation"
+      ]
+    }
+  }
+}

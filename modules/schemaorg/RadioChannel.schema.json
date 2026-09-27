@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "BroadcastChannel.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "BroadcastChannel.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "RadioChannel.schema.json",
+  "x-oold-uuid": "cd09f235-8f6e-59c2-960e-f6a76c41a21f",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/RadioChannel",
+  "x-oold-instance-rdf-type": [
+    "schema:RadioChannel"
+  ],
+  "title": "RadioChannel",
+  "description": "A unique instance of a radio BroadcastService on a CableOrSatelliteService lineup.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:RadioChannel"
+      ]
+    }
+  }
+}

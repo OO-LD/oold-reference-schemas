@@ -1,0 +1,8 @@
+{
+  "$schema": "RuntimePlatform.schema.json",
+  "@context": "RuntimePlatform.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:RuntimePlatform"
+  ]
+}

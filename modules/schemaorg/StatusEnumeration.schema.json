@@ -1,0 +1,113 @@
+{
+  "@context": [
+    "Enumeration.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Enumeration.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "StatusEnumeration.schema.json",
+  "x-oold-uuid": "01813199-3ebe-5007-af70-93786b1424e0",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/StatusEnumeration",
+  "x-oold-instance-rdf-type": [
+    "schema:StatusEnumeration"
+  ],
+  "title": "StatusEnumeration",
+  "description": "Lists or enumerations dealing with status types.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:StatusEnumeration"
+      ]
+    }
+  },
+  "$defs": {
+    "member": {
+      "title": "StatusEnumeration member",
+      "description": "One of the 33 member instances of StatusEnumeration.",
+      "type": "string",
+      "format": "iri-reference",
+      "enum": [
+        "schema:ActiveActionStatus",
+        "schema:CompletedActionStatus",
+        "schema:EventCancelled",
+        "schema:EventMovedOnline",
+        "schema:EventPostponed",
+        "schema:EventRescheduled",
+        "schema:EventScheduled",
+        "schema:FailedActionStatus",
+        "schema:InForce",
+        "schema:NotInForce",
+        "schema:OfflinePermanently",
+        "schema:OfflineTemporarily",
+        "schema:Online",
+        "schema:OnlineFull",
+        "schema:OrderCancelled",
+        "schema:OrderDelivered",
+        "schema:OrderInTransit",
+        "schema:OrderPaymentDue",
+        "schema:OrderPickupAvailable",
+        "schema:OrderProblem",
+        "schema:OrderProcessing",
+        "schema:OrderReturned",
+        "schema:PartiallyInForce",
+        "schema:PaymentAutomaticallyApplied",
+        "schema:PaymentComplete",
+        "schema:PaymentDeclined",
+        "schema:PaymentDue",
+        "schema:PaymentPastDue",
+        "schema:PotentialActionStatus",
+        "schema:ReservationCancelled",
+        "schema:ReservationConfirmed",
+        "schema:ReservationHold",
+        "schema:ReservationPending"
+      ],
+      "x-oold-ui-enum-titles": [
+        "ActiveActionStatus",
+        "CompletedActionStatus",
+        "EventCancelled",
+        "EventMovedOnline",
+        "EventPostponed",
+        "EventRescheduled",
+        "EventScheduled",
+        "FailedActionStatus",
+        "InForce",
+        "NotInForce",
+        "OfflinePermanently",
+        "OfflineTemporarily",
+        "Online",
+        "OnlineFull",
+        "OrderCancelled",
+        "OrderDelivered",
+        "OrderInTransit",
+        "OrderPaymentDue",
+        "OrderPickupAvailable",
+        "OrderProblem",
+        "OrderProcessing",
+        "OrderReturned",
+        "PartiallyInForce",
+        "PaymentAutomaticallyApplied",
+        "PaymentComplete",
+        "PaymentDeclined",
+        "PaymentDue",
+        "PaymentPastDue",
+        "PotentialActionStatus",
+        "ReservationCancelled",
+        "ReservationConfirmed",
+        "ReservationHold",
+        "ReservationPending"
+      ]
+    }
+  }
+}

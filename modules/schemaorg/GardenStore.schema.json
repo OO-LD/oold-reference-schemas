@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Store.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Store.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "GardenStore.schema.json",
+  "x-oold-uuid": "a993cd16-56fc-565b-b070-02b226253776",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/GardenStore",
+  "x-oold-instance-rdf-type": [
+    "schema:GardenStore"
+  ],
+  "title": "GardenStore",
+  "description": "A garden store.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:GardenStore"
+      ]
+    }
+  }
+}

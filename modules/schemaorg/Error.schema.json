@@ -1,0 +1,73 @@
+{
+  "@context": [
+    "InstantaneousEvent.schema.json",
+    {
+      "errorCode": {
+        "@id": "schema:errorCode",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "errorCode_text": {
+        "@id": "schema:errorCode",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "InstantaneousEvent.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Error.schema.json",
+  "x-oold-uuid": "50ec128e-3981-522b-af51-76e6d7085edf",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Error",
+  "x-oold-instance-rdf-type": [
+    "schema:Error"
+  ],
+  "title": "Error",
+  "description": "Representation of an Error.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Error"
+      ]
+    },
+    "errorCode": {
+      "title": "Error Code",
+      "description": "Application or platform dependant error code.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "DefinedTerm.schema.json",
+          "StatusEnumeration.schema.json"
+        ]
+      }
+    },
+    "errorCode_text": {
+      "title": "Error Code (text)",
+      "description": "Application or platform dependant error code.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Integer.schema.json"
+          },
+          {
+            "$ref": "Text.schema.json"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "$schema": "GameServer.schema.json",
+  "@context": "GameServer.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:GameServer"
+  ]
+}

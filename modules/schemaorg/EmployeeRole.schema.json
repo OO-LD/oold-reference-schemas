@@ -1,0 +1,71 @@
+{
+  "@context": [
+    "OrganizationRole.schema.json",
+    {
+      "baseSalary": {
+        "@id": "schema:baseSalary",
+        "@container": "@set"
+      },
+      "salaryCurrency": {
+        "@id": "schema:salaryCurrency",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "OrganizationRole.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "EmployeeRole.schema.json",
+  "x-oold-uuid": "7c57456a-84bc-5e23-bc9c-a57095a7f005",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/EmployeeRole",
+  "x-oold-instance-rdf-type": [
+    "schema:EmployeeRole"
+  ],
+  "title": "EmployeeRole",
+  "description": "A subclass of OrganizationRole used to describe employee relationships.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:EmployeeRole"
+      ]
+    },
+    "baseSalary": {
+      "title": "Base Salary",
+      "description": "The base salary of the job or of an employee in an EmployeeRole.",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: MonetaryAmount [value-type]: MonetaryAmount -> StructuredValue -> Intangible -> Thing; PriceSpecification [value-type]: PriceSpecification -> StructuredValue -> Intangible -> Thing",
+        "anyOf": [
+          {
+            "$ref": "Number.schema.json"
+          },
+          {
+            "$ref": "MonetaryAmount.schema.json"
+          },
+          {
+            "$ref": "PriceSpecification.schema.json"
+          }
+        ]
+      }
+    },
+    "salaryCurrency": {
+      "title": "Salary Currency",
+      "description": "The currency (coded using [ISO 4217](http://en.wikipedia.org/wiki/ISO_4217)) used for the main salary information in this job posting or for this employee.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    }
+  }
+}

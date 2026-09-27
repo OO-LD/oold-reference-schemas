@@ -1,0 +1,51 @@
+{
+  "@context": [
+    "MedicalEntity.schema.json",
+    {
+      "increasesRiskOf": {
+        "@id": "schema:increasesRiskOf",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "MedicalEntity.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MedicalRiskFactor.schema.json",
+  "x-oold-uuid": "4a7161dc-d86e-5682-b114-d78302b83539",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/MedicalRiskFactor",
+  "x-oold-instance-rdf-type": [
+    "schema:MedicalRiskFactor"
+  ],
+  "title": "MedicalRiskFactor",
+  "description": "A risk factor is anything that increases a person's likelihood of developing or contracting a disease, medical condition, or complication.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:MedicalRiskFactor"
+      ]
+    },
+    "increasesRiskOf": {
+      "title": "Increases Risk Of",
+      "description": "The condition, complication, etc. influenced by this factor.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "MedicalEntity.schema.json"
+      }
+    }
+  }
+}

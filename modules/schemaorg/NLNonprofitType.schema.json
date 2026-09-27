@@ -1,0 +1,51 @@
+{
+  "@context": [
+    "NonprofitType.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "NonprofitType.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "NLNonprofitType.schema.json",
+  "x-oold-uuid": "5216e230-69cc-5312-8c5a-50560b995851",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/NLNonprofitType",
+  "x-oold-instance-rdf-type": [
+    "schema:NLNonprofitType"
+  ],
+  "title": "NLNonprofitType",
+  "description": "NLNonprofitType: Non-profit organization type originating from the Netherlands.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:NLNonprofitType"
+      ]
+    }
+  },
+  "$defs": {
+    "member": {
+      "title": "NLNonprofitType member",
+      "description": "One of the 2 member instances of NLNonprofitType.",
+      "type": "string",
+      "format": "iri-reference",
+      "enum": [
+        "schema:NonprofitANBI",
+        "schema:NonprofitSBBI"
+      ],
+      "x-oold-ui-enum-titles": [
+        "NonprofitANBI",
+        "NonprofitSBBI"
+      ]
+    }
+  }
+}

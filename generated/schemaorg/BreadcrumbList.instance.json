@@ -1,0 +1,8 @@
+{
+  "$schema": "BreadcrumbList.schema.json",
+  "@context": "BreadcrumbList.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:BreadcrumbList"
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "@context": [
+    "MedicalEnumeration.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "MedicalEnumeration.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MedicalImagingTechnique.schema.json",
+  "x-oold-uuid": "bddff1cf-7f41-5ac7-9980-31b12aa8ec67",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/MedicalImagingTechnique",
+  "x-oold-instance-rdf-type": [
+    "schema:MedicalImagingTechnique"
+  ],
+  "title": "MedicalImagingTechnique",
+  "description": "Any medical imaging modality typically used for diagnostic purposes. Enumerated type.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:MedicalImagingTechnique"
+      ]
+    }
+  },
+  "$defs": {
+    "member": {
+      "title": "MedicalImagingTechnique member",
+      "description": "One of the 6 member instances of MedicalImagingTechnique.",
+      "type": "string",
+      "format": "iri-reference",
+      "enum": [
+        "schema:CT",
+        "schema:MRI",
+        "schema:PET",
+        "schema:Radiography",
+        "schema:Ultrasound",
+        "schema:XRay"
+      ],
+      "x-oold-ui-enum-titles": [
+        "CT",
+        "MRI",
+        "PET",
+        "Radiography",
+        "Ultrasound",
+        "XRay"
+      ]
+    }
+  }
+}

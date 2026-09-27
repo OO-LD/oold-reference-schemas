@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Landform.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Landform.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Mountain.schema.json",
+  "x-oold-uuid": "5a169144-1593-5d61-acdc-3d53ed0b22d9",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Mountain",
+  "x-oold-instance-rdf-type": [
+    "schema:Mountain"
+  ],
+  "title": "Mountain",
+  "description": "A mountain, like Mount Whitney or Mount Everest.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Mountain"
+      ]
+    }
+  }
+}

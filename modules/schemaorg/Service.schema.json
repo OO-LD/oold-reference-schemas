@@ -1,0 +1,440 @@
+{
+  "@context": [
+    "Intangible.schema.json",
+    {
+      "aggregateRating": {
+        "@id": "schema:aggregateRating",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "areaServed": {
+        "@id": "schema:areaServed",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "areaServed_text": {
+        "@id": "schema:areaServed",
+        "@container": "@set"
+      },
+      "audience": {
+        "@id": "schema:audience",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "availableChannel": {
+        "@id": "schema:availableChannel",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "award": {
+        "@id": "schema:award",
+        "@container": "@set"
+      },
+      "brand": {
+        "@id": "schema:brand",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "broker": {
+        "@id": "schema:broker",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "category": {
+        "@id": "schema:category",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "category_text": {
+        "@id": "schema:category",
+        "@container": "@set"
+      },
+      "hasCertification": {
+        "@id": "schema:hasCertification",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "hasOfferCatalog": {
+        "@id": "schema:hasOfferCatalog",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "hoursAvailable": {
+        "@id": "schema:hoursAvailable",
+        "@container": "@set"
+      },
+      "isRelatedTo": {
+        "@id": "schema:isRelatedTo",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "isSimilarTo": {
+        "@id": "schema:isSimilarTo",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "logo": {
+        "@id": "schema:logo",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "offers": {
+        "@id": "schema:offers",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "provider": {
+        "@id": "schema:provider",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "providerMobility": {
+        "@id": "schema:providerMobility",
+        "@container": "@set"
+      },
+      "review": {
+        "@id": "schema:review",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "serviceOutput": {
+        "@id": "schema:serviceOutput",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "serviceType": {
+        "@id": "schema:serviceType",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "serviceType_text": {
+        "@id": "schema:serviceType",
+        "@container": "@set"
+      },
+      "slogan": {
+        "@id": "schema:slogan",
+        "@container": "@set"
+      },
+      "termsOfService": {
+        "@id": "schema:termsOfService",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Intangible.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Service.schema.json",
+  "x-oold-uuid": "f2f1a2a8-c67a-5442-9d95-814791e6c58a",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Service",
+  "x-oold-instance-rdf-type": [
+    "schema:Service"
+  ],
+  "title": "Service",
+  "description": "A service provided by an organization, e.g. delivery service, print services, etc.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Service"
+      ]
+    },
+    "aggregateRating": {
+      "title": "Aggregate Rating",
+      "description": "The overall rating, based on a collection of reviews or ratings, of the item.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "AggregateRating.schema.json"
+      }
+    },
+    "areaServed": {
+      "title": "Area Served",
+      "description": "The geographic area where a service or offered item is provided.",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: GeoShape [value-type]: GeoShape -> StructuredValue -> Intangible -> Thing; AdministrativeArea [entity]: AdministrativeArea -> Place -> Thing; Place [entity]: Place -> Thing",
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "iri-reference",
+            "x-oold-range": [
+              "AdministrativeArea.schema.json",
+              "Place.schema.json"
+            ]
+          },
+          {
+            "$ref": "GeoShape.schema.json"
+          }
+        ]
+      }
+    },
+    "areaServed_text": {
+      "title": "Area Served (text)",
+      "description": "The geographic area where a service or offered item is provided.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "audience": {
+      "title": "Audience",
+      "description": "An intended audience, i.e. a group for whom something was created.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Audience.schema.json"
+      }
+    },
+    "availableChannel": {
+      "title": "Available Channel",
+      "description": "A means of accessing the service (e.g. a phone bank, a web site, a location, etc.).",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "ServiceChannel.schema.json"
+      }
+    },
+    "award": {
+      "title": "Award",
+      "description": "An award won by or for this item.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "brand": {
+      "title": "Brand",
+      "description": "The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "Brand.schema.json",
+          "Organization.schema.json"
+        ]
+      }
+    },
+    "broker": {
+      "title": "Broker",
+      "description": "An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "Organization.schema.json",
+          "Person.schema.json"
+        ]
+      }
+    },
+    "category": {
+      "title": "Category",
+      "description": "A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "CategoryCode.schema.json",
+          "PhysicalActivityCategory.schema.json",
+          "Thing.schema.json"
+        ]
+      }
+    },
+    "category_text": {
+      "title": "Category (text)",
+      "description": "A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Text.schema.json"
+          },
+          {
+            "$ref": "URL.schema.json"
+          }
+        ]
+      }
+    },
+    "hasCertification": {
+      "title": "Has Certification",
+      "description": "Certification information about a product, organization, service, place, or person.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Certification.schema.json"
+      }
+    },
+    "hasOfferCatalog": {
+      "title": "Has Offer Catalog",
+      "description": "Indicates an OfferCatalog listing for this Organization, Person, or Service.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "OfferCatalog.schema.json"
+      }
+    },
+    "hoursAvailable": {
+      "title": "Hours Available",
+      "description": "The hours during which this service or contact is available.",
+      "type": "array",
+      "items": {
+        "$ref": "OpeningHoursSpecification.schema.json"
+      }
+    },
+    "isRelatedTo": {
+      "title": "Is Related To",
+      "description": "A pointer to another, somehow related product (or multiple products).",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "Product.schema.json",
+          "Service.schema.json"
+        ]
+      }
+    },
+    "isSimilarTo": {
+      "title": "Is Similar To",
+      "description": "A pointer to another, functionally similar product (or multiple products).",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "Product.schema.json",
+          "Service.schema.json"
+        ]
+      }
+    },
+    "logo": {
+      "title": "Logo",
+      "description": "An associated logo.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "URL.schema.json"
+          },
+          {
+            "type": "string",
+            "format": "iri-reference",
+            "x-oold-range": "ImageObject.schema.json"
+          }
+        ]
+      }
+    },
+    "offers": {
+      "title": "Offers",
+      "description": "An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.\n      ",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "Demand.schema.json",
+          "Offer.schema.json"
+        ]
+      }
+    },
+    "provider": {
+      "title": "Provider",
+      "description": "The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "Organization.schema.json",
+          "Person.schema.json"
+        ]
+      }
+    },
+    "providerMobility": {
+      "title": "Provider Mobility",
+      "description": "Indicates the mobility of a provided service (e.g. 'static', 'dynamic').",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "review": {
+      "title": "Review",
+      "description": "A review of the item.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Review.schema.json"
+      }
+    },
+    "serviceOutput": {
+      "title": "Service Output",
+      "description": "The tangible thing generated by the service, e.g. a passport, permit, etc.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Thing.schema.json"
+      }
+    },
+    "serviceType": {
+      "title": "Service Type",
+      "description": "The type of service being offered, e.g. veterans' benefits, emergency relief, etc.",
+      "type": "array",
+      "items": {
+        "$ref": "GovernmentBenefitsType.schema.json#/$defs/member",
+        "x-oold-range": "GovernmentBenefitsType.schema.json"
+      }
+    },
+    "serviceType_text": {
+      "title": "Service Type (text)",
+      "description": "The type of service being offered, e.g. veterans' benefits, emergency relief, etc.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "slogan": {
+      "title": "Slogan",
+      "description": "A slogan or motto associated with the item.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "termsOfService": {
+      "title": "Terms Of Service",
+      "description": "Human-readable terms of service documentation.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Text.schema.json"
+          },
+          {
+            "$ref": "URL.schema.json"
+          }
+        ]
+      }
+    }
+  }
+}

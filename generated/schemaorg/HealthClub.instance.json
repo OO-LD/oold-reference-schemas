@@ -1,0 +1,8 @@
+{
+  "$schema": "HealthClub.schema.json",
+  "@context": "HealthClub.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:HealthClub"
+  ]
+}

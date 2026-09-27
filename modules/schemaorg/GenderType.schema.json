@@ -1,0 +1,51 @@
+{
+  "@context": [
+    "Enumeration.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Enumeration.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "GenderType.schema.json",
+  "x-oold-uuid": "e7d44039-4ced-545a-beb4-75113b4572af",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/GenderType",
+  "x-oold-instance-rdf-type": [
+    "schema:GenderType"
+  ],
+  "title": "GenderType",
+  "description": "An enumeration of genders.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:GenderType"
+      ]
+    }
+  },
+  "$defs": {
+    "member": {
+      "title": "GenderType member",
+      "description": "One of the 2 member instances of GenderType.",
+      "type": "string",
+      "format": "iri-reference",
+      "enum": [
+        "schema:Female",
+        "schema:Male"
+      ],
+      "x-oold-ui-enum-titles": [
+        "Female",
+        "Male"
+      ]
+    }
+  }
+}

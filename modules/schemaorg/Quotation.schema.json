@@ -1,0 +1,54 @@
+{
+  "@context": [
+    "CreativeWork.schema.json",
+    {
+      "spokenByCharacter": {
+        "@id": "schema:spokenByCharacter",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "CreativeWork.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Quotation.schema.json",
+  "x-oold-uuid": "6773226f-a261-5bc5-aac8-8cac9e03f9d1",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Quotation",
+  "x-oold-instance-rdf-type": [
+    "schema:Quotation"
+  ],
+  "title": "Quotation",
+  "description": "A quotation. Often but not necessarily from some written work, attributable to a real world author and - if associated with a fictional character - to any fictional Person. Use [[isBasedOn]] to link to source/origin. The [[recordedIn]] property can be used to reference a Quotation from an [[Event]].",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Quotation"
+      ]
+    },
+    "spokenByCharacter": {
+      "title": "Spoken By Character",
+      "description": "The (e.g. fictional) character, Person or Organization to whom the quotation is attributed within the containing CreativeWork.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "Organization.schema.json",
+          "Person.schema.json"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "$schema": "HealthTopicContent.schema.json",
+  "@context": "HealthTopicContent.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:HealthTopicContent"
+  ]
+}

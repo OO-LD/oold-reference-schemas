@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "CommunicateAction.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "CommunicateAction.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ShareAction.schema.json",
+  "x-oold-uuid": "230b09cc-b3b2-5318-a0ad-7690b26087d4",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/ShareAction",
+  "x-oold-instance-rdf-type": [
+    "schema:ShareAction"
+  ],
+  "title": "ShareAction",
+  "description": "The act of distributing content to people for their amusement or edification.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:ShareAction"
+      ]
+    }
+  }
+}

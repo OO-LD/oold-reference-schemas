@@ -1,0 +1,51 @@
+{
+  "@context": [
+    "Enumeration.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Enumeration.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ContactPointOption.schema.json",
+  "x-oold-uuid": "4910d6a4-b2c4-5b00-ab16-68f5fc7b2b0d",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/ContactPointOption",
+  "x-oold-instance-rdf-type": [
+    "schema:ContactPointOption"
+  ],
+  "title": "ContactPointOption",
+  "description": "Enumerated options related to a ContactPoint.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:ContactPointOption"
+      ]
+    }
+  },
+  "$defs": {
+    "member": {
+      "title": "ContactPointOption member",
+      "description": "One of the 2 member instances of ContactPointOption.",
+      "type": "string",
+      "format": "iri-reference",
+      "enum": [
+        "schema:HearingImpairedSupported",
+        "schema:TollFree"
+      ],
+      "x-oold-ui-enum-titles": [
+        "HearingImpairedSupported",
+        "TollFree"
+      ]
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "MedicalTherapy.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "MedicalTherapy.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "RadiationTherapy.schema.json",
+  "x-oold-uuid": "a29d73d8-f14c-5aeb-9900-4911b0b7741c",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/RadiationTherapy",
+  "x-oold-instance-rdf-type": [
+    "schema:RadiationTherapy"
+  ],
+  "title": "RadiationTherapy",
+  "description": "A process of care using radiation aimed at improving a health condition.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:RadiationTherapy"
+      ]
+    }
+  }
+}

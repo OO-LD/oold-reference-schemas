@@ -1,0 +1,8 @@
+{
+  "$schema": "Volcano.schema.json",
+  "@context": "Volcano.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:Volcano"
+  ]
+}

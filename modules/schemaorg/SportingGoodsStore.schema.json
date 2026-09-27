@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Store.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Store.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "SportingGoodsStore.schema.json",
+  "x-oold-uuid": "48392323-4f07-59de-b06d-5201bd0cdadf",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/SportingGoodsStore",
+  "x-oold-instance-rdf-type": [
+    "schema:SportingGoodsStore"
+  ],
+  "title": "SportingGoodsStore",
+  "description": "A sporting goods store.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:SportingGoodsStore"
+      ]
+    }
+  }
+}

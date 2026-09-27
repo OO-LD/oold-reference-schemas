@@ -1,0 +1,108 @@
+{
+  "@context": [
+    "AnatomicalStructure.schema.json",
+    {
+      "antagonist": {
+        "@id": "schema:antagonist",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "bloodSupply": {
+        "@id": "schema:bloodSupply",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "insertion": {
+        "@id": "schema:insertion",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "muscleAction": {
+        "@id": "schema:muscleAction",
+        "@container": "@set"
+      },
+      "nerve": {
+        "@id": "schema:nerve",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "AnatomicalStructure.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Muscle.schema.json",
+  "x-oold-uuid": "c21873ef-94a3-5d52-aed9-6144a8153a6e",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Muscle",
+  "x-oold-instance-rdf-type": [
+    "schema:Muscle"
+  ],
+  "title": "Muscle",
+  "description": "A muscle is an anatomical structure consisting of a contractile form of tissue that animals use to effect movement.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Muscle"
+      ]
+    },
+    "antagonist": {
+      "title": "Antagonist",
+      "description": "The muscle whose action counteracts the specified muscle.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Muscle.schema.json"
+      }
+    },
+    "bloodSupply": {
+      "title": "Blood Supply",
+      "description": "The blood vessel that carries blood from the heart to the muscle.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Vessel.schema.json"
+      }
+    },
+    "insertion": {
+      "title": "Insertion",
+      "description": "The place of attachment of a muscle, or what the muscle moves.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "AnatomicalStructure.schema.json"
+      }
+    },
+    "muscleAction": {
+      "title": "Muscle Action",
+      "description": "The movement the muscle generates.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "nerve": {
+      "title": "Nerve",
+      "description": "The underlying innervation associated with the muscle.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Nerve.schema.json"
+      }
+    }
+  }
+}

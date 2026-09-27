@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "HomeAndConstructionBusiness.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "HomeAndConstructionBusiness.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Locksmith.schema.json",
+  "x-oold-uuid": "38f63330-fb18-5c5a-a294-9ab17d8ac71c",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Locksmith",
+  "x-oold-instance-rdf-type": [
+    "schema:Locksmith"
+  ],
+  "title": "Locksmith",
+  "description": "A locksmith.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Locksmith"
+      ]
+    }
+  }
+}

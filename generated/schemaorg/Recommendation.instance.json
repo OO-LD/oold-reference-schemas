@@ -1,0 +1,8 @@
+{
+  "$schema": "Recommendation.schema.json",
+  "@context": "Recommendation.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:Recommendation"
+  ]
+}

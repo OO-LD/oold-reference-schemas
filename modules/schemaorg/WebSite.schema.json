@@ -1,0 +1,48 @@
+{
+  "@context": [
+    "CreativeWork.schema.json",
+    {
+      "issn": {
+        "@id": "schema:issn",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "CreativeWork.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "WebSite.schema.json",
+  "x-oold-uuid": "eb786fe8-7681-5873-b262-e9a4d3f2fe41",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/WebSite",
+  "x-oold-instance-rdf-type": [
+    "schema:WebSite"
+  ],
+  "title": "WebSite",
+  "description": "A WebSite is a set of related web pages and other items typically served from a single web domain and accessible via URLs.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:WebSite"
+      ]
+    },
+    "issn": {
+      "title": "Issn",
+      "description": "The International Standard Serial Number (ISSN) that identifies this serial publication. You can repeat this property to identify different formats of, or the linking ISSN (ISSN-L) for, this serial publication.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    }
+  }
+}

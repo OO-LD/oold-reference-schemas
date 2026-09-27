@@ -1,0 +1,8 @@
+{
+  "$schema": "DDxElement.schema.json",
+  "@context": "DDxElement.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:DDxElement"
+  ]
+}

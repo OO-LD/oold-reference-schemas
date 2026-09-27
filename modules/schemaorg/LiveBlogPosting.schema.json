@@ -1,0 +1,77 @@
+{
+  "@context": [
+    "BlogPosting.schema.json",
+    {
+      "coverageEndTime": {
+        "@id": "schema:coverageEndTime",
+        "@type": "xsd:dateTime",
+        "@container": "@set"
+      },
+      "coverageStartTime": {
+        "@id": "schema:coverageStartTime",
+        "@type": "xsd:dateTime",
+        "@container": "@set"
+      },
+      "liveBlogUpdate": {
+        "@id": "schema:liveBlogUpdate",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "BlogPosting.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "LiveBlogPosting.schema.json",
+  "x-oold-uuid": "30575c6b-c863-5e06-8cd5-c16e9d5a75d1",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/LiveBlogPosting",
+  "x-oold-instance-rdf-type": [
+    "schema:LiveBlogPosting"
+  ],
+  "title": "LiveBlogPosting",
+  "description": "A [[LiveBlogPosting]] is a [[BlogPosting]] intended to provide a rolling textual coverage of an ongoing event through continuous updates.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:LiveBlogPosting"
+      ]
+    },
+    "coverageEndTime": {
+      "title": "Coverage End Time",
+      "description": "The time when the live blog will stop covering the Event. Note that coverage may continue after the Event concludes.",
+      "type": "array",
+      "items": {
+        "$ref": "DateTime.schema.json"
+      }
+    },
+    "coverageStartTime": {
+      "title": "Coverage Start Time",
+      "description": "The time when the live blog will begin covering the Event. Note that coverage may begin before the Event's start time. The LiveBlogPosting may also be created before coverage begins.",
+      "type": "array",
+      "items": {
+        "$ref": "DateTime.schema.json"
+      }
+    },
+    "liveBlogUpdate": {
+      "title": "Live Blog Update",
+      "description": "An update to the LiveBlog.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "BlogPosting.schema.json"
+      }
+    }
+  }
+}

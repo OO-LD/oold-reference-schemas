@@ -1,0 +1,1200 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Thing.schema.json",
+  "x-oold-uuid": "ebcabcdd-d3ec-539d-879a-5b32648b96a3",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Thing",
+  "x-oold-instance-rdf-type": [
+    "schema:Thing"
+  ],
+  "title": "Thing",
+  "description": "The most generic type of item.",
+  "type": "object",
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "id": "@id",
+    "type": {
+      "@id": "@type",
+      "@container": "@set"
+    },
+    "additionalType": {
+      "@id": "schema:additionalType",
+      "@type": "@vocab",
+      "@container": "@set"
+    },
+    "alternateName": {
+      "@id": "schema:alternateName",
+      "@container": "@set"
+    },
+    "description": {
+      "@id": "schema:description",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "description_text": {
+      "@id": "schema:description",
+      "@container": "@set"
+    },
+    "disambiguatingDescription": {
+      "@id": "schema:disambiguatingDescription",
+      "@container": "@set"
+    },
+    "identifier": {
+      "@id": "schema:identifier",
+      "@container": "@set"
+    },
+    "image": {
+      "@id": "schema:image",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "mainEntityOfPage": {
+      "@id": "schema:mainEntityOfPage",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "name": "schema:name",
+    "owner": {
+      "@id": "schema:owner",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "potentialAction": {
+      "@id": "schema:potentialAction",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "sameAs": {
+      "@id": "schema:sameAs",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "subjectOf": {
+      "@id": "schema:subjectOf",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "url": {
+      "@id": "schema:url",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "cvdCollectionDate": {
+      "@id": "schema:cvdCollectionDate",
+      "@container": "@set"
+    },
+    "cvdFacilityCounty": {
+      "@id": "schema:cvdFacilityCounty",
+      "@container": "@set"
+    },
+    "cvdFacilityId": {
+      "@id": "schema:cvdFacilityId",
+      "@container": "@set"
+    },
+    "cvdNumBeds": {
+      "@id": "schema:cvdNumBeds",
+      "@container": "@set"
+    },
+    "cvdNumBedsOcc": {
+      "@id": "schema:cvdNumBedsOcc",
+      "@container": "@set"
+    },
+    "cvdNumC19Died": {
+      "@id": "schema:cvdNumC19Died",
+      "@container": "@set"
+    },
+    "cvdNumC19HOPats": {
+      "@id": "schema:cvdNumC19HOPats",
+      "@container": "@set"
+    },
+    "cvdNumC19HospPats": {
+      "@id": "schema:cvdNumC19HospPats",
+      "@container": "@set"
+    },
+    "cvdNumC19MechVentPats": {
+      "@id": "schema:cvdNumC19MechVentPats",
+      "@container": "@set"
+    },
+    "cvdNumC19OFMechVentPats": {
+      "@id": "schema:cvdNumC19OFMechVentPats",
+      "@container": "@set"
+    },
+    "cvdNumC19OverflowPats": {
+      "@id": "schema:cvdNumC19OverflowPats",
+      "@container": "@set"
+    },
+    "cvdNumICUBeds": {
+      "@id": "schema:cvdNumICUBeds",
+      "@container": "@set"
+    },
+    "cvdNumICUBedsOcc": {
+      "@id": "schema:cvdNumICUBedsOcc",
+      "@container": "@set"
+    },
+    "cvdNumTotBeds": {
+      "@id": "schema:cvdNumTotBeds",
+      "@container": "@set"
+    },
+    "cvdNumVent": {
+      "@id": "schema:cvdNumVent",
+      "@container": "@set"
+    },
+    "cvdNumVentUse": {
+      "@id": "schema:cvdNumVentUse",
+      "@container": "@set"
+    },
+    "datePosted": {
+      "@id": "schema:datePosted",
+      "@container": "@set"
+    },
+    "eligibleQuantity": {
+      "@id": "schema:eligibleQuantity",
+      "@container": "@set"
+    },
+    "eligibleTransactionVolume": {
+      "@id": "schema:eligibleTransactionVolume",
+      "@container": "@set"
+    },
+    "maxPrice": {
+      "@id": "schema:maxPrice",
+      "@container": "@set"
+    },
+    "membershipPointsEarned": {
+      "@id": "schema:membershipPointsEarned",
+      "@container": "@set"
+    },
+    "minPrice": {
+      "@id": "schema:minPrice",
+      "@container": "@set"
+    },
+    "price": {
+      "@id": "schema:price",
+      "@container": "@set"
+    },
+    "priceCurrency": {
+      "@id": "schema:priceCurrency",
+      "@container": "@set"
+    },
+    "validForMemberTier": {
+      "@id": "schema:validForMemberTier",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validFrom": {
+      "@id": "schema:validFrom",
+      "@container": "@set"
+    },
+    "validThrough": {
+      "@id": "schema:validThrough",
+      "@container": "@set"
+    },
+    "valueAddedTaxIncluded": {
+      "@id": "schema:valueAddedTaxIncluded",
+      "@container": "@set"
+    },
+    "priceComponent": {
+      "@id": "schema:priceComponent",
+      "@container": "@set"
+    },
+    "priceType": {
+      "@id": "schema:priceType",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "priceType_text": {
+      "@id": "schema:priceType",
+      "@container": "@set"
+    },
+    "areaServed": {
+      "@id": "schema:areaServed",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "areaServed_text": {
+      "@id": "schema:areaServed",
+      "@container": "@set"
+    },
+    "availableLanguage": {
+      "@id": "schema:availableLanguage",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "availableLanguage_text": {
+      "@id": "schema:availableLanguage",
+      "@container": "@set"
+    },
+    "contactOption": {
+      "@id": "schema:contactOption",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "contactType": {
+      "@id": "schema:contactType",
+      "@container": "@set"
+    },
+    "email": {
+      "@id": "schema:email",
+      "@container": "@set"
+    },
+    "faxNumber": {
+      "@id": "schema:faxNumber",
+      "@container": "@set"
+    },
+    "hoursAvailable": {
+      "@id": "schema:hoursAvailable",
+      "@container": "@set"
+    },
+    "productSupported": {
+      "@id": "schema:productSupported",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "productSupported_text": {
+      "@id": "schema:productSupported",
+      "@container": "@set"
+    },
+    "telephone": {
+      "@id": "schema:telephone",
+      "@container": "@set"
+    },
+    "addressCountry": {
+      "@id": "schema:addressCountry",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "addressCountry_text": {
+      "@id": "schema:addressCountry",
+      "@container": "@set"
+    },
+    "addressRegion": {
+      "@id": "schema:addressRegion",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "addressRegion_text": {
+      "@id": "schema:addressRegion",
+      "@container": "@set"
+    },
+    "postalCode": {
+      "@id": "schema:postalCode",
+      "@container": "@set"
+    },
+    "postalCodePrefix": {
+      "@id": "schema:postalCodePrefix",
+      "@container": "@set"
+    },
+    "postalCodeRange": {
+      "@id": "schema:postalCodeRange",
+      "@container": "@set"
+    },
+    "additionalProperty": {
+      "@id": "schema:additionalProperty",
+      "@container": "@set"
+    },
+    "address": {
+      "@id": "schema:address",
+      "@container": "@set"
+    },
+    "aggregateRating": {
+      "@id": "schema:aggregateRating",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "amenityFeature": {
+      "@id": "schema:amenityFeature",
+      "@container": "@set"
+    },
+    "branchCode": {
+      "@id": "schema:branchCode",
+      "@container": "@set"
+    },
+    "containedInPlace": {
+      "@id": "schema:containedInPlace",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "containsPlace": {
+      "@id": "schema:containsPlace",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "event": {
+      "@id": "schema:event",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "geo": {
+      "@id": "schema:geo",
+      "@container": "@set"
+    },
+    "geoContains": {
+      "@id": "schema:geoContains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "geoCoveredBy": {
+      "@id": "schema:geoCoveredBy",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "geoCovers": {
+      "@id": "schema:geoCovers",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "geoCrosses": {
+      "@id": "schema:geoCrosses",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "geoDisjoint": {
+      "@id": "schema:geoDisjoint",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "geoEquals": {
+      "@id": "schema:geoEquals",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "geoIntersects": {
+      "@id": "schema:geoIntersects",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "geoOverlaps": {
+      "@id": "schema:geoOverlaps",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "geoTouches": {
+      "@id": "schema:geoTouches",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "geoWithin": {
+      "@id": "schema:geoWithin",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "globalLocationNumber": {
+      "@id": "schema:globalLocationNumber",
+      "@container": "@set"
+    },
+    "hasCertification": {
+      "@id": "schema:hasCertification",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "hasDriveThroughService": {
+      "@id": "schema:hasDriveThroughService",
+      "@container": "@set"
+    },
+    "hasGS1DigitalLink": {
+      "@id": "schema:hasGS1DigitalLink",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "hasMap": {
+      "@id": "schema:hasMap",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "isAccessibleForFree": {
+      "@id": "schema:isAccessibleForFree",
+      "@container": "@set"
+    },
+    "isicV4": {
+      "@id": "schema:isicV4",
+      "@container": "@set"
+    },
+    "keywords": {
+      "@id": "schema:keywords",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "keywords_text": {
+      "@id": "schema:keywords",
+      "@container": "@set"
+    },
+    "latitude": {
+      "@id": "schema:latitude",
+      "@container": "@set"
+    },
+    "logo": {
+      "@id": "schema:logo",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "longitude": {
+      "@id": "schema:longitude",
+      "@container": "@set"
+    },
+    "maximumAttendeeCapacity": {
+      "@id": "schema:maximumAttendeeCapacity",
+      "@container": "@set"
+    },
+    "openingHoursSpecification": {
+      "@id": "schema:openingHoursSpecification",
+      "@container": "@set"
+    },
+    "photo": {
+      "@id": "schema:photo",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "publicAccess": {
+      "@id": "schema:publicAccess",
+      "@container": "@set"
+    },
+    "review": {
+      "@id": "schema:review",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "slogan": {
+      "@id": "schema:slogan",
+      "@container": "@set"
+    },
+    "smokingAllowed": {
+      "@id": "schema:smokingAllowed",
+      "@container": "@set"
+    },
+    "specialOpeningHoursSpecification": {
+      "@id": "schema:specialOpeningHoursSpecification",
+      "@container": "@set"
+    },
+    "tourBookingPage": {
+      "@id": "schema:tourBookingPage",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "appliesToDeliveryMethod": {
+      "@id": "schema:appliesToDeliveryMethod",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "eligibleRegion": {
+      "@id": "schema:eligibleRegion",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "eligibleRegion_text": {
+      "@id": "schema:eligibleRegion",
+      "@container": "@set"
+    },
+    "ineligibleRegion": {
+      "@id": "schema:ineligibleRegion",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "ineligibleRegion_text": {
+      "@id": "schema:ineligibleRegion",
+      "@container": "@set"
+    },
+    "engineDisplacement": {
+      "@id": "schema:engineDisplacement",
+      "@container": "@set"
+    },
+    "enginePower": {
+      "@id": "schema:enginePower",
+      "@container": "@set"
+    },
+    "engineType": {
+      "@id": "schema:engineType",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "engineType_text": {
+      "@id": "schema:engineType",
+      "@container": "@set"
+    },
+    "fuelType": {
+      "@id": "schema:fuelType",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "fuelType_text": {
+      "@id": "schema:fuelType",
+      "@container": "@set"
+    },
+    "torque": {
+      "@id": "schema:torque",
+      "@container": "@set"
+    },
+    "data": {
+      "@id": "schema:data",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "source": {
+      "@id": "schema:source",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "timestamp": {
+      "@id": "schema:timestamp",
+      "@type": "xsd:dateTime",
+      "@container": "@set"
+    },
+    "errorCode": {
+      "@id": "schema:errorCode",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "errorCode_text": {
+      "@id": "schema:errorCode",
+      "@container": "@set"
+    },
+    "currency": {
+      "@id": "schema:currency",
+      "@container": "@set"
+    },
+    "currentExchangeRate": {
+      "@id": "schema:currentExchangeRate",
+      "@container": "@set"
+    },
+    "exchangeRateSpread": {
+      "@id": "schema:exchangeRateSpread",
+      "@container": "@set"
+    },
+    "box": {
+      "@id": "schema:box",
+      "@container": "@set"
+    },
+    "circle": {
+      "@id": "schema:circle",
+      "@container": "@set"
+    },
+    "elevation": {
+      "@id": "schema:elevation",
+      "@container": "@set"
+    },
+    "line": {
+      "@id": "schema:line",
+      "@container": "@set"
+    },
+    "polygon": {
+      "@id": "schema:polygon",
+      "@container": "@set"
+    },
+    "geoMidpoint": {
+      "@id": "schema:geoMidpoint",
+      "@container": "@set"
+    },
+    "geoRadius": {
+      "@id": "schema:geoRadius",
+      "@container": "@set"
+    },
+    "endTime": {
+      "@id": "schema:endTime",
+      "@container": "@set"
+    },
+    "interactionService": {
+      "@id": "schema:interactionService",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "interactionType": {
+      "@id": "schema:interactionType",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "location": {
+      "@id": "schema:location",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "location_text": {
+      "@id": "schema:location",
+      "@container": "@set"
+    },
+    "startTime": {
+      "@id": "schema:startTime",
+      "@container": "@set"
+    },
+    "userInteractionCount": {
+      "@id": "schema:userInteractionCount",
+      "@container": "@set"
+    },
+    "maxValue": {
+      "@id": "schema:maxValue",
+      "@container": "@set"
+    },
+    "measurementMethod": {
+      "@id": "schema:measurementMethod",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "measurementMethod_text": {
+      "@id": "schema:measurementMethod",
+      "@container": "@set"
+    },
+    "measurementTechnique": {
+      "@id": "schema:measurementTechnique",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "measurementTechnique_text": {
+      "@id": "schema:measurementTechnique",
+      "@container": "@set"
+    },
+    "minValue": {
+      "@id": "schema:minValue",
+      "@container": "@set"
+    },
+    "propertyID": {
+      "@id": "schema:propertyID",
+      "@container": "@set"
+    },
+    "unitCode": {
+      "@id": "schema:unitCode",
+      "@container": "@set"
+    },
+    "unitText": {
+      "@id": "schema:unitText",
+      "@container": "@set"
+    },
+    "value": {
+      "@id": "schema:value",
+      "@container": "@set"
+    },
+    "valueReference": {
+      "@id": "schema:valueReference",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "valueReference_text": {
+      "@id": "schema:valueReference",
+      "@container": "@set"
+    },
+    "duration": {
+      "@id": "schema:duration",
+      "@container": "@set"
+    },
+    "median": {
+      "@id": "schema:median",
+      "@container": "@set"
+    },
+    "percentile10": {
+      "@id": "schema:percentile10",
+      "@container": "@set"
+    },
+    "percentile25": {
+      "@id": "schema:percentile25",
+      "@container": "@set"
+    },
+    "percentile75": {
+      "@id": "schema:percentile75",
+      "@container": "@set"
+    },
+    "percentile90": {
+      "@id": "schema:percentile90",
+      "@container": "@set"
+    },
+    "calories": {
+      "@id": "schema:calories",
+      "@container": "@set"
+    },
+    "carbohydrateContent": {
+      "@id": "schema:carbohydrateContent",
+      "@container": "@set"
+    },
+    "cholesterolContent": {
+      "@id": "schema:cholesterolContent",
+      "@container": "@set"
+    },
+    "fatContent": {
+      "@id": "schema:fatContent",
+      "@container": "@set"
+    },
+    "fiberContent": {
+      "@id": "schema:fiberContent",
+      "@container": "@set"
+    },
+    "proteinContent": {
+      "@id": "schema:proteinContent",
+      "@container": "@set"
+    },
+    "saturatedFatContent": {
+      "@id": "schema:saturatedFatContent",
+      "@container": "@set"
+    },
+    "servingSize": {
+      "@id": "schema:servingSize",
+      "@container": "@set"
+    },
+    "sodiumContent": {
+      "@id": "schema:sodiumContent",
+      "@container": "@set"
+    },
+    "sugarContent": {
+      "@id": "schema:sugarContent",
+      "@container": "@set"
+    },
+    "transFatContent": {
+      "@id": "schema:transFatContent",
+      "@container": "@set"
+    },
+    "unsaturatedFatContent": {
+      "@id": "schema:unsaturatedFatContent",
+      "@container": "@set"
+    },
+    "marginOfError": {
+      "@id": "schema:marginOfError",
+      "@container": "@set"
+    },
+    "measuredProperty": {
+      "@id": "schema:measuredProperty",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "measurementDenominator": {
+      "@id": "schema:measurementDenominator",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "measurementQualifier": {
+      "@id": "schema:measurementQualifier",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "observationAbout": {
+      "@id": "schema:observationAbout",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "observationDate": {
+      "@id": "schema:observationDate",
+      "@container": "@set"
+    },
+    "observationPeriod": {
+      "@id": "schema:observationPeriod",
+      "@container": "@set"
+    },
+    "variableMeasured": {
+      "@id": "schema:variableMeasured",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "variableMeasured_text": {
+      "@id": "schema:variableMeasured",
+      "@container": "@set"
+    },
+    "deliveryTime": {
+      "@id": "schema:deliveryTime",
+      "@container": "@set"
+    },
+    "depth": {
+      "@id": "schema:depth",
+      "@container": "@set"
+    },
+    "doesNotShip": {
+      "@id": "schema:doesNotShip",
+      "@container": "@set"
+    },
+    "hasShippingService": {
+      "@id": "schema:hasShippingService",
+      "@container": "@set"
+    },
+    "height": {
+      "@id": "schema:height",
+      "@container": "@set"
+    },
+    "shippingDestination": {
+      "@id": "schema:shippingDestination",
+      "@container": "@set"
+    },
+    "shippingOrigin": {
+      "@id": "schema:shippingOrigin",
+      "@container": "@set"
+    },
+    "shippingRate": {
+      "@id": "schema:shippingRate",
+      "@container": "@set"
+    },
+    "weight": {
+      "@id": "schema:weight",
+      "@container": "@set"
+    },
+    "width": {
+      "@id": "schema:width",
+      "@container": "@set"
+    },
+    "closes": {
+      "@id": "schema:closes",
+      "@type": "xsd:time",
+      "@container": "@set"
+    },
+    "dayOfWeek": {
+      "@id": "schema:dayOfWeek",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "opens": {
+      "@id": "schema:opens",
+      "@type": "xsd:time",
+      "@container": "@set"
+    },
+    "orderDelivery": {
+      "@id": "schema:orderDelivery",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "orderedItem": {
+      "@id": "schema:orderedItem",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "orderItemNumber": {
+      "@id": "schema:orderItemNumber",
+      "@container": "@set"
+    },
+    "orderItemStatus": {
+      "@id": "schema:orderItemStatus",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "orderQuantity": {
+      "@id": "schema:orderQuantity",
+      "@container": "@set"
+    },
+    "acquiredFrom": {
+      "@id": "schema:acquiredFrom",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "ownedFrom": {
+      "@id": "schema:ownedFrom",
+      "@type": "xsd:dateTime",
+      "@container": "@set"
+    },
+    "ownedThrough": {
+      "@id": "schema:ownedThrough",
+      "@type": "xsd:dateTime",
+      "@container": "@set"
+    },
+    "typeOfGood": {
+      "@id": "schema:typeOfGood",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "appliesToPaymentMethod": {
+      "@id": "schema:appliesToPaymentMethod",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "addressLocality": {
+      "@id": "schema:addressLocality",
+      "@container": "@set"
+    },
+    "extendedAddress": {
+      "@id": "schema:extendedAddress",
+      "@container": "@set"
+    },
+    "postOfficeBoxNumber": {
+      "@id": "schema:postOfficeBoxNumber",
+      "@container": "@set"
+    },
+    "streetAddress": {
+      "@id": "schema:streetAddress",
+      "@container": "@set"
+    },
+    "postalCodeBegin": {
+      "@id": "schema:postalCodeBegin",
+      "@container": "@set"
+    },
+    "postalCodeEnd": {
+      "@id": "schema:postalCodeEnd",
+      "@container": "@set"
+    },
+    "downPayment": {
+      "@id": "schema:downPayment",
+      "@container": "@set"
+    },
+    "earlyPrepaymentPenalty": {
+      "@id": "schema:earlyPrepaymentPenalty",
+      "@container": "@set"
+    },
+    "loanPaymentAmount": {
+      "@id": "schema:loanPaymentAmount",
+      "@container": "@set"
+    },
+    "loanPaymentFrequency": {
+      "@id": "schema:loanPaymentFrequency",
+      "@container": "@set"
+    },
+    "numberOfLoanPayments": {
+      "@id": "schema:numberOfLoanPayments",
+      "@container": "@set"
+    },
+    "businessDays": {
+      "@id": "schema:businessDays",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "cutoffTime": {
+      "@id": "schema:cutoffTime",
+      "@type": "xsd:time",
+      "@container": "@set"
+    },
+    "numItems": {
+      "@id": "schema:numItems",
+      "@container": "@set"
+    },
+    "orderValue": {
+      "@id": "schema:orderValue",
+      "@container": "@set"
+    },
+    "seasonalOverride": {
+      "@id": "schema:seasonalOverride",
+      "@container": "@set"
+    },
+    "transitTime": {
+      "@id": "schema:transitTime",
+      "@container": "@set"
+    },
+    "handlingTime": {
+      "@id": "schema:handlingTime",
+      "@container": "@set"
+    },
+    "freeShippingThreshold": {
+      "@id": "schema:freeShippingThreshold",
+      "@container": "@set"
+    },
+    "isUnlabelledFallback": {
+      "@id": "schema:isUnlabelledFallback",
+      "@container": "@set"
+    },
+    "orderPercentage": {
+      "@id": "schema:orderPercentage",
+      "@container": "@set"
+    },
+    "weightPercentage": {
+      "@id": "schema:weightPercentage",
+      "@container": "@set"
+    },
+    "fulfillmentType": {
+      "@id": "schema:fulfillmentType",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "shippingConditions": {
+      "@id": "schema:shippingConditions",
+      "@container": "@set"
+    },
+    "amountOfThisGood": {
+      "@id": "schema:amountOfThisGood",
+      "@container": "@set"
+    },
+    "businessFunction": {
+      "@id": "schema:businessFunction",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "billingDuration": {
+      "@id": "schema:billingDuration",
+      "@container": "@set"
+    },
+    "billingIncrement": {
+      "@id": "schema:billingIncrement",
+      "@container": "@set"
+    },
+    "billingStart": {
+      "@id": "schema:billingStart",
+      "@container": "@set"
+    },
+    "priceComponentType": {
+      "@id": "schema:priceComponentType",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "referenceQuantity": {
+      "@id": "schema:referenceQuantity",
+      "@container": "@set"
+    },
+    "durationOfWarranty": {
+      "@id": "schema:durationOfWarranty",
+      "@container": "@set"
+    },
+    "warrantyScope": {
+      "@id": "schema:warrantyScope",
+      "@type": "@id",
+      "@container": "@set"
+    }
+  },
+  "properties": {
+    "id": {
+      "title": "ID",
+      "description": "The IRI identifying this item.",
+      "type": "string",
+      "format": "iri-reference"
+    },
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Thing"
+      ]
+    },
+    "additionalType": {
+      "title": "Additional Type",
+      "description": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the\n    use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href=\"https://schema.org/docs/styleguide.html\">style guide</a>.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uri"
+      }
+    },
+    "alternateName": {
+      "title": "Alternate Name",
+      "description": "An alias for the item.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "description": {
+      "title": "Description",
+      "description": "A description of the item.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "TextObject.schema.json"
+      }
+    },
+    "description_text": {
+      "title": "Description (text)",
+      "description": "A description of the item.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "disambiguatingDescription": {
+      "title": "Disambiguating Description",
+      "description": "A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "identifier": {
+      "title": "Identifier",
+      "description": "The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.\n        ",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: PropertyValue [value-type]: PropertyValue -> StructuredValue -> Intangible -> Thing",
+        "anyOf": [
+          {
+            "$ref": "Text.schema.json"
+          },
+          {
+            "$ref": "URL.schema.json"
+          },
+          {
+            "$ref": "PropertyValue.schema.json"
+          }
+        ]
+      }
+    },
+    "image": {
+      "title": "Image",
+      "description": "An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "URL.schema.json"
+          },
+          {
+            "type": "string",
+            "format": "iri-reference",
+            "x-oold-range": "ImageObject.schema.json"
+          }
+        ]
+      }
+    },
+    "mainEntityOfPage": {
+      "title": "Main Entity Of Page",
+      "description": "Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "URL.schema.json"
+          },
+          {
+            "type": "string",
+            "format": "iri-reference",
+            "x-oold-range": "CreativeWork.schema.json"
+          }
+        ]
+      }
+    },
+    "name": {
+      "title": "Name",
+      "description": "The name of the item.",
+      "$ref": "Text.schema.json"
+    },
+    "owner": {
+      "title": "Owner",
+      "description": "A person or organization who owns this Thing.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "Organization.schema.json",
+          "Person.schema.json"
+        ]
+      }
+    },
+    "potentialAction": {
+      "title": "Potential Action",
+      "description": "Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Action.schema.json"
+      }
+    },
+    "sameAs": {
+      "title": "Same As",
+      "description": "URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.",
+      "type": "array",
+      "items": {
+        "$ref": "URL.schema.json"
+      }
+    },
+    "subjectOf": {
+      "title": "Subject Of",
+      "description": "A CreativeWork or Event about this Thing.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "CreativeWork.schema.json",
+          "Event.schema.json"
+        ]
+      }
+    },
+    "url": {
+      "title": "Url",
+      "description": "URL of the item.",
+      "type": "array",
+      "items": {
+        "$ref": "URL.schema.json"
+      }
+    }
+  }
+}

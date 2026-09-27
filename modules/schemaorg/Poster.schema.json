@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "CreativeWork.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "CreativeWork.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Poster.schema.json",
+  "x-oold-uuid": "d2103f51-7ba0-53a9-afc3-b7ca1c94b2da",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Poster",
+  "x-oold-instance-rdf-type": [
+    "schema:Poster"
+  ],
+  "title": "Poster",
+  "description": "A large, usually printed placard, bill, or announcement, often illustrated, that is posted to advertise or publicize something.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Poster"
+      ]
+    }
+  }
+}

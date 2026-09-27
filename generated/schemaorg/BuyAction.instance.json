@@ -1,0 +1,8 @@
+{
+  "$schema": "BuyAction.schema.json",
+  "@context": "BuyAction.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:BuyAction"
+  ]
+}

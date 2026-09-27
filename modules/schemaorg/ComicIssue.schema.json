@@ -1,0 +1,123 @@
+{
+  "@context": [
+    "PublicationIssue.schema.json",
+    {
+      "artist": {
+        "@id": "schema:artist",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "colorist": {
+        "@id": "schema:colorist",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "inker": {
+        "@id": "schema:inker",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "letterer": {
+        "@id": "schema:letterer",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "penciler": {
+        "@id": "schema:penciler",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "variantCover": {
+        "@id": "schema:variantCover",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "PublicationIssue.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ComicIssue.schema.json",
+  "x-oold-uuid": "63605e1b-dc4e-5335-8b41-07857e6c7a3f",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/ComicIssue",
+  "x-oold-instance-rdf-type": [
+    "schema:ComicIssue"
+  ],
+  "title": "ComicIssue",
+  "description": "Individual comic issues are serially published as\n    \tpart of a larger series. For the sake of consistency, even one-shot issues\n    \tbelong to a series comprised of a single issue. All comic issues can be\n    \tuniquely identified by: the combination of the name and volume number of the\n    \tseries to which the issue belongs; the issue number; and the variant\n    \tdescription of the issue (if any).",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:ComicIssue"
+      ]
+    },
+    "artist": {
+      "title": "Artist",
+      "description": "The primary artist for a work\n    \tin a medium other than pencils or digital line art--for example, if the\n    \tprimary artwork is done in watercolors or digital paints.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Person.schema.json"
+      }
+    },
+    "colorist": {
+      "title": "Colorist",
+      "description": "The individual who adds color to inked drawings.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Person.schema.json"
+      }
+    },
+    "inker": {
+      "title": "Inker",
+      "description": "The individual who traces over the pencil drawings in ink after pencils are complete.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Person.schema.json"
+      }
+    },
+    "letterer": {
+      "title": "Letterer",
+      "description": "The individual who adds lettering, including speech balloons and sound effects, to artwork.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Person.schema.json"
+      }
+    },
+    "penciler": {
+      "title": "Penciler",
+      "description": "The individual who draws the primary narrative artwork.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Person.schema.json"
+      }
+    },
+    "variantCover": {
+      "title": "Variant Cover",
+      "description": "A description of the variant cover\n    \tfor the issue, if the issue is a variant printing. For example, \"Bryan Hitch\n    \tVariant Cover\" or \"2nd Printing Variant\".",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    }
+  }
+}

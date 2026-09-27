@@ -1,0 +1,105 @@
+{
+  "@context": [
+    "Enumeration.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Enumeration.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "HealthAspectEnumeration.schema.json",
+  "x-oold-uuid": "4b75ffce-67aa-5afd-bc0d-c2ad065d84d9",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/HealthAspectEnumeration",
+  "x-oold-instance-rdf-type": [
+    "schema:HealthAspectEnumeration"
+  ],
+  "title": "HealthAspectEnumeration",
+  "description": "HealthAspectEnumeration enumerates several aspects of health content online, each of which might be described using [[hasHealthAspect]] and [[HealthTopicContent]].",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:HealthAspectEnumeration"
+      ]
+    }
+  },
+  "$defs": {
+    "member": {
+      "title": "HealthAspectEnumeration member",
+      "description": "One of the 29 member instances of HealthAspectEnumeration.",
+      "type": "string",
+      "format": "iri-reference",
+      "enum": [
+        "schema:AllergiesHealthAspect",
+        "schema:BenefitsHealthAspect",
+        "schema:CausesHealthAspect",
+        "schema:ContagiousnessHealthAspect",
+        "schema:EffectivenessHealthAspect",
+        "schema:GettingAccessHealthAspect",
+        "schema:HowItWorksHealthAspect",
+        "schema:HowOrWhereHealthAspect",
+        "schema:IngredientsHealthAspect",
+        "schema:LivingWithHealthAspect",
+        "schema:MayTreatHealthAspect",
+        "schema:MisconceptionsHealthAspect",
+        "schema:OverviewHealthAspect",
+        "schema:PatientExperienceHealthAspect",
+        "schema:PregnancyHealthAspect",
+        "schema:PreventionHealthAspect",
+        "schema:PrognosisHealthAspect",
+        "schema:RelatedTopicsHealthAspect",
+        "schema:RisksOrComplicationsHealthAspect",
+        "schema:SafetyHealthAspect",
+        "schema:ScreeningHealthAspect",
+        "schema:SeeDoctorHealthAspect",
+        "schema:SelfCareHealthAspect",
+        "schema:SideEffectsHealthAspect",
+        "schema:StagesHealthAspect",
+        "schema:SymptomsHealthAspect",
+        "schema:TreatmentsHealthAspect",
+        "schema:TypesHealthAspect",
+        "schema:UsageOrScheduleHealthAspect"
+      ],
+      "x-oold-ui-enum-titles": [
+        "AllergiesHealthAspect",
+        "BenefitsHealthAspect",
+        "CausesHealthAspect",
+        "ContagiousnessHealthAspect",
+        "EffectivenessHealthAspect",
+        "GettingAccessHealthAspect",
+        "HowItWorksHealthAspect",
+        "HowOrWhereHealthAspect",
+        "IngredientsHealthAspect",
+        "LivingWithHealthAspect",
+        "MayTreatHealthAspect",
+        "MisconceptionsHealthAspect",
+        "OverviewHealthAspect",
+        "PatientExperienceHealthAspect",
+        "PregnancyHealthAspect",
+        "PreventionHealthAspect",
+        "PrognosisHealthAspect",
+        "RelatedTopicsHealthAspect",
+        "RisksOrComplicationsHealthAspect",
+        "SafetyHealthAspect",
+        "ScreeningHealthAspect",
+        "SeeDoctorHealthAspect",
+        "SelfCareHealthAspect",
+        "SideEffectsHealthAspect",
+        "StagesHealthAspect",
+        "SymptomsHealthAspect",
+        "TreatmentsHealthAspect",
+        "TypesHealthAspect",
+        "UsageOrScheduleHealthAspect"
+      ]
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "$schema": "ConsumeAction.schema.json",
+  "@context": "ConsumeAction.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:ConsumeAction"
+  ]
+}

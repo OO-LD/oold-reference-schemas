@@ -1,0 +1,108 @@
+{
+  "@context": [
+    "Intangible.schema.json",
+    {
+      "dateCreated": {
+        "@id": "schema:dateCreated",
+        "@container": "@set"
+      },
+      "dateDeleted": {
+        "@id": "schema:dateDeleted",
+        "@container": "@set"
+      },
+      "dateModified": {
+        "@id": "schema:dateModified",
+        "@container": "@set"
+      },
+      "item": {
+        "@id": "schema:item",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Intangible.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "DataFeedItem.schema.json",
+  "x-oold-uuid": "8fc57cff-a8f1-58d2-bfba-a2ac22937a5e",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/DataFeedItem",
+  "x-oold-instance-rdf-type": [
+    "schema:DataFeedItem"
+  ],
+  "title": "DataFeedItem",
+  "description": "A single item within a larger data feed.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:DataFeedItem"
+      ]
+    },
+    "dateCreated": {
+      "title": "Date Created",
+      "description": "The date on which the CreativeWork was created or the item was added to a DataFeed.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Date.schema.json"
+          },
+          {
+            "$ref": "DateTime.schema.json"
+          }
+        ]
+      }
+    },
+    "dateDeleted": {
+      "title": "Date Deleted",
+      "description": "The datetime the item was removed from the DataFeed.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Date.schema.json"
+          },
+          {
+            "$ref": "DateTime.schema.json"
+          }
+        ]
+      }
+    },
+    "dateModified": {
+      "title": "Date Modified",
+      "description": "The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Date.schema.json"
+          },
+          {
+            "$ref": "DateTime.schema.json"
+          }
+        ]
+      }
+    },
+    "item": {
+      "title": "Item",
+      "description": "An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists').",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Thing.schema.json"
+      }
+    }
+  }
+}

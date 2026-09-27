@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "FoodEstablishment.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "FoodEstablishment.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "BarOrPub.schema.json",
+  "x-oold-uuid": "b1bf6e91-26f0-5d69-b3bf-12a0755404ba",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/BarOrPub",
+  "x-oold-instance-rdf-type": [
+    "schema:BarOrPub"
+  ],
+  "title": "BarOrPub",
+  "description": "A bar or pub.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:BarOrPub"
+      ]
+    }
+  }
+}

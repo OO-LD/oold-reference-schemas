@@ -1,0 +1,75 @@
+{
+  "@context": [
+    "Intangible.schema.json",
+    {
+      "numberOfBeds": {
+        "@id": "schema:numberOfBeds",
+        "@container": "@set"
+      },
+      "typeOfBed": {
+        "@id": "schema:typeOfBed",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "typeOfBed_text": {
+        "@id": "schema:typeOfBed",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Intangible.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "BedDetails.schema.json",
+  "x-oold-uuid": "42bed6ab-8ce9-501a-9182-3ca7cde912f0",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/BedDetails",
+  "x-oold-instance-rdf-type": [
+    "schema:BedDetails"
+  ],
+  "title": "BedDetails",
+  "description": "An entity holding detailed information about the available bed types, e.g. the quantity of twin beds for a hotel room. For the single case of just one bed of a certain type, you can use bed directly with a text. See also [[BedType]] (under development).",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:BedDetails"
+      ]
+    },
+    "numberOfBeds": {
+      "title": "Number Of Beds",
+      "description": "The quantity of the given bed type available in the HotelRoom, Suite, House, or Apartment.",
+      "type": "array",
+      "items": {
+        "$ref": "Number.schema.json"
+      }
+    },
+    "typeOfBed": {
+      "title": "Type Of Bed",
+      "description": "The type of bed to which the BedDetail refers, i.e. the type of bed available in the quantity indicated by quantity.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "BedType.schema.json"
+      }
+    },
+    "typeOfBed_text": {
+      "title": "Type Of Bed (text)",
+      "description": "The type of bed to which the BedDetail refers, i.e. the type of bed available in the quantity indicated by quantity.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    }
+  }
+}

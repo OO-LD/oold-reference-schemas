@@ -1,0 +1,8 @@
+{
+  "$schema": "ServiceChannel.schema.json",
+  "@context": "ServiceChannel.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:ServiceChannel"
+  ]
+}

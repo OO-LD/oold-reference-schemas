@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "LocalBusiness.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "LocalBusiness.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Store.schema.json",
+  "x-oold-uuid": "42b0100a-3665-5fde-960a-26d46fbd2e6d",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Store",
+  "x-oold-instance-rdf-type": [
+    "schema:Store"
+  ],
+  "title": "Store",
+  "description": "A retail good store.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Store"
+      ]
+    }
+  }
+}

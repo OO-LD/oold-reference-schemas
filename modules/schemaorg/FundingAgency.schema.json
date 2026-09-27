@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Project.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Project.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "FundingAgency.schema.json",
+  "x-oold-uuid": "31996161-c438-5b57-9ca3-9b90e1eefa06",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/FundingAgency",
+  "x-oold-instance-rdf-type": [
+    "schema:FundingAgency"
+  ],
+  "title": "FundingAgency",
+  "description": "A FundingAgency is an organization that implements one or more [[FundingScheme]]s and manages\n    the granting process (via [[Grant]]s, typically [[MonetaryGrant]]s).\n    A funding agency is not always required for grant funding, e.g. philanthropic giving, corporate sponsorship etc.\n    \nExamples of funding agencies include ERC, REA, NIH, Bill and Melinda Gates Foundation, ...\n    ",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:FundingAgency"
+      ]
+    }
+  }
+}

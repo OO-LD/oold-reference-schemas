@@ -1,0 +1,58 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "id": "@id",
+    "type": "@type",
+    "value": {
+      "@id": "schema:value",
+      "@container": "@set"
+    },
+    "unitCode": {
+      "@id": "schema:unitCode",
+      "@container": "@set"
+    },
+    "unitText": {
+      "@id": "schema:unitText",
+      "@container": "@set"
+    }
+  },
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Quantity.schema.json",
+  "x-oold-uuid": "2e6ff24b-7457-55c5-939a-7d1d5b4e5f95",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Quantity",
+  "x-oold-instance-rdf-type": [
+    "schema:Quantity"
+  ],
+  "title": "Quantity",
+  "description": "Quantities such as distance, time, mass, weight, etc.",
+  "type": "object",
+  "properties": {
+    "value": {
+      "title": "Value",
+      "description": "The numeric value of the quantity.",
+      "type": "array",
+      "items": {
+        "$ref": "Number.schema.json"
+      }
+    },
+    "unitCode": {
+      "title": "Unit Code",
+      "description": "The unit of measurement (UN/CEFACT code or a URL).",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "unitText": {
+      "title": "Unit Text",
+      "description": "A string indicating the unit of measurement.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    }
+  }
+}

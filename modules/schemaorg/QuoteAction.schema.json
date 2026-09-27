@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "TradeAction.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "TradeAction.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "QuoteAction.schema.json",
+  "x-oold-uuid": "211d34d0-871a-597b-bd96-66eea5803088",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/QuoteAction",
+  "x-oold-instance-rdf-type": [
+    "schema:QuoteAction"
+  ],
+  "title": "QuoteAction",
+  "description": "An agent quotes/estimates/appraises an object/product/service with a price at a location/store.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:QuoteAction"
+      ]
+    }
+  }
+}

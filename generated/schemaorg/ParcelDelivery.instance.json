@@ -1,0 +1,8 @@
+{
+  "$schema": "ParcelDelivery.schema.json",
+  "@context": "ParcelDelivery.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:ParcelDelivery"
+  ]
+}

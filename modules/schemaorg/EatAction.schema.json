@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "ConsumeAction.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "ConsumeAction.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "EatAction.schema.json",
+  "x-oold-uuid": "32e33e55-f0da-5826-8aea-b4da9af252a6",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/EatAction",
+  "x-oold-instance-rdf-type": [
+    "schema:EatAction"
+  ],
+  "title": "EatAction",
+  "description": "The act of swallowing solid objects.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:EatAction"
+      ]
+    }
+  }
+}

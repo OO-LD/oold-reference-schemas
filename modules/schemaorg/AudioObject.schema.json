@@ -1,0 +1,87 @@
+{
+  "@context": [
+    "MediaObject.schema.json",
+    {
+      "caption": {
+        "@id": "schema:caption",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "caption_text": {
+        "@id": "schema:caption",
+        "@container": "@set"
+      },
+      "embeddedTextCaption": {
+        "@id": "schema:embeddedTextCaption",
+        "@container": "@set"
+      },
+      "transcript": {
+        "@id": "schema:transcript",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "MediaObject.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "AudioObject.schema.json",
+  "x-oold-uuid": "2f439d57-dd9a-5cac-9d21-017b6397b12d",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/AudioObject",
+  "x-oold-instance-rdf-type": [
+    "schema:AudioObject"
+  ],
+  "title": "AudioObject",
+  "description": "An audio file.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:AudioObject"
+      ]
+    },
+    "caption": {
+      "title": "Caption",
+      "description": "The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the [[encodingFormat]].",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "MediaObject.schema.json"
+      }
+    },
+    "caption_text": {
+      "title": "Caption (text)",
+      "description": "The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the [[encodingFormat]].",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "embeddedTextCaption": {
+      "title": "Embedded Text Caption",
+      "description": "Represents textual captioning from a [[MediaObject]], e.g. text of a 'meme'.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "transcript": {
+      "title": "Transcript",
+      "description": "If this MediaObject is an AudioObject or VideoObject, the transcript of that object.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    }
+  }
+}

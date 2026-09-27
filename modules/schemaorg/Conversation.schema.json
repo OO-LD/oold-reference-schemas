@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "CreativeWork.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "CreativeWork.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Conversation.schema.json",
+  "x-oold-uuid": "b5536f3b-c5de-5e42-9d03-27010b3ec160",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Conversation",
+  "x-oold-instance-rdf-type": [
+    "schema:Conversation"
+  ],
+  "title": "Conversation",
+  "description": "One or more messages between organizations or people on a particular topic. Individual messages can be linked to the conversation with isPartOf or hasPart properties.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Conversation"
+      ]
+    }
+  }
+}

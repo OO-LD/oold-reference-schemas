@@ -1,0 +1,50 @@
+{
+  "@context": [
+    "TradeAction.schema.json",
+    {
+      "deliveryMethod": {
+        "@id": "schema:deliveryMethod",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "TradeAction.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "OrderAction.schema.json",
+  "x-oold-uuid": "3b997643-3dd5-5618-92cc-84067b661067",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/OrderAction",
+  "x-oold-instance-rdf-type": [
+    "schema:OrderAction"
+  ],
+  "title": "OrderAction",
+  "description": "An agent orders an object/product/service to be delivered/sent.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:OrderAction"
+      ]
+    },
+    "deliveryMethod": {
+      "title": "Delivery Method",
+      "description": "A sub property of instrument. The method of delivery.",
+      "type": "array",
+      "items": {
+        "$ref": "DeliveryMethod.schema.json#/$defs/member",
+        "x-oold-range": "DeliveryMethod.schema.json"
+      }
+    }
+  }
+}

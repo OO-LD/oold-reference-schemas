@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "BodyOfWater.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "BodyOfWater.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "OceanBodyOfWater.schema.json",
+  "x-oold-uuid": "465bf9b3-33ec-54dc-8b64-2bfc4b397b78",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/OceanBodyOfWater",
+  "x-oold-instance-rdf-type": [
+    "schema:OceanBodyOfWater"
+  ],
+  "title": "OceanBodyOfWater",
+  "description": "An ocean (for example, the Pacific).",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:OceanBodyOfWater"
+      ]
+    }
+  }
+}

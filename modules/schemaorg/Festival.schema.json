@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Event.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Event.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Festival.schema.json",
+  "x-oold-uuid": "a8008c0d-1557-5f47-ab3b-7bc5f0a20419",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Festival",
+  "x-oold-instance-rdf-type": [
+    "schema:Festival"
+  ],
+  "title": "Festival",
+  "description": "Event type: Festival.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Festival"
+      ]
+    }
+  }
+}

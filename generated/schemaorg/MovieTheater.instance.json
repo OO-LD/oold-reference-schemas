@@ -1,0 +1,8 @@
+{
+  "$schema": "MovieTheater.schema.json",
+  "@context": "MovieTheater.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:MovieTheater"
+  ]
+}

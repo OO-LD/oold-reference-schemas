@@ -1,0 +1,8 @@
+{
+  "$schema": "GenderType.schema.json",
+  "@context": "GenderType.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:GenderType"
+  ]
+}

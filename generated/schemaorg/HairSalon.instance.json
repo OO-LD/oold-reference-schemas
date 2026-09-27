@@ -1,0 +1,8 @@
+{
+  "$schema": "HairSalon.schema.json",
+  "@context": "HairSalon.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:HairSalon"
+  ]
+}

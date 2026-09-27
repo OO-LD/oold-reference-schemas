@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "MedicalIndication.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "MedicalIndication.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ApprovedIndication.schema.json",
+  "x-oold-uuid": "3b72efcb-ddc0-5557-bdf1-8fc13700fc33",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/ApprovedIndication",
+  "x-oold-instance-rdf-type": [
+    "schema:ApprovedIndication"
+  ],
+  "title": "ApprovedIndication",
+  "description": "An indication for a medical therapy that has been formally specified or approved by a regulatory body that regulates use of the therapy; for example, the US FDA approves indications for most drugs in the US.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:ApprovedIndication"
+      ]
+    }
+  }
+}

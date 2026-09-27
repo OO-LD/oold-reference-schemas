@@ -1,0 +1,8 @@
+{
+  "$schema": "DeliveryChargeSpecification.schema.json",
+  "@context": "DeliveryChargeSpecification.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:DeliveryChargeSpecification"
+  ]
+}

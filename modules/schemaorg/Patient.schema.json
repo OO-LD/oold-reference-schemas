@@ -1,0 +1,85 @@
+{
+  "@context": [
+    "MedicalAudience.schema.json",
+    "Person.schema.json",
+    {
+      "diagnosis": {
+        "@id": "schema:diagnosis",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "drug": {
+        "@id": "schema:drug",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "healthCondition": {
+        "@id": "schema:healthCondition",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "MedicalAudience.schema.json"
+    },
+    {
+      "$ref": "Person.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Patient.schema.json",
+  "x-oold-uuid": "b5a2bc68-d457-58fb-a990-3931e83b19ba",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Patient",
+  "x-oold-instance-rdf-type": [
+    "schema:Patient"
+  ],
+  "title": "Patient",
+  "description": "A patient is any person recipient of health care services.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Patient"
+      ]
+    },
+    "diagnosis": {
+      "title": "Diagnosis",
+      "description": "One or more alternative conditions considered in the differential diagnosis process as output of a diagnosis process.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "MedicalCondition.schema.json"
+      }
+    },
+    "drug": {
+      "title": "Drug",
+      "description": "Specifying a drug or medicine used in a medication procedure.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Drug.schema.json"
+      }
+    },
+    "healthCondition": {
+      "title": "Health Condition",
+      "description": "Specifying the health condition(s) of a patient, medical study, or other target audience.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "MedicalCondition.schema.json"
+      }
+    }
+  }
+}

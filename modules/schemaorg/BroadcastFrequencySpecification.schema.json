@@ -1,0 +1,94 @@
+{
+  "@context": [
+    "Intangible.schema.json",
+    {
+      "broadcastFrequencyValue": {
+        "@id": "schema:broadcastFrequencyValue",
+        "@container": "@set"
+      },
+      "broadcastSignalModulation": {
+        "@id": "schema:broadcastSignalModulation",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "broadcastSignalModulation_text": {
+        "@id": "schema:broadcastSignalModulation",
+        "@container": "@set"
+      },
+      "broadcastSubChannel": {
+        "@id": "schema:broadcastSubChannel",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Intangible.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "BroadcastFrequencySpecification.schema.json",
+  "x-oold-uuid": "c5e720a9-d567-55ff-843a-a84c7799e6c7",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/BroadcastFrequencySpecification",
+  "x-oold-instance-rdf-type": [
+    "schema:BroadcastFrequencySpecification"
+  ],
+  "title": "BroadcastFrequencySpecification",
+  "description": "The frequency in MHz and the modulation used for a particular BroadcastService.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:BroadcastFrequencySpecification"
+      ]
+    },
+    "broadcastFrequencyValue": {
+      "title": "Broadcast Frequency Value",
+      "description": "The frequency in MHz for a particular broadcast.",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: QuantitativeValue [value-type]: QuantitativeValue -> StructuredValue -> Intangible -> Thing",
+        "anyOf": [
+          {
+            "$ref": "Number.schema.json"
+          },
+          {
+            "$ref": "QuantitativeValue.schema.json"
+          }
+        ]
+      }
+    },
+    "broadcastSignalModulation": {
+      "title": "Broadcast Signal Modulation",
+      "description": "The modulation (e.g. FM, AM, etc) used by a particular broadcast service.",
+      "type": "array",
+      "items": {
+        "$ref": "QualitativeValue.schema.json#/$defs/member",
+        "x-oold-range": "QualitativeValue.schema.json"
+      }
+    },
+    "broadcastSignalModulation_text": {
+      "title": "Broadcast Signal Modulation (text)",
+      "description": "The modulation (e.g. FM, AM, etc) used by a particular broadcast service.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "broadcastSubChannel": {
+      "title": "Broadcast Sub Channel",
+      "description": "The subchannel used for the broadcast.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Physician.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Physician.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "PhysiciansOffice.schema.json",
+  "x-oold-uuid": "6538fcfc-0793-52d9-86f5-3d16bd595f59",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/PhysiciansOffice",
+  "x-oold-instance-rdf-type": [
+    "schema:PhysiciansOffice"
+  ],
+  "title": "PhysiciansOffice",
+  "description": "A doctor's office or clinic.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:PhysiciansOffice"
+      ]
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "@context": [
+    "Action.schema.json",
+    {
+      "targetCollection": {
+        "@id": "schema:targetCollection",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Action.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "UpdateAction.schema.json",
+  "x-oold-uuid": "0b09aec0-7d67-5824-8309-16e7dbb885b7",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/UpdateAction",
+  "x-oold-instance-rdf-type": [
+    "schema:UpdateAction"
+  ],
+  "title": "UpdateAction",
+  "description": "The act of managing by changing/editing the state of the object.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:UpdateAction"
+      ]
+    },
+    "targetCollection": {
+      "title": "Target Collection",
+      "description": "A sub property of object. The collection target of the action.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Thing.schema.json"
+      }
+    }
+  }
+}

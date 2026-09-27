@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "CivicStructure.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "CivicStructure.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "RVPark.schema.json",
+  "x-oold-uuid": "0eb65d21-a7ce-50a0-99bc-87a17c663fd6",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/RVPark",
+  "x-oold-instance-rdf-type": [
+    "schema:RVPark"
+  ],
+  "title": "RVPark",
+  "description": "A place offering space for \"Recreational Vehicles\", Caravans, mobile homes and the like.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:RVPark"
+      ]
+    }
+  }
+}

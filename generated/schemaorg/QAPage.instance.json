@@ -1,0 +1,8 @@
+{
+  "$schema": "QAPage.schema.json",
+  "@context": "QAPage.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:QAPage"
+  ]
+}

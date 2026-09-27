@@ -1,0 +1,19 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "DateTime.schema.json",
+  "x-oold-uuid": "15468c7d-a2f8-5f44-a35d-b4f64f64d256",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/DateTime",
+  "x-oold-instance-rdf-type": [
+    "schema:DateTime"
+  ],
+  "title": "DateTime",
+  "description": "A combination of date and time of day in ISO 8601 format.",
+  "type": "string",
+  "format": "date-time"
+}

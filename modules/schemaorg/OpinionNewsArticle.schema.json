@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "NewsArticle.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "NewsArticle.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "OpinionNewsArticle.schema.json",
+  "x-oold-uuid": "5191ce80-b932-545c-9dc7-6a0d217fdcde",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/OpinionNewsArticle",
+  "x-oold-instance-rdf-type": [
+    "schema:OpinionNewsArticle"
+  ],
+  "title": "OpinionNewsArticle",
+  "description": "An [[OpinionNewsArticle]] is a [[NewsArticle]] that primarily expresses opinions rather than journalistic reporting of news and events. For example, a [[NewsArticle]] consisting of a column or [[Blog]]/[[BlogPosting]] entry in the Opinions section of a news publication. ",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:OpinionNewsArticle"
+      ]
+    }
+  }
+}

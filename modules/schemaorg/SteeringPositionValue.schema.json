@@ -1,0 +1,51 @@
+{
+  "@context": [
+    "QualitativeValue.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "QualitativeValue.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "SteeringPositionValue.schema.json",
+  "x-oold-uuid": "c340296a-5806-5186-9f0e-89677a1775c7",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/SteeringPositionValue",
+  "x-oold-instance-rdf-type": [
+    "schema:SteeringPositionValue"
+  ],
+  "title": "SteeringPositionValue",
+  "description": "A value indicating a steering position.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:SteeringPositionValue"
+      ]
+    }
+  },
+  "$defs": {
+    "member": {
+      "title": "SteeringPositionValue member",
+      "description": "One of the 2 member instances of SteeringPositionValue.",
+      "type": "string",
+      "format": "iri-reference",
+      "enum": [
+        "schema:LeftHandDriving",
+        "schema:RightHandDriving"
+      ],
+      "x-oold-ui-enum-titles": [
+        "LeftHandDriving",
+        "RightHandDriving"
+      ]
+    }
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "@context": [
+    "CreateAction.schema.json",
+    {
+      "foodEstablishment": {
+        "@id": "schema:foodEstablishment",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "foodEvent": {
+        "@id": "schema:foodEvent",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "recipe": {
+        "@id": "schema:recipe",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "CreateAction.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "CookAction.schema.json",
+  "x-oold-uuid": "0299a8b6-a296-5af1-b312-fc9cc896658d",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/CookAction",
+  "x-oold-instance-rdf-type": [
+    "schema:CookAction"
+  ],
+  "title": "CookAction",
+  "description": "The act of producing/preparing food.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:CookAction"
+      ]
+    },
+    "foodEstablishment": {
+      "title": "Food Establishment",
+      "description": "A sub property of location. The specific food establishment where the action occurred.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "FoodEstablishment.schema.json",
+          "Place.schema.json"
+        ]
+      }
+    },
+    "foodEvent": {
+      "title": "Food Event",
+      "description": "A sub property of location. The specific food event where the action occurred.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "FoodEvent.schema.json"
+      }
+    },
+    "recipe": {
+      "title": "Recipe",
+      "description": "A sub property of instrument. The recipe/instructions used to perform the action.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Recipe.schema.json"
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "SoftwareApplication.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "SoftwareApplication.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "OperatingSystem.schema.json",
+  "x-oold-uuid": "2b51b75d-780e-5543-9fd6-c6469b7cd157",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/OperatingSystem",
+  "x-oold-instance-rdf-type": [
+    "schema:OperatingSystem"
+  ],
+  "title": "OperatingSystem",
+  "description": "System software that manages computer hardware and software resources, and provides common services for computer programs.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:OperatingSystem"
+      ]
+    }
+  }
+}

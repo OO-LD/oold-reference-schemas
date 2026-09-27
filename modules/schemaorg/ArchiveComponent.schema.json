@@ -1,0 +1,86 @@
+{
+  "@context": [
+    "CreativeWork.schema.json",
+    {
+      "holdingArchive": {
+        "@id": "schema:holdingArchive",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "itemLocation": {
+        "@id": "schema:itemLocation",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "itemLocation_text": {
+        "@id": "schema:itemLocation",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "CreativeWork.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ArchiveComponent.schema.json",
+  "x-oold-uuid": "69893247-4372-509b-bf2a-0f96c6b48c29",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/ArchiveComponent",
+  "x-oold-instance-rdf-type": [
+    "schema:ArchiveComponent"
+  ],
+  "title": "ArchiveComponent",
+  "description": "An intangible type to be applied to any archive content, carrying with it a set of properties required to describe archival items and collections.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:ArchiveComponent"
+      ]
+    },
+    "holdingArchive": {
+      "title": "Holding Archive",
+      "description": "[[ArchiveOrganization]] that holds, keeps or maintains the [[ArchiveComponent]].",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "ArchiveOrganization.schema.json"
+      }
+    },
+    "itemLocation": {
+      "title": "Item Location",
+      "description": "Current location of the item.",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: PostalAddress [value-type]: PostalAddress -> ContactPoint -> StructuredValue -> Intangible -> Thing; Place [entity]: Place -> Thing",
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "iri-reference",
+            "x-oold-range": "Place.schema.json"
+          },
+          {
+            "$ref": "PostalAddress.schema.json"
+          }
+        ]
+      }
+    },
+    "itemLocation_text": {
+      "title": "Item Location (text)",
+      "description": "Current location of the item.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    }
+  }
+}

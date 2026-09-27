@@ -1,0 +1,317 @@
+{
+  "@context": [
+    "CreativeWorkSeries.schema.json",
+    {
+      "actor": {
+        "@id": "schema:actor",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "characterAttribute": {
+        "@id": "schema:characterAttribute",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "cheatCode": {
+        "@id": "schema:cheatCode",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "containsSeason": {
+        "@id": "schema:containsSeason",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "director": {
+        "@id": "schema:director",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "episode": {
+        "@id": "schema:episode",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "gameItem": {
+        "@id": "schema:gameItem",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "gameLocation": {
+        "@id": "schema:gameLocation",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "gamePlatform": {
+        "@id": "schema:gamePlatform",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "gamePlatform_text": {
+        "@id": "schema:gamePlatform",
+        "@container": "@set"
+      },
+      "musicBy": {
+        "@id": "schema:musicBy",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "numberOfEpisodes": {
+        "@id": "schema:numberOfEpisodes",
+        "@container": "@set"
+      },
+      "numberOfPlayers": {
+        "@id": "schema:numberOfPlayers",
+        "@container": "@set"
+      },
+      "numberOfSeasons": {
+        "@id": "schema:numberOfSeasons",
+        "@container": "@set"
+      },
+      "playMode": {
+        "@id": "schema:playMode",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "productionCompany": {
+        "@id": "schema:productionCompany",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "quest": {
+        "@id": "schema:quest",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "trailer": {
+        "@id": "schema:trailer",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "CreativeWorkSeries.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "VideoGameSeries.schema.json",
+  "x-oold-uuid": "fde270fd-f19a-5471-b16b-4f692b9764c4",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/VideoGameSeries",
+  "x-oold-instance-rdf-type": [
+    "schema:VideoGameSeries"
+  ],
+  "title": "VideoGameSeries",
+  "description": "A video game series.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:VideoGameSeries"
+      ]
+    },
+    "actor": {
+      "title": "Actor",
+      "description": "An actor (individual or a group), e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "PerformingGroup.schema.json",
+          "Person.schema.json"
+        ]
+      }
+    },
+    "characterAttribute": {
+      "title": "Character Attribute",
+      "description": "A piece of data that represents a particular aspect of a fictional character (skill, power, character points, advantage, disadvantage).",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Thing.schema.json"
+      }
+    },
+    "cheatCode": {
+      "title": "Cheat Code",
+      "description": "Cheat codes to the game.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "CreativeWork.schema.json"
+      }
+    },
+    "containsSeason": {
+      "title": "Contains Season",
+      "description": "A season that is part of the media series.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "CreativeWorkSeason.schema.json"
+      }
+    },
+    "director": {
+      "title": "Director",
+      "description": "A director of e.g. TV, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Person.schema.json"
+      }
+    },
+    "episode": {
+      "title": "Episode",
+      "description": "An episode of a TV, radio or game media within a series or season.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Episode.schema.json"
+      }
+    },
+    "gameItem": {
+      "title": "Game Item",
+      "description": "An item is an object within the game world that can be collected by a player or, occasionally, a non-player character.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Thing.schema.json"
+      }
+    },
+    "gameLocation": {
+      "title": "Game Location",
+      "description": "Real or fictional location of the game (or part of game).",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: PostalAddress [value-type]: PostalAddress -> ContactPoint -> StructuredValue -> Intangible -> Thing; Place [entity]: Place -> Thing",
+        "anyOf": [
+          {
+            "$ref": "URL.schema.json"
+          },
+          {
+            "type": "string",
+            "format": "iri-reference",
+            "x-oold-range": "Place.schema.json"
+          },
+          {
+            "$ref": "PostalAddress.schema.json"
+          }
+        ]
+      }
+    },
+    "gamePlatform": {
+      "title": "Game Platform",
+      "description": "The electronic systems used to play <a href=\"http://en.wikipedia.org/wiki/Category:Video_game_platforms\">video games</a>.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Thing.schema.json"
+      }
+    },
+    "gamePlatform_text": {
+      "title": "Game Platform (text)",
+      "description": "The electronic systems used to play <a href=\"http://en.wikipedia.org/wiki/Category:Video_game_platforms\">video games</a>.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Text.schema.json"
+          },
+          {
+            "$ref": "URL.schema.json"
+          }
+        ]
+      }
+    },
+    "musicBy": {
+      "title": "Music By",
+      "description": "The composer of the soundtrack.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "MusicGroup.schema.json",
+          "Person.schema.json"
+        ]
+      }
+    },
+    "numberOfEpisodes": {
+      "title": "Number Of Episodes",
+      "description": "The number of episodes in this season or series.",
+      "type": "array",
+      "items": {
+        "$ref": "Integer.schema.json"
+      }
+    },
+    "numberOfPlayers": {
+      "title": "Number Of Players",
+      "description": "Indicate how many people can play this game (minimum, maximum, or range).",
+      "type": "array",
+      "items": {
+        "$ref": "QuantitativeValue.schema.json"
+      }
+    },
+    "numberOfSeasons": {
+      "title": "Number Of Seasons",
+      "description": "The number of seasons in this series.",
+      "type": "array",
+      "items": {
+        "$ref": "Integer.schema.json"
+      }
+    },
+    "playMode": {
+      "title": "Play Mode",
+      "description": "Indicates whether this game is multi-player, co-op or single-player.  The game can be marked as multi-player, co-op and single-player at the same time.",
+      "type": "array",
+      "items": {
+        "$ref": "GamePlayMode.schema.json#/$defs/member",
+        "x-oold-range": "GamePlayMode.schema.json"
+      }
+    },
+    "productionCompany": {
+      "title": "Production Company",
+      "description": "The production company or studio responsible for the item, e.g. series, video game, episode etc.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Organization.schema.json"
+      }
+    },
+    "quest": {
+      "title": "Quest",
+      "description": "The task that a player-controlled character, or group of characters may complete in order to gain a reward.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Thing.schema.json"
+      }
+    },
+    "trailer": {
+      "title": "Trailer",
+      "description": "The trailer of a movie or TV/radio series, season, episode, etc.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "VideoObject.schema.json"
+      }
+    }
+  }
+}

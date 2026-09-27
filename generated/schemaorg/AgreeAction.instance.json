@@ -1,0 +1,8 @@
+{
+  "$schema": "AgreeAction.schema.json",
+  "@context": "AgreeAction.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:AgreeAction"
+  ]
+}

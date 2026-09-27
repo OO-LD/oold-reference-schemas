@@ -1,0 +1,51 @@
+{
+  "@context": [
+    "CommunicateAction.schema.json",
+    {
+      "resultComment": {
+        "@id": "schema:resultComment",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "CommunicateAction.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ReplyAction.schema.json",
+  "x-oold-uuid": "86238e4b-1932-5d98-a1f5-02afdf072e92",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/ReplyAction",
+  "x-oold-instance-rdf-type": [
+    "schema:ReplyAction"
+  ],
+  "title": "ReplyAction",
+  "description": "The act of responding to a question/message asked/sent by the object. Related to [[AskAction]].\\n\\nRelated actions:\\n\\n* [[AskAction]]: Appears generally as an origin of a ReplyAction.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:ReplyAction"
+      ]
+    },
+    "resultComment": {
+      "title": "Result Comment",
+      "description": "A sub property of result. The Comment created or sent as a result of this action.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Comment.schema.json"
+      }
+    }
+  }
+}

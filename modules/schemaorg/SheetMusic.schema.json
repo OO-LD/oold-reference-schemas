@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "CreativeWork.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "CreativeWork.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "SheetMusic.schema.json",
+  "x-oold-uuid": "ea260394-593f-59e7-b313-9109f446ab35",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/SheetMusic",
+  "x-oold-instance-rdf-type": [
+    "schema:SheetMusic"
+  ],
+  "title": "SheetMusic",
+  "description": "Printed music, as opposed to performed or recorded music.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:SheetMusic"
+      ]
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "@context": [
+    "AddAction.schema.json",
+    {
+      "toLocation": {
+        "@id": "schema:toLocation",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "AddAction.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "InsertAction.schema.json",
+  "x-oold-uuid": "30ec0cab-308b-523a-82c3-7624772d6464",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/InsertAction",
+  "x-oold-instance-rdf-type": [
+    "schema:InsertAction"
+  ],
+  "title": "InsertAction",
+  "description": "The act of adding at a specific location in an ordered collection.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:InsertAction"
+      ]
+    },
+    "toLocation": {
+      "title": "To Location",
+      "description": "A sub property of location. The final location of the object or the agent after the action.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Place.schema.json"
+      }
+    }
+  }
+}

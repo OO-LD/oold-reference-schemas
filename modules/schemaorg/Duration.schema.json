@@ -1,0 +1,19 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Duration.schema.json",
+  "x-oold-uuid": "9ae49f8a-47e9-56f4-9a18-98102d426696",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Duration",
+  "x-oold-instance-rdf-type": [
+    "schema:Duration"
+  ],
+  "title": "Duration",
+  "description": "A time interval in ISO 8601 duration format.",
+  "type": "string",
+  "format": "duration"
+}

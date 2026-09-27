@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "CreativeWork.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "CreativeWork.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Drawing.schema.json",
+  "x-oold-uuid": "ac3d14d0-de74-5c14-9c92-8c21e80b7237",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Drawing",
+  "x-oold-instance-rdf-type": [
+    "schema:Drawing"
+  ],
+  "title": "Drawing",
+  "description": "A picture or diagram made with a pencil, pen, or crayon rather than paint.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Drawing"
+      ]
+    }
+  }
+}

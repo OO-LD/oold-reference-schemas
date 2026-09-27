@@ -1,0 +1,78 @@
+{
+  "@context": [
+    "BioChemEntity.schema.json",
+    {
+      "chemicalComposition": {
+        "@id": "schema:chemicalComposition",
+        "@container": "@set"
+      },
+      "chemicalRole": {
+        "@id": "schema:chemicalRole",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "potentialUse": {
+        "@id": "schema:potentialUse",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "BioChemEntity.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ChemicalSubstance.schema.json",
+  "x-oold-uuid": "92bbe9e1-e221-59cc-8752-4bed3c12da57",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/ChemicalSubstance",
+  "x-oold-instance-rdf-type": [
+    "schema:ChemicalSubstance"
+  ],
+  "title": "ChemicalSubstance",
+  "description": "A chemical substance is 'a portion of matter of constant composition, composed of molecular entities of the same type or of different types' (source: [ChEBI:59999](https://www.ebi.ac.uk/chebi/searchId.do?chebiId=59999)).",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:ChemicalSubstance"
+      ]
+    },
+    "chemicalComposition": {
+      "title": "Chemical Composition",
+      "description": "The chemical composition describes the identity and relative ratio of the chemical elements that make up the substance.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "chemicalRole": {
+      "title": "Chemical Role",
+      "description": "A role played by the BioChemEntity within a chemical context.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "DefinedTerm.schema.json"
+      }
+    },
+    "potentialUse": {
+      "title": "Potential Use",
+      "description": "Intended use of the BioChemEntity by humans.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "DefinedTerm.schema.json"
+      }
+    }
+  }
+}

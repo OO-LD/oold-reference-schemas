@@ -1,0 +1,73 @@
+{
+  "@context": [
+    "MeasurementTypeEnumeration.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "MeasurementTypeEnumeration.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "BodyMeasurementTypeEnumeration.schema.json",
+  "x-oold-uuid": "599df5fe-ba06-5760-a177-daf144ab8804",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/BodyMeasurementTypeEnumeration",
+  "x-oold-instance-rdf-type": [
+    "schema:BodyMeasurementTypeEnumeration"
+  ],
+  "title": "BodyMeasurementTypeEnumeration",
+  "description": "Enumerates types (or dimensions) of a person's body measurements, for example for fitting of clothes.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:BodyMeasurementTypeEnumeration"
+      ]
+    }
+  },
+  "$defs": {
+    "member": {
+      "title": "BodyMeasurementTypeEnumeration member",
+      "description": "One of the 13 member instances of BodyMeasurementTypeEnumeration.",
+      "type": "string",
+      "format": "iri-reference",
+      "enum": [
+        "schema:BodyMeasurementArm",
+        "schema:BodyMeasurementBust",
+        "schema:BodyMeasurementChest",
+        "schema:BodyMeasurementFoot",
+        "schema:BodyMeasurementHand",
+        "schema:BodyMeasurementHead",
+        "schema:BodyMeasurementHeight",
+        "schema:BodyMeasurementHips",
+        "schema:BodyMeasurementInsideLeg",
+        "schema:BodyMeasurementNeck",
+        "schema:BodyMeasurementUnderbust",
+        "schema:BodyMeasurementWaist",
+        "schema:BodyMeasurementWeight"
+      ],
+      "x-oold-ui-enum-titles": [
+        "BodyMeasurementArm",
+        "BodyMeasurementBust",
+        "BodyMeasurementChest",
+        "BodyMeasurementFoot",
+        "BodyMeasurementHand",
+        "BodyMeasurementHead",
+        "BodyMeasurementHeight",
+        "BodyMeasurementHips",
+        "BodyMeasurementInsideLeg",
+        "BodyMeasurementNeck",
+        "BodyMeasurementUnderbust",
+        "BodyMeasurementWaist",
+        "BodyMeasurementWeight"
+      ]
+    }
+  }
+}

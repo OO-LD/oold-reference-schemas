@@ -1,0 +1,114 @@
+{
+  "@context": [
+    "StructuredValue.schema.json",
+    {
+      "closes": {
+        "@id": "schema:closes",
+        "@type": "xsd:time",
+        "@container": "@set"
+      },
+      "dayOfWeek": {
+        "@id": "schema:dayOfWeek",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "opens": {
+        "@id": "schema:opens",
+        "@type": "xsd:time",
+        "@container": "@set"
+      },
+      "validFrom": {
+        "@id": "schema:validFrom",
+        "@container": "@set"
+      },
+      "validThrough": {
+        "@id": "schema:validThrough",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "StructuredValue.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "OpeningHoursSpecification.schema.json",
+  "x-oold-uuid": "22de4aa5-a4a2-50a8-b5da-f99ec8625dfd",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/OpeningHoursSpecification",
+  "x-oold-instance-rdf-type": [
+    "schema:OpeningHoursSpecification"
+  ],
+  "title": "OpeningHoursSpecification",
+  "description": "A structured value providing information about the opening hours of a place or a certain service inside a place.\\n\\n\nThe place is __open__ if the [[opens]] property is specified, and __closed__ otherwise.\\n\\nIf the value for the [[closes]] property is less than the value for the [[opens]] property then the hour range is assumed to span over the next day.\n      ",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:OpeningHoursSpecification"
+      ]
+    },
+    "closes": {
+      "title": "Closes",
+      "description": "The closing hour of the place or service on the given day(s) of the week.",
+      "type": "array",
+      "items": {
+        "$ref": "Time.schema.json"
+      }
+    },
+    "dayOfWeek": {
+      "title": "Day Of Week",
+      "description": "The day of the week for which these opening hours are valid.",
+      "type": "array",
+      "items": {
+        "$ref": "DayOfWeek.schema.json#/$defs/member",
+        "x-oold-range": "DayOfWeek.schema.json"
+      }
+    },
+    "opens": {
+      "title": "Opens",
+      "description": "The opening hour of the place or service on the given day(s) of the week.",
+      "type": "array",
+      "items": {
+        "$ref": "Time.schema.json"
+      }
+    },
+    "validFrom": {
+      "title": "Valid From",
+      "description": "The date when the item becomes valid.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Date.schema.json"
+          },
+          {
+            "$ref": "DateTime.schema.json"
+          }
+        ]
+      }
+    },
+    "validThrough": {
+      "title": "Valid Through",
+      "description": "The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Date.schema.json"
+          },
+          {
+            "$ref": "DateTime.schema.json"
+          }
+        ]
+      }
+    }
+  }
+}

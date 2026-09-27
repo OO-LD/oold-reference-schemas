@@ -1,0 +1,136 @@
+{
+  "@context": [
+    "StructuredValue.schema.json",
+    {
+      "currency": {
+        "@id": "schema:currency",
+        "@container": "@set"
+      },
+      "maxValue": {
+        "@id": "schema:maxValue",
+        "@container": "@set"
+      },
+      "minValue": {
+        "@id": "schema:minValue",
+        "@container": "@set"
+      },
+      "validFrom": {
+        "@id": "schema:validFrom",
+        "@container": "@set"
+      },
+      "validThrough": {
+        "@id": "schema:validThrough",
+        "@container": "@set"
+      },
+      "value": {
+        "@id": "schema:value",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "StructuredValue.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MonetaryAmount.schema.json",
+  "x-oold-uuid": "06bf4292-0f2d-5019-bb9f-8b62332ac8bb",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/MonetaryAmount",
+  "x-oold-instance-rdf-type": [
+    "schema:MonetaryAmount"
+  ],
+  "title": "MonetaryAmount",
+  "description": "A monetary value or range. This type can be used to describe an amount of money such as $50 USD, or a range as in describing a bank account being suitable for a balance between £1,000 and £1,000,000 GBP, or the value of a salary, etc. It is recommended to use [[PriceSpecification]] Types to describe the price of an Offer, Invoice, etc.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:MonetaryAmount"
+      ]
+    },
+    "currency": {
+      "title": "Currency",
+      "description": "The currency in which the monetary amount is expressed.\\n\\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217), e.g. \"USD\"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies, e.g. \"BTC\"; well known names for [Local Exchange Trading Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types, e.g. \"Ithaca HOUR\".",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "maxValue": {
+      "title": "Max Value",
+      "description": "The upper value of some characteristic or property.",
+      "type": "array",
+      "items": {
+        "$ref": "Number.schema.json"
+      }
+    },
+    "minValue": {
+      "title": "Min Value",
+      "description": "The lower value of some characteristic or property.",
+      "type": "array",
+      "items": {
+        "$ref": "Number.schema.json"
+      }
+    },
+    "validFrom": {
+      "title": "Valid From",
+      "description": "The date when the item becomes valid.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Date.schema.json"
+          },
+          {
+            "$ref": "DateTime.schema.json"
+          }
+        ]
+      }
+    },
+    "validThrough": {
+      "title": "Valid Through",
+      "description": "The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Date.schema.json"
+          },
+          {
+            "$ref": "DateTime.schema.json"
+          }
+        ]
+      }
+    },
+    "value": {
+      "title": "Value",
+      "description": "The value of a [[QuantitativeValue]] (including [[Observation]]) or property value node.\\n\\n* For [[QuantitativeValue]] and [[MonetaryAmount]], the recommended type for values is 'Number'.\\n* For [[PropertyValue]], it can be 'Text', 'Number', 'Boolean', or 'StructuredValue'.\\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.\\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: StructuredValue [value-type]: StructuredValue -> Intangible -> Thing",
+        "anyOf": [
+          {
+            "$ref": "Boolean.schema.json"
+          },
+          {
+            "$ref": "Number.schema.json"
+          },
+          {
+            "$ref": "Text.schema.json"
+          },
+          {
+            "$ref": "StructuredValue.schema.json"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "@context": [
+    "Intangible.schema.json",
+    {
+      "supersededBy": {
+        "@id": "schema:supersededBy",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Intangible.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Class.schema.json",
+  "x-oold-uuid": "dc227ad9-7545-5110-a8bc-fba577cd9abb",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Class",
+  "x-oold-instance-rdf-type": [
+    "schema:Class"
+  ],
+  "title": "Class",
+  "description": "A class, also often called a 'Type'; equivalent to rdfs:Class.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Class"
+      ]
+    },
+    "supersededBy": {
+      "title": "Superseded By",
+      "description": "Relates a term (i.e. a property, class or enumeration) to one that supersedes it.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "Class.schema.json",
+          "Enumeration.schema.json",
+          "Property.schema.json"
+        ]
+      }
+    }
+  }
+}

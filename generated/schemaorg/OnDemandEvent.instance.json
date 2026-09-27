@@ -1,0 +1,8 @@
+{
+  "$schema": "OnDemandEvent.schema.json",
+  "@context": "OnDemandEvent.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:OnDemandEvent"
+  ]
+}

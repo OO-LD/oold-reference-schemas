@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "CreativeWorkSeries.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "CreativeWorkSeries.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "BookSeries.schema.json",
+  "x-oold-uuid": "2cfc0124-3d7e-5c5d-a8c0-89862bc6a07b",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/BookSeries",
+  "x-oold-instance-rdf-type": [
+    "schema:BookSeries"
+  ],
+  "title": "BookSeries",
+  "description": "A series of books. Included books can be indicated with the hasPart property.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:BookSeries"
+      ]
+    }
+  }
+}

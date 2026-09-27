@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Store.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Store.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "WholesaleStore.schema.json",
+  "x-oold-uuid": "e4fab106-72ec-53c6-8d1b-cf0342df49e6",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/WholesaleStore",
+  "x-oold-instance-rdf-type": [
+    "schema:WholesaleStore"
+  ],
+  "title": "WholesaleStore",
+  "description": "A wholesale store.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:WholesaleStore"
+      ]
+    }
+  }
+}

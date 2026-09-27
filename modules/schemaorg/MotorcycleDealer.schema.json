@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "AutomotiveBusiness.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "AutomotiveBusiness.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MotorcycleDealer.schema.json",
+  "x-oold-uuid": "31c52794-4dd7-5e0c-b000-b3123a002170",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/MotorcycleDealer",
+  "x-oold-instance-rdf-type": [
+    "schema:MotorcycleDealer"
+  ],
+  "title": "MotorcycleDealer",
+  "description": "A motorcycle dealer.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:MotorcycleDealer"
+      ]
+    }
+  }
+}

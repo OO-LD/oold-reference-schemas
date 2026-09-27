@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "PlanAction.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "PlanAction.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "CancelAction.schema.json",
+  "x-oold-uuid": "19b038a2-ce18-5fa6-a113-33d4e6c55bd9",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/CancelAction",
+  "x-oold-instance-rdf-type": [
+    "schema:CancelAction"
+  ],
+  "title": "CancelAction",
+  "description": "The act of asserting that a future event/action is no longer going to happen.\\n\\nRelated actions:\\n\\n* [[ConfirmAction]]: The antonym of CancelAction.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:CancelAction"
+      ]
+    }
+  }
+}

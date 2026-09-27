@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Intangible.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Intangible.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "StructuredValue.schema.json",
+  "x-oold-uuid": "90122376-cdc6-5344-8802-3eb187ac4c29",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/StructuredValue",
+  "x-oold-instance-rdf-type": [
+    "schema:StructuredValue"
+  ],
+  "title": "StructuredValue",
+  "description": "Structured values are used when the value of a property has a more complex structure than simply being a textual value or a reference to another thing.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:StructuredValue"
+      ]
+    }
+  }
+}

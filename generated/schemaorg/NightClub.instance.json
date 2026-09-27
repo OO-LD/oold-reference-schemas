@@ -1,0 +1,8 @@
+{
+  "$schema": "NightClub.schema.json",
+  "@context": "NightClub.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:NightClub"
+  ]
+}

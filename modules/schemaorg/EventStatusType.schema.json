@@ -1,0 +1,57 @@
+{
+  "@context": [
+    "StatusEnumeration.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "StatusEnumeration.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "EventStatusType.schema.json",
+  "x-oold-uuid": "384be7e9-cfdf-5aa5-b87d-0c4da79c8ed1",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/EventStatusType",
+  "x-oold-instance-rdf-type": [
+    "schema:EventStatusType"
+  ],
+  "title": "EventStatusType",
+  "description": "EventStatusType is an enumeration type whose instances represent several states that an Event may be in.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:EventStatusType"
+      ]
+    }
+  },
+  "$defs": {
+    "member": {
+      "title": "EventStatusType member",
+      "description": "One of the 5 member instances of EventStatusType.",
+      "type": "string",
+      "format": "iri-reference",
+      "enum": [
+        "schema:EventCancelled",
+        "schema:EventMovedOnline",
+        "schema:EventPostponed",
+        "schema:EventRescheduled",
+        "schema:EventScheduled"
+      ],
+      "x-oold-ui-enum-titles": [
+        "EventCancelled",
+        "EventMovedOnline",
+        "EventPostponed",
+        "EventRescheduled",
+        "EventScheduled"
+      ]
+    }
+  }
+}

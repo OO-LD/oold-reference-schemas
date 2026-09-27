@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "MedicalClinic.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "MedicalClinic.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "CovidTestingFacility.schema.json",
+  "x-oold-uuid": "a1edcf60-2570-58c0-9e1f-8073dedffb0f",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/CovidTestingFacility",
+  "x-oold-instance-rdf-type": [
+    "schema:CovidTestingFacility"
+  ],
+  "title": "CovidTestingFacility",
+  "description": "A CovidTestingFacility is a [[MedicalClinic]] where testing for the COVID-19 Coronavirus\n      disease is available. If the facility is being made available from an established [[Pharmacy]], [[Hotel]], or other\n      non-medical organization, multiple types can be listed. This makes it easier to re-use existing schema.org information\n      about that place, e.g. contact info, address, opening hours. Note that in an emergency, such information may not always be reliable.\n      ",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:CovidTestingFacility"
+      ]
+    }
+  }
+}

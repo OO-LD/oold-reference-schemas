@@ -1,0 +1,8 @@
+{
+  "$schema": "EducationalOccupationalProgram.schema.json",
+  "@context": "EducationalOccupationalProgram.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:EducationalOccupationalProgram"
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "@context": [
+    "ReactAction.schema.json",
+    {
+      "endorsee": {
+        "@id": "schema:endorsee",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "ReactAction.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "EndorseAction.schema.json",
+  "x-oold-uuid": "b4f6d22b-3e98-5025-b5fe-21b8c9fe7923",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/EndorseAction",
+  "x-oold-instance-rdf-type": [
+    "schema:EndorseAction"
+  ],
+  "title": "EndorseAction",
+  "description": "An agent approves/certifies/likes/supports/sanctions an object.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:EndorseAction"
+      ]
+    },
+    "endorsee": {
+      "title": "Endorsee",
+      "description": "A sub property of participant. The person/organization being supported.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "Organization.schema.json",
+          "Person.schema.json"
+        ]
+      }
+    }
+  }
+}

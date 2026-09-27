@@ -1,0 +1,8 @@
+{
+  "$schema": "WorkersUnion.schema.json",
+  "@context": "WorkersUnion.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:WorkersUnion"
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "InvestmentOrDeposit.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "InvestmentOrDeposit.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "InvestmentFund.schema.json",
+  "x-oold-uuid": "10a02199-d1c1-50cb-a1d8-a3407d08ec3e",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/InvestmentFund",
+  "x-oold-instance-rdf-type": [
+    "schema:InvestmentFund"
+  ],
+  "title": "InvestmentFund",
+  "description": "A company or fund that gathers capital from a number of investors to create a pool of money that is then re-invested into stocks, bonds and other assets.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:InvestmentFund"
+      ]
+    }
+  }
+}

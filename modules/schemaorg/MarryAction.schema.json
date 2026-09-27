@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "InteractAction.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "InteractAction.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MarryAction.schema.json",
+  "x-oold-uuid": "69b04f12-4d4d-5633-a117-8c739af3dfa3",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/MarryAction",
+  "x-oold-instance-rdf-type": [
+    "schema:MarryAction"
+  ],
+  "title": "MarryAction",
+  "description": "The act of marrying a person.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:MarryAction"
+      ]
+    }
+  }
+}

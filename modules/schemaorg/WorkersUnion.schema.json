@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Organization.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Organization.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "WorkersUnion.schema.json",
+  "x-oold-uuid": "3dc22166-3385-5df4-87c8-34a1c750079f",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/WorkersUnion",
+  "x-oold-instance-rdf-type": [
+    "schema:WorkersUnion"
+  ],
+  "title": "WorkersUnion",
+  "description": "A Workers Union (also known as a Labor Union, Labour Union, or Trade Union) is an organization that promotes the interests of its worker members by collectively bargaining with management, organizing, and political lobbying.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:WorkersUnion"
+      ]
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Organization.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Organization.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Project.schema.json",
+  "x-oold-uuid": "a9bfc73b-baf7-5d93-a5c4-90ff1103730a",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Project",
+  "x-oold-instance-rdf-type": [
+    "schema:Project"
+  ],
+  "title": "Project",
+  "description": "An enterprise (potentially individual but typically collaborative), planned to achieve a particular aim.\nUse properties from [[Organization]], [[subOrganization]]/[[parentOrganization]] to indicate project sub-structures. \n   ",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Project"
+      ]
+    }
+  }
+}

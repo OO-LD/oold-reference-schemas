@@ -1,0 +1,48 @@
+{
+  "@context": [
+    "SoftwareApplication.schema.json",
+    {
+      "browserRequirements": {
+        "@id": "schema:browserRequirements",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "SoftwareApplication.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "WebApplication.schema.json",
+  "x-oold-uuid": "7ed4759c-469b-50b6-8937-f5e12b8e7297",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/WebApplication",
+  "x-oold-instance-rdf-type": [
+    "schema:WebApplication"
+  ],
+  "title": "WebApplication",
+  "description": "Web applications.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:WebApplication"
+      ]
+    },
+    "browserRequirements": {
+      "title": "Browser Requirements",
+      "description": "Specifies browser requirements in human-readable text. For example, 'requires HTML5 support'.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    }
+  }
+}

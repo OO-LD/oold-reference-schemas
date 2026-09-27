@@ -1,0 +1,39 @@
+{
+  "@context": [
+    "ComicStory.schema.json",
+    "CoverArt.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "ComicStory.schema.json"
+    },
+    {
+      "$ref": "CoverArt.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ComicCoverArt.schema.json",
+  "x-oold-uuid": "e7489491-9143-5459-b2a1-cb7b057dcd1b",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/ComicCoverArt",
+  "x-oold-instance-rdf-type": [
+    "schema:ComicCoverArt"
+  ],
+  "title": "ComicCoverArt",
+  "description": "The artwork on the cover of a comic.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:ComicCoverArt"
+      ]
+    }
+  }
+}

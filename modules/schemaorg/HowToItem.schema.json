@@ -1,0 +1,59 @@
+{
+  "@context": [
+    "ListItem.schema.json",
+    {
+      "requiredQuantity": {
+        "@id": "schema:requiredQuantity",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "ListItem.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "HowToItem.schema.json",
+  "x-oold-uuid": "224cbc16-d65f-581f-a76c-4df520c64b5b",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/HowToItem",
+  "x-oold-instance-rdf-type": [
+    "schema:HowToItem"
+  ],
+  "title": "HowToItem",
+  "description": "An item used as either a tool or supply when performing the instructions for how to achieve a result.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:HowToItem"
+      ]
+    },
+    "requiredQuantity": {
+      "title": "Required Quantity",
+      "description": "The required quantity of the item(s).",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: QuantitativeValue [value-type]: QuantitativeValue -> StructuredValue -> Intangible -> Thing",
+        "anyOf": [
+          {
+            "$ref": "Number.schema.json"
+          },
+          {
+            "$ref": "Text.schema.json"
+          },
+          {
+            "$ref": "QuantitativeValue.schema.json"
+          }
+        ]
+      }
+    }
+  }
+}

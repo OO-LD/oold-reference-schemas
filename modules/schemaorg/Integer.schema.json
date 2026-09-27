@@ -1,0 +1,19 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Integer.schema.json",
+  "x-oold-uuid": "3a28e535-0f03-5cb4-b807-8b3663be91b2",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Integer",
+  "x-oold-instance-rdf-type": [
+    "schema:Integer"
+  ],
+  "title": "Integer",
+  "description": "Data type: Integer.",
+  "$ref": "Number.schema.json",
+  "type": "integer"
+}

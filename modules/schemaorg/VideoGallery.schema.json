@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "MediaGallery.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "MediaGallery.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "VideoGallery.schema.json",
+  "x-oold-uuid": "4efc42ce-e2d5-525c-97b0-ac4d6d51ac9d",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/VideoGallery",
+  "x-oold-instance-rdf-type": [
+    "schema:VideoGallery"
+  ],
+  "title": "VideoGallery",
+  "description": "Web page type: Video gallery page.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:VideoGallery"
+      ]
+    }
+  }
+}

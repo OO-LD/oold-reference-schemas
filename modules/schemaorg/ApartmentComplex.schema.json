@@ -1,0 +1,112 @@
+{
+  "@context": [
+    "Residence.schema.json",
+    {
+      "numberOfAccommodationUnits": {
+        "@id": "schema:numberOfAccommodationUnits",
+        "@container": "@set"
+      },
+      "numberOfAvailableAccommodationUnits": {
+        "@id": "schema:numberOfAvailableAccommodationUnits",
+        "@container": "@set"
+      },
+      "numberOfBedrooms": {
+        "@id": "schema:numberOfBedrooms",
+        "@container": "@set"
+      },
+      "petsAllowed": {
+        "@id": "schema:petsAllowed",
+        "@container": "@set"
+      },
+      "tourBookingPage": {
+        "@id": "schema:tourBookingPage",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Residence.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ApartmentComplex.schema.json",
+  "x-oold-uuid": "ce234b73-fbaa-5e17-ad00-c34342d2d795",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/ApartmentComplex",
+  "x-oold-instance-rdf-type": [
+    "schema:ApartmentComplex"
+  ],
+  "title": "ApartmentComplex",
+  "description": "Residence type: Apartment complex.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:ApartmentComplex"
+      ]
+    },
+    "numberOfAccommodationUnits": {
+      "title": "Number Of Accommodation Units",
+      "description": "Indicates the total (available plus unavailable) number of accommodation units in an [[ApartmentComplex]], or the number of accommodation units for a specific [[FloorPlan]] (within its specific [[ApartmentComplex]]). See also [[numberOfAvailableAccommodationUnits]].",
+      "type": "array",
+      "items": {
+        "$ref": "QuantitativeValue.schema.json"
+      }
+    },
+    "numberOfAvailableAccommodationUnits": {
+      "title": "Number Of Available Accommodation Units",
+      "description": "Indicates the number of available accommodation units in an [[ApartmentComplex]], or the number of accommodation units for a specific [[FloorPlan]] (within its specific [[ApartmentComplex]]). See also [[numberOfAccommodationUnits]].",
+      "type": "array",
+      "items": {
+        "$ref": "QuantitativeValue.schema.json"
+      }
+    },
+    "numberOfBedrooms": {
+      "title": "Number Of Bedrooms",
+      "description": "The total integer number of bedrooms in a some [[Accommodation]], [[ApartmentComplex]] or [[FloorPlan]].",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: QuantitativeValue [value-type]: QuantitativeValue -> StructuredValue -> Intangible -> Thing",
+        "anyOf": [
+          {
+            "$ref": "Number.schema.json"
+          },
+          {
+            "$ref": "QuantitativeValue.schema.json"
+          }
+        ]
+      }
+    },
+    "petsAllowed": {
+      "title": "Pets Allowed",
+      "description": "Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Boolean.schema.json"
+          },
+          {
+            "$ref": "Text.schema.json"
+          }
+        ]
+      }
+    },
+    "tourBookingPage": {
+      "title": "Tour Booking Page",
+      "description": "A page providing information on how to book a tour of some [[Place]], such as an [[Accommodation]] or [[ApartmentComplex]] in a real estate setting, as well as other kinds of tours as appropriate.",
+      "type": "array",
+      "items": {
+        "$ref": "URL.schema.json"
+      }
+    }
+  }
+}

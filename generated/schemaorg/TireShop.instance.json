@@ -1,0 +1,8 @@
+{
+  "$schema": "TireShop.schema.json",
+  "@context": "TireShop.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:TireShop"
+  ]
+}

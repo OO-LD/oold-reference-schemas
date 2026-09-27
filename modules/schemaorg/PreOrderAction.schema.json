@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "TradeAction.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "TradeAction.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "PreOrderAction.schema.json",
+  "x-oold-uuid": "0a78fa6a-368b-5f86-8d3c-f8808cce978b",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/PreOrderAction",
+  "x-oold-instance-rdf-type": [
+    "schema:PreOrderAction"
+  ],
+  "title": "PreOrderAction",
+  "description": "An agent orders a (not yet released) object/product/service to be delivered/sent.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:PreOrderAction"
+      ]
+    }
+  }
+}

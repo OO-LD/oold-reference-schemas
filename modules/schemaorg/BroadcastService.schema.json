@@ -1,0 +1,198 @@
+{
+  "@context": [
+    "Service.schema.json",
+    {
+      "broadcastAffiliateOf": {
+        "@id": "schema:broadcastAffiliateOf",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "broadcastDisplayName": {
+        "@id": "schema:broadcastDisplayName",
+        "@container": "@set"
+      },
+      "broadcaster": {
+        "@id": "schema:broadcaster",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "broadcastFrequency": {
+        "@id": "schema:broadcastFrequency",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "broadcastFrequency_text": {
+        "@id": "schema:broadcastFrequency",
+        "@container": "@set"
+      },
+      "broadcastTimezone": {
+        "@id": "schema:broadcastTimezone",
+        "@container": "@set"
+      },
+      "callSign": {
+        "@id": "schema:callSign",
+        "@container": "@set"
+      },
+      "hasBroadcastChannel": {
+        "@id": "schema:hasBroadcastChannel",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "inLanguage": {
+        "@id": "schema:inLanguage",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "inLanguage_text": {
+        "@id": "schema:inLanguage",
+        "@container": "@set"
+      },
+      "parentService": {
+        "@id": "schema:parentService",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "videoFormat": {
+        "@id": "schema:videoFormat",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Service.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "BroadcastService.schema.json",
+  "x-oold-uuid": "81e36096-04a9-5ad0-b6fe-e2be4ef97855",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/BroadcastService",
+  "x-oold-instance-rdf-type": [
+    "schema:BroadcastService"
+  ],
+  "title": "BroadcastService",
+  "description": "A delivery service through which content is provided via broadcast over the air or online.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:BroadcastService"
+      ]
+    },
+    "broadcastAffiliateOf": {
+      "title": "Broadcast Affiliate Of",
+      "description": "The media network(s) whose content is broadcast on this station.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Organization.schema.json"
+      }
+    },
+    "broadcastDisplayName": {
+      "title": "Broadcast Display Name",
+      "description": "The name displayed in the channel guide. For many US affiliates, it is the network name.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "broadcaster": {
+      "title": "Broadcaster",
+      "description": "The organization owning or operating the broadcast service.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Organization.schema.json"
+      }
+    },
+    "broadcastFrequency": {
+      "title": "Broadcast Frequency",
+      "description": "The frequency used for over-the-air broadcasts. Numeric values or simple ranges, e.g. 87-99. In addition a shortcut idiom is supported for frequencies of AM and FM radio channels, e.g. \"87 FM\".",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "BroadcastFrequencySpecification.schema.json"
+      }
+    },
+    "broadcastFrequency_text": {
+      "title": "Broadcast Frequency (text)",
+      "description": "The frequency used for over-the-air broadcasts. Numeric values or simple ranges, e.g. 87-99. In addition a shortcut idiom is supported for frequencies of AM and FM radio channels, e.g. \"87 FM\".",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "broadcastTimezone": {
+      "title": "Broadcast Timezone",
+      "description": "The timezone in [ISO 8601 format](http://en.wikipedia.org/wiki/ISO_8601) for which the service bases its broadcasts.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "callSign": {
+      "title": "Call Sign",
+      "description": "A [callsign](https://en.wikipedia.org/wiki/Call_sign), as used in broadcasting and radio communications to identify people, radio and TV stations, or vehicles.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "hasBroadcastChannel": {
+      "title": "Has Broadcast Channel",
+      "description": "A broadcast channel of a broadcast service.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "BroadcastChannel.schema.json"
+      }
+    },
+    "inLanguage": {
+      "title": "In Language",
+      "description": "The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Language.schema.json"
+      }
+    },
+    "inLanguage_text": {
+      "title": "In Language (text)",
+      "description": "The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "parentService": {
+      "title": "Parent Service",
+      "description": "A broadcast service to which the broadcast service may belong to such as regional variations of a national channel.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "BroadcastService.schema.json"
+      }
+    },
+    "videoFormat": {
+      "title": "Video Format",
+      "description": "The type of screening or video broadcast used (e.g. IMAX, 3D, SD, HD, etc.).",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    }
+  }
+}

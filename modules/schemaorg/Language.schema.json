@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Intangible.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Intangible.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Language.schema.json",
+  "x-oold-uuid": "0fc93170-debb-5df4-bdc9-b87542991850",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Language",
+  "x-oold-instance-rdf-type": [
+    "schema:Language"
+  ],
+  "title": "Language",
+  "description": "Natural languages such as Spanish, Tamil, Hindi, English, etc. Formal language code tags expressed in [BCP 47](https://en.wikipedia.org/wiki/IETF_language_tag) can be used via the [[alternateName]] property. The Language type previously also covered programming languages such as Scheme and Lisp, which are now best represented using [[ComputerLanguage]].",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Language"
+      ]
+    }
+  }
+}

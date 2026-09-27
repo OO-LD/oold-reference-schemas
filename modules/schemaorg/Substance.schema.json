@@ -1,0 +1,63 @@
+{
+  "@context": [
+    "MedicalEntity.schema.json",
+    {
+      "activeIngredient": {
+        "@id": "schema:activeIngredient",
+        "@container": "@set"
+      },
+      "maximumIntake": {
+        "@id": "schema:maximumIntake",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "MedicalEntity.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Substance.schema.json",
+  "x-oold-uuid": "c21d6670-7688-5ad6-8c06-a055376acc7d",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Substance",
+  "x-oold-instance-rdf-type": [
+    "schema:Substance"
+  ],
+  "title": "Substance",
+  "description": "Any matter of defined composition that has discrete existence, whose origin may be biological, mineral or chemical.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Substance"
+      ]
+    },
+    "activeIngredient": {
+      "title": "Active Ingredient",
+      "description": "An active ingredient, typically chemical compounds and/or biologic substances.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "maximumIntake": {
+      "title": "Maximum Intake",
+      "description": "Recommended intake of this supplement for a given population as defined by a specific recommending authority.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "MaximumDoseSchedule.schema.json"
+      }
+    }
+  }
+}

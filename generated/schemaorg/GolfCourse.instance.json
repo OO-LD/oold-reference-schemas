@@ -1,0 +1,8 @@
+{
+  "$schema": "GolfCourse.schema.json",
+  "@context": "GolfCourse.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:GolfCourse"
+  ]
+}

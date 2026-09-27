@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Store.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Store.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "HobbyShop.schema.json",
+  "x-oold-uuid": "57b17225-fd7c-5137-a503-aafeb92c3019",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/HobbyShop",
+  "x-oold-instance-rdf-type": [
+    "schema:HobbyShop"
+  ],
+  "title": "HobbyShop",
+  "description": "A store that sells materials useful or necessary for various hobbies.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:HobbyShop"
+      ]
+    }
+  }
+}

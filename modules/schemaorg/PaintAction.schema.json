@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "CreateAction.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "CreateAction.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "PaintAction.schema.json",
+  "x-oold-uuid": "455ff5d4-065a-53c6-9618-ef0b33740155",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/PaintAction",
+  "x-oold-instance-rdf-type": [
+    "schema:PaintAction"
+  ],
+  "title": "PaintAction",
+  "description": "The act of producing a painting, typically with paint and canvas as instruments.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:PaintAction"
+      ]
+    }
+  }
+}

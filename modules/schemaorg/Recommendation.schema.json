@@ -1,0 +1,74 @@
+{
+  "@context": [
+    "Review.schema.json",
+    {
+      "category": {
+        "@id": "schema:category",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "category_text": {
+        "@id": "schema:category",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Review.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Recommendation.schema.json",
+  "x-oold-uuid": "5afe5723-9c8d-5f34-9f0d-ff95e8852b9c",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Recommendation",
+  "x-oold-instance-rdf-type": [
+    "schema:Recommendation"
+  ],
+  "title": "Recommendation",
+  "description": "[[Recommendation]] is a type of [[Review]] that suggests or proposes something as the best option or best course of action. Recommendations may be for products or services, or other concrete things, as in the case of a ranked list or product guide. A [[Guide]] may list multiple recommendations for different categories. For example, in a [[Guide]] about which TVs to buy, the author may have several [[Recommendation]]s.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Recommendation"
+      ]
+    },
+    "category": {
+      "title": "Category",
+      "description": "A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "CategoryCode.schema.json",
+          "PhysicalActivityCategory.schema.json",
+          "Thing.schema.json"
+        ]
+      }
+    },
+    "category_text": {
+      "title": "Category (text)",
+      "description": "A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Text.schema.json"
+          },
+          {
+            "$ref": "URL.schema.json"
+          }
+        ]
+      }
+    }
+  }
+}

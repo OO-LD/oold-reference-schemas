@@ -1,0 +1,100 @@
+{
+  "@context": [
+    "Intangible.schema.json",
+    {
+      "aggregateRating": {
+        "@id": "schema:aggregateRating",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "logo": {
+        "@id": "schema:logo",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "review": {
+        "@id": "schema:review",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "slogan": {
+        "@id": "schema:slogan",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Intangible.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Brand.schema.json",
+  "x-oold-uuid": "087c795e-2d97-5515-9858-22a0bc80af9d",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Brand",
+  "x-oold-instance-rdf-type": [
+    "schema:Brand"
+  ],
+  "title": "Brand",
+  "description": "A brand is a name used by an organization or business person for labeling a product, product group, or similar.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Brand"
+      ]
+    },
+    "aggregateRating": {
+      "title": "Aggregate Rating",
+      "description": "The overall rating, based on a collection of reviews or ratings, of the item.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "AggregateRating.schema.json"
+      }
+    },
+    "logo": {
+      "title": "Logo",
+      "description": "An associated logo.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "URL.schema.json"
+          },
+          {
+            "type": "string",
+            "format": "iri-reference",
+            "x-oold-range": "ImageObject.schema.json"
+          }
+        ]
+      }
+    },
+    "review": {
+      "title": "Review",
+      "description": "A review of the item.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Review.schema.json"
+      }
+    },
+    "slogan": {
+      "title": "Slogan",
+      "description": "A slogan or motto associated with the item.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    }
+  }
+}

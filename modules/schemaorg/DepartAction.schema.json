@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "MoveAction.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "MoveAction.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "DepartAction.schema.json",
+  "x-oold-uuid": "51058b9b-084d-50b7-8e31-23137c286f91",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/DepartAction",
+  "x-oold-instance-rdf-type": [
+    "schema:DepartAction"
+  ],
+  "title": "DepartAction",
+  "description": "The act of  departing from a place. An agent departs from a fromLocation for a destination, optionally with participants.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:DepartAction"
+      ]
+    }
+  }
+}

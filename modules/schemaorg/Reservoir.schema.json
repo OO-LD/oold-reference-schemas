@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "BodyOfWater.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "BodyOfWater.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Reservoir.schema.json",
+  "x-oold-uuid": "dc374412-509f-543e-b4cf-e0134d7a33df",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Reservoir",
+  "x-oold-instance-rdf-type": [
+    "schema:Reservoir"
+  ],
+  "title": "Reservoir",
+  "description": "A reservoir of water, typically an artificially created lake, like the Lake Kariba reservoir.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Reservoir"
+      ]
+    }
+  }
+}

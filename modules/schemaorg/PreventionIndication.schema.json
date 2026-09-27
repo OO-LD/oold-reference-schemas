@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "MedicalIndication.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "MedicalIndication.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "PreventionIndication.schema.json",
+  "x-oold-uuid": "7b87b2d5-c39a-5b17-93df-51468b77c435",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/PreventionIndication",
+  "x-oold-instance-rdf-type": [
+    "schema:PreventionIndication"
+  ],
+  "title": "PreventionIndication",
+  "description": "An indication for preventing an underlying condition, symptom, etc.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:PreventionIndication"
+      ]
+    }
+  }
+}

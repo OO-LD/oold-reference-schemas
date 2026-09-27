@@ -1,0 +1,67 @@
+{
+  "@context": [
+    "MedicalEnumeration.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "MedicalEnumeration.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MedicalStudyStatus.schema.json",
+  "x-oold-uuid": "65589b64-3c61-506b-bc1c-cb9fc5c07971",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/MedicalStudyStatus",
+  "x-oold-instance-rdf-type": [
+    "schema:MedicalStudyStatus"
+  ],
+  "title": "MedicalStudyStatus",
+  "description": "The status of a medical study. Enumerated type.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:MedicalStudyStatus"
+      ]
+    }
+  },
+  "$defs": {
+    "member": {
+      "title": "MedicalStudyStatus member",
+      "description": "One of the 10 member instances of MedicalStudyStatus.",
+      "type": "string",
+      "format": "iri-reference",
+      "enum": [
+        "schema:ActiveNotRecruiting",
+        "schema:Completed",
+        "schema:EnrollingByInvitation",
+        "schema:NotYetRecruiting",
+        "schema:Recruiting",
+        "schema:ResultsAvailable",
+        "schema:ResultsNotAvailable",
+        "schema:Suspended",
+        "schema:Terminated",
+        "schema:Withdrawn"
+      ],
+      "x-oold-ui-enum-titles": [
+        "ActiveNotRecruiting",
+        "Completed",
+        "EnrollingByInvitation",
+        "NotYetRecruiting",
+        "Recruiting",
+        "ResultsAvailable",
+        "ResultsNotAvailable",
+        "Suspended",
+        "Terminated",
+        "Withdrawn"
+      ]
+    }
+  }
+}

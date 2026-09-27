@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "CreativeWorkSeason.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "CreativeWorkSeason.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "PodcastSeason.schema.json",
+  "x-oold-uuid": "dfef6385-fca4-53b0-808f-640425aec5fc",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/PodcastSeason",
+  "x-oold-instance-rdf-type": [
+    "schema:PodcastSeason"
+  ],
+  "title": "PodcastSeason",
+  "description": "A single season of a podcast. Many podcasts do not break down into separate seasons. In that case, PodcastSeries should be used.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:PodcastSeason"
+      ]
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "$schema": "AdultOrientedEnumeration.schema.json",
+  "@context": "AdultOrientedEnumeration.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:AdultOrientedEnumeration"
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "@context": [
+    "StructuredValue.schema.json",
+    {
+      "downPayment": {
+        "@id": "schema:downPayment",
+        "@container": "@set"
+      },
+      "earlyPrepaymentPenalty": {
+        "@id": "schema:earlyPrepaymentPenalty",
+        "@container": "@set"
+      },
+      "loanPaymentAmount": {
+        "@id": "schema:loanPaymentAmount",
+        "@container": "@set"
+      },
+      "loanPaymentFrequency": {
+        "@id": "schema:loanPaymentFrequency",
+        "@container": "@set"
+      },
+      "numberOfLoanPayments": {
+        "@id": "schema:numberOfLoanPayments",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "StructuredValue.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "RepaymentSpecification.schema.json",
+  "x-oold-uuid": "98daf0c0-3598-502e-acad-cc1dc06df4d2",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/RepaymentSpecification",
+  "x-oold-instance-rdf-type": [
+    "schema:RepaymentSpecification"
+  ],
+  "title": "RepaymentSpecification",
+  "description": "A structured value representing repayment.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:RepaymentSpecification"
+      ]
+    },
+    "downPayment": {
+      "title": "Down Payment",
+      "description": "a type of payment made in cash during the onset of the purchase of an expensive good/service. The payment typically represents only a percentage of the full purchase price.",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: MonetaryAmount [value-type]: MonetaryAmount -> StructuredValue -> Intangible -> Thing",
+        "anyOf": [
+          {
+            "$ref": "Number.schema.json"
+          },
+          {
+            "$ref": "MonetaryAmount.schema.json"
+          }
+        ]
+      }
+    },
+    "earlyPrepaymentPenalty": {
+      "title": "Early Prepayment Penalty",
+      "description": "The amount to be paid as a penalty in the event of early payment of the loan.",
+      "type": "array",
+      "items": {
+        "$ref": "MonetaryAmount.schema.json"
+      }
+    },
+    "loanPaymentAmount": {
+      "title": "Loan Payment Amount",
+      "description": "The amount of money to pay in a single payment.",
+      "type": "array",
+      "items": {
+        "$ref": "MonetaryAmount.schema.json"
+      }
+    },
+    "loanPaymentFrequency": {
+      "title": "Loan Payment Frequency",
+      "description": "Frequency of payments due, i.e. number of months between payments. This is defined as a frequency, i.e. the reciprocal of a period of time.",
+      "type": "array",
+      "items": {
+        "$ref": "Number.schema.json"
+      }
+    },
+    "numberOfLoanPayments": {
+      "title": "Number Of Loan Payments",
+      "description": "The number of payments contractually required at origination to repay the loan. For monthly paying loans this is the number of months from the contractual first payment date to the maturity date.",
+      "type": "array",
+      "items": {
+        "$ref": "Number.schema.json"
+      }
+    }
+  }
+}

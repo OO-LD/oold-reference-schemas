@@ -1,0 +1,8 @@
+{
+  "$schema": "RentAction.schema.json",
+  "@context": "RentAction.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:RentAction"
+  ]
+}

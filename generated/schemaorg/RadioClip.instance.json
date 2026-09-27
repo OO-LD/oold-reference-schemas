@@ -1,0 +1,8 @@
+{
+  "$schema": "RadioClip.schema.json",
+  "@context": "RadioClip.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:RadioClip"
+  ]
+}

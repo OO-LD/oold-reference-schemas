@@ -1,0 +1,8 @@
+{
+  "$schema": "Waterfall.schema.json",
+  "@context": "Waterfall.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:Waterfall"
+  ]
+}

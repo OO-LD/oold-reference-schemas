@@ -1,0 +1,119 @@
+{
+  "@context": [
+    "Intangible.schema.json",
+    {
+      "aggregateElement": {
+        "@id": "schema:aggregateElement",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "itemListElement": {
+        "@id": "schema:itemListElement",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "itemListElement_text": {
+        "@id": "schema:itemListElement",
+        "@container": "@set"
+      },
+      "itemListOrder": {
+        "@id": "schema:itemListOrder",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "itemListOrder_text": {
+        "@id": "schema:itemListOrder",
+        "@container": "@set"
+      },
+      "numberOfItems": {
+        "@id": "schema:numberOfItems",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Intangible.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ItemList.schema.json",
+  "x-oold-uuid": "52b41da0-7554-5e15-a3fa-2599c14b4f14",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/ItemList",
+  "x-oold-instance-rdf-type": [
+    "schema:ItemList"
+  ],
+  "title": "ItemList",
+  "description": "A list of items of any sort&#x2014;for example, Top 10 Movies About Weathermen, or Top 100 Party Songs. Not to be confused with HTML lists, which are often used only for formatting.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:ItemList"
+      ]
+    },
+    "aggregateElement": {
+      "title": "Aggregate Element",
+      "description": "Indicates a prototype of the elements in the list that is used to hold aggregate information (ratings, offers, etc.).",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Thing.schema.json"
+      }
+    },
+    "itemListElement": {
+      "title": "Item List Element",
+      "description": "For itemListElement values, you can use simple strings (e.g. \"Peter\", \"Paul\", \"Mary\"), existing entities, or use ListItem.\\n\\nText values are best if the elements in the list are plain strings. Existing entities are best for a simple, unordered list of existing things in your data. ListItem is used with ordered lists when you want to provide additional context about the element in that list or when the same item might be in different places in different lists.\\n\\nNote: The order of elements in your mark-up is not sufficient for indicating the order or elements.  Use ListItem with a 'position' property in such cases.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "ListItem.schema.json",
+          "Thing.schema.json"
+        ]
+      }
+    },
+    "itemListElement_text": {
+      "title": "Item List Element (text)",
+      "description": "For itemListElement values, you can use simple strings (e.g. \"Peter\", \"Paul\", \"Mary\"), existing entities, or use ListItem.\\n\\nText values are best if the elements in the list are plain strings. Existing entities are best for a simple, unordered list of existing things in your data. ListItem is used with ordered lists when you want to provide additional context about the element in that list or when the same item might be in different places in different lists.\\n\\nNote: The order of elements in your mark-up is not sufficient for indicating the order or elements.  Use ListItem with a 'position' property in such cases.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "itemListOrder": {
+      "title": "Item List Order",
+      "description": "Type of ordering (e.g. Ascending, Descending, Unordered).",
+      "type": "array",
+      "items": {
+        "$ref": "ItemListOrderType.schema.json#/$defs/member",
+        "x-oold-range": "ItemListOrderType.schema.json"
+      }
+    },
+    "itemListOrder_text": {
+      "title": "Item List Order (text)",
+      "description": "Type of ordering (e.g. Ascending, Descending, Unordered).",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "numberOfItems": {
+      "title": "Number Of Items",
+      "description": "The number of items in an ItemList. Note that some descriptions might not fully describe all items in a list (e.g., multi-page pagination); in such cases, the numberOfItems would be for the entire list.",
+      "type": "array",
+      "items": {
+        "$ref": "Integer.schema.json"
+      }
+    }
+  }
+}

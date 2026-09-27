@@ -1,0 +1,8 @@
+{
+  "$schema": "BefriendAction.schema.json",
+  "@context": "BefriendAction.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:BefriendAction"
+  ]
+}

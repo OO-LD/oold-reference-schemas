@@ -1,0 +1,63 @@
+{
+  "@context": [
+    "TradeAction.schema.json",
+    {
+      "recipient": {
+        "@id": "schema:recipient",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "TradeAction.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "TipAction.schema.json",
+  "x-oold-uuid": "963ec0d5-31c8-53b5-a5e2-c9f0d29432db",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/TipAction",
+  "x-oold-instance-rdf-type": [
+    "schema:TipAction"
+  ],
+  "title": "TipAction",
+  "description": "The act of giving money voluntarily to a beneficiary in recognition of services rendered.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:TipAction"
+      ]
+    },
+    "recipient": {
+      "title": "Recipient",
+      "description": "A sub property of participant. The participant who is at the receiving end of the action.",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: ContactPoint [value-type]: ContactPoint -> StructuredValue -> Intangible -> Thing; Audience [entity]: Audience -> Intangible -> Thing; Organization [entity]: Organization -> Thing; Person [entity]: Person -> Thing",
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "iri-reference",
+            "x-oold-range": [
+              "Audience.schema.json",
+              "Organization.schema.json",
+              "Person.schema.json"
+            ]
+          },
+          {
+            "$ref": "ContactPoint.schema.json"
+          }
+        ]
+      }
+    }
+  }
+}

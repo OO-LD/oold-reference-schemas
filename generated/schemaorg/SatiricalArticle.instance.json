@@ -1,0 +1,8 @@
+{
+  "$schema": "SatiricalArticle.schema.json",
+  "@context": "SatiricalArticle.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:SatiricalArticle"
+  ]
+}

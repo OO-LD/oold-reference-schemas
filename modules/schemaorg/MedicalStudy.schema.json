@@ -1,0 +1,163 @@
+{
+  "@context": [
+    "MedicalEntity.schema.json",
+    {
+      "healthCondition": {
+        "@id": "schema:healthCondition",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "sponsor": {
+        "@id": "schema:sponsor",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "status": {
+        "@id": "schema:status",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "status_text": {
+        "@id": "schema:status",
+        "@container": "@set"
+      },
+      "studyLocation": {
+        "@id": "schema:studyLocation",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "studySubject": {
+        "@id": "schema:studySubject",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "MedicalEntity.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MedicalStudy.schema.json",
+  "x-oold-uuid": "b39383f3-e9e4-519d-98b7-4aec49931cfb",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/MedicalStudy",
+  "x-oold-instance-rdf-type": [
+    "schema:MedicalStudy"
+  ],
+  "title": "MedicalStudy",
+  "description": "A medical study is an umbrella type covering all kinds of research studies relating to human medicine or health, including observational studies and interventional trials and registries, randomized, controlled or not. When the specific type of study is known, use one of the extensions of this type, such as MedicalTrial or MedicalObservationalStudy. Also, note that this type should be used to mark up data that describes the study itself; to tag an article that publishes the results of a study, use MedicalScholarlyArticle. Note: use the code property of MedicalEntity to store study IDs, e.g. clinicaltrials.gov ID.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:MedicalStudy"
+      ]
+    },
+    "healthCondition": {
+      "title": "Health Condition",
+      "description": "Specifying the health condition(s) of a patient, medical study, or other target audience.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "MedicalCondition.schema.json"
+      }
+    },
+    "sponsor": {
+      "title": "Sponsor",
+      "description": "A person or organization that supports a thing through a pledge, promise, or financial contribution. E.g. a sponsor of a Medical Study or a corporate sponsor of an event.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "Organization.schema.json",
+          "Person.schema.json"
+        ]
+      }
+    },
+    "status": {
+      "title": "Status",
+      "description": "The status of the study (enumerated).",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "EventStatusType.schema.json",
+          "MedicalStudyStatus.schema.json"
+        ],
+        "enum": [
+          "schema:ActiveNotRecruiting",
+          "schema:Completed",
+          "schema:EnrollingByInvitation",
+          "schema:EventCancelled",
+          "schema:EventMovedOnline",
+          "schema:EventPostponed",
+          "schema:EventRescheduled",
+          "schema:EventScheduled",
+          "schema:NotYetRecruiting",
+          "schema:Recruiting",
+          "schema:ResultsAvailable",
+          "schema:ResultsNotAvailable",
+          "schema:Suspended",
+          "schema:Terminated",
+          "schema:Withdrawn"
+        ],
+        "x-oold-ui-enum-titles": [
+          "ActiveNotRecruiting",
+          "Completed",
+          "EnrollingByInvitation",
+          "EventCancelled",
+          "EventMovedOnline",
+          "EventPostponed",
+          "EventRescheduled",
+          "EventScheduled",
+          "NotYetRecruiting",
+          "Recruiting",
+          "ResultsAvailable",
+          "ResultsNotAvailable",
+          "Suspended",
+          "Terminated",
+          "Withdrawn"
+        ]
+      }
+    },
+    "status_text": {
+      "title": "Status (text)",
+      "description": "The status of the study (enumerated).",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "studyLocation": {
+      "title": "Study Location",
+      "description": "The location in which the study is taking/took place.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "AdministrativeArea.schema.json"
+      }
+    },
+    "studySubject": {
+      "title": "Study Subject",
+      "description": "A subject of the study, i.e. one of the medical conditions, therapies, devices, drugs, etc. investigated by the study.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "MedicalEntity.schema.json"
+      }
+    }
+  }
+}

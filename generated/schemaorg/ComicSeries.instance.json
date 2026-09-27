@@ -1,0 +1,8 @@
+{
+  "$schema": "ComicSeries.schema.json",
+  "@context": "ComicSeries.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:ComicSeries"
+  ]
+}

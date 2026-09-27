@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "ControlAction.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "ControlAction.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "DeactivateAction.schema.json",
+  "x-oold-uuid": "a4e71142-a6da-5578-bea4-fab3e9d48c85",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/DeactivateAction",
+  "x-oold-instance-rdf-type": [
+    "schema:DeactivateAction"
+  ],
+  "title": "DeactivateAction",
+  "description": "The act of stopping or deactivating a device or application (e.g. stopping a timer or turning off a flashlight).",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:DeactivateAction"
+      ]
+    }
+  }
+}

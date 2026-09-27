@@ -1,0 +1,51 @@
+{
+  "@context": [
+    "Enumeration.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Enumeration.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "BoardingPolicyType.schema.json",
+  "x-oold-uuid": "95e3f783-4810-5239-bbbc-470f210355a2",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/BoardingPolicyType",
+  "x-oold-instance-rdf-type": [
+    "schema:BoardingPolicyType"
+  ],
+  "title": "BoardingPolicyType",
+  "description": "A type of boarding policy used by an airline.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:BoardingPolicyType"
+      ]
+    }
+  },
+  "$defs": {
+    "member": {
+      "title": "BoardingPolicyType member",
+      "description": "One of the 2 member instances of BoardingPolicyType.",
+      "type": "string",
+      "format": "iri-reference",
+      "enum": [
+        "schema:GroupBoardingPolicy",
+        "schema:ZoneBoardingPolicy"
+      ],
+      "x-oold-ui-enum-titles": [
+        "GroupBoardingPolicy",
+        "ZoneBoardingPolicy"
+      ]
+    }
+  }
+}

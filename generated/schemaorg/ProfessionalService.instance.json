@@ -1,0 +1,8 @@
+{
+  "$schema": "ProfessionalService.schema.json",
+  "@context": "ProfessionalService.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:ProfessionalService"
+  ]
+}

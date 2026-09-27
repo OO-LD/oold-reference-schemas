@@ -1,0 +1,66 @@
+{
+  "@context": [
+    "CreativeWork.schema.json",
+    {
+      "numTracks": {
+        "@id": "schema:numTracks",
+        "@container": "@set"
+      },
+      "track": {
+        "@id": "schema:track",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "CreativeWork.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MusicPlaylist.schema.json",
+  "x-oold-uuid": "da713588-02ab-5f2b-9fe7-712735a33b9b",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/MusicPlaylist",
+  "x-oold-instance-rdf-type": [
+    "schema:MusicPlaylist"
+  ],
+  "title": "MusicPlaylist",
+  "description": "A collection of music tracks in playlist form.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:MusicPlaylist"
+      ]
+    },
+    "numTracks": {
+      "title": "Num Tracks",
+      "description": "The number of tracks in this album or playlist.",
+      "type": "array",
+      "items": {
+        "$ref": "Integer.schema.json"
+      }
+    },
+    "track": {
+      "title": "Track",
+      "description": "A music recording (track)&#x2014;usually a single song. If an ItemList is given, the list should contain items of type MusicRecording.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "ItemList.schema.json",
+          "MusicRecording.schema.json"
+        ]
+      }
+    }
+  }
+}

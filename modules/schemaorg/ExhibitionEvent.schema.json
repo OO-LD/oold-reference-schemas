@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Event.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Event.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ExhibitionEvent.schema.json",
+  "x-oold-uuid": "d7d8d14d-adf2-57c4-bc7a-1f79f53a7ccb",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/ExhibitionEvent",
+  "x-oold-instance-rdf-type": [
+    "schema:ExhibitionEvent"
+  ],
+  "title": "ExhibitionEvent",
+  "description": "Event type: Exhibition event, e.g. at a museum, library, archive, tradeshow, ...",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:ExhibitionEvent"
+      ]
+    }
+  }
+}

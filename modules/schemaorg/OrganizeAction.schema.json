@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Action.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Action.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "OrganizeAction.schema.json",
+  "x-oold-uuid": "f0b6bfa4-1412-543f-8fe3-c6076a169bc7",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/OrganizeAction",
+  "x-oold-instance-rdf-type": [
+    "schema:OrganizeAction"
+  ],
+  "title": "OrganizeAction",
+  "description": "The act of manipulating/administering/supervising/controlling one or more objects.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:OrganizeAction"
+      ]
+    }
+  }
+}

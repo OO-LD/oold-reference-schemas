@@ -1,0 +1,8 @@
+{
+  "$schema": "AuthorizeAction.schema.json",
+  "@context": "AuthorizeAction.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:AuthorizeAction"
+  ]
+}

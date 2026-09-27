@@ -1,0 +1,51 @@
+{
+  "@context": [
+    "MedicalTest.schema.json",
+    {
+      "subTest": {
+        "@id": "schema:subTest",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "MedicalTest.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MedicalTestPanel.schema.json",
+  "x-oold-uuid": "51b2e59e-6964-540e-9ae5-c96f0ba691c4",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/MedicalTestPanel",
+  "x-oold-instance-rdf-type": [
+    "schema:MedicalTestPanel"
+  ],
+  "title": "MedicalTestPanel",
+  "description": "Any collection of tests commonly ordered together.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:MedicalTestPanel"
+      ]
+    },
+    "subTest": {
+      "title": "Sub Test",
+      "description": "A component test of the panel.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "MedicalTest.schema.json"
+      }
+    }
+  }
+}

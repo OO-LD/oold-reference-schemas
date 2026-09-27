@@ -1,0 +1,66 @@
+{
+  "@context": [
+    "Intangible.schema.json",
+    {
+      "authenticator": {
+        "@id": "schema:authenticator",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "expectsAcceptanceOf": {
+        "@id": "schema:expectsAcceptanceOf",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Intangible.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MediaSubscription.schema.json",
+  "x-oold-uuid": "d9ff5cf1-76a4-5296-8d4c-34850da2830f",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/MediaSubscription",
+  "x-oold-instance-rdf-type": [
+    "schema:MediaSubscription"
+  ],
+  "title": "MediaSubscription",
+  "description": "A subscription which allows a user to access media including audio, video, books, etc.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:MediaSubscription"
+      ]
+    },
+    "authenticator": {
+      "title": "Authenticator",
+      "description": "The Organization responsible for authenticating the user's subscription. For example, many media apps require a cable/satellite provider to authenticate your subscription before playing media.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Organization.schema.json"
+      }
+    },
+    "expectsAcceptanceOf": {
+      "title": "Expects Acceptance Of",
+      "description": "An Offer which must be accepted before the user can perform the Action. For example, the user may need to buy a movie before being able to watch it.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Offer.schema.json"
+      }
+    }
+  }
+}

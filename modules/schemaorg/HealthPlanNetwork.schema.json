@@ -1,0 +1,87 @@
+{
+  "@context": [
+    "Intangible.schema.json",
+    {
+      "healthPlanCostSharing": {
+        "@id": "schema:healthPlanCostSharing",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "healthPlanCostSharing_text": {
+        "@id": "schema:healthPlanCostSharing",
+        "@container": "@set"
+      },
+      "healthPlanNetworkId": {
+        "@id": "schema:healthPlanNetworkId",
+        "@container": "@set"
+      },
+      "healthPlanNetworkTier": {
+        "@id": "schema:healthPlanNetworkTier",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Intangible.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "HealthPlanNetwork.schema.json",
+  "x-oold-uuid": "c285c799-13e6-5a59-8619-3565e83fdedf",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/HealthPlanNetwork",
+  "x-oold-instance-rdf-type": [
+    "schema:HealthPlanNetwork"
+  ],
+  "title": "HealthPlanNetwork",
+  "description": "A US-style health insurance plan network.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:HealthPlanNetwork"
+      ]
+    },
+    "healthPlanCostSharing": {
+      "title": "Health Plan Cost Sharing",
+      "description": "The costs to the patient for services under this network or formulary.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "HealthPlanCostSharingSpecification.schema.json"
+      }
+    },
+    "healthPlanCostSharing_text": {
+      "title": "Health Plan Cost Sharing (text)",
+      "description": "The costs to the patient for services under this network or formulary.",
+      "type": "array",
+      "items": {
+        "$ref": "Boolean.schema.json"
+      }
+    },
+    "healthPlanNetworkId": {
+      "title": "Health Plan Network Id",
+      "description": "Name or unique ID of network. (Networks are often reused across different insurance plans.)",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "healthPlanNetworkTier": {
+      "title": "Health Plan Network Tier",
+      "description": "The tier(s) for this network.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    }
+  }
+}

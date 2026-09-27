@@ -1,0 +1,50 @@
+{
+  "@context": [
+    "MedicalTest.schema.json",
+    {
+      "imagingTechnique": {
+        "@id": "schema:imagingTechnique",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "MedicalTest.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ImagingTest.schema.json",
+  "x-oold-uuid": "64053eb4-1872-5a8e-bd41-158b3c2824b1",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/ImagingTest",
+  "x-oold-instance-rdf-type": [
+    "schema:ImagingTest"
+  ],
+  "title": "ImagingTest",
+  "description": "Any medical imaging modality typically used for diagnostic purposes.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:ImagingTest"
+      ]
+    },
+    "imagingTechnique": {
+      "title": "Imaging Technique",
+      "description": "Imaging technique used.",
+      "type": "array",
+      "items": {
+        "$ref": "MedicalImagingTechnique.schema.json#/$defs/member",
+        "x-oold-range": "MedicalImagingTechnique.schema.json"
+      }
+    }
+  }
+}

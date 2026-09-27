@@ -1,0 +1,8 @@
+{
+  "$schema": "DaySpa.schema.json",
+  "@context": "DaySpa.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:DaySpa"
+  ]
+}

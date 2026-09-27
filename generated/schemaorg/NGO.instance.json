@@ -1,0 +1,8 @@
+{
+  "$schema": "NGO.schema.json",
+  "@context": "NGO.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:NGO"
+  ]
+}

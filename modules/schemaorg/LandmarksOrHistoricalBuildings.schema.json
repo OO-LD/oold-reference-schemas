@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Place.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Place.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "LandmarksOrHistoricalBuildings.schema.json",
+  "x-oold-uuid": "303a1d21-d3f5-55da-958d-dd262073a6a2",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/LandmarksOrHistoricalBuildings",
+  "x-oold-instance-rdf-type": [
+    "schema:LandmarksOrHistoricalBuildings"
+  ],
+  "title": "LandmarksOrHistoricalBuildings",
+  "description": "An historical landmark or building.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:LandmarksOrHistoricalBuildings"
+      ]
+    }
+  }
+}

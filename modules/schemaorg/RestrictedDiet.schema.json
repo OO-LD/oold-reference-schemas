@@ -1,0 +1,69 @@
+{
+  "@context": [
+    "Enumeration.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Enumeration.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "RestrictedDiet.schema.json",
+  "x-oold-uuid": "39184c88-6485-50ef-93f1-4fe115e6cba4",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/RestrictedDiet",
+  "x-oold-instance-rdf-type": [
+    "schema:RestrictedDiet"
+  ],
+  "title": "RestrictedDiet",
+  "description": "A diet restricted to certain foods or preparations for cultural, religious, health or lifestyle reasons. ",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:RestrictedDiet"
+      ]
+    }
+  },
+  "$defs": {
+    "member": {
+      "title": "RestrictedDiet member",
+      "description": "One of the 11 member instances of RestrictedDiet.",
+      "type": "string",
+      "format": "iri-reference",
+      "enum": [
+        "schema:DiabeticDiet",
+        "schema:GlutenFreeDiet",
+        "schema:HalalDiet",
+        "schema:HinduDiet",
+        "schema:KosherDiet",
+        "schema:LowCalorieDiet",
+        "schema:LowFatDiet",
+        "schema:LowLactoseDiet",
+        "schema:LowSaltDiet",
+        "schema:VeganDiet",
+        "schema:VegetarianDiet"
+      ],
+      "x-oold-ui-enum-titles": [
+        "DiabeticDiet",
+        "GlutenFreeDiet",
+        "HalalDiet",
+        "HinduDiet",
+        "KosherDiet",
+        "LowCalorieDiet",
+        "LowFatDiet",
+        "LowLactoseDiet",
+        "LowSaltDiet",
+        "VeganDiet",
+        "VegetarianDiet"
+      ]
+    }
+  }
+}

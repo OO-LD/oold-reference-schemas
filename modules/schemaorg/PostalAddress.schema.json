@@ -1,0 +1,150 @@
+{
+  "@context": [
+    "ContactPoint.schema.json",
+    {
+      "addressCountry": {
+        "@id": "schema:addressCountry",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "addressCountry_text": {
+        "@id": "schema:addressCountry",
+        "@container": "@set"
+      },
+      "addressLocality": {
+        "@id": "schema:addressLocality",
+        "@container": "@set"
+      },
+      "addressRegion": {
+        "@id": "schema:addressRegion",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "addressRegion_text": {
+        "@id": "schema:addressRegion",
+        "@container": "@set"
+      },
+      "extendedAddress": {
+        "@id": "schema:extendedAddress",
+        "@container": "@set"
+      },
+      "postalCode": {
+        "@id": "schema:postalCode",
+        "@container": "@set"
+      },
+      "postOfficeBoxNumber": {
+        "@id": "schema:postOfficeBoxNumber",
+        "@container": "@set"
+      },
+      "streetAddress": {
+        "@id": "schema:streetAddress",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "ContactPoint.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "PostalAddress.schema.json",
+  "x-oold-uuid": "2985939e-83ab-53a1-aaba-2bdc9bb65b9c",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/PostalAddress",
+  "x-oold-instance-rdf-type": [
+    "schema:PostalAddress"
+  ],
+  "title": "PostalAddress",
+  "description": "The mailing address.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:PostalAddress"
+      ]
+    },
+    "addressCountry": {
+      "title": "Address Country",
+      "description": "The country. Recommended to be in 2-letter [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1) format, for example \"US\". For backward compatibility, a 3-letter [ISO 3166-1 alpha-3](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3) country code such as \"SGP\" or a full country name such as \"Singapore\" can also be used.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Country.schema.json"
+      }
+    },
+    "addressCountry_text": {
+      "title": "Address Country (text)",
+      "description": "The country. Recommended to be in 2-letter [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1) format, for example \"US\". For backward compatibility, a 3-letter [ISO 3166-1 alpha-3](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3) country code such as \"SGP\" or a full country name such as \"Singapore\" can also be used.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "addressLocality": {
+      "title": "Address Locality",
+      "description": "The locality in which the street address is, and which is in the region. For example, Mountain View.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "addressRegion": {
+      "title": "Address Region",
+      "description": "The region in which the locality is, and which is in the country. For example, California or another appropriate first-level [Administrative division](https://en.wikipedia.org/wiki/List_of_administrative_divisions_by_country) such as the Province in Italy or Region in Germany.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "AdministrativeArea.schema.json"
+      }
+    },
+    "addressRegion_text": {
+      "title": "Address Region (text)",
+      "description": "The region in which the locality is, and which is in the country. For example, California or another appropriate first-level [Administrative division](https://en.wikipedia.org/wiki/List_of_administrative_divisions_by_country) such as the Province in Italy or Region in Germany.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "extendedAddress": {
+      "title": "Extended Address",
+      "description": "An address extension such as an apartment number, C/O or alternative name.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "postalCode": {
+      "title": "Postal Code",
+      "description": "The postal code. For example, 94043.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "postOfficeBoxNumber": {
+      "title": "Post Office Box Number",
+      "description": "The post office box number for PO box addresses.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "streetAddress": {
+      "title": "Street Address",
+      "description": "The street address. For example, 1600 Amphitheatre Pkwy.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    }
+  }
+}

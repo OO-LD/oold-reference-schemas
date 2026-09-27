@@ -1,0 +1,39 @@
+{
+  "@context": [
+    "MedicalProcedure.schema.json",
+    "MedicalTherapy.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "MedicalProcedure.schema.json"
+    },
+    {
+      "$ref": "MedicalTherapy.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "PalliativeProcedure.schema.json",
+  "x-oold-uuid": "644f0be2-f4a9-5800-add2-d3e839367caa",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/PalliativeProcedure",
+  "x-oold-instance-rdf-type": [
+    "schema:PalliativeProcedure"
+  ],
+  "title": "PalliativeProcedure",
+  "description": "A medical procedure intended primarily for palliative purposes, aimed at relieving the symptoms of an underlying health condition.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:PalliativeProcedure"
+      ]
+    }
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "@context": [
+    "Event.schema.json",
+    {
+      "accessCode": {
+        "@id": "schema:accessCode",
+        "@container": "@set"
+      },
+      "availableFrom": {
+        "@id": "schema:availableFrom",
+        "@type": "xsd:dateTime",
+        "@container": "@set"
+      },
+      "availableThrough": {
+        "@id": "schema:availableThrough",
+        "@type": "xsd:dateTime",
+        "@container": "@set"
+      },
+      "hasDeliveryMethod": {
+        "@id": "schema:hasDeliveryMethod",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Event.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "DeliveryEvent.schema.json",
+  "x-oold-uuid": "27acf8b5-1bdb-53c1-8c26-7ef48bc74f43",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/DeliveryEvent",
+  "x-oold-instance-rdf-type": [
+    "schema:DeliveryEvent"
+  ],
+  "title": "DeliveryEvent",
+  "description": "An event involving the delivery of an item.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:DeliveryEvent"
+      ]
+    },
+    "accessCode": {
+      "title": "Access Code",
+      "description": "Password, PIN, or access code needed for delivery (e.g. from a locker).",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "availableFrom": {
+      "title": "Available From",
+      "description": "When the item is available for pickup from the store, locker, etc.",
+      "type": "array",
+      "items": {
+        "$ref": "DateTime.schema.json"
+      }
+    },
+    "availableThrough": {
+      "title": "Available Through",
+      "description": "After this date, the item will no longer be available for pickup.",
+      "type": "array",
+      "items": {
+        "$ref": "DateTime.schema.json"
+      }
+    },
+    "hasDeliveryMethod": {
+      "title": "Has Delivery Method",
+      "description": "Method used for delivery or shipping.",
+      "type": "array",
+      "items": {
+        "$ref": "DeliveryMethod.schema.json#/$defs/member",
+        "x-oold-range": "DeliveryMethod.schema.json"
+      }
+    }
+  }
+}

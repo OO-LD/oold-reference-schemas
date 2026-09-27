@@ -1,0 +1,53 @@
+{
+  "@context": [
+    "Enumeration.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Enumeration.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "CarUsageType.schema.json",
+  "x-oold-uuid": "df5d059b-30c1-5b66-855e-24bde104efed",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/CarUsageType",
+  "x-oold-instance-rdf-type": [
+    "schema:CarUsageType"
+  ],
+  "title": "CarUsageType",
+  "description": "A value indicating a special usage of a car, e.g. commercial rental, driving school, or as a taxi.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:CarUsageType"
+      ]
+    }
+  },
+  "$defs": {
+    "member": {
+      "title": "CarUsageType member",
+      "description": "One of the 3 member instances of CarUsageType.",
+      "type": "string",
+      "format": "iri-reference",
+      "enum": [
+        "schema:DrivingSchoolVehicleUsage",
+        "schema:RentalVehicleUsage",
+        "schema:TaxiVehicleUsage"
+      ],
+      "x-oold-ui-enum-titles": [
+        "DrivingSchoolVehicleUsage",
+        "RentalVehicleUsage",
+        "TaxiVehicleUsage"
+      ]
+    }
+  }
+}

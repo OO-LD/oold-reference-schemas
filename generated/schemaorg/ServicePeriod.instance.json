@@ -1,0 +1,8 @@
+{
+  "$schema": "ServicePeriod.schema.json",
+  "@context": "ServicePeriod.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:ServicePeriod"
+  ]
+}

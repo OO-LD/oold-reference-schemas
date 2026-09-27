@@ -1,0 +1,8 @@
+{
+  "$schema": "ReplyAction.schema.json",
+  "@context": "ReplyAction.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:ReplyAction"
+  ]
+}

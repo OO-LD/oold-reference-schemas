@@ -1,0 +1,48 @@
+{
+  "@context": [
+    "Product.schema.json",
+    {
+      "inventoryLevel": {
+        "@id": "schema:inventoryLevel",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Product.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "SomeProducts.schema.json",
+  "x-oold-uuid": "5733a746-42e7-5b5d-8844-eb65b43cc579",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/SomeProducts",
+  "x-oold-instance-rdf-type": [
+    "schema:SomeProducts"
+  ],
+  "title": "SomeProducts",
+  "description": "A placeholder for multiple similar products of the same kind.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:SomeProducts"
+      ]
+    },
+    "inventoryLevel": {
+      "title": "Inventory Level",
+      "description": "The current approximate inventory level for the item or items.",
+      "type": "array",
+      "items": {
+        "$ref": "QuantitativeValue.schema.json"
+      }
+    }
+  }
+}

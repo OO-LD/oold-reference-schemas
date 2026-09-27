@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "EducationalOrganization.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "EducationalOrganization.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "School.schema.json",
+  "x-oold-uuid": "3377e2c1-9407-51cb-80bd-28e83063093d",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/School",
+  "x-oold-instance-rdf-type": [
+    "schema:School"
+  ],
+  "title": "School",
+  "description": "A school.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:School"
+      ]
+    }
+  }
+}

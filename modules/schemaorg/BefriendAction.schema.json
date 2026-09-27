@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "InteractAction.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "InteractAction.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "BefriendAction.schema.json",
+  "x-oold-uuid": "f3bc4c66-799b-5f13-90ea-98477b7ee867",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/BefriendAction",
+  "x-oold-instance-rdf-type": [
+    "schema:BefriendAction"
+  ],
+  "title": "BefriendAction",
+  "description": "The act of forming a personal connection with someone (object) mutually/bidirectionally/symmetrically.\\n\\nRelated actions:\\n\\n* [[FollowAction]]: Unlike FollowAction, BefriendAction implies that the connection is reciprocal.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:BefriendAction"
+      ]
+    }
+  }
+}

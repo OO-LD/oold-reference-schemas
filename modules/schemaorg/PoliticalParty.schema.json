@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Organization.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Organization.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "PoliticalParty.schema.json",
+  "x-oold-uuid": "909278d3-d7a2-59f9-b715-12bc785cfc69",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/PoliticalParty",
+  "x-oold-instance-rdf-type": [
+    "schema:PoliticalParty"
+  ],
+  "title": "PoliticalParty",
+  "description": "Organization: Political Party.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:PoliticalParty"
+      ]
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "EntertainmentBusiness.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "EntertainmentBusiness.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Casino.schema.json",
+  "x-oold-uuid": "5e706f22-bce8-577f-9a0b-81b11d6a8536",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Casino",
+  "x-oold-instance-rdf-type": [
+    "schema:Casino"
+  ],
+  "title": "Casino",
+  "description": "A casino.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Casino"
+      ]
+    }
+  }
+}

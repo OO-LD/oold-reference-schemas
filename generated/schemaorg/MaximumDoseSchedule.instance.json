@@ -1,0 +1,8 @@
+{
+  "$schema": "MaximumDoseSchedule.schema.json",
+  "@context": "MaximumDoseSchedule.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:MaximumDoseSchedule"
+  ]
+}

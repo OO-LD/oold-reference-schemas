@@ -1,0 +1,8 @@
+{
+  "$schema": "MediaSubscription.schema.json",
+  "@context": "MediaSubscription.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:MediaSubscription"
+  ]
+}

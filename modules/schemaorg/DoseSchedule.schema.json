@@ -1,0 +1,98 @@
+{
+  "@context": [
+    "MedicalIntangible.schema.json",
+    {
+      "doseUnit": {
+        "@id": "schema:doseUnit",
+        "@container": "@set"
+      },
+      "doseValue": {
+        "@id": "schema:doseValue",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "doseValue_text": {
+        "@id": "schema:doseValue",
+        "@container": "@set"
+      },
+      "frequency": {
+        "@id": "schema:frequency",
+        "@container": "@set"
+      },
+      "targetPopulation": {
+        "@id": "schema:targetPopulation",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "MedicalIntangible.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "DoseSchedule.schema.json",
+  "x-oold-uuid": "b95052fa-ceed-5365-b5fd-52e189ecbf70",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/DoseSchedule",
+  "x-oold-instance-rdf-type": [
+    "schema:DoseSchedule"
+  ],
+  "title": "DoseSchedule",
+  "description": "A specific dosing schedule for a drug or supplement.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:DoseSchedule"
+      ]
+    },
+    "doseUnit": {
+      "title": "Dose Unit",
+      "description": "The unit of the dose, e.g. 'mg'.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "doseValue": {
+      "title": "Dose Value",
+      "description": "The value of the dose, e.g. 500.",
+      "type": "array",
+      "items": {
+        "$ref": "QualitativeValue.schema.json#/$defs/member",
+        "x-oold-range": "QualitativeValue.schema.json"
+      }
+    },
+    "doseValue_text": {
+      "title": "Dose Value (text)",
+      "description": "The value of the dose, e.g. 500.",
+      "type": "array",
+      "items": {
+        "$ref": "Number.schema.json"
+      }
+    },
+    "frequency": {
+      "title": "Frequency",
+      "description": "How often the dose is taken, e.g. 'daily'.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "targetPopulation": {
+      "title": "Target Population",
+      "description": "Characteristics of the population for which this is intended, or which typically uses it, e.g. 'adults'.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    }
+  }
+}

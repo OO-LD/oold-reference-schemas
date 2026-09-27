@@ -1,0 +1,206 @@
+{
+  "@context": [
+    "StructuredValue.schema.json",
+    {
+      "deliveryTime": {
+        "@id": "schema:deliveryTime",
+        "@container": "@set"
+      },
+      "depth": {
+        "@id": "schema:depth",
+        "@container": "@set"
+      },
+      "doesNotShip": {
+        "@id": "schema:doesNotShip",
+        "@container": "@set"
+      },
+      "hasShippingService": {
+        "@id": "schema:hasShippingService",
+        "@container": "@set"
+      },
+      "height": {
+        "@id": "schema:height",
+        "@container": "@set"
+      },
+      "shippingDestination": {
+        "@id": "schema:shippingDestination",
+        "@container": "@set"
+      },
+      "shippingOrigin": {
+        "@id": "schema:shippingOrigin",
+        "@container": "@set"
+      },
+      "shippingRate": {
+        "@id": "schema:shippingRate",
+        "@container": "@set"
+      },
+      "validForMemberTier": {
+        "@id": "schema:validForMemberTier",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "weight": {
+        "@id": "schema:weight",
+        "@container": "@set"
+      },
+      "width": {
+        "@id": "schema:width",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "StructuredValue.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "OfferShippingDetails.schema.json",
+  "x-oold-uuid": "35a4e596-9013-50f7-a3f0-866bfaeccac0",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/OfferShippingDetails",
+  "x-oold-instance-rdf-type": [
+    "schema:OfferShippingDetails"
+  ],
+  "title": "OfferShippingDetails",
+  "description": "OfferShippingDetails represents information about shipping destinations.\n\nMultiple of these entities can be used to represent different shipping rates for different destinations:\n\nOne entity for Alaska/Hawaii. A different one for continental US. A different one for all France.\n\nMultiple of these entities can be used to represent different shipping costs and delivery times.\n\nTwo entities that are identical but differ in rate and time:\n\nE.g. Cheaper and slower: $5 in 5-7 days\nor Fast and expensive: $15 in 1-2 days.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:OfferShippingDetails"
+      ]
+    },
+    "deliveryTime": {
+      "title": "Delivery Time",
+      "description": "The total delay between the receipt of the order and the goods reaching the final customer.",
+      "type": "array",
+      "items": {
+        "$ref": "ShippingDeliveryTime.schema.json"
+      }
+    },
+    "depth": {
+      "title": "Depth",
+      "description": "The depth of the item.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Distance.schema.json"
+          },
+          {
+            "$ref": "QuantitativeValue.schema.json"
+          }
+        ]
+      }
+    },
+    "doesNotShip": {
+      "title": "Does Not Ship",
+      "description": "Indicates when shipping to a particular [[shippingDestination]] is not available.",
+      "type": "array",
+      "items": {
+        "$ref": "Boolean.schema.json"
+      }
+    },
+    "hasShippingService": {
+      "title": "Has Shipping Service",
+      "description": "Specification of a shipping service offered by the organization.",
+      "type": "array",
+      "items": {
+        "$ref": "ShippingService.schema.json"
+      }
+    },
+    "height": {
+      "title": "Height",
+      "description": "The height of the item.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Distance.schema.json"
+          },
+          {
+            "$ref": "QuantitativeValue.schema.json"
+          }
+        ]
+      }
+    },
+    "shippingDestination": {
+      "title": "Shipping Destination",
+      "description": "indicates (possibly multiple) shipping destinations. These can be defined in several ways, e.g. postalCode ranges.",
+      "type": "array",
+      "items": {
+        "$ref": "DefinedRegion.schema.json"
+      }
+    },
+    "shippingOrigin": {
+      "title": "Shipping Origin",
+      "description": "Indicates the origin of a shipment, i.e. where it should be coming from.",
+      "type": "array",
+      "items": {
+        "$ref": "DefinedRegion.schema.json"
+      }
+    },
+    "shippingRate": {
+      "title": "Shipping Rate",
+      "description": "The shipping rate is the cost of shipping to the specified destination. Typically, the maxValue and currency values (of the [[MonetaryAmount]]) are most appropriate.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "MonetaryAmount.schema.json"
+          },
+          {
+            "$ref": "ShippingRateSettings.schema.json"
+          }
+        ]
+      }
+    },
+    "validForMemberTier": {
+      "title": "Valid For Member Tier",
+      "description": "The membership program tier(s) an Offer (or a PriceSpecification, OfferShippingDetails, or MerchantReturnPolicy under an Offer) is valid for.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "MemberProgramTier.schema.json"
+      }
+    },
+    "weight": {
+      "title": "Weight",
+      "description": "The weight of the product or person.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Mass.schema.json"
+          },
+          {
+            "$ref": "QuantitativeValue.schema.json"
+          }
+        ]
+      }
+    },
+    "width": {
+      "title": "Width",
+      "description": "The width of the item.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Distance.schema.json"
+          },
+          {
+            "$ref": "QuantitativeValue.schema.json"
+          }
+        ]
+      }
+    }
+  }
+}

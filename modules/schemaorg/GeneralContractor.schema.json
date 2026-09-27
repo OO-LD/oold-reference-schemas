@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "HomeAndConstructionBusiness.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "HomeAndConstructionBusiness.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "GeneralContractor.schema.json",
+  "x-oold-uuid": "3fec73c1-bfb3-5e75-8433-d6741031a5c6",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/GeneralContractor",
+  "x-oold-instance-rdf-type": [
+    "schema:GeneralContractor"
+  ],
+  "title": "GeneralContractor",
+  "description": "A general contractor.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:GeneralContractor"
+      ]
+    }
+  }
+}

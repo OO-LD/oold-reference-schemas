@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Offer.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Offer.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "OfferForPurchase.schema.json",
+  "x-oold-uuid": "42a37dfc-9e5b-5853-902e-25c8913b5d66",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/OfferForPurchase",
+  "x-oold-instance-rdf-type": [
+    "schema:OfferForPurchase"
+  ],
+  "title": "OfferForPurchase",
+  "description": "An [[OfferForPurchase]] in Schema.org represents an [[Offer]] to sell something, i.e. an [[Offer]] whose\n  [[businessFunction]] is [sell](http://purl.org/goodrelations/v1#Sell.). See [Good Relations](https://en.wikipedia.org/wiki/GoodRelations) for\n  background on the underlying concepts.\n  ",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:OfferForPurchase"
+      ]
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "InformAction.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "InformAction.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ConfirmAction.schema.json",
+  "x-oold-uuid": "6857637f-63b9-59a6-af4d-7154581f2a84",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/ConfirmAction",
+  "x-oold-instance-rdf-type": [
+    "schema:ConfirmAction"
+  ],
+  "title": "ConfirmAction",
+  "description": "The act of notifying someone that a future event/action is going to happen as expected.\\n\\nRelated actions:\\n\\n* [[CancelAction]]: The antonym of ConfirmAction.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:ConfirmAction"
+      ]
+    }
+  }
+}

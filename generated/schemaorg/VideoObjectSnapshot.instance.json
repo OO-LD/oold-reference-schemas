@@ -1,0 +1,8 @@
+{
+  "$schema": "VideoObjectSnapshot.schema.json",
+  "@context": "VideoObjectSnapshot.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:VideoObjectSnapshot"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "$schema": "HealthPlanNetwork.schema.json",
+  "@context": "HealthPlanNetwork.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:HealthPlanNetwork"
+  ]
+}

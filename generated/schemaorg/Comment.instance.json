@@ -1,0 +1,8 @@
+{
+  "$schema": "Comment.schema.json",
+  "@context": "Comment.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:Comment"
+  ]
+}

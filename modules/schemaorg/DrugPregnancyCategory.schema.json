@@ -1,0 +1,59 @@
+{
+  "@context": [
+    "MedicalEnumeration.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "MedicalEnumeration.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "DrugPregnancyCategory.schema.json",
+  "x-oold-uuid": "720e6102-0735-5132-a7f2-0f6376ff9945",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/DrugPregnancyCategory",
+  "x-oold-instance-rdf-type": [
+    "schema:DrugPregnancyCategory"
+  ],
+  "title": "DrugPregnancyCategory",
+  "description": "Categories that represent an assessment of the risk of fetal injury due to a drug or pharmaceutical used as directed by the mother during pregnancy.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:DrugPregnancyCategory"
+      ]
+    }
+  },
+  "$defs": {
+    "member": {
+      "title": "DrugPregnancyCategory member",
+      "description": "One of the 6 member instances of DrugPregnancyCategory.",
+      "type": "string",
+      "format": "iri-reference",
+      "enum": [
+        "schema:FDAcategoryA",
+        "schema:FDAcategoryB",
+        "schema:FDAcategoryC",
+        "schema:FDAcategoryD",
+        "schema:FDAcategoryX",
+        "schema:FDAnotEvaluated"
+      ],
+      "x-oold-ui-enum-titles": [
+        "FDAcategoryA",
+        "FDAcategoryB",
+        "FDAcategoryC",
+        "FDAcategoryD",
+        "FDAcategoryX",
+        "FDAnotEvaluated"
+      ]
+    }
+  }
+}

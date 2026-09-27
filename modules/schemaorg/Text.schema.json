@@ -1,0 +1,18 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Text.schema.json",
+  "x-oold-uuid": "38cd018a-e9e2-5ee8-9dde-646ec3bc556c",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Text",
+  "x-oold-instance-rdf-type": [
+    "schema:Text"
+  ],
+  "title": "Text",
+  "description": "Data type: Text.",
+  "type": "string"
+}

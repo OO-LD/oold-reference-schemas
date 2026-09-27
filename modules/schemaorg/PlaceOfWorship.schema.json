@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "CivicStructure.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "CivicStructure.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "PlaceOfWorship.schema.json",
+  "x-oold-uuid": "09e31513-7a22-57a6-9e0e-40f4342045ab",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/PlaceOfWorship",
+  "x-oold-instance-rdf-type": [
+    "schema:PlaceOfWorship"
+  ],
+  "title": "PlaceOfWorship",
+  "description": "Place of worship, such as a church, synagogue, or mosque.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:PlaceOfWorship"
+      ]
+    }
+  }
+}

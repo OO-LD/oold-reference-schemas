@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "LocalBusiness.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "LocalBusiness.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MedicalBusiness.schema.json",
+  "x-oold-uuid": "f2fb86df-8a8f-5508-bac8-6b499a6948e3",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/MedicalBusiness",
+  "x-oold-instance-rdf-type": [
+    "schema:MedicalBusiness"
+  ],
+  "title": "MedicalBusiness",
+  "description": "A particular physical or virtual business of an organization for medical purposes. Examples of MedicalBusiness include different businesses run by health professionals.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:MedicalBusiness"
+      ]
+    }
+  }
+}

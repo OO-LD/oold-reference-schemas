@@ -1,0 +1,8 @@
+{
+  "$schema": "MotorcycleRepair.schema.json",
+  "@context": "MotorcycleRepair.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:MotorcycleRepair"
+  ]
+}

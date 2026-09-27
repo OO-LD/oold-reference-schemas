@@ -1,0 +1,8 @@
+{
+  "$schema": "DrawAction.schema.json",
+  "@context": "DrawAction.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:DrawAction"
+  ]
+}

@@ -1,0 +1,277 @@
+{
+  "@context": [
+    "Thing.schema.json",
+    {
+      "actionProcess": {
+        "@id": "schema:actionProcess",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "actionStatus": {
+        "@id": "schema:actionStatus",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "agent": {
+        "@id": "schema:agent",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "endTime": {
+        "@id": "schema:endTime",
+        "@container": "@set"
+      },
+      "error": {
+        "@id": "schema:error",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "instrument": {
+        "@id": "schema:instrument",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "location": {
+        "@id": "schema:location",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "location_text": {
+        "@id": "schema:location",
+        "@container": "@set"
+      },
+      "object": {
+        "@id": "schema:object",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "participant": {
+        "@id": "schema:participant",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "provider": {
+        "@id": "schema:provider",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "result": {
+        "@id": "schema:result",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "startTime": {
+        "@id": "schema:startTime",
+        "@container": "@set"
+      },
+      "target": {
+        "@id": "schema:target",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Thing.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Action.schema.json",
+  "x-oold-uuid": "f779829a-a0b8-58d1-bafa-bcca664049ab",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Action",
+  "x-oold-instance-rdf-type": [
+    "schema:Action"
+  ],
+  "title": "Action",
+  "description": "An action performed by a direct agent and indirect participants upon a direct object. Optionally happens at a location with the help of an inanimate instrument. The execution of the action may produce a result. Specific action sub-type documentation specifies the exact expectation of each argument/role.\\n\\nSee also [blog post](https://blog.schema.org/2014/04/16/announcing-schema-org-actions/) and [Actions overview document](https://schema.org/docs/actions.html).",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Action"
+      ]
+    },
+    "actionProcess": {
+      "title": "Action Process",
+      "description": "Description of the process by which the action was performed.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "HowTo.schema.json"
+      }
+    },
+    "actionStatus": {
+      "title": "Action Status",
+      "description": "Indicates the current disposition of the Action.",
+      "type": "array",
+      "items": {
+        "$ref": "ActionStatusType.schema.json#/$defs/member",
+        "x-oold-range": "ActionStatusType.schema.json"
+      }
+    },
+    "agent": {
+      "title": "Agent",
+      "description": "The direct performer or driver of the action (animate or inanimate). E.g. *John* wrote a book.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "Organization.schema.json",
+          "Person.schema.json"
+        ]
+      }
+    },
+    "endTime": {
+      "title": "End Time",
+      "description": "The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. E.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.\\n\\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "DateTime.schema.json"
+          },
+          {
+            "$ref": "Time.schema.json"
+          }
+        ]
+      }
+    },
+    "error": {
+      "title": "Error",
+      "description": "For failed actions, more information on the cause of the failure. Consider using the Error type.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Thing.schema.json"
+      }
+    },
+    "instrument": {
+      "title": "Instrument",
+      "description": "The object that helped the agent perform the action. E.g. John wrote a book with *a pen*.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Thing.schema.json"
+      }
+    },
+    "location": {
+      "title": "Location",
+      "description": "The location of, for example, where an event is happening, where an organization is located, or where an action takes place.",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: PostalAddress [value-type]: PostalAddress -> ContactPoint -> StructuredValue -> Intangible -> Thing; Place [entity]: Place -> Thing; VirtualLocation [entity]: VirtualLocation -> Intangible -> Thing",
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "iri-reference",
+            "x-oold-range": [
+              "Place.schema.json",
+              "VirtualLocation.schema.json"
+            ]
+          },
+          {
+            "$ref": "PostalAddress.schema.json"
+          }
+        ]
+      }
+    },
+    "location_text": {
+      "title": "Location (text)",
+      "description": "The location of, for example, where an event is happening, where an organization is located, or where an action takes place.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "object": {
+      "title": "Object",
+      "description": "The object upon which the action is carried out, whose state is kept intact or changed. Also known as the semantic roles patient, affected or undergoer (which change their state) or theme (which doesn't). E.g. John read *a book*.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Thing.schema.json"
+      }
+    },
+    "participant": {
+      "title": "Participant",
+      "description": "Other co-agents that participated in the action indirectly. E.g. John wrote a book with *Steve*.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "Organization.schema.json",
+          "Person.schema.json"
+        ]
+      }
+    },
+    "provider": {
+      "title": "Provider",
+      "description": "The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "Organization.schema.json",
+          "Person.schema.json"
+        ]
+      }
+    },
+    "result": {
+      "title": "Result",
+      "description": "The result produced in the action. E.g. John wrote *a book*.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Thing.schema.json"
+      }
+    },
+    "startTime": {
+      "title": "Start Time",
+      "description": "The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. E.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.\\n\\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "DateTime.schema.json"
+          },
+          {
+            "$ref": "Time.schema.json"
+          }
+        ]
+      }
+    },
+    "target": {
+      "title": "Target",
+      "description": "Indicates a target EntryPoint, or url, for an Action.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "URL.schema.json"
+          },
+          {
+            "type": "string",
+            "format": "iri-reference",
+            "x-oold-range": "EntryPoint.schema.json"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "@context": [
+    "DefinedTermSet.schema.json",
+    {
+      "hasCategoryCode": {
+        "@id": "schema:hasCategoryCode",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "DefinedTermSet.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "CategoryCodeSet.schema.json",
+  "x-oold-uuid": "21380ebd-2654-505a-9003-530a73360f99",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/CategoryCodeSet",
+  "x-oold-instance-rdf-type": [
+    "schema:CategoryCodeSet"
+  ],
+  "title": "CategoryCodeSet",
+  "description": "A set of Category Code values.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:CategoryCodeSet"
+      ]
+    },
+    "hasCategoryCode": {
+      "title": "Has Category Code",
+      "description": "A Category code contained in this code set.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "CategoryCode.schema.json"
+      }
+    }
+  }
+}

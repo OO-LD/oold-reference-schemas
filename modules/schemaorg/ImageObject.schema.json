@@ -1,0 +1,107 @@
+{
+  "@context": [
+    "MediaObject.schema.json",
+    {
+      "caption": {
+        "@id": "schema:caption",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "caption_text": {
+        "@id": "schema:caption",
+        "@container": "@set"
+      },
+      "embeddedTextCaption": {
+        "@id": "schema:embeddedTextCaption",
+        "@container": "@set"
+      },
+      "exifData": {
+        "@id": "schema:exifData",
+        "@container": "@set"
+      },
+      "representativeOfPage": {
+        "@id": "schema:representativeOfPage",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "MediaObject.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ImageObject.schema.json",
+  "x-oold-uuid": "082dd86c-67fb-58e0-ab0e-a64332debc2d",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/ImageObject",
+  "x-oold-instance-rdf-type": [
+    "schema:ImageObject"
+  ],
+  "title": "ImageObject",
+  "description": "An image file.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:ImageObject"
+      ]
+    },
+    "caption": {
+      "title": "Caption",
+      "description": "The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the [[encodingFormat]].",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "MediaObject.schema.json"
+      }
+    },
+    "caption_text": {
+      "title": "Caption (text)",
+      "description": "The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the [[encodingFormat]].",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "embeddedTextCaption": {
+      "title": "Embedded Text Caption",
+      "description": "Represents textual captioning from a [[MediaObject]], e.g. text of a 'meme'.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "exifData": {
+      "title": "Exif Data",
+      "description": "exif data for this object.",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: PropertyValue [value-type]: PropertyValue -> StructuredValue -> Intangible -> Thing",
+        "anyOf": [
+          {
+            "$ref": "Text.schema.json"
+          },
+          {
+            "$ref": "PropertyValue.schema.json"
+          }
+        ]
+      }
+    },
+    "representativeOfPage": {
+      "title": "Representative Of Page",
+      "description": "Indicates whether this image is representative of the content of the page.",
+      "type": "array",
+      "items": {
+        "$ref": "Boolean.schema.json"
+      }
+    }
+  }
+}

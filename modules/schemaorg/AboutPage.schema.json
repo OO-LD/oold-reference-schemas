@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "WebPage.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "WebPage.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "AboutPage.schema.json",
+  "x-oold-uuid": "d08c3ceb-e008-5d7b-a773-3c5cb997f748",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/AboutPage",
+  "x-oold-instance-rdf-type": [
+    "schema:AboutPage"
+  ],
+  "title": "AboutPage",
+  "description": "Web page type: About page.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:AboutPage"
+      ]
+    }
+  }
+}

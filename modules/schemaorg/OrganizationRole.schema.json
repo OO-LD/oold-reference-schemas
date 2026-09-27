@@ -1,0 +1,48 @@
+{
+  "@context": [
+    "Role.schema.json",
+    {
+      "numberedPosition": {
+        "@id": "schema:numberedPosition",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Role.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "OrganizationRole.schema.json",
+  "x-oold-uuid": "bf19f999-8bf4-502a-8833-6e66cfd547e2",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/OrganizationRole",
+  "x-oold-instance-rdf-type": [
+    "schema:OrganizationRole"
+  ],
+  "title": "OrganizationRole",
+  "description": "A subclass of Role used to describe roles within organizations.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:OrganizationRole"
+      ]
+    },
+    "numberedPosition": {
+      "title": "Numbered Position",
+      "description": "A number associated with a role in an organization, for example, the number on an athlete's jersey.",
+      "type": "array",
+      "items": {
+        "$ref": "Number.schema.json"
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Organization.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Organization.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "PerformingGroup.schema.json",
+  "x-oold-uuid": "501f466a-4e43-5c50-bb06-8f8a73c8f656",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/PerformingGroup",
+  "x-oold-instance-rdf-type": [
+    "schema:PerformingGroup"
+  ],
+  "title": "PerformingGroup",
+  "description": "A performance group, such as a band, an orchestra, or a circus.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:PerformingGroup"
+      ]
+    }
+  }
+}

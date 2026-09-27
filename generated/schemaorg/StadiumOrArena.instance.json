@@ -1,0 +1,8 @@
+{
+  "$schema": "StadiumOrArena.schema.json",
+  "@context": "StadiumOrArena.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:StadiumOrArena"
+  ]
+}

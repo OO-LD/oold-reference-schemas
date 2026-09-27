@@ -1,0 +1,49 @@
+{
+  "@context": [
+    "EnergyEfficiencyEnumeration.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "EnergyEfficiencyEnumeration.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "EnergyStarEnergyEfficiencyEnumeration.schema.json",
+  "x-oold-uuid": "7c2e94e3-8395-514b-805f-854149270464",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/EnergyStarEnergyEfficiencyEnumeration",
+  "x-oold-instance-rdf-type": [
+    "schema:EnergyStarEnergyEfficiencyEnumeration"
+  ],
+  "title": "EnergyStarEnergyEfficiencyEnumeration",
+  "description": "Used to indicate whether a product is EnergyStar certified.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:EnergyStarEnergyEfficiencyEnumeration"
+      ]
+    }
+  },
+  "$defs": {
+    "member": {
+      "title": "EnergyStarEnergyEfficiencyEnumeration member",
+      "description": "One of the 1 member instances of EnergyStarEnergyEfficiencyEnumeration.",
+      "type": "string",
+      "format": "iri-reference",
+      "enum": [
+        "schema:EnergyStarCertified"
+      ],
+      "x-oold-ui-enum-titles": [
+        "EnergyStarCertified"
+      ]
+    }
+  }
+}

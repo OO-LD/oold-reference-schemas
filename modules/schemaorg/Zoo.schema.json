@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "CivicStructure.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "CivicStructure.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Zoo.schema.json",
+  "x-oold-uuid": "b44085e9-bd00-5de6-9068-5a5e9fac1f2b",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Zoo",
+  "x-oold-instance-rdf-type": [
+    "schema:Zoo"
+  ],
+  "title": "Zoo",
+  "description": "A zoo.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Zoo"
+      ]
+    }
+  }
+}

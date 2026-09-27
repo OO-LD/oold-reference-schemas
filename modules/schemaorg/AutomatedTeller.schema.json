@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "FinancialService.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "FinancialService.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "AutomatedTeller.schema.json",
+  "x-oold-uuid": "97d982eb-fbb0-5e7e-ab93-70f158651445",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/AutomatedTeller",
+  "x-oold-instance-rdf-type": [
+    "schema:AutomatedTeller"
+  ],
+  "title": "AutomatedTeller",
+  "description": "ATM/cash machine.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:AutomatedTeller"
+      ]
+    }
+  }
+}

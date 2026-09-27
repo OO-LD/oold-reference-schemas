@@ -1,0 +1,19 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Date.schema.json",
+  "x-oold-uuid": "751383ac-527f-51a9-9068-863edac4d91c",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Date",
+  "x-oold-instance-rdf-type": [
+    "schema:Date"
+  ],
+  "title": "Date",
+  "description": "A date value in ISO 8601 date format.",
+  "type": "string",
+  "format": "date"
+}

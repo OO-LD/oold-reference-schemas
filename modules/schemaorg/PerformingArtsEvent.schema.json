@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Event.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Event.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "PerformingArtsEvent.schema.json",
+  "x-oold-uuid": "43927bce-b457-5a17-9527-bd3954c3af2f",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/PerformingArtsEvent",
+  "x-oold-instance-rdf-type": [
+    "schema:PerformingArtsEvent"
+  ],
+  "title": "PerformingArtsEvent",
+  "description": "Live performance <a class=\"localLink\" href=\"http://schema.org/Event\">Event of the performing arts (music, theatre, dance, acrobatics, spoken word), including performance art and performative sports (e.g. choreographed forms of martial arts, figure skating, competitive ballroom dancing).<br/><br/>Note: Use <a class=\"localLink\" href=\"http://schema.org/additionalType\">additionalType</a> to differentiate between productions / shows (PerformanceWork, EventSeries), tours (EventSeries), and individual performances.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:PerformingArtsEvent"
+      ]
+    }
+  }
+}

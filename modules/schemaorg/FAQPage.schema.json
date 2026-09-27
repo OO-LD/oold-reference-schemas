@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "WebPage.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "WebPage.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "FAQPage.schema.json",
+  "x-oold-uuid": "1fda0419-7eb6-5c27-b67f-854415fd76c8",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/FAQPage",
+  "x-oold-instance-rdf-type": [
+    "schema:FAQPage"
+  ],
+  "title": "FAQPage",
+  "description": "A [[FAQPage]] is a [[WebPage]] presenting one or more \"[Frequently asked questions](https://en.wikipedia.org/wiki/FAQ)\" (see also [[QAPage]]).",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:FAQPage"
+      ]
+    }
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "@context": [
+    "CreativeWork.schema.json",
+    {
+      "mathExpression": {
+        "@id": "schema:mathExpression",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "mathExpression_text": {
+        "@id": "schema:mathExpression",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "CreativeWork.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MathSolver.schema.json",
+  "x-oold-uuid": "ab285539-a86f-527d-ba0f-12ecf33d5bc9",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/MathSolver",
+  "x-oold-instance-rdf-type": [
+    "schema:MathSolver"
+  ],
+  "title": "MathSolver",
+  "description": "A math solver which is capable of solving a subset of mathematical problems.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:MathSolver"
+      ]
+    },
+    "mathExpression": {
+      "title": "Math Expression",
+      "description": "A mathematical expression (e.g. 'x^2-3x=0') that may be solved for a specific variable, simplified, or transformed. This can take many formats, e.g. LaTeX, Ascii-Math, or math as you would write with a keyboard.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "SolveMathAction.schema.json"
+      }
+    },
+    "mathExpression_text": {
+      "title": "Math Expression (text)",
+      "description": "A mathematical expression (e.g. 'x^2-3x=0') that may be solved for a specific variable, simplified, or transformed. This can take many formats, e.g. LaTeX, Ascii-Math, or math as you would write with a keyboard.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    }
+  }
+}

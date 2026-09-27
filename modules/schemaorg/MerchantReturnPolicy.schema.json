@@ -1,0 +1,375 @@
+{
+  "@context": [
+    "Intangible.schema.json",
+    {
+      "additionalProperty": {
+        "@id": "schema:additionalProperty",
+        "@container": "@set"
+      },
+      "applicableCountry": {
+        "@id": "schema:applicableCountry",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "applicableCountry_text": {
+        "@id": "schema:applicableCountry",
+        "@container": "@set"
+      },
+      "customerRemorseReturnFees": {
+        "@id": "schema:customerRemorseReturnFees",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "customerRemorseReturnLabelSource": {
+        "@id": "schema:customerRemorseReturnLabelSource",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "customerRemorseReturnShippingFeesAmount": {
+        "@id": "schema:customerRemorseReturnShippingFeesAmount",
+        "@container": "@set"
+      },
+      "inStoreReturnsOffered": {
+        "@id": "schema:inStoreReturnsOffered",
+        "@container": "@set"
+      },
+      "itemCondition": {
+        "@id": "schema:itemCondition",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "itemDefectReturnFees": {
+        "@id": "schema:itemDefectReturnFees",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "itemDefectReturnLabelSource": {
+        "@id": "schema:itemDefectReturnLabelSource",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "itemDefectReturnShippingFeesAmount": {
+        "@id": "schema:itemDefectReturnShippingFeesAmount",
+        "@container": "@set"
+      },
+      "merchantReturnDays": {
+        "@id": "schema:merchantReturnDays",
+        "@container": "@set"
+      },
+      "merchantReturnLink": {
+        "@id": "schema:merchantReturnLink",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "refundType": {
+        "@id": "schema:refundType",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "restockingFee": {
+        "@id": "schema:restockingFee",
+        "@container": "@set"
+      },
+      "returnFees": {
+        "@id": "schema:returnFees",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "returnLabelSource": {
+        "@id": "schema:returnLabelSource",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "returnMethod": {
+        "@id": "schema:returnMethod",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "returnPolicyCategory": {
+        "@id": "schema:returnPolicyCategory",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "returnPolicyCountry": {
+        "@id": "schema:returnPolicyCountry",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "returnPolicyCountry_text": {
+        "@id": "schema:returnPolicyCountry",
+        "@container": "@set"
+      },
+      "returnPolicySeasonalOverride": {
+        "@id": "schema:returnPolicySeasonalOverride",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "returnShippingFeesAmount": {
+        "@id": "schema:returnShippingFeesAmount",
+        "@container": "@set"
+      },
+      "validForMemberTier": {
+        "@id": "schema:validForMemberTier",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Intangible.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MerchantReturnPolicy.schema.json",
+  "x-oold-uuid": "d488e274-a998-53ac-a07a-625840fe2056",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/MerchantReturnPolicy",
+  "x-oold-instance-rdf-type": [
+    "schema:MerchantReturnPolicy"
+  ],
+  "title": "MerchantReturnPolicy",
+  "description": "A MerchantReturnPolicy provides information about product return policies associated with an [[Organization]], [[Product]], or [[Offer]].",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:MerchantReturnPolicy"
+      ]
+    },
+    "additionalProperty": {
+      "title": "Additional Property",
+      "description": "A property-value pair representing an additional characteristic of the entity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.\\n\\nNote: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.\n",
+      "type": "array",
+      "items": {
+        "$ref": "PropertyValue.schema.json"
+      }
+    },
+    "applicableCountry": {
+      "title": "Applicable Country",
+      "description": "A country where a particular merchant return policy applies to, for example the two-letter ISO 3166-1 alpha-2 country code.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Country.schema.json"
+      }
+    },
+    "applicableCountry_text": {
+      "title": "Applicable Country (text)",
+      "description": "A country where a particular merchant return policy applies to, for example the two-letter ISO 3166-1 alpha-2 country code.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "customerRemorseReturnFees": {
+      "title": "Customer Remorse Return Fees",
+      "description": "The type of return fees if the product is returned due to customer remorse.",
+      "type": "array",
+      "items": {
+        "$ref": "ReturnFeesEnumeration.schema.json#/$defs/member",
+        "x-oold-range": "ReturnFeesEnumeration.schema.json"
+      }
+    },
+    "customerRemorseReturnLabelSource": {
+      "title": "Customer Remorse Return Label Source",
+      "description": "The method (from an enumeration) by which the customer obtains a return shipping label for a product returned due to customer remorse.",
+      "type": "array",
+      "items": {
+        "$ref": "ReturnLabelSourceEnumeration.schema.json#/$defs/member",
+        "x-oold-range": "ReturnLabelSourceEnumeration.schema.json"
+      }
+    },
+    "customerRemorseReturnShippingFeesAmount": {
+      "title": "Customer Remorse Return Shipping Fees Amount",
+      "description": "The amount of shipping costs if a product is returned due to customer remorse. Applicable when property [[customerRemorseReturnFees]] equals [[ReturnShippingFees]].",
+      "type": "array",
+      "items": {
+        "$ref": "MonetaryAmount.schema.json"
+      }
+    },
+    "inStoreReturnsOffered": {
+      "title": "In Store Returns Offered",
+      "description": "Are in-store returns offered? (For more advanced return methods use the [[returnMethod]] property.)",
+      "type": "array",
+      "items": {
+        "$ref": "Boolean.schema.json"
+      }
+    },
+    "itemCondition": {
+      "title": "Item Condition",
+      "description": "A predefined value from OfferItemCondition specifying the condition of the product or service, or the products or services included in the offer. Also used for product return policies to specify the condition of products accepted for returns.",
+      "type": "array",
+      "items": {
+        "$ref": "OfferItemCondition.schema.json#/$defs/member",
+        "x-oold-range": "OfferItemCondition.schema.json"
+      }
+    },
+    "itemDefectReturnFees": {
+      "title": "Item Defect Return Fees",
+      "description": "The type of return fees for returns of defect products.",
+      "type": "array",
+      "items": {
+        "$ref": "ReturnFeesEnumeration.schema.json#/$defs/member",
+        "x-oold-range": "ReturnFeesEnumeration.schema.json"
+      }
+    },
+    "itemDefectReturnLabelSource": {
+      "title": "Item Defect Return Label Source",
+      "description": "The method (from an enumeration) by which the customer obtains a return shipping label for a defect product.",
+      "type": "array",
+      "items": {
+        "$ref": "ReturnLabelSourceEnumeration.schema.json#/$defs/member",
+        "x-oold-range": "ReturnLabelSourceEnumeration.schema.json"
+      }
+    },
+    "itemDefectReturnShippingFeesAmount": {
+      "title": "Item Defect Return Shipping Fees Amount",
+      "description": "Amount of shipping costs for defect product returns. Applicable when property [[itemDefectReturnFees]] equals [[ReturnShippingFees]].",
+      "type": "array",
+      "items": {
+        "$ref": "MonetaryAmount.schema.json"
+      }
+    },
+    "merchantReturnDays": {
+      "title": "Merchant Return Days",
+      "description": "Specifies either a fixed return date or the number of days (from the delivery date) that a product can be returned. Used when the [[returnPolicyCategory]] property is specified as [[MerchantReturnFiniteReturnWindow]].",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Date.schema.json"
+          },
+          {
+            "$ref": "DateTime.schema.json"
+          },
+          {
+            "$ref": "Integer.schema.json"
+          }
+        ]
+      }
+    },
+    "merchantReturnLink": {
+      "title": "Merchant Return Link",
+      "description": "Specifies a Web page or service by URL, for product returns.",
+      "type": "array",
+      "items": {
+        "$ref": "URL.schema.json"
+      }
+    },
+    "refundType": {
+      "title": "Refund Type",
+      "description": "A refund type, from an enumerated list.",
+      "type": "array",
+      "items": {
+        "$ref": "RefundTypeEnumeration.schema.json#/$defs/member",
+        "x-oold-range": "RefundTypeEnumeration.schema.json"
+      }
+    },
+    "restockingFee": {
+      "title": "Restocking Fee",
+      "description": "Use [[MonetaryAmount]] to specify a fixed restocking fee for product returns, or use [[Number]] to specify a percentage of the product price paid by the customer.",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: MonetaryAmount [value-type]: MonetaryAmount -> StructuredValue -> Intangible -> Thing",
+        "anyOf": [
+          {
+            "$ref": "Number.schema.json"
+          },
+          {
+            "$ref": "MonetaryAmount.schema.json"
+          }
+        ]
+      }
+    },
+    "returnFees": {
+      "title": "Return Fees",
+      "description": "The type of return fees for purchased products (for any return reason).",
+      "type": "array",
+      "items": {
+        "$ref": "ReturnFeesEnumeration.schema.json#/$defs/member",
+        "x-oold-range": "ReturnFeesEnumeration.schema.json"
+      }
+    },
+    "returnLabelSource": {
+      "title": "Return Label Source",
+      "description": "The method (from an enumeration) by which the customer obtains a return shipping label for a product returned for any reason.",
+      "type": "array",
+      "items": {
+        "$ref": "ReturnLabelSourceEnumeration.schema.json#/$defs/member",
+        "x-oold-range": "ReturnLabelSourceEnumeration.schema.json"
+      }
+    },
+    "returnMethod": {
+      "title": "Return Method",
+      "description": "The type of return method offered, specified from an enumeration.",
+      "type": "array",
+      "items": {
+        "$ref": "ReturnMethodEnumeration.schema.json#/$defs/member",
+        "x-oold-range": "ReturnMethodEnumeration.schema.json"
+      }
+    },
+    "returnPolicyCategory": {
+      "title": "Return Policy Category",
+      "description": "Specifies an applicable return policy (from an enumeration).",
+      "type": "array",
+      "items": {
+        "$ref": "MerchantReturnEnumeration.schema.json#/$defs/member",
+        "x-oold-range": "MerchantReturnEnumeration.schema.json"
+      }
+    },
+    "returnPolicyCountry": {
+      "title": "Return Policy Country",
+      "description": "The country where the product has to be sent to for returns, for example \"Ireland\" using the [[name]] property of [[Country]]. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1). Note that this can be different from the country where the product was originally shipped from or sent to.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Country.schema.json"
+      }
+    },
+    "returnPolicyCountry_text": {
+      "title": "Return Policy Country (text)",
+      "description": "The country where the product has to be sent to for returns, for example \"Ireland\" using the [[name]] property of [[Country]]. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1). Note that this can be different from the country where the product was originally shipped from or sent to.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "returnPolicySeasonalOverride": {
+      "title": "Return Policy Seasonal Override",
+      "description": "Seasonal override of a return policy.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "MerchantReturnPolicySeasonalOverride.schema.json"
+      }
+    },
+    "returnShippingFeesAmount": {
+      "title": "Return Shipping Fees Amount",
+      "description": "Amount of shipping costs for product returns (for any reason). Applicable when property [[returnFees]] equals [[ReturnShippingFees]].",
+      "type": "array",
+      "items": {
+        "$ref": "MonetaryAmount.schema.json"
+      }
+    },
+    "validForMemberTier": {
+      "title": "Valid For Member Tier",
+      "description": "The membership program tier(s) an Offer (or a PriceSpecification, OfferShippingDetails, or MerchantReturnPolicy under an Offer) is valid for.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "MemberProgramTier.schema.json"
+      }
+    }
+  }
+}

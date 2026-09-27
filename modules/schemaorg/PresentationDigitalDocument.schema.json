@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "DigitalDocument.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "DigitalDocument.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "PresentationDigitalDocument.schema.json",
+  "x-oold-uuid": "4d2ba664-62e8-561e-86fc-510cd7cde038",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/PresentationDigitalDocument",
+  "x-oold-instance-rdf-type": [
+    "schema:PresentationDigitalDocument"
+  ],
+  "title": "PresentationDigitalDocument",
+  "description": "A file containing slides or used for a presentation.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:PresentationDigitalDocument"
+      ]
+    }
+  }
+}

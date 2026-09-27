@@ -1,0 +1,8 @@
+{
+  "$schema": "LegalService.schema.json",
+  "@context": "LegalService.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:LegalService"
+  ]
+}

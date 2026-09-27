@@ -1,0 +1,8 @@
+{
+  "$schema": "ExchangeRateSpecification.schema.json",
+  "@context": "ExchangeRateSpecification.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:ExchangeRateSpecification"
+  ]
+}

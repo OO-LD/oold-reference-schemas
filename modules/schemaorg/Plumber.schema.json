@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "HomeAndConstructionBusiness.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "HomeAndConstructionBusiness.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Plumber.schema.json",
+  "x-oold-uuid": "7fa2e62c-0c33-53b8-8f28-108506da0706",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Plumber",
+  "x-oold-instance-rdf-type": [
+    "schema:Plumber"
+  ],
+  "title": "Plumber",
+  "description": "A plumbing service.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Plumber"
+      ]
+    }
+  }
+}

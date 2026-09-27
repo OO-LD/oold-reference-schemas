@@ -1,0 +1,81 @@
+{
+  "@context": [
+    "MediaEnumeration.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "MediaEnumeration.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "IPTCDigitalSourceEnumeration.schema.json",
+  "x-oold-uuid": "fc0eb57d-7d18-5fe2-a77d-e74b3a0653ac",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/IPTCDigitalSourceEnumeration",
+  "x-oold-instance-rdf-type": [
+    "schema:IPTCDigitalSourceEnumeration"
+  ],
+  "title": "IPTCDigitalSourceEnumeration",
+  "description": "<a href=\"https://www.iptc.org/\">IPTC</a> \"Digital Source\" codes for use with the [[digitalSourceType]] property, providing information about the source for a digital media object.\nIn general these codes are not declared here to be mutually exclusive, although some combinations would be contradictory if applied simultaneously, or might be considered mutually incompatible by upstream maintainers of the definitions. See the IPTC <a href=\"https://www.iptc.org/std/photometadata/documentation/userguide/\">documentation</a>\n for <a href=\"https://cv.iptc.org/newscodes/digitalsourcetype/\">detailed definitions</a> of all terms.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:IPTCDigitalSourceEnumeration"
+      ]
+    }
+  },
+  "$defs": {
+    "member": {
+      "title": "IPTCDigitalSourceEnumeration member",
+      "description": "One of the 17 member instances of IPTCDigitalSourceEnumeration.",
+      "type": "string",
+      "format": "iri-reference",
+      "enum": [
+        "schema:AlgorithmicMediaDigitalSource",
+        "schema:AlgorithmicallyEnhancedDigitalSource",
+        "schema:CompositeCaptureDigitalSource",
+        "schema:CompositeDigitalSource",
+        "schema:CompositeSyntheticDigitalSource",
+        "schema:CompositeWithTrainedAlgorithmicMediaDigitalSource",
+        "schema:DataDrivenMediaDigitalSource",
+        "schema:DigitalArtDigitalSource",
+        "schema:DigitalCaptureDigitalSource",
+        "schema:MinorHumanEditsDigitalSource",
+        "schema:MultiFrameComputationalCaptureDigitalSource",
+        "schema:NegativeFilmDigitalSource",
+        "schema:PositiveFilmDigitalSource",
+        "schema:PrintDigitalSource",
+        "schema:ScreenCaptureDigitalSource",
+        "schema:TrainedAlgorithmicMediaDigitalSource",
+        "schema:VirtualRecordingDigitalSource"
+      ],
+      "x-oold-ui-enum-titles": [
+        "AlgorithmicMediaDigitalSource",
+        "AlgorithmicallyEnhancedDigitalSource",
+        "CompositeCaptureDigitalSource",
+        "CompositeDigitalSource",
+        "CompositeSyntheticDigitalSource",
+        "CompositeWithTrainedAlgorithmicMediaDigitalSource",
+        "DataDrivenMediaDigitalSource",
+        "DigitalArtDigitalSource",
+        "DigitalCaptureDigitalSource",
+        "MinorHumanEditsDigitalSource",
+        "MultiFrameComputationalCaptureDigitalSource",
+        "NegativeFilmDigitalSource",
+        "PositiveFilmDigitalSource",
+        "PrintDigitalSource",
+        "ScreenCaptureDigitalSource",
+        "TrainedAlgorithmicMediaDigitalSource",
+        "VirtualRecordingDigitalSource"
+      ]
+    }
+  }
+}

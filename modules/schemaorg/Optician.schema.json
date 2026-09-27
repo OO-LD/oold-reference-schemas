@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "MedicalBusiness.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "MedicalBusiness.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Optician.schema.json",
+  "x-oold-uuid": "8bf6d189-9e25-5cdc-ad6f-5e1881db3ad4",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Optician",
+  "x-oold-instance-rdf-type": [
+    "schema:Optician"
+  ],
+  "title": "Optician",
+  "description": "A store that sells reading glasses and similar devices for improving vision.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Optician"
+      ]
+    }
+  }
+}

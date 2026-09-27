@@ -1,0 +1,8 @@
+{
+  "$schema": "RadiationTherapy.schema.json",
+  "@context": "RadiationTherapy.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:RadiationTherapy"
+  ]
+}

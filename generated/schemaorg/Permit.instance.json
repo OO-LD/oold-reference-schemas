@@ -1,0 +1,8 @@
+{
+  "$schema": "Permit.schema.json",
+  "@context": "Permit.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:Permit"
+  ]
+}

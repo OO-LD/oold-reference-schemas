@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Store.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Store.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "BookStore.schema.json",
+  "x-oold-uuid": "db200ded-34f0-596d-8f9b-f88382878eb2",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/BookStore",
+  "x-oold-instance-rdf-type": [
+    "schema:BookStore"
+  ],
+  "title": "BookStore",
+  "description": "A bookstore.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:BookStore"
+      ]
+    }
+  }
+}

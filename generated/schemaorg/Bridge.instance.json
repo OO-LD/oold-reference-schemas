@@ -1,0 +1,8 @@
+{
+  "$schema": "Bridge.schema.json",
+  "@context": "Bridge.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:Bridge"
+  ]
+}

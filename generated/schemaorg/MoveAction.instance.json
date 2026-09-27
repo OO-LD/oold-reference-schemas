@@ -1,0 +1,8 @@
+{
+  "$schema": "MoveAction.schema.json",
+  "@context": "MoveAction.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:MoveAction"
+  ]
+}

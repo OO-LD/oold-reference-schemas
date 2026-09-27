@@ -1,0 +1,66 @@
+{
+  "@context": [
+    "CreativeWork.schema.json",
+    {
+      "hasMenuItem": {
+        "@id": "schema:hasMenuItem",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "hasMenuSection": {
+        "@id": "schema:hasMenuSection",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "CreativeWork.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Menu.schema.json",
+  "x-oold-uuid": "4b0985aa-2951-500c-9eac-0bd739872059",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Menu",
+  "x-oold-instance-rdf-type": [
+    "schema:Menu"
+  ],
+  "title": "Menu",
+  "description": "A structured representation of food or drink items available from a FoodEstablishment.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Menu"
+      ]
+    },
+    "hasMenuItem": {
+      "title": "Has Menu Item",
+      "description": "A food or drink item contained in a menu or menu section.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "MenuItem.schema.json"
+      }
+    },
+    "hasMenuSection": {
+      "title": "Has Menu Section",
+      "description": "A subgrouping of the menu (by dishes, course, serving time period, etc.).",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "MenuSection.schema.json"
+      }
+    }
+  }
+}

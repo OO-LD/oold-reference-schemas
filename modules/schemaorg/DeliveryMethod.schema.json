@@ -1,0 +1,53 @@
+{
+  "@context": [
+    "Enumeration.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Enumeration.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "DeliveryMethod.schema.json",
+  "x-oold-uuid": "a066a1e9-a131-53ff-8ffa-8be76ab7bfe6",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/DeliveryMethod",
+  "x-oold-instance-rdf-type": [
+    "schema:DeliveryMethod"
+  ],
+  "title": "DeliveryMethod",
+  "description": "A delivery method is a standardized procedure for transferring the product or service to the destination of fulfillment chosen by the customer. Delivery methods are characterized by the means of transportation used, and by the organization or group that is the contracting party for the sending organization or person.\\n\\nCommonly used values:\\n\\n* http://purl.org/goodrelations/v1#DeliveryModeDirectDownload\\n* http://purl.org/goodrelations/v1#DeliveryModeFreight\\n* http://purl.org/goodrelations/v1#DeliveryModeMail\\n* http://purl.org/goodrelations/v1#DeliveryModeOwnFleet\\n* http://purl.org/goodrelations/v1#DeliveryModePickUp\\n* http://purl.org/goodrelations/v1#DHL\\n* http://purl.org/goodrelations/v1#FederalExpress\\n* http://purl.org/goodrelations/v1#UPS\n        ",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:DeliveryMethod"
+      ]
+    }
+  },
+  "$defs": {
+    "member": {
+      "title": "DeliveryMethod member",
+      "description": "One of the 3 member instances of DeliveryMethod.",
+      "type": "string",
+      "format": "iri-reference",
+      "enum": [
+        "schema:LockerDelivery",
+        "schema:OnSitePickup",
+        "schema:ParcelService"
+      ],
+      "x-oold-ui-enum-titles": [
+        "LockerDelivery",
+        "OnSitePickup",
+        "ParcelService"
+      ]
+    }
+  }
+}

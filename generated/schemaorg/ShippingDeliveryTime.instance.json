@@ -1,0 +1,8 @@
+{
+  "$schema": "ShippingDeliveryTime.schema.json",
+  "@context": "ShippingDeliveryTime.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:ShippingDeliveryTime"
+  ]
+}

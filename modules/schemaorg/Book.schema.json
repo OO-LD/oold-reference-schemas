@@ -1,0 +1,113 @@
+{
+  "@context": [
+    "CreativeWork.schema.json",
+    {
+      "abridged": {
+        "@id": "schema:abridged",
+        "@container": "@set"
+      },
+      "bookEdition": {
+        "@id": "schema:bookEdition",
+        "@container": "@set"
+      },
+      "bookFormat": {
+        "@id": "schema:bookFormat",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "illustrator": {
+        "@id": "schema:illustrator",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "isbn": {
+        "@id": "schema:isbn",
+        "@container": "@set"
+      },
+      "numberOfPages": {
+        "@id": "schema:numberOfPages",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "CreativeWork.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Book.schema.json",
+  "x-oold-uuid": "c8dcb2ac-fa31-57cf-8266-697a7e87306b",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Book",
+  "x-oold-instance-rdf-type": [
+    "schema:Book"
+  ],
+  "title": "Book",
+  "description": "A book.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Book"
+      ]
+    },
+    "abridged": {
+      "title": "Abridged",
+      "description": "Indicates whether the book is an abridged edition.",
+      "type": "array",
+      "items": {
+        "$ref": "Boolean.schema.json"
+      }
+    },
+    "bookEdition": {
+      "title": "Book Edition",
+      "description": "The edition of the book.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "bookFormat": {
+      "title": "Book Format",
+      "description": "The format of the book.",
+      "type": "array",
+      "items": {
+        "$ref": "BookFormatType.schema.json#/$defs/member",
+        "x-oold-range": "BookFormatType.schema.json"
+      }
+    },
+    "illustrator": {
+      "title": "Illustrator",
+      "description": "The illustrator of the book.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Person.schema.json"
+      }
+    },
+    "isbn": {
+      "title": "Isbn",
+      "description": "The ISBN of the book.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "numberOfPages": {
+      "title": "Number Of Pages",
+      "description": "The number of pages in the book.",
+      "type": "array",
+      "items": {
+        "$ref": "Integer.schema.json"
+      }
+    }
+  }
+}

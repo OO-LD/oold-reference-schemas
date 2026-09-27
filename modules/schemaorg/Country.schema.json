@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "AdministrativeArea.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "AdministrativeArea.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Country.schema.json",
+  "x-oold-uuid": "7dd7bc0d-ca81-5781-a664-7aaaffbd0259",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Country",
+  "x-oold-instance-rdf-type": [
+    "schema:Country"
+  ],
+  "title": "Country",
+  "description": "A country.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Country"
+      ]
+    }
+  }
+}

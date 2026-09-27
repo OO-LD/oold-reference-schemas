@@ -1,0 +1,55 @@
+{
+  "@context": [
+    "Enumeration.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Enumeration.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MusicAlbumReleaseType.schema.json",
+  "x-oold-uuid": "d8d49a85-5762-54b8-b3a3-3b8b2fc0ffc7",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/MusicAlbumReleaseType",
+  "x-oold-instance-rdf-type": [
+    "schema:MusicAlbumReleaseType"
+  ],
+  "title": "MusicAlbumReleaseType",
+  "description": "The kind of release which this album is: single, EP or album.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:MusicAlbumReleaseType"
+      ]
+    }
+  },
+  "$defs": {
+    "member": {
+      "title": "MusicAlbumReleaseType member",
+      "description": "One of the 4 member instances of MusicAlbumReleaseType.",
+      "type": "string",
+      "format": "iri-reference",
+      "enum": [
+        "schema:AlbumRelease",
+        "schema:BroadcastRelease",
+        "schema:EPRelease",
+        "schema:SingleRelease"
+      ],
+      "x-oold-ui-enum-titles": [
+        "AlbumRelease",
+        "BroadcastRelease",
+        "EPRelease",
+        "SingleRelease"
+      ]
+    }
+  }
+}

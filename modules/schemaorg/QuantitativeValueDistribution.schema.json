@@ -1,0 +1,116 @@
+{
+  "@context": [
+    "StructuredValue.schema.json",
+    {
+      "duration": {
+        "@id": "schema:duration",
+        "@container": "@set"
+      },
+      "median": {
+        "@id": "schema:median",
+        "@container": "@set"
+      },
+      "percentile10": {
+        "@id": "schema:percentile10",
+        "@container": "@set"
+      },
+      "percentile25": {
+        "@id": "schema:percentile25",
+        "@container": "@set"
+      },
+      "percentile75": {
+        "@id": "schema:percentile75",
+        "@container": "@set"
+      },
+      "percentile90": {
+        "@id": "schema:percentile90",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "StructuredValue.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "QuantitativeValueDistribution.schema.json",
+  "x-oold-uuid": "b03d553e-1b42-5fbc-8b83-7fc3885834d3",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/QuantitativeValueDistribution",
+  "x-oold-instance-rdf-type": [
+    "schema:QuantitativeValueDistribution"
+  ],
+  "title": "QuantitativeValueDistribution",
+  "description": "A statistical distribution of values.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:QuantitativeValueDistribution"
+      ]
+    },
+    "duration": {
+      "title": "Duration",
+      "description": "The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: QuantitativeValue [value-type]: QuantitativeValue -> StructuredValue -> Intangible -> Thing",
+        "anyOf": [
+          {
+            "$ref": "Duration.schema.json"
+          },
+          {
+            "$ref": "QuantitativeValue.schema.json"
+          }
+        ]
+      }
+    },
+    "median": {
+      "title": "Median",
+      "description": "The median value.",
+      "type": "array",
+      "items": {
+        "$ref": "Number.schema.json"
+      }
+    },
+    "percentile10": {
+      "title": "Percentile10",
+      "description": "The 10th percentile value.",
+      "type": "array",
+      "items": {
+        "$ref": "Number.schema.json"
+      }
+    },
+    "percentile25": {
+      "title": "Percentile25",
+      "description": "The 25th percentile value.",
+      "type": "array",
+      "items": {
+        "$ref": "Number.schema.json"
+      }
+    },
+    "percentile75": {
+      "title": "Percentile75",
+      "description": "The 75th percentile value.",
+      "type": "array",
+      "items": {
+        "$ref": "Number.schema.json"
+      }
+    },
+    "percentile90": {
+      "title": "Percentile90",
+      "description": "The 90th percentile value.",
+      "type": "array",
+      "items": {
+        "$ref": "Number.schema.json"
+      }
+    }
+  }
+}

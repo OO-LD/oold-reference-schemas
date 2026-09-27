@@ -1,0 +1,75 @@
+{
+  "@context": [
+    "EducationalOccupationalProgram.schema.json",
+    {
+      "occupationalCategory": {
+        "@id": "schema:occupationalCategory",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "occupationalCategory_text": {
+        "@id": "schema:occupationalCategory",
+        "@container": "@set"
+      },
+      "trainingSalary": {
+        "@id": "schema:trainingSalary",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "EducationalOccupationalProgram.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "WorkBasedProgram.schema.json",
+  "x-oold-uuid": "93b2f41a-d6a1-5b9d-b81a-d94f8e71e99f",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/WorkBasedProgram",
+  "x-oold-instance-rdf-type": [
+    "schema:WorkBasedProgram"
+  ],
+  "title": "WorkBasedProgram",
+  "description": "A program with both an educational and employment component. Typically based at a workplace and structured around work-based learning, with the aim of instilling competencies related to an occupation. WorkBasedProgram is used to distinguish programs such as apprenticeships from school, college or other classroom based educational programs.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:WorkBasedProgram"
+      ]
+    },
+    "occupationalCategory": {
+      "title": "Occupational Category",
+      "description": "A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html), [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.\\n\nNote: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "CategoryCode.schema.json"
+      }
+    },
+    "occupationalCategory_text": {
+      "title": "Occupational Category (text)",
+      "description": "A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html), [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.\\n\nNote: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "trainingSalary": {
+      "title": "Training Salary",
+      "description": "The estimated salary earned while in the program.",
+      "type": "array",
+      "items": {
+        "$ref": "MonetaryAmountDistribution.schema.json"
+      }
+    }
+  }
+}

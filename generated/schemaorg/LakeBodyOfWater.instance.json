@@ -1,0 +1,8 @@
+{
+  "$schema": "LakeBodyOfWater.schema.json",
+  "@context": "LakeBodyOfWater.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:LakeBodyOfWater"
+  ]
+}

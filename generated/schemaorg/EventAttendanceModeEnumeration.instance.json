@@ -1,0 +1,8 @@
+{
+  "$schema": "EventAttendanceModeEnumeration.schema.json",
+  "@context": "EventAttendanceModeEnumeration.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:EventAttendanceModeEnumeration"
+  ]
+}

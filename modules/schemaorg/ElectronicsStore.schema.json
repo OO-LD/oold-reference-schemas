@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Store.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Store.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ElectronicsStore.schema.json",
+  "x-oold-uuid": "0d95d0f1-0ede-598e-bff8-3713b0acdf79",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/ElectronicsStore",
+  "x-oold-instance-rdf-type": [
+    "schema:ElectronicsStore"
+  ],
+  "title": "ElectronicsStore",
+  "description": "An electronics store.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:ElectronicsStore"
+      ]
+    }
+  }
+}

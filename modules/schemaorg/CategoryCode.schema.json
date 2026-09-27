@@ -1,0 +1,70 @@
+{
+  "@context": [
+    "DefinedTerm.schema.json",
+    {
+      "codeValue": {
+        "@id": "schema:codeValue",
+        "@container": "@set"
+      },
+      "inCodeSet": {
+        "@id": "schema:inCodeSet",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "DefinedTerm.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "CategoryCode.schema.json",
+  "x-oold-uuid": "48279538-1440-501c-b241-e5b1c23baf60",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/CategoryCode",
+  "x-oold-instance-rdf-type": [
+    "schema:CategoryCode"
+  ],
+  "title": "CategoryCode",
+  "description": "A Category Code.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:CategoryCode"
+      ]
+    },
+    "codeValue": {
+      "title": "Code Value",
+      "description": "A short textual code that uniquely identifies the value.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "inCodeSet": {
+      "title": "In Code Set",
+      "description": "A [[CategoryCodeSet]] that contains this category code.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "URL.schema.json"
+          },
+          {
+            "type": "string",
+            "format": "iri-reference",
+            "x-oold-range": "CategoryCodeSet.schema.json"
+          }
+        ]
+      }
+    }
+  }
+}

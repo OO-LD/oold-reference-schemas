@@ -1,0 +1,216 @@
+{
+  "@context": [
+    "Intangible.schema.json",
+    {
+      "geoContains": {
+        "@id": "schema:geoContains",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "geoCoveredBy": {
+        "@id": "schema:geoCoveredBy",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "geoCovers": {
+        "@id": "schema:geoCovers",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "geoCrosses": {
+        "@id": "schema:geoCrosses",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "geoDisjoint": {
+        "@id": "schema:geoDisjoint",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "geoEquals": {
+        "@id": "schema:geoEquals",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "geoIntersects": {
+        "@id": "schema:geoIntersects",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "geoOverlaps": {
+        "@id": "schema:geoOverlaps",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "geoTouches": {
+        "@id": "schema:geoTouches",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "geoWithin": {
+        "@id": "schema:geoWithin",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Intangible.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "GeospatialGeometry.schema.json",
+  "x-oold-uuid": "2dae9f54-ac15-5e36-8cdc-0dacfc1a2d19",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/GeospatialGeometry",
+  "x-oold-instance-rdf-type": [
+    "schema:GeospatialGeometry"
+  ],
+  "title": "GeospatialGeometry",
+  "description": "(Eventually to be defined as) a supertype of GeoShape designed to accommodate definitions from Geo-Spatial best practices.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:GeospatialGeometry"
+      ]
+    },
+    "geoContains": {
+      "title": "Geo Contains",
+      "description": "Represents a relationship between two geometries (or the places they represent), relating a containing geometry to a contained geometry. \"a contains b iff no points of b lie in the exterior of a, and at least one point of the interior of b lies in the interior of a\". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "GeospatialGeometry.schema.json",
+          "Place.schema.json"
+        ]
+      }
+    },
+    "geoCoveredBy": {
+      "title": "Geo Covered By",
+      "description": "Represents a relationship between two geometries (or the places they represent), relating a geometry to another that covers it. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "GeospatialGeometry.schema.json",
+          "Place.schema.json"
+        ]
+      }
+    },
+    "geoCovers": {
+      "title": "Geo Covers",
+      "description": "Represents a relationship between two geometries (or the places they represent), relating a covering geometry to a covered geometry. \"Every point of b is a point of (the interior or boundary of) a\". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "GeospatialGeometry.schema.json",
+          "Place.schema.json"
+        ]
+      }
+    },
+    "geoCrosses": {
+      "title": "Geo Crosses",
+      "description": "Represents a relationship between two geometries (or the places they represent), relating a geometry to another that crosses it: \"a crosses b: they have some but not all interior points in common, and the dimension of the intersection is less than that of at least one of them\". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "GeospatialGeometry.schema.json",
+          "Place.schema.json"
+        ]
+      }
+    },
+    "geoDisjoint": {
+      "title": "Geo Disjoint",
+      "description": "Represents spatial relations in which two geometries (or the places they represent) are topologically disjoint: \"they have no point in common. They form a set of disconnected geometries.\" (A symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).)",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "GeospatialGeometry.schema.json",
+          "Place.schema.json"
+        ]
+      }
+    },
+    "geoEquals": {
+      "title": "Geo Equals",
+      "description": "Represents spatial relations in which two geometries (or the places they represent) are topologically equal, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM). \"Two geometries are topologically equal if their interiors intersect and no part of the interior or boundary of one geometry intersects the exterior of the other\" (a symmetric relationship).",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "GeospatialGeometry.schema.json",
+          "Place.schema.json"
+        ]
+      }
+    },
+    "geoIntersects": {
+      "title": "Geo Intersects",
+      "description": "Represents spatial relations in which two geometries (or the places they represent) have at least one point in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "GeospatialGeometry.schema.json",
+          "Place.schema.json"
+        ]
+      }
+    },
+    "geoOverlaps": {
+      "title": "Geo Overlaps",
+      "description": "Represents a relationship between two geometries (or the places they represent), relating a geometry to another that geospatially overlaps it, i.e. they have some but not all points in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "GeospatialGeometry.schema.json",
+          "Place.schema.json"
+        ]
+      }
+    },
+    "geoTouches": {
+      "title": "Geo Touches",
+      "description": "Represents spatial relations in which two geometries (or the places they represent) touch: \"they have at least one boundary point in common, but no interior points.\" (A symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).)",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "GeospatialGeometry.schema.json",
+          "Place.schema.json"
+        ]
+      }
+    },
+    "geoWithin": {
+      "title": "Geo Within",
+      "description": "Represents a relationship between two geometries (or the places they represent), relating a geometry to one that contains it, i.e. it is inside (i.e. within) its interior. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "GeospatialGeometry.schema.json",
+          "Place.schema.json"
+        ]
+      }
+    }
+  }
+}

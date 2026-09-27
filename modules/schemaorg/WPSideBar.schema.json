@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "WebPageElement.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "WebPageElement.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "WPSideBar.schema.json",
+  "x-oold-uuid": "49fc830c-4e77-529f-8924-7471331e1a88",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/WPSideBar",
+  "x-oold-instance-rdf-type": [
+    "schema:WPSideBar"
+  ],
+  "title": "WPSideBar",
+  "description": "A sidebar section of the page.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:WPSideBar"
+      ]
+    }
+  }
+}

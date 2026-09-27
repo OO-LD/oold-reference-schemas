@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Organization.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Organization.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ResearchOrganization.schema.json",
+  "x-oold-uuid": "a91c02a4-2f0f-5302-afa4-d0c504216020",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/ResearchOrganization",
+  "x-oold-instance-rdf-type": [
+    "schema:ResearchOrganization"
+  ],
+  "title": "ResearchOrganization",
+  "description": "A Research Organization (e.g. scientific institute, research company).",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:ResearchOrganization"
+      ]
+    }
+  }
+}

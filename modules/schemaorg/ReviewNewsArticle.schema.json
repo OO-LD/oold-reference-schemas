@@ -1,0 +1,39 @@
+{
+  "@context": [
+    "CriticReview.schema.json",
+    "NewsArticle.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "CriticReview.schema.json"
+    },
+    {
+      "$ref": "NewsArticle.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ReviewNewsArticle.schema.json",
+  "x-oold-uuid": "2f48ebef-cc6f-58a0-8d01-8eee334d0024",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/ReviewNewsArticle",
+  "x-oold-instance-rdf-type": [
+    "schema:ReviewNewsArticle"
+  ],
+  "title": "ReviewNewsArticle",
+  "description": "A [[NewsArticle]] and [[CriticReview]] providing a professional critic's assessment of a service, product, performance, or artistic or literary work.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:ReviewNewsArticle"
+      ]
+    }
+  }
+}

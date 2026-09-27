@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "EntertainmentBusiness.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "EntertainmentBusiness.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "AdultEntertainment.schema.json",
+  "x-oold-uuid": "69ccded7-7fd2-5234-98d7-b3cf8ed0c57b",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/AdultEntertainment",
+  "x-oold-instance-rdf-type": [
+    "schema:AdultEntertainment"
+  ],
+  "title": "AdultEntertainment",
+  "description": "An adult entertainment establishment.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:AdultEntertainment"
+      ]
+    }
+  }
+}

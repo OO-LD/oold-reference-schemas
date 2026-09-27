@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Episode.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Episode.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "RadioEpisode.schema.json",
+  "x-oold-uuid": "3073aff1-e2b6-5f2e-aff7-d6f51c3c406f",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/RadioEpisode",
+  "x-oold-instance-rdf-type": [
+    "schema:RadioEpisode"
+  ],
+  "title": "RadioEpisode",
+  "description": "A radio episode which can be part of a series or season.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:RadioEpisode"
+      ]
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "@context": [
+    "AutomotiveBusiness.schema.json",
+    "Store.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "AutomotiveBusiness.schema.json"
+    },
+    {
+      "$ref": "Store.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "AutoPartsStore.schema.json",
+  "x-oold-uuid": "72fe824f-22b4-5847-af14-bbbd1cdf4e59",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/AutoPartsStore",
+  "x-oold-instance-rdf-type": [
+    "schema:AutoPartsStore"
+  ],
+  "title": "AutoPartsStore",
+  "description": "An auto parts store.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:AutoPartsStore"
+      ]
+    }
+  }
+}

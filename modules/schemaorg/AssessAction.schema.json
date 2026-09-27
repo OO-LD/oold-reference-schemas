@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Action.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Action.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "AssessAction.schema.json",
+  "x-oold-uuid": "e8fb1c9d-5c52-58ef-8967-4d0ade9e3e87",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/AssessAction",
+  "x-oold-instance-rdf-type": [
+    "schema:AssessAction"
+  ],
+  "title": "AssessAction",
+  "description": "The act of forming one's opinion, reaction or sentiment.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:AssessAction"
+      ]
+    }
+  }
+}

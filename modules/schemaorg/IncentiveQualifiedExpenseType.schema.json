@@ -1,0 +1,55 @@
+{
+  "@context": [
+    "Enumeration.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Enumeration.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "IncentiveQualifiedExpenseType.schema.json",
+  "x-oold-uuid": "3124ccdc-e68c-51b2-86b9-bbf0a0aff6f8",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/IncentiveQualifiedExpenseType",
+  "x-oold-instance-rdf-type": [
+    "schema:IncentiveQualifiedExpenseType"
+  ],
+  "title": "IncentiveQualifiedExpenseType",
+  "description": "The types of expenses that are covered by the incentive. For example some incentives are only for the goods (tangible items) but the services (labor) are excluded.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:IncentiveQualifiedExpenseType"
+      ]
+    }
+  },
+  "$defs": {
+    "member": {
+      "title": "IncentiveQualifiedExpenseType member",
+      "description": "One of the 4 member instances of IncentiveQualifiedExpenseType.",
+      "type": "string",
+      "format": "iri-reference",
+      "enum": [
+        "schema:IncentiveQualifiedExpenseTypeGoodsOnly",
+        "schema:IncentiveQualifiedExpenseTypeGoodsOrServices",
+        "schema:IncentiveQualifiedExpenseTypeServicesOnly",
+        "schema:IncentiveQualifiedExpenseTypeUtilityBill"
+      ],
+      "x-oold-ui-enum-titles": [
+        "IncentiveQualifiedExpenseTypeGoodsOnly",
+        "IncentiveQualifiedExpenseTypeGoodsOrServices",
+        "IncentiveQualifiedExpenseTypeServicesOnly",
+        "IncentiveQualifiedExpenseTypeUtilityBill"
+      ]
+    }
+  }
+}

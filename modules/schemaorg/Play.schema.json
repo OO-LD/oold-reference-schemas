@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "CreativeWork.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "CreativeWork.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Play.schema.json",
+  "x-oold-uuid": "3f494815-6b96-5f41-8e09-2991c7886fac",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Play",
+  "x-oold-instance-rdf-type": [
+    "schema:Play"
+  ],
+  "title": "Play",
+  "description": "A play is a form of literature, usually consisting of dialogue between characters, intended for theatrical performance rather than just reading. Note: A performance of a Play would be a [[TheaterEvent]] or [[BroadcastEvent]] - the *Play* being the [[workPerformed]].",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Play"
+      ]
+    }
+  }
+}

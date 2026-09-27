@@ -1,0 +1,39 @@
+{
+  "@context": [
+    "CreativeWork.schema.json",
+    "MediaObject.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "CreativeWork.schema.json"
+    },
+    {
+      "$ref": "MediaObject.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "AmpStory.schema.json",
+  "x-oold-uuid": "acdd72f2-4d99-52e7-8312-bf7cde318791",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/AmpStory",
+  "x-oold-instance-rdf-type": [
+    "schema:AmpStory"
+  ],
+  "title": "AmpStory",
+  "description": "A creative work with a visual storytelling format intended to be viewed online, particularly on mobile devices.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:AmpStory"
+      ]
+    }
+  }
+}

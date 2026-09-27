@@ -1,0 +1,75 @@
+{
+  "@context": [
+    "AudioObject.schema.json",
+    "Book.schema.json",
+    {
+      "duration": {
+        "@id": "schema:duration",
+        "@container": "@set"
+      },
+      "readBy": {
+        "@id": "schema:readBy",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "AudioObject.schema.json"
+    },
+    {
+      "$ref": "Book.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Audiobook.schema.json",
+  "x-oold-uuid": "0d2e23f4-5be0-528b-b334-58d20058676d",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Audiobook",
+  "x-oold-instance-rdf-type": [
+    "schema:Audiobook"
+  ],
+  "title": "Audiobook",
+  "description": "An audiobook.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Audiobook"
+      ]
+    },
+    "duration": {
+      "title": "Duration",
+      "description": "The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: QuantitativeValue [value-type]: QuantitativeValue -> StructuredValue -> Intangible -> Thing",
+        "anyOf": [
+          {
+            "$ref": "Duration.schema.json"
+          },
+          {
+            "$ref": "QuantitativeValue.schema.json"
+          }
+        ]
+      }
+    },
+    "readBy": {
+      "title": "Read By",
+      "description": "A person who reads (performs) the audiobook.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Person.schema.json"
+      }
+    }
+  }
+}

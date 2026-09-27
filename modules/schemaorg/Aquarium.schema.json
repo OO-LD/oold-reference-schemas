@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "CivicStructure.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "CivicStructure.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Aquarium.schema.json",
+  "x-oold-uuid": "38e69355-8de2-57e0-bb88-f6c454869a23",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Aquarium",
+  "x-oold-instance-rdf-type": [
+    "schema:Aquarium"
+  ],
+  "title": "Aquarium",
+  "description": "Aquarium.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Aquarium"
+      ]
+    }
+  }
+}

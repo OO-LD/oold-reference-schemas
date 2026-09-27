@@ -1,0 +1,8 @@
+{
+  "$schema": "SequentialArt.schema.json",
+  "@context": "SequentialArt.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:SequentialArt"
+  ]
+}

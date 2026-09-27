@@ -1,0 +1,8 @@
+{
+  "$schema": "Invoice.schema.json",
+  "@context": "Invoice.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:Invoice"
+  ]
+}

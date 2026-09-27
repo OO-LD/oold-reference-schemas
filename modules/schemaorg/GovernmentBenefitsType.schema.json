@@ -1,0 +1,63 @@
+{
+  "@context": [
+    "Enumeration.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Enumeration.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "GovernmentBenefitsType.schema.json",
+  "x-oold-uuid": "a458ab1c-46ab-5b34-ad28-6c8d6776a660",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/GovernmentBenefitsType",
+  "x-oold-instance-rdf-type": [
+    "schema:GovernmentBenefitsType"
+  ],
+  "title": "GovernmentBenefitsType",
+  "description": "GovernmentBenefitsType enumerates several kinds of government benefits to support the COVID-19 situation. Note that this structure may not capture all benefits offered.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:GovernmentBenefitsType"
+      ]
+    }
+  },
+  "$defs": {
+    "member": {
+      "title": "GovernmentBenefitsType member",
+      "description": "One of the 8 member instances of GovernmentBenefitsType.",
+      "type": "string",
+      "format": "iri-reference",
+      "enum": [
+        "schema:BasicIncome",
+        "schema:BusinessSupport",
+        "schema:DisabilitySupport",
+        "schema:HealthCare",
+        "schema:OneTimePayments",
+        "schema:PaidLeave",
+        "schema:ParentalSupport",
+        "schema:UnemploymentSupport"
+      ],
+      "x-oold-ui-enum-titles": [
+        "BasicIncome",
+        "BusinessSupport",
+        "DisabilitySupport",
+        "HealthCare",
+        "OneTimePayments",
+        "PaidLeave",
+        "ParentalSupport",
+        "UnemploymentSupport"
+      ]
+    }
+  }
+}

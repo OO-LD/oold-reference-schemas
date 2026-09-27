@@ -1,0 +1,8 @@
+{
+  "$schema": "RegisterAction.schema.json",
+  "@context": "RegisterAction.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:RegisterAction"
+  ]
+}

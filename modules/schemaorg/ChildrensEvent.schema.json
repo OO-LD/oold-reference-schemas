@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Event.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Event.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ChildrensEvent.schema.json",
+  "x-oold-uuid": "99b1fa88-aecc-5fac-91e1-74b1d6d154b0",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/ChildrensEvent",
+  "x-oold-instance-rdf-type": [
+    "schema:ChildrensEvent"
+  ],
+  "title": "ChildrensEvent",
+  "description": "Event type: Children's event.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:ChildrensEvent"
+      ]
+    }
+  }
+}

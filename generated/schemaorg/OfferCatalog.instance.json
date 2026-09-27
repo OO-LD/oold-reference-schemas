@@ -1,0 +1,8 @@
+{
+  "$schema": "OfferCatalog.schema.json",
+  "@context": "OfferCatalog.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:OfferCatalog"
+  ]
+}

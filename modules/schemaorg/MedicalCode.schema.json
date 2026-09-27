@@ -1,0 +1,64 @@
+{
+  "@context": [
+    "CategoryCode.schema.json",
+    "MedicalIntangible.schema.json",
+    {
+      "codeValue": {
+        "@id": "schema:codeValue",
+        "@container": "@set"
+      },
+      "codingSystem": {
+        "@id": "schema:codingSystem",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "CategoryCode.schema.json"
+    },
+    {
+      "$ref": "MedicalIntangible.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MedicalCode.schema.json",
+  "x-oold-uuid": "efd58717-48b6-5474-a4ba-b191be79f026",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/MedicalCode",
+  "x-oold-instance-rdf-type": [
+    "schema:MedicalCode"
+  ],
+  "title": "MedicalCode",
+  "description": "A code for a medical entity.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:MedicalCode"
+      ]
+    },
+    "codeValue": {
+      "title": "Code Value",
+      "description": "A short textual code that uniquely identifies the value.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "codingSystem": {
+      "title": "Coding System",
+      "description": "The coding system, e.g. 'ICD-10'.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    }
+  }
+}

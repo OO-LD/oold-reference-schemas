@@ -1,0 +1,8 @@
+{
+  "$schema": "WriteAction.schema.json",
+  "@context": "WriteAction.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:WriteAction"
+  ]
+}

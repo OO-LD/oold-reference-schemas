@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "LodgingBusiness.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "LodgingBusiness.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "VacationRental.schema.json",
+  "x-oold-uuid": "a9f3ed26-7675-5754-b40b-ab0eed25785b",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/VacationRental",
+  "x-oold-instance-rdf-type": [
+    "schema:VacationRental"
+  ],
+  "title": "VacationRental",
+  "description": "A kind of lodging business that focuses on renting single properties for limited time.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:VacationRental"
+      ]
+    }
+  }
+}

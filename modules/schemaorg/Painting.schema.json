@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "CreativeWork.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "CreativeWork.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Painting.schema.json",
+  "x-oold-uuid": "a3f45b54-53b2-580a-a960-96d17035b800",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Painting",
+  "x-oold-instance-rdf-type": [
+    "schema:Painting"
+  ],
+  "title": "Painting",
+  "description": "A painting.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Painting"
+      ]
+    }
+  }
+}

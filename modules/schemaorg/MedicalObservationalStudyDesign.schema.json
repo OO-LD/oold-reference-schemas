@@ -1,0 +1,59 @@
+{
+  "@context": [
+    "MedicalEnumeration.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "MedicalEnumeration.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MedicalObservationalStudyDesign.schema.json",
+  "x-oold-uuid": "da9c321b-f26f-5f1e-b0be-3770f0e94402",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/MedicalObservationalStudyDesign",
+  "x-oold-instance-rdf-type": [
+    "schema:MedicalObservationalStudyDesign"
+  ],
+  "title": "MedicalObservationalStudyDesign",
+  "description": "Design models for observational medical studies. Enumerated type.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:MedicalObservationalStudyDesign"
+      ]
+    }
+  },
+  "$defs": {
+    "member": {
+      "title": "MedicalObservationalStudyDesign member",
+      "description": "One of the 6 member instances of MedicalObservationalStudyDesign.",
+      "type": "string",
+      "format": "iri-reference",
+      "enum": [
+        "schema:CaseSeries",
+        "schema:CohortStudy",
+        "schema:CrossSectional",
+        "schema:Longitudinal",
+        "schema:Observational",
+        "schema:Registry"
+      ],
+      "x-oold-ui-enum-titles": [
+        "CaseSeries",
+        "CohortStudy",
+        "CrossSectional",
+        "Longitudinal",
+        "Observational",
+        "Registry"
+      ]
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "LocalBusiness.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "LocalBusiness.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "RecyclingCenter.schema.json",
+  "x-oold-uuid": "2bf5008c-6b98-5a45-95d3-fdfd195ba8d8",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/RecyclingCenter",
+  "x-oold-instance-rdf-type": [
+    "schema:RecyclingCenter"
+  ],
+  "title": "RecyclingCenter",
+  "description": "A recycling center.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:RecyclingCenter"
+      ]
+    }
+  }
+}

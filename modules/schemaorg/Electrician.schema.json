@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "HomeAndConstructionBusiness.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "HomeAndConstructionBusiness.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Electrician.schema.json",
+  "x-oold-uuid": "11ed7e00-7a52-5b9b-bccf-3b0e10c0b288",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Electrician",
+  "x-oold-instance-rdf-type": [
+    "schema:Electrician"
+  ],
+  "title": "Electrician",
+  "description": "An electrician.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Electrician"
+      ]
+    }
+  }
+}

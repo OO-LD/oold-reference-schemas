@@ -1,0 +1,51 @@
+{
+  "@context": [
+    "Enumeration.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Enumeration.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "GameAvailabilityEnumeration.schema.json",
+  "x-oold-uuid": "a92a0b57-55af-510a-92e9-aa7ed283f610",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/GameAvailabilityEnumeration",
+  "x-oold-instance-rdf-type": [
+    "schema:GameAvailabilityEnumeration"
+  ],
+  "title": "GameAvailabilityEnumeration",
+  "description": "For a [[VideoGame]], such as used with a [[PlayGameAction]], an enumeration of the kind of game availability offered. ",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:GameAvailabilityEnumeration"
+      ]
+    }
+  },
+  "$defs": {
+    "member": {
+      "title": "GameAvailabilityEnumeration member",
+      "description": "One of the 2 member instances of GameAvailabilityEnumeration.",
+      "type": "string",
+      "format": "iri-reference",
+      "enum": [
+        "schema:DemoGameAvailability",
+        "schema:FullGameAvailability"
+      ],
+      "x-oold-ui-enum-titles": [
+        "DemoGameAvailability",
+        "FullGameAvailability"
+      ]
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "DoseSchedule.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "DoseSchedule.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ReportedDoseSchedule.schema.json",
+  "x-oold-uuid": "f708f4e1-534d-5a95-a3bb-62555dee41c7",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/ReportedDoseSchedule",
+  "x-oold-instance-rdf-type": [
+    "schema:ReportedDoseSchedule"
+  ],
+  "title": "ReportedDoseSchedule",
+  "description": "A patient-reported or observed dosing schedule for a drug or supplement.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:ReportedDoseSchedule"
+      ]
+    }
+  }
+}

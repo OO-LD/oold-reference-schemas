@@ -1,0 +1,39 @@
+{
+  "@context": [
+    "BankAccount.schema.json",
+    "InvestmentOrDeposit.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "BankAccount.schema.json"
+    },
+    {
+      "$ref": "InvestmentOrDeposit.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "DepositAccount.schema.json",
+  "x-oold-uuid": "b2201d0f-7915-5124-9317-60030336cadb",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/DepositAccount",
+  "x-oold-instance-rdf-type": [
+    "schema:DepositAccount"
+  ],
+  "title": "DepositAccount",
+  "description": "A type of Bank Account with a main purpose of depositing funds to gain interest or other benefits.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:DepositAccount"
+      ]
+    }
+  }
+}

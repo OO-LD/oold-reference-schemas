@@ -1,0 +1,8 @@
+{
+  "$schema": "CommentAction.schema.json",
+  "@context": "CommentAction.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:CommentAction"
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "@context": [
+    "Dataset.schema.json",
+    {
+      "dataFeedElement": {
+        "@id": "schema:dataFeedElement",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "dataFeedElement_text": {
+        "@id": "schema:dataFeedElement",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Dataset.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "DataFeed.schema.json",
+  "x-oold-uuid": "869ac2f5-40ca-5551-973c-ed9860229c98",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/DataFeed",
+  "x-oold-instance-rdf-type": [
+    "schema:DataFeed"
+  ],
+  "title": "DataFeed",
+  "description": "A single feed providing structured information about one or more entities or topics.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:DataFeed"
+      ]
+    },
+    "dataFeedElement": {
+      "title": "Data Feed Element",
+      "description": "An item within a data feed. Data feeds may have many elements.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "DataFeedItem.schema.json",
+          "Thing.schema.json"
+        ]
+      }
+    },
+    "dataFeedElement_text": {
+      "title": "Data Feed Element (text)",
+      "description": "An item within a data feed. Data feeds may have many elements.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    }
+  }
+}

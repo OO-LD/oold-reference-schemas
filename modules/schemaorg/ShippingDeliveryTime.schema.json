@@ -1,0 +1,109 @@
+{
+  "@context": [
+    "StructuredValue.schema.json",
+    {
+      "businessDays": {
+        "@id": "schema:businessDays",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "cutoffTime": {
+        "@id": "schema:cutoffTime",
+        "@type": "xsd:time",
+        "@container": "@set"
+      },
+      "handlingTime": {
+        "@id": "schema:handlingTime",
+        "@container": "@set"
+      },
+      "transitTime": {
+        "@id": "schema:transitTime",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "StructuredValue.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ShippingDeliveryTime.schema.json",
+  "x-oold-uuid": "3490cbe1-b1af-54bb-807b-e547fe9cc7b3",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/ShippingDeliveryTime",
+  "x-oold-instance-rdf-type": [
+    "schema:ShippingDeliveryTime"
+  ],
+  "title": "ShippingDeliveryTime",
+  "description": "ShippingDeliveryTime provides various pieces of information about delivery times for shipping.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:ShippingDeliveryTime"
+      ]
+    },
+    "businessDays": {
+      "title": "Business Days",
+      "description": "Days of the week when the merchant typically operates, indicated via opening hours markup.",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: OpeningHoursSpecification [value-type]: OpeningHoursSpecification -> StructuredValue -> Intangible -> Thing; DayOfWeek [entity]: DayOfWeek -> Enumeration -> Intangible -> Thing",
+        "anyOf": [
+          {
+            "$ref": "DayOfWeek.schema.json#/$defs/member",
+            "x-oold-range": "DayOfWeek.schema.json"
+          },
+          {
+            "$ref": "OpeningHoursSpecification.schema.json"
+          }
+        ]
+      }
+    },
+    "cutoffTime": {
+      "title": "Cutoff Time",
+      "description": "Order cutoff time allows merchants to describe the time after which they will no longer process orders received on that day. For orders processed after cutoff time, one day gets added to the delivery time estimate. This property is expected to be most typically used via the [[ShippingRateSettings]] publication pattern. The time is indicated using the ISO-8601 Time format, e.g. \"23:30:00-05:00\" would represent 6:30 pm Eastern Standard Time (EST) which is 5 hours behind Coordinated Universal Time (UTC).",
+      "type": "array",
+      "items": {
+        "$ref": "Time.schema.json"
+      }
+    },
+    "handlingTime": {
+      "title": "Handling Time",
+      "description": "The typical delay between the receipt of the order and the goods either leaving the warehouse or being prepared for pickup, in case the delivery method is on site pickup.\n\nIn the context of [[ShippingDeliveryTime]], Typical properties: minValue, maxValue, unitCode (d for DAY).  This is by common convention assumed to mean business days (if a unitCode is used, coded as \"d\"), i.e. only counting days when the business normally operates.\n\nIn the context of [[ShippingService]], use the [[ServicePeriod]] format, that contains the same information in a structured form, with cut-off time, business days and duration.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "QuantitativeValue.schema.json"
+          },
+          {
+            "$ref": "ServicePeriod.schema.json"
+          }
+        ]
+      }
+    },
+    "transitTime": {
+      "title": "Transit Time",
+      "description": "The typical delay the order has been sent for delivery and the goods reach the final customer.\n\n  In the context of [[ShippingDeliveryTime]], use the [[QuantitativeValue]]. Typical properties: minValue, maxValue, unitCode (d for DAY).\n\n  In the context of [[ShippingConditions]], use the [[ServicePeriod]]. It has a duration (as a [[QuantitativeValue]]) and also business days and a cut-off time.\n",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "QuantitativeValue.schema.json"
+          },
+          {
+            "$ref": "ServicePeriod.schema.json"
+          }
+        ]
+      }
+    }
+  }
+}

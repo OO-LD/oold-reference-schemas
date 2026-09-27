@@ -1,0 +1,169 @@
+{
+  "@context": [
+    "Thing.schema.json",
+    {
+      "code": {
+        "@id": "schema:code",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "funding": {
+        "@id": "schema:funding",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "guideline": {
+        "@id": "schema:guideline",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "legalStatus": {
+        "@id": "schema:legalStatus",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "legalStatus_text": {
+        "@id": "schema:legalStatus",
+        "@container": "@set"
+      },
+      "medicineSystem": {
+        "@id": "schema:medicineSystem",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "recognizingAuthority": {
+        "@id": "schema:recognizingAuthority",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "relevantSpecialty": {
+        "@id": "schema:relevantSpecialty",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "study": {
+        "@id": "schema:study",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Thing.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MedicalEntity.schema.json",
+  "x-oold-uuid": "ef5ba8e6-6de7-5160-b38f-d28ccb16e9d8",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/MedicalEntity",
+  "x-oold-instance-rdf-type": [
+    "schema:MedicalEntity"
+  ],
+  "title": "MedicalEntity",
+  "description": "The most generic type of entity related to health and the practice of medicine.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:MedicalEntity"
+      ]
+    },
+    "code": {
+      "title": "Code",
+      "description": "A medical code for the entity, taken from a controlled vocabulary or ontology such as ICD-9, DiseasesDB, MeSH, SNOMED-CT, RxNorm, etc.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "MedicalCode.schema.json"
+      }
+    },
+    "funding": {
+      "title": "Funding",
+      "description": "A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Grant.schema.json"
+      }
+    },
+    "guideline": {
+      "title": "Guideline",
+      "description": "A medical guideline related to this entity.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "MedicalGuideline.schema.json"
+      }
+    },
+    "legalStatus": {
+      "title": "Legal Status",
+      "description": "The drug or supplement's legal status, including any controlled substance schedules that apply.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "DrugLegalStatus.schema.json",
+          "MedicalEnumeration.schema.json"
+        ]
+      }
+    },
+    "legalStatus_text": {
+      "title": "Legal Status (text)",
+      "description": "The drug or supplement's legal status, including any controlled substance schedules that apply.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "medicineSystem": {
+      "title": "Medicine System",
+      "description": "The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.",
+      "type": "array",
+      "items": {
+        "$ref": "MedicineSystem.schema.json#/$defs/member",
+        "x-oold-range": "MedicineSystem.schema.json"
+      }
+    },
+    "recognizingAuthority": {
+      "title": "Recognizing Authority",
+      "description": "If applicable, the organization that officially recognizes this entity as part of its endorsed system of medicine.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Organization.schema.json"
+      }
+    },
+    "relevantSpecialty": {
+      "title": "Relevant Specialty",
+      "description": "If applicable, a medical specialty in which this entity is relevant.",
+      "type": "array",
+      "items": {
+        "$ref": "MedicalSpecialty.schema.json#/$defs/member",
+        "x-oold-range": "MedicalSpecialty.schema.json"
+      }
+    },
+    "study": {
+      "title": "Study",
+      "description": "A medical study or trial related to this entity.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "MedicalStudy.schema.json"
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "$schema": "AmpStory.schema.json",
+  "@context": "AmpStory.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:AmpStory"
+  ]
+}

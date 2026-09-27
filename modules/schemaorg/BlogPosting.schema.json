@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "SocialMediaPosting.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "SocialMediaPosting.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "BlogPosting.schema.json",
+  "x-oold-uuid": "8b0ed3f8-6433-568e-8913-203b955a9b96",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/BlogPosting",
+  "x-oold-instance-rdf-type": [
+    "schema:BlogPosting"
+  ],
+  "title": "BlogPosting",
+  "description": "A blog post.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:BlogPosting"
+      ]
+    }
+  }
+}

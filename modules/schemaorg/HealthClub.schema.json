@@ -1,0 +1,39 @@
+{
+  "@context": [
+    "HealthAndBeautyBusiness.schema.json",
+    "SportsActivityLocation.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "HealthAndBeautyBusiness.schema.json"
+    },
+    {
+      "$ref": "SportsActivityLocation.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "HealthClub.schema.json",
+  "x-oold-uuid": "e2fc90ba-7f18-5e9e-90c7-375307f0ef50",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/HealthClub",
+  "x-oold-instance-rdf-type": [
+    "schema:HealthClub"
+  ],
+  "title": "HealthClub",
+  "description": "A health club.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:HealthClub"
+      ]
+    }
+  }
+}

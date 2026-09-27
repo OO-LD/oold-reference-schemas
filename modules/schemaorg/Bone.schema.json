@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "AnatomicalStructure.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "AnatomicalStructure.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Bone.schema.json",
+  "x-oold-uuid": "e5e577c4-b9b9-5ce4-a1fa-dfd29704e174",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Bone",
+  "x-oold-instance-rdf-type": [
+    "schema:Bone"
+  ],
+  "title": "Bone",
+  "description": "Rigid connective tissue that comprises up the skeletal structure of the human body.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Bone"
+      ]
+    }
+  }
+}

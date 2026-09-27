@@ -1,0 +1,356 @@
+{
+  "@context": [
+    "Intangible.schema.json",
+    {
+      "acceptedOffer": {
+        "@id": "schema:acceptedOffer",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "billingAddress": {
+        "@id": "schema:billingAddress",
+        "@container": "@set"
+      },
+      "broker": {
+        "@id": "schema:broker",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "confirmationNumber": {
+        "@id": "schema:confirmationNumber",
+        "@container": "@set"
+      },
+      "customer": {
+        "@id": "schema:customer",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "discount": {
+        "@id": "schema:discount",
+        "@container": "@set"
+      },
+      "discountCode": {
+        "@id": "schema:discountCode",
+        "@container": "@set"
+      },
+      "discountCurrency": {
+        "@id": "schema:discountCurrency",
+        "@container": "@set"
+      },
+      "isGift": {
+        "@id": "schema:isGift",
+        "@container": "@set"
+      },
+      "orderDate": {
+        "@id": "schema:orderDate",
+        "@container": "@set"
+      },
+      "orderDelivery": {
+        "@id": "schema:orderDelivery",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "orderedItem": {
+        "@id": "schema:orderedItem",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "orderNumber": {
+        "@id": "schema:orderNumber",
+        "@container": "@set"
+      },
+      "orderStatus": {
+        "@id": "schema:orderStatus",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "partOfInvoice": {
+        "@id": "schema:partOfInvoice",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "paymentDueDate": {
+        "@id": "schema:paymentDueDate",
+        "@container": "@set"
+      },
+      "paymentMethod": {
+        "@id": "schema:paymentMethod",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "paymentMethod_text": {
+        "@id": "schema:paymentMethod",
+        "@container": "@set"
+      },
+      "paymentMethodId": {
+        "@id": "schema:paymentMethodId",
+        "@container": "@set"
+      },
+      "paymentUrl": {
+        "@id": "schema:paymentUrl",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "seller": {
+        "@id": "schema:seller",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Intangible.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Order.schema.json",
+  "x-oold-uuid": "4e482ea7-45ac-5fca-a84e-dd1477f8c6af",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Order",
+  "x-oold-instance-rdf-type": [
+    "schema:Order"
+  ],
+  "title": "Order",
+  "description": "An order is a confirmation of a transaction (a receipt), which can contain multiple line items, each represented by an Offer that has been accepted by the customer.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Order"
+      ]
+    },
+    "acceptedOffer": {
+      "title": "Accepted Offer",
+      "description": "The offer(s) -- e.g., product, quantity and price combinations -- included in the order.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Offer.schema.json"
+      }
+    },
+    "billingAddress": {
+      "title": "Billing Address",
+      "description": "The billing address for the order.",
+      "type": "array",
+      "items": {
+        "$ref": "PostalAddress.schema.json"
+      }
+    },
+    "broker": {
+      "title": "Broker",
+      "description": "An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "Organization.schema.json",
+          "Person.schema.json"
+        ]
+      }
+    },
+    "confirmationNumber": {
+      "title": "Confirmation Number",
+      "description": "A number that confirms the given order or payment has been received.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "customer": {
+      "title": "Customer",
+      "description": "Party placing the order or paying the invoice.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "Organization.schema.json",
+          "Person.schema.json"
+        ]
+      }
+    },
+    "discount": {
+      "title": "Discount",
+      "description": "Any discount applied (to an Order).",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Number.schema.json"
+          },
+          {
+            "$ref": "Text.schema.json"
+          }
+        ]
+      }
+    },
+    "discountCode": {
+      "title": "Discount Code",
+      "description": "Code used to redeem a discount.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "discountCurrency": {
+      "title": "Discount Currency",
+      "description": "The currency of the discount.\\n\\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217), e.g. \"USD\"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies, e.g. \"BTC\"; well known names for [Local Exchange Trading Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types, e.g. \"Ithaca HOUR\".",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "isGift": {
+      "title": "Is Gift",
+      "description": "Indicates whether the offer was accepted as a gift for someone other than the buyer.",
+      "type": "array",
+      "items": {
+        "$ref": "Boolean.schema.json"
+      }
+    },
+    "orderDate": {
+      "title": "Order Date",
+      "description": "Date order was placed.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Date.schema.json"
+          },
+          {
+            "$ref": "DateTime.schema.json"
+          }
+        ]
+      }
+    },
+    "orderDelivery": {
+      "title": "Order Delivery",
+      "description": "The delivery of the parcel related to this order or order item.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "ParcelDelivery.schema.json"
+      }
+    },
+    "orderedItem": {
+      "title": "Ordered Item",
+      "description": "The item ordered.",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: OrderItem [value-type]: OrderItem -> StructuredValue -> Intangible -> Thing; Product [entity]: Product -> Thing; Service [entity]: Service -> Intangible -> Thing",
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "iri-reference",
+            "x-oold-range": [
+              "Product.schema.json",
+              "Service.schema.json"
+            ]
+          },
+          {
+            "$ref": "OrderItem.schema.json"
+          }
+        ]
+      }
+    },
+    "orderNumber": {
+      "title": "Order Number",
+      "description": "The identifier of the transaction.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "orderStatus": {
+      "title": "Order Status",
+      "description": "The current status of the order.",
+      "type": "array",
+      "items": {
+        "$ref": "OrderStatus.schema.json#/$defs/member",
+        "x-oold-range": "OrderStatus.schema.json"
+      }
+    },
+    "partOfInvoice": {
+      "title": "Part Of Invoice",
+      "description": "The order is being paid as part of the referenced Invoice.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Invoice.schema.json"
+      }
+    },
+    "paymentDueDate": {
+      "title": "Payment Due Date",
+      "description": "The date that payment is due.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Date.schema.json"
+          },
+          {
+            "$ref": "DateTime.schema.json"
+          }
+        ]
+      }
+    },
+    "paymentMethod": {
+      "title": "Payment Method",
+      "description": "The name of the credit card or other method of payment for the order.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "PaymentMethod.schema.json"
+      }
+    },
+    "paymentMethod_text": {
+      "title": "Payment Method (text)",
+      "description": "The name of the credit card or other method of payment for the order.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "paymentMethodId": {
+      "title": "Payment Method Id",
+      "description": "An identifier for the method of payment used (e.g. the last 4 digits of the credit card).",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "paymentUrl": {
+      "title": "Payment Url",
+      "description": "The URL for sending a payment.",
+      "type": "array",
+      "items": {
+        "$ref": "URL.schema.json"
+      }
+    },
+    "seller": {
+      "title": "Seller",
+      "description": "An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "Organization.schema.json",
+          "Person.schema.json"
+        ]
+      }
+    }
+  }
+}

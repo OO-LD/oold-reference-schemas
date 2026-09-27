@@ -1,0 +1,8 @@
+{
+  "$schema": "PreventionIndication.schema.json",
+  "@context": "PreventionIndication.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:PreventionIndication"
+  ]
+}

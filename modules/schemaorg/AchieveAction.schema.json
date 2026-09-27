@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Action.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Action.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "AchieveAction.schema.json",
+  "x-oold-uuid": "89e0cd62-acbc-533f-94a6-2f52004bb1ce",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/AchieveAction",
+  "x-oold-instance-rdf-type": [
+    "schema:AchieveAction"
+  ],
+  "title": "AchieveAction",
+  "description": "The act of accomplishing something via previous efforts. It is an instantaneous action rather than an ongoing process.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:AchieveAction"
+      ]
+    }
+  }
+}

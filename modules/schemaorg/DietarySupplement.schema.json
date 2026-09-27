@@ -1,0 +1,184 @@
+{
+  "@context": [
+    "Product.schema.json",
+    "Substance.schema.json",
+    {
+      "activeIngredient": {
+        "@id": "schema:activeIngredient",
+        "@container": "@set"
+      },
+      "isProprietary": {
+        "@id": "schema:isProprietary",
+        "@container": "@set"
+      },
+      "legalStatus": {
+        "@id": "schema:legalStatus",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "legalStatus_text": {
+        "@id": "schema:legalStatus",
+        "@container": "@set"
+      },
+      "maximumIntake": {
+        "@id": "schema:maximumIntake",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "mechanismOfAction": {
+        "@id": "schema:mechanismOfAction",
+        "@container": "@set"
+      },
+      "nonProprietaryName": {
+        "@id": "schema:nonProprietaryName",
+        "@container": "@set"
+      },
+      "proprietaryName": {
+        "@id": "schema:proprietaryName",
+        "@container": "@set"
+      },
+      "recommendedIntake": {
+        "@id": "schema:recommendedIntake",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "safetyConsideration": {
+        "@id": "schema:safetyConsideration",
+        "@container": "@set"
+      },
+      "targetPopulation": {
+        "@id": "schema:targetPopulation",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Product.schema.json"
+    },
+    {
+      "$ref": "Substance.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "DietarySupplement.schema.json",
+  "x-oold-uuid": "88f6a9fc-d9b3-5a6b-9b36-8e1a885dce16",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/DietarySupplement",
+  "x-oold-instance-rdf-type": [
+    "schema:DietarySupplement"
+  ],
+  "title": "DietarySupplement",
+  "description": "A product taken by mouth that contains a dietary ingredient intended to supplement the diet. Dietary ingredients may include vitamins, minerals, herbs or other botanicals, amino acids, and substances such as enzymes, organ tissues, glandulars and metabolites.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:DietarySupplement"
+      ]
+    },
+    "activeIngredient": {
+      "title": "Active Ingredient",
+      "description": "An active ingredient, typically chemical compounds and/or biologic substances.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "isProprietary": {
+      "title": "Is Proprietary",
+      "description": "True if this item's name is a proprietary/brand name (vs. generic name).",
+      "type": "array",
+      "items": {
+        "$ref": "Boolean.schema.json"
+      }
+    },
+    "legalStatus": {
+      "title": "Legal Status",
+      "description": "The drug or supplement's legal status, including any controlled substance schedules that apply.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "DrugLegalStatus.schema.json",
+          "MedicalEnumeration.schema.json"
+        ]
+      }
+    },
+    "legalStatus_text": {
+      "title": "Legal Status (text)",
+      "description": "The drug or supplement's legal status, including any controlled substance schedules that apply.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "maximumIntake": {
+      "title": "Maximum Intake",
+      "description": "Recommended intake of this supplement for a given population as defined by a specific recommending authority.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "MaximumDoseSchedule.schema.json"
+      }
+    },
+    "mechanismOfAction": {
+      "title": "Mechanism Of Action",
+      "description": "The specific biochemical interaction through which this drug or supplement produces its pharmacological effect.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "nonProprietaryName": {
+      "title": "Non Proprietary Name",
+      "description": "The generic name of this drug or supplement.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "proprietaryName": {
+      "title": "Proprietary Name",
+      "description": "Proprietary name given to the diet plan, typically by its originator or creator.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "recommendedIntake": {
+      "title": "Recommended Intake",
+      "description": "Recommended intake of this supplement for a given population as defined by a specific recommending authority.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "RecommendedDoseSchedule.schema.json"
+      }
+    },
+    "safetyConsideration": {
+      "title": "Safety Consideration",
+      "description": "Any potential safety concern associated with the supplement. May include interactions with other drugs and foods, pregnancy, breastfeeding, known adverse reactions, and documented efficacy of the supplement.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "targetPopulation": {
+      "title": "Target Population",
+      "description": "Characteristics of the population for which this is intended, or which typically uses it, e.g. 'adults'.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    }
+  }
+}

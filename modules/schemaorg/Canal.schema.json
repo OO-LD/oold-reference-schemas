@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "BodyOfWater.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "BodyOfWater.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Canal.schema.json",
+  "x-oold-uuid": "823f82fa-4faa-5acb-859d-05a5e5484589",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Canal",
+  "x-oold-instance-rdf-type": [
+    "schema:Canal"
+  ],
+  "title": "Canal",
+  "description": "A canal, like the Panama Canal.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Canal"
+      ]
+    }
+  }
+}

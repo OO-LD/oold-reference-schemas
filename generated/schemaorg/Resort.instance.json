@@ -1,0 +1,8 @@
+{
+  "$schema": "Resort.schema.json",
+  "@context": "Resort.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:Resort"
+  ]
+}

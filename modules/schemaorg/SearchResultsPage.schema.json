@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "WebPage.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "WebPage.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "SearchResultsPage.schema.json",
+  "x-oold-uuid": "1a2205d9-4b88-56e0-8458-68e395ab502e",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/SearchResultsPage",
+  "x-oold-instance-rdf-type": [
+    "schema:SearchResultsPage"
+  ],
+  "title": "SearchResultsPage",
+  "description": "Web page type: Search results page.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:SearchResultsPage"
+      ]
+    }
+  }
+}

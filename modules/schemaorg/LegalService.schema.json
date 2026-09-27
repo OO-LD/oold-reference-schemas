@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "LocalBusiness.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "LocalBusiness.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "LegalService.schema.json",
+  "x-oold-uuid": "c88010d9-1bba-58ea-8c68-92de8cdf2f1f",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/LegalService",
+  "x-oold-instance-rdf-type": [
+    "schema:LegalService"
+  ],
+  "title": "LegalService",
+  "description": "A LegalService is a business that provides legally-oriented services, advice and representation, e.g. law firms.\\n\\nAs a [[LocalBusiness]] it can be described as a [[provider]] of one or more [[Service]]\\(s).",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:LegalService"
+      ]
+    }
+  }
+}

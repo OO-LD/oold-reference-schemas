@@ -1,0 +1,48 @@
+{
+  "@context": [
+    "Review.schema.json",
+    {
+      "claimReviewed": {
+        "@id": "schema:claimReviewed",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Review.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ClaimReview.schema.json",
+  "x-oold-uuid": "ea65b868-39fe-550e-8c8d-4121ed59e1ae",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/ClaimReview",
+  "x-oold-instance-rdf-type": [
+    "schema:ClaimReview"
+  ],
+  "title": "ClaimReview",
+  "description": "A fact-checking review of claims made (or reported) in some creative work (referenced via itemReviewed).",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:ClaimReview"
+      ]
+    },
+    "claimReviewed": {
+      "title": "Claim Reviewed",
+      "description": "A short summary of the specific claims reviewed in a ClaimReview.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    }
+  }
+}

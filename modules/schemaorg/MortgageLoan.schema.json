@@ -1,0 +1,60 @@
+{
+  "@context": [
+    "LoanOrCredit.schema.json",
+    {
+      "domiciledMortgage": {
+        "@id": "schema:domiciledMortgage",
+        "@container": "@set"
+      },
+      "loanMortgageMandateAmount": {
+        "@id": "schema:loanMortgageMandateAmount",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "LoanOrCredit.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MortgageLoan.schema.json",
+  "x-oold-uuid": "22b8aad9-ee79-5c0b-bfd7-483fca4209cb",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/MortgageLoan",
+  "x-oold-instance-rdf-type": [
+    "schema:MortgageLoan"
+  ],
+  "title": "MortgageLoan",
+  "description": "A loan in which property or real estate is used as collateral. (A loan securitized against some real estate.)",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:MortgageLoan"
+      ]
+    },
+    "domiciledMortgage": {
+      "title": "Domiciled Mortgage",
+      "description": "Whether borrower is a resident of the jurisdiction where the property is located.",
+      "type": "array",
+      "items": {
+        "$ref": "Boolean.schema.json"
+      }
+    },
+    "loanMortgageMandateAmount": {
+      "title": "Loan Mortgage Mandate Amount",
+      "description": "Amount of mortgage mandate that can be converted into a proper mortgage at a later stage.",
+      "type": "array",
+      "items": {
+        "$ref": "MonetaryAmount.schema.json"
+      }
+    }
+  }
+}

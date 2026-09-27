@@ -1,0 +1,66 @@
+{
+  "@context": [
+    "Intangible.schema.json",
+    {
+      "hasTiers": {
+        "@id": "schema:hasTiers",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "hostingOrganization": {
+        "@id": "schema:hostingOrganization",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Intangible.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MemberProgram.schema.json",
+  "x-oold-uuid": "deeea7e6-1961-5471-84a1-6e645e57183e",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/MemberProgram",
+  "x-oold-instance-rdf-type": [
+    "schema:MemberProgram"
+  ],
+  "title": "MemberProgram",
+  "description": "A MemberProgram defines a loyalty (or membership) program that provides its members with certain benefits, for example better pricing, free shipping or returns, or the ability to earn loyalty points. Member programs may have multiple tiers, for example silver and gold members, each with different benefits.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:MemberProgram"
+      ]
+    },
+    "hasTiers": {
+      "title": "Has Tiers",
+      "description": "The tiers of a member program.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "MemberProgramTier.schema.json"
+      }
+    },
+    "hostingOrganization": {
+      "title": "Hosting Organization",
+      "description": "The Organization (airline, travelers' club, retailer, etc.) the membership is made with or which offers the  MemberProgram.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Organization.schema.json"
+      }
+    }
+  }
+}

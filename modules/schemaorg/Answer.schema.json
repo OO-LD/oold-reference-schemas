@@ -1,0 +1,72 @@
+{
+  "@context": [
+    "Comment.schema.json",
+    {
+      "answerExplanation": {
+        "@id": "schema:answerExplanation",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "parentItem": {
+        "@id": "schema:parentItem",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Comment.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Answer.schema.json",
+  "x-oold-uuid": "70ec889c-ea0b-51a2-8fc9-3dceaa3bd104",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Answer",
+  "x-oold-instance-rdf-type": [
+    "schema:Answer"
+  ],
+  "title": "Answer",
+  "description": "An answer offered to a question; perhaps correct, perhaps opinionated or wrong.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Answer"
+      ]
+    },
+    "answerExplanation": {
+      "title": "Answer Explanation",
+      "description": "A step-by-step or full explanation about Answer. Can outline how this Answer was achieved or contain more broad clarification or statement about it. ",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "Comment.schema.json",
+          "WebContent.schema.json"
+        ]
+      }
+    },
+    "parentItem": {
+      "title": "Parent Item",
+      "description": "The parent of a question, answer or item in general. Typically used for Q/A discussion threads e.g. a chain of comments with the first comment being an [[Article]] or other [[CreativeWork]]. See also [[comment]] which points from something to a comment about it.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "Comment.schema.json",
+          "CreativeWork.schema.json"
+        ]
+      }
+    }
+  }
+}

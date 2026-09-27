@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Landform.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Landform.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Volcano.schema.json",
+  "x-oold-uuid": "1a3efbf6-ecb6-5f8f-bb3a-49667e38415e",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Volcano",
+  "x-oold-instance-rdf-type": [
+    "schema:Volcano"
+  ],
+  "title": "Volcano",
+  "description": "A volcano, like Fujisan.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Volcano"
+      ]
+    }
+  }
+}

@@ -1,0 +1,381 @@
+{
+  "@context": [
+    "CreativeWork.schema.json",
+    {
+      "associatedArticle": {
+        "@id": "schema:associatedArticle",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "bitrate": {
+        "@id": "schema:bitrate",
+        "@container": "@set"
+      },
+      "contentSize": {
+        "@id": "schema:contentSize",
+        "@container": "@set"
+      },
+      "contentUrl": {
+        "@id": "schema:contentUrl",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "duration": {
+        "@id": "schema:duration",
+        "@container": "@set"
+      },
+      "embedUrl": {
+        "@id": "schema:embedUrl",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "encodesCreativeWork": {
+        "@id": "schema:encodesCreativeWork",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "encodingFormat": {
+        "@id": "schema:encodingFormat",
+        "@container": "@set"
+      },
+      "endTime": {
+        "@id": "schema:endTime",
+        "@container": "@set"
+      },
+      "height": {
+        "@id": "schema:height",
+        "@container": "@set"
+      },
+      "ineligibleRegion": {
+        "@id": "schema:ineligibleRegion",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "ineligibleRegion_text": {
+        "@id": "schema:ineligibleRegion",
+        "@container": "@set"
+      },
+      "interpretedAsClaim": {
+        "@id": "schema:interpretedAsClaim",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "playerType": {
+        "@id": "schema:playerType",
+        "@container": "@set"
+      },
+      "productionCompany": {
+        "@id": "schema:productionCompany",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "regionsAllowed": {
+        "@id": "schema:regionsAllowed",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "requiresSubscription": {
+        "@id": "schema:requiresSubscription",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "requiresSubscription_text": {
+        "@id": "schema:requiresSubscription",
+        "@container": "@set"
+      },
+      "sha256": {
+        "@id": "schema:sha256",
+        "@container": "@set"
+      },
+      "startTime": {
+        "@id": "schema:startTime",
+        "@container": "@set"
+      },
+      "uploadDate": {
+        "@id": "schema:uploadDate",
+        "@container": "@set"
+      },
+      "width": {
+        "@id": "schema:width",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "CreativeWork.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MediaObject.schema.json",
+  "x-oold-uuid": "16673fe4-7080-5dfe-8f6b-e7b9c4a8df44",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/MediaObject",
+  "x-oold-instance-rdf-type": [
+    "schema:MediaObject"
+  ],
+  "title": "MediaObject",
+  "description": "A media object, such as an image, video, audio, or text object embedded in a web page or a downloadable dataset i.e. DataDownload. Note that a creative work may have many media objects associated with it on the same web page. For example, a page about a single song (MusicRecording) may have a music video (VideoObject), and a high and low bandwidth audio stream (2 AudioObject's).",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:MediaObject"
+      ]
+    },
+    "associatedArticle": {
+      "title": "Associated Article",
+      "description": "A NewsArticle associated with the Media Object.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "NewsArticle.schema.json"
+      }
+    },
+    "bitrate": {
+      "title": "Bitrate",
+      "description": "The bitrate of the media object.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "contentSize": {
+      "title": "Content Size",
+      "description": "File size in (mega/kilo)bytes.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "contentUrl": {
+      "title": "Content Url",
+      "description": "Actual bytes of the media object, for example the image file or video file.",
+      "type": "array",
+      "items": {
+        "$ref": "URL.schema.json"
+      }
+    },
+    "duration": {
+      "title": "Duration",
+      "description": "The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: QuantitativeValue [value-type]: QuantitativeValue -> StructuredValue -> Intangible -> Thing",
+        "anyOf": [
+          {
+            "$ref": "Duration.schema.json"
+          },
+          {
+            "$ref": "QuantitativeValue.schema.json"
+          }
+        ]
+      }
+    },
+    "embedUrl": {
+      "title": "Embed Url",
+      "description": "A URL pointing to a player for a specific video. In general, this is the information in the ```src``` element of an ```embed``` tag and should not be the same as the content of the ```loc``` tag.",
+      "type": "array",
+      "items": {
+        "$ref": "URL.schema.json"
+      }
+    },
+    "encodesCreativeWork": {
+      "title": "Encodes Creative Work",
+      "description": "The CreativeWork encoded by this media object.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "CreativeWork.schema.json"
+      }
+    },
+    "encodingFormat": {
+      "title": "Encoding Format",
+      "description": "Media type typically expressed using a MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml) and [MDN reference](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types)), e.g. application/zip for a SoftwareApplication binary, audio/mpeg for .mp3 etc.\n\nIn cases where a [[CreativeWork]] has several media type representations, [[encoding]] can be used to indicate each [[MediaObject]] alongside particular [[encodingFormat]] information.\n\nUnregistered or niche encoding and file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia/Wikidata entry.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Text.schema.json"
+          },
+          {
+            "$ref": "URL.schema.json"
+          }
+        ]
+      }
+    },
+    "endTime": {
+      "title": "End Time",
+      "description": "The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. E.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.\\n\\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "DateTime.schema.json"
+          },
+          {
+            "$ref": "Time.schema.json"
+          }
+        ]
+      }
+    },
+    "height": {
+      "title": "Height",
+      "description": "The height of the item.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Distance.schema.json"
+          },
+          {
+            "$ref": "QuantitativeValue.schema.json"
+          }
+        ]
+      }
+    },
+    "ineligibleRegion": {
+      "title": "Ineligible Region",
+      "description": "The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.\\n\\nSee also [[eligibleRegion]].\n      ",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: GeoShape [value-type]: GeoShape -> StructuredValue -> Intangible -> Thing; Place [entity]: Place -> Thing",
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "iri-reference",
+            "x-oold-range": "Place.schema.json"
+          },
+          {
+            "$ref": "GeoShape.schema.json"
+          }
+        ]
+      }
+    },
+    "ineligibleRegion_text": {
+      "title": "Ineligible Region (text)",
+      "description": "The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.\\n\\nSee also [[eligibleRegion]].\n      ",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "interpretedAsClaim": {
+      "title": "Interpreted As Claim",
+      "description": "Used to indicate a specific claim contained, implied, translated or refined from the content of a [[MediaObject]] or other [[CreativeWork]]. The interpreting party can be indicated using [[claimInterpreter]].",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Claim.schema.json"
+      }
+    },
+    "playerType": {
+      "title": "Player Type",
+      "description": "Player type required&#x2014;for example, Flash or Silverlight.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "productionCompany": {
+      "title": "Production Company",
+      "description": "The production company or studio responsible for the item, e.g. series, video game, episode etc.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Organization.schema.json"
+      }
+    },
+    "regionsAllowed": {
+      "title": "Regions Allowed",
+      "description": "The regions where the media is allowed. If not specified, then it's assumed to be allowed everywhere. Specify the countries in [ISO 3166 format](http://en.wikipedia.org/wiki/ISO_3166).",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Place.schema.json"
+      }
+    },
+    "requiresSubscription": {
+      "title": "Requires Subscription",
+      "description": "Indicates if use of the media require a subscription  (either paid or free). Allowed values are ```true``` or ```false``` (note that an earlier version had 'yes', 'no').",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "MediaSubscription.schema.json"
+      }
+    },
+    "requiresSubscription_text": {
+      "title": "Requires Subscription (text)",
+      "description": "Indicates if use of the media require a subscription  (either paid or free). Allowed values are ```true``` or ```false``` (note that an earlier version had 'yes', 'no').",
+      "type": "array",
+      "items": {
+        "$ref": "Boolean.schema.json"
+      }
+    },
+    "sha256": {
+      "title": "Sha256",
+      "description": "The [SHA-2](https://en.wikipedia.org/wiki/SHA-2) SHA256 hash of the content of the item. For example, a zero-length input has value 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "startTime": {
+      "title": "Start Time",
+      "description": "The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. E.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.\\n\\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "DateTime.schema.json"
+          },
+          {
+            "$ref": "Time.schema.json"
+          }
+        ]
+      }
+    },
+    "uploadDate": {
+      "title": "Upload Date",
+      "description": "Date (including time if available) when this media object was uploaded to this site.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Date.schema.json"
+          },
+          {
+            "$ref": "DateTime.schema.json"
+          }
+        ]
+      }
+    },
+    "width": {
+      "title": "Width",
+      "description": "The width of the item.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Distance.schema.json"
+          },
+          {
+            "$ref": "QuantitativeValue.schema.json"
+          }
+        ]
+      }
+    }
+  }
+}

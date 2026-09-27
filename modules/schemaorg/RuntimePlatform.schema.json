@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "SoftwareApplication.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "SoftwareApplication.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "RuntimePlatform.schema.json",
+  "x-oold-uuid": "37b5ef37-d3c9-55e9-a3d2-381528b9fd3a",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/RuntimePlatform",
+  "x-oold-instance-rdf-type": [
+    "schema:RuntimePlatform"
+  ],
+  "title": "RuntimePlatform",
+  "description": "Specialized software environment that provides the essential infrastructure, libraries, and services required to execute a program.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:RuntimePlatform"
+      ]
+    }
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "@context": [
+    "Rating.schema.json",
+    {
+      "itemReviewed": {
+        "@id": "schema:itemReviewed",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "ratingCount": {
+        "@id": "schema:ratingCount",
+        "@container": "@set"
+      },
+      "reviewCount": {
+        "@id": "schema:reviewCount",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Rating.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "AggregateRating.schema.json",
+  "x-oold-uuid": "a3d379ab-5a1e-530e-99d5-e9f1cab5d3b8",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/AggregateRating",
+  "x-oold-instance-rdf-type": [
+    "schema:AggregateRating"
+  ],
+  "title": "AggregateRating",
+  "description": "The average rating based on multiple ratings or reviews.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:AggregateRating"
+      ]
+    },
+    "itemReviewed": {
+      "title": "Item Reviewed",
+      "description": "The item that is being reviewed/rated.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Thing.schema.json"
+      }
+    },
+    "ratingCount": {
+      "title": "Rating Count",
+      "description": "The count of total number of ratings.",
+      "type": "array",
+      "items": {
+        "$ref": "Integer.schema.json"
+      }
+    },
+    "reviewCount": {
+      "title": "Review Count",
+      "description": "The count of total number of reviews.",
+      "type": "array",
+      "items": {
+        "$ref": "Integer.schema.json"
+      }
+    }
+  }
+}

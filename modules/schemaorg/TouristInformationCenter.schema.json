@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "LocalBusiness.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "LocalBusiness.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "TouristInformationCenter.schema.json",
+  "x-oold-uuid": "d1eea007-af0a-52ff-a19c-b850d6fd4daf",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/TouristInformationCenter",
+  "x-oold-instance-rdf-type": [
+    "schema:TouristInformationCenter"
+  ],
+  "title": "TouristInformationCenter",
+  "description": "A tourist information center.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:TouristInformationCenter"
+      ]
+    }
+  }
+}

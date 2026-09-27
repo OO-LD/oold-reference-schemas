@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "QualitativeValue.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "QualitativeValue.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "BedType.schema.json",
+  "x-oold-uuid": "dc72974f-371f-5735-a7ef-052c8e782826",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/BedType",
+  "x-oold-instance-rdf-type": [
+    "schema:BedType"
+  ],
+  "title": "BedType",
+  "description": "A type of bed. This is used for indicating the bed or beds available in an accommodation.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:BedType"
+      ]
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "$schema": "Guide.schema.json",
+  "@context": "Guide.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:Guide"
+  ]
+}

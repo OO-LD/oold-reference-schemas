@@ -1,0 +1,8 @@
+{
+  "$schema": "PriceTypeEnumeration.schema.json",
+  "@context": "PriceTypeEnumeration.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:PriceTypeEnumeration"
+  ]
+}

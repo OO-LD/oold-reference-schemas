@@ -1,0 +1,123 @@
+{
+  "@context": [
+    "Intangible.schema.json",
+    {
+      "hasTierBenefit": {
+        "@id": "schema:hasTierBenefit",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "hasTierRequirement": {
+        "@id": "schema:hasTierRequirement",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "hasTierRequirement_text": {
+        "@id": "schema:hasTierRequirement",
+        "@container": "@set"
+      },
+      "isTierOf": {
+        "@id": "schema:isTierOf",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "membershipPointsEarned": {
+        "@id": "schema:membershipPointsEarned",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Intangible.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MemberProgramTier.schema.json",
+  "x-oold-uuid": "97d40d2d-668c-591b-b5e1-3c3eb36e1400",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/MemberProgramTier",
+  "x-oold-instance-rdf-type": [
+    "schema:MemberProgramTier"
+  ],
+  "title": "MemberProgramTier",
+  "description": "A MemberProgramTier specifies a tier under a loyalty (member) program, for example \"gold\".",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:MemberProgramTier"
+      ]
+    },
+    "hasTierBenefit": {
+      "title": "Has Tier Benefit",
+      "description": "A member benefit for a particular tier of a loyalty program.",
+      "type": "array",
+      "items": {
+        "$ref": "TierBenefitEnumeration.schema.json#/$defs/member",
+        "x-oold-range": "TierBenefitEnumeration.schema.json"
+      }
+    },
+    "hasTierRequirement": {
+      "title": "Has Tier Requirement",
+      "description": "A requirement for a user to join a membership tier, for example: a CreditCard if the tier requires sign up for a credit card, A UnitPriceSpecification if the user is required to pay a (periodic) fee, or a MonetaryAmount if the user needs to spend a minimum amount to join the tier. If a tier is free to join then this property does not need to be specified.",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: MonetaryAmount [value-type]: MonetaryAmount -> StructuredValue -> Intangible -> Thing; UnitPriceSpecification [value-type]: UnitPriceSpecification -> PriceSpecification -> StructuredValue -> Intangible -> Thing; CreditCard [entity]: CreditCard -> LoanOrCredit -> FinancialProduct -> Service -> Intangible -> Thing",
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "iri-reference",
+            "x-oold-range": "CreditCard.schema.json"
+          },
+          {
+            "$ref": "MonetaryAmount.schema.json"
+          },
+          {
+            "$ref": "UnitPriceSpecification.schema.json"
+          }
+        ]
+      }
+    },
+    "hasTierRequirement_text": {
+      "title": "Has Tier Requirement (text)",
+      "description": "A requirement for a user to join a membership tier, for example: a CreditCard if the tier requires sign up for a credit card, A UnitPriceSpecification if the user is required to pay a (periodic) fee, or a MonetaryAmount if the user needs to spend a minimum amount to join the tier. If a tier is free to join then this property does not need to be specified.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "isTierOf": {
+      "title": "Is Tier Of",
+      "description": "The member program this tier is a part of.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "MemberProgram.schema.json"
+      }
+    },
+    "membershipPointsEarned": {
+      "title": "Membership Points Earned",
+      "description": "The number of membership points earned by the member. If necessary, the unitText can be used to express the units the points are issued in. (E.g. stars, miles, etc.)",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: QuantitativeValue [value-type]: QuantitativeValue -> StructuredValue -> Intangible -> Thing",
+        "anyOf": [
+          {
+            "$ref": "Number.schema.json"
+          },
+          {
+            "$ref": "QuantitativeValue.schema.json"
+          }
+        ]
+      }
+    }
+  }
+}

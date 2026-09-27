@@ -1,0 +1,8 @@
+{
+  "$schema": "GamePlayMode.schema.json",
+  "@context": "GamePlayMode.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:GamePlayMode"
+  ]
+}

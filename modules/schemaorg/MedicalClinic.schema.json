@@ -1,0 +1,73 @@
+{
+  "@context": [
+    "MedicalBusiness.schema.json",
+    "MedicalOrganization.schema.json",
+    {
+      "availableService": {
+        "@id": "schema:availableService",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "medicalSpecialty": {
+        "@id": "schema:medicalSpecialty",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "MedicalBusiness.schema.json"
+    },
+    {
+      "$ref": "MedicalOrganization.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MedicalClinic.schema.json",
+  "x-oold-uuid": "9bbb29e8-2e14-53a8-bb52-f07cc72683b0",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/MedicalClinic",
+  "x-oold-instance-rdf-type": [
+    "schema:MedicalClinic"
+  ],
+  "title": "MedicalClinic",
+  "description": "A facility, often associated with a hospital or medical school, that is devoted to the specific diagnosis and/or healthcare. Previously limited to outpatients but with evolution it may be open to inpatients as well.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:MedicalClinic"
+      ]
+    },
+    "availableService": {
+      "title": "Available Service",
+      "description": "A medical service available from this provider.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "MedicalProcedure.schema.json",
+          "MedicalTest.schema.json",
+          "MedicalTherapy.schema.json"
+        ]
+      }
+    },
+    "medicalSpecialty": {
+      "title": "Medical Specialty",
+      "description": "A medical specialty of the provider.",
+      "type": "array",
+      "items": {
+        "$ref": "MedicalSpecialty.schema.json#/$defs/member",
+        "x-oold-range": "MedicalSpecialty.schema.json"
+      }
+    }
+  }
+}

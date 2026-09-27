@@ -1,0 +1,8 @@
+{
+  "$schema": "PayAction.schema.json",
+  "@context": "PayAction.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:PayAction"
+  ]
+}

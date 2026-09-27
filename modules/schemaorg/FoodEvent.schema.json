@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Event.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Event.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "FoodEvent.schema.json",
+  "x-oold-uuid": "c39cf02c-c9ea-5d38-9eb9-fa80bc650c20",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/FoodEvent",
+  "x-oold-instance-rdf-type": [
+    "schema:FoodEvent"
+  ],
+  "title": "FoodEvent",
+  "description": "Event type: Food event.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:FoodEvent"
+      ]
+    }
+  }
+}

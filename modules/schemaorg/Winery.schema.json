@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "FoodEstablishment.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "FoodEstablishment.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Winery.schema.json",
+  "x-oold-uuid": "610bc6ba-facf-524b-89c5-433cfaac626c",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Winery",
+  "x-oold-instance-rdf-type": [
+    "schema:Winery"
+  ],
+  "title": "Winery",
+  "description": "A winery.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Winery"
+      ]
+    }
+  }
+}

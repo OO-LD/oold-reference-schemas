@@ -1,0 +1,8 @@
+{
+  "$schema": "CarUsageType.schema.json",
+  "@context": "CarUsageType.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:CarUsageType"
+  ]
+}

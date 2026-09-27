@@ -1,0 +1,63 @@
+{
+  "@context": [
+    "Enumeration.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Enumeration.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "DayOfWeek.schema.json",
+  "x-oold-uuid": "932fc8f1-b000-525c-8ef5-062ef30e6954",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/DayOfWeek",
+  "x-oold-instance-rdf-type": [
+    "schema:DayOfWeek"
+  ],
+  "title": "DayOfWeek",
+  "description": "The day of the week, e.g. used to specify to which day the opening hours of an OpeningHoursSpecification refer.\n\nOriginally, URLs from [GoodRelations](http://purl.org/goodrelations/v1) were used (for [[Monday]], [[Tuesday]], [[Wednesday]], [[Thursday]], [[Friday]], [[Saturday]], [[Sunday]] plus a special entry for [[PublicHolidays]]); these have now been integrated directly into schema.org.\n      ",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:DayOfWeek"
+      ]
+    }
+  },
+  "$defs": {
+    "member": {
+      "title": "DayOfWeek member",
+      "description": "One of the 8 member instances of DayOfWeek.",
+      "type": "string",
+      "format": "iri-reference",
+      "enum": [
+        "schema:Friday",
+        "schema:Monday",
+        "schema:PublicHolidays",
+        "schema:Saturday",
+        "schema:Sunday",
+        "schema:Thursday",
+        "schema:Tuesday",
+        "schema:Wednesday"
+      ],
+      "x-oold-ui-enum-titles": [
+        "Friday",
+        "Monday",
+        "PublicHolidays",
+        "Saturday",
+        "Sunday",
+        "Thursday",
+        "Tuesday",
+        "Wednesday"
+      ]
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "WebPageElement.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "WebPageElement.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Table.schema.json",
+  "x-oold-uuid": "69405755-8d5a-5d82-b452-69a66ea558f4",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Table",
+  "x-oold-instance-rdf-type": [
+    "schema:Table"
+  ],
+  "title": "Table",
+  "description": "A table on a Web page.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Table"
+      ]
+    }
+  }
+}

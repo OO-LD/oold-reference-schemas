@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "BroadcastService.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "BroadcastService.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "RadioBroadcastService.schema.json",
+  "x-oold-uuid": "3c6c20e7-ef7d-525d-b43d-5aff4dbb9be1",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/RadioBroadcastService",
+  "x-oold-instance-rdf-type": [
+    "schema:RadioBroadcastService"
+  ],
+  "title": "RadioBroadcastService",
+  "description": "A delivery service through which radio content is provided via broadcast over the air or online.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:RadioBroadcastService"
+      ]
+    }
+  }
+}

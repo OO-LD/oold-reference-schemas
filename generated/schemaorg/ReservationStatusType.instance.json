@@ -1,0 +1,8 @@
+{
+  "$schema": "ReservationStatusType.schema.json",
+  "@context": "ReservationStatusType.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:ReservationStatusType"
+  ]
+}

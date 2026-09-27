@@ -1,0 +1,8 @@
+{
+  "$schema": "ReportedDoseSchedule.schema.json",
+  "@context": "ReportedDoseSchedule.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:ReportedDoseSchedule"
+  ]
+}

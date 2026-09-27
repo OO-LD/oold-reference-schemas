@@ -1,0 +1,84 @@
+{
+  "@context": [
+    "Vessel.schema.json",
+    {
+      "drainsTo": {
+        "@id": "schema:drainsTo",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "regionDrained": {
+        "@id": "schema:regionDrained",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "tributary": {
+        "@id": "schema:tributary",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Vessel.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Vein.schema.json",
+  "x-oold-uuid": "6b377e61-cef2-535b-98b6-7639ba56d61d",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Vein",
+  "x-oold-instance-rdf-type": [
+    "schema:Vein"
+  ],
+  "title": "Vein",
+  "description": "A type of blood vessel that specifically carries blood to the heart.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Vein"
+      ]
+    },
+    "drainsTo": {
+      "title": "Drains To",
+      "description": "The vasculature that the vein drains into.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Vessel.schema.json"
+      }
+    },
+    "regionDrained": {
+      "title": "Region Drained",
+      "description": "The anatomical or organ system drained by this vessel; generally refers to a specific part of an organ.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "AnatomicalStructure.schema.json",
+          "AnatomicalSystem.schema.json"
+        ]
+      }
+    },
+    "tributary": {
+      "title": "Tributary",
+      "description": "The anatomical or organ system that the vein flows into; a larger structure that the vein connects to.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "AnatomicalStructure.schema.json"
+      }
+    }
+  }
+}

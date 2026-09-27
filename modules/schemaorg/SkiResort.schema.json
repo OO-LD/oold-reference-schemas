@@ -1,0 +1,39 @@
+{
+  "@context": [
+    "Resort.schema.json",
+    "SportsActivityLocation.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Resort.schema.json"
+    },
+    {
+      "$ref": "SportsActivityLocation.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "SkiResort.schema.json",
+  "x-oold-uuid": "4348b65f-e355-59d5-9e1c-6a0b873f765e",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/SkiResort",
+  "x-oold-instance-rdf-type": [
+    "schema:SkiResort"
+  ],
+  "title": "SkiResort",
+  "description": "A ski resort.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:SkiResort"
+      ]
+    }
+  }
+}

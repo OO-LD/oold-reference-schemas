@@ -1,0 +1,53 @@
+{
+  "@context": [
+    "MedicalEnumeration.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "MedicalEnumeration.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MedicalEvidenceLevel.schema.json",
+  "x-oold-uuid": "b5b20d1e-b766-5c11-8fc7-e7dc3fddab14",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/MedicalEvidenceLevel",
+  "x-oold-instance-rdf-type": [
+    "schema:MedicalEvidenceLevel"
+  ],
+  "title": "MedicalEvidenceLevel",
+  "description": "Level of evidence for a medical guideline. Enumerated type.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:MedicalEvidenceLevel"
+      ]
+    }
+  },
+  "$defs": {
+    "member": {
+      "title": "MedicalEvidenceLevel member",
+      "description": "One of the 3 member instances of MedicalEvidenceLevel.",
+      "type": "string",
+      "format": "iri-reference",
+      "enum": [
+        "schema:EvidenceLevelA",
+        "schema:EvidenceLevelB",
+        "schema:EvidenceLevelC"
+      ],
+      "x-oold-ui-enum-titles": [
+        "EvidenceLevelA",
+        "EvidenceLevelB",
+        "EvidenceLevelC"
+      ]
+    }
+  }
+}

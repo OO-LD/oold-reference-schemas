@@ -1,0 +1,57 @@
+{
+  "@context": [
+    "StatusEnumeration.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "StatusEnumeration.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "PaymentStatusType.schema.json",
+  "x-oold-uuid": "d6723b5f-79bf-5c92-936c-70dc6405d163",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/PaymentStatusType",
+  "x-oold-instance-rdf-type": [
+    "schema:PaymentStatusType"
+  ],
+  "title": "PaymentStatusType",
+  "description": "A specific payment status. For example, PaymentDue, PaymentComplete, etc.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:PaymentStatusType"
+      ]
+    }
+  },
+  "$defs": {
+    "member": {
+      "title": "PaymentStatusType member",
+      "description": "One of the 5 member instances of PaymentStatusType.",
+      "type": "string",
+      "format": "iri-reference",
+      "enum": [
+        "schema:PaymentAutomaticallyApplied",
+        "schema:PaymentComplete",
+        "schema:PaymentDeclined",
+        "schema:PaymentDue",
+        "schema:PaymentPastDue"
+      ],
+      "x-oold-ui-enum-titles": [
+        "PaymentAutomaticallyApplied",
+        "PaymentComplete",
+        "PaymentDeclined",
+        "PaymentDue",
+        "PaymentPastDue"
+      ]
+    }
+  }
+}

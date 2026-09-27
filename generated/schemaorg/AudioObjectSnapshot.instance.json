@@ -1,0 +1,8 @@
+{
+  "$schema": "AudioObjectSnapshot.schema.json",
+  "@context": "AudioObjectSnapshot.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:AudioObjectSnapshot"
+  ]
+}

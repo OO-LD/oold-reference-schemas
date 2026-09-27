@@ -1,0 +1,119 @@
+{
+  "@context": [
+    "NonprofitType.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "NonprofitType.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "USNonprofitType.schema.json",
+  "x-oold-uuid": "b8738e25-e82b-5199-9a9f-cee05e66dbbe",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/USNonprofitType",
+  "x-oold-instance-rdf-type": [
+    "schema:USNonprofitType"
+  ],
+  "title": "USNonprofitType",
+  "description": "USNonprofitType: Non-profit organization type originating from the United States.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:USNonprofitType"
+      ]
+    }
+  },
+  "$defs": {
+    "member": {
+      "title": "USNonprofitType member",
+      "description": "One of the 36 member instances of USNonprofitType.",
+      "type": "string",
+      "format": "iri-reference",
+      "enum": [
+        "schema:Nonprofit501a",
+        "schema:Nonprofit501c1",
+        "schema:Nonprofit501c10",
+        "schema:Nonprofit501c11",
+        "schema:Nonprofit501c12",
+        "schema:Nonprofit501c13",
+        "schema:Nonprofit501c14",
+        "schema:Nonprofit501c15",
+        "schema:Nonprofit501c16",
+        "schema:Nonprofit501c17",
+        "schema:Nonprofit501c18",
+        "schema:Nonprofit501c19",
+        "schema:Nonprofit501c2",
+        "schema:Nonprofit501c20",
+        "schema:Nonprofit501c21",
+        "schema:Nonprofit501c22",
+        "schema:Nonprofit501c23",
+        "schema:Nonprofit501c24",
+        "schema:Nonprofit501c25",
+        "schema:Nonprofit501c26",
+        "schema:Nonprofit501c27",
+        "schema:Nonprofit501c28",
+        "schema:Nonprofit501c3",
+        "schema:Nonprofit501c4",
+        "schema:Nonprofit501c5",
+        "schema:Nonprofit501c6",
+        "schema:Nonprofit501c7",
+        "schema:Nonprofit501c8",
+        "schema:Nonprofit501c9",
+        "schema:Nonprofit501d",
+        "schema:Nonprofit501e",
+        "schema:Nonprofit501f",
+        "schema:Nonprofit501k",
+        "schema:Nonprofit501n",
+        "schema:Nonprofit501q",
+        "schema:Nonprofit527"
+      ],
+      "x-oold-ui-enum-titles": [
+        "Nonprofit501a",
+        "Nonprofit501c1",
+        "Nonprofit501c10",
+        "Nonprofit501c11",
+        "Nonprofit501c12",
+        "Nonprofit501c13",
+        "Nonprofit501c14",
+        "Nonprofit501c15",
+        "Nonprofit501c16",
+        "Nonprofit501c17",
+        "Nonprofit501c18",
+        "Nonprofit501c19",
+        "Nonprofit501c2",
+        "Nonprofit501c20",
+        "Nonprofit501c21",
+        "Nonprofit501c22",
+        "Nonprofit501c23",
+        "Nonprofit501c24",
+        "Nonprofit501c25",
+        "Nonprofit501c26",
+        "Nonprofit501c27",
+        "Nonprofit501c28",
+        "Nonprofit501c3",
+        "Nonprofit501c4",
+        "Nonprofit501c5",
+        "Nonprofit501c6",
+        "Nonprofit501c7",
+        "Nonprofit501c8",
+        "Nonprofit501c9",
+        "Nonprofit501d",
+        "Nonprofit501e",
+        "Nonprofit501f",
+        "Nonprofit501k",
+        "Nonprofit501n",
+        "Nonprofit501q",
+        "Nonprofit527"
+      ]
+    }
+  }
+}

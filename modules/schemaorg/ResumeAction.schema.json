@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "ControlAction.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "ControlAction.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ResumeAction.schema.json",
+  "x-oold-uuid": "de1ac075-25fa-5a57-bb0b-62be1cb39b14",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/ResumeAction",
+  "x-oold-instance-rdf-type": [
+    "schema:ResumeAction"
+  ],
+  "title": "ResumeAction",
+  "description": "The act of resuming a device or application which was formerly paused (e.g. resume music playback or resume a timer).",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:ResumeAction"
+      ]
+    }
+  }
+}

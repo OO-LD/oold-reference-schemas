@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "TransferAction.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "TransferAction.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "DownloadAction.schema.json",
+  "x-oold-uuid": "126cf4d1-534d-5c95-9d85-2580616c8ed5",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/DownloadAction",
+  "x-oold-instance-rdf-type": [
+    "schema:DownloadAction"
+  ],
+  "title": "DownloadAction",
+  "description": "The act of downloading an object.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:DownloadAction"
+      ]
+    }
+  }
+}

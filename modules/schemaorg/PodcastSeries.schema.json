@@ -1,0 +1,76 @@
+{
+  "@context": [
+    "CreativeWorkSeries.schema.json",
+    {
+      "actor": {
+        "@id": "schema:actor",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "webFeed": {
+        "@id": "schema:webFeed",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "CreativeWorkSeries.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "PodcastSeries.schema.json",
+  "x-oold-uuid": "025ff21c-20c4-54ba-8413-dd2943ca987b",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/PodcastSeries",
+  "x-oold-instance-rdf-type": [
+    "schema:PodcastSeries"
+  ],
+  "title": "PodcastSeries",
+  "description": "A podcast is an episodic series of digital audio or video files which a user can download and listen to.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:PodcastSeries"
+      ]
+    },
+    "actor": {
+      "title": "Actor",
+      "description": "An actor (individual or a group), e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "PerformingGroup.schema.json",
+          "Person.schema.json"
+        ]
+      }
+    },
+    "webFeed": {
+      "title": "Web Feed",
+      "description": "The URL for a feed, e.g. associated with a podcast series, blog, or series of date-stamped updates. This is usually RSS or Atom.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "URL.schema.json"
+          },
+          {
+            "type": "string",
+            "format": "iri-reference",
+            "x-oold-range": "DataFeed.schema.json"
+          }
+        ]
+      }
+    }
+  }
+}

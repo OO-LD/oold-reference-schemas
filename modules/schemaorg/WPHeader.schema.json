@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "WebPageElement.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "WebPageElement.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "WPHeader.schema.json",
+  "x-oold-uuid": "8283e1c3-ec78-5c11-aad9-f6687587d1c9",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/WPHeader",
+  "x-oold-instance-rdf-type": [
+    "schema:WPHeader"
+  ],
+  "title": "WPHeader",
+  "description": "The header section of the page.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:WPHeader"
+      ]
+    }
+  }
+}

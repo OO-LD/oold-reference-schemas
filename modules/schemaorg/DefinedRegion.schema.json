@@ -1,0 +1,130 @@
+{
+  "@context": [
+    "Place.schema.json",
+    "StructuredValue.schema.json",
+    {
+      "addressCountry": {
+        "@id": "schema:addressCountry",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "addressCountry_text": {
+        "@id": "schema:addressCountry",
+        "@container": "@set"
+      },
+      "addressRegion": {
+        "@id": "schema:addressRegion",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "addressRegion_text": {
+        "@id": "schema:addressRegion",
+        "@container": "@set"
+      },
+      "postalCode": {
+        "@id": "schema:postalCode",
+        "@container": "@set"
+      },
+      "postalCodePrefix": {
+        "@id": "schema:postalCodePrefix",
+        "@container": "@set"
+      },
+      "postalCodeRange": {
+        "@id": "schema:postalCodeRange",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Place.schema.json"
+    },
+    {
+      "$ref": "StructuredValue.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "DefinedRegion.schema.json",
+  "x-oold-uuid": "c4654ad9-fd53-5e6b-825c-0166bbe1b566",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/DefinedRegion",
+  "x-oold-instance-rdf-type": [
+    "schema:DefinedRegion"
+  ],
+  "title": "DefinedRegion",
+  "description": "A DefinedRegion is a geographic area defined by potentially arbitrary (rather than political, administrative or natural geographical) criteria. Properties are provided for defining a region by reference to sets of postal codes.\n\nExamples: a delivery destination when shopping. Region where regional pricing is configured.\n\nRequirement 1:\nCountry: US\nStates: \"NY\", \"CA\"\n\nRequirement 2:\nCountry: US\nPostalCode Set: { [94000-94585], [97000, 97999], [13000, 13599]}\n{ [12345, 12345], [78945, 78945], }\nRegion = state, canton, prefecture, autonomous community...\n",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:DefinedRegion"
+      ]
+    },
+    "addressCountry": {
+      "title": "Address Country",
+      "description": "The country. Recommended to be in 2-letter [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1) format, for example \"US\". For backward compatibility, a 3-letter [ISO 3166-1 alpha-3](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3) country code such as \"SGP\" or a full country name such as \"Singapore\" can also be used.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Country.schema.json"
+      }
+    },
+    "addressCountry_text": {
+      "title": "Address Country (text)",
+      "description": "The country. Recommended to be in 2-letter [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1) format, for example \"US\". For backward compatibility, a 3-letter [ISO 3166-1 alpha-3](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3) country code such as \"SGP\" or a full country name such as \"Singapore\" can also be used.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "addressRegion": {
+      "title": "Address Region",
+      "description": "The region in which the locality is, and which is in the country. For example, California or another appropriate first-level [Administrative division](https://en.wikipedia.org/wiki/List_of_administrative_divisions_by_country) such as the Province in Italy or Region in Germany.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "AdministrativeArea.schema.json"
+      }
+    },
+    "addressRegion_text": {
+      "title": "Address Region (text)",
+      "description": "The region in which the locality is, and which is in the country. For example, California or another appropriate first-level [Administrative division](https://en.wikipedia.org/wiki/List_of_administrative_divisions_by_country) such as the Province in Italy or Region in Germany.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "postalCode": {
+      "title": "Postal Code",
+      "description": "The postal code. For example, 94043.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "postalCodePrefix": {
+      "title": "Postal Code Prefix",
+      "description": "A defined range of postal codes indicated by a common textual prefix. Used for non-numeric systems such as UK.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "postalCodeRange": {
+      "title": "Postal Code Range",
+      "description": "A defined range of postal codes.",
+      "type": "array",
+      "items": {
+        "$ref": "PostalCodeRangeSpecification.schema.json"
+      }
+    }
+  }
+}

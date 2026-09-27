@@ -1,0 +1,18 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Float.schema.json",
+  "x-oold-uuid": "fcbb9e1b-f7d7-5299-98de-5ce694820043",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Float",
+  "x-oold-instance-rdf-type": [
+    "schema:Float"
+  ],
+  "title": "Float",
+  "description": "Data type: Floating point number.",
+  "$ref": "Number.schema.json"
+}

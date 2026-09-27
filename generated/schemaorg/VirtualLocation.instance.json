@@ -1,0 +1,8 @@
+{
+  "$schema": "VirtualLocation.schema.json",
+  "@context": "VirtualLocation.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:VirtualLocation"
+  ]
+}

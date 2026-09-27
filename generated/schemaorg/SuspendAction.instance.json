@@ -1,0 +1,8 @@
+{
+  "$schema": "SuspendAction.schema.json",
+  "@context": "SuspendAction.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:SuspendAction"
+  ]
+}

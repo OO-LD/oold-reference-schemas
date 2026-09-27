@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "GovernmentBuilding.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "GovernmentBuilding.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Courthouse.schema.json",
+  "x-oold-uuid": "61112f56-f5cf-56c4-b568-df7a84d54499",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Courthouse",
+  "x-oold-instance-rdf-type": [
+    "schema:Courthouse"
+  ],
+  "title": "Courthouse",
+  "description": "A courthouse.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Courthouse"
+      ]
+    }
+  }
+}

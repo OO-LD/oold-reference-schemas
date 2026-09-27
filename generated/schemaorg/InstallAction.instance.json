@@ -1,0 +1,8 @@
+{
+  "$schema": "InstallAction.schema.json",
+  "@context": "InstallAction.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:InstallAction"
+  ]
+}

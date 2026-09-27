@@ -1,0 +1,200 @@
+{
+  "@context": [
+    "HowTo.schema.json",
+    {
+      "cookingMethod": {
+        "@id": "schema:cookingMethod",
+        "@container": "@set"
+      },
+      "cookTime": {
+        "@id": "schema:cookTime",
+        "@type": "xsd:duration",
+        "@container": "@set"
+      },
+      "nutrition": {
+        "@id": "schema:nutrition",
+        "@container": "@set"
+      },
+      "recipeCategory": {
+        "@id": "schema:recipeCategory",
+        "@container": "@set"
+      },
+      "recipeCuisine": {
+        "@id": "schema:recipeCuisine",
+        "@container": "@set"
+      },
+      "recipeIngredient": {
+        "@id": "schema:recipeIngredient",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "recipeIngredient_text": {
+        "@id": "schema:recipeIngredient",
+        "@container": "@set"
+      },
+      "recipeInstructions": {
+        "@id": "schema:recipeInstructions",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "recipeInstructions_text": {
+        "@id": "schema:recipeInstructions",
+        "@container": "@set"
+      },
+      "recipeYield": {
+        "@id": "schema:recipeYield",
+        "@container": "@set"
+      },
+      "suitableForDiet": {
+        "@id": "schema:suitableForDiet",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "HowTo.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Recipe.schema.json",
+  "x-oold-uuid": "0f8465ab-37ed-5186-8c53-738f1cc89c7e",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Recipe",
+  "x-oold-instance-rdf-type": [
+    "schema:Recipe"
+  ],
+  "title": "Recipe",
+  "description": "A recipe. For dietary restrictions covered by the recipe, a few common restrictions are enumerated via [[suitableForDiet]]. The [[keywords]] property can also be used to add more detail.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Recipe"
+      ]
+    },
+    "cookingMethod": {
+      "title": "Cooking Method",
+      "description": "The method of cooking, such as Frying, Steaming, ...",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "cookTime": {
+      "title": "Cook Time",
+      "description": "The time it takes to actually cook the dish, in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).",
+      "type": "array",
+      "items": {
+        "$ref": "Duration.schema.json"
+      }
+    },
+    "nutrition": {
+      "title": "Nutrition",
+      "description": "Nutrition information about the recipe or menu item.",
+      "type": "array",
+      "items": {
+        "$ref": "NutritionInformation.schema.json"
+      }
+    },
+    "recipeCategory": {
+      "title": "Recipe Category",
+      "description": "The category of the recipe—for example, appetizer, entree, etc.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "recipeCuisine": {
+      "title": "Recipe Cuisine",
+      "description": "The cuisine of the recipe (for example, French or Ethiopian).",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "recipeIngredient": {
+      "title": "Recipe Ingredient",
+      "description": "An ingredient or ordered list of ingredients and potentially quantities used in the recipe, e.g. 1 cup of sugar, flour or garlic.  The ingredients can be represented as free text or more structured values.",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: PropertyValue [value-type]: PropertyValue -> StructuredValue -> Intangible -> Thing; ItemList [entity]: ItemList -> Intangible -> Thing",
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "iri-reference",
+            "x-oold-range": "ItemList.schema.json"
+          },
+          {
+            "$ref": "PropertyValue.schema.json"
+          }
+        ]
+      }
+    },
+    "recipeIngredient_text": {
+      "title": "Recipe Ingredient (text)",
+      "description": "An ingredient or ordered list of ingredients and potentially quantities used in the recipe, e.g. 1 cup of sugar, flour or garlic.  The ingredients can be represented as free text or more structured values.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "recipeInstructions": {
+      "title": "Recipe Instructions",
+      "description": "A step in making the recipe, in the form of a single item (document, video, etc.) or an ordered list with HowToStep and/or HowToSection items.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "CreativeWork.schema.json",
+          "ItemList.schema.json"
+        ]
+      }
+    },
+    "recipeInstructions_text": {
+      "title": "Recipe Instructions (text)",
+      "description": "A step in making the recipe, in the form of a single item (document, video, etc.) or an ordered list with HowToStep and/or HowToSection items.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "recipeYield": {
+      "title": "Recipe Yield",
+      "description": "The quantity produced by the recipe (for example, number of people served, number of servings, etc).",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: QuantitativeValue [value-type]: QuantitativeValue -> StructuredValue -> Intangible -> Thing",
+        "anyOf": [
+          {
+            "$ref": "Text.schema.json"
+          },
+          {
+            "$ref": "QuantitativeValue.schema.json"
+          }
+        ]
+      }
+    },
+    "suitableForDiet": {
+      "title": "Suitable For Diet",
+      "description": "Indicates a dietary restriction or guideline for which this recipe or menu item is suitable, e.g. diabetic, halal etc.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "Diet.schema.json",
+          "RestrictedDiet.schema.json"
+        ]
+      }
+    }
+  }
+}

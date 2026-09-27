@@ -1,0 +1,8 @@
+{
+  "$schema": "CheckoutPage.schema.json",
+  "@context": "CheckoutPage.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:CheckoutPage"
+  ]
+}

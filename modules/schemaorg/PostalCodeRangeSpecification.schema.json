@@ -1,0 +1,60 @@
+{
+  "@context": [
+    "StructuredValue.schema.json",
+    {
+      "postalCodeBegin": {
+        "@id": "schema:postalCodeBegin",
+        "@container": "@set"
+      },
+      "postalCodeEnd": {
+        "@id": "schema:postalCodeEnd",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "StructuredValue.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "PostalCodeRangeSpecification.schema.json",
+  "x-oold-uuid": "4d191b12-8611-525d-8a24-d12f3c70857e",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/PostalCodeRangeSpecification",
+  "x-oold-instance-rdf-type": [
+    "schema:PostalCodeRangeSpecification"
+  ],
+  "title": "PostalCodeRangeSpecification",
+  "description": "Indicates a range of postal codes, usually defined as the set of valid codes between [[postalCodeBegin]] and [[postalCodeEnd]], inclusively.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:PostalCodeRangeSpecification"
+      ]
+    },
+    "postalCodeBegin": {
+      "title": "Postal Code Begin",
+      "description": "First postal code in a range (included).",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "postalCodeEnd": {
+      "title": "Postal Code End",
+      "description": "Last postal code in the range (included). Needs to be after [[postalCodeBegin]].",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    }
+  }
+}

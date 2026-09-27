@@ -1,0 +1,114 @@
+{
+  "@context": [
+    "Trip.schema.json",
+    {
+      "arrivalPlatform": {
+        "@id": "schema:arrivalPlatform",
+        "@container": "@set"
+      },
+      "arrivalStation": {
+        "@id": "schema:arrivalStation",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "departurePlatform": {
+        "@id": "schema:departurePlatform",
+        "@container": "@set"
+      },
+      "departureStation": {
+        "@id": "schema:departureStation",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "trainName": {
+        "@id": "schema:trainName",
+        "@container": "@set"
+      },
+      "trainNumber": {
+        "@id": "schema:trainNumber",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Trip.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "TrainTrip.schema.json",
+  "x-oold-uuid": "fd06f1f5-f3f7-5f0b-985d-c3c995561943",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/TrainTrip",
+  "x-oold-instance-rdf-type": [
+    "schema:TrainTrip"
+  ],
+  "title": "TrainTrip",
+  "description": "A trip on a commercial train line.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:TrainTrip"
+      ]
+    },
+    "arrivalPlatform": {
+      "title": "Arrival Platform",
+      "description": "The platform where the train arrives.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "arrivalStation": {
+      "title": "Arrival Station",
+      "description": "The station where the train trip ends.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "TrainStation.schema.json"
+      }
+    },
+    "departurePlatform": {
+      "title": "Departure Platform",
+      "description": "The platform from which the train departs.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "departureStation": {
+      "title": "Departure Station",
+      "description": "The station from which the train departs.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "TrainStation.schema.json"
+      }
+    },
+    "trainName": {
+      "title": "Train Name",
+      "description": "The name of the train (e.g. The Orient Express).",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "trainNumber": {
+      "title": "Train Number",
+      "description": "The unique identifier for the train.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    }
+  }
+}

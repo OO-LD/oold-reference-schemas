@@ -1,0 +1,131 @@
+{
+  "@context": [
+    "CreativeWork.schema.json",
+    {
+      "byArtist": {
+        "@id": "schema:byArtist",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "duration": {
+        "@id": "schema:duration",
+        "@container": "@set"
+      },
+      "inAlbum": {
+        "@id": "schema:inAlbum",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "inPlaylist": {
+        "@id": "schema:inPlaylist",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "isrcCode": {
+        "@id": "schema:isrcCode",
+        "@container": "@set"
+      },
+      "recordingOf": {
+        "@id": "schema:recordingOf",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "CreativeWork.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MusicRecording.schema.json",
+  "x-oold-uuid": "957dcbd7-cae1-5b62-b9e5-197673242013",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/MusicRecording",
+  "x-oold-instance-rdf-type": [
+    "schema:MusicRecording"
+  ],
+  "title": "MusicRecording",
+  "description": "A music recording (track), usually a single song.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:MusicRecording"
+      ]
+    },
+    "byArtist": {
+      "title": "By Artist",
+      "description": "The artist that performed this album or recording.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "MusicGroup.schema.json",
+          "Person.schema.json"
+        ]
+      }
+    },
+    "duration": {
+      "title": "Duration",
+      "description": "The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: QuantitativeValue [value-type]: QuantitativeValue -> StructuredValue -> Intangible -> Thing",
+        "anyOf": [
+          {
+            "$ref": "Duration.schema.json"
+          },
+          {
+            "$ref": "QuantitativeValue.schema.json"
+          }
+        ]
+      }
+    },
+    "inAlbum": {
+      "title": "In Album",
+      "description": "The album to which this recording belongs.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "MusicAlbum.schema.json"
+      }
+    },
+    "inPlaylist": {
+      "title": "In Playlist",
+      "description": "The playlist to which this recording belongs.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "MusicPlaylist.schema.json"
+      }
+    },
+    "isrcCode": {
+      "title": "Isrc Code",
+      "description": "The International Standard Recording Code for the recording.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "recordingOf": {
+      "title": "Recording Of",
+      "description": "The composition this track is a recording of.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "MusicComposition.schema.json"
+      }
+    }
+  }
+}

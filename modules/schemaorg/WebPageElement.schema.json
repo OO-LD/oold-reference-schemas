@@ -1,0 +1,60 @@
+{
+  "@context": [
+    "CreativeWork.schema.json",
+    {
+      "cssSelector": {
+        "@id": "schema:cssSelector",
+        "@container": "@set"
+      },
+      "xpath": {
+        "@id": "schema:xpath",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "CreativeWork.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "WebPageElement.schema.json",
+  "x-oold-uuid": "2f2e13aa-4f53-51c0-a5d6-4f09a14ecee3",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/WebPageElement",
+  "x-oold-instance-rdf-type": [
+    "schema:WebPageElement"
+  ],
+  "title": "WebPageElement",
+  "description": "A web page element, like a table or an image.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:WebPageElement"
+      ]
+    },
+    "cssSelector": {
+      "title": "Css Selector",
+      "description": "A CSS selector, e.g. of a [[SpeakableSpecification]] or [[WebPageElement]]. In the latter case, multiple matches within a page can constitute a single conceptual \"Web page element\".",
+      "type": "array",
+      "items": {
+        "$ref": "CssSelectorType.schema.json"
+      }
+    },
+    "xpath": {
+      "title": "Xpath",
+      "description": "An XPath, e.g. of a [[SpeakableSpecification]] or [[WebPageElement]]. In the latter case, multiple matches within a page can constitute a single conceptual \"Web page element\".",
+      "type": "array",
+      "items": {
+        "$ref": "XPathType.schema.json"
+      }
+    }
+  }
+}

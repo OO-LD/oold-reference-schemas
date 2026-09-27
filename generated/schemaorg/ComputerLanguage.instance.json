@@ -1,0 +1,8 @@
+{
+  "$schema": "ComputerLanguage.schema.json",
+  "@context": "ComputerLanguage.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:ComputerLanguage"
+  ]
+}

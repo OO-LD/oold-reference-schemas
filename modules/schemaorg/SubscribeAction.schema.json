@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "InteractAction.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "InteractAction.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "SubscribeAction.schema.json",
+  "x-oold-uuid": "336ff6ef-209f-5524-8e8f-45c39eaf2ce0",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/SubscribeAction",
+  "x-oold-instance-rdf-type": [
+    "schema:SubscribeAction"
+  ],
+  "title": "SubscribeAction",
+  "description": "The act of forming a personal connection with someone/something (object) unidirectionally/asymmetrically to get updates pushed to.\\n\\nRelated actions:\\n\\n* [[FollowAction]]: Unlike FollowAction, SubscribeAction implies that the subscriber acts as a passive agent being constantly/actively pushed for updates.\\n* [[RegisterAction]]: Unlike RegisterAction, SubscribeAction implies that the agent is interested in continuing receiving updates from the object.\\n* [[JoinAction]]: Unlike JoinAction, SubscribeAction implies that the agent is interested in continuing receiving updates from the object.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:SubscribeAction"
+      ]
+    }
+  }
+}

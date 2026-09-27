@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "BodyOfWater.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "BodyOfWater.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Waterfall.schema.json",
+  "x-oold-uuid": "d4fdd6cd-328f-5535-87a9-66e00c4cf899",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Waterfall",
+  "x-oold-instance-rdf-type": [
+    "schema:Waterfall"
+  ],
+  "title": "Waterfall",
+  "description": "A waterfall, like Niagara.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Waterfall"
+      ]
+    }
+  }
+}

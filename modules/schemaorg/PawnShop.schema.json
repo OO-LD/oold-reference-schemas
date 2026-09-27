@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Store.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Store.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "PawnShop.schema.json",
+  "x-oold-uuid": "9fb40312-7723-5785-81d0-5b3213e58af8",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/PawnShop",
+  "x-oold-instance-rdf-type": [
+    "schema:PawnShop"
+  ],
+  "title": "PawnShop",
+  "description": "A shop that will buy, or lend money against the security of, personal possessions.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:PawnShop"
+      ]
+    }
+  }
+}

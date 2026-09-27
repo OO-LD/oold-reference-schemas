@@ -1,0 +1,157 @@
+{
+  "@context": [
+    "StructuredValue.schema.json",
+    {
+      "endTime": {
+        "@id": "schema:endTime",
+        "@container": "@set"
+      },
+      "interactionService": {
+        "@id": "schema:interactionService",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "interactionType": {
+        "@id": "schema:interactionType",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "location": {
+        "@id": "schema:location",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "location_text": {
+        "@id": "schema:location",
+        "@container": "@set"
+      },
+      "startTime": {
+        "@id": "schema:startTime",
+        "@container": "@set"
+      },
+      "userInteractionCount": {
+        "@id": "schema:userInteractionCount",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "StructuredValue.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "InteractionCounter.schema.json",
+  "x-oold-uuid": "3429a094-e537-575e-a8dc-8f44ef3da1b0",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/InteractionCounter",
+  "x-oold-instance-rdf-type": [
+    "schema:InteractionCounter"
+  ],
+  "title": "InteractionCounter",
+  "description": "A summary of how users have interacted with this CreativeWork. In most cases, authors will use a subtype to specify the specific type of interaction.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:InteractionCounter"
+      ]
+    },
+    "endTime": {
+      "title": "End Time",
+      "description": "The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. E.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.\\n\\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "DateTime.schema.json"
+          },
+          {
+            "$ref": "Time.schema.json"
+          }
+        ]
+      }
+    },
+    "interactionService": {
+      "title": "Interaction Service",
+      "description": "The WebSite or SoftwareApplication where the interactions took place.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "SoftwareApplication.schema.json",
+          "WebSite.schema.json"
+        ]
+      }
+    },
+    "interactionType": {
+      "title": "Interaction Type",
+      "description": "The Action representing the type of interaction. For up votes, +1s, etc. use [[LikeAction]]. For down votes use [[DislikeAction]]. Otherwise, use the most specific Action.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Action.schema.json"
+      }
+    },
+    "location": {
+      "title": "Location",
+      "description": "The location of, for example, where an event is happening, where an organization is located, or where an action takes place.",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: PostalAddress [value-type]: PostalAddress -> ContactPoint -> StructuredValue -> Intangible -> Thing; Place [entity]: Place -> Thing; VirtualLocation [entity]: VirtualLocation -> Intangible -> Thing",
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "iri-reference",
+            "x-oold-range": [
+              "Place.schema.json",
+              "VirtualLocation.schema.json"
+            ]
+          },
+          {
+            "$ref": "PostalAddress.schema.json"
+          }
+        ]
+      }
+    },
+    "location_text": {
+      "title": "Location (text)",
+      "description": "The location of, for example, where an event is happening, where an organization is located, or where an action takes place.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "startTime": {
+      "title": "Start Time",
+      "description": "The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. E.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.\\n\\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "DateTime.schema.json"
+          },
+          {
+            "$ref": "Time.schema.json"
+          }
+        ]
+      }
+    },
+    "userInteractionCount": {
+      "title": "User Interaction Count",
+      "description": "The number of interactions for the CreativeWork using the WebSite or SoftwareApplication.",
+      "type": "array",
+      "items": {
+        "$ref": "Integer.schema.json"
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "@context": [
+    "Service.schema.json",
+    {
+      "jurisdiction": {
+        "@id": "schema:jurisdiction",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "jurisdiction_text": {
+        "@id": "schema:jurisdiction",
+        "@container": "@set"
+      },
+      "serviceOperator": {
+        "@id": "schema:serviceOperator",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Service.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "GovernmentService.schema.json",
+  "x-oold-uuid": "b7ef18ef-4cdf-55a8-88c3-2b1ad2c77114",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/GovernmentService",
+  "x-oold-instance-rdf-type": [
+    "schema:GovernmentService"
+  ],
+  "title": "GovernmentService",
+  "description": "A service provided by a government organization, e.g. food stamps, veterans benefits, etc.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:GovernmentService"
+      ]
+    },
+    "jurisdiction": {
+      "title": "Jurisdiction",
+      "description": "Indicates a legal jurisdiction, e.g. of some legislation, or where some government service is based.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "AdministrativeArea.schema.json"
+      }
+    },
+    "jurisdiction_text": {
+      "title": "Jurisdiction (text)",
+      "description": "Indicates a legal jurisdiction, e.g. of some legislation, or where some government service is based.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "serviceOperator": {
+      "title": "Service Operator",
+      "description": "The operating organization, if different from the provider.  This enables the representation of services that are provided by an organization, but operated by another organization like a subcontractor.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Organization.schema.json"
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "$schema": "TVSeason.schema.json",
+  "@context": "TVSeason.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:TVSeason"
+  ]
+}

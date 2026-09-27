@@ -1,0 +1,66 @@
+{
+  "@context": [
+    "Action.schema.json",
+    {
+      "actionAccessibilityRequirement": {
+        "@id": "schema:actionAccessibilityRequirement",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "expectsAcceptanceOf": {
+        "@id": "schema:expectsAcceptanceOf",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Action.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ConsumeAction.schema.json",
+  "x-oold-uuid": "f5f487e0-6510-5af5-8540-ec631aac173b",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/ConsumeAction",
+  "x-oold-instance-rdf-type": [
+    "schema:ConsumeAction"
+  ],
+  "title": "ConsumeAction",
+  "description": "The act of ingesting information/resources/food.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:ConsumeAction"
+      ]
+    },
+    "actionAccessibilityRequirement": {
+      "title": "Action Accessibility Requirement",
+      "description": "A set of requirements that must be fulfilled in order to perform an Action. If more than one value is specified, fulfilling one set of requirements will allow the Action to be performed.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "ActionAccessSpecification.schema.json"
+      }
+    },
+    "expectsAcceptanceOf": {
+      "title": "Expects Acceptance Of",
+      "description": "An Offer which must be accepted before the user can perform the Action. For example, the user may need to buy a movie before being able to watch it.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Offer.schema.json"
+      }
+    }
+  }
+}

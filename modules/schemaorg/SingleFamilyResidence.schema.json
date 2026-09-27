@@ -1,0 +1,68 @@
+{
+  "@context": [
+    "House.schema.json",
+    {
+      "numberOfRooms": {
+        "@id": "schema:numberOfRooms",
+        "@container": "@set"
+      },
+      "occupancy": {
+        "@id": "schema:occupancy",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "House.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "SingleFamilyResidence.schema.json",
+  "x-oold-uuid": "327a24cf-c262-548b-923c-3846c54edd11",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/SingleFamilyResidence",
+  "x-oold-instance-rdf-type": [
+    "schema:SingleFamilyResidence"
+  ],
+  "title": "SingleFamilyResidence",
+  "description": "Residence type: Single-family home.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:SingleFamilyResidence"
+      ]
+    },
+    "numberOfRooms": {
+      "title": "Number Of Rooms",
+      "description": "The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.\nTypical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: QuantitativeValue [value-type]: QuantitativeValue -> StructuredValue -> Intangible -> Thing",
+        "anyOf": [
+          {
+            "$ref": "Number.schema.json"
+          },
+          {
+            "$ref": "QuantitativeValue.schema.json"
+          }
+        ]
+      }
+    },
+    "occupancy": {
+      "title": "Occupancy",
+      "description": "The allowed total occupancy for the accommodation in persons (including infants etc). For individual accommodations, this is not necessarily the legal maximum but defines the permitted usage as per the contractual agreement (e.g. a double room used by a single person).\nTypical unit code(s): C62 for person.",
+      "type": "array",
+      "items": {
+        "$ref": "QuantitativeValue.schema.json"
+      }
+    }
+  }
+}

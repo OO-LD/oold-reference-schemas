@@ -1,0 +1,81 @@
+{
+  "@context": [
+    "Enumeration.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Enumeration.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MediaEnumeration.schema.json",
+  "x-oold-uuid": "48582a81-7d05-5ce9-98d2-860935da65a7",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/MediaEnumeration",
+  "x-oold-instance-rdf-type": [
+    "schema:MediaEnumeration"
+  ],
+  "title": "MediaEnumeration",
+  "description": "MediaEnumeration enumerations are lists of codes, labels etc. useful for describing media objects. They may be reflections of externally developed lists, or created at schema.org, or a combination.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:MediaEnumeration"
+      ]
+    }
+  },
+  "$defs": {
+    "member": {
+      "title": "MediaEnumeration member",
+      "description": "One of the 17 member instances of MediaEnumeration.",
+      "type": "string",
+      "format": "iri-reference",
+      "enum": [
+        "schema:AlgorithmicMediaDigitalSource",
+        "schema:AlgorithmicallyEnhancedDigitalSource",
+        "schema:CompositeCaptureDigitalSource",
+        "schema:CompositeDigitalSource",
+        "schema:CompositeSyntheticDigitalSource",
+        "schema:CompositeWithTrainedAlgorithmicMediaDigitalSource",
+        "schema:DataDrivenMediaDigitalSource",
+        "schema:DigitalArtDigitalSource",
+        "schema:DigitalCaptureDigitalSource",
+        "schema:MinorHumanEditsDigitalSource",
+        "schema:MultiFrameComputationalCaptureDigitalSource",
+        "schema:NegativeFilmDigitalSource",
+        "schema:PositiveFilmDigitalSource",
+        "schema:PrintDigitalSource",
+        "schema:ScreenCaptureDigitalSource",
+        "schema:TrainedAlgorithmicMediaDigitalSource",
+        "schema:VirtualRecordingDigitalSource"
+      ],
+      "x-oold-ui-enum-titles": [
+        "AlgorithmicMediaDigitalSource",
+        "AlgorithmicallyEnhancedDigitalSource",
+        "CompositeCaptureDigitalSource",
+        "CompositeDigitalSource",
+        "CompositeSyntheticDigitalSource",
+        "CompositeWithTrainedAlgorithmicMediaDigitalSource",
+        "DataDrivenMediaDigitalSource",
+        "DigitalArtDigitalSource",
+        "DigitalCaptureDigitalSource",
+        "MinorHumanEditsDigitalSource",
+        "MultiFrameComputationalCaptureDigitalSource",
+        "NegativeFilmDigitalSource",
+        "PositiveFilmDigitalSource",
+        "PrintDigitalSource",
+        "ScreenCaptureDigitalSource",
+        "TrainedAlgorithmicMediaDigitalSource",
+        "VirtualRecordingDigitalSource"
+      ]
+    }
+  }
+}

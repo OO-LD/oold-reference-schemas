@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Store.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Store.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ToyStore.schema.json",
+  "x-oold-uuid": "fe358ce1-7e03-57b3-a569-c7668442a265",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/ToyStore",
+  "x-oold-instance-rdf-type": [
+    "schema:ToyStore"
+  ],
+  "title": "ToyStore",
+  "description": "A toy store.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:ToyStore"
+      ]
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "$schema": "WPSideBar.schema.json",
+  "@context": "WPSideBar.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:WPSideBar"
+  ]
+}

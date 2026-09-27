@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Reservation.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Reservation.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "EventReservation.schema.json",
+  "x-oold-uuid": "3d78ed02-5c52-5695-a890-c1b6a973cb3f",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/EventReservation",
+  "x-oold-instance-rdf-type": [
+    "schema:EventReservation"
+  ],
+  "title": "EventReservation",
+  "description": "A reservation for an event like a concert, sporting event, or lecture.\\n\\nNote: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations. For offers of tickets, use [[Offer]].",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:EventReservation"
+      ]
+    }
+  }
+}

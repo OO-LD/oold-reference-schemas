@@ -1,0 +1,8 @@
+{
+  "$schema": "MusicAlbumReleaseType.schema.json",
+  "@context": "MusicAlbumReleaseType.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:MusicAlbumReleaseType"
+  ]
+}

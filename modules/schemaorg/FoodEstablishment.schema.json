@@ -1,0 +1,119 @@
+{
+  "@context": [
+    "LocalBusiness.schema.json",
+    {
+      "acceptsReservations": {
+        "@id": "schema:acceptsReservations",
+        "@container": "@set"
+      },
+      "hasMenu": {
+        "@id": "schema:hasMenu",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "hasMenu_text": {
+        "@id": "schema:hasMenu",
+        "@container": "@set"
+      },
+      "servesCuisine": {
+        "@id": "schema:servesCuisine",
+        "@container": "@set"
+      },
+      "starRating": {
+        "@id": "schema:starRating",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "LocalBusiness.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "FoodEstablishment.schema.json",
+  "x-oold-uuid": "eeff8419-98e5-5a98-9dbb-8e086ff0c355",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/FoodEstablishment",
+  "x-oold-instance-rdf-type": [
+    "schema:FoodEstablishment"
+  ],
+  "title": "FoodEstablishment",
+  "description": "A food-related business.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:FoodEstablishment"
+      ]
+    },
+    "acceptsReservations": {
+      "title": "Accepts Reservations",
+      "description": "Indicates whether a FoodEstablishment accepts reservations. Values can be Boolean, an URL at which reservations can be made or (for backwards compatibility) the strings ```Yes``` or ```No```.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Boolean.schema.json"
+          },
+          {
+            "$ref": "Text.schema.json"
+          },
+          {
+            "$ref": "URL.schema.json"
+          }
+        ]
+      }
+    },
+    "hasMenu": {
+      "title": "Has Menu",
+      "description": "Either the actual menu as a structured representation, as text, or a URL of the menu.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Menu.schema.json"
+      }
+    },
+    "hasMenu_text": {
+      "title": "Has Menu (text)",
+      "description": "Either the actual menu as a structured representation, as text, or a URL of the menu.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Text.schema.json"
+          },
+          {
+            "$ref": "URL.schema.json"
+          }
+        ]
+      }
+    },
+    "servesCuisine": {
+      "title": "Serves Cuisine",
+      "description": "The cuisine of the restaurant.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "starRating": {
+      "title": "Star Rating",
+      "description": "An official rating for a lodging business or food establishment, e.g. from national associations or standards bodies. Use the author property to indicate the rating organization, e.g. as an Organization with name such as (e.g. HOTREC, DEHOGA, WHR, or Hotelstars).",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Rating.schema.json"
+      }
+    }
+  }
+}

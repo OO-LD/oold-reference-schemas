@@ -1,0 +1,98 @@
+{
+  "@context": [
+    "Intangible.schema.json",
+    {
+      "seatingType": {
+        "@id": "schema:seatingType",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "seatingType_text": {
+        "@id": "schema:seatingType",
+        "@container": "@set"
+      },
+      "seatNumber": {
+        "@id": "schema:seatNumber",
+        "@container": "@set"
+      },
+      "seatRow": {
+        "@id": "schema:seatRow",
+        "@container": "@set"
+      },
+      "seatSection": {
+        "@id": "schema:seatSection",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Intangible.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Seat.schema.json",
+  "x-oold-uuid": "bc009804-7c5b-587a-94e2-a288a10bb7fb",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Seat",
+  "x-oold-instance-rdf-type": [
+    "schema:Seat"
+  ],
+  "title": "Seat",
+  "description": "Used to describe a seat, such as a reserved seat in an event reservation.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Seat"
+      ]
+    },
+    "seatingType": {
+      "title": "Seating Type",
+      "description": "The type/class of the seat.",
+      "type": "array",
+      "items": {
+        "$ref": "QualitativeValue.schema.json#/$defs/member",
+        "x-oold-range": "QualitativeValue.schema.json"
+      }
+    },
+    "seatingType_text": {
+      "title": "Seating Type (text)",
+      "description": "The type/class of the seat.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "seatNumber": {
+      "title": "Seat Number",
+      "description": "The location of the reserved seat (e.g., 27).",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "seatRow": {
+      "title": "Seat Row",
+      "description": "The row location of the reserved seat (e.g., B).",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "seatSection": {
+      "title": "Seat Section",
+      "description": "The section location of the reserved seat (e.g. Orchestra).",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    }
+  }
+}

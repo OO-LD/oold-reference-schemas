@@ -1,0 +1,54 @@
+{
+  "@context": [
+    "TradeAction.schema.json",
+    {
+      "buyer": {
+        "@id": "schema:buyer",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "TradeAction.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "SellAction.schema.json",
+  "x-oold-uuid": "7eeb9e07-e4ef-52d4-a865-091269a6f5bb",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/SellAction",
+  "x-oold-instance-rdf-type": [
+    "schema:SellAction"
+  ],
+  "title": "SellAction",
+  "description": "The act of taking money from a buyer in exchange for goods or services rendered. An agent sells an object, product, or service to a buyer for a price. Reciprocal of BuyAction.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:SellAction"
+      ]
+    },
+    "buyer": {
+      "title": "Buyer",
+      "description": "A sub property of participant. The participant/person/organization that bought the object.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "Organization.schema.json",
+          "Person.schema.json"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "@context": [
+    "SizeSystemEnumeration.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "SizeSystemEnumeration.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "WearableSizeSystemEnumeration.schema.json",
+  "x-oold-uuid": "4c50eafa-4d53-5dd8-9e47-70c14fad9b0b",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/WearableSizeSystemEnumeration",
+  "x-oold-instance-rdf-type": [
+    "schema:WearableSizeSystemEnumeration"
+  ],
+  "title": "WearableSizeSystemEnumeration",
+  "description": "Enumerates common size systems specific for wearable products.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:WearableSizeSystemEnumeration"
+      ]
+    }
+  },
+  "$defs": {
+    "member": {
+      "title": "WearableSizeSystemEnumeration member",
+      "description": "One of the 14 member instances of WearableSizeSystemEnumeration.",
+      "type": "string",
+      "format": "iri-reference",
+      "enum": [
+        "schema:WearableSizeSystemAU",
+        "schema:WearableSizeSystemBR",
+        "schema:WearableSizeSystemCN",
+        "schema:WearableSizeSystemContinental",
+        "schema:WearableSizeSystemDE",
+        "schema:WearableSizeSystemEN13402",
+        "schema:WearableSizeSystemEurope",
+        "schema:WearableSizeSystemFR",
+        "schema:WearableSizeSystemGS1",
+        "schema:WearableSizeSystemIT",
+        "schema:WearableSizeSystemJP",
+        "schema:WearableSizeSystemMX",
+        "schema:WearableSizeSystemUK",
+        "schema:WearableSizeSystemUS"
+      ],
+      "x-oold-ui-enum-titles": [
+        "WearableSizeSystemAU",
+        "WearableSizeSystemBR",
+        "WearableSizeSystemCN",
+        "WearableSizeSystemContinental",
+        "WearableSizeSystemDE",
+        "WearableSizeSystemEN13402",
+        "WearableSizeSystemEurope",
+        "WearableSizeSystemFR",
+        "WearableSizeSystemGS1",
+        "WearableSizeSystemIT",
+        "WearableSizeSystemJP",
+        "WearableSizeSystemMX",
+        "WearableSizeSystemUK",
+        "WearableSizeSystemUS"
+      ]
+    }
+  }
+}

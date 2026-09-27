@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "FindAction.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "FindAction.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "DiscoverAction.schema.json",
+  "x-oold-uuid": "022f2d24-08b4-5274-ab0c-c10f8663a1e3",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/DiscoverAction",
+  "x-oold-instance-rdf-type": [
+    "schema:DiscoverAction"
+  ],
+  "title": "DiscoverAction",
+  "description": "The act of discovering/finding an object.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:DiscoverAction"
+      ]
+    }
+  }
+}

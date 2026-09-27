@@ -1,0 +1,119 @@
+{
+  "@context": [
+    "CreativeWork.schema.json",
+    {
+      "characterAttribute": {
+        "@id": "schema:characterAttribute",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "gameItem": {
+        "@id": "schema:gameItem",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "gameLocation": {
+        "@id": "schema:gameLocation",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "numberOfPlayers": {
+        "@id": "schema:numberOfPlayers",
+        "@container": "@set"
+      },
+      "quest": {
+        "@id": "schema:quest",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "CreativeWork.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Game.schema.json",
+  "x-oold-uuid": "7a58fa70-0be2-53eb-af3e-cc27d80ee7d2",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Game",
+  "x-oold-instance-rdf-type": [
+    "schema:Game"
+  ],
+  "title": "Game",
+  "description": "The Game type represents things which are games. These are typically rule-governed recreational activities, e.g. role-playing games in which players assume the role of characters in a fictional setting.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Game"
+      ]
+    },
+    "characterAttribute": {
+      "title": "Character Attribute",
+      "description": "A piece of data that represents a particular aspect of a fictional character (skill, power, character points, advantage, disadvantage).",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Thing.schema.json"
+      }
+    },
+    "gameItem": {
+      "title": "Game Item",
+      "description": "An item is an object within the game world that can be collected by a player or, occasionally, a non-player character.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Thing.schema.json"
+      }
+    },
+    "gameLocation": {
+      "title": "Game Location",
+      "description": "Real or fictional location of the game (or part of game).",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: PostalAddress [value-type]: PostalAddress -> ContactPoint -> StructuredValue -> Intangible -> Thing; Place [entity]: Place -> Thing",
+        "anyOf": [
+          {
+            "$ref": "URL.schema.json"
+          },
+          {
+            "type": "string",
+            "format": "iri-reference",
+            "x-oold-range": "Place.schema.json"
+          },
+          {
+            "$ref": "PostalAddress.schema.json"
+          }
+        ]
+      }
+    },
+    "numberOfPlayers": {
+      "title": "Number Of Players",
+      "description": "Indicate how many people can play this game (minimum, maximum, or range).",
+      "type": "array",
+      "items": {
+        "$ref": "QuantitativeValue.schema.json"
+      }
+    },
+    "quest": {
+      "title": "Quest",
+      "description": "The task that a player-controlled character, or group of characters may complete in order to gain a reward.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Thing.schema.json"
+      }
+    }
+  }
+}

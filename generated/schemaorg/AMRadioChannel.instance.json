@@ -1,0 +1,8 @@
+{
+  "$schema": "AMRadioChannel.schema.json",
+  "@context": "AMRadioChannel.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:AMRadioChannel"
+  ]
+}

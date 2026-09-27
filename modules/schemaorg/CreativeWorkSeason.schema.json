@@ -1,0 +1,198 @@
+{
+  "@context": [
+    "CreativeWork.schema.json",
+    {
+      "actor": {
+        "@id": "schema:actor",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "director": {
+        "@id": "schema:director",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "endDate": {
+        "@id": "schema:endDate",
+        "@container": "@set"
+      },
+      "episode": {
+        "@id": "schema:episode",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "numberOfEpisodes": {
+        "@id": "schema:numberOfEpisodes",
+        "@container": "@set"
+      },
+      "partOfSeries": {
+        "@id": "schema:partOfSeries",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "productionCompany": {
+        "@id": "schema:productionCompany",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "seasonNumber": {
+        "@id": "schema:seasonNumber",
+        "@container": "@set"
+      },
+      "startDate": {
+        "@id": "schema:startDate",
+        "@container": "@set"
+      },
+      "trailer": {
+        "@id": "schema:trailer",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "CreativeWork.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "CreativeWorkSeason.schema.json",
+  "x-oold-uuid": "b201a817-1e4f-558c-abd3-b4636158320f",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/CreativeWorkSeason",
+  "x-oold-instance-rdf-type": [
+    "schema:CreativeWorkSeason"
+  ],
+  "title": "CreativeWorkSeason",
+  "description": "A media season, e.g. TV, radio, video game etc.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:CreativeWorkSeason"
+      ]
+    },
+    "actor": {
+      "title": "Actor",
+      "description": "An actor (individual or a group), e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "PerformingGroup.schema.json",
+          "Person.schema.json"
+        ]
+      }
+    },
+    "director": {
+      "title": "Director",
+      "description": "A director of e.g. TV, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Person.schema.json"
+      }
+    },
+    "endDate": {
+      "title": "End Date",
+      "description": "The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Date.schema.json"
+          },
+          {
+            "$ref": "DateTime.schema.json"
+          }
+        ]
+      }
+    },
+    "episode": {
+      "title": "Episode",
+      "description": "An episode of a TV, radio or game media within a series or season.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Episode.schema.json"
+      }
+    },
+    "numberOfEpisodes": {
+      "title": "Number Of Episodes",
+      "description": "The number of episodes in this season or series.",
+      "type": "array",
+      "items": {
+        "$ref": "Integer.schema.json"
+      }
+    },
+    "partOfSeries": {
+      "title": "Part Of Series",
+      "description": "The series to which this episode or season belongs.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "CreativeWorkSeries.schema.json"
+      }
+    },
+    "productionCompany": {
+      "title": "Production Company",
+      "description": "The production company or studio responsible for the item, e.g. series, video game, episode etc.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Organization.schema.json"
+      }
+    },
+    "seasonNumber": {
+      "title": "Season Number",
+      "description": "Position of the season within an ordered group of seasons.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Integer.schema.json"
+          },
+          {
+            "$ref": "Text.schema.json"
+          }
+        ]
+      }
+    },
+    "startDate": {
+      "title": "Start Date",
+      "description": "The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Date.schema.json"
+          },
+          {
+            "$ref": "DateTime.schema.json"
+          }
+        ]
+      }
+    },
+    "trailer": {
+      "title": "Trailer",
+      "description": "The trailer of a movie or TV/radio series, season, episode, etc.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "VideoObject.schema.json"
+      }
+    }
+  }
+}

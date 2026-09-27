@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "PlaceOfWorship.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "PlaceOfWorship.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Synagogue.schema.json",
+  "x-oold-uuid": "c5ac2c01-5142-534c-9cba-115e8e76d87c",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Synagogue",
+  "x-oold-instance-rdf-type": [
+    "schema:Synagogue"
+  ],
+  "title": "Synagogue",
+  "description": "A synagogue.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Synagogue"
+      ]
+    }
+  }
+}

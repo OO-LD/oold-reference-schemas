@@ -1,0 +1,8 @@
+{
+  "$schema": "EducationEvent.schema.json",
+  "@context": "EducationEvent.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:EducationEvent"
+  ]
+}

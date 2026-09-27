@@ -1,0 +1,54 @@
+{
+  "@context": [
+    "TradeAction.schema.json",
+    {
+      "seller": {
+        "@id": "schema:seller",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "TradeAction.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "BuyAction.schema.json",
+  "x-oold-uuid": "585049d6-836b-57b0-9a80-b9f9b272feee",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/BuyAction",
+  "x-oold-instance-rdf-type": [
+    "schema:BuyAction"
+  ],
+  "title": "BuyAction",
+  "description": "The act of giving money to a seller in exchange for goods or services rendered. An agent buys an object, product, or service from a seller for a price. Reciprocal of SellAction.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:BuyAction"
+      ]
+    },
+    "seller": {
+      "title": "Seller",
+      "description": "An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "Organization.schema.json",
+          "Person.schema.json"
+        ]
+      }
+    }
+  }
+}

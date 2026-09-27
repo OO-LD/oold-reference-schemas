@@ -1,0 +1,90 @@
+{
+  "@context": [
+    "Place.schema.json",
+    {
+      "availableLanguage": {
+        "@id": "schema:availableLanguage",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "availableLanguage_text": {
+        "@id": "schema:availableLanguage",
+        "@container": "@set"
+      },
+      "touristType": {
+        "@id": "schema:touristType",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "touristType_text": {
+        "@id": "schema:touristType",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Place.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "TouristAttraction.schema.json",
+  "x-oold-uuid": "0bc2dec7-bffc-5ff4-9cbc-77d4a0760b55",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/TouristAttraction",
+  "x-oold-instance-rdf-type": [
+    "schema:TouristAttraction"
+  ],
+  "title": "TouristAttraction",
+  "description": "A tourist attraction.  In principle any Thing can be a [[TouristAttraction]], from a [[Mountain]] and [[LandmarksOrHistoricalBuildings]] to a [[LocalBusiness]].  This Type can be used on its own to describe a general [[TouristAttraction]], or be used as an [[additionalType]] to add tourist attraction properties to any other type.  (See examples below)",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:TouristAttraction"
+      ]
+    },
+    "availableLanguage": {
+      "title": "Available Language",
+      "description": "A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]].",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Language.schema.json"
+      }
+    },
+    "availableLanguage_text": {
+      "title": "Available Language (text)",
+      "description": "A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]].",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "touristType": {
+      "title": "Tourist Type",
+      "description": "Attraction suitable for type(s) of tourist. E.g. children, visitors from a particular country, etc. ",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Audience.schema.json"
+      }
+    },
+    "touristType_text": {
+      "title": "Tourist Type (text)",
+      "description": "Attraction suitable for type(s) of tourist. E.g. children, visitors from a particular country, etc. ",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    }
+  }
+}

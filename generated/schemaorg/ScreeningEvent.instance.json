@@ -1,0 +1,8 @@
+{
+  "$schema": "ScreeningEvent.schema.json",
+  "@context": "ScreeningEvent.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:ScreeningEvent"
+  ]
+}

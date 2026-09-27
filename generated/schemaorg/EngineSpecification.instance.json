@@ -1,0 +1,8 @@
+{
+  "$schema": "EngineSpecification.schema.json",
+  "@context": "EngineSpecification.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:EngineSpecification"
+  ]
+}

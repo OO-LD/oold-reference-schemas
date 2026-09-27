@@ -1,0 +1,52 @@
+{
+  "@context": [
+    "Collection.schema.json",
+    "Product.schema.json",
+    {
+      "includesObject": {
+        "@id": "schema:includesObject",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Collection.schema.json"
+    },
+    {
+      "$ref": "Product.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ProductCollection.schema.json",
+  "x-oold-uuid": "12312e6c-9dbd-5d63-8f87-106cd86cdc5b",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/ProductCollection",
+  "x-oold-instance-rdf-type": [
+    "schema:ProductCollection"
+  ],
+  "title": "ProductCollection",
+  "description": "A set of products (either [[ProductGroup]]s or specific variants) that are listed together e.g. in an [[Offer]].",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:ProductCollection"
+      ]
+    },
+    "includesObject": {
+      "title": "Includes Object",
+      "description": "This links to a node or nodes indicating the exact quantity of the products included in  an [[Offer]] or [[ProductCollection]].",
+      "type": "array",
+      "items": {
+        "$ref": "TypeAndQuantityNode.schema.json"
+      }
+    }
+  }
+}

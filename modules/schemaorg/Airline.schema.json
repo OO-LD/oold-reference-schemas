@@ -1,0 +1,62 @@
+{
+  "@context": [
+    "Organization.schema.json",
+    {
+      "boardingPolicy": {
+        "@id": "schema:boardingPolicy",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "iataCode": {
+        "@id": "schema:iataCode",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Organization.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Airline.schema.json",
+  "x-oold-uuid": "9897af93-62f9-53a5-bcd2-711bd9389a0e",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Airline",
+  "x-oold-instance-rdf-type": [
+    "schema:Airline"
+  ],
+  "title": "Airline",
+  "description": "An organization that provides flights for passengers.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Airline"
+      ]
+    },
+    "boardingPolicy": {
+      "title": "Boarding Policy",
+      "description": "The type of boarding policy used by the airline (e.g. zone-based or group-based).",
+      "type": "array",
+      "items": {
+        "$ref": "BoardingPolicyType.schema.json#/$defs/member",
+        "x-oold-range": "BoardingPolicyType.schema.json"
+      }
+    },
+    "iataCode": {
+      "title": "Iata Code",
+      "description": "IATA identifier for an airline or airport.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    }
+  }
+}

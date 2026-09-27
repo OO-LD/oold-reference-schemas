@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "LodgingBusiness.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "LodgingBusiness.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Resort.schema.json",
+  "x-oold-uuid": "b54fcd5f-2f32-57ef-8d9c-750c0978d902",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Resort",
+  "x-oold-instance-rdf-type": [
+    "schema:Resort"
+  ],
+  "title": "Resort",
+  "description": "A resort is a place used for relaxation or recreation, attracting visitors for holidays or vacations. Resorts are places, towns or sometimes commercial establishments operated by a single company (source: Wikipedia, the free encyclopedia, see <a href=\"http://en.wikipedia.org/wiki/Resort\">http://en.wikipedia.org/wiki/Resort</a>).\n<br /><br />\nSee also the <a href=\"/docs/hotels.html\">dedicated document on the use of schema.org for marking up hotels and other forms of accommodations</a>.\n    ",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Resort"
+      ]
+    }
+  }
+}

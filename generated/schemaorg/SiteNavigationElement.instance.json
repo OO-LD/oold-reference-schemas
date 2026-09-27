@@ -1,0 +1,8 @@
+{
+  "$schema": "SiteNavigationElement.schema.json",
+  "@context": "SiteNavigationElement.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:SiteNavigationElement"
+  ]
+}

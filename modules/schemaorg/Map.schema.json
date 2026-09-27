@@ -1,0 +1,50 @@
+{
+  "@context": [
+    "CreativeWork.schema.json",
+    {
+      "mapType": {
+        "@id": "schema:mapType",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "CreativeWork.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Map.schema.json",
+  "x-oold-uuid": "6e71314b-29a0-5e71-b623-d4b7c40fa79e",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Map",
+  "x-oold-instance-rdf-type": [
+    "schema:Map"
+  ],
+  "title": "Map",
+  "description": "A map.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Map"
+      ]
+    },
+    "mapType": {
+      "title": "Map Type",
+      "description": "Indicates the kind of Map, from the MapCategoryType Enumeration.",
+      "type": "array",
+      "items": {
+        "$ref": "MapCategoryType.schema.json#/$defs/member",
+        "x-oold-range": "MapCategoryType.schema.json"
+      }
+    }
+  }
+}

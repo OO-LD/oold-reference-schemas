@@ -1,0 +1,8 @@
+{
+  "$schema": "AutoBodyShop.schema.json",
+  "@context": "AutoBodyShop.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:AutoBodyShop"
+  ]
+}

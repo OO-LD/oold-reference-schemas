@@ -1,0 +1,8 @@
+{
+  "$schema": "HyperToc.schema.json",
+  "@context": "HyperToc.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:HyperToc"
+  ]
+}

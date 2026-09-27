@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "LocalBusiness.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "LocalBusiness.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "EmergencyService.schema.json",
+  "x-oold-uuid": "0875247e-1209-58df-9a44-e0cfba1fb7c4",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/EmergencyService",
+  "x-oold-instance-rdf-type": [
+    "schema:EmergencyService"
+  ],
+  "title": "EmergencyService",
+  "description": "An emergency service, such as a fire station or ER.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:EmergencyService"
+      ]
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "MedicalProcedure.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "MedicalProcedure.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "DiagnosticProcedure.schema.json",
+  "x-oold-uuid": "6a584c0f-c72f-54ed-98c0-15689b444372",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/DiagnosticProcedure",
+  "x-oold-instance-rdf-type": [
+    "schema:DiagnosticProcedure"
+  ],
+  "title": "DiagnosticProcedure",
+  "description": "A medical procedure intended primarily for diagnostic, as opposed to therapeutic, purposes.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:DiagnosticProcedure"
+      ]
+    }
+  }
+}

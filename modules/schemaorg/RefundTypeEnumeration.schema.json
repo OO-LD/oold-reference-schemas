@@ -1,0 +1,53 @@
+{
+  "@context": [
+    "Enumeration.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Enumeration.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "RefundTypeEnumeration.schema.json",
+  "x-oold-uuid": "acc0744a-7a50-5793-ab12-575dd48b7731",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/RefundTypeEnumeration",
+  "x-oold-instance-rdf-type": [
+    "schema:RefundTypeEnumeration"
+  ],
+  "title": "RefundTypeEnumeration",
+  "description": "Enumerates several kinds of product return refund types.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:RefundTypeEnumeration"
+      ]
+    }
+  },
+  "$defs": {
+    "member": {
+      "title": "RefundTypeEnumeration member",
+      "description": "One of the 3 member instances of RefundTypeEnumeration.",
+      "type": "string",
+      "format": "iri-reference",
+      "enum": [
+        "schema:ExchangeRefund",
+        "schema:FullRefund",
+        "schema:StoreCreditRefund"
+      ],
+      "x-oold-ui-enum-titles": [
+        "ExchangeRefund",
+        "FullRefund",
+        "StoreCreditRefund"
+      ]
+    }
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "@context": [
+    "Organization.schema.json",
+    {
+      "healthPlanNetworkId": {
+        "@id": "schema:healthPlanNetworkId",
+        "@container": "@set"
+      },
+      "isAcceptingNewPatients": {
+        "@id": "schema:isAcceptingNewPatients",
+        "@container": "@set"
+      },
+      "medicalSpecialty": {
+        "@id": "schema:medicalSpecialty",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Organization.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MedicalOrganization.schema.json",
+  "x-oold-uuid": "53ba60dc-be61-5720-8255-e48e84a59bf6",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/MedicalOrganization",
+  "x-oold-instance-rdf-type": [
+    "schema:MedicalOrganization"
+  ],
+  "title": "MedicalOrganization",
+  "description": "A medical organization (physical or not), such as hospital, institution or clinic.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:MedicalOrganization"
+      ]
+    },
+    "healthPlanNetworkId": {
+      "title": "Health Plan Network Id",
+      "description": "Name or unique ID of network. (Networks are often reused across different insurance plans.)",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "isAcceptingNewPatients": {
+      "title": "Is Accepting New Patients",
+      "description": "Whether the provider is accepting new patients.",
+      "type": "array",
+      "items": {
+        "$ref": "Boolean.schema.json"
+      }
+    },
+    "medicalSpecialty": {
+      "title": "Medical Specialty",
+      "description": "A medical specialty of the provider.",
+      "type": "array",
+      "items": {
+        "$ref": "MedicalSpecialty.schema.json#/$defs/member",
+        "x-oold-range": "MedicalSpecialty.schema.json"
+      }
+    }
+  }
+}

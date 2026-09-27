@@ -1,0 +1,8 @@
+{
+  "$schema": "RejectAction.schema.json",
+  "@context": "RejectAction.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:RejectAction"
+  ]
+}

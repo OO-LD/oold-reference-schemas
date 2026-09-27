@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "UseAction.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "UseAction.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "WearAction.schema.json",
+  "x-oold-uuid": "8e4ecc28-4043-55de-b4f9-e7ddd61fcd78",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/WearAction",
+  "x-oold-instance-rdf-type": [
+    "schema:WearAction"
+  ],
+  "title": "WearAction",
+  "description": "The act of dressing oneself in clothing.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:WearAction"
+      ]
+    }
+  }
+}

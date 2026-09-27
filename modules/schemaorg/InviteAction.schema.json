@@ -1,0 +1,51 @@
+{
+  "@context": [
+    "CommunicateAction.schema.json",
+    {
+      "event": {
+        "@id": "schema:event",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "CommunicateAction.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "InviteAction.schema.json",
+  "x-oold-uuid": "303a0f7d-2dcd-5d93-a9f5-3bb0d569490f",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/InviteAction",
+  "x-oold-instance-rdf-type": [
+    "schema:InviteAction"
+  ],
+  "title": "InviteAction",
+  "description": "The act of asking someone to attend an event. Reciprocal of RsvpAction.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:InviteAction"
+      ]
+    },
+    "event": {
+      "title": "Event",
+      "description": "Upcoming or past event associated with this place, organization, or action.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Event.schema.json"
+      }
+    }
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "@context": [
+    "Vessel.schema.json",
+    {
+      "arterialBranch": {
+        "@id": "schema:arterialBranch",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "supplyTo": {
+        "@id": "schema:supplyTo",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Vessel.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Artery.schema.json",
+  "x-oold-uuid": "f87aba99-bd3a-5316-bd33-95175d90f930",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Artery",
+  "x-oold-instance-rdf-type": [
+    "schema:Artery"
+  ],
+  "title": "Artery",
+  "description": "A type of blood vessel that specifically carries blood away from the heart.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Artery"
+      ]
+    },
+    "arterialBranch": {
+      "title": "Arterial Branch",
+      "description": "The branches that comprise the arterial structure.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "AnatomicalStructure.schema.json"
+      }
+    },
+    "supplyTo": {
+      "title": "Supply To",
+      "description": "The area to which the artery supplies blood.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "AnatomicalStructure.schema.json"
+      }
+    }
+  }
+}

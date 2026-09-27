@@ -1,0 +1,100 @@
+{
+  "@context": [
+    "Intangible.schema.json",
+    {
+      "domainIncludes": {
+        "@id": "schema:domainIncludes",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "inverseOf": {
+        "@id": "schema:inverseOf",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "rangeIncludes": {
+        "@id": "schema:rangeIncludes",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "supersededBy": {
+        "@id": "schema:supersededBy",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Intangible.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Property.schema.json",
+  "x-oold-uuid": "06e2d6ba-f6d1-5be7-9f37-1ab472c46ccd",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Property",
+  "x-oold-instance-rdf-type": [
+    "schema:Property"
+  ],
+  "title": "Property",
+  "description": "A property, used to indicate attributes and relationships of some Thing; equivalent to rdf:Property.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Property"
+      ]
+    },
+    "domainIncludes": {
+      "title": "Domain Includes",
+      "description": "Relates a property to a class that is (one of) the type(s) the property is expected to be used on.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Class.schema.json"
+      }
+    },
+    "inverseOf": {
+      "title": "Inverse Of",
+      "description": "Relates a property to a property that is its inverse. Inverse properties relate the same pairs of items to each other, but in reversed direction. For example, the 'alumni' and 'alumniOf' properties are inverseOf each other. Some properties don't have explicit inverses; in these situations RDFa and JSON-LD syntax for reverse properties can be used.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Property.schema.json"
+      }
+    },
+    "rangeIncludes": {
+      "title": "Range Includes",
+      "description": "Relates a property to a class that constitutes (one of) the expected type(s) for values of the property.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Class.schema.json"
+      }
+    },
+    "supersededBy": {
+      "title": "Superseded By",
+      "description": "Relates a term (i.e. a property, class or enumeration) to one that supersedes it.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "Class.schema.json",
+          "Enumeration.schema.json",
+          "Property.schema.json"
+        ]
+      }
+    }
+  }
+}

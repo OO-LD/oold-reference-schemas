@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Action.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Action.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ControlAction.schema.json",
+  "x-oold-uuid": "dbffa9e7-164b-52cb-a9d3-829e326d5af4",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/ControlAction",
+  "x-oold-instance-rdf-type": [
+    "schema:ControlAction"
+  ],
+  "title": "ControlAction",
+  "description": "An agent controls a device or application.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:ControlAction"
+      ]
+    }
+  }
+}

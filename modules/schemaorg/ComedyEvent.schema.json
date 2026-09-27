@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Event.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Event.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ComedyEvent.schema.json",
+  "x-oold-uuid": "8dbcc9df-a6fe-5f98-9ace-29deff4833fe",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/ComedyEvent",
+  "x-oold-instance-rdf-type": [
+    "schema:ComedyEvent"
+  ],
+  "title": "ComedyEvent",
+  "description": "Event type: Comedy event.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:ComedyEvent"
+      ]
+    }
+  }
+}

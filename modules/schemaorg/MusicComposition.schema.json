@@ -1,0 +1,180 @@
+{
+  "@context": [
+    "CreativeWork.schema.json",
+    {
+      "composer": {
+        "@id": "schema:composer",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "firstPerformance": {
+        "@id": "schema:firstPerformance",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "includedComposition": {
+        "@id": "schema:includedComposition",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "iswcCode": {
+        "@id": "schema:iswcCode",
+        "@container": "@set"
+      },
+      "lyricist": {
+        "@id": "schema:lyricist",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "lyrics": {
+        "@id": "schema:lyrics",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "musicalKey": {
+        "@id": "schema:musicalKey",
+        "@container": "@set"
+      },
+      "musicArrangement": {
+        "@id": "schema:musicArrangement",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "musicCompositionForm": {
+        "@id": "schema:musicCompositionForm",
+        "@container": "@set"
+      },
+      "recordedAs": {
+        "@id": "schema:recordedAs",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "CreativeWork.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MusicComposition.schema.json",
+  "x-oold-uuid": "e89fe98d-c963-5f02-9b87-cc0dc5eb9612",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/MusicComposition",
+  "x-oold-instance-rdf-type": [
+    "schema:MusicComposition"
+  ],
+  "title": "MusicComposition",
+  "description": "A musical composition.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:MusicComposition"
+      ]
+    },
+    "composer": {
+      "title": "Composer",
+      "description": "The person or organization who wrote a composition, or who is the composer of a work performed at some event.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "Organization.schema.json",
+          "Person.schema.json"
+        ]
+      }
+    },
+    "firstPerformance": {
+      "title": "First Performance",
+      "description": "The date and place the work was first performed.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Event.schema.json"
+      }
+    },
+    "includedComposition": {
+      "title": "Included Composition",
+      "description": "Smaller compositions included in this work (e.g. a movement in a symphony).",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "MusicComposition.schema.json"
+      }
+    },
+    "iswcCode": {
+      "title": "Iswc Code",
+      "description": "The International Standard Musical Work Code for the composition.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "lyricist": {
+      "title": "Lyricist",
+      "description": "The person who wrote the words.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Person.schema.json"
+      }
+    },
+    "lyrics": {
+      "title": "Lyrics",
+      "description": "The words in the song.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "CreativeWork.schema.json"
+      }
+    },
+    "musicalKey": {
+      "title": "Musical Key",
+      "description": "The key, mode, or scale this composition uses.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "musicArrangement": {
+      "title": "Music Arrangement",
+      "description": "An arrangement derived from the composition.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "MusicComposition.schema.json"
+      }
+    },
+    "musicCompositionForm": {
+      "title": "Music Composition Form",
+      "description": "The type of composition (e.g. overture, sonata, symphony, etc.).",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "recordedAs": {
+      "title": "Recorded As",
+      "description": "An audio recording of the work.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "MusicRecording.schema.json"
+      }
+    }
+  }
+}

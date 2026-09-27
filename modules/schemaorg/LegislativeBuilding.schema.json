@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "GovernmentBuilding.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "GovernmentBuilding.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "LegislativeBuilding.schema.json",
+  "x-oold-uuid": "9c95034a-9709-5d25-9bd2-c8a3ca3ca316",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/LegislativeBuilding",
+  "x-oold-instance-rdf-type": [
+    "schema:LegislativeBuilding"
+  ],
+  "title": "LegislativeBuilding",
+  "description": "A legislative building&#x2014;for example, the state capitol.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:LegislativeBuilding"
+      ]
+    }
+  }
+}

@@ -1,0 +1,123 @@
+{
+  "@context": [
+    "StructuredValue.schema.json",
+    {
+      "orderDelivery": {
+        "@id": "schema:orderDelivery",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "orderedItem": {
+        "@id": "schema:orderedItem",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "orderItemNumber": {
+        "@id": "schema:orderItemNumber",
+        "@container": "@set"
+      },
+      "orderItemStatus": {
+        "@id": "schema:orderItemStatus",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "orderQuantity": {
+        "@id": "schema:orderQuantity",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "StructuredValue.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "OrderItem.schema.json",
+  "x-oold-uuid": "0d6e0916-2ba9-5b16-bff1-9e73992d0ddf",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/OrderItem",
+  "x-oold-instance-rdf-type": [
+    "schema:OrderItem"
+  ],
+  "title": "OrderItem",
+  "description": "An order item is a line of an order. It includes the quantity and shipping details of a bought offer.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:OrderItem"
+      ]
+    },
+    "orderDelivery": {
+      "title": "Order Delivery",
+      "description": "The delivery of the parcel related to this order or order item.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "ParcelDelivery.schema.json"
+      }
+    },
+    "orderedItem": {
+      "title": "Ordered Item",
+      "description": "The item ordered.",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: OrderItem [value-type]: OrderItem -> StructuredValue -> Intangible -> Thing; Product [entity]: Product -> Thing; Service [entity]: Service -> Intangible -> Thing",
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "iri-reference",
+            "x-oold-range": [
+              "Product.schema.json",
+              "Service.schema.json"
+            ]
+          },
+          {
+            "$ref": "OrderItem.schema.json"
+          }
+        ]
+      }
+    },
+    "orderItemNumber": {
+      "title": "Order Item Number",
+      "description": "The identifier of the order item.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "orderItemStatus": {
+      "title": "Order Item Status",
+      "description": "The current status of the order item.",
+      "type": "array",
+      "items": {
+        "$ref": "OrderStatus.schema.json#/$defs/member",
+        "x-oold-range": "OrderStatus.schema.json"
+      }
+    },
+    "orderQuantity": {
+      "title": "Order Quantity",
+      "description": "The number of the item ordered. If the property is not set, assume the quantity is one.",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: QuantitativeValue [value-type]: QuantitativeValue -> StructuredValue -> Intangible -> Thing",
+        "anyOf": [
+          {
+            "$ref": "Number.schema.json"
+          },
+          {
+            "$ref": "QuantitativeValue.schema.json"
+          }
+        ]
+      }
+    }
+  }
+}

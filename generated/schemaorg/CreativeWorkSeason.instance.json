@@ -1,0 +1,8 @@
+{
+  "$schema": "CreativeWorkSeason.schema.json",
+  "@context": "CreativeWorkSeason.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:CreativeWorkSeason"
+  ]
+}

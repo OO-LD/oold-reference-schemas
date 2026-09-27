@@ -1,0 +1,63 @@
+{
+  "@context": [
+    "AssessAction.schema.json",
+    {
+      "actionOption": {
+        "@id": "schema:actionOption",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "actionOption_text": {
+        "@id": "schema:actionOption",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "AssessAction.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ChooseAction.schema.json",
+  "x-oold-uuid": "770c6c2e-3f7e-5dc7-843e-84b4fe4e9716",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/ChooseAction",
+  "x-oold-instance-rdf-type": [
+    "schema:ChooseAction"
+  ],
+  "title": "ChooseAction",
+  "description": "The act of expressing a preference from a set of options or a large or unbounded set of choices/options.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:ChooseAction"
+      ]
+    },
+    "actionOption": {
+      "title": "Action Option",
+      "description": "A sub property of object. The options subject to this action.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Thing.schema.json"
+      }
+    },
+    "actionOption_text": {
+      "title": "Action Option (text)",
+      "description": "A sub property of object. The options subject to this action.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    }
+  }
+}

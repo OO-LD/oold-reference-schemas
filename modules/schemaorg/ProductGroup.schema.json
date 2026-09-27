@@ -1,0 +1,90 @@
+{
+  "@context": [
+    "Product.schema.json",
+    {
+      "hasVariant": {
+        "@id": "schema:hasVariant",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "productGroupID": {
+        "@id": "schema:productGroupID",
+        "@container": "@set"
+      },
+      "variesBy": {
+        "@id": "schema:variesBy",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "variesBy_text": {
+        "@id": "schema:variesBy",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Product.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ProductGroup.schema.json",
+  "x-oold-uuid": "38ce7a37-8f09-5c65-8c1e-c9c4bb9128b1",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/ProductGroup",
+  "x-oold-instance-rdf-type": [
+    "schema:ProductGroup"
+  ],
+  "title": "ProductGroup",
+  "description": "A ProductGroup represents a group of [[Product]]s that vary only in certain well-described ways, such as by [[size]], [[color]], [[material]] etc.\n\nWhile a ProductGroup itself is not directly offered for sale, the various varying products that it represents can be. The ProductGroup serves as a prototype or template, standing in for all of the products who have an [[isVariantOf]] relationship to it. As such, properties (including additional types) can be applied to the ProductGroup to represent characteristics shared by each of the (possibly very many) variants. Properties that reference a ProductGroup are not included in this mechanism; neither are the following specific properties [[variesBy]], [[hasVariant]], [[url]]. ",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:ProductGroup"
+      ]
+    },
+    "hasVariant": {
+      "title": "Has Variant",
+      "description": "Indicates a [[Product]] that is a member of this [[ProductGroup]] (or [[ProductModel]]).",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Product.schema.json"
+      }
+    },
+    "productGroupID": {
+      "title": "Product Group I D",
+      "description": "Indicates a textual identifier for a ProductGroup.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "variesBy": {
+      "title": "Varies By",
+      "description": "Indicates the property or properties by which the variants in a [[ProductGroup]] vary, e.g. their size, color etc. Schema.org properties can be referenced by their short name e.g. \"color\"; terms defined elsewhere can be referenced with their URIs.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "DefinedTerm.schema.json"
+      }
+    },
+    "variesBy_text": {
+      "title": "Varies By (text)",
+      "description": "Indicates the property or properties by which the variants in a [[ProductGroup]] vary, e.g. their size, color etc. Schema.org properties can be referenced by their short name e.g. \"color\"; terms defined elsewhere can be referenced with their URIs.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    }
+  }
+}

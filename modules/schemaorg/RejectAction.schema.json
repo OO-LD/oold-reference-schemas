@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "AllocateAction.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "AllocateAction.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "RejectAction.schema.json",
+  "x-oold-uuid": "057c41c6-cedf-54bf-944f-b9ced78de240",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/RejectAction",
+  "x-oold-instance-rdf-type": [
+    "schema:RejectAction"
+  ],
+  "title": "RejectAction",
+  "description": "The act of rejecting to/adopting an object.\\n\\nRelated actions:\\n\\n* [[AcceptAction]]: The antonym of RejectAction.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:RejectAction"
+      ]
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Intangible.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Intangible.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ComputerLanguage.schema.json",
+  "x-oold-uuid": "9af435f9-113a-5e16-9ba6-15ad24bca3a6",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/ComputerLanguage",
+  "x-oold-instance-rdf-type": [
+    "schema:ComputerLanguage"
+  ],
+  "title": "ComputerLanguage",
+  "description": "This type covers computer programming languages such as Scheme and Lisp, as well as other language-like computer representations. Natural languages are best represented with the [[Language]] type.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:ComputerLanguage"
+      ]
+    }
+  }
+}

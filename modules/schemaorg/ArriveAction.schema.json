@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "MoveAction.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "MoveAction.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ArriveAction.schema.json",
+  "x-oold-uuid": "dc61f29c-9d1c-53a6-b754-89c778eeb6a9",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/ArriveAction",
+  "x-oold-instance-rdf-type": [
+    "schema:ArriveAction"
+  ],
+  "title": "ArriveAction",
+  "description": "The act of arriving at a place. An agent arrives at a destination from a fromLocation, optionally with participants.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:ArriveAction"
+      ]
+    }
+  }
+}

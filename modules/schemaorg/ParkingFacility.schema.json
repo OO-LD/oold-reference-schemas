@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "CivicStructure.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "CivicStructure.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ParkingFacility.schema.json",
+  "x-oold-uuid": "fce5665f-205c-544b-93b6-8bc72f877189",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/ParkingFacility",
+  "x-oold-instance-rdf-type": [
+    "schema:ParkingFacility"
+  ],
+  "title": "ParkingFacility",
+  "description": "A parking lot or other parking facility.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:ParkingFacility"
+      ]
+    }
+  }
+}

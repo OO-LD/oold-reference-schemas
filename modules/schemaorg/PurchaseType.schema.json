@@ -1,0 +1,55 @@
+{
+  "@context": [
+    "Enumeration.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Enumeration.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "PurchaseType.schema.json",
+  "x-oold-uuid": "df52404d-f712-54af-8388-4939ea943d0c",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/PurchaseType",
+  "x-oold-instance-rdf-type": [
+    "schema:PurchaseType"
+  ],
+  "title": "PurchaseType",
+  "description": "Enumerates a purchase type for an item.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:PurchaseType"
+      ]
+    }
+  },
+  "$defs": {
+    "member": {
+      "title": "PurchaseType member",
+      "description": "One of the 4 member instances of PurchaseType.",
+      "type": "string",
+      "format": "iri-reference",
+      "enum": [
+        "schema:PurchaseTypeLease",
+        "schema:PurchaseTypeNewPurchase",
+        "schema:PurchaseTypeTradeIn",
+        "schema:PurchaseTypeUsedPurchase"
+      ],
+      "x-oold-ui-enum-titles": [
+        "PurchaseTypeLease",
+        "PurchaseTypeNewPurchase",
+        "PurchaseTypeTradeIn",
+        "PurchaseTypeUsedPurchase"
+      ]
+    }
+  }
+}

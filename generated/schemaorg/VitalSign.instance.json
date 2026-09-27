@@ -1,0 +1,8 @@
+{
+  "$schema": "VitalSign.schema.json",
+  "@context": "VitalSign.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:VitalSign"
+  ]
+}

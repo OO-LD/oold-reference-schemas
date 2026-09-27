@@ -1,0 +1,8 @@
+{
+  "$schema": "PsychologicalTreatment.schema.json",
+  "@context": "PsychologicalTreatment.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:PsychologicalTreatment"
+  ]
+}

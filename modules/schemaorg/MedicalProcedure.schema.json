@@ -1,0 +1,177 @@
+{
+  "@context": [
+    "MedicalEntity.schema.json",
+    {
+      "bodyLocation": {
+        "@id": "schema:bodyLocation",
+        "@container": "@set"
+      },
+      "followup": {
+        "@id": "schema:followup",
+        "@container": "@set"
+      },
+      "howPerformed": {
+        "@id": "schema:howPerformed",
+        "@container": "@set"
+      },
+      "preparation": {
+        "@id": "schema:preparation",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "preparation_text": {
+        "@id": "schema:preparation",
+        "@container": "@set"
+      },
+      "procedureType": {
+        "@id": "schema:procedureType",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "status": {
+        "@id": "schema:status",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "status_text": {
+        "@id": "schema:status",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "MedicalEntity.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MedicalProcedure.schema.json",
+  "x-oold-uuid": "2539beda-9405-5be2-ad5c-5f34c46e1f73",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/MedicalProcedure",
+  "x-oold-instance-rdf-type": [
+    "schema:MedicalProcedure"
+  ],
+  "title": "MedicalProcedure",
+  "description": "A process of care used in either a diagnostic, therapeutic, preventive or palliative capacity that relies on invasive (surgical), non-invasive, or other techniques.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:MedicalProcedure"
+      ]
+    },
+    "bodyLocation": {
+      "title": "Body Location",
+      "description": "Location in the body of the anatomical structure.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "followup": {
+      "title": "Followup",
+      "description": "Typical or recommended followup care after the procedure is performed.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "howPerformed": {
+      "title": "How Performed",
+      "description": "How the procedure is performed.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "preparation": {
+      "title": "Preparation",
+      "description": "Typical preparation that a patient must undergo before having the procedure performed.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "MedicalEntity.schema.json"
+      }
+    },
+    "preparation_text": {
+      "title": "Preparation (text)",
+      "description": "Typical preparation that a patient must undergo before having the procedure performed.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "procedureType": {
+      "title": "Procedure Type",
+      "description": "The type of procedure, for example Surgical, Noninvasive, or Percutaneous.",
+      "type": "array",
+      "items": {
+        "$ref": "MedicalProcedureType.schema.json#/$defs/member",
+        "x-oold-range": "MedicalProcedureType.schema.json"
+      }
+    },
+    "status": {
+      "title": "Status",
+      "description": "The status of the study (enumerated).",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "EventStatusType.schema.json",
+          "MedicalStudyStatus.schema.json"
+        ],
+        "enum": [
+          "schema:ActiveNotRecruiting",
+          "schema:Completed",
+          "schema:EnrollingByInvitation",
+          "schema:EventCancelled",
+          "schema:EventMovedOnline",
+          "schema:EventPostponed",
+          "schema:EventRescheduled",
+          "schema:EventScheduled",
+          "schema:NotYetRecruiting",
+          "schema:Recruiting",
+          "schema:ResultsAvailable",
+          "schema:ResultsNotAvailable",
+          "schema:Suspended",
+          "schema:Terminated",
+          "schema:Withdrawn"
+        ],
+        "x-oold-ui-enum-titles": [
+          "ActiveNotRecruiting",
+          "Completed",
+          "EnrollingByInvitation",
+          "EventCancelled",
+          "EventMovedOnline",
+          "EventPostponed",
+          "EventRescheduled",
+          "EventScheduled",
+          "NotYetRecruiting",
+          "Recruiting",
+          "ResultsAvailable",
+          "ResultsNotAvailable",
+          "Suspended",
+          "Terminated",
+          "Withdrawn"
+        ]
+      }
+    },
+    "status_text": {
+      "title": "Status (text)",
+      "description": "The status of the study (enumerated).",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    }
+  }
+}

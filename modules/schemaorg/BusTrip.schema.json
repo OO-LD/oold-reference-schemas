@@ -1,0 +1,96 @@
+{
+  "@context": [
+    "Trip.schema.json",
+    {
+      "arrivalBusStop": {
+        "@id": "schema:arrivalBusStop",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "busName": {
+        "@id": "schema:busName",
+        "@container": "@set"
+      },
+      "busNumber": {
+        "@id": "schema:busNumber",
+        "@container": "@set"
+      },
+      "departureBusStop": {
+        "@id": "schema:departureBusStop",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Trip.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "BusTrip.schema.json",
+  "x-oold-uuid": "de627bff-c3e5-5da3-afd6-1ccc7f952637",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/BusTrip",
+  "x-oold-instance-rdf-type": [
+    "schema:BusTrip"
+  ],
+  "title": "BusTrip",
+  "description": "A trip on a commercial bus line.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:BusTrip"
+      ]
+    },
+    "arrivalBusStop": {
+      "title": "Arrival Bus Stop",
+      "description": "The stop or station from which the bus arrives.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "BusStation.schema.json",
+          "BusStop.schema.json"
+        ]
+      }
+    },
+    "busName": {
+      "title": "Bus Name",
+      "description": "The name of the bus (e.g. Bolt Express).",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "busNumber": {
+      "title": "Bus Number",
+      "description": "The unique identifier for the bus.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "departureBusStop": {
+      "title": "Departure Bus Stop",
+      "description": "The stop or station from which the bus departs.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "BusStation.schema.json",
+          "BusStop.schema.json"
+        ]
+      }
+    }
+  }
+}

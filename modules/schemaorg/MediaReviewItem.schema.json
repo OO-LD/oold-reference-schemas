@@ -1,0 +1,51 @@
+{
+  "@context": [
+    "CreativeWork.schema.json",
+    {
+      "mediaItemAppearance": {
+        "@id": "schema:mediaItemAppearance",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "CreativeWork.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MediaReviewItem.schema.json",
+  "x-oold-uuid": "dc951f59-993c-5771-8f95-e2b9053c3755",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/MediaReviewItem",
+  "x-oold-instance-rdf-type": [
+    "schema:MediaReviewItem"
+  ],
+  "title": "MediaReviewItem",
+  "description": "Represents an item or group of closely related items treated as a unit for the sake of evaluation in a [[MediaReview]]. Authorship etc. apply to the items rather than to the curation/grouping or reviewing party.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:MediaReviewItem"
+      ]
+    },
+    "mediaItemAppearance": {
+      "title": "Media Item Appearance",
+      "description": "In the context of a [[MediaReview]], indicates specific media item(s) that are grouped using a [[MediaReviewItem]].",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "MediaObject.schema.json"
+      }
+    }
+  }
+}

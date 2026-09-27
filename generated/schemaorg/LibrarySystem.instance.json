@@ -1,0 +1,8 @@
+{
+  "$schema": "LibrarySystem.schema.json",
+  "@context": "LibrarySystem.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:LibrarySystem"
+  ]
+}

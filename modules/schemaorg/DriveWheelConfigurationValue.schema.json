@@ -1,0 +1,55 @@
+{
+  "@context": [
+    "QualitativeValue.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "QualitativeValue.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "DriveWheelConfigurationValue.schema.json",
+  "x-oold-uuid": "865166b9-6b15-561f-96ba-c3600a3e9259",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/DriveWheelConfigurationValue",
+  "x-oold-instance-rdf-type": [
+    "schema:DriveWheelConfigurationValue"
+  ],
+  "title": "DriveWheelConfigurationValue",
+  "description": "A value indicating which roadwheels will receive torque.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:DriveWheelConfigurationValue"
+      ]
+    }
+  },
+  "$defs": {
+    "member": {
+      "title": "DriveWheelConfigurationValue member",
+      "description": "One of the 4 member instances of DriveWheelConfigurationValue.",
+      "type": "string",
+      "format": "iri-reference",
+      "enum": [
+        "schema:AllWheelDriveConfiguration",
+        "schema:FourWheelDriveConfiguration",
+        "schema:FrontWheelDriveConfiguration",
+        "schema:RearWheelDriveConfiguration"
+      ],
+      "x-oold-ui-enum-titles": [
+        "AllWheelDriveConfiguration",
+        "FourWheelDriveConfiguration",
+        "FrontWheelDriveConfiguration",
+        "RearWheelDriveConfiguration"
+      ]
+    }
+  }
+}

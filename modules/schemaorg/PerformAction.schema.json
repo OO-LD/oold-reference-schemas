@@ -1,0 +1,51 @@
+{
+  "@context": [
+    "PlayAction.schema.json",
+    {
+      "entertainmentBusiness": {
+        "@id": "schema:entertainmentBusiness",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "PlayAction.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "PerformAction.schema.json",
+  "x-oold-uuid": "e7c06f3d-1df2-5aa0-8ed6-5472a7e3597a",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/PerformAction",
+  "x-oold-instance-rdf-type": [
+    "schema:PerformAction"
+  ],
+  "title": "PerformAction",
+  "description": "The act of participating in performance arts.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:PerformAction"
+      ]
+    },
+    "entertainmentBusiness": {
+      "title": "Entertainment Business",
+      "description": "A sub property of location. The entertainment business where the action occurred.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "EntertainmentBusiness.schema.json"
+      }
+    }
+  }
+}

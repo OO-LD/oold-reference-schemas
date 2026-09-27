@@ -1,0 +1,90 @@
+{
+  "@context": [
+    "Event.schema.json",
+    {
+      "subtitleLanguage": {
+        "@id": "schema:subtitleLanguage",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "subtitleLanguage_text": {
+        "@id": "schema:subtitleLanguage",
+        "@container": "@set"
+      },
+      "videoFormat": {
+        "@id": "schema:videoFormat",
+        "@container": "@set"
+      },
+      "workPresented": {
+        "@id": "schema:workPresented",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Event.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ScreeningEvent.schema.json",
+  "x-oold-uuid": "bc7479c3-7252-58ff-856a-23d94e0d5eb9",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/ScreeningEvent",
+  "x-oold-instance-rdf-type": [
+    "schema:ScreeningEvent"
+  ],
+  "title": "ScreeningEvent",
+  "description": "A screening of a movie or other video.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:ScreeningEvent"
+      ]
+    },
+    "subtitleLanguage": {
+      "title": "Subtitle Language",
+      "description": "Languages in which subtitles/captions are available, in [IETF BCP 47 standard format](http://tools.ietf.org/html/bcp47).",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Language.schema.json"
+      }
+    },
+    "subtitleLanguage_text": {
+      "title": "Subtitle Language (text)",
+      "description": "Languages in which subtitles/captions are available, in [IETF BCP 47 standard format](http://tools.ietf.org/html/bcp47).",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "videoFormat": {
+      "title": "Video Format",
+      "description": "The type of screening or video broadcast used (e.g. IMAX, 3D, SD, HD, etc.).",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "workPresented": {
+      "title": "Work Presented",
+      "description": "The movie presented during this event.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Movie.schema.json"
+      }
+    }
+  }
+}

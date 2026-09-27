@@ -1,0 +1,678 @@
+{
+  "@context": [
+    "Intangible.schema.json",
+    {
+      "applicantLocationRequirements": {
+        "@id": "schema:applicantLocationRequirements",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "applicationContact": {
+        "@id": "schema:applicationContact",
+        "@container": "@set"
+      },
+      "baseSalary": {
+        "@id": "schema:baseSalary",
+        "@container": "@set"
+      },
+      "datePosted": {
+        "@id": "schema:datePosted",
+        "@container": "@set"
+      },
+      "directApply": {
+        "@id": "schema:directApply",
+        "@container": "@set"
+      },
+      "educationRequirements": {
+        "@id": "schema:educationRequirements",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "educationRequirements_text": {
+        "@id": "schema:educationRequirements",
+        "@container": "@set"
+      },
+      "eligibilityToWorkRequirement": {
+        "@id": "schema:eligibilityToWorkRequirement",
+        "@container": "@set"
+      },
+      "employerOverview": {
+        "@id": "schema:employerOverview",
+        "@container": "@set"
+      },
+      "employmentType": {
+        "@id": "schema:employmentType",
+        "@container": "@set"
+      },
+      "employmentUnit": {
+        "@id": "schema:employmentUnit",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "estimatedSalary": {
+        "@id": "schema:estimatedSalary",
+        "@container": "@set"
+      },
+      "experienceInPlaceOfEducation": {
+        "@id": "schema:experienceInPlaceOfEducation",
+        "@container": "@set"
+      },
+      "experienceRequirements": {
+        "@id": "schema:experienceRequirements",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "experienceRequirements_text": {
+        "@id": "schema:experienceRequirements",
+        "@container": "@set"
+      },
+      "hiringOrganization": {
+        "@id": "schema:hiringOrganization",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "incentiveCompensation": {
+        "@id": "schema:incentiveCompensation",
+        "@container": "@set"
+      },
+      "industry": {
+        "@id": "schema:industry",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "industry_text": {
+        "@id": "schema:industry",
+        "@container": "@set"
+      },
+      "jobBenefits": {
+        "@id": "schema:jobBenefits",
+        "@container": "@set"
+      },
+      "jobDuration": {
+        "@id": "schema:jobDuration",
+        "@container": "@set"
+      },
+      "jobImmediateStart": {
+        "@id": "schema:jobImmediateStart",
+        "@container": "@set"
+      },
+      "jobLocation": {
+        "@id": "schema:jobLocation",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "jobLocationType": {
+        "@id": "schema:jobLocationType",
+        "@container": "@set"
+      },
+      "jobStartDate": {
+        "@id": "schema:jobStartDate",
+        "@container": "@set"
+      },
+      "occupationalCategory": {
+        "@id": "schema:occupationalCategory",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "occupationalCategory_text": {
+        "@id": "schema:occupationalCategory",
+        "@container": "@set"
+      },
+      "physicalRequirement": {
+        "@id": "schema:physicalRequirement",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "physicalRequirement_text": {
+        "@id": "schema:physicalRequirement",
+        "@container": "@set"
+      },
+      "qualifications": {
+        "@id": "schema:qualifications",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "qualifications_text": {
+        "@id": "schema:qualifications",
+        "@container": "@set"
+      },
+      "relevantOccupation": {
+        "@id": "schema:relevantOccupation",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "responsibilities": {
+        "@id": "schema:responsibilities",
+        "@container": "@set"
+      },
+      "salaryCurrency": {
+        "@id": "schema:salaryCurrency",
+        "@container": "@set"
+      },
+      "securityClearanceRequirement": {
+        "@id": "schema:securityClearanceRequirement",
+        "@container": "@set"
+      },
+      "sensoryRequirement": {
+        "@id": "schema:sensoryRequirement",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "sensoryRequirement_text": {
+        "@id": "schema:sensoryRequirement",
+        "@container": "@set"
+      },
+      "skills": {
+        "@id": "schema:skills",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "skills_text": {
+        "@id": "schema:skills",
+        "@container": "@set"
+      },
+      "specialCommitments": {
+        "@id": "schema:specialCommitments",
+        "@container": "@set"
+      },
+      "title": {
+        "@id": "schema:title",
+        "@container": "@set"
+      },
+      "totalJobOpenings": {
+        "@id": "schema:totalJobOpenings",
+        "@container": "@set"
+      },
+      "validThrough": {
+        "@id": "schema:validThrough",
+        "@container": "@set"
+      },
+      "workHours": {
+        "@id": "schema:workHours",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Intangible.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "JobPosting.schema.json",
+  "x-oold-uuid": "733941ef-2f30-53d8-927d-c0c76cd31b55",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/JobPosting",
+  "x-oold-instance-rdf-type": [
+    "schema:JobPosting"
+  ],
+  "title": "JobPosting",
+  "description": "A listing that describes a job opening in a certain organization.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:JobPosting"
+      ]
+    },
+    "applicantLocationRequirements": {
+      "title": "Applicant Location Requirements",
+      "description": "The location(s) applicants can apply from. This is usually used for telecommuting jobs where the applicant does not need to be in a physical office. Note: This should not be used for citizenship or work visa requirements.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "AdministrativeArea.schema.json"
+      }
+    },
+    "applicationContact": {
+      "title": "Application Contact",
+      "description": "Contact details for further information relevant to this job posting.",
+      "type": "array",
+      "items": {
+        "$ref": "ContactPoint.schema.json"
+      }
+    },
+    "baseSalary": {
+      "title": "Base Salary",
+      "description": "The base salary of the job or of an employee in an EmployeeRole.",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: MonetaryAmount [value-type]: MonetaryAmount -> StructuredValue -> Intangible -> Thing; PriceSpecification [value-type]: PriceSpecification -> StructuredValue -> Intangible -> Thing",
+        "anyOf": [
+          {
+            "$ref": "Number.schema.json"
+          },
+          {
+            "$ref": "MonetaryAmount.schema.json"
+          },
+          {
+            "$ref": "PriceSpecification.schema.json"
+          }
+        ]
+      }
+    },
+    "datePosted": {
+      "title": "Date Posted",
+      "description": "Publication date of an online listing.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Date.schema.json"
+          },
+          {
+            "$ref": "DateTime.schema.json"
+          }
+        ]
+      }
+    },
+    "directApply": {
+      "title": "Direct Apply",
+      "description": "Indicates whether an [[url]] that is associated with a [[JobPosting]] enables direct application for the job, via the posting website. A job posting is considered to have directApply of [[True]] if an application process for the specified job can be directly initiated via the url(s) given (noting that e.g. multiple internet domains might nevertheless be involved at an implementation level). A value of [[False]] is appropriate if there is no clear path to applying directly online for the specified job, navigating directly from the JobPosting url(s) supplied.",
+      "type": "array",
+      "items": {
+        "$ref": "Boolean.schema.json"
+      }
+    },
+    "educationRequirements": {
+      "title": "Education Requirements",
+      "description": "Educational background needed for the position or Occupation.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "EducationalOccupationalCredential.schema.json"
+      }
+    },
+    "educationRequirements_text": {
+      "title": "Education Requirements (text)",
+      "description": "Educational background needed for the position or Occupation.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "eligibilityToWorkRequirement": {
+      "title": "Eligibility To Work Requirement",
+      "description": "The legal requirements such as citizenship, visa and other documentation required for an applicant to this job.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "employerOverview": {
+      "title": "Employer Overview",
+      "description": "A description of the employer, career opportunities and work environment for this position.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "employmentType": {
+      "title": "Employment Type",
+      "description": "Type of employment (e.g. full-time, part-time, contract, temporary, seasonal, internship).",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "employmentUnit": {
+      "title": "Employment Unit",
+      "description": "Indicates the department, unit and/or facility where the employee reports and/or in which the job is to be performed.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Organization.schema.json"
+      }
+    },
+    "estimatedSalary": {
+      "title": "Estimated Salary",
+      "description": "An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: MonetaryAmount [value-type]: MonetaryAmount -> StructuredValue -> Intangible -> Thing; MonetaryAmountDistribution [value-type]: MonetaryAmountDistribution -> QuantitativeValueDistribution -> StructuredValue -> Intangible -> Thing",
+        "anyOf": [
+          {
+            "$ref": "Number.schema.json"
+          },
+          {
+            "$ref": "MonetaryAmount.schema.json"
+          },
+          {
+            "$ref": "MonetaryAmountDistribution.schema.json"
+          }
+        ]
+      }
+    },
+    "experienceInPlaceOfEducation": {
+      "title": "Experience In Place Of Education",
+      "description": "Indicates whether a [[JobPosting]] will accept experience (as indicated by [[OccupationalExperienceRequirements]]) in place of its formal educational qualifications (as indicated by [[educationRequirements]]). If true, indicates that satisfying one of these requirements is sufficient.",
+      "type": "array",
+      "items": {
+        "$ref": "Boolean.schema.json"
+      }
+    },
+    "experienceRequirements": {
+      "title": "Experience Requirements",
+      "description": "Description of skills and experience needed for the position or Occupation.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "OccupationalExperienceRequirements.schema.json"
+      }
+    },
+    "experienceRequirements_text": {
+      "title": "Experience Requirements (text)",
+      "description": "Description of skills and experience needed for the position or Occupation.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "hiringOrganization": {
+      "title": "Hiring Organization",
+      "description": "Organization or Person offering the job position.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "Organization.schema.json",
+          "Person.schema.json"
+        ]
+      }
+    },
+    "incentiveCompensation": {
+      "title": "Incentive Compensation",
+      "description": "Description of bonus and commission compensation aspects of the job.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "industry": {
+      "title": "Industry",
+      "description": "The industry associated with the job position.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "DefinedTerm.schema.json"
+      }
+    },
+    "industry_text": {
+      "title": "Industry (text)",
+      "description": "The industry associated with the job position.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "jobBenefits": {
+      "title": "Job Benefits",
+      "description": "Description of benefits associated with the job.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "jobDuration": {
+      "title": "Job Duration",
+      "description": "The expected duration of an employment offer as advertised by the employer. Relevant for job postings that have a clearly defined period in mind such as seasonal work, substitutes for maternal leave or any other temporary employment.",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: QuantitativeValue [value-type]: QuantitativeValue -> StructuredValue -> Intangible -> Thing",
+        "anyOf": [
+          {
+            "$ref": "Duration.schema.json"
+          },
+          {
+            "$ref": "QuantitativeValue.schema.json"
+          }
+        ]
+      }
+    },
+    "jobImmediateStart": {
+      "title": "Job Immediate Start",
+      "description": "An indicator as to whether a position is available for an immediate start.",
+      "type": "array",
+      "items": {
+        "$ref": "Boolean.schema.json"
+      }
+    },
+    "jobLocation": {
+      "title": "Job Location",
+      "description": "A (typically single) geographic location associated with the job position.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Place.schema.json"
+      }
+    },
+    "jobLocationType": {
+      "title": "Job Location Type",
+      "description": "A description of the job location (e.g. TELECOMMUTE for telecommute jobs).",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "jobStartDate": {
+      "title": "Job Start Date",
+      "description": "The date on which a successful applicant for this job would be expected to start work. Choose a specific date in the future or use the jobImmediateStart property to indicate the position is to be filled as soon as possible.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Date.schema.json"
+          },
+          {
+            "$ref": "Text.schema.json"
+          }
+        ]
+      }
+    },
+    "occupationalCategory": {
+      "title": "Occupational Category",
+      "description": "A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html), [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.\\n\nNote: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "CategoryCode.schema.json"
+      }
+    },
+    "occupationalCategory_text": {
+      "title": "Occupational Category (text)",
+      "description": "A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html), [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.\\n\nNote: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "physicalRequirement": {
+      "title": "Physical Requirement",
+      "description": "A description of the types of physical activity associated with the job. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "DefinedTerm.schema.json"
+      }
+    },
+    "physicalRequirement_text": {
+      "title": "Physical Requirement (text)",
+      "description": "A description of the types of physical activity associated with the job. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Text.schema.json"
+          },
+          {
+            "$ref": "URL.schema.json"
+          }
+        ]
+      }
+    },
+    "qualifications": {
+      "title": "Qualifications",
+      "description": "Specific qualifications required for this role or Occupation.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Credential.schema.json"
+      }
+    },
+    "qualifications_text": {
+      "title": "Qualifications (text)",
+      "description": "Specific qualifications required for this role or Occupation.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "relevantOccupation": {
+      "title": "Relevant Occupation",
+      "description": "The Occupation for the JobPosting.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Occupation.schema.json"
+      }
+    },
+    "responsibilities": {
+      "title": "Responsibilities",
+      "description": "Responsibilities associated with this role or Occupation.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "salaryCurrency": {
+      "title": "Salary Currency",
+      "description": "The currency (coded using [ISO 4217](http://en.wikipedia.org/wiki/ISO_4217)) used for the main salary information in this job posting or for this employee.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "securityClearanceRequirement": {
+      "title": "Security Clearance Requirement",
+      "description": "A description of any security clearance requirements of the job.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Text.schema.json"
+          },
+          {
+            "$ref": "URL.schema.json"
+          }
+        ]
+      }
+    },
+    "sensoryRequirement": {
+      "title": "Sensory Requirement",
+      "description": "A description of any sensory requirements and levels necessary to function on the job, including hearing and vision. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "DefinedTerm.schema.json"
+      }
+    },
+    "sensoryRequirement_text": {
+      "title": "Sensory Requirement (text)",
+      "description": "A description of any sensory requirements and levels necessary to function on the job, including hearing and vision. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Text.schema.json"
+          },
+          {
+            "$ref": "URL.schema.json"
+          }
+        ]
+      }
+    },
+    "skills": {
+      "title": "Skills",
+      "description": "A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is either claimed by a person, an organization or desired or required to fulfill a role or to work in an occupation.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "DefinedTerm.schema.json"
+      }
+    },
+    "skills_text": {
+      "title": "Skills (text)",
+      "description": "A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is either claimed by a person, an organization or desired or required to fulfill a role or to work in an occupation.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "specialCommitments": {
+      "title": "Special Commitments",
+      "description": "Any special commitments associated with this job posting. Valid entries include VeteranCommit, MilitarySpouseCommit, etc.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "title": {
+      "title": "Title",
+      "description": "The title of the job.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "totalJobOpenings": {
+      "title": "Total Job Openings",
+      "description": "The number of positions open for this job posting. Use a positive integer. Do not use if the number of positions is unclear or not known.",
+      "type": "array",
+      "items": {
+        "$ref": "Integer.schema.json"
+      }
+    },
+    "validThrough": {
+      "title": "Valid Through",
+      "description": "The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Date.schema.json"
+          },
+          {
+            "$ref": "DateTime.schema.json"
+          }
+        ]
+      }
+    },
+    "workHours": {
+      "title": "Work Hours",
+      "description": "The typical working hours for this job (e.g. 1st shift, night shift, 8am-5pm).",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    }
+  }
+}

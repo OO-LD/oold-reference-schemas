@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "AutomotiveBusiness.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "AutomotiveBusiness.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MotorcycleRepair.schema.json",
+  "x-oold-uuid": "66313329-9266-54e4-a040-e2e3da0ebde6",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/MotorcycleRepair",
+  "x-oold-instance-rdf-type": [
+    "schema:MotorcycleRepair"
+  ],
+  "title": "MotorcycleRepair",
+  "description": "A motorcycle repair shop.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:MotorcycleRepair"
+      ]
+    }
+  }
+}

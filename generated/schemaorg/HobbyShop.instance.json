@@ -1,0 +1,8 @@
+{
+  "$schema": "HobbyShop.schema.json",
+  "@context": "HobbyShop.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:HobbyShop"
+  ]
+}

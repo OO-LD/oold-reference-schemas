@@ -1,0 +1,18 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "XPathType.schema.json",
+  "x-oold-uuid": "a908fce0-e51e-5de4-b14b-12564ff46562",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/XPathType",
+  "x-oold-instance-rdf-type": [
+    "schema:XPathType"
+  ],
+  "title": "XPathType",
+  "description": "Text representing an XPath (typically but not necessarily version 1.0).",
+  "$ref": "Text.schema.json"
+}

@@ -1,0 +1,50 @@
+{
+  "@context": [
+    "WebContent.schema.json",
+    {
+      "hasHealthAspect": {
+        "@id": "schema:hasHealthAspect",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "WebContent.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "HealthTopicContent.schema.json",
+  "x-oold-uuid": "763f1336-2741-5923-b320-56cd73b0bf22",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/HealthTopicContent",
+  "x-oold-instance-rdf-type": [
+    "schema:HealthTopicContent"
+  ],
+  "title": "HealthTopicContent",
+  "description": "[[HealthTopicContent]] is [[WebContent]] that is about some aspect of a health topic, e.g. a condition, its symptoms or treatments. Such content may be comprised of several parts or sections and use different types of media. Multiple instances of [[WebContent]] (and hence [[HealthTopicContent]]) can be related using [[hasPart]] / [[isPartOf]] where there is some kind of content hierarchy, and their content described with [[about]] and [[mentions]] e.g. building upon the existing [[MedicalCondition]] vocabulary.\n  ",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:HealthTopicContent"
+      ]
+    },
+    "hasHealthAspect": {
+      "title": "Has Health Aspect",
+      "description": "Indicates the aspect or aspects specifically addressed in some [[HealthTopicContent]]. For example, that the content is an overview, or that it talks about treatment, self-care, treatments or their side-effects.",
+      "type": "array",
+      "items": {
+        "$ref": "HealthAspectEnumeration.schema.json#/$defs/member",
+        "x-oold-range": "HealthAspectEnumeration.schema.json"
+      }
+    }
+  }
+}

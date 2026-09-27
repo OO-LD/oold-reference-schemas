@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "PlaceOfWorship.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "PlaceOfWorship.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "HinduTemple.schema.json",
+  "x-oold-uuid": "1ab787d2-a70d-506b-bae9-64e1c42d3739",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/HinduTemple",
+  "x-oold-instance-rdf-type": [
+    "schema:HinduTemple"
+  ],
+  "title": "HinduTemple",
+  "description": "A Hindu temple.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:HinduTemple"
+      ]
+    }
+  }
+}

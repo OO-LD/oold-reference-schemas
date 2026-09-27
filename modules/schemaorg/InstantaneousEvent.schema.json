@@ -1,0 +1,79 @@
+{
+  "@context": [
+    "StructuredValue.schema.json",
+    {
+      "data": {
+        "@id": "schema:data",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "source": {
+        "@id": "schema:source",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "timestamp": {
+        "@id": "schema:timestamp",
+        "@type": "xsd:dateTime",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "StructuredValue.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "InstantaneousEvent.schema.json",
+  "x-oold-uuid": "f9e44402-29b1-50b1-832d-0ae7cc7b6090",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/InstantaneousEvent",
+  "x-oold-instance-rdf-type": [
+    "schema:InstantaneousEvent"
+  ],
+  "title": "InstantaneousEvent",
+  "description": "An event with no duration, like for instance a computer log entry.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:InstantaneousEvent"
+      ]
+    },
+    "data": {
+      "title": "Data",
+      "description": "Data associated with the event, like for instance a log message.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Thing.schema.json"
+      }
+    },
+    "source": {
+      "title": "Source",
+      "description": "The source or cause of the event.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Thing.schema.json"
+      }
+    },
+    "timestamp": {
+      "title": "Timestamp",
+      "description": "The instant the event occured.",
+      "type": "array",
+      "items": {
+        "$ref": "DateTime.schema.json"
+      }
+    }
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "@context": [
+    "Event.schema.json",
+    {
+      "publishedBy": {
+        "@id": "schema:publishedBy",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "publishedOn": {
+        "@id": "schema:publishedOn",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Event.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "PublicationEvent.schema.json",
+  "x-oold-uuid": "1ea6a930-3f12-5344-ab3b-7b3060e10675",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/PublicationEvent",
+  "x-oold-instance-rdf-type": [
+    "schema:PublicationEvent"
+  ],
+  "title": "PublicationEvent",
+  "description": "A PublicationEvent corresponds indifferently to the event of publication for a CreativeWork of any type, e.g. a broadcast event, an on-demand event, a book/journal publication via a variety of delivery media.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:PublicationEvent"
+      ]
+    },
+    "publishedBy": {
+      "title": "Published By",
+      "description": "An agent associated with the publication event.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "Organization.schema.json",
+          "Person.schema.json"
+        ]
+      }
+    },
+    "publishedOn": {
+      "title": "Published On",
+      "description": "A broadcast service associated with the publication event.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "BroadcastService.schema.json"
+      }
+    }
+  }
+}

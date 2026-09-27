@@ -1,0 +1,51 @@
+{
+  "@context": [
+    "Intangible.schema.json",
+    {
+      "populationType": {
+        "@id": "schema:populationType",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Intangible.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "StatisticalPopulation.schema.json",
+  "x-oold-uuid": "c61775c7-1b87-567e-ab66-bfd3788e8a08",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/StatisticalPopulation",
+  "x-oold-instance-rdf-type": [
+    "schema:StatisticalPopulation"
+  ],
+  "title": "StatisticalPopulation",
+  "description": "A StatisticalPopulation is a set of instances of a certain given type that satisfy some set of constraints. The property [[populationType]] is used to specify the type. Any property that can be used on instances of that type can appear on the statistical population. For example, a [[StatisticalPopulation]] representing all [[Person]]s with a [[homeLocation]] of East Podunk California would be described by applying the appropriate [[homeLocation]] and [[populationType]] properties to a [[StatisticalPopulation]] item that stands for that set of people.\nThe properties [[numConstraints]] and [[constraintProperty]] are used to specify which of the populations properties are used to specify the population. Note that the sense of \"population\" used here is the general sense of a statistical\npopulation, and does not imply that the population consists of people. For example, a [[populationType]] of [[Event]] or [[NewsArticle]] could be used. See also [[Observation]], where a [[populationType]] such as [[Person]] or [[Event]] can be indicated directly. In most cases it may be better to use [[StatisticalVariable]] instead of [[StatisticalPopulation]].",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:StatisticalPopulation"
+      ]
+    },
+    "populationType": {
+      "title": "Population Type",
+      "description": "Indicates the populationType common to all members of a [[StatisticalPopulation]] or all cases within the scope of a [[StatisticalVariable]].",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Class.schema.json"
+      }
+    }
+  }
+}

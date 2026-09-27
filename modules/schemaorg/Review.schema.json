@@ -1,0 +1,205 @@
+{
+  "@context": [
+    "CreativeWork.schema.json",
+    {
+      "associatedClaimReview": {
+        "@id": "schema:associatedClaimReview",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "associatedMediaReview": {
+        "@id": "schema:associatedMediaReview",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "associatedReview": {
+        "@id": "schema:associatedReview",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "itemReviewed": {
+        "@id": "schema:itemReviewed",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "negativeNotes": {
+        "@id": "schema:negativeNotes",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "negativeNotes_text": {
+        "@id": "schema:negativeNotes",
+        "@container": "@set"
+      },
+      "positiveNotes": {
+        "@id": "schema:positiveNotes",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "positiveNotes_text": {
+        "@id": "schema:positiveNotes",
+        "@container": "@set"
+      },
+      "reviewAspect": {
+        "@id": "schema:reviewAspect",
+        "@container": "@set"
+      },
+      "reviewBody": {
+        "@id": "schema:reviewBody",
+        "@container": "@set"
+      },
+      "reviewRating": {
+        "@id": "schema:reviewRating",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "CreativeWork.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Review.schema.json",
+  "x-oold-uuid": "b1a6fae8-b91f-59a8-b77d-bd7255ed8fdf",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Review",
+  "x-oold-instance-rdf-type": [
+    "schema:Review"
+  ],
+  "title": "Review",
+  "description": "A review of an item - for example, of a restaurant, movie, or store.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Review"
+      ]
+    },
+    "associatedClaimReview": {
+      "title": "Associated Claim Review",
+      "description": "An associated [[ClaimReview]], related by specific common content, topic or claim. The expectation is that this property would be most typically used in cases where a single activity is conducting both claim reviews and media reviews, in which case [[relatedMediaReview]] would commonly be used on a [[ClaimReview]], while [[associatedClaimReview]] would be used on [[MediaReview]].",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Review.schema.json"
+      }
+    },
+    "associatedMediaReview": {
+      "title": "Associated Media Review",
+      "description": "An associated [[MediaReview]], related by specific common content, topic or claim. The expectation is that this property would be most typically used in cases where a single activity is conducting both claim reviews and media reviews, in which case [[relatedMediaReview]] would commonly be used on a [[ClaimReview]], while [[associatedClaimReview]] would be used on [[MediaReview]].",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Review.schema.json"
+      }
+    },
+    "associatedReview": {
+      "title": "Associated Review",
+      "description": "An associated [[Review]].",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Review.schema.json"
+      }
+    },
+    "itemReviewed": {
+      "title": "Item Reviewed",
+      "description": "The item that is being reviewed/rated.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Thing.schema.json"
+      }
+    },
+    "negativeNotes": {
+      "title": "Negative Notes",
+      "description": "Provides negative considerations regarding something, most typically in pro/con lists for reviews (alongside [[positiveNotes]]). For symmetry \n\nIn the case of a [[Review]], the property describes the [[itemReviewed]] from the perspective of the review; in the case of a [[Product]], the product itself is being described. Since product descriptions \ntend to emphasise positive claims, it may be relatively unusual to find [[negativeNotes]] used in this way. Nevertheless for the sake of symmetry, [[negativeNotes]] can be used on [[Product]].\n\nThe property values can be expressed either as unstructured text (repeated as necessary), or if ordered, as a list (in which case the most negative is at the beginning of the list).",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "ItemList.schema.json",
+          "ListItem.schema.json",
+          "WebContent.schema.json"
+        ]
+      }
+    },
+    "negativeNotes_text": {
+      "title": "Negative Notes (text)",
+      "description": "Provides negative considerations regarding something, most typically in pro/con lists for reviews (alongside [[positiveNotes]]). For symmetry \n\nIn the case of a [[Review]], the property describes the [[itemReviewed]] from the perspective of the review; in the case of a [[Product]], the product itself is being described. Since product descriptions \ntend to emphasise positive claims, it may be relatively unusual to find [[negativeNotes]] used in this way. Nevertheless for the sake of symmetry, [[negativeNotes]] can be used on [[Product]].\n\nThe property values can be expressed either as unstructured text (repeated as necessary), or if ordered, as a list (in which case the most negative is at the beginning of the list).",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "positiveNotes": {
+      "title": "Positive Notes",
+      "description": "Provides positive considerations regarding something, for example product highlights or (alongside [[negativeNotes]]) pro/con lists for reviews.\n\nIn the case of a [[Review]], the property describes the [[itemReviewed]] from the perspective of the review; in the case of a [[Product]], the product itself is being described.\n\nThe property values can be expressed either as unstructured text (repeated as necessary), or if ordered, as a list (in which case the most positive is at the beginning of the list).",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "ItemList.schema.json",
+          "ListItem.schema.json",
+          "WebContent.schema.json"
+        ]
+      }
+    },
+    "positiveNotes_text": {
+      "title": "Positive Notes (text)",
+      "description": "Provides positive considerations regarding something, for example product highlights or (alongside [[negativeNotes]]) pro/con lists for reviews.\n\nIn the case of a [[Review]], the property describes the [[itemReviewed]] from the perspective of the review; in the case of a [[Product]], the product itself is being described.\n\nThe property values can be expressed either as unstructured text (repeated as necessary), or if ordered, as a list (in which case the most positive is at the beginning of the list).",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "reviewAspect": {
+      "title": "Review Aspect",
+      "description": "This Review or Rating is relevant to this part or facet of the itemReviewed.",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: StructuredValue [value-type]: StructuredValue -> Intangible -> Thing",
+        "anyOf": [
+          {
+            "$ref": "Text.schema.json"
+          },
+          {
+            "$ref": "StructuredValue.schema.json"
+          }
+        ]
+      }
+    },
+    "reviewBody": {
+      "title": "Review Body",
+      "description": "The actual body of the review.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "reviewRating": {
+      "title": "Review Rating",
+      "description": "The rating given in this review. Note that reviews can themselves be rated. The ```reviewRating``` applies to rating given by the review. The [[aggregateRating]] property applies to the review itself, as a creative work.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Rating.schema.json"
+      }
+    }
+  }
+}

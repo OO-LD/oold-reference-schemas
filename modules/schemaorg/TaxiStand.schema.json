@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "CivicStructure.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "CivicStructure.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "TaxiStand.schema.json",
+  "x-oold-uuid": "7cfbd2b7-017a-55c3-83e3-b3b237ded55e",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/TaxiStand",
+  "x-oold-instance-rdf-type": [
+    "schema:TaxiStand"
+  ],
+  "title": "TaxiStand",
+  "description": "A taxi stand.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:TaxiStand"
+      ]
+    }
+  }
+}

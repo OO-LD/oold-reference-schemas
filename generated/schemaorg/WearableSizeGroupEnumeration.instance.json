@@ -1,0 +1,8 @@
+{
+  "$schema": "WearableSizeGroupEnumeration.schema.json",
+  "@context": "WearableSizeGroupEnumeration.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:WearableSizeGroupEnumeration"
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "@context": [
+    "StructuredValue.schema.json",
+    {
+      "amountOfThisGood": {
+        "@id": "schema:amountOfThisGood",
+        "@container": "@set"
+      },
+      "businessFunction": {
+        "@id": "schema:businessFunction",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "typeOfGood": {
+        "@id": "schema:typeOfGood",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "unitCode": {
+        "@id": "schema:unitCode",
+        "@container": "@set"
+      },
+      "unitText": {
+        "@id": "schema:unitText",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "StructuredValue.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "TypeAndQuantityNode.schema.json",
+  "x-oold-uuid": "5ccd4b84-0bca-5a5b-bed8-53207ab7fe4e",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/TypeAndQuantityNode",
+  "x-oold-instance-rdf-type": [
+    "schema:TypeAndQuantityNode"
+  ],
+  "title": "TypeAndQuantityNode",
+  "description": "A structured value indicating the quantity, unit of measurement, and business function of goods included in a bundle offer.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:TypeAndQuantityNode"
+      ]
+    },
+    "amountOfThisGood": {
+      "title": "Amount Of This Good",
+      "description": "The quantity of the goods included in the offer.",
+      "type": "array",
+      "items": {
+        "$ref": "Number.schema.json"
+      }
+    },
+    "businessFunction": {
+      "title": "Business Function",
+      "description": "The business function (e.g. sell, lease, repair, dispose) of the offer or component of a bundle (TypeAndQuantityNode). The default is http://purl.org/goodrelations/v1#Sell.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "BusinessFunction.schema.json"
+      }
+    },
+    "typeOfGood": {
+      "title": "Type Of Good",
+      "description": "The product that this structured value is referring to.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "Product.schema.json",
+          "Service.schema.json"
+        ]
+      }
+    },
+    "unitCode": {
+      "title": "Unit Code",
+      "description": "The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Text.schema.json"
+          },
+          {
+            "$ref": "URL.schema.json"
+          }
+        ]
+      }
+    },
+    "unitText": {
+      "title": "Unit Text",
+      "description": "A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for\n<a href='unitCode'>unitCode</a>.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    }
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "@context": [
+    "AnatomicalStructure.schema.json",
+    {
+      "nerveMotor": {
+        "@id": "schema:nerveMotor",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "sensoryUnit": {
+        "@id": "schema:sensoryUnit",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "sourcedFrom": {
+        "@id": "schema:sourcedFrom",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "AnatomicalStructure.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Nerve.schema.json",
+  "x-oold-uuid": "7e34161d-86d7-5cb2-8b2b-bf356e4938f7",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Nerve",
+  "x-oold-instance-rdf-type": [
+    "schema:Nerve"
+  ],
+  "title": "Nerve",
+  "description": "A common pathway for the electrochemical nerve impulses that are transmitted along each of the axons.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Nerve"
+      ]
+    },
+    "nerveMotor": {
+      "title": "Nerve Motor",
+      "description": "The neurological pathway extension that involves muscle control.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Muscle.schema.json"
+      }
+    },
+    "sensoryUnit": {
+      "title": "Sensory Unit",
+      "description": "The neurological pathway extension that inputs and sends information to the brain or spinal cord.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "AnatomicalStructure.schema.json",
+          "SuperficialAnatomy.schema.json"
+        ]
+      }
+    },
+    "sourcedFrom": {
+      "title": "Sourced From",
+      "description": "The neurological pathway that originates the neurons.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "BrainStructure.schema.json"
+      }
+    }
+  }
+}

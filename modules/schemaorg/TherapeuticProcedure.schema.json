@@ -1,0 +1,81 @@
+{
+  "@context": [
+    "MedicalProcedure.schema.json",
+    {
+      "adverseOutcome": {
+        "@id": "schema:adverseOutcome",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "doseSchedule": {
+        "@id": "schema:doseSchedule",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "drug": {
+        "@id": "schema:drug",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "MedicalProcedure.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "TherapeuticProcedure.schema.json",
+  "x-oold-uuid": "f3466b32-5e73-51f9-aabb-7220be4eaed3",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/TherapeuticProcedure",
+  "x-oold-instance-rdf-type": [
+    "schema:TherapeuticProcedure"
+  ],
+  "title": "TherapeuticProcedure",
+  "description": "A medical procedure intended primarily for therapeutic purposes, aimed at improving a health condition.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:TherapeuticProcedure"
+      ]
+    },
+    "adverseOutcome": {
+      "title": "Adverse Outcome",
+      "description": "A possible complication and/or side effect of this therapy. If it is known that an adverse outcome is serious (resulting in death, disability, or permanent damage; requiring hospitalization; or otherwise life-threatening or requiring immediate medical attention), tag it as a seriousAdverseOutcome instead.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "MedicalEntity.schema.json"
+      }
+    },
+    "doseSchedule": {
+      "title": "Dose Schedule",
+      "description": "A dosing schedule for the drug for a given population, either observed, recommended, or maximum dose based on the type used.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "DoseSchedule.schema.json"
+      }
+    },
+    "drug": {
+      "title": "Drug",
+      "description": "Specifying a drug or medicine used in a medication procedure.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Drug.schema.json"
+      }
+    }
+  }
+}

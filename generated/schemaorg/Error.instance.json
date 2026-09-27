@@ -1,0 +1,8 @@
+{
+  "$schema": "Error.schema.json",
+  "@context": "Error.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:Error"
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "MedicalEntity.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "MedicalEntity.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MedicalIntangible.schema.json",
+  "x-oold-uuid": "4175d637-0045-50a1-b12e-b4d8ed4e9c98",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/MedicalIntangible",
+  "x-oold-instance-rdf-type": [
+    "schema:MedicalIntangible"
+  ],
+  "title": "MedicalIntangible",
+  "description": "A utility class that serves as the umbrella for a number of 'intangible' things in the medical space.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:MedicalIntangible"
+      ]
+    }
+  }
+}

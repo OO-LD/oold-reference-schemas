@@ -1,0 +1,74 @@
+{
+  "@context": [
+    "Grant.schema.json",
+    {
+      "amount": {
+        "@id": "schema:amount",
+        "@container": "@set"
+      },
+      "funder": {
+        "@id": "schema:funder",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Grant.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MonetaryGrant.schema.json",
+  "x-oold-uuid": "ad131bfd-b777-5041-875a-1c3e19d46b24",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/MonetaryGrant",
+  "x-oold-instance-rdf-type": [
+    "schema:MonetaryGrant"
+  ],
+  "title": "MonetaryGrant",
+  "description": "A monetary grant.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:MonetaryGrant"
+      ]
+    },
+    "amount": {
+      "title": "Amount",
+      "description": "The amount of money.",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: MonetaryAmount [value-type]: MonetaryAmount -> StructuredValue -> Intangible -> Thing",
+        "anyOf": [
+          {
+            "$ref": "Number.schema.json"
+          },
+          {
+            "$ref": "MonetaryAmount.schema.json"
+          }
+        ]
+      }
+    },
+    "funder": {
+      "title": "Funder",
+      "description": "A person or organization that supports (sponsors) something through some kind of financial contribution.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "Organization.schema.json",
+          "Person.schema.json"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Event.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Event.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "TheaterEvent.schema.json",
+  "x-oold-uuid": "f6179ee1-6c32-51c1-a0dd-880a1f5a6903",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/TheaterEvent",
+  "x-oold-instance-rdf-type": [
+    "schema:TheaterEvent"
+  ],
+  "title": "TheaterEvent",
+  "description": "Event type: Theater performance.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:TheaterEvent"
+      ]
+    }
+  }
+}

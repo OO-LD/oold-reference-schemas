@@ -1,0 +1,63 @@
+{
+  "@context": [
+    "StructuredValue.schema.json",
+    {
+      "durationOfWarranty": {
+        "@id": "schema:durationOfWarranty",
+        "@container": "@set"
+      },
+      "warrantyScope": {
+        "@id": "schema:warrantyScope",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "StructuredValue.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "WarrantyPromise.schema.json",
+  "x-oold-uuid": "6a080de7-c9e1-59c5-8ae6-7b0fe2b40b3e",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/WarrantyPromise",
+  "x-oold-instance-rdf-type": [
+    "schema:WarrantyPromise"
+  ],
+  "title": "WarrantyPromise",
+  "description": "A structured value representing the duration and scope of services that will be provided to a customer free of charge in case of a defect or malfunction of a product.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:WarrantyPromise"
+      ]
+    },
+    "durationOfWarranty": {
+      "title": "Duration Of Warranty",
+      "description": "The duration of the warranty promise. Common unitCode values are ANN for year, MON for months, or DAY for days.",
+      "type": "array",
+      "items": {
+        "$ref": "QuantitativeValue.schema.json"
+      }
+    },
+    "warrantyScope": {
+      "title": "Warranty Scope",
+      "description": "The scope of the warranty promise.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "WarrantyScope.schema.json"
+      }
+    }
+  }
+}

@@ -1,0 +1,263 @@
+{
+  "@context": [
+    "CreativeWork.schema.json",
+    {
+      "artEdition": {
+        "@id": "schema:artEdition",
+        "@container": "@set"
+      },
+      "artform": {
+        "@id": "schema:artform",
+        "@container": "@set"
+      },
+      "artist": {
+        "@id": "schema:artist",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "artMedium": {
+        "@id": "schema:artMedium",
+        "@container": "@set"
+      },
+      "artworkSurface": {
+        "@id": "schema:artworkSurface",
+        "@container": "@set"
+      },
+      "colorist": {
+        "@id": "schema:colorist",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "depth": {
+        "@id": "schema:depth",
+        "@container": "@set"
+      },
+      "height": {
+        "@id": "schema:height",
+        "@container": "@set"
+      },
+      "inker": {
+        "@id": "schema:inker",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "letterer": {
+        "@id": "schema:letterer",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "penciler": {
+        "@id": "schema:penciler",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "weight": {
+        "@id": "schema:weight",
+        "@container": "@set"
+      },
+      "width": {
+        "@id": "schema:width",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "CreativeWork.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "VisualArtwork.schema.json",
+  "x-oold-uuid": "7e0d6a58-c1fd-5bfe-8958-68e1fbd08e79",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/VisualArtwork",
+  "x-oold-instance-rdf-type": [
+    "schema:VisualArtwork"
+  ],
+  "title": "VisualArtwork",
+  "description": "A work of art that is primarily visual in character.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:VisualArtwork"
+      ]
+    },
+    "artEdition": {
+      "title": "Art Edition",
+      "description": "The number of copies when multiple copies of a piece of artwork are produced - e.g. for a limited edition of 20 prints, 'artEdition' refers to the total number of copies (in this example \"20\").",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Integer.schema.json"
+          },
+          {
+            "$ref": "Text.schema.json"
+          }
+        ]
+      }
+    },
+    "artform": {
+      "title": "Artform",
+      "description": "e.g. Painting, Drawing, Sculpture, Print, Photograph, Assemblage, Collage, etc.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Text.schema.json"
+          },
+          {
+            "$ref": "URL.schema.json"
+          }
+        ]
+      }
+    },
+    "artist": {
+      "title": "Artist",
+      "description": "The primary artist for a work\n    \tin a medium other than pencils or digital line art--for example, if the\n    \tprimary artwork is done in watercolors or digital paints.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Person.schema.json"
+      }
+    },
+    "artMedium": {
+      "title": "Art Medium",
+      "description": "The material used. (E.g. Oil, Watercolour, Acrylic, Linoprint, Marble, Cyanotype, Digital, Lithograph, DryPoint, Intaglio, Pastel, Woodcut, Pencil, Mixed Media, etc.)",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Text.schema.json"
+          },
+          {
+            "$ref": "URL.schema.json"
+          }
+        ]
+      }
+    },
+    "artworkSurface": {
+      "title": "Artwork Surface",
+      "description": "The supporting materials for the artwork, e.g. Canvas, Paper, Wood, Board, etc.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Text.schema.json"
+          },
+          {
+            "$ref": "URL.schema.json"
+          }
+        ]
+      }
+    },
+    "colorist": {
+      "title": "Colorist",
+      "description": "The individual who adds color to inked drawings.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Person.schema.json"
+      }
+    },
+    "depth": {
+      "title": "Depth",
+      "description": "The depth of the item.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Distance.schema.json"
+          },
+          {
+            "$ref": "QuantitativeValue.schema.json"
+          }
+        ]
+      }
+    },
+    "height": {
+      "title": "Height",
+      "description": "The height of the item.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Distance.schema.json"
+          },
+          {
+            "$ref": "QuantitativeValue.schema.json"
+          }
+        ]
+      }
+    },
+    "inker": {
+      "title": "Inker",
+      "description": "The individual who traces over the pencil drawings in ink after pencils are complete.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Person.schema.json"
+      }
+    },
+    "letterer": {
+      "title": "Letterer",
+      "description": "The individual who adds lettering, including speech balloons and sound effects, to artwork.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Person.schema.json"
+      }
+    },
+    "penciler": {
+      "title": "Penciler",
+      "description": "The individual who draws the primary narrative artwork.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Person.schema.json"
+      }
+    },
+    "weight": {
+      "title": "Weight",
+      "description": "The weight of the product or person.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Mass.schema.json"
+          },
+          {
+            "$ref": "QuantitativeValue.schema.json"
+          }
+        ]
+      }
+    },
+    "width": {
+      "title": "Width",
+      "description": "The width of the item.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Distance.schema.json"
+          },
+          {
+            "$ref": "QuantitativeValue.schema.json"
+          }
+        ]
+      }
+    }
+  }
+}

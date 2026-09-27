@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "WebPage.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "WebPage.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "CollectionPage.schema.json",
+  "x-oold-uuid": "ad55f780-4be7-527d-92ec-b67b69040de2",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/CollectionPage",
+  "x-oold-instance-rdf-type": [
+    "schema:CollectionPage"
+  ],
+  "title": "CollectionPage",
+  "description": "Web page type: Collection page.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:CollectionPage"
+      ]
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "@context": [
+    "MedicalEnumeration.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "MedicalEnumeration.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MedicalDevicePurpose.schema.json",
+  "x-oold-uuid": "5bb33e4c-70a4-5317-be61-e0327737b95b",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/MedicalDevicePurpose",
+  "x-oold-instance-rdf-type": [
+    "schema:MedicalDevicePurpose"
+  ],
+  "title": "MedicalDevicePurpose",
+  "description": "Categories of medical devices, organized by the purpose or intended use of the device.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:MedicalDevicePurpose"
+      ]
+    }
+  },
+  "$defs": {
+    "member": {
+      "title": "MedicalDevicePurpose member",
+      "description": "One of the 2 member instances of MedicalDevicePurpose.",
+      "type": "string",
+      "format": "iri-reference",
+      "enum": [
+        "schema:Diagnostic",
+        "schema:Therapeutic"
+      ],
+      "x-oold-ui-enum-titles": [
+        "Diagnostic",
+        "Therapeutic"
+      ]
+    }
+  }
+}

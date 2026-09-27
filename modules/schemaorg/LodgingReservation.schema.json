@@ -1,0 +1,152 @@
+{
+  "@context": [
+    "Reservation.schema.json",
+    {
+      "checkinTime": {
+        "@id": "schema:checkinTime",
+        "@container": "@set"
+      },
+      "checkoutTime": {
+        "@id": "schema:checkoutTime",
+        "@container": "@set"
+      },
+      "lodgingUnitDescription": {
+        "@id": "schema:lodgingUnitDescription",
+        "@container": "@set"
+      },
+      "lodgingUnitType": {
+        "@id": "schema:lodgingUnitType",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "lodgingUnitType_text": {
+        "@id": "schema:lodgingUnitType",
+        "@container": "@set"
+      },
+      "numAdults": {
+        "@id": "schema:numAdults",
+        "@container": "@set"
+      },
+      "numChildren": {
+        "@id": "schema:numChildren",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Reservation.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "LodgingReservation.schema.json",
+  "x-oold-uuid": "bef9fff2-95cc-5313-b5fc-a4d5f5d1b3a2",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/LodgingReservation",
+  "x-oold-instance-rdf-type": [
+    "schema:LodgingReservation"
+  ],
+  "title": "LodgingReservation",
+  "description": "A reservation for lodging at a hotel, motel, inn, etc.\\n\\nNote: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:LodgingReservation"
+      ]
+    },
+    "checkinTime": {
+      "title": "Checkin Time",
+      "description": "The earliest someone may check into a lodging establishment.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "DateTime.schema.json"
+          },
+          {
+            "$ref": "Time.schema.json"
+          }
+        ]
+      }
+    },
+    "checkoutTime": {
+      "title": "Checkout Time",
+      "description": "The latest someone may check out of a lodging establishment.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "DateTime.schema.json"
+          },
+          {
+            "$ref": "Time.schema.json"
+          }
+        ]
+      }
+    },
+    "lodgingUnitDescription": {
+      "title": "Lodging Unit Description",
+      "description": "A full description of the lodging unit.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "lodgingUnitType": {
+      "title": "Lodging Unit Type",
+      "description": "Textual description of the unit type (including suite vs. room, size of bed, etc.).",
+      "type": "array",
+      "items": {
+        "$ref": "QualitativeValue.schema.json#/$defs/member",
+        "x-oold-range": "QualitativeValue.schema.json"
+      }
+    },
+    "lodgingUnitType_text": {
+      "title": "Lodging Unit Type (text)",
+      "description": "Textual description of the unit type (including suite vs. room, size of bed, etc.).",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "numAdults": {
+      "title": "Num Adults",
+      "description": "The number of adults staying in the unit.",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: QuantitativeValue [value-type]: QuantitativeValue -> StructuredValue -> Intangible -> Thing",
+        "anyOf": [
+          {
+            "$ref": "Integer.schema.json"
+          },
+          {
+            "$ref": "QuantitativeValue.schema.json"
+          }
+        ]
+      }
+    },
+    "numChildren": {
+      "title": "Num Children",
+      "description": "The number of children staying in the unit.",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: QuantitativeValue [value-type]: QuantitativeValue -> StructuredValue -> Intangible -> Thing",
+        "anyOf": [
+          {
+            "$ref": "Integer.schema.json"
+          },
+          {
+            "$ref": "QuantitativeValue.schema.json"
+          }
+        ]
+      }
+    }
+  }
+}

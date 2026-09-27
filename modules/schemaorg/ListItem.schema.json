@@ -1,0 +1,100 @@
+{
+  "@context": [
+    "Intangible.schema.json",
+    {
+      "item": {
+        "@id": "schema:item",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "nextItem": {
+        "@id": "schema:nextItem",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "position": {
+        "@id": "schema:position",
+        "@container": "@set"
+      },
+      "previousItem": {
+        "@id": "schema:previousItem",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Intangible.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ListItem.schema.json",
+  "x-oold-uuid": "e4c02ac9-c1f1-55fa-aabf-9e8c5a7b9071",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/ListItem",
+  "x-oold-instance-rdf-type": [
+    "schema:ListItem"
+  ],
+  "title": "ListItem",
+  "description": "An list item, e.g. a step in a checklist or how-to description.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:ListItem"
+      ]
+    },
+    "item": {
+      "title": "Item",
+      "description": "An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists').",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Thing.schema.json"
+      }
+    },
+    "nextItem": {
+      "title": "Next Item",
+      "description": "A link to the ListItem that follows the current one.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "ListItem.schema.json"
+      }
+    },
+    "position": {
+      "title": "Position",
+      "description": "The position of an item in a series or sequence of items.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Integer.schema.json"
+          },
+          {
+            "$ref": "Text.schema.json"
+          }
+        ]
+      }
+    },
+    "previousItem": {
+      "title": "Previous Item",
+      "description": "A link to the ListItem that precedes the current one.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "ListItem.schema.json"
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "CssSelectorType.schema.json",
+  "x-oold-uuid": "eeb6a1b6-4825-5868-b15b-3b0f281b5990",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/CssSelectorType",
+  "x-oold-instance-rdf-type": [
+    "schema:CssSelectorType"
+  ],
+  "title": "CssSelectorType",
+  "description": "Text representing a CSS selector.",
+  "$ref": "Text.schema.json"
+}

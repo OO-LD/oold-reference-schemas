@@ -1,0 +1,8 @@
+{
+  "$schema": "ReserveAction.schema.json",
+  "@context": "ReserveAction.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:ReserveAction"
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Landform.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Landform.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Continent.schema.json",
+  "x-oold-uuid": "53075f3e-84d1-57b4-82fb-8891310479d7",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Continent",
+  "x-oold-instance-rdf-type": [
+    "schema:Continent"
+  ],
+  "title": "Continent",
+  "description": "One of the continents (for example, Europe or Africa).",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Continent"
+      ]
+    }
+  }
+}

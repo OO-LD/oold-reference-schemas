@@ -1,0 +1,92 @@
+{
+  "@context": [
+    "SportsOrganization.schema.json",
+    {
+      "athlete": {
+        "@id": "schema:athlete",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "coach": {
+        "@id": "schema:coach",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "gender": {
+        "@id": "schema:gender",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "gender_text": {
+        "@id": "schema:gender",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "SportsOrganization.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "SportsTeam.schema.json",
+  "x-oold-uuid": "bab827a1-4aa1-5376-9a14-8a2f65f2b45d",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/SportsTeam",
+  "x-oold-instance-rdf-type": [
+    "schema:SportsTeam"
+  ],
+  "title": "SportsTeam",
+  "description": "Organization: Sports team.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:SportsTeam"
+      ]
+    },
+    "athlete": {
+      "title": "Athlete",
+      "description": "A person that acts as performing member of a sports team; a player as opposed to a coach.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Person.schema.json"
+      }
+    },
+    "coach": {
+      "title": "Coach",
+      "description": "A person that acts in a coaching role for a sports team.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Person.schema.json"
+      }
+    },
+    "gender": {
+      "title": "Gender",
+      "description": "Gender of something, typically a [[Person]], but possibly also fictional characters, animals, etc. While https://schema.org/Male and https://schema.org/Female may be used, text strings are also acceptable for people who are not a binary gender. The [[gender]] property can also be used in an extended sense to cover e.g. the gender of sports teams. As with the gender of individuals, we do not try to enumerate all possibilities. A mixed-gender [[SportsTeam]] can be indicated with a text value of \"Mixed\".",
+      "type": "array",
+      "items": {
+        "$ref": "GenderType.schema.json#/$defs/member",
+        "x-oold-range": "GenderType.schema.json"
+      }
+    },
+    "gender_text": {
+      "title": "Gender (text)",
+      "description": "Gender of something, typically a [[Person]], but possibly also fictional characters, animals, etc. While https://schema.org/Male and https://schema.org/Female may be used, text strings are also acceptable for people who are not a binary gender. The [[gender]] property can also be used in an extended sense to cover e.g. the gender of sports teams. As with the gender of individuals, we do not try to enumerate all possibilities. A mixed-gender [[SportsTeam]] can be indicated with a text value of \"Mixed\".",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    }
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "@context": [
+    "Action.schema.json",
+    {
+      "startOffset": {
+        "@id": "schema:startOffset",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "startOffset_text": {
+        "@id": "schema:startOffset",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Action.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "SeekToAction.schema.json",
+  "x-oold-uuid": "dd659ba9-9a46-5a0e-b4e4-e0e4eaff613c",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/SeekToAction",
+  "x-oold-instance-rdf-type": [
+    "schema:SeekToAction"
+  ],
+  "title": "SeekToAction",
+  "description": "This is the [[Action]] of navigating to a specific [[startOffset]] timestamp within a [[VideoObject]], typically represented with a URL template structure.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:SeekToAction"
+      ]
+    },
+    "startOffset": {
+      "title": "Start Offset",
+      "description": "The start time of the clip expressed as the number of seconds from the beginning of the work.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "HyperTocEntry.schema.json"
+      }
+    },
+    "startOffset_text": {
+      "title": "Start Offset (text)",
+      "description": "The start time of the clip expressed as the number of seconds from the beginning of the work.",
+      "type": "array",
+      "items": {
+        "$ref": "Number.schema.json"
+      }
+    }
+  }
+}

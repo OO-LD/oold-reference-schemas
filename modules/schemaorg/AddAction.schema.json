@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "UpdateAction.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "UpdateAction.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "AddAction.schema.json",
+  "x-oold-uuid": "27b22bb7-00ff-596f-8bd1-945872cf82d2",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/AddAction",
+  "x-oold-instance-rdf-type": [
+    "schema:AddAction"
+  ],
+  "title": "AddAction",
+  "description": "The act of editing by adding an object to a collection.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:AddAction"
+      ]
+    }
+  }
+}

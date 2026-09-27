@@ -1,0 +1,8 @@
+{
+  "$schema": "AdultEntertainment.schema.json",
+  "@context": "AdultEntertainment.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:AdultEntertainment"
+  ]
+}

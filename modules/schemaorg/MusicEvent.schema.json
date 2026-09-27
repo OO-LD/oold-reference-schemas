@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Event.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Event.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MusicEvent.schema.json",
+  "x-oold-uuid": "a75b59bd-0a8a-54a2-ad58-206a775ab63d",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/MusicEvent",
+  "x-oold-instance-rdf-type": [
+    "schema:MusicEvent"
+  ],
+  "title": "MusicEvent",
+  "description": "Event type: Music event.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:MusicEvent"
+      ]
+    }
+  }
+}

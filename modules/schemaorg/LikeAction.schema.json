@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "ReactAction.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "ReactAction.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "LikeAction.schema.json",
+  "x-oold-uuid": "ab4d83f2-e3ca-517e-9c8b-8944bee403f1",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/LikeAction",
+  "x-oold-instance-rdf-type": [
+    "schema:LikeAction"
+  ],
+  "title": "LikeAction",
+  "description": "The act of expressing a positive sentiment about the object. An agent likes an object (a proposition, topic or theme) with participants.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:LikeAction"
+      ]
+    }
+  }
+}

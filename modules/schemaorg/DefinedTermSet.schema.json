@@ -1,0 +1,66 @@
+{
+  "@context": [
+    "CreativeWork.schema.json",
+    {
+      "about": {
+        "@id": "schema:about",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "hasDefinedTerm": {
+        "@id": "schema:hasDefinedTerm",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "CreativeWork.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "DefinedTermSet.schema.json",
+  "x-oold-uuid": "16fd184a-fd15-519d-acf7-2892f0a8bfff",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/DefinedTermSet",
+  "x-oold-instance-rdf-type": [
+    "schema:DefinedTermSet"
+  ],
+  "title": "DefinedTermSet",
+  "description": "A set of defined terms, for example a set of categories or a classification scheme, a glossary, dictionary or enumeration. Use the about property to specify what the term set is about.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:DefinedTermSet"
+      ]
+    },
+    "about": {
+      "title": "About",
+      "description": "The subject matter of an object.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Thing.schema.json"
+      }
+    },
+    "hasDefinedTerm": {
+      "title": "Has Defined Term",
+      "description": "A Defined Term contained in this term set.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "DefinedTerm.schema.json"
+      }
+    }
+  }
+}

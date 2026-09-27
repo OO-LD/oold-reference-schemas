@@ -1,0 +1,8 @@
+{
+  "$schema": "ShareAction.schema.json",
+  "@context": "ShareAction.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:ShareAction"
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "@context": [
+    "WebPage.schema.json",
+    {
+      "medicalAudience": {
+        "@id": "schema:medicalAudience",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "WebPage.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MedicalWebPage.schema.json",
+  "x-oold-uuid": "952df165-7f02-5451-8e32-3156cc297f1a",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/MedicalWebPage",
+  "x-oold-instance-rdf-type": [
+    "schema:MedicalWebPage"
+  ],
+  "title": "MedicalWebPage",
+  "description": "A web page that provides medical information.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:MedicalWebPage"
+      ]
+    },
+    "medicalAudience": {
+      "title": "Medical Audience",
+      "description": "Medical audience for page.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "MedicalAudience.schema.json",
+          "MedicalAudienceType.schema.json"
+        ]
+      }
+    }
+  }
+}

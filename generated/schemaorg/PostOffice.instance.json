@@ -1,0 +1,8 @@
+{
+  "$schema": "PostOffice.schema.json",
+  "@context": "PostOffice.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:PostOffice"
+  ]
+}

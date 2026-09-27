@@ -1,0 +1,39 @@
+{
+  "@context": [
+    "CivicStructure.schema.json",
+    "SportsActivityLocation.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "CivicStructure.schema.json"
+    },
+    {
+      "$ref": "SportsActivityLocation.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "StadiumOrArena.schema.json",
+  "x-oold-uuid": "9cbef53f-9a2d-54e4-beb8-94e431070f56",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/StadiumOrArena",
+  "x-oold-instance-rdf-type": [
+    "schema:StadiumOrArena"
+  ],
+  "title": "StadiumOrArena",
+  "description": "A stadium.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:StadiumOrArena"
+      ]
+    }
+  }
+}

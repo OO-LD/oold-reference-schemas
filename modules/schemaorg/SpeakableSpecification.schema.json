@@ -1,0 +1,60 @@
+{
+  "@context": [
+    "Intangible.schema.json",
+    {
+      "cssSelector": {
+        "@id": "schema:cssSelector",
+        "@container": "@set"
+      },
+      "xpath": {
+        "@id": "schema:xpath",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Intangible.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "SpeakableSpecification.schema.json",
+  "x-oold-uuid": "406d64ce-7e7c-5e7f-91be-bb7d6efd4cfc",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/SpeakableSpecification",
+  "x-oold-instance-rdf-type": [
+    "schema:SpeakableSpecification"
+  ],
+  "title": "SpeakableSpecification",
+  "description": "A SpeakableSpecification indicates (typically via [[xpath]] or [[cssSelector]]) sections of a document that are highlighted as particularly [[speakable]]. Instances of this type are expected to be used primarily as values of the [[speakable]] property.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:SpeakableSpecification"
+      ]
+    },
+    "cssSelector": {
+      "title": "Css Selector",
+      "description": "A CSS selector, e.g. of a [[SpeakableSpecification]] or [[WebPageElement]]. In the latter case, multiple matches within a page can constitute a single conceptual \"Web page element\".",
+      "type": "array",
+      "items": {
+        "$ref": "CssSelectorType.schema.json"
+      }
+    },
+    "xpath": {
+      "title": "Xpath",
+      "description": "An XPath, e.g. of a [[SpeakableSpecification]] or [[WebPageElement]]. In the latter case, multiple matches within a page can constitute a single conceptual \"Web page element\".",
+      "type": "array",
+      "items": {
+        "$ref": "XPathType.schema.json"
+      }
+    }
+  }
+}

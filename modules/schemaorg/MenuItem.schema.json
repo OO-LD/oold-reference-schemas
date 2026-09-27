@@ -1,0 +1,102 @@
+{
+  "@context": [
+    "Intangible.schema.json",
+    {
+      "menuAddOn": {
+        "@id": "schema:menuAddOn",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "nutrition": {
+        "@id": "schema:nutrition",
+        "@container": "@set"
+      },
+      "offers": {
+        "@id": "schema:offers",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "suitableForDiet": {
+        "@id": "schema:suitableForDiet",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Intangible.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MenuItem.schema.json",
+  "x-oold-uuid": "7bb40639-ca67-5f1a-b0a5-dcedd42e6daa",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/MenuItem",
+  "x-oold-instance-rdf-type": [
+    "schema:MenuItem"
+  ],
+  "title": "MenuItem",
+  "description": "A food or drink item listed in a menu or menu section.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:MenuItem"
+      ]
+    },
+    "menuAddOn": {
+      "title": "Menu Add On",
+      "description": "Additional menu item(s) such as a side dish of salad or side order of fries that can be added to this menu item. Additionally it can be a menu section containing allowed add-on menu items for this menu item.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "MenuItem.schema.json",
+          "MenuSection.schema.json"
+        ]
+      }
+    },
+    "nutrition": {
+      "title": "Nutrition",
+      "description": "Nutrition information about the recipe or menu item.",
+      "type": "array",
+      "items": {
+        "$ref": "NutritionInformation.schema.json"
+      }
+    },
+    "offers": {
+      "title": "Offers",
+      "description": "An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.\n      ",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "Demand.schema.json",
+          "Offer.schema.json"
+        ]
+      }
+    },
+    "suitableForDiet": {
+      "title": "Suitable For Diet",
+      "description": "Indicates a dietary restriction or guideline for which this recipe or menu item is suitable, e.g. diabetic, halal etc.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "Diet.schema.json",
+          "RestrictedDiet.schema.json"
+        ]
+      }
+    }
+  }
+}

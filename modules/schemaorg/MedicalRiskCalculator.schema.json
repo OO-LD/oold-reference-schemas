@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "MedicalRiskEstimator.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "MedicalRiskEstimator.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MedicalRiskCalculator.schema.json",
+  "x-oold-uuid": "97e82766-f6f3-5430-97cb-10141e0260ac",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/MedicalRiskCalculator",
+  "x-oold-instance-rdf-type": [
+    "schema:MedicalRiskCalculator"
+  ],
+  "title": "MedicalRiskCalculator",
+  "description": "A complex mathematical calculation requiring an online calculator, used to assess prognosis. Note: use the url property of Thing to record any URLs for online calculators.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:MedicalRiskCalculator"
+      ]
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Time.schema.json",
+  "x-oold-uuid": "5d0288fa-b6d3-5c2d-9d3c-5554b33fc1d9",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Time",
+  "x-oold-instance-rdf-type": [
+    "schema:Time"
+  ],
+  "title": "Time",
+  "description": "A point in time recurring on multiple days, in ISO 8601 time format.",
+  "type": "string",
+  "format": "time"
+}

@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Clip.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Clip.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "TVClip.schema.json",
+  "x-oold-uuid": "e2327789-9d6e-565b-977e-9913b0afeb4e",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/TVClip",
+  "x-oold-instance-rdf-type": [
+    "schema:TVClip"
+  ],
+  "title": "TVClip",
+  "description": "A short TV program or a segment/part of a TV program.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:TVClip"
+      ]
+    }
+  }
+}

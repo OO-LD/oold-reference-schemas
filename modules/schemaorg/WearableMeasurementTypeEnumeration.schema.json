@@ -1,0 +1,71 @@
+{
+  "@context": [
+    "MeasurementTypeEnumeration.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "MeasurementTypeEnumeration.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "WearableMeasurementTypeEnumeration.schema.json",
+  "x-oold-uuid": "36bbd0a7-2b6c-512b-bee0-033d55c17579",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/WearableMeasurementTypeEnumeration",
+  "x-oold-instance-rdf-type": [
+    "schema:WearableMeasurementTypeEnumeration"
+  ],
+  "title": "WearableMeasurementTypeEnumeration",
+  "description": "Enumerates common types of measurement for wearables products.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:WearableMeasurementTypeEnumeration"
+      ]
+    }
+  },
+  "$defs": {
+    "member": {
+      "title": "WearableMeasurementTypeEnumeration member",
+      "description": "One of the 12 member instances of WearableMeasurementTypeEnumeration.",
+      "type": "string",
+      "format": "iri-reference",
+      "enum": [
+        "schema:WearableMeasurementBack",
+        "schema:WearableMeasurementChestOrBust",
+        "schema:WearableMeasurementCollar",
+        "schema:WearableMeasurementCup",
+        "schema:WearableMeasurementHeight",
+        "schema:WearableMeasurementHips",
+        "schema:WearableMeasurementInseam",
+        "schema:WearableMeasurementLength",
+        "schema:WearableMeasurementOutsideLeg",
+        "schema:WearableMeasurementSleeve",
+        "schema:WearableMeasurementWaist",
+        "schema:WearableMeasurementWidth"
+      ],
+      "x-oold-ui-enum-titles": [
+        "WearableMeasurementBack",
+        "WearableMeasurementChestOrBust",
+        "WearableMeasurementCollar",
+        "WearableMeasurementCup",
+        "WearableMeasurementHeight",
+        "WearableMeasurementHips",
+        "WearableMeasurementInseam",
+        "WearableMeasurementLength",
+        "WearableMeasurementOutsideLeg",
+        "WearableMeasurementSleeve",
+        "WearableMeasurementWaist",
+        "WearableMeasurementWidth"
+      ]
+    }
+  }
+}

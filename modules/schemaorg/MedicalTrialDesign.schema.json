@@ -1,0 +1,65 @@
+{
+  "@context": [
+    "MedicalEnumeration.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "MedicalEnumeration.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MedicalTrialDesign.schema.json",
+  "x-oold-uuid": "db91d713-40d1-587a-b612-59f229ff59c6",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/MedicalTrialDesign",
+  "x-oold-instance-rdf-type": [
+    "schema:MedicalTrialDesign"
+  ],
+  "title": "MedicalTrialDesign",
+  "description": "Design models for medical trials. Enumerated type.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:MedicalTrialDesign"
+      ]
+    }
+  },
+  "$defs": {
+    "member": {
+      "title": "MedicalTrialDesign member",
+      "description": "One of the 9 member instances of MedicalTrialDesign.",
+      "type": "string",
+      "format": "iri-reference",
+      "enum": [
+        "schema:DoubleBlindedTrial",
+        "schema:InternationalTrial",
+        "schema:MultiCenterTrial",
+        "schema:OpenTrial",
+        "schema:PlaceboControlledTrial",
+        "schema:RandomizedTrial",
+        "schema:SingleBlindedTrial",
+        "schema:SingleCenterTrial",
+        "schema:TripleBlindedTrial"
+      ],
+      "x-oold-ui-enum-titles": [
+        "DoubleBlindedTrial",
+        "InternationalTrial",
+        "MultiCenterTrial",
+        "OpenTrial",
+        "PlaceboControlledTrial",
+        "RandomizedTrial",
+        "SingleBlindedTrial",
+        "SingleCenterTrial",
+        "TripleBlindedTrial"
+      ]
+    }
+  }
+}

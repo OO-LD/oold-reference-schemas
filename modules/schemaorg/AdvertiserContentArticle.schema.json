@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Article.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Article.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "AdvertiserContentArticle.schema.json",
+  "x-oold-uuid": "0bd32e2b-8e35-59fc-a77d-b3d150436ec0",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/AdvertiserContentArticle",
+  "x-oold-instance-rdf-type": [
+    "schema:AdvertiserContentArticle"
+  ],
+  "title": "AdvertiserContentArticle",
+  "description": "An [[Article]] that an external entity has paid to place or to produce to its specifications. Includes [advertorials](https://en.wikipedia.org/wiki/Advertorial), sponsored content, native advertising and other paid content.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:AdvertiserContentArticle"
+      ]
+    }
+  }
+}

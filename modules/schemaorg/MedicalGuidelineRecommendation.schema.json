@@ -1,0 +1,48 @@
+{
+  "@context": [
+    "MedicalGuideline.schema.json",
+    {
+      "recommendationStrength": {
+        "@id": "schema:recommendationStrength",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "MedicalGuideline.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MedicalGuidelineRecommendation.schema.json",
+  "x-oold-uuid": "3a0bb560-073a-55f0-8e3c-2e6288c41d1c",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/MedicalGuidelineRecommendation",
+  "x-oold-instance-rdf-type": [
+    "schema:MedicalGuidelineRecommendation"
+  ],
+  "title": "MedicalGuidelineRecommendation",
+  "description": "A guideline recommendation that is regarded as efficacious and where quality of the data supporting the recommendation is sound.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:MedicalGuidelineRecommendation"
+      ]
+    },
+    "recommendationStrength": {
+      "title": "Recommendation Strength",
+      "description": "Strength of the guideline's recommendation (e.g. 'class I').",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    }
+  }
+}

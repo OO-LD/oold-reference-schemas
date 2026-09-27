@@ -1,0 +1,59 @@
+{
+  "@context": [
+    "Enumeration.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Enumeration.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "PriceComponentTypeEnumeration.schema.json",
+  "x-oold-uuid": "1f65a9d3-1824-5f16-a5e5-dc434e172d98",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/PriceComponentTypeEnumeration",
+  "x-oold-instance-rdf-type": [
+    "schema:PriceComponentTypeEnumeration"
+  ],
+  "title": "PriceComponentTypeEnumeration",
+  "description": "Enumerates different price components that together make up the total price for an offered product.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:PriceComponentTypeEnumeration"
+      ]
+    }
+  },
+  "$defs": {
+    "member": {
+      "title": "PriceComponentTypeEnumeration member",
+      "description": "One of the 6 member instances of PriceComponentTypeEnumeration.",
+      "type": "string",
+      "format": "iri-reference",
+      "enum": [
+        "schema:ActivationFee",
+        "schema:CleaningFee",
+        "schema:DistanceFee",
+        "schema:Downpayment",
+        "schema:Installment",
+        "schema:Subscription"
+      ],
+      "x-oold-ui-enum-titles": [
+        "ActivationFee",
+        "CleaningFee",
+        "DistanceFee",
+        "Downpayment",
+        "Installment",
+        "Subscription"
+      ]
+    }
+  }
+}

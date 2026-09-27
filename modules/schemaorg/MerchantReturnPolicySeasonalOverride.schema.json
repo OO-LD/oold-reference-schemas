@@ -1,0 +1,184 @@
+{
+  "@context": [
+    "Intangible.schema.json",
+    {
+      "endDate": {
+        "@id": "schema:endDate",
+        "@container": "@set"
+      },
+      "merchantReturnDays": {
+        "@id": "schema:merchantReturnDays",
+        "@container": "@set"
+      },
+      "refundType": {
+        "@id": "schema:refundType",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "restockingFee": {
+        "@id": "schema:restockingFee",
+        "@container": "@set"
+      },
+      "returnFees": {
+        "@id": "schema:returnFees",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "returnMethod": {
+        "@id": "schema:returnMethod",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "returnPolicyCategory": {
+        "@id": "schema:returnPolicyCategory",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "returnShippingFeesAmount": {
+        "@id": "schema:returnShippingFeesAmount",
+        "@container": "@set"
+      },
+      "startDate": {
+        "@id": "schema:startDate",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Intangible.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MerchantReturnPolicySeasonalOverride.schema.json",
+  "x-oold-uuid": "df81592b-61ed-51dd-b681-7b6d09c2fad4",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/MerchantReturnPolicySeasonalOverride",
+  "x-oold-instance-rdf-type": [
+    "schema:MerchantReturnPolicySeasonalOverride"
+  ],
+  "title": "MerchantReturnPolicySeasonalOverride",
+  "description": "A seasonal override of a return policy, for example used for holidays.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:MerchantReturnPolicySeasonalOverride"
+      ]
+    },
+    "endDate": {
+      "title": "End Date",
+      "description": "The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Date.schema.json"
+          },
+          {
+            "$ref": "DateTime.schema.json"
+          }
+        ]
+      }
+    },
+    "merchantReturnDays": {
+      "title": "Merchant Return Days",
+      "description": "Specifies either a fixed return date or the number of days (from the delivery date) that a product can be returned. Used when the [[returnPolicyCategory]] property is specified as [[MerchantReturnFiniteReturnWindow]].",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Date.schema.json"
+          },
+          {
+            "$ref": "DateTime.schema.json"
+          },
+          {
+            "$ref": "Integer.schema.json"
+          }
+        ]
+      }
+    },
+    "refundType": {
+      "title": "Refund Type",
+      "description": "A refund type, from an enumerated list.",
+      "type": "array",
+      "items": {
+        "$ref": "RefundTypeEnumeration.schema.json#/$defs/member",
+        "x-oold-range": "RefundTypeEnumeration.schema.json"
+      }
+    },
+    "restockingFee": {
+      "title": "Restocking Fee",
+      "description": "Use [[MonetaryAmount]] to specify a fixed restocking fee for product returns, or use [[Number]] to specify a percentage of the product price paid by the customer.",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: MonetaryAmount [value-type]: MonetaryAmount -> StructuredValue -> Intangible -> Thing",
+        "anyOf": [
+          {
+            "$ref": "Number.schema.json"
+          },
+          {
+            "$ref": "MonetaryAmount.schema.json"
+          }
+        ]
+      }
+    },
+    "returnFees": {
+      "title": "Return Fees",
+      "description": "The type of return fees for purchased products (for any return reason).",
+      "type": "array",
+      "items": {
+        "$ref": "ReturnFeesEnumeration.schema.json#/$defs/member",
+        "x-oold-range": "ReturnFeesEnumeration.schema.json"
+      }
+    },
+    "returnMethod": {
+      "title": "Return Method",
+      "description": "The type of return method offered, specified from an enumeration.",
+      "type": "array",
+      "items": {
+        "$ref": "ReturnMethodEnumeration.schema.json#/$defs/member",
+        "x-oold-range": "ReturnMethodEnumeration.schema.json"
+      }
+    },
+    "returnPolicyCategory": {
+      "title": "Return Policy Category",
+      "description": "Specifies an applicable return policy (from an enumeration).",
+      "type": "array",
+      "items": {
+        "$ref": "MerchantReturnEnumeration.schema.json#/$defs/member",
+        "x-oold-range": "MerchantReturnEnumeration.schema.json"
+      }
+    },
+    "returnShippingFeesAmount": {
+      "title": "Return Shipping Fees Amount",
+      "description": "Amount of shipping costs for product returns (for any reason). Applicable when property [[returnFees]] equals [[ReturnShippingFees]].",
+      "type": "array",
+      "items": {
+        "$ref": "MonetaryAmount.schema.json"
+      }
+    },
+    "startDate": {
+      "title": "Start Date",
+      "description": "The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Date.schema.json"
+          },
+          {
+            "$ref": "DateTime.schema.json"
+          }
+        ]
+      }
+    }
+  }
+}

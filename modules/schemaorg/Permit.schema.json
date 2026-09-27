@@ -1,0 +1,141 @@
+{
+  "@context": [
+    "Intangible.schema.json",
+    {
+      "issuedBy": {
+        "@id": "schema:issuedBy",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "issuedThrough": {
+        "@id": "schema:issuedThrough",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "permitAudience": {
+        "@id": "schema:permitAudience",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "validFor": {
+        "@id": "schema:validFor",
+        "@type": "xsd:duration",
+        "@container": "@set"
+      },
+      "validFrom": {
+        "@id": "schema:validFrom",
+        "@container": "@set"
+      },
+      "validIn": {
+        "@id": "schema:validIn",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "validUntil": {
+        "@id": "schema:validUntil",
+        "@type": "xsd:date",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Intangible.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Permit.schema.json",
+  "x-oold-uuid": "aff49a08-3abd-564d-9a18-e07b3004d0bb",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Permit",
+  "x-oold-instance-rdf-type": [
+    "schema:Permit"
+  ],
+  "title": "Permit",
+  "description": "A permit issued by an organization, e.g. a parking pass.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Permit"
+      ]
+    },
+    "issuedBy": {
+      "title": "Issued By",
+      "description": "The organization issuing the item, for example a [[Permit]], [[Ticket]], or [[Certification]].",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Organization.schema.json"
+      }
+    },
+    "issuedThrough": {
+      "title": "Issued Through",
+      "description": "The service through which the permit was granted.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Service.schema.json"
+      }
+    },
+    "permitAudience": {
+      "title": "Permit Audience",
+      "description": "The target audience for this permit.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Audience.schema.json"
+      }
+    },
+    "validFor": {
+      "title": "Valid For",
+      "description": "The duration of validity of a permit or similar thing.",
+      "type": "array",
+      "items": {
+        "$ref": "Duration.schema.json"
+      }
+    },
+    "validFrom": {
+      "title": "Valid From",
+      "description": "The date when the item becomes valid.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Date.schema.json"
+          },
+          {
+            "$ref": "DateTime.schema.json"
+          }
+        ]
+      }
+    },
+    "validIn": {
+      "title": "Valid In",
+      "description": "The geographic area where the item is valid. Applies for example to a [[Permit]], a [[Certification]], or an [[EducationalOccupationalCredential]]. ",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "AdministrativeArea.schema.json"
+      }
+    },
+    "validUntil": {
+      "title": "Valid Until",
+      "description": "The date when the item is no longer valid.",
+      "type": "array",
+      "items": {
+        "$ref": "Date.schema.json"
+      }
+    }
+  }
+}

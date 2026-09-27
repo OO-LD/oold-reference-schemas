@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "EntertainmentBusiness.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "EntertainmentBusiness.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "AmusementPark.schema.json",
+  "x-oold-uuid": "46c1c26d-5a12-56c2-a887-7aa0ff7d853e",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/AmusementPark",
+  "x-oold-instance-rdf-type": [
+    "schema:AmusementPark"
+  ],
+  "title": "AmusementPark",
+  "description": "An amusement park.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:AmusementPark"
+      ]
+    }
+  }
+}

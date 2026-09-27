@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "ConsumeAction.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "ConsumeAction.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ViewAction.schema.json",
+  "x-oold-uuid": "79c833c5-5d65-5c5f-bd96-0469c8b77580",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/ViewAction",
+  "x-oold-instance-rdf-type": [
+    "schema:ViewAction"
+  ],
+  "title": "ViewAction",
+  "description": "The act of consuming static visual content.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:ViewAction"
+      ]
+    }
+  }
+}

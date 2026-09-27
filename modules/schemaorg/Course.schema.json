@@ -1,0 +1,266 @@
+{
+  "@context": [
+    "CreativeWork.schema.json",
+    "LearningResource.schema.json",
+    {
+      "availableLanguage": {
+        "@id": "schema:availableLanguage",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "availableLanguage_text": {
+        "@id": "schema:availableLanguage",
+        "@container": "@set"
+      },
+      "courseCode": {
+        "@id": "schema:courseCode",
+        "@container": "@set"
+      },
+      "coursePrerequisites": {
+        "@id": "schema:coursePrerequisites",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "coursePrerequisites_text": {
+        "@id": "schema:coursePrerequisites",
+        "@container": "@set"
+      },
+      "educationalCredentialAwarded": {
+        "@id": "schema:educationalCredentialAwarded",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "educationalCredentialAwarded_text": {
+        "@id": "schema:educationalCredentialAwarded",
+        "@container": "@set"
+      },
+      "financialAidEligible": {
+        "@id": "schema:financialAidEligible",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "financialAidEligible_text": {
+        "@id": "schema:financialAidEligible",
+        "@container": "@set"
+      },
+      "hasCourseInstance": {
+        "@id": "schema:hasCourseInstance",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "numberOfCredits": {
+        "@id": "schema:numberOfCredits",
+        "@container": "@set"
+      },
+      "occupationalCredentialAwarded": {
+        "@id": "schema:occupationalCredentialAwarded",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "occupationalCredentialAwarded_text": {
+        "@id": "schema:occupationalCredentialAwarded",
+        "@container": "@set"
+      },
+      "syllabusSections": {
+        "@id": "schema:syllabusSections",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "totalHistoricalEnrollment": {
+        "@id": "schema:totalHistoricalEnrollment",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "CreativeWork.schema.json"
+    },
+    {
+      "$ref": "LearningResource.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Course.schema.json",
+  "x-oold-uuid": "5accf5ec-b63c-5455-980a-6fd1aeed7b78",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Course",
+  "x-oold-instance-rdf-type": [
+    "schema:Course"
+  ],
+  "title": "Course",
+  "description": "A description of an educational course which may be offered as distinct instances which take place at different times or take place at different locations, or be offered through different media or modes of study. An educational course is a sequence of one or more educational events and/or creative works which aims to build knowledge, competence or ability of learners.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Course"
+      ]
+    },
+    "availableLanguage": {
+      "title": "Available Language",
+      "description": "A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]].",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Language.schema.json"
+      }
+    },
+    "availableLanguage_text": {
+      "title": "Available Language (text)",
+      "description": "A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]].",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "courseCode": {
+      "title": "Course Code",
+      "description": "The identifier for the [[Course]] used by the course [[provider]] (e.g. CS101 or 6.001).",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "coursePrerequisites": {
+      "title": "Course Prerequisites",
+      "description": "Requirements for taking the Course. May be completion of another [[Course]] or a textual description like \"permission of instructor\". Requirements may be a pre-requisite competency, referenced using [[AlignmentObject]].",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "AlignmentObject.schema.json",
+          "Course.schema.json"
+        ]
+      }
+    },
+    "coursePrerequisites_text": {
+      "title": "Course Prerequisites (text)",
+      "description": "Requirements for taking the Course. May be completion of another [[Course]] or a textual description like \"permission of instructor\". Requirements may be a pre-requisite competency, referenced using [[AlignmentObject]].",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "educationalCredentialAwarded": {
+      "title": "Educational Credential Awarded",
+      "description": "A description of the qualification, award, certificate, diploma or other educational credential awarded as a consequence of successful completion of this course or program.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "EducationalOccupationalCredential.schema.json"
+      }
+    },
+    "educationalCredentialAwarded_text": {
+      "title": "Educational Credential Awarded (text)",
+      "description": "A description of the qualification, award, certificate, diploma or other educational credential awarded as a consequence of successful completion of this course or program.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Text.schema.json"
+          },
+          {
+            "$ref": "URL.schema.json"
+          }
+        ]
+      }
+    },
+    "financialAidEligible": {
+      "title": "Financial Aid Eligible",
+      "description": "A financial aid type or program which students may use to pay for tuition or fees associated with the program.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "DefinedTerm.schema.json"
+      }
+    },
+    "financialAidEligible_text": {
+      "title": "Financial Aid Eligible (text)",
+      "description": "A financial aid type or program which students may use to pay for tuition or fees associated with the program.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "hasCourseInstance": {
+      "title": "Has Course Instance",
+      "description": "An offering of the course at a specific time and place or through specific media or mode of study or to a specific section of students.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "CourseInstance.schema.json"
+      }
+    },
+    "numberOfCredits": {
+      "title": "Number Of Credits",
+      "description": "The number of credits or units awarded by a Course or required to complete an EducationalOccupationalProgram.",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: StructuredValue [value-type]: StructuredValue -> Intangible -> Thing",
+        "anyOf": [
+          {
+            "$ref": "Integer.schema.json"
+          },
+          {
+            "$ref": "StructuredValue.schema.json"
+          }
+        ]
+      }
+    },
+    "occupationalCredentialAwarded": {
+      "title": "Occupational Credential Awarded",
+      "description": "A description of the qualification, award, certificate, diploma or other occupational credential awarded as a consequence of successful completion of this course or program.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "EducationalOccupationalCredential.schema.json"
+      }
+    },
+    "occupationalCredentialAwarded_text": {
+      "title": "Occupational Credential Awarded (text)",
+      "description": "A description of the qualification, award, certificate, diploma or other occupational credential awarded as a consequence of successful completion of this course or program.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Text.schema.json"
+          },
+          {
+            "$ref": "URL.schema.json"
+          }
+        ]
+      }
+    },
+    "syllabusSections": {
+      "title": "Syllabus Sections",
+      "description": "Indicates (typically several) Syllabus entities that lay out what each section of the overall course will cover.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Syllabus.schema.json"
+      }
+    },
+    "totalHistoricalEnrollment": {
+      "title": "Total Historical Enrollment",
+      "description": "The total number of students that have enrolled in the history of the course.",
+      "type": "array",
+      "items": {
+        "$ref": "Integer.schema.json"
+      }
+    }
+  }
+}

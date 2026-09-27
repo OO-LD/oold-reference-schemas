@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "CreativeWork.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "CreativeWork.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Manuscript.schema.json",
+  "x-oold-uuid": "249bffa9-2656-562b-ae6b-1b33ecf0884b",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Manuscript",
+  "x-oold-instance-rdf-type": [
+    "schema:Manuscript"
+  ],
+  "title": "Manuscript",
+  "description": "A book, document, or piece of music written by hand rather than typed or printed.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Manuscript"
+      ]
+    }
+  }
+}

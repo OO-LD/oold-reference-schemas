@@ -1,0 +1,8 @@
+{
+  "$schema": "FireStation.schema.json",
+  "@context": "FireStation.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:FireStation"
+  ]
+}

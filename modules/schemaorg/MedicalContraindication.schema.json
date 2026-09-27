@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "MedicalEntity.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "MedicalEntity.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MedicalContraindication.schema.json",
+  "x-oold-uuid": "baa7fffe-75c8-54b5-a5e7-e29cfea52e4c",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/MedicalContraindication",
+  "x-oold-instance-rdf-type": [
+    "schema:MedicalContraindication"
+  ],
+  "title": "MedicalContraindication",
+  "description": "A condition or factor that serves as a reason to withhold a certain medical therapy. Contraindications can be absolute (there are no reasonable circumstances for undertaking a course of action) or relative (the patient is at higher risk of complications, but these risks may be outweighed by other considerations or mitigated by other measures).",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:MedicalContraindication"
+      ]
+    }
+  }
+}

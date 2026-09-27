@@ -1,0 +1,51 @@
+{
+  "@context": [
+    "MedicalOrganization.schema.json",
+    {
+      "availableTest": {
+        "@id": "schema:availableTest",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "MedicalOrganization.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "DiagnosticLab.schema.json",
+  "x-oold-uuid": "fb4f4971-d3f4-5856-b57b-f37389522002",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/DiagnosticLab",
+  "x-oold-instance-rdf-type": [
+    "schema:DiagnosticLab"
+  ],
+  "title": "DiagnosticLab",
+  "description": "A medical laboratory that offers on-site or off-site diagnostic services.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:DiagnosticLab"
+      ]
+    },
+    "availableTest": {
+      "title": "Available Test",
+      "description": "A diagnostic test or procedure offered by this lab.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "MedicalTest.schema.json"
+      }
+    }
+  }
+}

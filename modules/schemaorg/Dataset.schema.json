@@ -1,0 +1,190 @@
+{
+  "@context": [
+    "CreativeWork.schema.json",
+    {
+      "distribution": {
+        "@id": "schema:distribution",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "includedInDataCatalog": {
+        "@id": "schema:includedInDataCatalog",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "issn": {
+        "@id": "schema:issn",
+        "@container": "@set"
+      },
+      "measurementMethod": {
+        "@id": "schema:measurementMethod",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "measurementMethod_text": {
+        "@id": "schema:measurementMethod",
+        "@container": "@set"
+      },
+      "measurementTechnique": {
+        "@id": "schema:measurementTechnique",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "measurementTechnique_text": {
+        "@id": "schema:measurementTechnique",
+        "@container": "@set"
+      },
+      "variableMeasured": {
+        "@id": "schema:variableMeasured",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "variableMeasured_text": {
+        "@id": "schema:variableMeasured",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "CreativeWork.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Dataset.schema.json",
+  "x-oold-uuid": "771d8edd-38c1-59c2-9c59-9b44ed8ebc78",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Dataset",
+  "x-oold-instance-rdf-type": [
+    "schema:Dataset"
+  ],
+  "title": "Dataset",
+  "description": "A body of structured information describing some topic(s) of interest.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Dataset"
+      ]
+    },
+    "distribution": {
+      "title": "Distribution",
+      "description": "A downloadable form of this dataset, at a specific location, in a specific format. This property can be repeated if different variations are available. There is no expectation that different downloadable distributions must contain exactly equivalent information (see also [DCAT](https://www.w3.org/TR/vocab-dcat-3/#Class:Distribution) on this point). Different distributions might include or exclude different subsets of the entire dataset, for example.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "DataDownload.schema.json"
+      }
+    },
+    "includedInDataCatalog": {
+      "title": "Included In Data Catalog",
+      "description": "A data catalog which contains this dataset.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "DataCatalog.schema.json"
+      }
+    },
+    "issn": {
+      "title": "Issn",
+      "description": "The International Standard Serial Number (ISSN) that identifies this serial publication. You can repeat this property to identify different formats of, or the linking ISSN (ISSN-L) for, this serial publication.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "measurementMethod": {
+      "title": "Measurement Method",
+      "description": "A subproperty of [[measurementTechnique]] that can be used for specifying specific methods, in particular via [[MeasurementMethodEnum]].",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "DefinedTerm.schema.json",
+          "MeasurementMethodEnum.schema.json"
+        ]
+      }
+    },
+    "measurementMethod_text": {
+      "title": "Measurement Method (text)",
+      "description": "A subproperty of [[measurementTechnique]] that can be used for specifying specific methods, in particular via [[MeasurementMethodEnum]].",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Text.schema.json"
+          },
+          {
+            "$ref": "URL.schema.json"
+          }
+        ]
+      }
+    },
+    "measurementTechnique": {
+      "title": "Measurement Technique",
+      "description": "A technique, method or technology used in an [[Observation]], [[StatisticalVariable]] or [[Dataset]] (or [[DataDownload]], [[DataCatalog]]), corresponding to the method used for measuring the corresponding variable(s) (for datasets, described using [[variableMeasured]]; for [[Observation]], a [[StatisticalVariable]]). Often but not necessarily each [[variableMeasured]] will have an explicit representation as (or mapping to) an property such as those defined in Schema.org, or other RDF vocabularies and \"knowledge graphs\". In that case the subproperty of [[variableMeasured]] called [[measuredProperty]] is applicable.\n    \nThe [[measurementTechnique]] property helps when extra clarification is needed about how a [[measuredProperty]] was measured. This is oriented towards scientific and scholarly dataset publication but may have broader applicability; it is not intended as a full representation of measurement, but can often serve as a high level summary for dataset discovery. \n\nFor example, if [[variableMeasured]] is: molecule concentration, [[measurementTechnique]] could be: \"mass spectrometry\" or \"nmr spectroscopy\" or \"colorimetry\" or \"immunofluorescence\". If the [[variableMeasured]] is \"depression rating\", the [[measurementTechnique]] could be \"Zung Scale\" or \"HAM-D\" or \"Beck Depression Inventory\". \n\nIf there are several [[variableMeasured]] properties recorded for some given data object, use a [[PropertyValue]] for each [[variableMeasured]] and attach the corresponding [[measurementTechnique]]. The value can also be from an enumeration, organized as a [[MeasurementMethodEnum]].",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "DefinedTerm.schema.json",
+          "MeasurementMethodEnum.schema.json"
+        ]
+      }
+    },
+    "measurementTechnique_text": {
+      "title": "Measurement Technique (text)",
+      "description": "A technique, method or technology used in an [[Observation]], [[StatisticalVariable]] or [[Dataset]] (or [[DataDownload]], [[DataCatalog]]), corresponding to the method used for measuring the corresponding variable(s) (for datasets, described using [[variableMeasured]]; for [[Observation]], a [[StatisticalVariable]]). Often but not necessarily each [[variableMeasured]] will have an explicit representation as (or mapping to) an property such as those defined in Schema.org, or other RDF vocabularies and \"knowledge graphs\". In that case the subproperty of [[variableMeasured]] called [[measuredProperty]] is applicable.\n    \nThe [[measurementTechnique]] property helps when extra clarification is needed about how a [[measuredProperty]] was measured. This is oriented towards scientific and scholarly dataset publication but may have broader applicability; it is not intended as a full representation of measurement, but can often serve as a high level summary for dataset discovery. \n\nFor example, if [[variableMeasured]] is: molecule concentration, [[measurementTechnique]] could be: \"mass spectrometry\" or \"nmr spectroscopy\" or \"colorimetry\" or \"immunofluorescence\". If the [[variableMeasured]] is \"depression rating\", the [[measurementTechnique]] could be \"Zung Scale\" or \"HAM-D\" or \"Beck Depression Inventory\". \n\nIf there are several [[variableMeasured]] properties recorded for some given data object, use a [[PropertyValue]] for each [[variableMeasured]] and attach the corresponding [[measurementTechnique]]. The value can also be from an enumeration, organized as a [[MeasurementMethodEnum]].",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Text.schema.json"
+          },
+          {
+            "$ref": "URL.schema.json"
+          }
+        ]
+      }
+    },
+    "variableMeasured": {
+      "title": "Variable Measured",
+      "description": "The variableMeasured property can indicate (repeated as necessary) the  variables that are measured in some dataset, either described as text or as pairs of identifier and description using PropertyValue, or more explicitly as a [[StatisticalVariable]].",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: PropertyValue [value-type]: PropertyValue -> StructuredValue -> Intangible -> Thing; Property [entity]: Property -> Intangible -> Thing; StatisticalVariable [entity]: StatisticalVariable -> ConstraintNode -> Intangible -> Thing",
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "iri-reference",
+            "x-oold-range": [
+              "Property.schema.json",
+              "StatisticalVariable.schema.json"
+            ]
+          },
+          {
+            "$ref": "PropertyValue.schema.json"
+          }
+        ]
+      }
+    },
+    "variableMeasured_text": {
+      "title": "Variable Measured (text)",
+      "description": "The variableMeasured property can indicate (repeated as necessary) the  variables that are measured in some dataset, either described as text or as pairs of identifier and description using PropertyValue, or more explicitly as a [[StatisticalVariable]].",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    }
+  }
+}

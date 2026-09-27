@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "AutomotiveBusiness.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "AutomotiveBusiness.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "AutoRepair.schema.json",
+  "x-oold-uuid": "3990950a-f080-56fc-ae96-7aaede5831ff",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/AutoRepair",
+  "x-oold-instance-rdf-type": [
+    "schema:AutoRepair"
+  ],
+  "title": "AutoRepair",
+  "description": "Car repair business.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:AutoRepair"
+      ]
+    }
+  }
+}

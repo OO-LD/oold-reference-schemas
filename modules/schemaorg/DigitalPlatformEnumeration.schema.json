@@ -1,0 +1,57 @@
+{
+  "@context": [
+    "Enumeration.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Enumeration.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "DigitalPlatformEnumeration.schema.json",
+  "x-oold-uuid": "98d8814a-b262-5732-acf9-3e8916f74483",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/DigitalPlatformEnumeration",
+  "x-oold-instance-rdf-type": [
+    "schema:DigitalPlatformEnumeration"
+  ],
+  "title": "DigitalPlatformEnumeration",
+  "description": "Enumerates some common technology platforms, for use with properties such as [[actionPlatform]]. It is not supposed to be comprehensive - when a suitable code is not enumerated here, textual or URL values can be used instead. These codes are at a fairly high level and do not deal with versioning and other nuance. Additional codes can be suggested [in github](https://github.com/schemaorg/schemaorg/issues/3057). ",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:DigitalPlatformEnumeration"
+      ]
+    }
+  },
+  "$defs": {
+    "member": {
+      "title": "DigitalPlatformEnumeration member",
+      "description": "One of the 5 member instances of DigitalPlatformEnumeration.",
+      "type": "string",
+      "format": "iri-reference",
+      "enum": [
+        "schema:AndroidPlatform",
+        "schema:DesktopWebPlatform",
+        "schema:GenericWebPlatform",
+        "schema:IOSPlatform",
+        "schema:MobileWebPlatform"
+      ],
+      "x-oold-ui-enum-titles": [
+        "AndroidPlatform",
+        "DesktopWebPlatform",
+        "GenericWebPlatform",
+        "IOSPlatform",
+        "MobileWebPlatform"
+      ]
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "$schema": "DanceGroup.schema.json",
+  "@context": "DanceGroup.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:DanceGroup"
+  ]
+}

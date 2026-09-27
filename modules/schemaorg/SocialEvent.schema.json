@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Event.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Event.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "SocialEvent.schema.json",
+  "x-oold-uuid": "b29368a1-ac99-5228-9d2b-39f52c3f18ac",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/SocialEvent",
+  "x-oold-instance-rdf-type": [
+    "schema:SocialEvent"
+  ],
+  "title": "SocialEvent",
+  "description": "Event type: Social event.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:SocialEvent"
+      ]
+    }
+  }
+}

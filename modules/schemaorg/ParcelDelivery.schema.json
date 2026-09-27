@@ -1,0 +1,200 @@
+{
+  "@context": [
+    "Intangible.schema.json",
+    {
+      "deliveryAddress": {
+        "@id": "schema:deliveryAddress",
+        "@container": "@set"
+      },
+      "deliveryStatus": {
+        "@id": "schema:deliveryStatus",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "expectedArrivalFrom": {
+        "@id": "schema:expectedArrivalFrom",
+        "@container": "@set"
+      },
+      "expectedArrivalUntil": {
+        "@id": "schema:expectedArrivalUntil",
+        "@container": "@set"
+      },
+      "hasDeliveryMethod": {
+        "@id": "schema:hasDeliveryMethod",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "itemShipped": {
+        "@id": "schema:itemShipped",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "originAddress": {
+        "@id": "schema:originAddress",
+        "@container": "@set"
+      },
+      "partOfOrder": {
+        "@id": "schema:partOfOrder",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "provider": {
+        "@id": "schema:provider",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "trackingNumber": {
+        "@id": "schema:trackingNumber",
+        "@container": "@set"
+      },
+      "trackingUrl": {
+        "@id": "schema:trackingUrl",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Intangible.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ParcelDelivery.schema.json",
+  "x-oold-uuid": "6b8a00bf-3d7e-5c71-b388-496355ac8edf",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/ParcelDelivery",
+  "x-oold-instance-rdf-type": [
+    "schema:ParcelDelivery"
+  ],
+  "title": "ParcelDelivery",
+  "description": "The delivery of a parcel either via the postal service or a commercial service.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:ParcelDelivery"
+      ]
+    },
+    "deliveryAddress": {
+      "title": "Delivery Address",
+      "description": "Destination address.",
+      "type": "array",
+      "items": {
+        "$ref": "PostalAddress.schema.json"
+      }
+    },
+    "deliveryStatus": {
+      "title": "Delivery Status",
+      "description": "New entry added as the package passes through each leg of its journey (from shipment to final delivery).",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "DeliveryEvent.schema.json"
+      }
+    },
+    "expectedArrivalFrom": {
+      "title": "Expected Arrival From",
+      "description": "The earliest date the package may arrive.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Date.schema.json"
+          },
+          {
+            "$ref": "DateTime.schema.json"
+          }
+        ]
+      }
+    },
+    "expectedArrivalUntil": {
+      "title": "Expected Arrival Until",
+      "description": "The latest date the package may arrive.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Date.schema.json"
+          },
+          {
+            "$ref": "DateTime.schema.json"
+          }
+        ]
+      }
+    },
+    "hasDeliveryMethod": {
+      "title": "Has Delivery Method",
+      "description": "Method used for delivery or shipping.",
+      "type": "array",
+      "items": {
+        "$ref": "DeliveryMethod.schema.json#/$defs/member",
+        "x-oold-range": "DeliveryMethod.schema.json"
+      }
+    },
+    "itemShipped": {
+      "title": "Item Shipped",
+      "description": "Item(s) being shipped.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Product.schema.json"
+      }
+    },
+    "originAddress": {
+      "title": "Origin Address",
+      "description": "Shipper's address.",
+      "type": "array",
+      "items": {
+        "$ref": "PostalAddress.schema.json"
+      }
+    },
+    "partOfOrder": {
+      "title": "Part Of Order",
+      "description": "The overall order the items in this delivery were included in.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Order.schema.json"
+      }
+    },
+    "provider": {
+      "title": "Provider",
+      "description": "The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "Organization.schema.json",
+          "Person.schema.json"
+        ]
+      }
+    },
+    "trackingNumber": {
+      "title": "Tracking Number",
+      "description": "Shipper tracking number.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "trackingUrl": {
+      "title": "Tracking Url",
+      "description": "Tracking url for the parcel delivery.",
+      "type": "array",
+      "items": {
+        "$ref": "URL.schema.json"
+      }
+    }
+  }
+}

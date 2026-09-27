@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "ItemList.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "ItemList.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "BreadcrumbList.schema.json",
+  "x-oold-uuid": "a51fe62d-652c-50ed-9f09-18a3785156e6",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/BreadcrumbList",
+  "x-oold-instance-rdf-type": [
+    "schema:BreadcrumbList"
+  ],
+  "title": "BreadcrumbList",
+  "description": "A BreadcrumbList is an ItemList consisting of a chain of linked Web pages, typically described using at least their URL and their name, and typically ending with the current page.\\n\\nThe [[position]] property is used to reconstruct the order of the items in a BreadcrumbList. The convention is that a breadcrumb list has an [[itemListOrder]] of [[ItemListOrderAscending]] (lower values listed first), and that the first items in this list correspond to the \"top\" or beginning of the breadcrumb trail, e.g. with a site or section homepage. The specific values of 'position' are not assigned meaning for a BreadcrumbList, but they should be integers, e.g. beginning with '1' for the first item in the list.\n      ",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:BreadcrumbList"
+      ]
+    }
+  }
+}

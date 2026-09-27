@@ -1,0 +1,8 @@
+{
+  "$schema": "Movie.schema.json",
+  "@context": "Movie.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:Movie"
+  ]
+}

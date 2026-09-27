@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "CreativeWork.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "CreativeWork.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Statement.schema.json",
+  "x-oold-uuid": "ceed98fc-bba5-5c62-82dc-8e28b071399e",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Statement",
+  "x-oold-instance-rdf-type": [
+    "schema:Statement"
+  ],
+  "title": "Statement",
+  "description": "A statement about something, for example a fun or interesting fact. If known, the main entity this statement is about can be indicated using mainEntity. For more formal claims (e.g. in Fact Checking), consider using [[Claim]] instead. Use the [[text]] property to capture the text of the statement.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Statement"
+      ]
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "$schema": "DigitalPlatformEnumeration.schema.json",
+  "@context": "DigitalPlatformEnumeration.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:DigitalPlatformEnumeration"
+  ]
+}

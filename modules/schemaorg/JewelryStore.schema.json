@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Store.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Store.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "JewelryStore.schema.json",
+  "x-oold-uuid": "36f676e2-7d56-5deb-ac2e-33aa79a57ac2",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/JewelryStore",
+  "x-oold-instance-rdf-type": [
+    "schema:JewelryStore"
+  ],
+  "title": "JewelryStore",
+  "description": "A jewelry store.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:JewelryStore"
+      ]
+    }
+  }
+}

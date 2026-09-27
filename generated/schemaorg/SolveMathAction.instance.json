@@ -1,0 +1,8 @@
+{
+  "$schema": "SolveMathAction.schema.json",
+  "@context": "SolveMathAction.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:SolveMathAction"
+  ]
+}

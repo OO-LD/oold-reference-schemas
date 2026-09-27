@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "SocialMediaPosting.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "SocialMediaPosting.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "DiscussionForumPosting.schema.json",
+  "x-oold-uuid": "c6f3f1ca-efed-5ac0-8d50-59307d58abd0",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/DiscussionForumPosting",
+  "x-oold-instance-rdf-type": [
+    "schema:DiscussionForumPosting"
+  ],
+  "title": "DiscussionForumPosting",
+  "description": "A posting to a discussion forum.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:DiscussionForumPosting"
+      ]
+    }
+  }
+}

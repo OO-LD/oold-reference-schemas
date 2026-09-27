@@ -1,0 +1,8 @@
+{
+  "$schema": "Intangible.schema.json",
+  "@context": "Intangible.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:Intangible"
+  ]
+}

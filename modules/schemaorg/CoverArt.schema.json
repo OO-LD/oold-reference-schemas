@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "VisualArtwork.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "VisualArtwork.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "CoverArt.schema.json",
+  "x-oold-uuid": "8c45acbd-c9cc-592a-a7bc-320133b37f88",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/CoverArt",
+  "x-oold-instance-rdf-type": [
+    "schema:CoverArt"
+  ],
+  "title": "CoverArt",
+  "description": "The artwork on the outer surface of a CreativeWork.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:CoverArt"
+      ]
+    }
+  }
+}

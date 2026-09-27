@@ -1,0 +1,8 @@
+{
+  "$schema": "GeneralContractor.schema.json",
+  "@context": "GeneralContractor.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:GeneralContractor"
+  ]
+}

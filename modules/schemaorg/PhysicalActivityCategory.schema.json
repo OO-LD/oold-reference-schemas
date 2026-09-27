@@ -1,0 +1,61 @@
+{
+  "@context": [
+    "Enumeration.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Enumeration.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "PhysicalActivityCategory.schema.json",
+  "x-oold-uuid": "7382681b-5b4c-5165-abba-7424857fc96d",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/PhysicalActivityCategory",
+  "x-oold-instance-rdf-type": [
+    "schema:PhysicalActivityCategory"
+  ],
+  "title": "PhysicalActivityCategory",
+  "description": "Categories of physical activity, organized by physiologic classification.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:PhysicalActivityCategory"
+      ]
+    }
+  },
+  "$defs": {
+    "member": {
+      "title": "PhysicalActivityCategory member",
+      "description": "One of the 7 member instances of PhysicalActivityCategory.",
+      "type": "string",
+      "format": "iri-reference",
+      "enum": [
+        "schema:AerobicActivity",
+        "schema:AnaerobicActivity",
+        "schema:Balance",
+        "schema:Flexibility",
+        "schema:LeisureTimeActivity",
+        "schema:OccupationalActivity",
+        "schema:StrengthTraining"
+      ],
+      "x-oold-ui-enum-titles": [
+        "AerobicActivity",
+        "AnaerobicActivity",
+        "Balance",
+        "Flexibility",
+        "LeisureTimeActivity",
+        "OccupationalActivity",
+        "StrengthTraining"
+      ]
+    }
+  }
+}

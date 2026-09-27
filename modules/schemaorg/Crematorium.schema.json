@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "CivicStructure.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "CivicStructure.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Crematorium.schema.json",
+  "x-oold-uuid": "b2d6906d-70c3-5b10-a557-1157bd3041df",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Crematorium",
+  "x-oold-instance-rdf-type": [
+    "schema:Crematorium"
+  ],
+  "title": "Crematorium",
+  "description": "A crematorium.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Crematorium"
+      ]
+    }
+  }
+}

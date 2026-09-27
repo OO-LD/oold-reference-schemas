@@ -1,0 +1,8 @@
+{
+  "$schema": "ReplaceAction.schema.json",
+  "@context": "ReplaceAction.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:ReplaceAction"
+  ]
+}

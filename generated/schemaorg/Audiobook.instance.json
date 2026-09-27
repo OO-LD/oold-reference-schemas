@@ -1,0 +1,8 @@
+{
+  "$schema": "Audiobook.schema.json",
+  "@context": "Audiobook.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:Audiobook"
+  ]
+}

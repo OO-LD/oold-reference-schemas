@@ -1,0 +1,55 @@
+{
+  "@context": [
+    "Enumeration.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Enumeration.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "TierBenefitEnumeration.schema.json",
+  "x-oold-uuid": "4741a88d-610e-592d-8ce3-8d570a363ba9",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/TierBenefitEnumeration",
+  "x-oold-instance-rdf-type": [
+    "schema:TierBenefitEnumeration"
+  ],
+  "title": "TierBenefitEnumeration",
+  "description": "An enumeration of possible benefits as part of a loyalty (members) program.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:TierBenefitEnumeration"
+      ]
+    }
+  },
+  "$defs": {
+    "member": {
+      "title": "TierBenefitEnumeration member",
+      "description": "One of the 4 member instances of TierBenefitEnumeration.",
+      "type": "string",
+      "format": "iri-reference",
+      "enum": [
+        "schema:TierBenefitLoyaltyPoints",
+        "schema:TierBenefitLoyaltyPrice",
+        "schema:TierBenefitLoyaltyReturns",
+        "schema:TierBenefitLoyaltyShipping"
+      ],
+      "x-oold-ui-enum-titles": [
+        "TierBenefitLoyaltyPoints",
+        "TierBenefitLoyaltyPrice",
+        "TierBenefitLoyaltyReturns",
+        "TierBenefitLoyaltyShipping"
+      ]
+    }
+  }
+}

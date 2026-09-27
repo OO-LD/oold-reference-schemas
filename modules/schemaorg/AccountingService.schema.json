@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "FinancialService.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "FinancialService.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "AccountingService.schema.json",
+  "x-oold-uuid": "d6f0fdef-f4ca-5210-90b3-9a39e7bf04ae",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/AccountingService",
+  "x-oold-instance-rdf-type": [
+    "schema:AccountingService"
+  ],
+  "title": "AccountingService",
+  "description": "Accountancy business.\\n\\nAs a [[LocalBusiness]] it can be described as a [[provider]] of one or more [[Service]]\\(s).\n      ",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:AccountingService"
+      ]
+    }
+  }
+}

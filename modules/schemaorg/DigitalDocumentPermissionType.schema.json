@@ -1,0 +1,53 @@
+{
+  "@context": [
+    "Enumeration.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Enumeration.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "DigitalDocumentPermissionType.schema.json",
+  "x-oold-uuid": "90987bcc-4f9a-5f15-9dcd-afc642708b85",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/DigitalDocumentPermissionType",
+  "x-oold-instance-rdf-type": [
+    "schema:DigitalDocumentPermissionType"
+  ],
+  "title": "DigitalDocumentPermissionType",
+  "description": "A type of permission which can be granted for accessing a digital document.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:DigitalDocumentPermissionType"
+      ]
+    }
+  },
+  "$defs": {
+    "member": {
+      "title": "DigitalDocumentPermissionType member",
+      "description": "One of the 3 member instances of DigitalDocumentPermissionType.",
+      "type": "string",
+      "format": "iri-reference",
+      "enum": [
+        "schema:CommentPermission",
+        "schema:ReadPermission",
+        "schema:WritePermission"
+      ],
+      "x-oold-ui-enum-titles": [
+        "CommentPermission",
+        "ReadPermission",
+        "WritePermission"
+      ]
+    }
+  }
+}

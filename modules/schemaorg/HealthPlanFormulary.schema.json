@@ -1,0 +1,87 @@
+{
+  "@context": [
+    "Intangible.schema.json",
+    {
+      "healthPlanCostSharing": {
+        "@id": "schema:healthPlanCostSharing",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "healthPlanCostSharing_text": {
+        "@id": "schema:healthPlanCostSharing",
+        "@container": "@set"
+      },
+      "healthPlanDrugTier": {
+        "@id": "schema:healthPlanDrugTier",
+        "@container": "@set"
+      },
+      "offersPrescriptionByMail": {
+        "@id": "schema:offersPrescriptionByMail",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Intangible.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "HealthPlanFormulary.schema.json",
+  "x-oold-uuid": "a39bf198-005f-53e6-aca7-db2180e267d5",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/HealthPlanFormulary",
+  "x-oold-instance-rdf-type": [
+    "schema:HealthPlanFormulary"
+  ],
+  "title": "HealthPlanFormulary",
+  "description": "For a given health insurance plan, the specification for costs and coverage of prescription drugs.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:HealthPlanFormulary"
+      ]
+    },
+    "healthPlanCostSharing": {
+      "title": "Health Plan Cost Sharing",
+      "description": "The costs to the patient for services under this network or formulary.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "HealthPlanCostSharingSpecification.schema.json"
+      }
+    },
+    "healthPlanCostSharing_text": {
+      "title": "Health Plan Cost Sharing (text)",
+      "description": "The costs to the patient for services under this network or formulary.",
+      "type": "array",
+      "items": {
+        "$ref": "Boolean.schema.json"
+      }
+    },
+    "healthPlanDrugTier": {
+      "title": "Health Plan Drug Tier",
+      "description": "The tier(s) of drugs offered by this formulary or insurance plan.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "offersPrescriptionByMail": {
+      "title": "Offers Prescription By Mail",
+      "description": "Whether prescriptions can be delivered by mail.",
+      "type": "array",
+      "items": {
+        "$ref": "Boolean.schema.json"
+      }
+    }
+  }
+}

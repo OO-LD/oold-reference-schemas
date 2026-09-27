@@ -1,0 +1,8 @@
+{
+  "$schema": "MedicalRiskFactor.schema.json",
+  "@context": "MedicalRiskFactor.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:MedicalRiskFactor"
+  ]
+}

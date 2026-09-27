@@ -1,0 +1,69 @@
+{
+  "@context": [
+    "Enumeration.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Enumeration.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "EnergyEfficiencyEnumeration.schema.json",
+  "x-oold-uuid": "0eebdcdd-2253-5b3e-ae9e-3d712d3096c0",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/EnergyEfficiencyEnumeration",
+  "x-oold-instance-rdf-type": [
+    "schema:EnergyEfficiencyEnumeration"
+  ],
+  "title": "EnergyEfficiencyEnumeration",
+  "description": "Enumerates energy efficiency levels (also known as \"classes\" or \"ratings\") and certifications that are part of several international energy efficiency standards.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:EnergyEfficiencyEnumeration"
+      ]
+    }
+  },
+  "$defs": {
+    "member": {
+      "title": "EnergyEfficiencyEnumeration member",
+      "description": "One of the 11 member instances of EnergyEfficiencyEnumeration.",
+      "type": "string",
+      "format": "iri-reference",
+      "enum": [
+        "schema:EUEnergyEfficiencyCategoryA",
+        "schema:EUEnergyEfficiencyCategoryA1Plus",
+        "schema:EUEnergyEfficiencyCategoryA2Plus",
+        "schema:EUEnergyEfficiencyCategoryA3Plus",
+        "schema:EUEnergyEfficiencyCategoryB",
+        "schema:EUEnergyEfficiencyCategoryC",
+        "schema:EUEnergyEfficiencyCategoryD",
+        "schema:EUEnergyEfficiencyCategoryE",
+        "schema:EUEnergyEfficiencyCategoryF",
+        "schema:EUEnergyEfficiencyCategoryG",
+        "schema:EnergyStarCertified"
+      ],
+      "x-oold-ui-enum-titles": [
+        "EUEnergyEfficiencyCategoryA",
+        "EUEnergyEfficiencyCategoryA1Plus",
+        "EUEnergyEfficiencyCategoryA2Plus",
+        "EUEnergyEfficiencyCategoryA3Plus",
+        "EUEnergyEfficiencyCategoryB",
+        "EUEnergyEfficiencyCategoryC",
+        "EUEnergyEfficiencyCategoryD",
+        "EUEnergyEfficiencyCategoryE",
+        "EUEnergyEfficiencyCategoryF",
+        "EUEnergyEfficiencyCategoryG",
+        "EnergyStarCertified"
+      ]
+    }
+  }
+}

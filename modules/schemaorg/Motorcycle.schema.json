@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Vehicle.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Vehicle.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Motorcycle.schema.json",
+  "x-oold-uuid": "204f5de4-019c-5416-83eb-e0227995d311",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Motorcycle",
+  "x-oold-instance-rdf-type": [
+    "schema:Motorcycle"
+  ],
+  "title": "Motorcycle",
+  "description": "A motorcycle or motorbike is a single-track, two-wheeled motor vehicle.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Motorcycle"
+      ]
+    }
+  }
+}

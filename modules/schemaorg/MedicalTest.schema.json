@@ -1,0 +1,122 @@
+{
+  "@context": [
+    "MedicalEntity.schema.json",
+    {
+      "affectedBy": {
+        "@id": "schema:affectedBy",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "normalRange": {
+        "@id": "schema:normalRange",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "normalRange_text": {
+        "@id": "schema:normalRange",
+        "@container": "@set"
+      },
+      "signDetected": {
+        "@id": "schema:signDetected",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "usedToDiagnose": {
+        "@id": "schema:usedToDiagnose",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "usesDevice": {
+        "@id": "schema:usesDevice",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "MedicalEntity.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MedicalTest.schema.json",
+  "x-oold-uuid": "338921ee-1fd0-54a9-8bb4-18ee3fc754cc",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/MedicalTest",
+  "x-oold-instance-rdf-type": [
+    "schema:MedicalTest"
+  ],
+  "title": "MedicalTest",
+  "description": "Any medical test, typically performed for diagnostic purposes.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:MedicalTest"
+      ]
+    },
+    "affectedBy": {
+      "title": "Affected By",
+      "description": "Drugs that affect the test's results.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Drug.schema.json"
+      }
+    },
+    "normalRange": {
+      "title": "Normal Range",
+      "description": "Range of acceptable values for a typical patient, when applicable.",
+      "type": "array",
+      "items": {
+        "$ref": "MedicalEnumeration.schema.json#/$defs/member",
+        "x-oold-range": "MedicalEnumeration.schema.json"
+      }
+    },
+    "normalRange_text": {
+      "title": "Normal Range (text)",
+      "description": "Range of acceptable values for a typical patient, when applicable.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "signDetected": {
+      "title": "Sign Detected",
+      "description": "A sign detected by the test.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "MedicalSign.schema.json"
+      }
+    },
+    "usedToDiagnose": {
+      "title": "Used To Diagnose",
+      "description": "A condition the test is used to diagnose.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "MedicalCondition.schema.json"
+      }
+    },
+    "usesDevice": {
+      "title": "Uses Device",
+      "description": "Device used to perform the test.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "MedicalDevice.schema.json"
+      }
+    }
+  }
+}

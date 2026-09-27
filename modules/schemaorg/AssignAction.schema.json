@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "AllocateAction.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "AllocateAction.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "AssignAction.schema.json",
+  "x-oold-uuid": "0959905a-c8c3-5a51-8763-97ed267d6557",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/AssignAction",
+  "x-oold-instance-rdf-type": [
+    "schema:AssignAction"
+  ],
+  "title": "AssignAction",
+  "description": "The act of allocating an action/event/task to some destination (someone or something).",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:AssignAction"
+      ]
+    }
+  }
+}

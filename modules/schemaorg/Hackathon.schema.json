@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Event.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Event.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Hackathon.schema.json",
+  "x-oold-uuid": "aa4fd146-aa21-50b9-95b3-a1284b185910",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Hackathon",
+  "x-oold-instance-rdf-type": [
+    "schema:Hackathon"
+  ],
+  "title": "Hackathon",
+  "description": "A [hackathon](https://en.wikipedia.org/wiki/Hackathon) event.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Hackathon"
+      ]
+    }
+  }
+}

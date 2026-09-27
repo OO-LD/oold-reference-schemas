@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "CivicStructure.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "CivicStructure.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Museum.schema.json",
+  "x-oold-uuid": "ba61b88d-8abe-5c13-b6e4-d50b36a226c9",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Museum",
+  "x-oold-instance-rdf-type": [
+    "schema:Museum"
+  ],
+  "title": "Museum",
+  "description": "A museum.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Museum"
+      ]
+    }
+  }
+}

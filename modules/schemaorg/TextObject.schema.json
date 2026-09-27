@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "MediaObject.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "MediaObject.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "TextObject.schema.json",
+  "x-oold-uuid": "b4b173ce-feb5-52a4-b41d-5ab4b40b33a8",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/TextObject",
+  "x-oold-instance-rdf-type": [
+    "schema:TextObject"
+  ],
+  "title": "TextObject",
+  "description": "A text file. The text can be unformatted or contain markup, html, etc.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:TextObject"
+      ]
+    }
+  }
+}

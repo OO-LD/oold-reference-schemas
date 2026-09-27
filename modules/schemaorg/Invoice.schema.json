@@ -1,0 +1,315 @@
+{
+  "@context": [
+    "Intangible.schema.json",
+    {
+      "accountId": {
+        "@id": "schema:accountId",
+        "@container": "@set"
+      },
+      "billingPeriod": {
+        "@id": "schema:billingPeriod",
+        "@type": "xsd:duration",
+        "@container": "@set"
+      },
+      "broker": {
+        "@id": "schema:broker",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "category": {
+        "@id": "schema:category",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "category_text": {
+        "@id": "schema:category",
+        "@container": "@set"
+      },
+      "confirmationNumber": {
+        "@id": "schema:confirmationNumber",
+        "@container": "@set"
+      },
+      "customer": {
+        "@id": "schema:customer",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "minimumPaymentDue": {
+        "@id": "schema:minimumPaymentDue",
+        "@container": "@set"
+      },
+      "paymentDueDate": {
+        "@id": "schema:paymentDueDate",
+        "@container": "@set"
+      },
+      "paymentMethod": {
+        "@id": "schema:paymentMethod",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "paymentMethod_text": {
+        "@id": "schema:paymentMethod",
+        "@container": "@set"
+      },
+      "paymentMethodId": {
+        "@id": "schema:paymentMethodId",
+        "@container": "@set"
+      },
+      "paymentStatus": {
+        "@id": "schema:paymentStatus",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "paymentStatus_text": {
+        "@id": "schema:paymentStatus",
+        "@container": "@set"
+      },
+      "provider": {
+        "@id": "schema:provider",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "referencesOrder": {
+        "@id": "schema:referencesOrder",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "scheduledPaymentDate": {
+        "@id": "schema:scheduledPaymentDate",
+        "@type": "xsd:date",
+        "@container": "@set"
+      },
+      "totalPaymentDue": {
+        "@id": "schema:totalPaymentDue",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Intangible.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Invoice.schema.json",
+  "x-oold-uuid": "7e664011-556d-5225-a6fb-9b6ce3694ae9",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Invoice",
+  "x-oold-instance-rdf-type": [
+    "schema:Invoice"
+  ],
+  "title": "Invoice",
+  "description": "A statement of the money due for goods or services; a bill.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Invoice"
+      ]
+    },
+    "accountId": {
+      "title": "Account Id",
+      "description": "The identifier for the account the payment will be applied to.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "billingPeriod": {
+      "title": "Billing Period",
+      "description": "The time interval used to compute the invoice.",
+      "type": "array",
+      "items": {
+        "$ref": "Duration.schema.json"
+      }
+    },
+    "broker": {
+      "title": "Broker",
+      "description": "An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "Organization.schema.json",
+          "Person.schema.json"
+        ]
+      }
+    },
+    "category": {
+      "title": "Category",
+      "description": "A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "CategoryCode.schema.json",
+          "PhysicalActivityCategory.schema.json",
+          "Thing.schema.json"
+        ]
+      }
+    },
+    "category_text": {
+      "title": "Category (text)",
+      "description": "A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Text.schema.json"
+          },
+          {
+            "$ref": "URL.schema.json"
+          }
+        ]
+      }
+    },
+    "confirmationNumber": {
+      "title": "Confirmation Number",
+      "description": "A number that confirms the given order or payment has been received.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "customer": {
+      "title": "Customer",
+      "description": "Party placing the order or paying the invoice.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "Organization.schema.json",
+          "Person.schema.json"
+        ]
+      }
+    },
+    "minimumPaymentDue": {
+      "title": "Minimum Payment Due",
+      "description": "The minimum payment required at this time.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "MonetaryAmount.schema.json"
+          },
+          {
+            "$ref": "PriceSpecification.schema.json"
+          }
+        ]
+      }
+    },
+    "paymentDueDate": {
+      "title": "Payment Due Date",
+      "description": "The date that payment is due.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Date.schema.json"
+          },
+          {
+            "$ref": "DateTime.schema.json"
+          }
+        ]
+      }
+    },
+    "paymentMethod": {
+      "title": "Payment Method",
+      "description": "The name of the credit card or other method of payment for the order.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "PaymentMethod.schema.json"
+      }
+    },
+    "paymentMethod_text": {
+      "title": "Payment Method (text)",
+      "description": "The name of the credit card or other method of payment for the order.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "paymentMethodId": {
+      "title": "Payment Method Id",
+      "description": "An identifier for the method of payment used (e.g. the last 4 digits of the credit card).",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "paymentStatus": {
+      "title": "Payment Status",
+      "description": "The status of payment; whether the invoice has been paid or not.",
+      "type": "array",
+      "items": {
+        "$ref": "PaymentStatusType.schema.json#/$defs/member",
+        "x-oold-range": "PaymentStatusType.schema.json"
+      }
+    },
+    "paymentStatus_text": {
+      "title": "Payment Status (text)",
+      "description": "The status of payment; whether the invoice has been paid or not.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "provider": {
+      "title": "Provider",
+      "description": "The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "Organization.schema.json",
+          "Person.schema.json"
+        ]
+      }
+    },
+    "referencesOrder": {
+      "title": "References Order",
+      "description": "The Order(s) related to this Invoice. One or more Orders may be combined into a single Invoice.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Order.schema.json"
+      }
+    },
+    "scheduledPaymentDate": {
+      "title": "Scheduled Payment Date",
+      "description": "The date the invoice is scheduled to be paid.",
+      "type": "array",
+      "items": {
+        "$ref": "Date.schema.json"
+      }
+    },
+    "totalPaymentDue": {
+      "title": "Total Payment Due",
+      "description": "The total amount due.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "MonetaryAmount.schema.json"
+          },
+          {
+            "$ref": "PriceSpecification.schema.json"
+          }
+        ]
+      }
+    }
+  }
+}

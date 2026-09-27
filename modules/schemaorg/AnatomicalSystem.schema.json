@@ -1,0 +1,111 @@
+{
+  "@context": [
+    "MedicalEntity.schema.json",
+    {
+      "associatedPathophysiology": {
+        "@id": "schema:associatedPathophysiology",
+        "@container": "@set"
+      },
+      "comprisedOf": {
+        "@id": "schema:comprisedOf",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "relatedCondition": {
+        "@id": "schema:relatedCondition",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "relatedStructure": {
+        "@id": "schema:relatedStructure",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "relatedTherapy": {
+        "@id": "schema:relatedTherapy",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "MedicalEntity.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "AnatomicalSystem.schema.json",
+  "x-oold-uuid": "01ff480a-1577-5b6f-ba18-73396c4e3edf",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/AnatomicalSystem",
+  "x-oold-instance-rdf-type": [
+    "schema:AnatomicalSystem"
+  ],
+  "title": "AnatomicalSystem",
+  "description": "An anatomical system is a group of anatomical structures that work together to perform a certain task. Anatomical systems, such as organ systems, are one organizing principle of anatomy, and can include circulatory, digestive, endocrine, integumentary, immune, lymphatic, muscular, nervous, reproductive, respiratory, skeletal, urinary, vestibular, and other systems.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:AnatomicalSystem"
+      ]
+    },
+    "associatedPathophysiology": {
+      "title": "Associated Pathophysiology",
+      "description": "If applicable, a description of the pathophysiology associated with the anatomical system, including potential abnormal changes in the mechanical, physical, and biochemical functions of the system.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "comprisedOf": {
+      "title": "Comprised Of",
+      "description": "Specifying something physically contained by something else. Typically used here for the underlying anatomical structures, such as organs, that comprise the anatomical system.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "AnatomicalStructure.schema.json",
+          "AnatomicalSystem.schema.json"
+        ]
+      }
+    },
+    "relatedCondition": {
+      "title": "Related Condition",
+      "description": "A medical condition associated with this anatomy.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "MedicalCondition.schema.json"
+      }
+    },
+    "relatedStructure": {
+      "title": "Related Structure",
+      "description": "Related anatomical structure(s) that are not part of the system but relate or connect to it, such as vascular bundles associated with an organ system.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "AnatomicalStructure.schema.json"
+      }
+    },
+    "relatedTherapy": {
+      "title": "Related Therapy",
+      "description": "A medical therapy related to this anatomy.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "MedicalTherapy.schema.json"
+      }
+    }
+  }
+}

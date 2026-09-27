@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "ReactAction.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "ReactAction.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "DislikeAction.schema.json",
+  "x-oold-uuid": "aa622d3b-7333-5944-9889-a8bc2470dbf8",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/DislikeAction",
+  "x-oold-instance-rdf-type": [
+    "schema:DislikeAction"
+  ],
+  "title": "DislikeAction",
+  "description": "The act of expressing a negative sentiment about the object. An agent dislikes an object (a proposition, topic or theme) with participants.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:DislikeAction"
+      ]
+    }
+  }
+}

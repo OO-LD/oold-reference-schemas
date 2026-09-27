@@ -1,0 +1,293 @@
+{
+  "@context": [
+    "Organization.schema.json",
+    {
+      "actionableFeedbackPolicy": {
+        "@id": "schema:actionableFeedbackPolicy",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "correctionsPolicy": {
+        "@id": "schema:correctionsPolicy",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "diversityPolicy": {
+        "@id": "schema:diversityPolicy",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "diversityStaffingReport": {
+        "@id": "schema:diversityStaffingReport",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "ethicsPolicy": {
+        "@id": "schema:ethicsPolicy",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "masthead": {
+        "@id": "schema:masthead",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "missionCoveragePrioritiesPolicy": {
+        "@id": "schema:missionCoveragePrioritiesPolicy",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "noBylinesPolicy": {
+        "@id": "schema:noBylinesPolicy",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "ownershipFundingInfo": {
+        "@id": "schema:ownershipFundingInfo",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "ownershipFundingInfo_text": {
+        "@id": "schema:ownershipFundingInfo",
+        "@container": "@set"
+      },
+      "unnamedSourcesPolicy": {
+        "@id": "schema:unnamedSourcesPolicy",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "verificationFactCheckingPolicy": {
+        "@id": "schema:verificationFactCheckingPolicy",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Organization.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "NewsMediaOrganization.schema.json",
+  "x-oold-uuid": "51281083-e46a-5d81-99ca-0dcaa0f2e189",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/NewsMediaOrganization",
+  "x-oold-instance-rdf-type": [
+    "schema:NewsMediaOrganization"
+  ],
+  "title": "NewsMediaOrganization",
+  "description": "A News/Media organization such as a newspaper or TV station.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:NewsMediaOrganization"
+      ]
+    },
+    "actionableFeedbackPolicy": {
+      "title": "Actionable Feedback Policy",
+      "description": "For a [[NewsMediaOrganization]] or other news-related [[Organization]], a statement about public engagement activities (for news media, the newsroom’s), including involving the public - digitally or otherwise -- in coverage decisions, reporting and activities after publication.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "URL.schema.json"
+          },
+          {
+            "type": "string",
+            "format": "iri-reference",
+            "x-oold-range": "CreativeWork.schema.json"
+          }
+        ]
+      }
+    },
+    "correctionsPolicy": {
+      "title": "Corrections Policy",
+      "description": "For an [[Organization]] (e.g. [[NewsMediaOrganization]]), a statement describing (in news media, the newsroom’s) disclosure and correction policy for errors.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "URL.schema.json"
+          },
+          {
+            "type": "string",
+            "format": "iri-reference",
+            "x-oold-range": "CreativeWork.schema.json"
+          }
+        ]
+      }
+    },
+    "diversityPolicy": {
+      "title": "Diversity Policy",
+      "description": "Statement on diversity policy by an [[Organization]] e.g. a [[NewsMediaOrganization]]. For a [[NewsMediaOrganization]], a statement describing the newsroom’s diversity policy on both staffing and sources, typically providing staffing data.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "URL.schema.json"
+          },
+          {
+            "type": "string",
+            "format": "iri-reference",
+            "x-oold-range": "CreativeWork.schema.json"
+          }
+        ]
+      }
+    },
+    "diversityStaffingReport": {
+      "title": "Diversity Staffing Report",
+      "description": "For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a report on staffing diversity issues. In a news context this might be for example ASNE or RTDNA (US) reports, or self-reported.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "URL.schema.json"
+          },
+          {
+            "type": "string",
+            "format": "iri-reference",
+            "x-oold-range": "Article.schema.json"
+          }
+        ]
+      }
+    },
+    "ethicsPolicy": {
+      "title": "Ethics Policy",
+      "description": "Statement about ethics policy, e.g. of a [[NewsMediaOrganization]] regarding journalistic and publishing practices, or of a [[Restaurant]], a page describing food source policies. In the case of a [[NewsMediaOrganization]], an ethicsPolicy is typically a statement describing the personal, organizational, and corporate standards of behavior expected by the organization.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "URL.schema.json"
+          },
+          {
+            "type": "string",
+            "format": "iri-reference",
+            "x-oold-range": "CreativeWork.schema.json"
+          }
+        ]
+      }
+    },
+    "masthead": {
+      "title": "Masthead",
+      "description": "For a [[NewsMediaOrganization]], a link to the masthead page or a page listing top editorial management.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "URL.schema.json"
+          },
+          {
+            "type": "string",
+            "format": "iri-reference",
+            "x-oold-range": "CreativeWork.schema.json"
+          }
+        ]
+      }
+    },
+    "missionCoveragePrioritiesPolicy": {
+      "title": "Mission Coverage Priorities Policy",
+      "description": "For a [[NewsMediaOrganization]], a statement on coverage priorities, including any public agenda or stance on issues.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "URL.schema.json"
+          },
+          {
+            "type": "string",
+            "format": "iri-reference",
+            "x-oold-range": "CreativeWork.schema.json"
+          }
+        ]
+      }
+    },
+    "noBylinesPolicy": {
+      "title": "No Bylines Policy",
+      "description": "For a [[NewsMediaOrganization]] or other news-related [[Organization]], a statement explaining when authors of articles are not named in bylines.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "URL.schema.json"
+          },
+          {
+            "type": "string",
+            "format": "iri-reference",
+            "x-oold-range": "CreativeWork.schema.json"
+          }
+        ]
+      }
+    },
+    "ownershipFundingInfo": {
+      "title": "Ownership Funding Info",
+      "description": "For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a description of organizational ownership structure; funding and grants. In a news/media setting, this is with particular reference to editorial independence.   Note that the [[funder]] is also available and can be used to make basic funder information machine-readable.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "AboutPage.schema.json",
+          "CreativeWork.schema.json"
+        ]
+      }
+    },
+    "ownershipFundingInfo_text": {
+      "title": "Ownership Funding Info (text)",
+      "description": "For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a description of organizational ownership structure; funding and grants. In a news/media setting, this is with particular reference to editorial independence.   Note that the [[funder]] is also available and can be used to make basic funder information machine-readable.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Text.schema.json"
+          },
+          {
+            "$ref": "URL.schema.json"
+          }
+        ]
+      }
+    },
+    "unnamedSourcesPolicy": {
+      "title": "Unnamed Sources Policy",
+      "description": "For an [[Organization]] (typically a [[NewsMediaOrganization]]), a statement about policy on use of unnamed sources and the decision process required.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "URL.schema.json"
+          },
+          {
+            "type": "string",
+            "format": "iri-reference",
+            "x-oold-range": "CreativeWork.schema.json"
+          }
+        ]
+      }
+    },
+    "verificationFactCheckingPolicy": {
+      "title": "Verification Fact Checking Policy",
+      "description": "Disclosure about verification and fact-checking processes for a [[NewsMediaOrganization]] or other fact-checking [[Organization]].",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "URL.schema.json"
+          },
+          {
+            "type": "string",
+            "format": "iri-reference",
+            "x-oold-range": "CreativeWork.schema.json"
+          }
+        ]
+      }
+    }
+  }
+}

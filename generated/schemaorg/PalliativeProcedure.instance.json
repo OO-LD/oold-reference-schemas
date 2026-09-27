@@ -1,0 +1,8 @@
+{
+  "$schema": "PalliativeProcedure.schema.json",
+  "@context": "PalliativeProcedure.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:PalliativeProcedure"
+  ]
+}

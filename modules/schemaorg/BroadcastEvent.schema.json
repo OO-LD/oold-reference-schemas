@@ -1,0 +1,102 @@
+{
+  "@context": [
+    "PublicationEvent.schema.json",
+    {
+      "broadcastOfEvent": {
+        "@id": "schema:broadcastOfEvent",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "isLiveBroadcast": {
+        "@id": "schema:isLiveBroadcast",
+        "@container": "@set"
+      },
+      "subtitleLanguage": {
+        "@id": "schema:subtitleLanguage",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "subtitleLanguage_text": {
+        "@id": "schema:subtitleLanguage",
+        "@container": "@set"
+      },
+      "videoFormat": {
+        "@id": "schema:videoFormat",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "PublicationEvent.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "BroadcastEvent.schema.json",
+  "x-oold-uuid": "5df11922-5a47-57e6-b924-739a178f9452",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/BroadcastEvent",
+  "x-oold-instance-rdf-type": [
+    "schema:BroadcastEvent"
+  ],
+  "title": "BroadcastEvent",
+  "description": "An over the air or online broadcast event.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:BroadcastEvent"
+      ]
+    },
+    "broadcastOfEvent": {
+      "title": "Broadcast Of Event",
+      "description": "The event being broadcast such as a sporting event or awards ceremony.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Event.schema.json"
+      }
+    },
+    "isLiveBroadcast": {
+      "title": "Is Live Broadcast",
+      "description": "True if the broadcast is of a live event.",
+      "type": "array",
+      "items": {
+        "$ref": "Boolean.schema.json"
+      }
+    },
+    "subtitleLanguage": {
+      "title": "Subtitle Language",
+      "description": "Languages in which subtitles/captions are available, in [IETF BCP 47 standard format](http://tools.ietf.org/html/bcp47).",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Language.schema.json"
+      }
+    },
+    "subtitleLanguage_text": {
+      "title": "Subtitle Language (text)",
+      "description": "Languages in which subtitles/captions are available, in [IETF BCP 47 standard format](http://tools.ietf.org/html/bcp47).",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "videoFormat": {
+      "title": "Video Format",
+      "description": "The type of screening or video broadcast used (e.g. IMAX, 3D, SD, HD, etc.).",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    }
+  }
+}

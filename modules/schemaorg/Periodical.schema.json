@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "CreativeWorkSeries.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "CreativeWorkSeries.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Periodical.schema.json",
+  "x-oold-uuid": "3ad4f9ff-5ad8-573f-a374-d57a42ce0bf0",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Periodical",
+  "x-oold-instance-rdf-type": [
+    "schema:Periodical"
+  ],
+  "title": "Periodical",
+  "description": "A publication in any medium issued in successive parts bearing numerical or chronological designations and intended to continue indefinitely, such as a magazine, scholarly journal, or newspaper.\\n\\nSee also [blog post](https://blog.schema.org/2014/09/02/schema-org-support-for-bibliographic-relationships-and-periodicals/).",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Periodical"
+      ]
+    }
+  }
+}

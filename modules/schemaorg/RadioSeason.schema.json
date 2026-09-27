@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "CreativeWorkSeason.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "CreativeWorkSeason.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "RadioSeason.schema.json",
+  "x-oold-uuid": "90674cf5-9915-5a62-9c49-966e00df1fdd",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/RadioSeason",
+  "x-oold-instance-rdf-type": [
+    "schema:RadioSeason"
+  ],
+  "title": "RadioSeason",
+  "description": "Season dedicated to radio broadcast and associated online delivery.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:RadioSeason"
+      ]
+    }
+  }
+}

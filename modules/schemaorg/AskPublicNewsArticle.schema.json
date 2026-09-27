@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "NewsArticle.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "NewsArticle.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "AskPublicNewsArticle.schema.json",
+  "x-oold-uuid": "76e3bdf9-6a8c-5506-be3a-37324d8ce200",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/AskPublicNewsArticle",
+  "x-oold-instance-rdf-type": [
+    "schema:AskPublicNewsArticle"
+  ],
+  "title": "AskPublicNewsArticle",
+  "description": "A [[NewsArticle]] expressing an open call by a [[NewsMediaOrganization]] asking the public for input, insights, clarifications, anecdotes, documentation, etc., on an issue, for reporting purposes.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:AskPublicNewsArticle"
+      ]
+    }
+  }
+}

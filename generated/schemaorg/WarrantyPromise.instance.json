@@ -1,0 +1,8 @@
+{
+  "$schema": "WarrantyPromise.schema.json",
+  "@context": "WarrantyPromise.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:WarrantyPromise"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "$schema": "IPTCDigitalSourceEnumeration.schema.json",
+  "@context": "IPTCDigitalSourceEnumeration.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:IPTCDigitalSourceEnumeration"
+  ]
+}

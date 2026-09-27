@@ -1,0 +1,74 @@
+{
+  "@context": [
+    "MedicalCondition.schema.json",
+    {
+      "infectiousAgent": {
+        "@id": "schema:infectiousAgent",
+        "@container": "@set"
+      },
+      "infectiousAgentClass": {
+        "@id": "schema:infectiousAgentClass",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "transmissionMethod": {
+        "@id": "schema:transmissionMethod",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "MedicalCondition.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "InfectiousDisease.schema.json",
+  "x-oold-uuid": "6248e1b6-60ca-53ce-826d-dd3410230c4c",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/InfectiousDisease",
+  "x-oold-instance-rdf-type": [
+    "schema:InfectiousDisease"
+  ],
+  "title": "InfectiousDisease",
+  "description": "An infectious disease is a clinically evident human disease resulting from the presence of pathogenic microbial agents, like pathogenic viruses, pathogenic bacteria, fungi, protozoa, multicellular parasites, and prions. To be considered an infectious disease, such pathogens are known to be able to cause this disease.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:InfectiousDisease"
+      ]
+    },
+    "infectiousAgent": {
+      "title": "Infectious Agent",
+      "description": "The actual infectious agent, such as a specific bacterium.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "infectiousAgentClass": {
+      "title": "Infectious Agent Class",
+      "description": "The class of infectious agent (bacteria, prion, etc.) that causes the disease.",
+      "type": "array",
+      "items": {
+        "$ref": "InfectiousAgentClass.schema.json#/$defs/member",
+        "x-oold-range": "InfectiousAgentClass.schema.json"
+      }
+    },
+    "transmissionMethod": {
+      "title": "Transmission Method",
+      "description": "How the disease spreads, either as a route or vector, for example 'direct contact', 'Aedes aegypti', etc.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    }
+  }
+}

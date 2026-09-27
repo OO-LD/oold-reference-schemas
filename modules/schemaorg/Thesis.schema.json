@@ -1,0 +1,48 @@
+{
+  "@context": [
+    "CreativeWork.schema.json",
+    {
+      "inSupportOf": {
+        "@id": "schema:inSupportOf",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "CreativeWork.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Thesis.schema.json",
+  "x-oold-uuid": "c8c336f1-faab-5e3c-98eb-a8fb494d8947",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Thesis",
+  "x-oold-instance-rdf-type": [
+    "schema:Thesis"
+  ],
+  "title": "Thesis",
+  "description": "A thesis or dissertation document submitted in support of candidature for an academic degree or professional qualification.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Thesis"
+      ]
+    },
+    "inSupportOf": {
+      "title": "In Support Of",
+      "description": "Qualification, candidature, degree, application that Thesis supports.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    }
+  }
+}

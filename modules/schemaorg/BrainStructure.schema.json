@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "AnatomicalStructure.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "AnatomicalStructure.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "BrainStructure.schema.json",
+  "x-oold-uuid": "ead5e215-6739-5bb9-bbf4-a4c242835b81",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/BrainStructure",
+  "x-oold-instance-rdf-type": [
+    "schema:BrainStructure"
+  ],
+  "title": "BrainStructure",
+  "description": "Any anatomical structure which pertains to the soft nervous tissue functioning as the coordinating center of sensation and intellectual and nervous activity.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:BrainStructure"
+      ]
+    }
+  }
+}

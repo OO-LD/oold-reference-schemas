@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "MedicalTest.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "MedicalTest.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "BloodTest.schema.json",
+  "x-oold-uuid": "dc2c7cd0-e063-59a1-84a7-53a82bbee19a",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/BloodTest",
+  "x-oold-instance-rdf-type": [
+    "schema:BloodTest"
+  ],
+  "title": "BloodTest",
+  "description": "A medical test performed on a sample of a patient's blood.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:BloodTest"
+      ]
+    }
+  }
+}

@@ -1,0 +1,339 @@
+{
+  "@context": [
+    "MedicalEntity.schema.json",
+    {
+      "associatedAnatomy": {
+        "@id": "schema:associatedAnatomy",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "cause": {
+        "@id": "schema:cause",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "differentialDiagnosis": {
+        "@id": "schema:differentialDiagnosis",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "drug": {
+        "@id": "schema:drug",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "epidemiology": {
+        "@id": "schema:epidemiology",
+        "@container": "@set"
+      },
+      "expectedPrognosis": {
+        "@id": "schema:expectedPrognosis",
+        "@container": "@set"
+      },
+      "naturalProgression": {
+        "@id": "schema:naturalProgression",
+        "@container": "@set"
+      },
+      "pathophysiology": {
+        "@id": "schema:pathophysiology",
+        "@container": "@set"
+      },
+      "possibleComplication": {
+        "@id": "schema:possibleComplication",
+        "@container": "@set"
+      },
+      "possibleTreatment": {
+        "@id": "schema:possibleTreatment",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "primaryPrevention": {
+        "@id": "schema:primaryPrevention",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "riskFactor": {
+        "@id": "schema:riskFactor",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "secondaryPrevention": {
+        "@id": "schema:secondaryPrevention",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "signOrSymptom": {
+        "@id": "schema:signOrSymptom",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "stage": {
+        "@id": "schema:stage",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "status": {
+        "@id": "schema:status",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "status_text": {
+        "@id": "schema:status",
+        "@container": "@set"
+      },
+      "typicalTest": {
+        "@id": "schema:typicalTest",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "MedicalEntity.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MedicalCondition.schema.json",
+  "x-oold-uuid": "5f8db9c2-2988-5ebe-a599-d0cf7f0bbc4c",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/MedicalCondition",
+  "x-oold-instance-rdf-type": [
+    "schema:MedicalCondition"
+  ],
+  "title": "MedicalCondition",
+  "description": "Any condition of the human body that affects the normal functioning of a person, whether physically or mentally. Includes diseases, injuries, disabilities, disorders, syndromes, etc.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:MedicalCondition"
+      ]
+    },
+    "associatedAnatomy": {
+      "title": "Associated Anatomy",
+      "description": "The anatomy of the underlying organ system or structures associated with this entity.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "AnatomicalStructure.schema.json",
+          "AnatomicalSystem.schema.json",
+          "SuperficialAnatomy.schema.json"
+        ]
+      }
+    },
+    "cause": {
+      "title": "Cause",
+      "description": "The cause of a medical condition.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "MedicalCause.schema.json"
+      }
+    },
+    "differentialDiagnosis": {
+      "title": "Differential Diagnosis",
+      "description": "One of a set of differential diagnoses for the condition. Specifically, a closely-related or competing diagnosis typically considered later in the cognitive process whereby this medical condition is distinguished from others most likely responsible for a similar collection of signs and symptoms to reach the most parsimonious diagnosis or diagnoses in a patient.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "DDxElement.schema.json"
+      }
+    },
+    "drug": {
+      "title": "Drug",
+      "description": "Specifying a drug or medicine used in a medication procedure.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Drug.schema.json"
+      }
+    },
+    "epidemiology": {
+      "title": "Epidemiology",
+      "description": "The characteristics of associated patients, such as age, gender, race etc.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "expectedPrognosis": {
+      "title": "Expected Prognosis",
+      "description": "The likely outcome in either the short term or long term of the medical condition.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "naturalProgression": {
+      "title": "Natural Progression",
+      "description": "The expected progression of the condition if it is not treated and allowed to progress naturally.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "pathophysiology": {
+      "title": "Pathophysiology",
+      "description": "Changes in the normal mechanical, physical, and biochemical functions that are associated with this activity or condition.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "possibleComplication": {
+      "title": "Possible Complication",
+      "description": "A possible unexpected and unfavorable evolution of a medical condition. Complications may include worsening of the signs or symptoms of the disease, extension of the condition to other organ systems, etc.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "possibleTreatment": {
+      "title": "Possible Treatment",
+      "description": "A possible treatment to address this condition, sign or symptom.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "Drug.schema.json",
+          "DrugClass.schema.json",
+          "LifestyleModification.schema.json",
+          "MedicalTherapy.schema.json"
+        ]
+      }
+    },
+    "primaryPrevention": {
+      "title": "Primary Prevention",
+      "description": "A preventative therapy used to prevent an initial occurrence of the medical condition, such as vaccination.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "MedicalTherapy.schema.json"
+      }
+    },
+    "riskFactor": {
+      "title": "Risk Factor",
+      "description": "A modifiable or non-modifiable factor that increases the risk of a patient contracting this condition, e.g. age,  coexisting condition.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "MedicalRiskFactor.schema.json"
+      }
+    },
+    "secondaryPrevention": {
+      "title": "Secondary Prevention",
+      "description": "A preventative therapy used to prevent reoccurrence of the medical condition after an initial episode of the condition.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "Drug.schema.json",
+          "DrugClass.schema.json",
+          "LifestyleModification.schema.json",
+          "MedicalTherapy.schema.json"
+        ]
+      }
+    },
+    "signOrSymptom": {
+      "title": "Sign Or Symptom",
+      "description": "A sign or symptom of this condition. Signs are objective or physically observable manifestations of the medical condition while symptoms are the subjective experience of the medical condition.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "MedicalSignOrSymptom.schema.json"
+      }
+    },
+    "stage": {
+      "title": "Stage",
+      "description": "The stage of the condition, if applicable.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "MedicalConditionStage.schema.json"
+      }
+    },
+    "status": {
+      "title": "Status",
+      "description": "The status of the study (enumerated).",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "EventStatusType.schema.json",
+          "MedicalStudyStatus.schema.json"
+        ],
+        "enum": [
+          "schema:ActiveNotRecruiting",
+          "schema:Completed",
+          "schema:EnrollingByInvitation",
+          "schema:EventCancelled",
+          "schema:EventMovedOnline",
+          "schema:EventPostponed",
+          "schema:EventRescheduled",
+          "schema:EventScheduled",
+          "schema:NotYetRecruiting",
+          "schema:Recruiting",
+          "schema:ResultsAvailable",
+          "schema:ResultsNotAvailable",
+          "schema:Suspended",
+          "schema:Terminated",
+          "schema:Withdrawn"
+        ],
+        "x-oold-ui-enum-titles": [
+          "ActiveNotRecruiting",
+          "Completed",
+          "EnrollingByInvitation",
+          "EventCancelled",
+          "EventMovedOnline",
+          "EventPostponed",
+          "EventRescheduled",
+          "EventScheduled",
+          "NotYetRecruiting",
+          "Recruiting",
+          "ResultsAvailable",
+          "ResultsNotAvailable",
+          "Suspended",
+          "Terminated",
+          "Withdrawn"
+        ]
+      }
+    },
+    "status_text": {
+      "title": "Status (text)",
+      "description": "The status of the study (enumerated).",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "typicalTest": {
+      "title": "Typical Test",
+      "description": "A medical test typically performed given this condition.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "MedicalTest.schema.json"
+      }
+    }
+  }
+}

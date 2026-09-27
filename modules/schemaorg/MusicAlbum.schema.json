@@ -1,0 +1,97 @@
+{
+  "@context": [
+    "MusicPlaylist.schema.json",
+    {
+      "albumProductionType": {
+        "@id": "schema:albumProductionType",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "albumRelease": {
+        "@id": "schema:albumRelease",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "albumReleaseType": {
+        "@id": "schema:albumReleaseType",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "byArtist": {
+        "@id": "schema:byArtist",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "MusicPlaylist.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MusicAlbum.schema.json",
+  "x-oold-uuid": "2ed4b38a-9d52-57dd-b9d3-f5e40e309218",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/MusicAlbum",
+  "x-oold-instance-rdf-type": [
+    "schema:MusicAlbum"
+  ],
+  "title": "MusicAlbum",
+  "description": "A collection of music tracks.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:MusicAlbum"
+      ]
+    },
+    "albumProductionType": {
+      "title": "Album Production Type",
+      "description": "Classification of the album by its type of content: soundtrack, live album, studio album, etc.",
+      "type": "array",
+      "items": {
+        "$ref": "MusicAlbumProductionType.schema.json#/$defs/member",
+        "x-oold-range": "MusicAlbumProductionType.schema.json"
+      }
+    },
+    "albumRelease": {
+      "title": "Album Release",
+      "description": "A release of this album.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "MusicRelease.schema.json"
+      }
+    },
+    "albumReleaseType": {
+      "title": "Album Release Type",
+      "description": "The kind of release which this album is: single, EP or album.",
+      "type": "array",
+      "items": {
+        "$ref": "MusicAlbumReleaseType.schema.json#/$defs/member",
+        "x-oold-range": "MusicAlbumReleaseType.schema.json"
+      }
+    },
+    "byArtist": {
+      "title": "By Artist",
+      "description": "The artist that performed this album or recording.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "MusicGroup.schema.json",
+          "Person.schema.json"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "@context": [
+    "SoftwareApplication.schema.json",
+    {
+      "carrierRequirements": {
+        "@id": "schema:carrierRequirements",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "SoftwareApplication.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MobileApplication.schema.json",
+  "x-oold-uuid": "780595e6-5759-5df5-bc1b-b57c170ac73b",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/MobileApplication",
+  "x-oold-instance-rdf-type": [
+    "schema:MobileApplication"
+  ],
+  "title": "MobileApplication",
+  "description": "A software application designed specifically to work well on a mobile device such as a telephone.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:MobileApplication"
+      ]
+    },
+    "carrierRequirements": {
+      "title": "Carrier Requirements",
+      "description": "Specifies specific carrier(s) requirements for the application (e.g. an application may only work on a specific carrier network).",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    }
+  }
+}

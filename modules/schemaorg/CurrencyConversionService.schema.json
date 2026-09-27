@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "FinancialProduct.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "FinancialProduct.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "CurrencyConversionService.schema.json",
+  "x-oold-uuid": "8eac0bf2-0b53-5a59-bb17-0fc55bcdac31",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/CurrencyConversionService",
+  "x-oold-instance-rdf-type": [
+    "schema:CurrencyConversionService"
+  ],
+  "title": "CurrencyConversionService",
+  "description": "A service to convert funds from one currency to another currency.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:CurrencyConversionService"
+      ]
+    }
+  }
+}

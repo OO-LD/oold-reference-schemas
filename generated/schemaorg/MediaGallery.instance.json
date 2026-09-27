@@ -1,0 +1,8 @@
+{
+  "$schema": "MediaGallery.schema.json",
+  "@context": "MediaGallery.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:MediaGallery"
+  ]
+}

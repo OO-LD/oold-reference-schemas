@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "ControlAction.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "ControlAction.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ActivateAction.schema.json",
+  "x-oold-uuid": "53c0543f-735e-5cf8-825c-acdccbea75cf",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/ActivateAction",
+  "x-oold-instance-rdf-type": [
+    "schema:ActivateAction"
+  ],
+  "title": "ActivateAction",
+  "description": "The act of starting or activating a device or application (e.g. starting a timer or turning on a flashlight).",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:ActivateAction"
+      ]
+    }
+  }
+}

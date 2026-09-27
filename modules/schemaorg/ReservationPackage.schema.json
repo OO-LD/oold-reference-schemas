@@ -1,0 +1,51 @@
+{
+  "@context": [
+    "Reservation.schema.json",
+    {
+      "subReservation": {
+        "@id": "schema:subReservation",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Reservation.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ReservationPackage.schema.json",
+  "x-oold-uuid": "8c8aa98c-77b1-56e5-9ffb-c7114a994195",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/ReservationPackage",
+  "x-oold-instance-rdf-type": [
+    "schema:ReservationPackage"
+  ],
+  "title": "ReservationPackage",
+  "description": "A group of multiple reservations with common values for all sub-reservations.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:ReservationPackage"
+      ]
+    },
+    "subReservation": {
+      "title": "Sub Reservation",
+      "description": "The individual reservations included in the package. Typically a repeated property.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Reservation.schema.json"
+      }
+    }
+  }
+}

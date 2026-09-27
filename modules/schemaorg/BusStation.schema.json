@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "CivicStructure.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "CivicStructure.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "BusStation.schema.json",
+  "x-oold-uuid": "db7496ce-e933-5c29-8056-38a18c1d6086",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/BusStation",
+  "x-oold-instance-rdf-type": [
+    "schema:BusStation"
+  ],
+  "title": "BusStation",
+  "description": "A bus station.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:BusStation"
+      ]
+    }
+  }
+}

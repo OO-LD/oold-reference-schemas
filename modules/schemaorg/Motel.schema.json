@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "LodgingBusiness.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "LodgingBusiness.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Motel.schema.json",
+  "x-oold-uuid": "d2574930-91ef-5128-98fd-ece708ae28f7",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Motel",
+  "x-oold-instance-rdf-type": [
+    "schema:Motel"
+  ],
+  "title": "Motel",
+  "description": "A motel.\n<br /><br />\nSee also the <a href=\"/docs/hotels.html\">dedicated document on the use of schema.org for marking up hotels and other forms of accommodations</a>.\n",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Motel"
+      ]
+    }
+  }
+}

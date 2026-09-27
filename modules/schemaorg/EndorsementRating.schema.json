@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Rating.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Rating.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "EndorsementRating.schema.json",
+  "x-oold-uuid": "86c5b41f-b8b2-5df1-8978-2e45ffe9367e",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/EndorsementRating",
+  "x-oold-instance-rdf-type": [
+    "schema:EndorsementRating"
+  ],
+  "title": "EndorsementRating",
+  "description": "An EndorsementRating is a rating that expresses some level of endorsement, for example inclusion in a \"critic's pick\" blog, a\n\"Like\" or \"+1\" on a social network. It can be considered the [[result]] of an [[EndorseAction]] in which the [[object]] of the action is rated positively by\nsome [[agent]]. As is common elsewhere in schema.org, it is sometimes more useful to describe the results of such an action without explicitly describing the [[Action]].\n\nAn [[EndorsementRating]] may be part of a numeric scale or organized system, but this is not required: having an explicit type for indicating a positive,\nendorsement rating is particularly useful in the absence of numeric scales as it helps consumers understand that the rating is broadly positive.\n",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:EndorsementRating"
+      ]
+    }
+  }
+}

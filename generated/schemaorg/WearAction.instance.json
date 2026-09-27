@@ -1,0 +1,8 @@
+{
+  "$schema": "WearAction.schema.json",
+  "@context": "WearAction.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:WearAction"
+  ]
+}

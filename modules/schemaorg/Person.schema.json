@@ -1,0 +1,1057 @@
+{
+  "@context": [
+    "Thing.schema.json",
+    {
+      "additionalName": {
+        "@id": "schema:additionalName",
+        "@container": "@set"
+      },
+      "address": {
+        "@id": "schema:address",
+        "@container": "@set"
+      },
+      "affiliation": {
+        "@id": "schema:affiliation",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "agentInteractionStatistic": {
+        "@id": "schema:agentInteractionStatistic",
+        "@container": "@set"
+      },
+      "alumniOf": {
+        "@id": "schema:alumniOf",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "award": {
+        "@id": "schema:award",
+        "@container": "@set"
+      },
+      "birthDate": {
+        "@id": "schema:birthDate",
+        "@type": "xsd:date",
+        "@container": "@set"
+      },
+      "birthPlace": {
+        "@id": "schema:birthPlace",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "brand": {
+        "@id": "schema:brand",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "callSign": {
+        "@id": "schema:callSign",
+        "@container": "@set"
+      },
+      "children": {
+        "@id": "schema:children",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "colleague": {
+        "@id": "schema:colleague",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "contactPoint": {
+        "@id": "schema:contactPoint",
+        "@container": "@set"
+      },
+      "deathDate": {
+        "@id": "schema:deathDate",
+        "@type": "xsd:date",
+        "@container": "@set"
+      },
+      "deathPlace": {
+        "@id": "schema:deathPlace",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "duns": {
+        "@id": "schema:duns",
+        "@container": "@set"
+      },
+      "email": {
+        "@id": "schema:email",
+        "@container": "@set"
+      },
+      "familyName": "schema:familyName",
+      "faxNumber": {
+        "@id": "schema:faxNumber",
+        "@container": "@set"
+      },
+      "follows": {
+        "@id": "schema:follows",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "funder": {
+        "@id": "schema:funder",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "funding": {
+        "@id": "schema:funding",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "gender": {
+        "@id": "schema:gender",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "gender_text": {
+        "@id": "schema:gender",
+        "@container": "@set"
+      },
+      "givenName": "schema:givenName",
+      "globalLocationNumber": {
+        "@id": "schema:globalLocationNumber",
+        "@container": "@set"
+      },
+      "hasCertification": {
+        "@id": "schema:hasCertification",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "hasCredential": {
+        "@id": "schema:hasCredential",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "hasOccupation": {
+        "@id": "schema:hasOccupation",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "hasOfferCatalog": {
+        "@id": "schema:hasOfferCatalog",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "hasPOS": {
+        "@id": "schema:hasPOS",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "height": {
+        "@id": "schema:height",
+        "@container": "@set"
+      },
+      "homeLocation": {
+        "@id": "schema:homeLocation",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "honorificPrefix": {
+        "@id": "schema:honorificPrefix",
+        "@container": "@set"
+      },
+      "honorificSuffix": {
+        "@id": "schema:honorificSuffix",
+        "@container": "@set"
+      },
+      "interactionStatistic": {
+        "@id": "schema:interactionStatistic",
+        "@container": "@set"
+      },
+      "isicV4": {
+        "@id": "schema:isicV4",
+        "@container": "@set"
+      },
+      "jobTitle": {
+        "@id": "schema:jobTitle",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "jobTitle_text": {
+        "@id": "schema:jobTitle",
+        "@container": "@set"
+      },
+      "knows": {
+        "@id": "schema:knows",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "knowsAbout": {
+        "@id": "schema:knowsAbout",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "knowsAbout_text": {
+        "@id": "schema:knowsAbout",
+        "@container": "@set"
+      },
+      "knowsLanguage": {
+        "@id": "schema:knowsLanguage",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "knowsLanguage_text": {
+        "@id": "schema:knowsLanguage",
+        "@container": "@set"
+      },
+      "lifeEvent": {
+        "@id": "schema:lifeEvent",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "makesOffer": {
+        "@id": "schema:makesOffer",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "memberOf": {
+        "@id": "schema:memberOf",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "naics": {
+        "@id": "schema:naics",
+        "@container": "@set"
+      },
+      "nationality": {
+        "@id": "schema:nationality",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "netWorth": {
+        "@id": "schema:netWorth",
+        "@container": "@set"
+      },
+      "owns": {
+        "@id": "schema:owns",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "parent": {
+        "@id": "schema:parent",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "performerIn": {
+        "@id": "schema:performerIn",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "pronouns": {
+        "@id": "schema:pronouns",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "pronouns_text": {
+        "@id": "schema:pronouns",
+        "@container": "@set"
+      },
+      "publishingPrinciples": {
+        "@id": "schema:publishingPrinciples",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "relatedTo": {
+        "@id": "schema:relatedTo",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "seeks": {
+        "@id": "schema:seeks",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "sibling": {
+        "@id": "schema:sibling",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "skills": {
+        "@id": "schema:skills",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "skills_text": {
+        "@id": "schema:skills",
+        "@container": "@set"
+      },
+      "sponsor": {
+        "@id": "schema:sponsor",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "spouse": {
+        "@id": "schema:spouse",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "taxID": {
+        "@id": "schema:taxID",
+        "@container": "@set"
+      },
+      "telephone": {
+        "@id": "schema:telephone",
+        "@container": "@set"
+      },
+      "vatID": {
+        "@id": "schema:vatID",
+        "@container": "@set"
+      },
+      "weight": {
+        "@id": "schema:weight",
+        "@container": "@set"
+      },
+      "workLocation": {
+        "@id": "schema:workLocation",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "worksFor": {
+        "@id": "schema:worksFor",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Thing.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Person.schema.json",
+  "x-oold-uuid": "6f07500e-896f-5c47-9dc0-9c951bf2210f",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Person",
+  "x-oold-instance-rdf-type": [
+    "schema:Person"
+  ],
+  "title": "Person",
+  "description": "A person (alive, dead, undead, or fictional).",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Person"
+      ]
+    },
+    "additionalName": {
+      "title": "Additional Name",
+      "description": "An additional name for a Person, can be used for a middle name.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "address": {
+      "title": "Address",
+      "description": "Physical address of the item.",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: PostalAddress [value-type]: PostalAddress -> ContactPoint -> StructuredValue -> Intangible -> Thing",
+        "anyOf": [
+          {
+            "$ref": "Text.schema.json"
+          },
+          {
+            "$ref": "PostalAddress.schema.json"
+          }
+        ]
+      }
+    },
+    "affiliation": {
+      "title": "Affiliation",
+      "description": "An organization that this person is affiliated with. For example, a school/university, a club, or a team.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Organization.schema.json"
+      }
+    },
+    "agentInteractionStatistic": {
+      "title": "Agent Interaction Statistic",
+      "description": "The number of completed interactions for this entity, in a particular role (the 'agent'), in a particular action (indicated in the statistic), and in a particular context (i.e. interactionService).",
+      "type": "array",
+      "items": {
+        "$ref": "InteractionCounter.schema.json"
+      }
+    },
+    "alumniOf": {
+      "title": "Alumni Of",
+      "description": "An organization that the person is an alumni of.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "EducationalOrganization.schema.json",
+          "Organization.schema.json"
+        ]
+      }
+    },
+    "award": {
+      "title": "Award",
+      "description": "An award won by or for this item.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "birthDate": {
+      "title": "Birth Date",
+      "description": "Date of birth.",
+      "type": "array",
+      "items": {
+        "$ref": "Date.schema.json"
+      }
+    },
+    "birthPlace": {
+      "title": "Birth Place",
+      "description": "The place where the person was born.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Place.schema.json"
+      }
+    },
+    "brand": {
+      "title": "Brand",
+      "description": "The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "Brand.schema.json",
+          "Organization.schema.json"
+        ]
+      }
+    },
+    "callSign": {
+      "title": "Call Sign",
+      "description": "A [callsign](https://en.wikipedia.org/wiki/Call_sign), as used in broadcasting and radio communications to identify people, radio and TV stations, or vehicles.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "children": {
+      "title": "Children",
+      "description": "A child of the person.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Person.schema.json"
+      }
+    },
+    "colleague": {
+      "title": "Colleague",
+      "description": "A colleague of the person.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "URL.schema.json"
+          },
+          {
+            "type": "string",
+            "format": "iri-reference",
+            "x-oold-range": "Person.schema.json"
+          }
+        ]
+      }
+    },
+    "contactPoint": {
+      "title": "Contact Point",
+      "description": "A contact point for a person or organization.",
+      "type": "array",
+      "items": {
+        "$ref": "ContactPoint.schema.json"
+      }
+    },
+    "deathDate": {
+      "title": "Death Date",
+      "description": "Date of death.",
+      "type": "array",
+      "items": {
+        "$ref": "Date.schema.json"
+      }
+    },
+    "deathPlace": {
+      "title": "Death Place",
+      "description": "The place where the person died.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Place.schema.json"
+      }
+    },
+    "duns": {
+      "title": "Duns",
+      "description": "The Dun & Bradstreet DUNS number for identifying an organization or business person.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "email": {
+      "title": "Email",
+      "description": "Email address.",
+      "type": "array",
+      "items": {
+        "$ref": "Email.schema.json"
+      }
+    },
+    "familyName": {
+      "title": "Family Name",
+      "description": "Family name. In the U.S., the last name of a Person.",
+      "$ref": "Text.schema.json"
+    },
+    "faxNumber": {
+      "title": "Fax Number",
+      "description": "The fax number.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "follows": {
+      "title": "Follows",
+      "description": "The most generic uni-directional social relation.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Person.schema.json"
+      }
+    },
+    "funder": {
+      "title": "Funder",
+      "description": "A person or organization that supports (sponsors) something through some kind of financial contribution.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "Organization.schema.json",
+          "Person.schema.json"
+        ]
+      }
+    },
+    "funding": {
+      "title": "Funding",
+      "description": "A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Grant.schema.json"
+      }
+    },
+    "gender": {
+      "title": "Gender",
+      "description": "Gender of something, typically a [[Person]], but possibly also fictional characters, animals, etc. While https://schema.org/Male and https://schema.org/Female may be used, text strings are also acceptable for people who are not a binary gender. The [[gender]] property can also be used in an extended sense to cover e.g. the gender of sports teams. As with the gender of individuals, we do not try to enumerate all possibilities. A mixed-gender [[SportsTeam]] can be indicated with a text value of \"Mixed\".",
+      "type": "array",
+      "items": {
+        "$ref": "GenderType.schema.json#/$defs/member",
+        "x-oold-range": "GenderType.schema.json"
+      }
+    },
+    "gender_text": {
+      "title": "Gender (text)",
+      "description": "Gender of something, typically a [[Person]], but possibly also fictional characters, animals, etc. While https://schema.org/Male and https://schema.org/Female may be used, text strings are also acceptable for people who are not a binary gender. The [[gender]] property can also be used in an extended sense to cover e.g. the gender of sports teams. As with the gender of individuals, we do not try to enumerate all possibilities. A mixed-gender [[SportsTeam]] can be indicated with a text value of \"Mixed\".",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "givenName": {
+      "title": "Given Name",
+      "description": "Given name. In the U.S., the first name of a Person.",
+      "$ref": "Text.schema.json"
+    },
+    "globalLocationNumber": {
+      "title": "Global Location Number",
+      "description": "The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "hasCertification": {
+      "title": "Has Certification",
+      "description": "Certification information about a product, organization, service, place, or person.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Certification.schema.json"
+      }
+    },
+    "hasCredential": {
+      "title": "Has Credential",
+      "description": "A credential awarded to the Person or Organization.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Credential.schema.json"
+      }
+    },
+    "hasOccupation": {
+      "title": "Has Occupation",
+      "description": "The Person's occupation. For past professions, use Role for expressing dates.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Occupation.schema.json"
+      }
+    },
+    "hasOfferCatalog": {
+      "title": "Has Offer Catalog",
+      "description": "Indicates an OfferCatalog listing for this Organization, Person, or Service.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "OfferCatalog.schema.json"
+      }
+    },
+    "hasPOS": {
+      "title": "Has P O S",
+      "description": "Points-of-Sales operated by the organization or person.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Place.schema.json"
+      }
+    },
+    "height": {
+      "title": "Height",
+      "description": "The height of the item.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Distance.schema.json"
+          },
+          {
+            "$ref": "QuantitativeValue.schema.json"
+          }
+        ]
+      }
+    },
+    "homeLocation": {
+      "title": "Home Location",
+      "description": "A contact location for a person's residence.",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: ContactPoint [value-type]: ContactPoint -> StructuredValue -> Intangible -> Thing; Place [entity]: Place -> Thing",
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "iri-reference",
+            "x-oold-range": "Place.schema.json"
+          },
+          {
+            "$ref": "ContactPoint.schema.json"
+          }
+        ]
+      }
+    },
+    "honorificPrefix": {
+      "title": "Honorific Prefix",
+      "description": "An honorific prefix preceding a Person's name such as Dr/Mrs/Mr.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "honorificSuffix": {
+      "title": "Honorific Suffix",
+      "description": "An honorific suffix following a Person's name such as M.D./PhD/MSCSW.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "interactionStatistic": {
+      "title": "Interaction Statistic",
+      "description": "The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.",
+      "type": "array",
+      "items": {
+        "$ref": "InteractionCounter.schema.json"
+      }
+    },
+    "isicV4": {
+      "title": "Isic V4",
+      "description": "The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "jobTitle": {
+      "title": "Job Title",
+      "description": "The job title of the person (for example, Financial Manager).",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "DefinedTerm.schema.json"
+      }
+    },
+    "jobTitle_text": {
+      "title": "Job Title (text)",
+      "description": "The job title of the person (for example, Financial Manager).",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "knows": {
+      "title": "Knows",
+      "description": "The most generic bi-directional social/work relation.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Person.schema.json"
+      }
+    },
+    "knowsAbout": {
+      "title": "Knows About",
+      "description": "Of a [[Person]], and less typically of an [[Organization]], to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or [[JobPosting]] descriptions.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Thing.schema.json"
+      }
+    },
+    "knowsAbout_text": {
+      "title": "Knows About (text)",
+      "description": "Of a [[Person]], and less typically of an [[Organization]], to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or [[JobPosting]] descriptions.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Text.schema.json"
+          },
+          {
+            "$ref": "URL.schema.json"
+          }
+        ]
+      }
+    },
+    "knowsLanguage": {
+      "title": "Knows Language",
+      "description": "Of a [[Person]], and less typically of an [[Organization]], to indicate a known language. We do not distinguish skill levels or reading/writing/speaking/signing here. Use language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47).",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Language.schema.json"
+      }
+    },
+    "knowsLanguage_text": {
+      "title": "Knows Language (text)",
+      "description": "Of a [[Person]], and less typically of an [[Organization]], to indicate a known language. We do not distinguish skill levels or reading/writing/speaking/signing here. Use language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47).",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "lifeEvent": {
+      "title": "Life Event",
+      "description": "A life event like baptism, communions, Bar Mitzvahs, Aqiqah, Namakarana, Miyamairi, burial, ....",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Event.schema.json"
+      }
+    },
+    "makesOffer": {
+      "title": "Makes Offer",
+      "description": "A pointer to products or services offered by the organization or person.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Offer.schema.json"
+      }
+    },
+    "memberOf": {
+      "title": "Member Of",
+      "description": "An Organization (or ProgramMembership) to which this Person or Organization belongs.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "MemberProgramTier.schema.json",
+          "Organization.schema.json",
+          "ProgramMembership.schema.json"
+        ]
+      }
+    },
+    "naics": {
+      "title": "Naics",
+      "description": "The North American Industry Classification System (NAICS) code for a particular organization or business person.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "nationality": {
+      "title": "Nationality",
+      "description": "Nationality of the person.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Country.schema.json"
+      }
+    },
+    "netWorth": {
+      "title": "Net Worth",
+      "description": "The total financial value of the person as calculated by subtracting the total value of liabilities from the total value of assets.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "MonetaryAmount.schema.json"
+          },
+          {
+            "$ref": "PriceSpecification.schema.json"
+          }
+        ]
+      }
+    },
+    "owns": {
+      "title": "Owns",
+      "description": "Things owned by the organization or person.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Thing.schema.json"
+      }
+    },
+    "parent": {
+      "title": "Parent",
+      "description": "A parent of this person.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Person.schema.json"
+      }
+    },
+    "performerIn": {
+      "title": "Performer In",
+      "description": "Event that this person is a performer or participant in.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Event.schema.json"
+      }
+    },
+    "pronouns": {
+      "title": "Pronouns",
+      "description": "A short string listing or describing pronouns for a person. Typically the person concerned is the best authority as pronouns are a critical part of personal identity and expression. Publishers and consumers of this information are reminded to treat this data responsibly, take country-specific laws related to gender expression into account, and be wary of out-of-date data and drawing unwarranted inferences about the person being described.\n\nIn English, formulations such as \"they/them\", \"she/her\", and \"he/him\" are commonly used online and can also be used here. We do not intend to enumerate all possible micro-syntaxes in all languages. More structured and well-defined external values for pronouns can be referenced using the [[StructuredValue]] or [[DefinedTerm]] values.\n",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: StructuredValue [value-type]: StructuredValue -> Intangible -> Thing; DefinedTerm [entity]: DefinedTerm -> Intangible -> Thing",
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "iri-reference",
+            "x-oold-range": "DefinedTerm.schema.json"
+          },
+          {
+            "$ref": "StructuredValue.schema.json"
+          }
+        ]
+      }
+    },
+    "pronouns_text": {
+      "title": "Pronouns (text)",
+      "description": "A short string listing or describing pronouns for a person. Typically the person concerned is the best authority as pronouns are a critical part of personal identity and expression. Publishers and consumers of this information are reminded to treat this data responsibly, take country-specific laws related to gender expression into account, and be wary of out-of-date data and drawing unwarranted inferences about the person being described.\n\nIn English, formulations such as \"they/them\", \"she/her\", and \"he/him\" are commonly used online and can also be used here. We do not intend to enumerate all possible micro-syntaxes in all languages. More structured and well-defined external values for pronouns can be referenced using the [[StructuredValue]] or [[DefinedTerm]] values.\n",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "publishingPrinciples": {
+      "title": "Publishing Principles",
+      "description": "The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual, e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].\n\nWhile such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.\n",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "URL.schema.json"
+          },
+          {
+            "type": "string",
+            "format": "iri-reference",
+            "x-oold-range": "CreativeWork.schema.json"
+          }
+        ]
+      }
+    },
+    "relatedTo": {
+      "title": "Related To",
+      "description": "The most generic familial relation.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Person.schema.json"
+      }
+    },
+    "seeks": {
+      "title": "Seeks",
+      "description": "A pointer to products or services sought by the organization or person (demand).",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Demand.schema.json"
+      }
+    },
+    "sibling": {
+      "title": "Sibling",
+      "description": "A sibling of the person.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Person.schema.json"
+      }
+    },
+    "skills": {
+      "title": "Skills",
+      "description": "A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is either claimed by a person, an organization or desired or required to fulfill a role or to work in an occupation.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "DefinedTerm.schema.json"
+      }
+    },
+    "skills_text": {
+      "title": "Skills (text)",
+      "description": "A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is either claimed by a person, an organization or desired or required to fulfill a role or to work in an occupation.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "sponsor": {
+      "title": "Sponsor",
+      "description": "A person or organization that supports a thing through a pledge, promise, or financial contribution. E.g. a sponsor of a Medical Study or a corporate sponsor of an event.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "Organization.schema.json",
+          "Person.schema.json"
+        ]
+      }
+    },
+    "spouse": {
+      "title": "Spouse",
+      "description": "The person's spouse.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Person.schema.json"
+      }
+    },
+    "taxID": {
+      "title": "Tax I D",
+      "description": "The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "telephone": {
+      "title": "Telephone",
+      "description": "The telephone number.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "vatID": {
+      "title": "Vat I D",
+      "description": "The value-added Tax ID of the organization or person with national prefix (for example IT123456789). Can also be described as [[iso6523Code]] with proper prefix.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "weight": {
+      "title": "Weight",
+      "description": "The weight of the product or person.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Mass.schema.json"
+          },
+          {
+            "$ref": "QuantitativeValue.schema.json"
+          }
+        ]
+      }
+    },
+    "workLocation": {
+      "title": "Work Location",
+      "description": "A contact location for a person's place of work.",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: ContactPoint [value-type]: ContactPoint -> StructuredValue -> Intangible -> Thing; Place [entity]: Place -> Thing",
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "iri-reference",
+            "x-oold-range": "Place.schema.json"
+          },
+          {
+            "$ref": "ContactPoint.schema.json"
+          }
+        ]
+      }
+    },
+    "worksFor": {
+      "title": "Works For",
+      "description": "Organizations that the person works for.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Organization.schema.json"
+      }
+    }
+  }
+}

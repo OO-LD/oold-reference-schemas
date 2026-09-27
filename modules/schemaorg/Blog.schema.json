@@ -1,0 +1,63 @@
+{
+  "@context": [
+    "CreativeWork.schema.json",
+    {
+      "blogPost": {
+        "@id": "schema:blogPost",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "issn": {
+        "@id": "schema:issn",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "CreativeWork.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Blog.schema.json",
+  "x-oold-uuid": "177a0cea-f263-527c-99e9-8e8c93749116",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Blog",
+  "x-oold-instance-rdf-type": [
+    "schema:Blog"
+  ],
+  "title": "Blog",
+  "description": "A [blog](https://en.wikipedia.org/wiki/Blog), sometimes known as a \"weblog\". Note that the individual posts ([[BlogPosting]]s) in a [[Blog]] are often colloquially referred to by the same term.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Blog"
+      ]
+    },
+    "blogPost": {
+      "title": "Blog Post",
+      "description": "A posting that is part of this blog.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "BlogPosting.schema.json"
+      }
+    },
+    "issn": {
+      "title": "Issn",
+      "description": "The International Standard Serial Number (ISSN) that identifies this serial publication. You can repeat this property to identify different formats of, or the linking ISSN (ISSN-L) for, this serial publication.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    }
+  }
+}

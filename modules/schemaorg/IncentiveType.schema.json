@@ -1,0 +1,57 @@
+{
+  "@context": [
+    "Enumeration.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Enumeration.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "IncentiveType.schema.json",
+  "x-oold-uuid": "029b77fa-1e30-5b1c-a0bb-a8904fe2704e",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/IncentiveType",
+  "x-oold-instance-rdf-type": [
+    "schema:IncentiveType"
+  ],
+  "title": "IncentiveType",
+  "description": "Enumerates common financial incentives for products, including tax credits, tax deductions, rebates and subsidies, etc.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:IncentiveType"
+      ]
+    }
+  },
+  "$defs": {
+    "member": {
+      "title": "IncentiveType member",
+      "description": "One of the 5 member instances of IncentiveType.",
+      "type": "string",
+      "format": "iri-reference",
+      "enum": [
+        "schema:IncentiveTypeLoan",
+        "schema:IncentiveTypeRebateOrSubsidy",
+        "schema:IncentiveTypeTaxCredit",
+        "schema:IncentiveTypeTaxDeduction",
+        "schema:IncentiveTypeTaxWaiver"
+      ],
+      "x-oold-ui-enum-titles": [
+        "IncentiveTypeLoan",
+        "IncentiveTypeRebateOrSubsidy",
+        "IncentiveTypeTaxCredit",
+        "IncentiveTypeTaxDeduction",
+        "IncentiveTypeTaxWaiver"
+      ]
+    }
+  }
+}

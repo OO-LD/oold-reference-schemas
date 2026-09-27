@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "HomeAndConstructionBusiness.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "HomeAndConstructionBusiness.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "RoofingContractor.schema.json",
+  "x-oold-uuid": "4a120884-dfdf-56f8-8d35-ab42e0c2554d",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/RoofingContractor",
+  "x-oold-instance-rdf-type": [
+    "schema:RoofingContractor"
+  ],
+  "title": "RoofingContractor",
+  "description": "A roofing contractor.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:RoofingContractor"
+      ]
+    }
+  }
+}

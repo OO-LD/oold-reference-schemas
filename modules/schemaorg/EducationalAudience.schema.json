@@ -1,0 +1,48 @@
+{
+  "@context": [
+    "Audience.schema.json",
+    {
+      "educationalRole": {
+        "@id": "schema:educationalRole",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Audience.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "EducationalAudience.schema.json",
+  "x-oold-uuid": "4b0dddbb-19a3-52cc-8fc7-792720286d97",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/EducationalAudience",
+  "x-oold-instance-rdf-type": [
+    "schema:EducationalAudience"
+  ],
+  "title": "EducationalAudience",
+  "description": "An EducationalAudience.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:EducationalAudience"
+      ]
+    },
+    "educationalRole": {
+      "title": "Educational Role",
+      "description": "An educationalRole of an EducationalAudience.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    }
+  }
+}

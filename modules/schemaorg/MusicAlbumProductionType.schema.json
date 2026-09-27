@@ -1,0 +1,65 @@
+{
+  "@context": [
+    "Enumeration.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Enumeration.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MusicAlbumProductionType.schema.json",
+  "x-oold-uuid": "027ec1b8-65a2-59cc-abd0-4f6c20c592e6",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/MusicAlbumProductionType",
+  "x-oold-instance-rdf-type": [
+    "schema:MusicAlbumProductionType"
+  ],
+  "title": "MusicAlbumProductionType",
+  "description": "Classification of the album by its type of content: soundtrack, live album, studio album, etc.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:MusicAlbumProductionType"
+      ]
+    }
+  },
+  "$defs": {
+    "member": {
+      "title": "MusicAlbumProductionType member",
+      "description": "One of the 9 member instances of MusicAlbumProductionType.",
+      "type": "string",
+      "format": "iri-reference",
+      "enum": [
+        "schema:CompilationAlbum",
+        "schema:DJMixAlbum",
+        "schema:DemoAlbum",
+        "schema:LiveAlbum",
+        "schema:MixtapeAlbum",
+        "schema:RemixAlbum",
+        "schema:SoundtrackAlbum",
+        "schema:SpokenWordAlbum",
+        "schema:StudioAlbum"
+      ],
+      "x-oold-ui-enum-titles": [
+        "CompilationAlbum",
+        "DJMixAlbum",
+        "DemoAlbum",
+        "LiveAlbum",
+        "MixtapeAlbum",
+        "RemixAlbum",
+        "SoundtrackAlbum",
+        "SpokenWordAlbum",
+        "StudioAlbum"
+      ]
+    }
+  }
+}

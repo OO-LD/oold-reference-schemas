@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "DigitalDocument.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "DigitalDocument.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "SpreadsheetDigitalDocument.schema.json",
+  "x-oold-uuid": "e075d662-342b-5149-b6d8-a7ec22e038df",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/SpreadsheetDigitalDocument",
+  "x-oold-instance-rdf-type": [
+    "schema:SpreadsheetDigitalDocument"
+  ],
+  "title": "SpreadsheetDigitalDocument",
+  "description": "A spreadsheet file.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:SpreadsheetDigitalDocument"
+      ]
+    }
+  }
+}

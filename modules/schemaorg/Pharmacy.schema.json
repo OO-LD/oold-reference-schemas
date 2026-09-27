@@ -1,0 +1,39 @@
+{
+  "@context": [
+    "MedicalBusiness.schema.json",
+    "MedicalOrganization.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "MedicalBusiness.schema.json"
+    },
+    {
+      "$ref": "MedicalOrganization.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Pharmacy.schema.json",
+  "x-oold-uuid": "3eb61cc1-4392-5b5b-8f2f-dc4a8a4fb0d8",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Pharmacy",
+  "x-oold-instance-rdf-type": [
+    "schema:Pharmacy"
+  ],
+  "title": "Pharmacy",
+  "description": "A pharmacy or drugstore.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Pharmacy"
+      ]
+    }
+  }
+}

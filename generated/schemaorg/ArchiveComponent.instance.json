@@ -1,0 +1,8 @@
+{
+  "$schema": "ArchiveComponent.schema.json",
+  "@context": "ArchiveComponent.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:ArchiveComponent"
+  ]
+}

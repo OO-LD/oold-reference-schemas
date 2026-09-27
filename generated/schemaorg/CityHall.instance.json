@@ -1,0 +1,8 @@
+{
+  "$schema": "CityHall.schema.json",
+  "@context": "CityHall.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:CityHall"
+  ]
+}

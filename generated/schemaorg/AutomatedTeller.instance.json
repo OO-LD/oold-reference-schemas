@@ -1,0 +1,8 @@
+{
+  "$schema": "AutomatedTeller.schema.json",
+  "@context": "AutomatedTeller.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:AutomatedTeller"
+  ]
+}

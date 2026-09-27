@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "OrganizeAction.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "OrganizeAction.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "AllocateAction.schema.json",
+  "x-oold-uuid": "66965e15-8a48-54d3-803a-c0e7fd01cef4",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/AllocateAction",
+  "x-oold-instance-rdf-type": [
+    "schema:AllocateAction"
+  ],
+  "title": "AllocateAction",
+  "description": "The act of organizing tasks/objects/events by associating resources to it.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:AllocateAction"
+      ]
+    }
+  }
+}

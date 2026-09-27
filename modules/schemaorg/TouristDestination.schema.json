@@ -1,0 +1,78 @@
+{
+  "@context": [
+    "Place.schema.json",
+    {
+      "includesAttraction": {
+        "@id": "schema:includesAttraction",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "touristType": {
+        "@id": "schema:touristType",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "touristType_text": {
+        "@id": "schema:touristType",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Place.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "TouristDestination.schema.json",
+  "x-oold-uuid": "ae33f39e-4e30-5d10-8ee0-30061697d169",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/TouristDestination",
+  "x-oold-instance-rdf-type": [
+    "schema:TouristDestination"
+  ],
+  "title": "TouristDestination",
+  "description": "A tourist destination. In principle any [[Place]] can be a [[TouristDestination]] from a [[City]], Region or [[Country]] to an [[AmusementPark]] or [[Hotel]]. This Type can be used on its own to describe a general [[TouristDestination]], or be used as an [[additionalType]] to add tourist relevant properties to any other [[Place]].  A [[TouristDestination]] is defined as a [[Place]] that contains, or is colocated with, one or more [[TouristAttraction]]s, often linked by a similar theme or interest to a particular [[touristType]]. The [UNWTO](http://www2.unwto.org/) defines Destination (main destination of a tourism trip) as the place visited that is central to the decision to take the trip.\n  (See examples below.)",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:TouristDestination"
+      ]
+    },
+    "includesAttraction": {
+      "title": "Includes Attraction",
+      "description": "Attraction located at destination.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "TouristAttraction.schema.json"
+      }
+    },
+    "touristType": {
+      "title": "Tourist Type",
+      "description": "Attraction suitable for type(s) of tourist. E.g. children, visitors from a particular country, etc. ",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Audience.schema.json"
+      }
+    },
+    "touristType_text": {
+      "title": "Tourist Type (text)",
+      "description": "Attraction suitable for type(s) of tourist. E.g. children, visitors from a particular country, etc. ",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "ControlAction.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "ControlAction.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "AuthenticateAction.schema.json",
+  "x-oold-uuid": "0ccdf111-1274-5c10-951e-7089753b3feb",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/AuthenticateAction",
+  "x-oold-instance-rdf-type": [
+    "schema:AuthenticateAction"
+  ],
+  "title": "AuthenticateAction",
+  "description": "The action of authenticating into a device or application.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:AuthenticateAction"
+      ]
+    }
+  }
+}

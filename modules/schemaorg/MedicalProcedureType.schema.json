@@ -1,0 +1,51 @@
+{
+  "@context": [
+    "MedicalEnumeration.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "MedicalEnumeration.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MedicalProcedureType.schema.json",
+  "x-oold-uuid": "88866242-9d9c-5eda-94a4-c7ca52ccbaf6",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/MedicalProcedureType",
+  "x-oold-instance-rdf-type": [
+    "schema:MedicalProcedureType"
+  ],
+  "title": "MedicalProcedureType",
+  "description": "An enumeration that describes different types of medical procedures.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:MedicalProcedureType"
+      ]
+    }
+  },
+  "$defs": {
+    "member": {
+      "title": "MedicalProcedureType member",
+      "description": "One of the 2 member instances of MedicalProcedureType.",
+      "type": "string",
+      "format": "iri-reference",
+      "enum": [
+        "schema:NoninvasiveProcedure",
+        "schema:PercutaneousProcedure"
+      ],
+      "x-oold-ui-enum-titles": [
+        "NoninvasiveProcedure",
+        "PercutaneousProcedure"
+      ]
+    }
+  }
+}

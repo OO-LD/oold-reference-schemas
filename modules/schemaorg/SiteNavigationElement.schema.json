@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "WebPageElement.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "WebPageElement.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "SiteNavigationElement.schema.json",
+  "x-oold-uuid": "5b387ebf-8b55-5d96-aa3c-2af2cd55f21c",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/SiteNavigationElement",
+  "x-oold-instance-rdf-type": [
+    "schema:SiteNavigationElement"
+  ],
+  "title": "SiteNavigationElement",
+  "description": "A navigation element of the page.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:SiteNavigationElement"
+      ]
+    }
+  }
+}

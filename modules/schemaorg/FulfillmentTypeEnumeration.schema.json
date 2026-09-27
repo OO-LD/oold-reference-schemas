@@ -1,0 +1,57 @@
+{
+  "@context": [
+    "Enumeration.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Enumeration.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "FulfillmentTypeEnumeration.schema.json",
+  "x-oold-uuid": "b3046942-bedd-5112-bcef-ef560d70b7f8",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/FulfillmentTypeEnumeration",
+  "x-oold-instance-rdf-type": [
+    "schema:FulfillmentTypeEnumeration"
+  ],
+  "title": "FulfillmentTypeEnumeration",
+  "description": "A type of product fulfillment.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:FulfillmentTypeEnumeration"
+      ]
+    }
+  },
+  "$defs": {
+    "member": {
+      "title": "FulfillmentTypeEnumeration member",
+      "description": "One of the 5 member instances of FulfillmentTypeEnumeration.",
+      "type": "string",
+      "format": "iri-reference",
+      "enum": [
+        "schema:FulfillmentTypeCollectionPoint",
+        "schema:FulfillmentTypeDelivery",
+        "schema:FulfillmentTypePickupDropoff",
+        "schema:FulfillmentTypePickupInStore",
+        "schema:FulfillmentTypeScheduledDelivery"
+      ],
+      "x-oold-ui-enum-titles": [
+        "FulfillmentTypeCollectionPoint",
+        "FulfillmentTypeDelivery",
+        "FulfillmentTypePickupDropoff",
+        "FulfillmentTypePickupInStore",
+        "FulfillmentTypeScheduledDelivery"
+      ]
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "CivicStructure.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "CivicStructure.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "GovernmentBuilding.schema.json",
+  "x-oold-uuid": "ef54d52a-63e9-55cd-a9fb-b984d7d312f9",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/GovernmentBuilding",
+  "x-oold-instance-rdf-type": [
+    "schema:GovernmentBuilding"
+  ],
+  "title": "GovernmentBuilding",
+  "description": "A government building.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:GovernmentBuilding"
+      ]
+    }
+  }
+}

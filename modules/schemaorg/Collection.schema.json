@@ -1,0 +1,48 @@
+{
+  "@context": [
+    "CreativeWork.schema.json",
+    {
+      "collectionSize": {
+        "@id": "schema:collectionSize",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "CreativeWork.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Collection.schema.json",
+  "x-oold-uuid": "a94dc592-c231-5dfa-bc63-b11e8bc08a7b",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Collection",
+  "x-oold-instance-rdf-type": [
+    "schema:Collection"
+  ],
+  "title": "Collection",
+  "description": "A collection of items, e.g. creative works or products.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Collection"
+      ]
+    },
+    "collectionSize": {
+      "title": "Collection Size",
+      "description": "The number of items in the [[Collection]].",
+      "type": "array",
+      "items": {
+        "$ref": "Integer.schema.json"
+      }
+    }
+  }
+}

@@ -1,0 +1,171 @@
+{
+  "@context": [
+    "CreativeWork.schema.json",
+    {
+      "articleBody": {
+        "@id": "schema:articleBody",
+        "@container": "@set"
+      },
+      "articleSection": {
+        "@id": "schema:articleSection",
+        "@container": "@set"
+      },
+      "backstory": {
+        "@id": "schema:backstory",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "backstory_text": {
+        "@id": "schema:backstory",
+        "@container": "@set"
+      },
+      "pageEnd": {
+        "@id": "schema:pageEnd",
+        "@container": "@set"
+      },
+      "pageStart": {
+        "@id": "schema:pageStart",
+        "@container": "@set"
+      },
+      "pagination": {
+        "@id": "schema:pagination",
+        "@container": "@set"
+      },
+      "speakable": {
+        "@id": "schema:speakable",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "wordCount": {
+        "@id": "schema:wordCount",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "CreativeWork.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Article.schema.json",
+  "x-oold-uuid": "84847232-ffc8-53f9-aefc-bfb82f31d7ae",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Article",
+  "x-oold-instance-rdf-type": [
+    "schema:Article"
+  ],
+  "title": "Article",
+  "description": "An article, such as a news article or piece of investigative report. Newspapers and magazines have articles of many different types and this is intended to cover them all.\\n\\nSee also [blog post](https://blog.schema.org/2014/09/02/schema-org-support-for-bibliographic-relationships-and-periodicals/).",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Article"
+      ]
+    },
+    "articleBody": {
+      "title": "Article Body",
+      "description": "The actual body of the article.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "articleSection": {
+      "title": "Article Section",
+      "description": "Articles may belong to one or more 'sections' in a magazine or newspaper, such as Sports, Lifestyle, etc.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "backstory": {
+      "title": "Backstory",
+      "description": "For an [[Article]], typically a [[NewsArticle]], the backstory property provides a textual summary giving a brief explanation of why and how an article was created. In a journalistic setting this could include information about reporting process, methods, interviews, data sources, etc.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "CreativeWork.schema.json"
+      }
+    },
+    "backstory_text": {
+      "title": "Backstory (text)",
+      "description": "For an [[Article]], typically a [[NewsArticle]], the backstory property provides a textual summary giving a brief explanation of why and how an article was created. In a journalistic setting this could include information about reporting process, methods, interviews, data sources, etc.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "pageEnd": {
+      "title": "Page End",
+      "description": "The page on which the work ends; for example \"138\" or \"xvi\".",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Integer.schema.json"
+          },
+          {
+            "$ref": "Text.schema.json"
+          }
+        ]
+      }
+    },
+    "pageStart": {
+      "title": "Page Start",
+      "description": "The page on which the work starts; for example \"135\" or \"xiii\".",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Integer.schema.json"
+          },
+          {
+            "$ref": "Text.schema.json"
+          }
+        ]
+      }
+    },
+    "pagination": {
+      "title": "Pagination",
+      "description": "Any description of pages that is not separated into pageStart and pageEnd; for example, \"1-6, 9, 55\" or \"10-12, 46-49\".",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "speakable": {
+      "title": "Speakable",
+      "description": "Indicates sections of a Web page that are particularly 'speakable' in the sense of being highlighted as being especially appropriate for text-to-speech conversion. Other sections of a page may also be usefully spoken in particular circumstances; the 'speakable' property serves to indicate the parts most likely to be generally useful for speech.\n\nThe *speakable* property can be repeated an arbitrary number of times, with three kinds of possible 'content-locator' values:\n\n1.) *id-value* URL references - uses *id-value* of an element in the page being annotated. The simplest use of *speakable* has (potentially relative) URL values, referencing identified sections of the document concerned.\n\n2.) CSS Selectors - addresses content in the annotated page, e.g. via class attribute. Use the [[cssSelector]] property.\n\n3.)  XPaths - addresses content via XPaths (assuming an XML view of the content). Use the [[xpath]] property.\n\n\nFor more sophisticated markup of speakable sections beyond simple ID references, either CSS selectors or XPath expressions to pick out document section(s) as speakable. For this\nwe define a supporting type, [[SpeakableSpecification]]  which is defined to be a possible value of the *speakable* property.\n         ",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "URL.schema.json"
+          },
+          {
+            "type": "string",
+            "format": "iri-reference",
+            "x-oold-range": "SpeakableSpecification.schema.json"
+          }
+        ]
+      }
+    },
+    "wordCount": {
+      "title": "Word Count",
+      "description": "The number of words in the text of the CreativeWork such as an Article, Book, etc.",
+      "type": "array",
+      "items": {
+        "$ref": "Integer.schema.json"
+      }
+    }
+  }
+}

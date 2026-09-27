@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Organization.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Organization.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "LibrarySystem.schema.json",
+  "x-oold-uuid": "1c193624-69d0-5b56-bb39-f78641d59120",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/LibrarySystem",
+  "x-oold-instance-rdf-type": [
+    "schema:LibrarySystem"
+  ],
+  "title": "LibrarySystem",
+  "description": "A [[LibrarySystem]] is a collaborative system amongst several libraries.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:LibrarySystem"
+      ]
+    }
+  }
+}

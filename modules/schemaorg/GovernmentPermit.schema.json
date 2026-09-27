@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Permit.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Permit.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "GovernmentPermit.schema.json",
+  "x-oold-uuid": "69d41671-0aa6-57ad-9dce-93f8cff1b4e3",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/GovernmentPermit",
+  "x-oold-instance-rdf-type": [
+    "schema:GovernmentPermit"
+  ],
+  "title": "GovernmentPermit",
+  "description": "A permit issued by a government agency.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:GovernmentPermit"
+      ]
+    }
+  }
+}

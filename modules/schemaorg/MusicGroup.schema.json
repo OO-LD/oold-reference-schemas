@@ -1,0 +1,103 @@
+{
+  "@context": [
+    "PerformingGroup.schema.json",
+    {
+      "album": {
+        "@id": "schema:album",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "genre": {
+        "@id": "schema:genre",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "genre_text": {
+        "@id": "schema:genre",
+        "@container": "@set"
+      },
+      "track": {
+        "@id": "schema:track",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "PerformingGroup.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MusicGroup.schema.json",
+  "x-oold-uuid": "dd1b8bd9-500f-5531-8aa7-d0b9113608cd",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/MusicGroup",
+  "x-oold-instance-rdf-type": [
+    "schema:MusicGroup"
+  ],
+  "title": "MusicGroup",
+  "description": "A musical group, such as a band, an orchestra, or a choir. Can also be a solo musician.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:MusicGroup"
+      ]
+    },
+    "album": {
+      "title": "Album",
+      "description": "A music album.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "MusicAlbum.schema.json"
+      }
+    },
+    "genre": {
+      "title": "Genre",
+      "description": "Genre of the creative work, broadcast channel or group.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "DefinedTerm.schema.json"
+      }
+    },
+    "genre_text": {
+      "title": "Genre (text)",
+      "description": "Genre of the creative work, broadcast channel or group.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Text.schema.json"
+          },
+          {
+            "$ref": "URL.schema.json"
+          }
+        ]
+      }
+    },
+    "track": {
+      "title": "Track",
+      "description": "A music recording (track)&#x2014;usually a single song. If an ItemList is given, the list should contain items of type MusicRecording.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "ItemList.schema.json",
+          "MusicRecording.schema.json"
+        ]
+      }
+    }
+  }
+}

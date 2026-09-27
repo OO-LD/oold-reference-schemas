@@ -1,0 +1,60 @@
+{
+  "@context": [
+    "CivicStructure.schema.json",
+    {
+      "iataCode": {
+        "@id": "schema:iataCode",
+        "@container": "@set"
+      },
+      "icaoCode": {
+        "@id": "schema:icaoCode",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "CivicStructure.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Airport.schema.json",
+  "x-oold-uuid": "8fed8f52-fece-5391-a6e9-e08a05f8ae9d",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Airport",
+  "x-oold-instance-rdf-type": [
+    "schema:Airport"
+  ],
+  "title": "Airport",
+  "description": "An airport.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Airport"
+      ]
+    },
+    "iataCode": {
+      "title": "Iata Code",
+      "description": "IATA identifier for an airline or airport.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "icaoCode": {
+      "title": "Icao Code",
+      "description": "ICAO identifier for an airport.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    }
+  }
+}

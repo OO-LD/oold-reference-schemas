@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Store.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Store.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "GroceryStore.schema.json",
+  "x-oold-uuid": "6921ce8c-34ba-5261-8802-c6b8195f4178",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/GroceryStore",
+  "x-oold-instance-rdf-type": [
+    "schema:GroceryStore"
+  ],
+  "title": "GroceryStore",
+  "description": "A grocery store.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:GroceryStore"
+      ]
+    }
+  }
+}

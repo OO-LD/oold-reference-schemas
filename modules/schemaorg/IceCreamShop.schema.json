@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "FoodEstablishment.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "FoodEstablishment.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "IceCreamShop.schema.json",
+  "x-oold-uuid": "f951d5eb-f8f9-5829-9cfe-9c172dc649fe",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/IceCreamShop",
+  "x-oold-instance-rdf-type": [
+    "schema:IceCreamShop"
+  ],
+  "title": "IceCreamShop",
+  "description": "An ice cream shop.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:IceCreamShop"
+      ]
+    }
+  }
+}

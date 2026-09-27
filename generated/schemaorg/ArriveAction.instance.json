@@ -1,0 +1,8 @@
+{
+  "$schema": "ArriveAction.schema.json",
+  "@context": "ArriveAction.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:ArriveAction"
+  ]
+}

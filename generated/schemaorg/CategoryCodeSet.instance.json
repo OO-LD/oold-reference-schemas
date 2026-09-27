@@ -1,0 +1,8 @@
+{
+  "$schema": "CategoryCodeSet.schema.json",
+  "@context": "CategoryCodeSet.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:CategoryCodeSet"
+  ]
+}

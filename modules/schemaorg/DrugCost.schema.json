@@ -1,0 +1,134 @@
+{
+  "@context": [
+    "MedicalEntity.schema.json",
+    {
+      "applicableLocation": {
+        "@id": "schema:applicableLocation",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "costCategory": {
+        "@id": "schema:costCategory",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "costCurrency": {
+        "@id": "schema:costCurrency",
+        "@container": "@set"
+      },
+      "costOrigin": {
+        "@id": "schema:costOrigin",
+        "@container": "@set"
+      },
+      "costPerUnit": {
+        "@id": "schema:costPerUnit",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "costPerUnit_text": {
+        "@id": "schema:costPerUnit",
+        "@container": "@set"
+      },
+      "drugUnit": {
+        "@id": "schema:drugUnit",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "MedicalEntity.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "DrugCost.schema.json",
+  "x-oold-uuid": "83e02890-2a22-5cd1-8f5c-ebfc00c074d5",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/DrugCost",
+  "x-oold-instance-rdf-type": [
+    "schema:DrugCost"
+  ],
+  "title": "DrugCost",
+  "description": "The cost per unit of a medical drug. Note that this type is not meant to represent the price in an offer of a drug for sale; see the Offer type for that. This type will typically be used to tag wholesale or average retail cost of a drug, or maximum reimbursable cost. Costs of medical drugs vary widely depending on how and where they are paid for, so while this type captures some of the variables, costs should be used with caution by consumers of this schema's markup.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:DrugCost"
+      ]
+    },
+    "applicableLocation": {
+      "title": "Applicable Location",
+      "description": "The location in which the status applies.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "AdministrativeArea.schema.json"
+      }
+    },
+    "costCategory": {
+      "title": "Cost Category",
+      "description": "The category of cost, such as wholesale, retail, reimbursement cap, etc.",
+      "type": "array",
+      "items": {
+        "$ref": "DrugCostCategory.schema.json#/$defs/member",
+        "x-oold-range": "DrugCostCategory.schema.json"
+      }
+    },
+    "costCurrency": {
+      "title": "Cost Currency",
+      "description": "The currency (in 3-letter) of the drug cost. See: http://en.wikipedia.org/wiki/ISO_4217. ",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "costOrigin": {
+      "title": "Cost Origin",
+      "description": "Additional details to capture the origin of the cost data. For example, 'Medicare Part B'.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "costPerUnit": {
+      "title": "Cost Per Unit",
+      "description": "The cost per unit of the drug.",
+      "type": "array",
+      "items": {
+        "$ref": "QualitativeValue.schema.json#/$defs/member",
+        "x-oold-range": "QualitativeValue.schema.json"
+      }
+    },
+    "costPerUnit_text": {
+      "title": "Cost Per Unit (text)",
+      "description": "The cost per unit of the drug.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Number.schema.json"
+          },
+          {
+            "$ref": "Text.schema.json"
+          }
+        ]
+      }
+    },
+    "drugUnit": {
+      "title": "Drug Unit",
+      "description": "The unit in which the drug is measured, e.g. '5 mg tablet'.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    }
+  }
+}

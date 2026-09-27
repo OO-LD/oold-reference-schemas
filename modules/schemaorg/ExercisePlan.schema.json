@@ -1,0 +1,183 @@
+{
+  "@context": [
+    "CreativeWork.schema.json",
+    "PhysicalActivity.schema.json",
+    {
+      "activityDuration": {
+        "@id": "schema:activityDuration",
+        "@container": "@set"
+      },
+      "activityFrequency": {
+        "@id": "schema:activityFrequency",
+        "@container": "@set"
+      },
+      "additionalVariable": {
+        "@id": "schema:additionalVariable",
+        "@container": "@set"
+      },
+      "exerciseType": {
+        "@id": "schema:exerciseType",
+        "@container": "@set"
+      },
+      "intensity": {
+        "@id": "schema:intensity",
+        "@container": "@set"
+      },
+      "repetitions": {
+        "@id": "schema:repetitions",
+        "@container": "@set"
+      },
+      "restPeriods": {
+        "@id": "schema:restPeriods",
+        "@container": "@set"
+      },
+      "workload": {
+        "@id": "schema:workload",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "CreativeWork.schema.json"
+    },
+    {
+      "$ref": "PhysicalActivity.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ExercisePlan.schema.json",
+  "x-oold-uuid": "3ddf89ca-aceb-5903-941b-c6ac7602c612",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/ExercisePlan",
+  "x-oold-instance-rdf-type": [
+    "schema:ExercisePlan"
+  ],
+  "title": "ExercisePlan",
+  "description": "Fitness-related activity designed for a specific health-related purpose, including defined exercise routines as well as activity prescribed by a clinician.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:ExercisePlan"
+      ]
+    },
+    "activityDuration": {
+      "title": "Activity Duration",
+      "description": "Length of time to engage in the activity.",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: QuantitativeValue [value-type]: QuantitativeValue -> StructuredValue -> Intangible -> Thing",
+        "anyOf": [
+          {
+            "$ref": "Duration.schema.json"
+          },
+          {
+            "$ref": "QuantitativeValue.schema.json"
+          }
+        ]
+      }
+    },
+    "activityFrequency": {
+      "title": "Activity Frequency",
+      "description": "How often one should engage in the activity.",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: QuantitativeValue [value-type]: QuantitativeValue -> StructuredValue -> Intangible -> Thing",
+        "anyOf": [
+          {
+            "$ref": "Text.schema.json"
+          },
+          {
+            "$ref": "QuantitativeValue.schema.json"
+          }
+        ]
+      }
+    },
+    "additionalVariable": {
+      "title": "Additional Variable",
+      "description": "Any additional component of the exercise prescription that may need to be articulated to the patient. This may include the order of exercises, the number of repetitions of movement, quantitative distance, progressions over time, etc.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "exerciseType": {
+      "title": "Exercise Type",
+      "description": "Type(s) of exercise or activity, such as strength training, flexibility training, aerobics, cardiac rehabilitation, etc.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "intensity": {
+      "title": "Intensity",
+      "description": "Quantitative measure gauging the degree of force involved in the exercise, for example, heartbeats per minute. May include the velocity of the movement.",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: QuantitativeValue [value-type]: QuantitativeValue -> StructuredValue -> Intangible -> Thing",
+        "anyOf": [
+          {
+            "$ref": "Text.schema.json"
+          },
+          {
+            "$ref": "QuantitativeValue.schema.json"
+          }
+        ]
+      }
+    },
+    "repetitions": {
+      "title": "Repetitions",
+      "description": "Number of times one should repeat the activity.",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: QuantitativeValue [value-type]: QuantitativeValue -> StructuredValue -> Intangible -> Thing",
+        "anyOf": [
+          {
+            "$ref": "Number.schema.json"
+          },
+          {
+            "$ref": "QuantitativeValue.schema.json"
+          }
+        ]
+      }
+    },
+    "restPeriods": {
+      "title": "Rest Periods",
+      "description": "How often one should break from the activity.",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: QuantitativeValue [value-type]: QuantitativeValue -> StructuredValue -> Intangible -> Thing",
+        "anyOf": [
+          {
+            "$ref": "Text.schema.json"
+          },
+          {
+            "$ref": "QuantitativeValue.schema.json"
+          }
+        ]
+      }
+    },
+    "workload": {
+      "title": "Workload",
+      "description": "Quantitative measure of the physiologic output of the exercise; also referred to as energy expenditure.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Energy.schema.json"
+          },
+          {
+            "$ref": "QuantitativeValue.schema.json"
+          }
+        ]
+      }
+    }
+  }
+}

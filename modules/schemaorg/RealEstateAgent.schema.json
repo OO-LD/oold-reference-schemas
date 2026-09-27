@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "LocalBusiness.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "LocalBusiness.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "RealEstateAgent.schema.json",
+  "x-oold-uuid": "115527ab-99e3-5296-93d4-c85b15258545",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/RealEstateAgent",
+  "x-oold-instance-rdf-type": [
+    "schema:RealEstateAgent"
+  ],
+  "title": "RealEstateAgent",
+  "description": "A real-estate agent.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:RealEstateAgent"
+      ]
+    }
+  }
+}

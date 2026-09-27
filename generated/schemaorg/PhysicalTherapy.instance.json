@@ -1,0 +1,8 @@
+{
+  "$schema": "PhysicalTherapy.schema.json",
+  "@context": "PhysicalTherapy.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:PhysicalTherapy"
+  ]
+}

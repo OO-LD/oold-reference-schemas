@@ -1,0 +1,8 @@
+{
+  "$schema": "RealEstateListing.schema.json",
+  "@context": "RealEstateListing.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:RealEstateListing"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "$schema": "DrugLegalStatus.schema.json",
+  "@context": "DrugLegalStatus.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:DrugLegalStatus"
+  ]
+}

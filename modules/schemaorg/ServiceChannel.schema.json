@@ -1,0 +1,155 @@
+{
+  "@context": [
+    "Intangible.schema.json",
+    {
+      "availableLanguage": {
+        "@id": "schema:availableLanguage",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "availableLanguage_text": {
+        "@id": "schema:availableLanguage",
+        "@container": "@set"
+      },
+      "processingTime": {
+        "@id": "schema:processingTime",
+        "@type": "xsd:duration",
+        "@container": "@set"
+      },
+      "providesService": {
+        "@id": "schema:providesService",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "serviceLocation": {
+        "@id": "schema:serviceLocation",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "servicePhone": {
+        "@id": "schema:servicePhone",
+        "@container": "@set"
+      },
+      "servicePostalAddress": {
+        "@id": "schema:servicePostalAddress",
+        "@container": "@set"
+      },
+      "serviceSmsNumber": {
+        "@id": "schema:serviceSmsNumber",
+        "@container": "@set"
+      },
+      "serviceUrl": {
+        "@id": "schema:serviceUrl",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Intangible.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ServiceChannel.schema.json",
+  "x-oold-uuid": "77ed5cdc-a761-5a87-83c5-bfbf0bc67fb2",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/ServiceChannel",
+  "x-oold-instance-rdf-type": [
+    "schema:ServiceChannel"
+  ],
+  "title": "ServiceChannel",
+  "description": "A means for accessing a service, e.g. a government office location, web site, or phone number.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:ServiceChannel"
+      ]
+    },
+    "availableLanguage": {
+      "title": "Available Language",
+      "description": "A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]].",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Language.schema.json"
+      }
+    },
+    "availableLanguage_text": {
+      "title": "Available Language (text)",
+      "description": "A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]].",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "processingTime": {
+      "title": "Processing Time",
+      "description": "Estimated processing time for the service using this channel.",
+      "type": "array",
+      "items": {
+        "$ref": "Duration.schema.json"
+      }
+    },
+    "providesService": {
+      "title": "Provides Service",
+      "description": "The service provided by this channel.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Service.schema.json"
+      }
+    },
+    "serviceLocation": {
+      "title": "Service Location",
+      "description": "The location (e.g. civic structure, local business, etc.) where a person can go to access the service.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Place.schema.json"
+      }
+    },
+    "servicePhone": {
+      "title": "Service Phone",
+      "description": "The phone number to use to access the service.",
+      "type": "array",
+      "items": {
+        "$ref": "ContactPoint.schema.json"
+      }
+    },
+    "servicePostalAddress": {
+      "title": "Service Postal Address",
+      "description": "The address for accessing the service by mail.",
+      "type": "array",
+      "items": {
+        "$ref": "PostalAddress.schema.json"
+      }
+    },
+    "serviceSmsNumber": {
+      "title": "Service Sms Number",
+      "description": "The number to access the service by text message.",
+      "type": "array",
+      "items": {
+        "$ref": "ContactPoint.schema.json"
+      }
+    },
+    "serviceUrl": {
+      "title": "Service Url",
+      "description": "The website to access the service.",
+      "type": "array",
+      "items": {
+        "$ref": "URL.schema.json"
+      }
+    }
+  }
+}

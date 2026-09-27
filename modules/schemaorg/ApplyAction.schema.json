@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "OrganizeAction.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "OrganizeAction.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ApplyAction.schema.json",
+  "x-oold-uuid": "de2b5128-cece-591a-a148-3aa1d67f3195",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/ApplyAction",
+  "x-oold-instance-rdf-type": [
+    "schema:ApplyAction"
+  ],
+  "title": "ApplyAction",
+  "description": "The act of registering to an organization/service without the guarantee to receive it.\\n\\nRelated actions:\\n\\n* [[RegisterAction]]: Unlike RegisterAction, ApplyAction has no guarantees that the application will be accepted.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:ApplyAction"
+      ]
+    }
+  }
+}

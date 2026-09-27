@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "PlanAction.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "PlanAction.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ScheduleAction.schema.json",
+  "x-oold-uuid": "48acbb02-1961-5e53-8609-808f79597c2a",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/ScheduleAction",
+  "x-oold-instance-rdf-type": [
+    "schema:ScheduleAction"
+  ],
+  "title": "ScheduleAction",
+  "description": "Scheduling future actions, events, or tasks.\\n\\nRelated actions:\\n\\n* [[ReserveAction]]: Unlike ReserveAction, ScheduleAction allocates future actions (e.g. an event, a task, etc) towards a time slot / spatial allocation.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:ScheduleAction"
+      ]
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "EducationalOrganization.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "EducationalOrganization.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Preschool.schema.json",
+  "x-oold-uuid": "5b28ecab-1906-592a-b13c-4192d5490b81",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Preschool",
+  "x-oold-instance-rdf-type": [
+    "schema:Preschool"
+  ],
+  "title": "Preschool",
+  "description": "A preschool.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Preschool"
+      ]
+    }
+  }
+}

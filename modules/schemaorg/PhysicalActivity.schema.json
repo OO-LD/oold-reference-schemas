@@ -1,0 +1,117 @@
+{
+  "@context": [
+    "LifestyleModification.schema.json",
+    {
+      "associatedAnatomy": {
+        "@id": "schema:associatedAnatomy",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "category": {
+        "@id": "schema:category",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "category_text": {
+        "@id": "schema:category",
+        "@container": "@set"
+      },
+      "epidemiology": {
+        "@id": "schema:epidemiology",
+        "@container": "@set"
+      },
+      "pathophysiology": {
+        "@id": "schema:pathophysiology",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "LifestyleModification.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "PhysicalActivity.schema.json",
+  "x-oold-uuid": "f3e7495c-fef0-5d59-9bd7-03ff7989281c",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/PhysicalActivity",
+  "x-oold-instance-rdf-type": [
+    "schema:PhysicalActivity"
+  ],
+  "title": "PhysicalActivity",
+  "description": "Any bodily activity that enhances or maintains physical fitness and overall health and wellness. Includes activity that is part of daily living and routine, structured exercise, and exercise prescribed as part of a medical treatment or recovery plan.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:PhysicalActivity"
+      ]
+    },
+    "associatedAnatomy": {
+      "title": "Associated Anatomy",
+      "description": "The anatomy of the underlying organ system or structures associated with this entity.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "AnatomicalStructure.schema.json",
+          "AnatomicalSystem.schema.json",
+          "SuperficialAnatomy.schema.json"
+        ]
+      }
+    },
+    "category": {
+      "title": "Category",
+      "description": "A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "CategoryCode.schema.json",
+          "PhysicalActivityCategory.schema.json",
+          "Thing.schema.json"
+        ]
+      }
+    },
+    "category_text": {
+      "title": "Category (text)",
+      "description": "A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Text.schema.json"
+          },
+          {
+            "$ref": "URL.schema.json"
+          }
+        ]
+      }
+    },
+    "epidemiology": {
+      "title": "Epidemiology",
+      "description": "The characteristics of associated patients, such as age, gender, race etc.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "pathophysiology": {
+      "title": "Pathophysiology",
+      "description": "Changes in the normal mechanical, physical, and biochemical functions that are associated with this activity or condition.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    }
+  }
+}

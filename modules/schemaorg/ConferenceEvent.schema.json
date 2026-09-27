@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Event.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Event.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ConferenceEvent.schema.json",
+  "x-oold-uuid": "41a330de-467c-5ca3-9e15-959cfce18428",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/ConferenceEvent",
+  "x-oold-instance-rdf-type": [
+    "schema:ConferenceEvent"
+  ],
+  "title": "ConferenceEvent",
+  "description": "Event type: Conference event.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:ConferenceEvent"
+      ]
+    }
+  }
+}

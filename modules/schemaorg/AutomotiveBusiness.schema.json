@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "LocalBusiness.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "LocalBusiness.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "AutomotiveBusiness.schema.json",
+  "x-oold-uuid": "d7ef574d-58d4-5a12-a94b-8c57309e9e1d",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/AutomotiveBusiness",
+  "x-oold-instance-rdf-type": [
+    "schema:AutomotiveBusiness"
+  ],
+  "title": "AutomotiveBusiness",
+  "description": "Car repair, sales, or parts.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:AutomotiveBusiness"
+      ]
+    }
+  }
+}

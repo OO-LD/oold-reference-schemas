@@ -1,0 +1,257 @@
+{
+  "@context": [
+    "Intangible.schema.json",
+    "QuantitativeValue.schema.json",
+    {
+      "marginOfError": {
+        "@id": "schema:marginOfError",
+        "@container": "@set"
+      },
+      "measuredProperty": {
+        "@id": "schema:measuredProperty",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "measurementDenominator": {
+        "@id": "schema:measurementDenominator",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "measurementMethod": {
+        "@id": "schema:measurementMethod",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "measurementMethod_text": {
+        "@id": "schema:measurementMethod",
+        "@container": "@set"
+      },
+      "measurementQualifier": {
+        "@id": "schema:measurementQualifier",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "measurementTechnique": {
+        "@id": "schema:measurementTechnique",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "measurementTechnique_text": {
+        "@id": "schema:measurementTechnique",
+        "@container": "@set"
+      },
+      "observationAbout": {
+        "@id": "schema:observationAbout",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "observationDate": {
+        "@id": "schema:observationDate",
+        "@container": "@set"
+      },
+      "observationPeriod": {
+        "@id": "schema:observationPeriod",
+        "@container": "@set"
+      },
+      "variableMeasured": {
+        "@id": "schema:variableMeasured",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "variableMeasured_text": {
+        "@id": "schema:variableMeasured",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Intangible.schema.json"
+    },
+    {
+      "$ref": "QuantitativeValue.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Observation.schema.json",
+  "x-oold-uuid": "87704093-5db1-5ef4-ae93-2f4fb76a371b",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Observation",
+  "x-oold-instance-rdf-type": [
+    "schema:Observation"
+  ],
+  "title": "Observation",
+  "description": "Instances of the class [[Observation]] are used to specify observations about an entity at a particular time. The principal properties of an [[Observation]] are [[observationAbout]], [[measuredProperty]], [[statType]], [[value] and [[observationDate]]  and [[measuredProperty]]. Some but not all Observations represent a [[QuantitativeValue]]. Quantitative observations can be about a [[StatisticalVariable]], which is an abstract specification about which we can make observations that are grounded at a particular location and time.\n\nObservations can also encode a subset of simple RDF-like statements (its observationAbout, a StatisticalVariable, defining the measuredPoperty; its observationAbout property indicating the entity the statement is about, and [[value]] )\n\nIn the context of a quantitative knowledge graph, typical properties could include [[measuredProperty]], [[observationAbout]], [[observationDate]], [[value]], [[unitCode]], [[unitText]], [[measurementMethod]].\n    ",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Observation"
+      ]
+    },
+    "marginOfError": {
+      "title": "Margin Of Error",
+      "description": "A [[marginOfError]] for an [[Observation]].",
+      "type": "array",
+      "items": {
+        "$ref": "QuantitativeValue.schema.json"
+      }
+    },
+    "measuredProperty": {
+      "title": "Measured Property",
+      "description": "The measuredProperty of an [[Observation]], typically via its [[StatisticalVariable]]. There are various kinds of applicable [[Property]]: a schema.org property, a property from other RDF-compatible systems, e.g. W3C RDF Data Cube, Data Commons, Wikidata, or schema.org extensions such as [GS1's](https://www.gs1.org/voc/?show=properties).",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Property.schema.json"
+      }
+    },
+    "measurementDenominator": {
+      "title": "Measurement Denominator",
+      "description": "Identifies the denominator variable when an observation represents a ratio or percentage.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "StatisticalVariable.schema.json"
+      }
+    },
+    "measurementMethod": {
+      "title": "Measurement Method",
+      "description": "A subproperty of [[measurementTechnique]] that can be used for specifying specific methods, in particular via [[MeasurementMethodEnum]].",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "DefinedTerm.schema.json",
+          "MeasurementMethodEnum.schema.json"
+        ]
+      }
+    },
+    "measurementMethod_text": {
+      "title": "Measurement Method (text)",
+      "description": "A subproperty of [[measurementTechnique]] that can be used for specifying specific methods, in particular via [[MeasurementMethodEnum]].",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Text.schema.json"
+          },
+          {
+            "$ref": "URL.schema.json"
+          }
+        ]
+      }
+    },
+    "measurementQualifier": {
+      "title": "Measurement Qualifier",
+      "description": "Provides additional qualification to an observation. For example, a GDP observation measures the Nominal value.",
+      "type": "array",
+      "items": {
+        "$ref": "Enumeration.schema.json#/$defs/member",
+        "x-oold-range": "Enumeration.schema.json"
+      }
+    },
+    "measurementTechnique": {
+      "title": "Measurement Technique",
+      "description": "A technique, method or technology used in an [[Observation]], [[StatisticalVariable]] or [[Dataset]] (or [[DataDownload]], [[DataCatalog]]), corresponding to the method used for measuring the corresponding variable(s) (for datasets, described using [[variableMeasured]]; for [[Observation]], a [[StatisticalVariable]]). Often but not necessarily each [[variableMeasured]] will have an explicit representation as (or mapping to) an property such as those defined in Schema.org, or other RDF vocabularies and \"knowledge graphs\". In that case the subproperty of [[variableMeasured]] called [[measuredProperty]] is applicable.\n    \nThe [[measurementTechnique]] property helps when extra clarification is needed about how a [[measuredProperty]] was measured. This is oriented towards scientific and scholarly dataset publication but may have broader applicability; it is not intended as a full representation of measurement, but can often serve as a high level summary for dataset discovery. \n\nFor example, if [[variableMeasured]] is: molecule concentration, [[measurementTechnique]] could be: \"mass spectrometry\" or \"nmr spectroscopy\" or \"colorimetry\" or \"immunofluorescence\". If the [[variableMeasured]] is \"depression rating\", the [[measurementTechnique]] could be \"Zung Scale\" or \"HAM-D\" or \"Beck Depression Inventory\". \n\nIf there are several [[variableMeasured]] properties recorded for some given data object, use a [[PropertyValue]] for each [[variableMeasured]] and attach the corresponding [[measurementTechnique]]. The value can also be from an enumeration, organized as a [[MeasurementMethodEnum]].",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "DefinedTerm.schema.json",
+          "MeasurementMethodEnum.schema.json"
+        ]
+      }
+    },
+    "measurementTechnique_text": {
+      "title": "Measurement Technique (text)",
+      "description": "A technique, method or technology used in an [[Observation]], [[StatisticalVariable]] or [[Dataset]] (or [[DataDownload]], [[DataCatalog]]), corresponding to the method used for measuring the corresponding variable(s) (for datasets, described using [[variableMeasured]]; for [[Observation]], a [[StatisticalVariable]]). Often but not necessarily each [[variableMeasured]] will have an explicit representation as (or mapping to) an property such as those defined in Schema.org, or other RDF vocabularies and \"knowledge graphs\". In that case the subproperty of [[variableMeasured]] called [[measuredProperty]] is applicable.\n    \nThe [[measurementTechnique]] property helps when extra clarification is needed about how a [[measuredProperty]] was measured. This is oriented towards scientific and scholarly dataset publication but may have broader applicability; it is not intended as a full representation of measurement, but can often serve as a high level summary for dataset discovery. \n\nFor example, if [[variableMeasured]] is: molecule concentration, [[measurementTechnique]] could be: \"mass spectrometry\" or \"nmr spectroscopy\" or \"colorimetry\" or \"immunofluorescence\". If the [[variableMeasured]] is \"depression rating\", the [[measurementTechnique]] could be \"Zung Scale\" or \"HAM-D\" or \"Beck Depression Inventory\". \n\nIf there are several [[variableMeasured]] properties recorded for some given data object, use a [[PropertyValue]] for each [[variableMeasured]] and attach the corresponding [[measurementTechnique]]. The value can also be from an enumeration, organized as a [[MeasurementMethodEnum]].",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Text.schema.json"
+          },
+          {
+            "$ref": "URL.schema.json"
+          }
+        ]
+      }
+    },
+    "observationAbout": {
+      "title": "Observation About",
+      "description": "The [[observationAbout]] property identifies an entity, often a [[Place]], associated with an [[Observation]].",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "Place.schema.json",
+          "Thing.schema.json"
+        ]
+      }
+    },
+    "observationDate": {
+      "title": "Observation Date",
+      "description": "The observationDate of an [[Observation]].",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Date.schema.json"
+          },
+          {
+            "$ref": "DateTime.schema.json"
+          }
+        ]
+      }
+    },
+    "observationPeriod": {
+      "title": "Observation Period",
+      "description": "The length of time an Observation took place over. The format follows `P[0-9]*[Y|M|D|h|m|s]`. For example, P1Y is Period 1 Year, P3M is Period 3 Months, P3h is Period 3 hours.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "variableMeasured": {
+      "title": "Variable Measured",
+      "description": "The variableMeasured property can indicate (repeated as necessary) the  variables that are measured in some dataset, either described as text or as pairs of identifier and description using PropertyValue, or more explicitly as a [[StatisticalVariable]].",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: PropertyValue [value-type]: PropertyValue -> StructuredValue -> Intangible -> Thing; Property [entity]: Property -> Intangible -> Thing; StatisticalVariable [entity]: StatisticalVariable -> ConstraintNode -> Intangible -> Thing",
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "iri-reference",
+            "x-oold-range": [
+              "Property.schema.json",
+              "StatisticalVariable.schema.json"
+            ]
+          },
+          {
+            "$ref": "PropertyValue.schema.json"
+          }
+        ]
+      }
+    },
+    "variableMeasured_text": {
+      "title": "Variable Measured (text)",
+      "description": "The variableMeasured property can indicate (repeated as necessary) the  variables that are measured in some dataset, either described as text or as pairs of identifier and description using PropertyValue, or more explicitly as a [[StatisticalVariable]].",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    }
+  }
+}

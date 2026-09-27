@@ -1,0 +1,48 @@
+{
+  "@context": [
+    "MedicalTest.schema.json",
+    {
+      "tissueSample": {
+        "@id": "schema:tissueSample",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "MedicalTest.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "PathologyTest.schema.json",
+  "x-oold-uuid": "2388f81d-27d1-5d5b-868b-2247057ef57b",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/PathologyTest",
+  "x-oold-instance-rdf-type": [
+    "schema:PathologyTest"
+  ],
+  "title": "PathologyTest",
+  "description": "A medical test performed by a laboratory that typically involves examination of a tissue sample by a pathologist.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:PathologyTest"
+      ]
+    },
+    "tissueSample": {
+      "title": "Tissue Sample",
+      "description": "The type of tissue sample required for the test.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Message.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Message.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "EmailMessage.schema.json",
+  "x-oold-uuid": "c9fa50a0-3c15-5eaf-91b8-97afa520d7ff",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/EmailMessage",
+  "x-oold-instance-rdf-type": [
+    "schema:EmailMessage"
+  ],
+  "title": "EmailMessage",
+  "description": "An email message.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:EmailMessage"
+      ]
+    }
+  }
+}

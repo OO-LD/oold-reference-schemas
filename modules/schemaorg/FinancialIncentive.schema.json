@@ -1,0 +1,295 @@
+{
+  "@context": [
+    "Intangible.schema.json",
+    {
+      "areaServed": {
+        "@id": "schema:areaServed",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "areaServed_text": {
+        "@id": "schema:areaServed",
+        "@container": "@set"
+      },
+      "eligibleWithSupplier": {
+        "@id": "schema:eligibleWithSupplier",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "incentiveAmount": {
+        "@id": "schema:incentiveAmount",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "incentiveStatus": {
+        "@id": "schema:incentiveStatus",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "incentiveType": {
+        "@id": "schema:incentiveType",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "incentivizedItem": {
+        "@id": "schema:incentivizedItem",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "incomeLimit": {
+        "@id": "schema:incomeLimit",
+        "@container": "@set"
+      },
+      "provider": {
+        "@id": "schema:provider",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "publisher": {
+        "@id": "schema:publisher",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "purchasePriceLimit": {
+        "@id": "schema:purchasePriceLimit",
+        "@container": "@set"
+      },
+      "purchaseType": {
+        "@id": "schema:purchaseType",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "qualifiedExpense": {
+        "@id": "schema:qualifiedExpense",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "validFrom": {
+        "@id": "schema:validFrom",
+        "@container": "@set"
+      },
+      "validThrough": {
+        "@id": "schema:validThrough",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Intangible.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "FinancialIncentive.schema.json",
+  "x-oold-uuid": "d721f1ae-3175-58d1-a369-daa1be42c6e0",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/FinancialIncentive",
+  "x-oold-instance-rdf-type": [
+    "schema:FinancialIncentive"
+  ],
+  "title": "FinancialIncentive",
+  "description": "<p>Represents financial incentives for goods/services offered by an organization (or individual).</p>\n\n<p>Typically contains the [[name]] of the incentive, the [[incentivizedItem]], the [[incentiveAmount]], the [[incentiveStatus]], [[incentiveType]], the [[provider]] of the incentive, and [[eligibleWithSupplier]].</p>\n\n<p>Optionally contains criteria on whether the incentive is limited based on [[purchaseType]], [[purchasePriceLimit]], [[incomeLimit]], and the [[qualifiedExpense]].\n    ",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:FinancialIncentive"
+      ]
+    },
+    "areaServed": {
+      "title": "Area Served",
+      "description": "The geographic area where a service or offered item is provided.",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: GeoShape [value-type]: GeoShape -> StructuredValue -> Intangible -> Thing; AdministrativeArea [entity]: AdministrativeArea -> Place -> Thing; Place [entity]: Place -> Thing",
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "iri-reference",
+            "x-oold-range": [
+              "AdministrativeArea.schema.json",
+              "Place.schema.json"
+            ]
+          },
+          {
+            "$ref": "GeoShape.schema.json"
+          }
+        ]
+      }
+    },
+    "areaServed_text": {
+      "title": "Area Served (text)",
+      "description": "The geographic area where a service or offered item is provided.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "eligibleWithSupplier": {
+      "title": "Eligible With Supplier",
+      "description": "The supplier of the incentivized item/service for which the incentive is valid for such as a utility company, merchant, or contractor.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Organization.schema.json"
+      }
+    },
+    "incentiveAmount": {
+      "title": "Incentive Amount",
+      "description": "Describes the amount that can be redeemed from this incentive.\n    \n<p>[[QuantitativeValue]]: Use this for incentives based on price (either raw amount or percentage-based). For a raw amount example, \"You can claim $2,500 - $7,500 from the total cost of installation\" would be represented as the following:</p>\n    {\n        \"@type\": \"QuantitativeValue\",\n        “minValue”: 2500,\n        “maxValue”: 7500,\n        \"unitCode\": \"USD\"\n    }\n<p>[[QuantitativeValue]] can also be used for percentage amounts. In such cases, value is used to represent the incentive’s percentage, while maxValue represents a limit (if one exists) to that incentive. The unitCode should be 'P1' and the unitText should be '%', while valueReference should be used for holding the currency type. For example, \"You can claim up to 30% of the total cost of installation, up to a maximum of $7,500\" would be:</p>\n    {\n        \"@type\": \"QuantitativeValue\",\n        \"value\": 30,\n        \"unitCode\": \"P1\",\n        \"unitText\": \"%\",\n        “maxValue”: 7500,\n        “valueReference”: “USD”\n    }\n<p>[[UnitPriceSpecification]]: Use this for incentives that are based on amounts rather than price. For example, a net metering rebate that pays $10/kWh, up to $1,000:</p>\n    {\n        \"@type\": \"UnitPriceSpecification\",\n        \"price\": 10,\n        \"priceCurrency\": \"USD\",\n        \"referenceQuantity\": 1,\n        \"unitCode\": \"DO3\",\n        \"unitText\": \"kw/h\",\n        \"maxPrice\": 1000,\n        \"description\": \"$10 / kwh up to $1000\"\n    }\n<p>[[LoanOrCredit]]: Use for incentives that are loan based. For example, a loan of $4,000 - $50,000 with a repayment term of 10 years, interest free would look like:</p>\n    {\n        \"@type\": \"LoanOrCredit\",\n        \"loanTerm\": {\n                \"@type\":\"QuantitativeValue\",\n                \"value\":\"10\",\n                \"unitCode\": \"ANN\"\n            },\n        \"amount\":[\n            {\n                \"@type\": \"QuantitativeValue\",\n                \"Name\":\"fixed interest rate\",\n                \"value\":\"0\",\n            },\n        ],\n        \"amount\":[\n            {\n                \"@type\": \"MonetaryAmount\",\n                \"Name\":\"min loan amount\",\n                \"value\":\"4000\",\n                \"currency\":\"CAD\"\n            },\n            {\n                \"@type\": \"MonetaryAmount\",\n                \"Name\":\"max loan amount\",\n                \"value\":\"50000\",\n                \"currency\":\"CAD\"\n            }\n        ],\n    }\n\nIn summary: <ul><li>Use [[QuantitativeValue]] for absolute/percentage-based incentives applied on the price of a good/service.</li>\n<li>Use [[UnitPriceSpecification]] for incentives based on a per-unit basis (e.g. net metering).</li>\n<li>Use [[LoanOrCredit]] for loans/credits.</li>\n</ul>.",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: QuantitativeValue [value-type]: QuantitativeValue -> StructuredValue -> Intangible -> Thing; UnitPriceSpecification [value-type]: UnitPriceSpecification -> PriceSpecification -> StructuredValue -> Intangible -> Thing; LoanOrCredit [entity]: LoanOrCredit -> FinancialProduct -> Service -> Intangible -> Thing",
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "iri-reference",
+            "x-oold-range": "LoanOrCredit.schema.json"
+          },
+          {
+            "$ref": "QuantitativeValue.schema.json"
+          },
+          {
+            "$ref": "UnitPriceSpecification.schema.json"
+          }
+        ]
+      }
+    },
+    "incentiveStatus": {
+      "title": "Incentive Status",
+      "description": "The status of the incentive (active, on hold, retired, etc.).",
+      "type": "array",
+      "items": {
+        "$ref": "IncentiveStatus.schema.json#/$defs/member",
+        "x-oold-range": "IncentiveStatus.schema.json"
+      }
+    },
+    "incentiveType": {
+      "title": "Incentive Type",
+      "description": "The type of incentive offered (tax credit/rebate, tax deduction, tax waiver, subsidies, etc.).",
+      "type": "array",
+      "items": {
+        "$ref": "IncentiveType.schema.json#/$defs/member",
+        "x-oold-range": "IncentiveType.schema.json"
+      }
+    },
+    "incentivizedItem": {
+      "title": "Incentivized Item",
+      "description": "The type or specific product(s) and/or service(s) being incentivized.\n<p>DefinedTermSets are used for product and service categories such as the United Nations Standard Products and Services Code:</p>\n    {\n        \"@type\": \"DefinedTerm\",\n        \"inDefinedTermSet\": \"https://www.unspsc.org/\",\n        \"termCode\": \"261315XX\",\n        \"name\": \"Photovoltaic module\"\n    }\n\n<p>For a specific product or service, use the Product type:</p>\n    {\n        \"@type\": \"Product\",\n        \"name\": \"Kenmore White 17\" Microwave\",\n    }\nFor multiple different incentivized items, use multiple [[DefinedTerm]] or [[Product]].",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "DefinedTerm.schema.json",
+          "Product.schema.json"
+        ]
+      }
+    },
+    "incomeLimit": {
+      "title": "Income Limit",
+      "description": "Optional. Income limit for which the incentive is applicable for.\n    \n<p>If MonetaryAmount is specified, this should be based on annualized income (e.g. if an incentive is limited to those making <$114,000 annually):</p>\n    {\n        \"@type\": \"MonetaryAmount\",\n        \"maxValue\": 114000,\n        \"currency\": \"USD\",\n    }\n\nUse Text for incentives that are limited based on other criteria, for example if an incentive is only available to recipients making 120% of the median poverty income in their area.",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: MonetaryAmount [value-type]: MonetaryAmount -> StructuredValue -> Intangible -> Thing",
+        "anyOf": [
+          {
+            "$ref": "Text.schema.json"
+          },
+          {
+            "$ref": "MonetaryAmount.schema.json"
+          }
+        ]
+      }
+    },
+    "provider": {
+      "title": "Provider",
+      "description": "The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "Organization.schema.json",
+          "Person.schema.json"
+        ]
+      }
+    },
+    "publisher": {
+      "title": "Publisher",
+      "description": "The publisher of the article in question.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "Organization.schema.json",
+          "Person.schema.json"
+        ]
+      }
+    },
+    "purchasePriceLimit": {
+      "title": "Purchase Price Limit",
+      "description": "Optional. The maximum price the item can have and still qualify for this offer.",
+      "type": "array",
+      "items": {
+        "$ref": "MonetaryAmount.schema.json"
+      }
+    },
+    "purchaseType": {
+      "title": "Purchase Type",
+      "description": "Optional. The type of purchase the consumer must make in order to qualify for this incentive.",
+      "type": "array",
+      "items": {
+        "$ref": "PurchaseType.schema.json#/$defs/member",
+        "x-oold-range": "PurchaseType.schema.json"
+      }
+    },
+    "qualifiedExpense": {
+      "title": "Qualified Expense",
+      "description": "Optional. The types of expenses that are covered by the incentive. For example some incentives are only for the goods (tangible items) but the services (labor) are excluded.",
+      "type": "array",
+      "items": {
+        "$ref": "IncentiveQualifiedExpenseType.schema.json#/$defs/member",
+        "x-oold-range": "IncentiveQualifiedExpenseType.schema.json"
+      }
+    },
+    "validFrom": {
+      "title": "Valid From",
+      "description": "The date when the item becomes valid.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Date.schema.json"
+          },
+          {
+            "$ref": "DateTime.schema.json"
+          }
+        ]
+      }
+    },
+    "validThrough": {
+      "title": "Valid Through",
+      "description": "The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Date.schema.json"
+          },
+          {
+            "$ref": "DateTime.schema.json"
+          }
+        ]
+      }
+    }
+  }
+}

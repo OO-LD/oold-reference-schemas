@@ -1,0 +1,8 @@
+{
+  "$schema": "TennisComplex.schema.json",
+  "@context": "TennisComplex.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:TennisComplex"
+  ]
+}

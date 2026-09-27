@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "OrganizeAction.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "OrganizeAction.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "BookmarkAction.schema.json",
+  "x-oold-uuid": "6fd7808f-fd45-559a-96cf-9ae93ead5abf",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/BookmarkAction",
+  "x-oold-instance-rdf-type": [
+    "schema:BookmarkAction"
+  ],
+  "title": "BookmarkAction",
+  "description": "An agent bookmarks/flags/labels/tags/marks an object.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:BookmarkAction"
+      ]
+    }
+  }
+}

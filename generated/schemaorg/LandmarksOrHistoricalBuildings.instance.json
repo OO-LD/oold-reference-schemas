@@ -1,0 +1,8 @@
+{
+  "$schema": "LandmarksOrHistoricalBuildings.schema.json",
+  "@context": "LandmarksOrHistoricalBuildings.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:LandmarksOrHistoricalBuildings"
+  ]
+}

@@ -1,0 +1,1214 @@
+{
+  "@context": [
+    "Thing.schema.json",
+    {
+      "acceptedPaymentMethod": {
+        "@id": "schema:acceptedPaymentMethod",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "acceptedPaymentMethod_text": {
+        "@id": "schema:acceptedPaymentMethod",
+        "@container": "@set"
+      },
+      "actionableFeedbackPolicy": {
+        "@id": "schema:actionableFeedbackPolicy",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "address": {
+        "@id": "schema:address",
+        "@container": "@set"
+      },
+      "agentInteractionStatistic": {
+        "@id": "schema:agentInteractionStatistic",
+        "@container": "@set"
+      },
+      "aggregateRating": {
+        "@id": "schema:aggregateRating",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "alumni": {
+        "@id": "schema:alumni",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "areaServed": {
+        "@id": "schema:areaServed",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "areaServed_text": {
+        "@id": "schema:areaServed",
+        "@container": "@set"
+      },
+      "award": {
+        "@id": "schema:award",
+        "@container": "@set"
+      },
+      "brand": {
+        "@id": "schema:brand",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "companyRegistration": {
+        "@id": "schema:companyRegistration",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "contactPoint": {
+        "@id": "schema:contactPoint",
+        "@container": "@set"
+      },
+      "correctionsPolicy": {
+        "@id": "schema:correctionsPolicy",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "department": {
+        "@id": "schema:department",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "dissolutionDate": {
+        "@id": "schema:dissolutionDate",
+        "@type": "xsd:date",
+        "@container": "@set"
+      },
+      "diversityPolicy": {
+        "@id": "schema:diversityPolicy",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "diversityStaffingReport": {
+        "@id": "schema:diversityStaffingReport",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "duns": {
+        "@id": "schema:duns",
+        "@container": "@set"
+      },
+      "email": {
+        "@id": "schema:email",
+        "@container": "@set"
+      },
+      "employee": {
+        "@id": "schema:employee",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "ethicsPolicy": {
+        "@id": "schema:ethicsPolicy",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "event": {
+        "@id": "schema:event",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "faxNumber": {
+        "@id": "schema:faxNumber",
+        "@container": "@set"
+      },
+      "founder": {
+        "@id": "schema:founder",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "foundingDate": {
+        "@id": "schema:foundingDate",
+        "@type": "xsd:date",
+        "@container": "@set"
+      },
+      "foundingLocation": {
+        "@id": "schema:foundingLocation",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "funder": {
+        "@id": "schema:funder",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "funding": {
+        "@id": "schema:funding",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "globalLocationNumber": {
+        "@id": "schema:globalLocationNumber",
+        "@container": "@set"
+      },
+      "hasCertification": {
+        "@id": "schema:hasCertification",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "hasCredential": {
+        "@id": "schema:hasCredential",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "hasGS1DigitalLink": {
+        "@id": "schema:hasGS1DigitalLink",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "hasMemberProgram": {
+        "@id": "schema:hasMemberProgram",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "hasMerchantReturnPolicy": {
+        "@id": "schema:hasMerchantReturnPolicy",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "hasOfferCatalog": {
+        "@id": "schema:hasOfferCatalog",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "hasPOS": {
+        "@id": "schema:hasPOS",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "hasShippingService": {
+        "@id": "schema:hasShippingService",
+        "@container": "@set"
+      },
+      "interactionStatistic": {
+        "@id": "schema:interactionStatistic",
+        "@container": "@set"
+      },
+      "isicV4": {
+        "@id": "schema:isicV4",
+        "@container": "@set"
+      },
+      "iso6523Code": {
+        "@id": "schema:iso6523Code",
+        "@container": "@set"
+      },
+      "keywords": {
+        "@id": "schema:keywords",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "keywords_text": {
+        "@id": "schema:keywords",
+        "@container": "@set"
+      },
+      "knowsAbout": {
+        "@id": "schema:knowsAbout",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "knowsAbout_text": {
+        "@id": "schema:knowsAbout",
+        "@container": "@set"
+      },
+      "knowsLanguage": {
+        "@id": "schema:knowsLanguage",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "knowsLanguage_text": {
+        "@id": "schema:knowsLanguage",
+        "@container": "@set"
+      },
+      "legalAddress": {
+        "@id": "schema:legalAddress",
+        "@container": "@set"
+      },
+      "legalName": {
+        "@id": "schema:legalName",
+        "@container": "@set"
+      },
+      "legalRepresentative": {
+        "@id": "schema:legalRepresentative",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "leiCode": {
+        "@id": "schema:leiCode",
+        "@container": "@set"
+      },
+      "location": {
+        "@id": "schema:location",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "location_text": {
+        "@id": "schema:location",
+        "@container": "@set"
+      },
+      "logo": {
+        "@id": "schema:logo",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "makesOffer": {
+        "@id": "schema:makesOffer",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "member": {
+        "@id": "schema:member",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "memberOf": {
+        "@id": "schema:memberOf",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "naics": {
+        "@id": "schema:naics",
+        "@container": "@set"
+      },
+      "nonprofitStatus": {
+        "@id": "schema:nonprofitStatus",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "numberOfEmployees": {
+        "@id": "schema:numberOfEmployees",
+        "@container": "@set"
+      },
+      "ownershipFundingInfo": {
+        "@id": "schema:ownershipFundingInfo",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "ownershipFundingInfo_text": {
+        "@id": "schema:ownershipFundingInfo",
+        "@container": "@set"
+      },
+      "owns": {
+        "@id": "schema:owns",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "parentOrganization": {
+        "@id": "schema:parentOrganization",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "publishingPrinciples": {
+        "@id": "schema:publishingPrinciples",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "review": {
+        "@id": "schema:review",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "seeks": {
+        "@id": "schema:seeks",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "skills": {
+        "@id": "schema:skills",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "skills_text": {
+        "@id": "schema:skills",
+        "@container": "@set"
+      },
+      "slogan": {
+        "@id": "schema:slogan",
+        "@container": "@set"
+      },
+      "sponsor": {
+        "@id": "schema:sponsor",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "subOrganization": {
+        "@id": "schema:subOrganization",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "taxID": {
+        "@id": "schema:taxID",
+        "@container": "@set"
+      },
+      "telephone": {
+        "@id": "schema:telephone",
+        "@container": "@set"
+      },
+      "unnamedSourcesPolicy": {
+        "@id": "schema:unnamedSourcesPolicy",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "vatID": {
+        "@id": "schema:vatID",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Thing.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Organization.schema.json",
+  "x-oold-uuid": "f7a206cb-3965-5aad-aee2-145372e7cc13",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Organization",
+  "x-oold-instance-rdf-type": [
+    "schema:Organization"
+  ],
+  "title": "Organization",
+  "description": "An organization such as a school, NGO, corporation, club, etc.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Organization"
+      ]
+    },
+    "acceptedPaymentMethod": {
+      "title": "Accepted Payment Method",
+      "description": "The payment method(s) that are accepted in general by an organization, or for some specific demand or offer.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "LoanOrCredit.schema.json",
+          "PaymentMethod.schema.json"
+        ]
+      }
+    },
+    "acceptedPaymentMethod_text": {
+      "title": "Accepted Payment Method (text)",
+      "description": "The payment method(s) that are accepted in general by an organization, or for some specific demand or offer.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "actionableFeedbackPolicy": {
+      "title": "Actionable Feedback Policy",
+      "description": "For a [[NewsMediaOrganization]] or other news-related [[Organization]], a statement about public engagement activities (for news media, the newsroom’s), including involving the public - digitally or otherwise -- in coverage decisions, reporting and activities after publication.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "URL.schema.json"
+          },
+          {
+            "type": "string",
+            "format": "iri-reference",
+            "x-oold-range": "CreativeWork.schema.json"
+          }
+        ]
+      }
+    },
+    "address": {
+      "title": "Address",
+      "description": "Physical address of the item.",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: PostalAddress [value-type]: PostalAddress -> ContactPoint -> StructuredValue -> Intangible -> Thing",
+        "anyOf": [
+          {
+            "$ref": "Text.schema.json"
+          },
+          {
+            "$ref": "PostalAddress.schema.json"
+          }
+        ]
+      }
+    },
+    "agentInteractionStatistic": {
+      "title": "Agent Interaction Statistic",
+      "description": "The number of completed interactions for this entity, in a particular role (the 'agent'), in a particular action (indicated in the statistic), and in a particular context (i.e. interactionService).",
+      "type": "array",
+      "items": {
+        "$ref": "InteractionCounter.schema.json"
+      }
+    },
+    "aggregateRating": {
+      "title": "Aggregate Rating",
+      "description": "The overall rating, based on a collection of reviews or ratings, of the item.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "AggregateRating.schema.json"
+      }
+    },
+    "alumni": {
+      "title": "Alumni",
+      "description": "Alumni of an organization.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Person.schema.json"
+      }
+    },
+    "areaServed": {
+      "title": "Area Served",
+      "description": "The geographic area where a service or offered item is provided.",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: GeoShape [value-type]: GeoShape -> StructuredValue -> Intangible -> Thing; AdministrativeArea [entity]: AdministrativeArea -> Place -> Thing; Place [entity]: Place -> Thing",
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "iri-reference",
+            "x-oold-range": [
+              "AdministrativeArea.schema.json",
+              "Place.schema.json"
+            ]
+          },
+          {
+            "$ref": "GeoShape.schema.json"
+          }
+        ]
+      }
+    },
+    "areaServed_text": {
+      "title": "Area Served (text)",
+      "description": "The geographic area where a service or offered item is provided.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "award": {
+      "title": "Award",
+      "description": "An award won by or for this item.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "brand": {
+      "title": "Brand",
+      "description": "The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "Brand.schema.json",
+          "Organization.schema.json"
+        ]
+      }
+    },
+    "companyRegistration": {
+      "title": "Company Registration",
+      "description": "The official registration information of a business including the organization that issued it such as Company House or Chamber of Commerce in form of a Certification.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Certification.schema.json"
+      }
+    },
+    "contactPoint": {
+      "title": "Contact Point",
+      "description": "A contact point for a person or organization.",
+      "type": "array",
+      "items": {
+        "$ref": "ContactPoint.schema.json"
+      }
+    },
+    "correctionsPolicy": {
+      "title": "Corrections Policy",
+      "description": "For an [[Organization]] (e.g. [[NewsMediaOrganization]]), a statement describing (in news media, the newsroom’s) disclosure and correction policy for errors.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "URL.schema.json"
+          },
+          {
+            "type": "string",
+            "format": "iri-reference",
+            "x-oold-range": "CreativeWork.schema.json"
+          }
+        ]
+      }
+    },
+    "department": {
+      "title": "Department",
+      "description": "A relationship between an organization and a department of that organization, also described as an organization (allowing different urls, logos, opening hours). For example: a store with a pharmacy, or a bakery with a cafe.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Organization.schema.json"
+      }
+    },
+    "dissolutionDate": {
+      "title": "Dissolution Date",
+      "description": "The date that this organization was dissolved.",
+      "type": "array",
+      "items": {
+        "$ref": "Date.schema.json"
+      }
+    },
+    "diversityPolicy": {
+      "title": "Diversity Policy",
+      "description": "Statement on diversity policy by an [[Organization]] e.g. a [[NewsMediaOrganization]]. For a [[NewsMediaOrganization]], a statement describing the newsroom’s diversity policy on both staffing and sources, typically providing staffing data.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "URL.schema.json"
+          },
+          {
+            "type": "string",
+            "format": "iri-reference",
+            "x-oold-range": "CreativeWork.schema.json"
+          }
+        ]
+      }
+    },
+    "diversityStaffingReport": {
+      "title": "Diversity Staffing Report",
+      "description": "For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a report on staffing diversity issues. In a news context this might be for example ASNE or RTDNA (US) reports, or self-reported.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "URL.schema.json"
+          },
+          {
+            "type": "string",
+            "format": "iri-reference",
+            "x-oold-range": "Article.schema.json"
+          }
+        ]
+      }
+    },
+    "duns": {
+      "title": "Duns",
+      "description": "The Dun & Bradstreet DUNS number for identifying an organization or business person.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "email": {
+      "title": "Email",
+      "description": "Email address.",
+      "type": "array",
+      "items": {
+        "$ref": "Email.schema.json"
+      }
+    },
+    "employee": {
+      "title": "Employee",
+      "description": "Someone working for this organization.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Person.schema.json"
+      }
+    },
+    "ethicsPolicy": {
+      "title": "Ethics Policy",
+      "description": "Statement about ethics policy, e.g. of a [[NewsMediaOrganization]] regarding journalistic and publishing practices, or of a [[Restaurant]], a page describing food source policies. In the case of a [[NewsMediaOrganization]], an ethicsPolicy is typically a statement describing the personal, organizational, and corporate standards of behavior expected by the organization.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "URL.schema.json"
+          },
+          {
+            "type": "string",
+            "format": "iri-reference",
+            "x-oold-range": "CreativeWork.schema.json"
+          }
+        ]
+      }
+    },
+    "event": {
+      "title": "Event",
+      "description": "Upcoming or past event associated with this place, organization, or action.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Event.schema.json"
+      }
+    },
+    "faxNumber": {
+      "title": "Fax Number",
+      "description": "The fax number.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "founder": {
+      "title": "Founder",
+      "description": "A person or organization who founded this organization.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "Organization.schema.json",
+          "Person.schema.json"
+        ]
+      }
+    },
+    "foundingDate": {
+      "title": "Founding Date",
+      "description": "The date that this organization was founded.",
+      "type": "array",
+      "items": {
+        "$ref": "Date.schema.json"
+      }
+    },
+    "foundingLocation": {
+      "title": "Founding Location",
+      "description": "The place where the Organization was founded.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Place.schema.json"
+      }
+    },
+    "funder": {
+      "title": "Funder",
+      "description": "A person or organization that supports (sponsors) something through some kind of financial contribution.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "Organization.schema.json",
+          "Person.schema.json"
+        ]
+      }
+    },
+    "funding": {
+      "title": "Funding",
+      "description": "A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Grant.schema.json"
+      }
+    },
+    "globalLocationNumber": {
+      "title": "Global Location Number",
+      "description": "The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "hasCertification": {
+      "title": "Has Certification",
+      "description": "Certification information about a product, organization, service, place, or person.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Certification.schema.json"
+      }
+    },
+    "hasCredential": {
+      "title": "Has Credential",
+      "description": "A credential awarded to the Person or Organization.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Credential.schema.json"
+      }
+    },
+    "hasGS1DigitalLink": {
+      "title": "Has G S1 Digital Link",
+      "description": "The <a href=\"https://www.gs1.org/standards/gs1-digital-link\">GS1 digital link</a> associated with the object. This URL should conform to the particular requirements of digital links. The link should only contain the Application Identifiers (AIs) that are relevant for the entity being annotated, for instance a [[Product]] or an [[Organization]], and for the correct granularity. In particular, for products:<ul><li>A Digital Link that contains a serial number (AI <code>21</code>) should only be present on instances of [[IndividualProduct]]</li><li>A Digital Link that contains a lot number (AI <code>10</code>) should be annotated as [[SomeProducts]] if only products from that lot are sold, or [[IndividualProduct]] if there is only a specific product.</li><li>A Digital Link that contains a global model number (AI <code>8013</code>) should be attached to a [[Product]] or a [[ProductModel]].</li></ul> Other item types should be adapted similarly.",
+      "type": "array",
+      "items": {
+        "$ref": "URL.schema.json"
+      }
+    },
+    "hasMemberProgram": {
+      "title": "Has Member Program",
+      "description": "MemberProgram offered by an Organization, for example an eCommerce merchant or an airline.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "MemberProgram.schema.json"
+      }
+    },
+    "hasMerchantReturnPolicy": {
+      "title": "Has Merchant Return Policy",
+      "description": "Specifies a MerchantReturnPolicy that may be applicable.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "MerchantReturnPolicy.schema.json"
+      }
+    },
+    "hasOfferCatalog": {
+      "title": "Has Offer Catalog",
+      "description": "Indicates an OfferCatalog listing for this Organization, Person, or Service.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "OfferCatalog.schema.json"
+      }
+    },
+    "hasPOS": {
+      "title": "Has P O S",
+      "description": "Points-of-Sales operated by the organization or person.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Place.schema.json"
+      }
+    },
+    "hasShippingService": {
+      "title": "Has Shipping Service",
+      "description": "Specification of a shipping service offered by the organization.",
+      "type": "array",
+      "items": {
+        "$ref": "ShippingService.schema.json"
+      }
+    },
+    "interactionStatistic": {
+      "title": "Interaction Statistic",
+      "description": "The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.",
+      "type": "array",
+      "items": {
+        "$ref": "InteractionCounter.schema.json"
+      }
+    },
+    "isicV4": {
+      "title": "Isic V4",
+      "description": "The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "iso6523Code": {
+      "title": "Iso6523 Code",
+      "description": "An organization identifier as defined in [ISO 6523(-1)](https://en.wikipedia.org/wiki/ISO/IEC_6523). The identifier should be in the `XXXX:YYYYYY:ZZZ` or `XXXX:YYYYYY`format. Where `XXXX` is a 4 digit _ICD_ (International Code Designator), `YYYYYY` is an _OID_ (Organization Identifier) with all formatting characters (dots, dashes, spaces) removed with a maximal length of 35 characters, and `ZZZ` is an optional OPI (Organization Part Identifier) with a maximum length of 35 characters. The various components (ICD, OID, OPI) are joined with a colon character (ASCII `0x3a`). Note that many existing organization identifiers defined as attributes like [leiCode](https://schema.org/leiCode) (`0199`), [duns](https://schema.org/duns) (`0060`) or [GLN](https://schema.org/globalLocationNumber) (`0088`) can be expressed using ISO-6523. If possible, ISO-6523 codes should be preferred to populating [vatID](https://schema.org/vatID) or [taxID](https://schema.org/taxID), as ISO identifiers are less ambiguous.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "keywords": {
+      "title": "Keywords",
+      "description": "Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "DefinedTerm.schema.json"
+      }
+    },
+    "keywords_text": {
+      "title": "Keywords (text)",
+      "description": "Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Text.schema.json"
+          },
+          {
+            "$ref": "URL.schema.json"
+          }
+        ]
+      }
+    },
+    "knowsAbout": {
+      "title": "Knows About",
+      "description": "Of a [[Person]], and less typically of an [[Organization]], to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or [[JobPosting]] descriptions.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Thing.schema.json"
+      }
+    },
+    "knowsAbout_text": {
+      "title": "Knows About (text)",
+      "description": "Of a [[Person]], and less typically of an [[Organization]], to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or [[JobPosting]] descriptions.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Text.schema.json"
+          },
+          {
+            "$ref": "URL.schema.json"
+          }
+        ]
+      }
+    },
+    "knowsLanguage": {
+      "title": "Knows Language",
+      "description": "Of a [[Person]], and less typically of an [[Organization]], to indicate a known language. We do not distinguish skill levels or reading/writing/speaking/signing here. Use language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47).",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Language.schema.json"
+      }
+    },
+    "knowsLanguage_text": {
+      "title": "Knows Language (text)",
+      "description": "Of a [[Person]], and less typically of an [[Organization]], to indicate a known language. We do not distinguish skill levels or reading/writing/speaking/signing here. Use language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47).",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "legalAddress": {
+      "title": "Legal Address",
+      "description": "The legal address of an organization which acts as the officially registered address used for legal and tax purposes. The legal address can be different from the place of operations of a business and other addresses can be part of an organization.",
+      "type": "array",
+      "items": {
+        "$ref": "PostalAddress.schema.json"
+      }
+    },
+    "legalName": {
+      "title": "Legal Name",
+      "description": "The official name of the organization, e.g. the registered company name.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "legalRepresentative": {
+      "title": "Legal Representative",
+      "description": "One or multiple persons who represent this organization legally such as CEO or sole administrator.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Person.schema.json"
+      }
+    },
+    "leiCode": {
+      "title": "Lei Code",
+      "description": "An organization identifier that uniquely identifies a legal entity as defined in ISO 17442.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "location": {
+      "title": "Location",
+      "description": "The location of, for example, where an event is happening, where an organization is located, or where an action takes place.",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: PostalAddress [value-type]: PostalAddress -> ContactPoint -> StructuredValue -> Intangible -> Thing; Place [entity]: Place -> Thing; VirtualLocation [entity]: VirtualLocation -> Intangible -> Thing",
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "iri-reference",
+            "x-oold-range": [
+              "Place.schema.json",
+              "VirtualLocation.schema.json"
+            ]
+          },
+          {
+            "$ref": "PostalAddress.schema.json"
+          }
+        ]
+      }
+    },
+    "location_text": {
+      "title": "Location (text)",
+      "description": "The location of, for example, where an event is happening, where an organization is located, or where an action takes place.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "logo": {
+      "title": "Logo",
+      "description": "An associated logo.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "URL.schema.json"
+          },
+          {
+            "type": "string",
+            "format": "iri-reference",
+            "x-oold-range": "ImageObject.schema.json"
+          }
+        ]
+      }
+    },
+    "makesOffer": {
+      "title": "Makes Offer",
+      "description": "A pointer to products or services offered by the organization or person.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Offer.schema.json"
+      }
+    },
+    "member": {
+      "title": "Member",
+      "description": "A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "Organization.schema.json",
+          "Person.schema.json"
+        ]
+      }
+    },
+    "memberOf": {
+      "title": "Member Of",
+      "description": "An Organization (or ProgramMembership) to which this Person or Organization belongs.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "MemberProgramTier.schema.json",
+          "Organization.schema.json",
+          "ProgramMembership.schema.json"
+        ]
+      }
+    },
+    "naics": {
+      "title": "Naics",
+      "description": "The North American Industry Classification System (NAICS) code for a particular organization or business person.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "nonprofitStatus": {
+      "title": "Nonprofit Status",
+      "description": "nonprofitStatus indicates the legal status of a non-profit organization in its primary place of business.",
+      "type": "array",
+      "items": {
+        "$ref": "NonprofitType.schema.json#/$defs/member",
+        "x-oold-range": "NonprofitType.schema.json"
+      }
+    },
+    "numberOfEmployees": {
+      "title": "Number Of Employees",
+      "description": "The number of employees in an organization, e.g. business.",
+      "type": "array",
+      "items": {
+        "$ref": "QuantitativeValue.schema.json"
+      }
+    },
+    "ownershipFundingInfo": {
+      "title": "Ownership Funding Info",
+      "description": "For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a description of organizational ownership structure; funding and grants. In a news/media setting, this is with particular reference to editorial independence.   Note that the [[funder]] is also available and can be used to make basic funder information machine-readable.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "AboutPage.schema.json",
+          "CreativeWork.schema.json"
+        ]
+      }
+    },
+    "ownershipFundingInfo_text": {
+      "title": "Ownership Funding Info (text)",
+      "description": "For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a description of organizational ownership structure; funding and grants. In a news/media setting, this is with particular reference to editorial independence.   Note that the [[funder]] is also available and can be used to make basic funder information machine-readable.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Text.schema.json"
+          },
+          {
+            "$ref": "URL.schema.json"
+          }
+        ]
+      }
+    },
+    "owns": {
+      "title": "Owns",
+      "description": "Things owned by the organization or person.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Thing.schema.json"
+      }
+    },
+    "parentOrganization": {
+      "title": "Parent Organization",
+      "description": "The larger organization that this organization is a [[subOrganization]] of, if any.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Organization.schema.json"
+      }
+    },
+    "publishingPrinciples": {
+      "title": "Publishing Principles",
+      "description": "The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual, e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].\n\nWhile such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.\n",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "URL.schema.json"
+          },
+          {
+            "type": "string",
+            "format": "iri-reference",
+            "x-oold-range": "CreativeWork.schema.json"
+          }
+        ]
+      }
+    },
+    "review": {
+      "title": "Review",
+      "description": "A review of the item.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Review.schema.json"
+      }
+    },
+    "seeks": {
+      "title": "Seeks",
+      "description": "A pointer to products or services sought by the organization or person (demand).",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Demand.schema.json"
+      }
+    },
+    "skills": {
+      "title": "Skills",
+      "description": "A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is either claimed by a person, an organization or desired or required to fulfill a role or to work in an occupation.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "DefinedTerm.schema.json"
+      }
+    },
+    "skills_text": {
+      "title": "Skills (text)",
+      "description": "A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is either claimed by a person, an organization or desired or required to fulfill a role or to work in an occupation.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "slogan": {
+      "title": "Slogan",
+      "description": "A slogan or motto associated with the item.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "sponsor": {
+      "title": "Sponsor",
+      "description": "A person or organization that supports a thing through a pledge, promise, or financial contribution. E.g. a sponsor of a Medical Study or a corporate sponsor of an event.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "Organization.schema.json",
+          "Person.schema.json"
+        ]
+      }
+    },
+    "subOrganization": {
+      "title": "Sub Organization",
+      "description": "A relationship between two organizations where the first includes the second, e.g., as a subsidiary. See also: the more specific 'department' property.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Organization.schema.json"
+      }
+    },
+    "taxID": {
+      "title": "Tax I D",
+      "description": "The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "telephone": {
+      "title": "Telephone",
+      "description": "The telephone number.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "unnamedSourcesPolicy": {
+      "title": "Unnamed Sources Policy",
+      "description": "For an [[Organization]] (typically a [[NewsMediaOrganization]]), a statement about policy on use of unnamed sources and the decision process required.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "URL.schema.json"
+          },
+          {
+            "type": "string",
+            "format": "iri-reference",
+            "x-oold-range": "CreativeWork.schema.json"
+          }
+        ]
+      }
+    },
+    "vatID": {
+      "title": "Vat I D",
+      "description": "The value-added Tax ID of the organization or person with national prefix (for example IT123456789). Can also be described as [[iso6523Code]] with proper prefix.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    }
+  }
+}

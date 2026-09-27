@@ -1,0 +1,124 @@
+{
+  "@context": [
+    "Event.schema.json",
+    {
+      "awayTeam": {
+        "@id": "schema:awayTeam",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "competitor": {
+        "@id": "schema:competitor",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "homeTeam": {
+        "@id": "schema:homeTeam",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "referee": {
+        "@id": "schema:referee",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "sport": {
+        "@id": "schema:sport",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Event.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "SportsEvent.schema.json",
+  "x-oold-uuid": "428f2e3f-a1e9-5125-9d0e-3b14301c6bc4",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/SportsEvent",
+  "x-oold-instance-rdf-type": [
+    "schema:SportsEvent"
+  ],
+  "title": "SportsEvent",
+  "description": "Event type: Sports event.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:SportsEvent"
+      ]
+    },
+    "awayTeam": {
+      "title": "Away Team",
+      "description": "The away team in a sports event.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "Person.schema.json",
+          "SportsTeam.schema.json"
+        ]
+      }
+    },
+    "competitor": {
+      "title": "Competitor",
+      "description": "A competitor in a sports event.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "Person.schema.json",
+          "SportsTeam.schema.json"
+        ]
+      }
+    },
+    "homeTeam": {
+      "title": "Home Team",
+      "description": "The home team in a sports event.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "Person.schema.json",
+          "SportsTeam.schema.json"
+        ]
+      }
+    },
+    "referee": {
+      "title": "Referee",
+      "description": "An official who watches a game or match closely to enforce the rules and arbitrate on matters arising from the play such as referees, umpires or judges. The name of the effective function can vary according to the sport.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Person.schema.json"
+      }
+    },
+    "sport": {
+      "title": "Sport",
+      "description": "A type of sport (e.g. Baseball).",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Text.schema.json"
+          },
+          {
+            "$ref": "URL.schema.json"
+          }
+        ]
+      }
+    }
+  }
+}

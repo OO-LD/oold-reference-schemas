@@ -1,0 +1,8 @@
+{
+  "$schema": "LeaveAction.schema.json",
+  "@context": "LeaveAction.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:LeaveAction"
+  ]
+}

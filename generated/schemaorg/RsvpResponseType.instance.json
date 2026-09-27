@@ -1,0 +1,8 @@
+{
+  "$schema": "RsvpResponseType.schema.json",
+  "@context": "RsvpResponseType.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:RsvpResponseType"
+  ]
+}

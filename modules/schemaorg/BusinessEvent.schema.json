@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Event.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Event.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "BusinessEvent.schema.json",
+  "x-oold-uuid": "2c271f4c-f4bc-5d25-899a-3a357c2d5b04",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/BusinessEvent",
+  "x-oold-instance-rdf-type": [
+    "schema:BusinessEvent"
+  ],
+  "title": "BusinessEvent",
+  "description": "Event type: Business event.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:BusinessEvent"
+      ]
+    }
+  }
+}

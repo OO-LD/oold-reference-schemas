@@ -1,0 +1,222 @@
+{
+  "@context": [
+    "Intangible.schema.json",
+    {
+      "bookingTime": {
+        "@id": "schema:bookingTime",
+        "@type": "xsd:dateTime",
+        "@container": "@set"
+      },
+      "broker": {
+        "@id": "schema:broker",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "modifiedTime": {
+        "@id": "schema:modifiedTime",
+        "@type": "xsd:dateTime",
+        "@container": "@set"
+      },
+      "priceCurrency": {
+        "@id": "schema:priceCurrency",
+        "@container": "@set"
+      },
+      "programMembershipUsed": {
+        "@id": "schema:programMembershipUsed",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "provider": {
+        "@id": "schema:provider",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "reservationFor": {
+        "@id": "schema:reservationFor",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "reservationId": {
+        "@id": "schema:reservationId",
+        "@container": "@set"
+      },
+      "reservationStatus": {
+        "@id": "schema:reservationStatus",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "reservedTicket": {
+        "@id": "schema:reservedTicket",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "totalPrice": {
+        "@id": "schema:totalPrice",
+        "@container": "@set"
+      },
+      "underName": {
+        "@id": "schema:underName",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Intangible.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Reservation.schema.json",
+  "x-oold-uuid": "57eb9c30-fb62-51fe-9e86-e754d72e9eac",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Reservation",
+  "x-oold-instance-rdf-type": [
+    "schema:Reservation"
+  ],
+  "title": "Reservation",
+  "description": "Describes a reservation for travel, dining or an event. Some reservations require tickets. \\n\\nNote: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations. For offers of tickets, restaurant reservations, flights, or rental cars, use [[Offer]].",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Reservation"
+      ]
+    },
+    "bookingTime": {
+      "title": "Booking Time",
+      "description": "The date and time the reservation was booked.",
+      "type": "array",
+      "items": {
+        "$ref": "DateTime.schema.json"
+      }
+    },
+    "broker": {
+      "title": "Broker",
+      "description": "An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "Organization.schema.json",
+          "Person.schema.json"
+        ]
+      }
+    },
+    "modifiedTime": {
+      "title": "Modified Time",
+      "description": "The date and time the reservation was modified.",
+      "type": "array",
+      "items": {
+        "$ref": "DateTime.schema.json"
+      }
+    },
+    "priceCurrency": {
+      "title": "Price Currency",
+      "description": "The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.\\n\\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217), e.g. \"USD\"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies, e.g. \"BTC\"; well known names for [Local Exchange Trading Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types, e.g. \"Ithaca HOUR\".",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "programMembershipUsed": {
+      "title": "Program Membership Used",
+      "description": "Any membership in a frequent flyer, hotel loyalty program, etc. being applied to the reservation.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "ProgramMembership.schema.json"
+      }
+    },
+    "provider": {
+      "title": "Provider",
+      "description": "The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "Organization.schema.json",
+          "Person.schema.json"
+        ]
+      }
+    },
+    "reservationFor": {
+      "title": "Reservation For",
+      "description": "The thing -- flight, event, restaurant, etc. being reserved.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Thing.schema.json"
+      }
+    },
+    "reservationId": {
+      "title": "Reservation Id",
+      "description": "A unique identifier for the reservation.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "reservationStatus": {
+      "title": "Reservation Status",
+      "description": "The current status of the reservation.",
+      "type": "array",
+      "items": {
+        "$ref": "ReservationStatusType.schema.json#/$defs/member",
+        "x-oold-range": "ReservationStatusType.schema.json"
+      }
+    },
+    "reservedTicket": {
+      "title": "Reserved Ticket",
+      "description": "A ticket associated with the reservation.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Ticket.schema.json"
+      }
+    },
+    "totalPrice": {
+      "title": "Total Price",
+      "description": "The total price for the reservation or ticket, including applicable taxes, shipping, etc.\\n\\nUsage guidelines:\\n\\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.\\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: PriceSpecification [value-type]: PriceSpecification -> StructuredValue -> Intangible -> Thing",
+        "anyOf": [
+          {
+            "$ref": "Number.schema.json"
+          },
+          {
+            "$ref": "Text.schema.json"
+          },
+          {
+            "$ref": "PriceSpecification.schema.json"
+          }
+        ]
+      }
+    },
+    "underName": {
+      "title": "Under Name",
+      "description": "The person or organization the reservation or ticket is for.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "Organization.schema.json",
+          "Person.schema.json"
+        ]
+      }
+    }
+  }
+}

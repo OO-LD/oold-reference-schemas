@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Organization.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Organization.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "SearchRescueOrganization.schema.json",
+  "x-oold-uuid": "a4ccfed2-c0f3-51d0-a64b-1103c176c9aa",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/SearchRescueOrganization",
+  "x-oold-instance-rdf-type": [
+    "schema:SearchRescueOrganization"
+  ],
+  "title": "SearchRescueOrganization",
+  "description": "A Search and Rescue organization of some kind.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:SearchRescueOrganization"
+      ]
+    }
+  }
+}

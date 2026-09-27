@@ -1,0 +1,86 @@
+{
+  "@context": [
+    "CreativeWork.schema.json",
+    {
+      "pageEnd": {
+        "@id": "schema:pageEnd",
+        "@container": "@set"
+      },
+      "pageStart": {
+        "@id": "schema:pageStart",
+        "@container": "@set"
+      },
+      "pagination": {
+        "@id": "schema:pagination",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "CreativeWork.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Chapter.schema.json",
+  "x-oold-uuid": "c254315e-b21e-58bd-af6b-51108018f08a",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Chapter",
+  "x-oold-instance-rdf-type": [
+    "schema:Chapter"
+  ],
+  "title": "Chapter",
+  "description": "One of the sections into which a book is divided. A chapter usually has a section number or a name.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Chapter"
+      ]
+    },
+    "pageEnd": {
+      "title": "Page End",
+      "description": "The page on which the work ends; for example \"138\" or \"xvi\".",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Integer.schema.json"
+          },
+          {
+            "$ref": "Text.schema.json"
+          }
+        ]
+      }
+    },
+    "pageStart": {
+      "title": "Page Start",
+      "description": "The page on which the work starts; for example \"135\" or \"xiii\".",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Integer.schema.json"
+          },
+          {
+            "$ref": "Text.schema.json"
+          }
+        ]
+      }
+    },
+    "pagination": {
+      "title": "Pagination",
+      "description": "Any description of pages that is not separated into pageStart and pageEnd; for example, \"1-6, 9, 55\" or \"10-12, 46-49\".",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    }
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "@context": [
+    "PriceSpecification.schema.json",
+    {
+      "appliesToDeliveryMethod": {
+        "@id": "schema:appliesToDeliveryMethod",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "appliesToPaymentMethod": {
+        "@id": "schema:appliesToPaymentMethod",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "PriceSpecification.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "PaymentChargeSpecification.schema.json",
+  "x-oold-uuid": "56808d88-6d61-5d09-8c1b-35f18241d517",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/PaymentChargeSpecification",
+  "x-oold-instance-rdf-type": [
+    "schema:PaymentChargeSpecification"
+  ],
+  "title": "PaymentChargeSpecification",
+  "description": "The costs of settling the payment using a particular payment method.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:PaymentChargeSpecification"
+      ]
+    },
+    "appliesToDeliveryMethod": {
+      "title": "Applies To Delivery Method",
+      "description": "The delivery method(s) to which the delivery charge or payment charge specification applies.",
+      "type": "array",
+      "items": {
+        "$ref": "DeliveryMethod.schema.json#/$defs/member",
+        "x-oold-range": "DeliveryMethod.schema.json"
+      }
+    },
+    "appliesToPaymentMethod": {
+      "title": "Applies To Payment Method",
+      "description": "The payment method(s) to which the payment charge specification applies.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "PaymentMethod.schema.json"
+      }
+    }
+  }
+}

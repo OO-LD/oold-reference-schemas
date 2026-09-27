@@ -1,0 +1,51 @@
+{
+  "@context": [
+    "InteractAction.schema.json",
+    {
+      "event": {
+        "@id": "schema:event",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "InteractAction.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "JoinAction.schema.json",
+  "x-oold-uuid": "dc94366e-29b9-5a9c-a18d-4c92dd40b8b4",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/JoinAction",
+  "x-oold-instance-rdf-type": [
+    "schema:JoinAction"
+  ],
+  "title": "JoinAction",
+  "description": "An agent joins an event/group with participants/friends at a location.\\n\\nRelated actions:\\n\\n* [[RegisterAction]]: Unlike RegisterAction, JoinAction refers to joining a group/team of people.\\n* [[SubscribeAction]]: Unlike SubscribeAction, JoinAction does not imply that you'll be receiving updates.\\n* [[FollowAction]]: Unlike FollowAction, JoinAction does not imply that you'll be polling for updates.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:JoinAction"
+      ]
+    },
+    "event": {
+      "title": "Event",
+      "description": "Upcoming or past event associated with this place, organization, or action.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Event.schema.json"
+      }
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "@context": [
+    "Enumeration.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Enumeration.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ItemListOrderType.schema.json",
+  "x-oold-uuid": "b6ca2e3a-64c0-5edb-ab42-0c750408bd9e",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/ItemListOrderType",
+  "x-oold-instance-rdf-type": [
+    "schema:ItemListOrderType"
+  ],
+  "title": "ItemListOrderType",
+  "description": "Enumerated for values for itemListOrder for indicating how an ordered ItemList is organized.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:ItemListOrderType"
+      ]
+    }
+  },
+  "$defs": {
+    "member": {
+      "title": "ItemListOrderType member",
+      "description": "One of the 3 member instances of ItemListOrderType.",
+      "type": "string",
+      "format": "iri-reference",
+      "enum": [
+        "schema:ItemListOrderAscending",
+        "schema:ItemListOrderDescending",
+        "schema:ItemListUnordered"
+      ],
+      "x-oold-ui-enum-titles": [
+        "ItemListOrderAscending",
+        "ItemListOrderDescending",
+        "ItemListUnordered"
+      ]
+    }
+  }
+}

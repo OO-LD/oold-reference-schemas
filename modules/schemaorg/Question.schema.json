@@ -1,0 +1,114 @@
+{
+  "@context": [
+    "Comment.schema.json",
+    {
+      "acceptedAnswer": {
+        "@id": "schema:acceptedAnswer",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "answerCount": {
+        "@id": "schema:answerCount",
+        "@container": "@set"
+      },
+      "eduQuestionType": {
+        "@id": "schema:eduQuestionType",
+        "@container": "@set"
+      },
+      "parentItem": {
+        "@id": "schema:parentItem",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "suggestedAnswer": {
+        "@id": "schema:suggestedAnswer",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Comment.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Question.schema.json",
+  "x-oold-uuid": "6b430953-1048-5636-9d38-f852cc89975f",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Question",
+  "x-oold-instance-rdf-type": [
+    "schema:Question"
+  ],
+  "title": "Question",
+  "description": "A specific question - e.g. from a user seeking answers online, or collected in a Frequently Asked Questions (FAQ) document.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Question"
+      ]
+    },
+    "acceptedAnswer": {
+      "title": "Accepted Answer",
+      "description": "The answer(s) that has been accepted as best, typically on a Question/Answer site. Sites vary in their selection mechanisms, e.g. drawing on community opinion and/or the view of the Question author.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "Answer.schema.json",
+          "ItemList.schema.json"
+        ]
+      }
+    },
+    "answerCount": {
+      "title": "Answer Count",
+      "description": "The number of answers this question has received.",
+      "type": "array",
+      "items": {
+        "$ref": "Integer.schema.json"
+      }
+    },
+    "eduQuestionType": {
+      "title": "Edu Question Type",
+      "description": "For questions that are part of learning resources (e.g. Quiz), eduQuestionType indicates the format of question being given. Example: \"Multiple choice\", \"Open ended\", \"Flashcard\".",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "parentItem": {
+      "title": "Parent Item",
+      "description": "The parent of a question, answer or item in general. Typically used for Q/A discussion threads e.g. a chain of comments with the first comment being an [[Article]] or other [[CreativeWork]]. See also [[comment]] which points from something to a comment about it.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "Comment.schema.json",
+          "CreativeWork.schema.json"
+        ]
+      }
+    },
+    "suggestedAnswer": {
+      "title": "Suggested Answer",
+      "description": "An answer (possibly one of several, possibly incorrect) to a Question, e.g. on a Question/Answer site.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "Answer.schema.json",
+          "ItemList.schema.json"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "@context": [
+    "Enumeration.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Enumeration.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "SizeGroupEnumeration.schema.json",
+  "x-oold-uuid": "fae96626-419f-5cdd-abd3-cc13168887cc",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/SizeGroupEnumeration",
+  "x-oold-instance-rdf-type": [
+    "schema:SizeGroupEnumeration"
+  ],
+  "title": "SizeGroupEnumeration",
+  "description": "Enumerates common size groups for various product categories.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:SizeGroupEnumeration"
+      ]
+    }
+  },
+  "$defs": {
+    "member": {
+      "title": "SizeGroupEnumeration member",
+      "description": "One of the 17 member instances of SizeGroupEnumeration.",
+      "type": "string",
+      "format": "iri-reference",
+      "enum": [
+        "schema:WearableSizeGroupBig",
+        "schema:WearableSizeGroupBoys",
+        "schema:WearableSizeGroupExtraShort",
+        "schema:WearableSizeGroupExtraTall",
+        "schema:WearableSizeGroupGirls",
+        "schema:WearableSizeGroupHusky",
+        "schema:WearableSizeGroupInfants",
+        "schema:WearableSizeGroupJuniors",
+        "schema:WearableSizeGroupMaternity",
+        "schema:WearableSizeGroupMens",
+        "schema:WearableSizeGroupMisses",
+        "schema:WearableSizeGroupPetite",
+        "schema:WearableSizeGroupPlus",
+        "schema:WearableSizeGroupRegular",
+        "schema:WearableSizeGroupShort",
+        "schema:WearableSizeGroupTall",
+        "schema:WearableSizeGroupWomens"
+      ],
+      "x-oold-ui-enum-titles": [
+        "WearableSizeGroupBig",
+        "WearableSizeGroupBoys",
+        "WearableSizeGroupExtraShort",
+        "WearableSizeGroupExtraTall",
+        "WearableSizeGroupGirls",
+        "WearableSizeGroupHusky",
+        "WearableSizeGroupInfants",
+        "WearableSizeGroupJuniors",
+        "WearableSizeGroupMaternity",
+        "WearableSizeGroupMens",
+        "WearableSizeGroupMisses",
+        "WearableSizeGroupPetite",
+        "WearableSizeGroupPlus",
+        "WearableSizeGroupRegular",
+        "WearableSizeGroupShort",
+        "WearableSizeGroupTall",
+        "WearableSizeGroupWomens"
+      ]
+    }
+  }
+}

@@ -1,0 +1,180 @@
+{
+  "@context": [
+    "StructuredValue.schema.json",
+    {
+      "calories": {
+        "@id": "schema:calories",
+        "@container": "@set"
+      },
+      "carbohydrateContent": {
+        "@id": "schema:carbohydrateContent",
+        "@container": "@set"
+      },
+      "cholesterolContent": {
+        "@id": "schema:cholesterolContent",
+        "@container": "@set"
+      },
+      "fatContent": {
+        "@id": "schema:fatContent",
+        "@container": "@set"
+      },
+      "fiberContent": {
+        "@id": "schema:fiberContent",
+        "@container": "@set"
+      },
+      "proteinContent": {
+        "@id": "schema:proteinContent",
+        "@container": "@set"
+      },
+      "saturatedFatContent": {
+        "@id": "schema:saturatedFatContent",
+        "@container": "@set"
+      },
+      "servingSize": {
+        "@id": "schema:servingSize",
+        "@container": "@set"
+      },
+      "sodiumContent": {
+        "@id": "schema:sodiumContent",
+        "@container": "@set"
+      },
+      "sugarContent": {
+        "@id": "schema:sugarContent",
+        "@container": "@set"
+      },
+      "transFatContent": {
+        "@id": "schema:transFatContent",
+        "@container": "@set"
+      },
+      "unsaturatedFatContent": {
+        "@id": "schema:unsaturatedFatContent",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "StructuredValue.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "NutritionInformation.schema.json",
+  "x-oold-uuid": "60284a77-8ed0-53f0-b26b-41c3515b27e6",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/NutritionInformation",
+  "x-oold-instance-rdf-type": [
+    "schema:NutritionInformation"
+  ],
+  "title": "NutritionInformation",
+  "description": "Nutritional information about the recipe.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:NutritionInformation"
+      ]
+    },
+    "calories": {
+      "title": "Calories",
+      "description": "The number of calories.",
+      "type": "array",
+      "items": {
+        "$ref": "Energy.schema.json"
+      }
+    },
+    "carbohydrateContent": {
+      "title": "Carbohydrate Content",
+      "description": "The number of grams of carbohydrates.",
+      "type": "array",
+      "items": {
+        "$ref": "Mass.schema.json"
+      }
+    },
+    "cholesterolContent": {
+      "title": "Cholesterol Content",
+      "description": "The number of milligrams of cholesterol.",
+      "type": "array",
+      "items": {
+        "$ref": "Mass.schema.json"
+      }
+    },
+    "fatContent": {
+      "title": "Fat Content",
+      "description": "The number of grams of fat.",
+      "type": "array",
+      "items": {
+        "$ref": "Mass.schema.json"
+      }
+    },
+    "fiberContent": {
+      "title": "Fiber Content",
+      "description": "The number of grams of fiber.",
+      "type": "array",
+      "items": {
+        "$ref": "Mass.schema.json"
+      }
+    },
+    "proteinContent": {
+      "title": "Protein Content",
+      "description": "The number of grams of protein.",
+      "type": "array",
+      "items": {
+        "$ref": "Mass.schema.json"
+      }
+    },
+    "saturatedFatContent": {
+      "title": "Saturated Fat Content",
+      "description": "The number of grams of saturated fat.",
+      "type": "array",
+      "items": {
+        "$ref": "Mass.schema.json"
+      }
+    },
+    "servingSize": {
+      "title": "Serving Size",
+      "description": "The serving size, in terms of the number of volume or mass.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "sodiumContent": {
+      "title": "Sodium Content",
+      "description": "The number of milligrams of sodium.",
+      "type": "array",
+      "items": {
+        "$ref": "Mass.schema.json"
+      }
+    },
+    "sugarContent": {
+      "title": "Sugar Content",
+      "description": "The number of grams of sugar.",
+      "type": "array",
+      "items": {
+        "$ref": "Mass.schema.json"
+      }
+    },
+    "transFatContent": {
+      "title": "Trans Fat Content",
+      "description": "The number of grams of trans fat.",
+      "type": "array",
+      "items": {
+        "$ref": "Mass.schema.json"
+      }
+    },
+    "unsaturatedFatContent": {
+      "title": "Unsaturated Fat Content",
+      "description": "The number of grams of unsaturated fat.",
+      "type": "array",
+      "items": {
+        "$ref": "Mass.schema.json"
+      }
+    }
+  }
+}

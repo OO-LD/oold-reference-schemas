@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "HealthAndBeautyBusiness.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "HealthAndBeautyBusiness.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "BeautySalon.schema.json",
+  "x-oold-uuid": "463fd1aa-3e61-55e0-a914-4376eae28f1a",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/BeautySalon",
+  "x-oold-instance-rdf-type": [
+    "schema:BeautySalon"
+  ],
+  "title": "BeautySalon",
+  "description": "Beauty salon.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:BeautySalon"
+      ]
+    }
+  }
+}

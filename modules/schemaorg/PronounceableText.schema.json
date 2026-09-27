@@ -1,0 +1,99 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "id": "@id",
+    "type": {
+      "@id": "@type",
+      "@container": "@set"
+    },
+    "inLanguage": {
+      "@id": "schema:inLanguage",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "phoneticText": {
+      "@id": "schema:phoneticText",
+      "@container": "@set"
+    },
+    "speechToTextMarkup": {
+      "@id": "schema:speechToTextMarkup",
+      "@container": "@set"
+    },
+    "textValue": {
+      "@id": "schema:textValue",
+      "@container": "@set"
+    }
+  },
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "PronounceableText.schema.json",
+  "x-oold-uuid": "ae798a94-a900-553e-9c32-f39a60ba0c77",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/PronounceableText",
+  "x-oold-instance-rdf-type": [
+    "schema:PronounceableText"
+  ],
+  "title": "PronounceableText",
+  "description": "Data type: PronounceableText. A Text value that may also carry pronunciation annotations (inLanguage, phoneticText, speechToTextMarkup, textValue).",
+  "oneOf": [
+    {
+      "type": "string"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [
+            "schema:PronounceableText"
+          ]
+        },
+        "inLanguage": {
+          "title": "In Language",
+          "description": "The language of the content or performance or used in an action. Please use one of the language codes from the IETF BCP 47 standard. See also availableLanguage.",
+          "type": "array",
+          "items": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "string",
+                "format": "iri-reference",
+                "x-oold-range": "Language.schema.json"
+              }
+            ]
+          }
+        },
+        "phoneticText": {
+          "title": "Phonetic Text",
+          "description": "Representation of a text textValue using the specified speechToTextMarkup. For example the city name of Houston in IPA: /ˈhjuːstən/.",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "speechToTextMarkup": {
+          "title": "Speech To Text Markup",
+          "description": "Form of markup used. eg. SSML or IPA.",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "textValue": {
+          "title": "Text Value",
+          "description": "Text value being annotated.",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ]
+}

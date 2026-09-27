@@ -1,0 +1,8 @@
+{
+  "$schema": "AppendAction.schema.json",
+  "@context": "AppendAction.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:AppendAction"
+  ]
+}

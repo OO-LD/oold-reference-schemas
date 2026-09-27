@@ -1,0 +1,60 @@
+{
+  "@context": [
+    "MedicalIntangible.schema.json",
+    {
+      "stageAsNumber": {
+        "@id": "schema:stageAsNumber",
+        "@container": "@set"
+      },
+      "subStageSuffix": {
+        "@id": "schema:subStageSuffix",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "MedicalIntangible.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MedicalConditionStage.schema.json",
+  "x-oold-uuid": "2d42263c-1b6a-5ced-9391-1fb190cb0a4e",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/MedicalConditionStage",
+  "x-oold-instance-rdf-type": [
+    "schema:MedicalConditionStage"
+  ],
+  "title": "MedicalConditionStage",
+  "description": "A stage of a medical condition, such as 'Stage IIIa'.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:MedicalConditionStage"
+      ]
+    },
+    "stageAsNumber": {
+      "title": "Stage As Number",
+      "description": "The stage represented as a number, e.g. 3.",
+      "type": "array",
+      "items": {
+        "$ref": "Number.schema.json"
+      }
+    },
+    "subStageSuffix": {
+      "title": "Sub Stage Suffix",
+      "description": "The substage, e.g. 'a' for Stage IIIa.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    }
+  }
+}

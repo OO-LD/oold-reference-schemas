@@ -1,0 +1,8 @@
+{
+  "$schema": "DryCleaningOrLaundry.schema.json",
+  "@context": "DryCleaningOrLaundry.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:DryCleaningOrLaundry"
+  ]
+}

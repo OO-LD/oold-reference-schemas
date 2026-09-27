@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "AnatomicalStructure.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "AnatomicalStructure.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Ligament.schema.json",
+  "x-oold-uuid": "9331fbf8-a9ab-5768-a1ab-ccfd66878f40",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Ligament",
+  "x-oold-instance-rdf-type": [
+    "schema:Ligament"
+  ],
+  "title": "Ligament",
+  "description": "A short band of tough, flexible, fibrous connective tissue that functions to connect multiple bones, cartilages, and structurally support joints.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Ligament"
+      ]
+    }
+  }
+}

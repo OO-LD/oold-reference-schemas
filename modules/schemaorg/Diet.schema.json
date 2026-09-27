@@ -1,0 +1,106 @@
+{
+  "@context": [
+    "CreativeWork.schema.json",
+    "LifestyleModification.schema.json",
+    {
+      "dietFeatures": {
+        "@id": "schema:dietFeatures",
+        "@container": "@set"
+      },
+      "endorsers": {
+        "@id": "schema:endorsers",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "expertConsiderations": {
+        "@id": "schema:expertConsiderations",
+        "@container": "@set"
+      },
+      "physiologicalBenefits": {
+        "@id": "schema:physiologicalBenefits",
+        "@container": "@set"
+      },
+      "risks": {
+        "@id": "schema:risks",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "CreativeWork.schema.json"
+    },
+    {
+      "$ref": "LifestyleModification.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Diet.schema.json",
+  "x-oold-uuid": "3cc7dcf1-99fe-5c0f-8d23-3fd07346976d",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Diet",
+  "x-oold-instance-rdf-type": [
+    "schema:Diet"
+  ],
+  "title": "Diet",
+  "description": "A strategy of regulating the intake of food to achieve or maintain a specific health-related goal.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Diet"
+      ]
+    },
+    "dietFeatures": {
+      "title": "Diet Features",
+      "description": "Nutritional information specific to the dietary plan. May include dietary recommendations on what foods to avoid, what foods to consume, and specific alterations/deviations from the USDA or other regulatory body's approved dietary guidelines.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "endorsers": {
+      "title": "Endorsers",
+      "description": "People or organizations that endorse the plan.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "Organization.schema.json",
+          "Person.schema.json"
+        ]
+      }
+    },
+    "expertConsiderations": {
+      "title": "Expert Considerations",
+      "description": "Medical expert advice related to the plan.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "physiologicalBenefits": {
+      "title": "Physiological Benefits",
+      "description": "Specific physiologic benefits associated to the plan.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "risks": {
+      "title": "Risks",
+      "description": "Specific physiologic risks associated to the diet plan.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    }
+  }
+}

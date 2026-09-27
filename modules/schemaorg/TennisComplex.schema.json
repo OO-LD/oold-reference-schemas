@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "SportsActivityLocation.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "SportsActivityLocation.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "TennisComplex.schema.json",
+  "x-oold-uuid": "ab5c2f20-ea18-5168-a413-db8badc6b4be",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/TennisComplex",
+  "x-oold-instance-rdf-type": [
+    "schema:TennisComplex"
+  ],
+  "title": "TennisComplex",
+  "description": "A tennis complex.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:TennisComplex"
+      ]
+    }
+  }
+}

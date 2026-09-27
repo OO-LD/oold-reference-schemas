@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "LocalBusiness.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "LocalBusiness.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "TravelAgency.schema.json",
+  "x-oold-uuid": "a49af91e-972c-5e5c-9960-3be14c1680b0",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/TravelAgency",
+  "x-oold-instance-rdf-type": [
+    "schema:TravelAgency"
+  ],
+  "title": "TravelAgency",
+  "description": "A travel agency.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:TravelAgency"
+      ]
+    }
+  }
+}

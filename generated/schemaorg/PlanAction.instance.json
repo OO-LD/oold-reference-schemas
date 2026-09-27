@@ -1,0 +1,8 @@
+{
+  "$schema": "PlanAction.schema.json",
+  "@context": "PlanAction.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:PlanAction"
+  ]
+}

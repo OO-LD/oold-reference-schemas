@@ -1,0 +1,8 @@
+{
+  "$schema": "Flight.schema.json",
+  "@context": "Flight.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:Flight"
+  ]
+}

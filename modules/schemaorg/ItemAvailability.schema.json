@@ -1,0 +1,71 @@
+{
+  "@context": [
+    "Enumeration.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Enumeration.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ItemAvailability.schema.json",
+  "x-oold-uuid": "b292f8dc-de03-5c9e-9bfd-962d796c92e5",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/ItemAvailability",
+  "x-oold-instance-rdf-type": [
+    "schema:ItemAvailability"
+  ],
+  "title": "ItemAvailability",
+  "description": "A list of possible product availability options.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:ItemAvailability"
+      ]
+    }
+  },
+  "$defs": {
+    "member": {
+      "title": "ItemAvailability member",
+      "description": "One of the 12 member instances of ItemAvailability.",
+      "type": "string",
+      "format": "iri-reference",
+      "enum": [
+        "schema:BackOrder",
+        "schema:Discontinued",
+        "schema:InStock",
+        "schema:InStoreOnly",
+        "schema:LimitedAvailability",
+        "schema:MadeToOrder",
+        "schema:OnlineOnly",
+        "schema:OutOfStock",
+        "schema:PreOrder",
+        "schema:PreSale",
+        "schema:Reserved",
+        "schema:SoldOut"
+      ],
+      "x-oold-ui-enum-titles": [
+        "BackOrder",
+        "Discontinued",
+        "InStock",
+        "InStoreOnly",
+        "LimitedAvailability",
+        "MadeToOrder",
+        "OnlineOnly",
+        "OutOfStock",
+        "PreOrder",
+        "PreSale",
+        "Reserved",
+        "SoldOut"
+      ]
+    }
+  }
+}

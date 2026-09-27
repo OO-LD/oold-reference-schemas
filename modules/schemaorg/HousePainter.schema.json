@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "HomeAndConstructionBusiness.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "HomeAndConstructionBusiness.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "HousePainter.schema.json",
+  "x-oold-uuid": "f50951bf-baba-5511-961b-5c4f54898f90",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/HousePainter",
+  "x-oold-instance-rdf-type": [
+    "schema:HousePainter"
+  ],
+  "title": "HousePainter",
+  "description": "A house painting service.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:HousePainter"
+      ]
+    }
+  }
+}

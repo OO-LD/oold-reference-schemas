@@ -1,0 +1,8 @@
+{
+  "$schema": "HowToTool.schema.json",
+  "@context": "HowToTool.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:HowToTool"
+  ]
+}

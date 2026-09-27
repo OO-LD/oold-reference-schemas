@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "LearningResource.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "LearningResource.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Quiz.schema.json",
+  "x-oold-uuid": "b6cd59c3-db92-5391-bfde-d895a7d0cae1",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Quiz",
+  "x-oold-instance-rdf-type": [
+    "schema:Quiz"
+  ],
+  "title": "Quiz",
+  "description": "Quiz: A test of knowledge, skills and abilities.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Quiz"
+      ]
+    }
+  }
+}

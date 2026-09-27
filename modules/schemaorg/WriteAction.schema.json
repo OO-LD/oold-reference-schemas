@@ -1,0 +1,63 @@
+{
+  "@context": [
+    "CreateAction.schema.json",
+    {
+      "inLanguage": {
+        "@id": "schema:inLanguage",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "inLanguage_text": {
+        "@id": "schema:inLanguage",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "CreateAction.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "WriteAction.schema.json",
+  "x-oold-uuid": "d5a33987-d5ed-50db-b8c9-f24609c6ff54",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/WriteAction",
+  "x-oold-instance-rdf-type": [
+    "schema:WriteAction"
+  ],
+  "title": "WriteAction",
+  "description": "The act of authoring written creative content.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:WriteAction"
+      ]
+    },
+    "inLanguage": {
+      "title": "In Language",
+      "description": "The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Language.schema.json"
+      }
+    },
+    "inLanguage_text": {
+      "title": "In Language (text)",
+      "description": "The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    }
+  }
+}

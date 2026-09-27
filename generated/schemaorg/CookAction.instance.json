@@ -1,0 +1,8 @@
+{
+  "$schema": "CookAction.schema.json",
+  "@context": "CookAction.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:CookAction"
+  ]
+}

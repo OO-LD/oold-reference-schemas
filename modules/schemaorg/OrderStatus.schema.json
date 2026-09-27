@@ -1,0 +1,63 @@
+{
+  "@context": [
+    "StatusEnumeration.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "StatusEnumeration.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "OrderStatus.schema.json",
+  "x-oold-uuid": "4b1e9f36-69eb-5387-beea-e1c44cdd5f5f",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/OrderStatus",
+  "x-oold-instance-rdf-type": [
+    "schema:OrderStatus"
+  ],
+  "title": "OrderStatus",
+  "description": "Enumerated status values for Order.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:OrderStatus"
+      ]
+    }
+  },
+  "$defs": {
+    "member": {
+      "title": "OrderStatus member",
+      "description": "One of the 8 member instances of OrderStatus.",
+      "type": "string",
+      "format": "iri-reference",
+      "enum": [
+        "schema:OrderCancelled",
+        "schema:OrderDelivered",
+        "schema:OrderInTransit",
+        "schema:OrderPaymentDue",
+        "schema:OrderPickupAvailable",
+        "schema:OrderProblem",
+        "schema:OrderProcessing",
+        "schema:OrderReturned"
+      ],
+      "x-oold-ui-enum-titles": [
+        "OrderCancelled",
+        "OrderDelivered",
+        "OrderInTransit",
+        "OrderPaymentDue",
+        "OrderPickupAvailable",
+        "OrderProblem",
+        "OrderProcessing",
+        "OrderReturned"
+      ]
+    }
+  }
+}

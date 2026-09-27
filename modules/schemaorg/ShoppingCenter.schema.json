@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "LocalBusiness.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "LocalBusiness.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ShoppingCenter.schema.json",
+  "x-oold-uuid": "41291c92-e2bc-5890-bccf-83d29795499d",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/ShoppingCenter",
+  "x-oold-instance-rdf-type": [
+    "schema:ShoppingCenter"
+  ],
+  "title": "ShoppingCenter",
+  "description": "A shopping center or mall.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:ShoppingCenter"
+      ]
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "EducationalOrganization.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "EducationalOrganization.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "CollegeOrUniversity.schema.json",
+  "x-oold-uuid": "dbc044e3-73ea-5237-b186-f89ebf845c4b",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/CollegeOrUniversity",
+  "x-oold-instance-rdf-type": [
+    "schema:CollegeOrUniversity"
+  ],
+  "title": "CollegeOrUniversity",
+  "description": "A college, university, or other third-level educational institution.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:CollegeOrUniversity"
+      ]
+    }
+  }
+}

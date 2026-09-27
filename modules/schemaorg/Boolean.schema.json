@@ -1,0 +1,18 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Boolean.schema.json",
+  "x-oold-uuid": "d71e93f6-3cd5-5499-bc4b-60fba23bd009",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Boolean",
+  "x-oold-instance-rdf-type": [
+    "schema:Boolean"
+  ],
+  "title": "Boolean",
+  "description": "Boolean: True or False.",
+  "type": "boolean"
+}

@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Store.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Store.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "FurnitureStore.schema.json",
+  "x-oold-uuid": "4bb85e63-eb8a-540a-bfc0-eb33c98f1d32",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/FurnitureStore",
+  "x-oold-instance-rdf-type": [
+    "schema:FurnitureStore"
+  ],
+  "title": "FurnitureStore",
+  "description": "A furniture store.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:FurnitureStore"
+      ]
+    }
+  }
+}

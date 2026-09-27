@@ -1,0 +1,48 @@
+{
+  "@context": [
+    "ScholarlyArticle.schema.json",
+    {
+      "publicationType": {
+        "@id": "schema:publicationType",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "ScholarlyArticle.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MedicalScholarlyArticle.schema.json",
+  "x-oold-uuid": "e15fae9d-636c-5b06-b80e-4f5d4f75cafd",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/MedicalScholarlyArticle",
+  "x-oold-instance-rdf-type": [
+    "schema:MedicalScholarlyArticle"
+  ],
+  "title": "MedicalScholarlyArticle",
+  "description": "A scholarly article in the medical domain.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:MedicalScholarlyArticle"
+      ]
+    },
+    "publicationType": {
+      "title": "Publication Type",
+      "description": "The type of the medical article, taken from the US NLM MeSH publication type catalog. See also [MeSH documentation](http://www.nlm.nih.gov/mesh/pubtypes.html).",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    }
+  }
+}

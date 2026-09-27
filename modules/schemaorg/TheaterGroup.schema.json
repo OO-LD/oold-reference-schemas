@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "PerformingGroup.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "PerformingGroup.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "TheaterGroup.schema.json",
+  "x-oold-uuid": "76f38ae6-29cd-5280-a935-6ad7226b9fbc",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/TheaterGroup",
+  "x-oold-instance-rdf-type": [
+    "schema:TheaterGroup"
+  ],
+  "title": "TheaterGroup",
+  "description": "A theater group or company, for example, the Royal Shakespeare Company or Druid Theatre.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:TheaterGroup"
+      ]
+    }
+  }
+}

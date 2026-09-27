@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "MedicalEntity.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "MedicalEntity.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MedicalIndication.schema.json",
+  "x-oold-uuid": "d35170b0-1391-5fd0-bb13-4712c4913c7c",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/MedicalIndication",
+  "x-oold-instance-rdf-type": [
+    "schema:MedicalIndication"
+  ],
+  "title": "MedicalIndication",
+  "description": "A condition or factor that indicates use of a medical therapy, including signs, symptoms, risk factors, anatomical states, etc.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:MedicalIndication"
+      ]
+    }
+  }
+}

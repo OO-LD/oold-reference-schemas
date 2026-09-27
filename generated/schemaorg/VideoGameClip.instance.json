@@ -1,0 +1,8 @@
+{
+  "$schema": "VideoGameClip.schema.json",
+  "@context": "VideoGameClip.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:VideoGameClip"
+  ]
+}

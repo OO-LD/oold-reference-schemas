@@ -1,0 +1,51 @@
+{
+  "@context": [
+    "MedicalEnumeration.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "MedicalEnumeration.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "DrugPrescriptionStatus.schema.json",
+  "x-oold-uuid": "6e86d4a1-94e0-520d-aea6-9a0085f2c8c8",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/DrugPrescriptionStatus",
+  "x-oold-instance-rdf-type": [
+    "schema:DrugPrescriptionStatus"
+  ],
+  "title": "DrugPrescriptionStatus",
+  "description": "Indicates whether this drug is available by prescription or over-the-counter.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:DrugPrescriptionStatus"
+      ]
+    }
+  },
+  "$defs": {
+    "member": {
+      "title": "DrugPrescriptionStatus member",
+      "description": "One of the 2 member instances of DrugPrescriptionStatus.",
+      "type": "string",
+      "format": "iri-reference",
+      "enum": [
+        "schema:OTC",
+        "schema:PrescriptionOnly"
+      ],
+      "x-oold-ui-enum-titles": [
+        "OTC",
+        "PrescriptionOnly"
+      ]
+    }
+  }
+}

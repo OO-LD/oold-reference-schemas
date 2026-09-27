@@ -1,0 +1,51 @@
+{
+  "@context": [
+    "CommunicateAction.schema.json",
+    {
+      "resultComment": {
+        "@id": "schema:resultComment",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "CommunicateAction.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "CommentAction.schema.json",
+  "x-oold-uuid": "7e845cad-2d0c-576d-9e45-e954f34a3f80",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/CommentAction",
+  "x-oold-instance-rdf-type": [
+    "schema:CommentAction"
+  ],
+  "title": "CommentAction",
+  "description": "The act of generating a comment about a subject.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:CommentAction"
+      ]
+    },
+    "resultComment": {
+      "title": "Result Comment",
+      "description": "A sub property of result. The Comment created or sent as a result of this action.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Comment.schema.json"
+      }
+    }
+  }
+}

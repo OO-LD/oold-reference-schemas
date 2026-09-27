@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Enumeration.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Enumeration.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "BusinessEntityType.schema.json",
+  "x-oold-uuid": "7c9fa14e-1eea-55f5-b2a6-c71cb13719e2",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/BusinessEntityType",
+  "x-oold-instance-rdf-type": [
+    "schema:BusinessEntityType"
+  ],
+  "title": "BusinessEntityType",
+  "description": "A business entity type is a conceptual entity representing the legal form, the size, the main line of business, the position in the value chain, or any combination thereof, of an organization or business person.\\n\\nCommonly used values:\\n\\n* http://purl.org/goodrelations/v1#Business\\n* http://purl.org/goodrelations/v1#Enduser\\n* http://purl.org/goodrelations/v1#PublicInstitution\\n* http://purl.org/goodrelations/v1#Reseller\n    ",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:BusinessEntityType"
+      ]
+    }
+  }
+}

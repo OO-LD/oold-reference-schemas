@@ -1,0 +1,496 @@
+{
+  "@context": [
+    "Intangible.schema.json",
+    {
+      "applicationDeadline": {
+        "@id": "schema:applicationDeadline",
+        "@container": "@set"
+      },
+      "applicationStartDate": {
+        "@id": "schema:applicationStartDate",
+        "@type": "xsd:date",
+        "@container": "@set"
+      },
+      "dayOfWeek": {
+        "@id": "schema:dayOfWeek",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "educationalCredentialAwarded": {
+        "@id": "schema:educationalCredentialAwarded",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "educationalCredentialAwarded_text": {
+        "@id": "schema:educationalCredentialAwarded",
+        "@container": "@set"
+      },
+      "educationalProgramMode": {
+        "@id": "schema:educationalProgramMode",
+        "@container": "@set"
+      },
+      "endDate": {
+        "@id": "schema:endDate",
+        "@container": "@set"
+      },
+      "financialAidEligible": {
+        "@id": "schema:financialAidEligible",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "financialAidEligible_text": {
+        "@id": "schema:financialAidEligible",
+        "@container": "@set"
+      },
+      "hasCourse": {
+        "@id": "schema:hasCourse",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "maximumEnrollment": {
+        "@id": "schema:maximumEnrollment",
+        "@container": "@set"
+      },
+      "numberOfCredits": {
+        "@id": "schema:numberOfCredits",
+        "@container": "@set"
+      },
+      "occupationalCategory": {
+        "@id": "schema:occupationalCategory",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "occupationalCategory_text": {
+        "@id": "schema:occupationalCategory",
+        "@container": "@set"
+      },
+      "occupationalCredentialAwarded": {
+        "@id": "schema:occupationalCredentialAwarded",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "occupationalCredentialAwarded_text": {
+        "@id": "schema:occupationalCredentialAwarded",
+        "@container": "@set"
+      },
+      "offers": {
+        "@id": "schema:offers",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "programPrerequisites": {
+        "@id": "schema:programPrerequisites",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "programPrerequisites_text": {
+        "@id": "schema:programPrerequisites",
+        "@container": "@set"
+      },
+      "programType": {
+        "@id": "schema:programType",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "programType_text": {
+        "@id": "schema:programType",
+        "@container": "@set"
+      },
+      "provider": {
+        "@id": "schema:provider",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "salaryUponCompletion": {
+        "@id": "schema:salaryUponCompletion",
+        "@container": "@set"
+      },
+      "startDate": {
+        "@id": "schema:startDate",
+        "@container": "@set"
+      },
+      "termDuration": {
+        "@id": "schema:termDuration",
+        "@type": "xsd:duration",
+        "@container": "@set"
+      },
+      "termsPerYear": {
+        "@id": "schema:termsPerYear",
+        "@container": "@set"
+      },
+      "timeOfDay": {
+        "@id": "schema:timeOfDay",
+        "@container": "@set"
+      },
+      "timeToComplete": {
+        "@id": "schema:timeToComplete",
+        "@type": "xsd:duration",
+        "@container": "@set"
+      },
+      "trainingSalary": {
+        "@id": "schema:trainingSalary",
+        "@container": "@set"
+      },
+      "typicalCreditsPerTerm": {
+        "@id": "schema:typicalCreditsPerTerm",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Intangible.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "EducationalOccupationalProgram.schema.json",
+  "x-oold-uuid": "5ddbc470-d8d2-5796-9862-b1a9c767fe9a",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/EducationalOccupationalProgram",
+  "x-oold-instance-rdf-type": [
+    "schema:EducationalOccupationalProgram"
+  ],
+  "title": "EducationalOccupationalProgram",
+  "description": "A program offered by an institution which determines the learning progress to achieve an outcome, usually a credential like a degree or certificate. This would define a discrete set of opportunities (e.g., job, courses) that together constitute a program with a clear start, end, set of requirements, and transition to a new occupational opportunity (e.g., a job), or sometimes a higher educational opportunity (e.g., an advanced degree).",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:EducationalOccupationalProgram"
+      ]
+    },
+    "applicationDeadline": {
+      "title": "Application Deadline",
+      "description": "The date on which the program stops collecting applications for the next enrollment cycle. Flexible application deadlines (for example, a program with rolling admissions) can be described in a textual string, rather than as a DateTime.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Date.schema.json"
+          },
+          {
+            "$ref": "Text.schema.json"
+          }
+        ]
+      }
+    },
+    "applicationStartDate": {
+      "title": "Application Start Date",
+      "description": "The date at which the program begins collecting applications for the next enrollment cycle.",
+      "type": "array",
+      "items": {
+        "$ref": "Date.schema.json"
+      }
+    },
+    "dayOfWeek": {
+      "title": "Day Of Week",
+      "description": "The day of the week for which these opening hours are valid.",
+      "type": "array",
+      "items": {
+        "$ref": "DayOfWeek.schema.json#/$defs/member",
+        "x-oold-range": "DayOfWeek.schema.json"
+      }
+    },
+    "educationalCredentialAwarded": {
+      "title": "Educational Credential Awarded",
+      "description": "A description of the qualification, award, certificate, diploma or other educational credential awarded as a consequence of successful completion of this course or program.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "EducationalOccupationalCredential.schema.json"
+      }
+    },
+    "educationalCredentialAwarded_text": {
+      "title": "Educational Credential Awarded (text)",
+      "description": "A description of the qualification, award, certificate, diploma or other educational credential awarded as a consequence of successful completion of this course or program.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Text.schema.json"
+          },
+          {
+            "$ref": "URL.schema.json"
+          }
+        ]
+      }
+    },
+    "educationalProgramMode": {
+      "title": "Educational Program Mode",
+      "description": "Similar to courseMode, the medium or means of delivery of the program as a whole. The value may either be a text label (e.g. \"online\", \"onsite\" or \"blended\"; \"synchronous\" or \"asynchronous\"; \"full-time\" or \"part-time\") or a URL reference to a term from a controlled vocabulary (e.g. https://ceds.ed.gov/element/001311#Asynchronous ).",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Text.schema.json"
+          },
+          {
+            "$ref": "URL.schema.json"
+          }
+        ]
+      }
+    },
+    "endDate": {
+      "title": "End Date",
+      "description": "The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Date.schema.json"
+          },
+          {
+            "$ref": "DateTime.schema.json"
+          }
+        ]
+      }
+    },
+    "financialAidEligible": {
+      "title": "Financial Aid Eligible",
+      "description": "A financial aid type or program which students may use to pay for tuition or fees associated with the program.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "DefinedTerm.schema.json"
+      }
+    },
+    "financialAidEligible_text": {
+      "title": "Financial Aid Eligible (text)",
+      "description": "A financial aid type or program which students may use to pay for tuition or fees associated with the program.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "hasCourse": {
+      "title": "Has Course",
+      "description": "A course or class that is one of the learning opportunities that constitute an educational / occupational program. No information is implied about whether the course is mandatory or optional; no guarantee is implied about whether the course will be available to everyone on the program.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Course.schema.json"
+      }
+    },
+    "maximumEnrollment": {
+      "title": "Maximum Enrollment",
+      "description": "The maximum number of students who may be enrolled in the program.",
+      "type": "array",
+      "items": {
+        "$ref": "Integer.schema.json"
+      }
+    },
+    "numberOfCredits": {
+      "title": "Number Of Credits",
+      "description": "The number of credits or units awarded by a Course or required to complete an EducationalOccupationalProgram.",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: StructuredValue [value-type]: StructuredValue -> Intangible -> Thing",
+        "anyOf": [
+          {
+            "$ref": "Integer.schema.json"
+          },
+          {
+            "$ref": "StructuredValue.schema.json"
+          }
+        ]
+      }
+    },
+    "occupationalCategory": {
+      "title": "Occupational Category",
+      "description": "A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html), [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.\\n\nNote: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "CategoryCode.schema.json"
+      }
+    },
+    "occupationalCategory_text": {
+      "title": "Occupational Category (text)",
+      "description": "A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html), [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.\\n\nNote: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "occupationalCredentialAwarded": {
+      "title": "Occupational Credential Awarded",
+      "description": "A description of the qualification, award, certificate, diploma or other occupational credential awarded as a consequence of successful completion of this course or program.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "EducationalOccupationalCredential.schema.json"
+      }
+    },
+    "occupationalCredentialAwarded_text": {
+      "title": "Occupational Credential Awarded (text)",
+      "description": "A description of the qualification, award, certificate, diploma or other occupational credential awarded as a consequence of successful completion of this course or program.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Text.schema.json"
+          },
+          {
+            "$ref": "URL.schema.json"
+          }
+        ]
+      }
+    },
+    "offers": {
+      "title": "Offers",
+      "description": "An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.\n      ",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "Demand.schema.json",
+          "Offer.schema.json"
+        ]
+      }
+    },
+    "programPrerequisites": {
+      "title": "Program Prerequisites",
+      "description": "Prerequisites for enrolling in the program.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "AlignmentObject.schema.json",
+          "Course.schema.json",
+          "EducationalOccupationalCredential.schema.json"
+        ]
+      }
+    },
+    "programPrerequisites_text": {
+      "title": "Program Prerequisites (text)",
+      "description": "Prerequisites for enrolling in the program.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "programType": {
+      "title": "Program Type",
+      "description": "The type of educational or occupational program. For example, classroom, internship, alternance, etc.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "DefinedTerm.schema.json"
+      }
+    },
+    "programType_text": {
+      "title": "Program Type (text)",
+      "description": "The type of educational or occupational program. For example, classroom, internship, alternance, etc.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "provider": {
+      "title": "Provider",
+      "description": "The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "Organization.schema.json",
+          "Person.schema.json"
+        ]
+      }
+    },
+    "salaryUponCompletion": {
+      "title": "Salary Upon Completion",
+      "description": "The expected salary upon completing the training.",
+      "type": "array",
+      "items": {
+        "$ref": "MonetaryAmountDistribution.schema.json"
+      }
+    },
+    "startDate": {
+      "title": "Start Date",
+      "description": "The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Date.schema.json"
+          },
+          {
+            "$ref": "DateTime.schema.json"
+          }
+        ]
+      }
+    },
+    "termDuration": {
+      "title": "Term Duration",
+      "description": "The amount of time in a term as defined by the institution. A term is a length of time where students take one or more classes. Semesters and quarters are common units for term.",
+      "type": "array",
+      "items": {
+        "$ref": "Duration.schema.json"
+      }
+    },
+    "termsPerYear": {
+      "title": "Terms Per Year",
+      "description": "The number of times terms of study are offered per year. Semesters and quarters are common units for term. For example, if the student can only take 2 semesters for the program in one year, then termsPerYear should be 2.",
+      "type": "array",
+      "items": {
+        "$ref": "Number.schema.json"
+      }
+    },
+    "timeOfDay": {
+      "title": "Time Of Day",
+      "description": "The time of day the program normally runs. For example, \"evenings\".",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "timeToComplete": {
+      "title": "Time To Complete",
+      "description": "The expected length of time to complete the program if attending full-time.",
+      "type": "array",
+      "items": {
+        "$ref": "Duration.schema.json"
+      }
+    },
+    "trainingSalary": {
+      "title": "Training Salary",
+      "description": "The estimated salary earned while in the program.",
+      "type": "array",
+      "items": {
+        "$ref": "MonetaryAmountDistribution.schema.json"
+      }
+    },
+    "typicalCreditsPerTerm": {
+      "title": "Typical Credits Per Term",
+      "description": "The number of credits or units a full-time student would be expected to take in 1 term however 'term' is defined by the institution.",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: StructuredValue [value-type]: StructuredValue -> Intangible -> Thing",
+        "anyOf": [
+          {
+            "$ref": "Integer.schema.json"
+          },
+          {
+            "$ref": "StructuredValue.schema.json"
+          }
+        ]
+      }
+    }
+  }
+}

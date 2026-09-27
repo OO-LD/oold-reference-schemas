@@ -1,0 +1,96 @@
+{
+  "@context": [
+    "StructuredValue.schema.json",
+    {
+      "fulfillmentType": {
+        "@id": "schema:fulfillmentType",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "handlingTime": {
+        "@id": "schema:handlingTime",
+        "@container": "@set"
+      },
+      "shippingConditions": {
+        "@id": "schema:shippingConditions",
+        "@container": "@set"
+      },
+      "validForMemberTier": {
+        "@id": "schema:validForMemberTier",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "StructuredValue.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ShippingService.schema.json",
+  "x-oold-uuid": "65bcc7c2-70be-5141-9466-0332bf314eaf",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/ShippingService",
+  "x-oold-instance-rdf-type": [
+    "schema:ShippingService"
+  ],
+  "title": "ShippingService",
+  "description": "ShippingService represents the criteria used to determine if and how an offer could be shipped to a customer.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:ShippingService"
+      ]
+    },
+    "fulfillmentType": {
+      "title": "Fulfillment Type",
+      "description": "Type of fulfillment applicable to the [[ShippingService]].",
+      "type": "array",
+      "items": {
+        "$ref": "FulfillmentTypeEnumeration.schema.json#/$defs/member",
+        "x-oold-range": "FulfillmentTypeEnumeration.schema.json"
+      }
+    },
+    "handlingTime": {
+      "title": "Handling Time",
+      "description": "The typical delay between the receipt of the order and the goods either leaving the warehouse or being prepared for pickup, in case the delivery method is on site pickup.\n\nIn the context of [[ShippingDeliveryTime]], Typical properties: minValue, maxValue, unitCode (d for DAY).  This is by common convention assumed to mean business days (if a unitCode is used, coded as \"d\"), i.e. only counting days when the business normally operates.\n\nIn the context of [[ShippingService]], use the [[ServicePeriod]] format, that contains the same information in a structured form, with cut-off time, business days and duration.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "QuantitativeValue.schema.json"
+          },
+          {
+            "$ref": "ServicePeriod.schema.json"
+          }
+        ]
+      }
+    },
+    "shippingConditions": {
+      "title": "Shipping Conditions",
+      "description": "The conditions (constraints, price) applicable to the [[ShippingService]].",
+      "type": "array",
+      "items": {
+        "$ref": "ShippingConditions.schema.json"
+      }
+    },
+    "validForMemberTier": {
+      "title": "Valid For Member Tier",
+      "description": "The membership program tier(s) an Offer (or a PriceSpecification, OfferShippingDetails, or MerchantReturnPolicy under an Offer) is valid for.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "MemberProgramTier.schema.json"
+      }
+    }
+  }
+}

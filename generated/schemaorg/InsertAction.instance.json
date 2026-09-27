@@ -1,0 +1,8 @@
+{
+  "$schema": "InsertAction.schema.json",
+  "@context": "InsertAction.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:InsertAction"
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "@context": [
+    "Enumeration.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Enumeration.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "CertificationStatusEnumeration.schema.json",
+  "x-oold-uuid": "68064dd3-51e6-56c4-9ad9-e7613a6a0dc5",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/CertificationStatusEnumeration",
+  "x-oold-instance-rdf-type": [
+    "schema:CertificationStatusEnumeration"
+  ],
+  "title": "CertificationStatusEnumeration",
+  "description": "Enumerates the different statuses of a Certification (Active and Inactive).",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:CertificationStatusEnumeration"
+      ]
+    }
+  },
+  "$defs": {
+    "member": {
+      "title": "CertificationStatusEnumeration member",
+      "description": "One of the 2 member instances of CertificationStatusEnumeration.",
+      "type": "string",
+      "format": "iri-reference",
+      "enum": [
+        "schema:CertificationActive",
+        "schema:CertificationInactive"
+      ],
+      "x-oold-ui-enum-titles": [
+        "CertificationActive",
+        "CertificationInactive"
+      ]
+    }
+  }
+}

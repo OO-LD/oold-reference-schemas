@@ -1,0 +1,51 @@
+{
+  "@context": [
+    "Physician.schema.json",
+    {
+      "practicesAt": {
+        "@id": "schema:practicesAt",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Physician.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "IndividualPhysician.schema.json",
+  "x-oold-uuid": "3b9de594-7791-5a5b-b271-b3457b39d8eb",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/IndividualPhysician",
+  "x-oold-instance-rdf-type": [
+    "schema:IndividualPhysician"
+  ],
+  "title": "IndividualPhysician",
+  "description": "An individual medical practitioner. For their official address use [[address]], for affiliations to hospitals use [[hospitalAffiliation]]. \nThe [[practicesAt]] property can be used to indicate [[MedicalOrganization]] hospitals, clinics, pharmacies etc. where this physician practices.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:IndividualPhysician"
+      ]
+    },
+    "practicesAt": {
+      "title": "Practices At",
+      "description": "A [[MedicalOrganization]] where the [[IndividualPhysician]] practices.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "MedicalOrganization.schema.json"
+      }
+    }
+  }
+}

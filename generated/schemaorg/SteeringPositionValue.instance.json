@@ -1,0 +1,8 @@
+{
+  "$schema": "SteeringPositionValue.schema.json",
+  "@context": "SteeringPositionValue.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:SteeringPositionValue"
+  ]
+}

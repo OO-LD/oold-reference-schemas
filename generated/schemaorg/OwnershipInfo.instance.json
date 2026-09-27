@@ -1,0 +1,8 @@
+{
+  "$schema": "OwnershipInfo.schema.json",
+  "@context": "OwnershipInfo.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:OwnershipInfo"
+  ]
+}

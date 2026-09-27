@@ -1,0 +1,8 @@
+{
+  "$schema": "CovidTestingFacility.schema.json",
+  "@context": "CovidTestingFacility.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:CovidTestingFacility"
+  ]
+}

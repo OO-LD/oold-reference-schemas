@@ -1,0 +1,79 @@
+{
+  "@context": [
+    "MedicalEnumeration.schema.json",
+    "MedicalProcedure.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "MedicalEnumeration.schema.json"
+    },
+    {
+      "$ref": "MedicalProcedure.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "PhysicalExam.schema.json",
+  "x-oold-uuid": "e22f84fb-75d0-5b61-b0b7-bf1fa6bf5f78",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/PhysicalExam",
+  "x-oold-instance-rdf-type": [
+    "schema:PhysicalExam"
+  ],
+  "title": "PhysicalExam",
+  "description": "A type of physical examination of a patient performed by a physician. ",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:PhysicalExam"
+      ]
+    }
+  },
+  "$defs": {
+    "member": {
+      "title": "PhysicalExam member",
+      "description": "One of the 14 member instances of PhysicalExam.",
+      "type": "string",
+      "format": "iri-reference",
+      "enum": [
+        "schema:Abdomen",
+        "schema:Appearance",
+        "schema:CardiovascularExam",
+        "schema:Ear",
+        "schema:Eye",
+        "schema:Genitourinary",
+        "schema:Head",
+        "schema:Lung",
+        "schema:MusculoskeletalExam",
+        "schema:Neck",
+        "schema:Neuro",
+        "schema:Nose",
+        "schema:Skin",
+        "schema:Throat"
+      ],
+      "x-oold-ui-enum-titles": [
+        "Abdomen",
+        "Appearance",
+        "CardiovascularExam",
+        "Ear",
+        "Eye",
+        "Genitourinary",
+        "Head",
+        "Lung",
+        "MusculoskeletalExam",
+        "Neck",
+        "Neuro",
+        "Nose",
+        "Skin",
+        "Throat"
+      ]
+    }
+  }
+}

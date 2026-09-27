@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Organization.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Organization.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "OnlineBusiness.schema.json",
+  "x-oold-uuid": "ca7a495c-0296-510e-b2fd-bc62e217d6f1",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/OnlineBusiness",
+  "x-oold-instance-rdf-type": [
+    "schema:OnlineBusiness"
+  ],
+  "title": "OnlineBusiness",
+  "description": "A particular online business, either standalone or the online part of a broader organization. Examples include an eCommerce site, an online travel booking site, an online learning site, an online logistics and shipping provider, an online (virtual) doctor, etc.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:OnlineBusiness"
+      ]
+    }
+  }
+}

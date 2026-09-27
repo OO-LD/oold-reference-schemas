@@ -1,0 +1,8 @@
+{
+  "$schema": "Motorcycle.schema.json",
+  "@context": "Motorcycle.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:Motorcycle"
+  ]
+}

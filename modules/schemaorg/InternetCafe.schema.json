@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "LocalBusiness.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "LocalBusiness.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "InternetCafe.schema.json",
+  "x-oold-uuid": "7cc6570e-a52c-53f8-8731-00c12d0a1514",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/InternetCafe",
+  "x-oold-instance-rdf-type": [
+    "schema:InternetCafe"
+  ],
+  "title": "InternetCafe",
+  "description": "An internet cafe.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:InternetCafe"
+      ]
+    }
+  }
+}

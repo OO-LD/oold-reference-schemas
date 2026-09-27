@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "ItemList.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "ItemList.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "OfferCatalog.schema.json",
+  "x-oold-uuid": "17578b64-7a50-5c2e-81bb-2b4b969b69e2",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/OfferCatalog",
+  "x-oold-instance-rdf-type": [
+    "schema:OfferCatalog"
+  ],
+  "title": "OfferCatalog",
+  "description": "An OfferCatalog is an ItemList that contains related Offers and/or further OfferCatalogs that are offeredBy the same provider.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:OfferCatalog"
+      ]
+    }
+  }
+}

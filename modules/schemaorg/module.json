@@ -1,0 +1,7 @@
+{
+  "name": "schemaorg",
+  "title": "Schema.org",
+  "version": "0.1.0",
+  "status": "draft",
+  "scope": "The whole schema.org class hierarchy as OO-LD schemas, generated mechanically from the vocabulary dump. Standalone: it mirrors an external vocabulary rather than modelling a domain, so no other module builds on it."
+}

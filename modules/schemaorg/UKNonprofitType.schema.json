@@ -1,0 +1,55 @@
+{
+  "@context": [
+    "NonprofitType.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "NonprofitType.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "UKNonprofitType.schema.json",
+  "x-oold-uuid": "7263d7f9-1dbf-525c-970c-6459bcb539fa",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/UKNonprofitType",
+  "x-oold-instance-rdf-type": [
+    "schema:UKNonprofitType"
+  ],
+  "title": "UKNonprofitType",
+  "description": "UKNonprofitType: Non-profit organization type originating from the United Kingdom.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:UKNonprofitType"
+      ]
+    }
+  },
+  "$defs": {
+    "member": {
+      "title": "UKNonprofitType member",
+      "description": "One of the 4 member instances of UKNonprofitType.",
+      "type": "string",
+      "format": "iri-reference",
+      "enum": [
+        "schema:CharitableIncorporatedOrganization",
+        "schema:LimitedByGuaranteeCharity",
+        "schema:UKTrust",
+        "schema:UnincorporatedAssociationCharity"
+      ],
+      "x-oold-ui-enum-titles": [
+        "CharitableIncorporatedOrganization",
+        "LimitedByGuaranteeCharity",
+        "UKTrust",
+        "UnincorporatedAssociationCharity"
+      ]
+    }
+  }
+}

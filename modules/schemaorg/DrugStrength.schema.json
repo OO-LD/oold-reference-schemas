@@ -1,0 +1,102 @@
+{
+  "@context": [
+    "MedicalIntangible.schema.json",
+    {
+      "activeIngredient": {
+        "@id": "schema:activeIngredient",
+        "@container": "@set"
+      },
+      "availableIn": {
+        "@id": "schema:availableIn",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "maximumIntake": {
+        "@id": "schema:maximumIntake",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "strengthUnit": {
+        "@id": "schema:strengthUnit",
+        "@container": "@set"
+      },
+      "strengthValue": {
+        "@id": "schema:strengthValue",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "MedicalIntangible.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "DrugStrength.schema.json",
+  "x-oold-uuid": "230b70e6-9a42-5b26-bb51-8dde0b692959",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/DrugStrength",
+  "x-oold-instance-rdf-type": [
+    "schema:DrugStrength"
+  ],
+  "title": "DrugStrength",
+  "description": "A specific strength in which a medical drug is available in a specific country.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:DrugStrength"
+      ]
+    },
+    "activeIngredient": {
+      "title": "Active Ingredient",
+      "description": "An active ingredient, typically chemical compounds and/or biologic substances.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "availableIn": {
+      "title": "Available In",
+      "description": "The location in which the strength is available.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "AdministrativeArea.schema.json"
+      }
+    },
+    "maximumIntake": {
+      "title": "Maximum Intake",
+      "description": "Recommended intake of this supplement for a given population as defined by a specific recommending authority.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "MaximumDoseSchedule.schema.json"
+      }
+    },
+    "strengthUnit": {
+      "title": "Strength Unit",
+      "description": "The units of an active ingredient's strength, e.g. mg.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "strengthValue": {
+      "title": "Strength Value",
+      "description": "The value of an active ingredient's strength, e.g. 325.",
+      "type": "array",
+      "items": {
+        "$ref": "Number.schema.json"
+      }
+    }
+  }
+}

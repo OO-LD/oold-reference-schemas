@@ -1,0 +1,60 @@
+{
+  "@context": [
+    "PeopleAudience.schema.json",
+    {
+      "childMaxAge": {
+        "@id": "schema:childMaxAge",
+        "@container": "@set"
+      },
+      "childMinAge": {
+        "@id": "schema:childMinAge",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "PeopleAudience.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ParentAudience.schema.json",
+  "x-oold-uuid": "affcf959-a177-537e-a9bf-0bea2c7b9a7f",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/ParentAudience",
+  "x-oold-instance-rdf-type": [
+    "schema:ParentAudience"
+  ],
+  "title": "ParentAudience",
+  "description": "A set of characteristics describing parents, who can be interested in viewing some content.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:ParentAudience"
+      ]
+    },
+    "childMaxAge": {
+      "title": "Child Max Age",
+      "description": "Maximal age of the child.",
+      "type": "array",
+      "items": {
+        "$ref": "Number.schema.json"
+      }
+    },
+    "childMinAge": {
+      "title": "Child Min Age",
+      "description": "Minimal age of the child.",
+      "type": "array",
+      "items": {
+        "$ref": "Number.schema.json"
+      }
+    }
+  }
+}

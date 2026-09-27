@@ -1,0 +1,8 @@
+{
+  "$schema": "Clip.schema.json",
+  "@context": "Clip.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:Clip"
+  ]
+}

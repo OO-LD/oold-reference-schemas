@@ -1,0 +1,8 @@
+{
+  "$schema": "Playground.schema.json",
+  "@context": "Playground.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:Playground"
+  ]
+}

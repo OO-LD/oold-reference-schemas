@@ -1,0 +1,127 @@
+{
+  "@context": [
+    "MedicalBusiness.schema.json",
+    "MedicalOrganization.schema.json",
+    {
+      "availableService": {
+        "@id": "schema:availableService",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "hospitalAffiliation": {
+        "@id": "schema:hospitalAffiliation",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "medicalSpecialty": {
+        "@id": "schema:medicalSpecialty",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "occupationalCategory": {
+        "@id": "schema:occupationalCategory",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "occupationalCategory_text": {
+        "@id": "schema:occupationalCategory",
+        "@container": "@set"
+      },
+      "usNPI": {
+        "@id": "schema:usNPI",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "MedicalBusiness.schema.json"
+    },
+    {
+      "$ref": "MedicalOrganization.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Physician.schema.json",
+  "x-oold-uuid": "55ae7011-117b-5559-94f4-b0a682879d82",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Physician",
+  "x-oold-instance-rdf-type": [
+    "schema:Physician"
+  ],
+  "title": "Physician",
+  "description": "An individual physician or a physician's office considered as a [[MedicalOrganization]].",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Physician"
+      ]
+    },
+    "availableService": {
+      "title": "Available Service",
+      "description": "A medical service available from this provider.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "MedicalProcedure.schema.json",
+          "MedicalTest.schema.json",
+          "MedicalTherapy.schema.json"
+        ]
+      }
+    },
+    "hospitalAffiliation": {
+      "title": "Hospital Affiliation",
+      "description": "A hospital with which the physician or office is affiliated.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Hospital.schema.json"
+      }
+    },
+    "medicalSpecialty": {
+      "title": "Medical Specialty",
+      "description": "A medical specialty of the provider.",
+      "type": "array",
+      "items": {
+        "$ref": "MedicalSpecialty.schema.json#/$defs/member",
+        "x-oold-range": "MedicalSpecialty.schema.json"
+      }
+    },
+    "occupationalCategory": {
+      "title": "Occupational Category",
+      "description": "A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html), [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.\\n\nNote: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "CategoryCode.schema.json"
+      }
+    },
+    "occupationalCategory_text": {
+      "title": "Occupational Category (text)",
+      "description": "A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html), [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.\\n\nNote: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "usNPI": {
+      "title": "Us N P I",
+      "description": "A <a href=\"https://en.wikipedia.org/wiki/National_Provider_Identifier\">National Provider Identifier</a> (NPI) \n    is a unique 10-digit identification number issued to health care providers in the United States by the Centers for Medicare and Medicaid Services.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    }
+  }
+}

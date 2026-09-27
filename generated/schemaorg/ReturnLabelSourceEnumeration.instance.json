@@ -1,0 +1,8 @@
+{
+  "$schema": "ReturnLabelSourceEnumeration.schema.json",
+  "@context": "ReturnLabelSourceEnumeration.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:ReturnLabelSourceEnumeration"
+  ]
+}

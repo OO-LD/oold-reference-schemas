@@ -1,0 +1,63 @@
+{
+  "@context": [
+    "TradeAction.schema.json",
+    {
+      "recipient": {
+        "@id": "schema:recipient",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "TradeAction.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "PayAction.schema.json",
+  "x-oold-uuid": "790f43f1-d7b8-5720-a8b1-069e60d21327",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/PayAction",
+  "x-oold-instance-rdf-type": [
+    "schema:PayAction"
+  ],
+  "title": "PayAction",
+  "description": "An agent pays a price to a participant.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:PayAction"
+      ]
+    },
+    "recipient": {
+      "title": "Recipient",
+      "description": "A sub property of participant. The participant who is at the receiving end of the action.",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: ContactPoint [value-type]: ContactPoint -> StructuredValue -> Intangible -> Thing; Audience [entity]: Audience -> Intangible -> Thing; Organization [entity]: Organization -> Thing; Person [entity]: Person -> Thing",
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "iri-reference",
+            "x-oold-range": [
+              "Audience.schema.json",
+              "Organization.schema.json",
+              "Person.schema.json"
+            ]
+          },
+          {
+            "$ref": "ContactPoint.schema.json"
+          }
+        ]
+      }
+    }
+  }
+}

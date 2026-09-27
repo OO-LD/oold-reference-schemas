@@ -1,0 +1,8 @@
+{
+  "$schema": "SeekToAction.schema.json",
+  "@context": "SeekToAction.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:SeekToAction"
+  ]
+}

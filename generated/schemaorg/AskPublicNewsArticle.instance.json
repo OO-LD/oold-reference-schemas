@@ -1,0 +1,8 @@
+{
+  "$schema": "AskPublicNewsArticle.schema.json",
+  "@context": "AskPublicNewsArticle.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:AskPublicNewsArticle"
+  ]
+}

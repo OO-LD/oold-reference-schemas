@@ -1,0 +1,50 @@
+{
+  "@context": [
+    "Intangible.schema.json",
+    {
+      "paymentMethodType": {
+        "@id": "schema:paymentMethodType",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Intangible.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "PaymentMethod.schema.json",
+  "x-oold-uuid": "7b3a870c-2414-56e2-b96f-81efa39b2310",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/PaymentMethod",
+  "x-oold-instance-rdf-type": [
+    "schema:PaymentMethod"
+  ],
+  "title": "PaymentMethod",
+  "description": "A payment method is a standardized procedure for transferring the monetary amount for a purchase. Payment methods are characterized by the legal and technical structures used, and by the organization or group carrying out the transaction. The following legacy values should be accepted: \\n\\n* http://purl.org/goodrelations/v1#ByBankTransferInAdvance\\n* http://purl.org/goodrelations/v1#ByInvoice\\n* http://purl.org/goodrelations/v1#Cash\\n* http://purl.org/goodrelations/v1#CheckInAdvance\\n* http://purl.org/goodrelations/v1#COD\\n* http://purl.org/goodrelations/v1#DirectDebit\\n* http://purl.org/goodrelations/v1#GoogleCheckout\\n* http://purl.org/goodrelations/v1#PayPal\\n* http://purl.org/goodrelations/v1#PaySwarm\\n\\nStructured values, or [UNCE payment means](https://vocabulary.uncefact.org/PaymentMeans) are recommended or for newer annotations.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:PaymentMethod"
+      ]
+    },
+    "paymentMethodType": {
+      "title": "Payment Method Type",
+      "description": "The type of a payment method.",
+      "type": "array",
+      "items": {
+        "$ref": "PaymentMethodType.schema.json#/$defs/member",
+        "x-oold-range": "PaymentMethodType.schema.json"
+      }
+    }
+  }
+}

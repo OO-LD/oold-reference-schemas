@@ -1,0 +1,8 @@
+{
+  "$schema": "GovernmentBuilding.schema.json",
+  "@context": "GovernmentBuilding.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:GovernmentBuilding"
+  ]
+}

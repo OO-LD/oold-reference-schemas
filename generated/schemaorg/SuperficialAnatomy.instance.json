@@ -1,0 +1,8 @@
+{
+  "$schema": "SuperficialAnatomy.schema.json",
+  "@context": "SuperficialAnatomy.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:SuperficialAnatomy"
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Thing.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Thing.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Intangible.schema.json",
+  "x-oold-uuid": "18be4713-188f-5bb0-97fe-3f0434b9807e",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Intangible",
+  "x-oold-instance-rdf-type": [
+    "schema:Intangible"
+  ],
+  "title": "Intangible",
+  "description": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Intangible"
+      ]
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "@context": [
+    "Audience.schema.json",
+    {
+      "numberOfEmployees": {
+        "@id": "schema:numberOfEmployees",
+        "@container": "@set"
+      },
+      "yearlyRevenue": {
+        "@id": "schema:yearlyRevenue",
+        "@container": "@set"
+      },
+      "yearsInOperation": {
+        "@id": "schema:yearsInOperation",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Audience.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "BusinessAudience.schema.json",
+  "x-oold-uuid": "8c55701c-c924-51b7-9471-a2c85a1889b4",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/BusinessAudience",
+  "x-oold-instance-rdf-type": [
+    "schema:BusinessAudience"
+  ],
+  "title": "BusinessAudience",
+  "description": "A set of characteristics belonging to businesses, e.g. who compose an item's target audience.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:BusinessAudience"
+      ]
+    },
+    "numberOfEmployees": {
+      "title": "Number Of Employees",
+      "description": "The number of employees in an organization, e.g. business.",
+      "type": "array",
+      "items": {
+        "$ref": "QuantitativeValue.schema.json"
+      }
+    },
+    "yearlyRevenue": {
+      "title": "Yearly Revenue",
+      "description": "The size of the business in annual revenue.",
+      "type": "array",
+      "items": {
+        "$ref": "QuantitativeValue.schema.json"
+      }
+    },
+    "yearsInOperation": {
+      "title": "Years In Operation",
+      "description": "The age of the business.",
+      "type": "array",
+      "items": {
+        "$ref": "QuantitativeValue.schema.json"
+      }
+    }
+  }
+}

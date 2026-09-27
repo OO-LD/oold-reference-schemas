@@ -1,0 +1,66 @@
+{
+  "@context": [
+    "UpdateAction.schema.json",
+    {
+      "replacee": {
+        "@id": "schema:replacee",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "replacer": {
+        "@id": "schema:replacer",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "UpdateAction.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ReplaceAction.schema.json",
+  "x-oold-uuid": "868d61d3-732b-5da1-8b03-9a64dbc7b9e6",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/ReplaceAction",
+  "x-oold-instance-rdf-type": [
+    "schema:ReplaceAction"
+  ],
+  "title": "ReplaceAction",
+  "description": "The act of editing a recipient by replacing an old object with a new object.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:ReplaceAction"
+      ]
+    },
+    "replacee": {
+      "title": "Replacee",
+      "description": "A sub property of object. The object that is being replaced.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Thing.schema.json"
+      }
+    },
+    "replacer": {
+      "title": "Replacer",
+      "description": "A sub property of object. The object that replaces.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Thing.schema.json"
+      }
+    }
+  }
+}

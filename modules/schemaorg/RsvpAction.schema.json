@@ -1,0 +1,77 @@
+{
+  "@context": [
+    "InformAction.schema.json",
+    {
+      "additionalNumberOfGuests": {
+        "@id": "schema:additionalNumberOfGuests",
+        "@container": "@set"
+      },
+      "comment": {
+        "@id": "schema:comment",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "rsvpResponse": {
+        "@id": "schema:rsvpResponse",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "InformAction.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "RsvpAction.schema.json",
+  "x-oold-uuid": "2931bffb-9470-5dae-874f-d8f59776aa39",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/RsvpAction",
+  "x-oold-instance-rdf-type": [
+    "schema:RsvpAction"
+  ],
+  "title": "RsvpAction",
+  "description": "The act of notifying an event organizer as to whether you expect to attend the event.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:RsvpAction"
+      ]
+    },
+    "additionalNumberOfGuests": {
+      "title": "Additional Number Of Guests",
+      "description": "If responding yes, the number of guests who will attend in addition to the invitee.",
+      "type": "array",
+      "items": {
+        "$ref": "Number.schema.json"
+      }
+    },
+    "comment": {
+      "title": "Comment",
+      "description": "Comments, typically from users.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Comment.schema.json"
+      }
+    },
+    "rsvpResponse": {
+      "title": "Rsvp Response",
+      "description": "The response (yes, no, maybe) to the RSVP.",
+      "type": "array",
+      "items": {
+        "$ref": "RsvpResponseType.schema.json#/$defs/member",
+        "x-oold-range": "RsvpResponseType.schema.json"
+      }
+    }
+  }
+}

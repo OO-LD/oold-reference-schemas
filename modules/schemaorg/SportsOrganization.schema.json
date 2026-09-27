@@ -1,0 +1,55 @@
+{
+  "@context": [
+    "Organization.schema.json",
+    {
+      "sport": {
+        "@id": "schema:sport",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Organization.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "SportsOrganization.schema.json",
+  "x-oold-uuid": "34bd6ac2-fa1b-528c-93ca-9d5ac9b152d3",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/SportsOrganization",
+  "x-oold-instance-rdf-type": [
+    "schema:SportsOrganization"
+  ],
+  "title": "SportsOrganization",
+  "description": "Represents the collection of all sports organizations, including sports teams, governing bodies, and sports associations.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:SportsOrganization"
+      ]
+    },
+    "sport": {
+      "title": "Sport",
+      "description": "A type of sport (e.g. Baseball).",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Text.schema.json"
+          },
+          {
+            "$ref": "URL.schema.json"
+          }
+        ]
+      }
+    }
+  }
+}

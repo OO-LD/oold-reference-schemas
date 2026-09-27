@@ -1,0 +1,8 @@
+{
+  "$schema": "EnergyEfficiencyEnumeration.schema.json",
+  "@context": "EnergyEfficiencyEnumeration.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:EnergyEfficiencyEnumeration"
+  ]
+}

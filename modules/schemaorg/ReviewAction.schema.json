@@ -1,0 +1,51 @@
+{
+  "@context": [
+    "AssessAction.schema.json",
+    {
+      "resultReview": {
+        "@id": "schema:resultReview",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "AssessAction.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ReviewAction.schema.json",
+  "x-oold-uuid": "af0d8286-cdbe-5aaa-a34f-b80a7a68c07e",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/ReviewAction",
+  "x-oold-instance-rdf-type": [
+    "schema:ReviewAction"
+  ],
+  "title": "ReviewAction",
+  "description": "The act of producing a balanced opinion about the object for an audience. An agent reviews an object with participants resulting in a review.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:ReviewAction"
+      ]
+    },
+    "resultReview": {
+      "title": "Result Review",
+      "description": "A sub property of result. The review that resulted in the performing of the action.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Review.schema.json"
+      }
+    }
+  }
+}

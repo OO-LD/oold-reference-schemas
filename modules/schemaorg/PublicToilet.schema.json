@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "CivicStructure.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "CivicStructure.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "PublicToilet.schema.json",
+  "x-oold-uuid": "4df10ae1-849a-5fc0-bfb0-d639f108c0d9",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/PublicToilet",
+  "x-oold-instance-rdf-type": [
+    "schema:PublicToilet"
+  ],
+  "title": "PublicToilet",
+  "description": "A public toilet is a room or small building containing one or more toilets (and possibly also urinals) which is available for use by the general public, or by customers or employees of certain businesses.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:PublicToilet"
+      ]
+    }
+  }
+}

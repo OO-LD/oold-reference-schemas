@@ -1,0 +1,85 @@
+{
+  "@context": [
+    "Intangible.schema.json",
+    {
+      "about": {
+        "@id": "schema:about",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "inDefinedTermSet": {
+        "@id": "schema:inDefinedTermSet",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "termCode": {
+        "@id": "schema:termCode",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Intangible.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "DefinedTerm.schema.json",
+  "x-oold-uuid": "f28e2af8-6e38-5ce0-be5c-baeee93f5e69",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/DefinedTerm",
+  "x-oold-instance-rdf-type": [
+    "schema:DefinedTerm"
+  ],
+  "title": "DefinedTerm",
+  "description": "A word, name, acronym, phrase, etc. with a formal definition. Often used in the context of category or subject classification, glossaries or dictionaries, product or creative work types, etc. Use the name property for the term being defined, use termCode if the term has an alpha-numeric code allocated, use description to provide the definition of the term. Use the about property to specify what the term is about.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:DefinedTerm"
+      ]
+    },
+    "about": {
+      "title": "About",
+      "description": "The subject matter of an object.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Thing.schema.json"
+      }
+    },
+    "inDefinedTermSet": {
+      "title": "In Defined Term Set",
+      "description": "A [[DefinedTermSet]] that contains this term.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "URL.schema.json"
+          },
+          {
+            "type": "string",
+            "format": "iri-reference",
+            "x-oold-range": "DefinedTermSet.schema.json"
+          }
+        ]
+      }
+    },
+    "termCode": {
+      "title": "Term Code",
+      "description": "A code that identifies this [[DefinedTerm]] within a [[DefinedTermSet]].",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    }
+  }
+}

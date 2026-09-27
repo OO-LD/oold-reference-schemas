@@ -1,0 +1,93 @@
+{
+  "@context": [
+    "CreativeWork.schema.json",
+    {
+      "downvoteCount": {
+        "@id": "schema:downvoteCount",
+        "@container": "@set"
+      },
+      "parentItem": {
+        "@id": "schema:parentItem",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "sharedContent": {
+        "@id": "schema:sharedContent",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "upvoteCount": {
+        "@id": "schema:upvoteCount",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "CreativeWork.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Comment.schema.json",
+  "x-oold-uuid": "f9dfc705-5a29-52d9-83b9-694de0de3399",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Comment",
+  "x-oold-instance-rdf-type": [
+    "schema:Comment"
+  ],
+  "title": "Comment",
+  "description": "A comment on an item - for example, a comment on a blog post. The comment's content is expressed via the [[text]] property, and its topic via [[about]], properties shared with all CreativeWorks.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Comment"
+      ]
+    },
+    "downvoteCount": {
+      "title": "Downvote Count",
+      "description": "The number of downvotes this question, answer or comment has received from the community.",
+      "type": "array",
+      "items": {
+        "$ref": "Integer.schema.json"
+      }
+    },
+    "parentItem": {
+      "title": "Parent Item",
+      "description": "The parent of a question, answer or item in general. Typically used for Q/A discussion threads e.g. a chain of comments with the first comment being an [[Article]] or other [[CreativeWork]]. See also [[comment]] which points from something to a comment about it.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "Comment.schema.json",
+          "CreativeWork.schema.json"
+        ]
+      }
+    },
+    "sharedContent": {
+      "title": "Shared Content",
+      "description": "A CreativeWork such as an image, video, or audio clip shared as part of this posting.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "CreativeWork.schema.json"
+      }
+    },
+    "upvoteCount": {
+      "title": "Upvote Count",
+      "description": "The number of upvotes this question, answer or comment has received from the community.",
+      "type": "array",
+      "items": {
+        "$ref": "Integer.schema.json"
+      }
+    }
+  }
+}

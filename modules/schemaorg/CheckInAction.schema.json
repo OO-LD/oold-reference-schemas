@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "CommunicateAction.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "CommunicateAction.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "CheckInAction.schema.json",
+  "x-oold-uuid": "d4e676d1-4a9c-567a-8470-863ece60de29",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/CheckInAction",
+  "x-oold-instance-rdf-type": [
+    "schema:CheckInAction"
+  ],
+  "title": "CheckInAction",
+  "description": "The act of an agent communicating (service provider, social media, etc) their arrival by registering/confirming for a previously reserved service (e.g. flight check-in) or at a place (e.g. hotel), possibly resulting in a result (boarding pass, etc).\\n\\nRelated actions:\\n\\n* [[CheckOutAction]]: The antonym of CheckInAction.\\n* [[ArriveAction]]: Unlike ArriveAction, CheckInAction implies that the agent is informing/confirming the start of a previously reserved service.\\n* [[ConfirmAction]]: Unlike ConfirmAction, CheckInAction implies that the agent is informing/confirming the *start* of a previously reserved service rather than its validity/existence.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:CheckInAction"
+      ]
+    }
+  }
+}

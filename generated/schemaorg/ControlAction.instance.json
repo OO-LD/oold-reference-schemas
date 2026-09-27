@@ -1,0 +1,8 @@
+{
+  "$schema": "ControlAction.schema.json",
+  "@context": "ControlAction.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:ControlAction"
+  ]
+}

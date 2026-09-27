@@ -1,0 +1,151 @@
+{
+  "@context": [
+    "Intangible.schema.json",
+    {
+      "broadcastChannelId": {
+        "@id": "schema:broadcastChannelId",
+        "@container": "@set"
+      },
+      "broadcastFrequency": {
+        "@id": "schema:broadcastFrequency",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "broadcastFrequency_text": {
+        "@id": "schema:broadcastFrequency",
+        "@container": "@set"
+      },
+      "broadcastServiceTier": {
+        "@id": "schema:broadcastServiceTier",
+        "@container": "@set"
+      },
+      "genre": {
+        "@id": "schema:genre",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "genre_text": {
+        "@id": "schema:genre",
+        "@container": "@set"
+      },
+      "inBroadcastLineup": {
+        "@id": "schema:inBroadcastLineup",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "providesBroadcastService": {
+        "@id": "schema:providesBroadcastService",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Intangible.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "BroadcastChannel.schema.json",
+  "x-oold-uuid": "41ddac37-5fcc-5fc0-95fe-3eb378d966b4",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/BroadcastChannel",
+  "x-oold-instance-rdf-type": [
+    "schema:BroadcastChannel"
+  ],
+  "title": "BroadcastChannel",
+  "description": "A unique instance of a BroadcastService on a CableOrSatelliteService lineup.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:BroadcastChannel"
+      ]
+    },
+    "broadcastChannelId": {
+      "title": "Broadcast Channel Id",
+      "description": "The unique address by which the BroadcastService can be identified in a provider lineup. In US, this is typically a number.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "broadcastFrequency": {
+      "title": "Broadcast Frequency",
+      "description": "The frequency used for over-the-air broadcasts. Numeric values or simple ranges, e.g. 87-99. In addition a shortcut idiom is supported for frequencies of AM and FM radio channels, e.g. \"87 FM\".",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "BroadcastFrequencySpecification.schema.json"
+      }
+    },
+    "broadcastFrequency_text": {
+      "title": "Broadcast Frequency (text)",
+      "description": "The frequency used for over-the-air broadcasts. Numeric values or simple ranges, e.g. 87-99. In addition a shortcut idiom is supported for frequencies of AM and FM radio channels, e.g. \"87 FM\".",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "broadcastServiceTier": {
+      "title": "Broadcast Service Tier",
+      "description": "The type of service required to have access to the channel (e.g. Standard or Premium).",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "genre": {
+      "title": "Genre",
+      "description": "Genre of the creative work, broadcast channel or group.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "DefinedTerm.schema.json"
+      }
+    },
+    "genre_text": {
+      "title": "Genre (text)",
+      "description": "Genre of the creative work, broadcast channel or group.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Text.schema.json"
+          },
+          {
+            "$ref": "URL.schema.json"
+          }
+        ]
+      }
+    },
+    "inBroadcastLineup": {
+      "title": "In Broadcast Lineup",
+      "description": "The CableOrSatelliteService offering the channel.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "CableOrSatelliteService.schema.json"
+      }
+    },
+    "providesBroadcastService": {
+      "title": "Provides Broadcast Service",
+      "description": "The BroadcastService offered on this channel.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "BroadcastService.schema.json"
+      }
+    }
+  }
+}

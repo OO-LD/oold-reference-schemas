@@ -1,0 +1,8 @@
+{
+  "$schema": "FundingScheme.schema.json",
+  "@context": "FundingScheme.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:FundingScheme"
+  ]
+}

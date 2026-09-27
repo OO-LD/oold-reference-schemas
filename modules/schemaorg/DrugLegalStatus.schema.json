@@ -1,0 +1,51 @@
+{
+  "@context": [
+    "MedicalIntangible.schema.json",
+    {
+      "applicableLocation": {
+        "@id": "schema:applicableLocation",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "MedicalIntangible.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "DrugLegalStatus.schema.json",
+  "x-oold-uuid": "fd45535a-f761-56bc-b068-27f0b36ba490",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/DrugLegalStatus",
+  "x-oold-instance-rdf-type": [
+    "schema:DrugLegalStatus"
+  ],
+  "title": "DrugLegalStatus",
+  "description": "The legal availability status of a medical drug.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:DrugLegalStatus"
+      ]
+    },
+    "applicableLocation": {
+      "title": "Applicable Location",
+      "description": "The location in which the status applies.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "AdministrativeArea.schema.json"
+      }
+    }
+  }
+}

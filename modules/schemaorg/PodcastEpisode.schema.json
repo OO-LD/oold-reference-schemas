@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Episode.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Episode.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "PodcastEpisode.schema.json",
+  "x-oold-uuid": "6d011d5e-7574-5fc4-b668-552aa13d287e",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/PodcastEpisode",
+  "x-oold-instance-rdf-type": [
+    "schema:PodcastEpisode"
+  ],
+  "title": "PodcastEpisode",
+  "description": "A single episode of a podcast series.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:PodcastEpisode"
+      ]
+    }
+  }
+}

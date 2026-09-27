@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Reservation.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Reservation.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "TrainReservation.schema.json",
+  "x-oold-uuid": "67d63624-5f7e-549b-a320-c4aaf6e44fe3",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/TrainReservation",
+  "x-oold-instance-rdf-type": [
+    "schema:TrainReservation"
+  ],
+  "title": "TrainReservation",
+  "description": "A reservation for train travel.\\n\\nNote: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations. For offers of tickets, use [[Offer]].",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:TrainReservation"
+      ]
+    }
+  }
+}

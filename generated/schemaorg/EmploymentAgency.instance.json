@@ -1,0 +1,8 @@
+{
+  "$schema": "EmploymentAgency.schema.json",
+  "@context": "EmploymentAgency.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:EmploymentAgency"
+  ]
+}

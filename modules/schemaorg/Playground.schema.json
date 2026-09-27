@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "CivicStructure.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "CivicStructure.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Playground.schema.json",
+  "x-oold-uuid": "0f3621f7-ef16-5215-843a-f63d5701391e",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Playground",
+  "x-oold-instance-rdf-type": [
+    "schema:Playground"
+  ],
+  "title": "Playground",
+  "description": "A playground.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Playground"
+      ]
+    }
+  }
+}

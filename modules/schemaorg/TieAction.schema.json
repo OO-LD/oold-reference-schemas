@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "AchieveAction.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "AchieveAction.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "TieAction.schema.json",
+  "x-oold-uuid": "60b52591-e2ac-5426-9a48-cc060f5419b7",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/TieAction",
+  "x-oold-instance-rdf-type": [
+    "schema:TieAction"
+  ],
+  "title": "TieAction",
+  "description": "The act of reaching a draw in a competitive activity.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:TieAction"
+      ]
+    }
+  }
+}

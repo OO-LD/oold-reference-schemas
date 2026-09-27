@@ -1,0 +1,58 @@
+{
+  "@context": [
+    "Service.schema.json",
+    {
+      "documentation": {
+        "@id": "schema:documentation",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Service.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "WebAPI.schema.json",
+  "x-oold-uuid": "c75b8466-c78f-56ee-96bd-51390195808a",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/WebAPI",
+  "x-oold-instance-rdf-type": [
+    "schema:WebAPI"
+  ],
+  "title": "WebAPI",
+  "description": "An application programming interface accessible over Web/Internet technologies.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:WebAPI"
+      ]
+    },
+    "documentation": {
+      "title": "Documentation",
+      "description": "Further documentation describing the Web API in more detail.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "URL.schema.json"
+          },
+          {
+            "type": "string",
+            "format": "iri-reference",
+            "x-oold-range": "CreativeWork.schema.json"
+          }
+        ]
+      }
+    }
+  }
+}

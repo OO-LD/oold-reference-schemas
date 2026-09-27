@@ -1,0 +1,43 @@
+{
+  "@context": [
+    "CreativeWork.schema.json",
+    "ItemList.schema.json",
+    "ListItem.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "CreativeWork.schema.json"
+    },
+    {
+      "$ref": "ItemList.schema.json"
+    },
+    {
+      "$ref": "ListItem.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "HowToStep.schema.json",
+  "x-oold-uuid": "c2559b80-ee85-5686-ad91-bf2d6ea6ff26",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/HowToStep",
+  "x-oold-instance-rdf-type": [
+    "schema:HowToStep"
+  ],
+  "title": "HowToStep",
+  "description": "A step in the instructions for how to achieve a result. It is an ordered list with HowToDirection and/or HowToTip items.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:HowToStep"
+      ]
+    }
+  }
+}

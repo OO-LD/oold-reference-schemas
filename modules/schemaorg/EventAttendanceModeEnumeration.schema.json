@@ -1,0 +1,53 @@
+{
+  "@context": [
+    "Enumeration.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Enumeration.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "EventAttendanceModeEnumeration.schema.json",
+  "x-oold-uuid": "4973e505-6df0-549a-be94-3b3127789c30",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/EventAttendanceModeEnumeration",
+  "x-oold-instance-rdf-type": [
+    "schema:EventAttendanceModeEnumeration"
+  ],
+  "title": "EventAttendanceModeEnumeration",
+  "description": "An EventAttendanceModeEnumeration value is one of potentially several modes of organising an event, relating to whether it is online or offline.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:EventAttendanceModeEnumeration"
+      ]
+    }
+  },
+  "$defs": {
+    "member": {
+      "title": "EventAttendanceModeEnumeration member",
+      "description": "One of the 3 member instances of EventAttendanceModeEnumeration.",
+      "type": "string",
+      "format": "iri-reference",
+      "enum": [
+        "schema:MixedEventAttendanceMode",
+        "schema:OfflineEventAttendanceMode",
+        "schema:OnlineEventAttendanceMode"
+      ],
+      "x-oold-ui-enum-titles": [
+        "MixedEventAttendanceMode",
+        "OfflineEventAttendanceMode",
+        "OnlineEventAttendanceMode"
+      ]
+    }
+  }
+}

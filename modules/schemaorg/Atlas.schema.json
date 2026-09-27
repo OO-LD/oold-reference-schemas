@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "CreativeWork.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "CreativeWork.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Atlas.schema.json",
+  "x-oold-uuid": "1eb39ea4-7785-57c9-9e9d-e328f765e93b",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Atlas",
+  "x-oold-instance-rdf-type": [
+    "schema:Atlas"
+  ],
+  "title": "Atlas",
+  "description": "A collection or bound volume of maps, charts, plates or tables, physical or in media form illustrating any subject.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Atlas"
+      ]
+    }
+  }
+}

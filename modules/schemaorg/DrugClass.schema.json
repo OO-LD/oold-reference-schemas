@@ -1,0 +1,51 @@
+{
+  "@context": [
+    "MedicalEntity.schema.json",
+    {
+      "drug": {
+        "@id": "schema:drug",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "MedicalEntity.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "DrugClass.schema.json",
+  "x-oold-uuid": "b5b21a3e-273d-5164-a4d8-98d02f583b89",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/DrugClass",
+  "x-oold-instance-rdf-type": [
+    "schema:DrugClass"
+  ],
+  "title": "DrugClass",
+  "description": "A class of medical drugs, e.g., statins. Classes can represent general pharmacological class, common mechanisms of action, common physiological effects, etc.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:DrugClass"
+      ]
+    },
+    "drug": {
+      "title": "Drug",
+      "description": "Specifying a drug or medicine used in a medication procedure.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Drug.schema.json"
+      }
+    }
+  }
+}

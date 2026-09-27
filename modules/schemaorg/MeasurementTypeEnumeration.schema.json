@@ -1,0 +1,97 @@
+{
+  "@context": [
+    "Enumeration.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Enumeration.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MeasurementTypeEnumeration.schema.json",
+  "x-oold-uuid": "0cc750b4-e91e-5b7a-a717-739d837cab60",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/MeasurementTypeEnumeration",
+  "x-oold-instance-rdf-type": [
+    "schema:MeasurementTypeEnumeration"
+  ],
+  "title": "MeasurementTypeEnumeration",
+  "description": "Enumeration of common measurement types (or dimensions), for example \"chest\" for a person, \"inseam\" for pants, \"gauge\" for screws, or \"wheel\" for bicycles.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:MeasurementTypeEnumeration"
+      ]
+    }
+  },
+  "$defs": {
+    "member": {
+      "title": "MeasurementTypeEnumeration member",
+      "description": "One of the 25 member instances of MeasurementTypeEnumeration.",
+      "type": "string",
+      "format": "iri-reference",
+      "enum": [
+        "schema:BodyMeasurementArm",
+        "schema:BodyMeasurementBust",
+        "schema:BodyMeasurementChest",
+        "schema:BodyMeasurementFoot",
+        "schema:BodyMeasurementHand",
+        "schema:BodyMeasurementHead",
+        "schema:BodyMeasurementHeight",
+        "schema:BodyMeasurementHips",
+        "schema:BodyMeasurementInsideLeg",
+        "schema:BodyMeasurementNeck",
+        "schema:BodyMeasurementUnderbust",
+        "schema:BodyMeasurementWaist",
+        "schema:BodyMeasurementWeight",
+        "schema:WearableMeasurementBack",
+        "schema:WearableMeasurementChestOrBust",
+        "schema:WearableMeasurementCollar",
+        "schema:WearableMeasurementCup",
+        "schema:WearableMeasurementHeight",
+        "schema:WearableMeasurementHips",
+        "schema:WearableMeasurementInseam",
+        "schema:WearableMeasurementLength",
+        "schema:WearableMeasurementOutsideLeg",
+        "schema:WearableMeasurementSleeve",
+        "schema:WearableMeasurementWaist",
+        "schema:WearableMeasurementWidth"
+      ],
+      "x-oold-ui-enum-titles": [
+        "BodyMeasurementArm",
+        "BodyMeasurementBust",
+        "BodyMeasurementChest",
+        "BodyMeasurementFoot",
+        "BodyMeasurementHand",
+        "BodyMeasurementHead",
+        "BodyMeasurementHeight",
+        "BodyMeasurementHips",
+        "BodyMeasurementInsideLeg",
+        "BodyMeasurementNeck",
+        "BodyMeasurementUnderbust",
+        "BodyMeasurementWaist",
+        "BodyMeasurementWeight",
+        "WearableMeasurementBack",
+        "WearableMeasurementChestOrBust",
+        "WearableMeasurementCollar",
+        "WearableMeasurementCup",
+        "WearableMeasurementHeight",
+        "WearableMeasurementHips",
+        "WearableMeasurementInseam",
+        "WearableMeasurementLength",
+        "WearableMeasurementOutsideLeg",
+        "WearableMeasurementSleeve",
+        "WearableMeasurementWaist",
+        "WearableMeasurementWidth"
+      ]
+    }
+  }
+}

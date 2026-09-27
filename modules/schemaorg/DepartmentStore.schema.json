@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Store.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Store.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "DepartmentStore.schema.json",
+  "x-oold-uuid": "332ccecb-ab88-5cbf-bf54-023eca368bbb",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/DepartmentStore",
+  "x-oold-instance-rdf-type": [
+    "schema:DepartmentStore"
+  ],
+  "title": "DepartmentStore",
+  "description": "A department store.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:DepartmentStore"
+      ]
+    }
+  }
+}

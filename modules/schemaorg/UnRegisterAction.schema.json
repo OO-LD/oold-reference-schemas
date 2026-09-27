@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "InteractAction.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "InteractAction.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "UnRegisterAction.schema.json",
+  "x-oold-uuid": "ea39a527-c6a4-5e84-bc21-f760790366b3",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/UnRegisterAction",
+  "x-oold-instance-rdf-type": [
+    "schema:UnRegisterAction"
+  ],
+  "title": "UnRegisterAction",
+  "description": "The act of un-registering from a service.\\n\\nRelated actions:\\n\\n* [[RegisterAction]]: antonym of UnRegisterAction.\\n* [[LeaveAction]]: Unlike LeaveAction, UnRegisterAction implies that you are unregistering from a service you were previously registered, rather than leaving a team/group of people.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:UnRegisterAction"
+      ]
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "$schema": "Atlas.schema.json",
+  "@context": "Atlas.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:Atlas"
+  ]
+}

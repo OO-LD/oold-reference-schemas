@@ -1,0 +1,8 @@
+{
+  "$schema": "HighSchool.schema.json",
+  "@context": "HighSchool.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:HighSchool"
+  ]
+}

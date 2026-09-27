@@ -1,0 +1,221 @@
+{
+  "@context": [
+    "Intangible.schema.json",
+    {
+      "educationRequirements": {
+        "@id": "schema:educationRequirements",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "educationRequirements_text": {
+        "@id": "schema:educationRequirements",
+        "@container": "@set"
+      },
+      "estimatedSalary": {
+        "@id": "schema:estimatedSalary",
+        "@container": "@set"
+      },
+      "experienceRequirements": {
+        "@id": "schema:experienceRequirements",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "experienceRequirements_text": {
+        "@id": "schema:experienceRequirements",
+        "@container": "@set"
+      },
+      "occupationalCategory": {
+        "@id": "schema:occupationalCategory",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "occupationalCategory_text": {
+        "@id": "schema:occupationalCategory",
+        "@container": "@set"
+      },
+      "occupationLocation": {
+        "@id": "schema:occupationLocation",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "qualifications": {
+        "@id": "schema:qualifications",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "qualifications_text": {
+        "@id": "schema:qualifications",
+        "@container": "@set"
+      },
+      "responsibilities": {
+        "@id": "schema:responsibilities",
+        "@container": "@set"
+      },
+      "skills": {
+        "@id": "schema:skills",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "skills_text": {
+        "@id": "schema:skills",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Intangible.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Occupation.schema.json",
+  "x-oold-uuid": "d4421b3f-dcce-5f75-b75e-14c2edafab57",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Occupation",
+  "x-oold-instance-rdf-type": [
+    "schema:Occupation"
+  ],
+  "title": "Occupation",
+  "description": "A profession, may involve prolonged training and/or a formal qualification.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Occupation"
+      ]
+    },
+    "educationRequirements": {
+      "title": "Education Requirements",
+      "description": "Educational background needed for the position or Occupation.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "EducationalOccupationalCredential.schema.json"
+      }
+    },
+    "educationRequirements_text": {
+      "title": "Education Requirements (text)",
+      "description": "Educational background needed for the position or Occupation.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "estimatedSalary": {
+      "title": "Estimated Salary",
+      "description": "An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: MonetaryAmount [value-type]: MonetaryAmount -> StructuredValue -> Intangible -> Thing; MonetaryAmountDistribution [value-type]: MonetaryAmountDistribution -> QuantitativeValueDistribution -> StructuredValue -> Intangible -> Thing",
+        "anyOf": [
+          {
+            "$ref": "Number.schema.json"
+          },
+          {
+            "$ref": "MonetaryAmount.schema.json"
+          },
+          {
+            "$ref": "MonetaryAmountDistribution.schema.json"
+          }
+        ]
+      }
+    },
+    "experienceRequirements": {
+      "title": "Experience Requirements",
+      "description": "Description of skills and experience needed for the position or Occupation.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "OccupationalExperienceRequirements.schema.json"
+      }
+    },
+    "experienceRequirements_text": {
+      "title": "Experience Requirements (text)",
+      "description": "Description of skills and experience needed for the position or Occupation.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "occupationalCategory": {
+      "title": "Occupational Category",
+      "description": "A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html), [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.\\n\nNote: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "CategoryCode.schema.json"
+      }
+    },
+    "occupationalCategory_text": {
+      "title": "Occupational Category (text)",
+      "description": "A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html), [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.\\n\nNote: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "occupationLocation": {
+      "title": "Occupation Location",
+      "description": " The region/country for which this occupational description is appropriate. Note that educational requirements and qualifications can vary between jurisdictions.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "AdministrativeArea.schema.json"
+      }
+    },
+    "qualifications": {
+      "title": "Qualifications",
+      "description": "Specific qualifications required for this role or Occupation.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Credential.schema.json"
+      }
+    },
+    "qualifications_text": {
+      "title": "Qualifications (text)",
+      "description": "Specific qualifications required for this role or Occupation.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "responsibilities": {
+      "title": "Responsibilities",
+      "description": "Responsibilities associated with this role or Occupation.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "skills": {
+      "title": "Skills",
+      "description": "A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is either claimed by a person, an organization or desired or required to fulfill a role or to work in an occupation.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "DefinedTerm.schema.json"
+      }
+    },
+    "skills_text": {
+      "title": "Skills (text)",
+      "description": "A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is either claimed by a person, an organization or desired or required to fulfill a role or to work in an occupation.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    }
+  }
+}

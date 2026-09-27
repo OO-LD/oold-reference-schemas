@@ -1,0 +1,69 @@
+{
+  "@context": [
+    "TransferAction.schema.json",
+    {
+      "deliveryMethod": {
+        "@id": "schema:deliveryMethod",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "sender": {
+        "@id": "schema:sender",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "TransferAction.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ReceiveAction.schema.json",
+  "x-oold-uuid": "d10bac2b-1ed3-5ad5-9904-c76d218d18da",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/ReceiveAction",
+  "x-oold-instance-rdf-type": [
+    "schema:ReceiveAction"
+  ],
+  "title": "ReceiveAction",
+  "description": "The act of physically/electronically taking delivery of an object that has been transferred from an origin to a destination. Reciprocal of SendAction.\\n\\nRelated actions:\\n\\n* [[SendAction]]: The reciprocal of ReceiveAction.\\n* [[TakeAction]]: Unlike TakeAction, ReceiveAction does not imply that the ownership has been transferred (e.g. I can receive a package, but it does not mean the package is now mine).",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:ReceiveAction"
+      ]
+    },
+    "deliveryMethod": {
+      "title": "Delivery Method",
+      "description": "A sub property of instrument. The method of delivery.",
+      "type": "array",
+      "items": {
+        "$ref": "DeliveryMethod.schema.json#/$defs/member",
+        "x-oold-range": "DeliveryMethod.schema.json"
+      }
+    },
+    "sender": {
+      "title": "Sender",
+      "description": "A sub property of participant. The participant who is at the sending end of the action.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "Audience.schema.json",
+          "Organization.schema.json",
+          "Person.schema.json"
+        ]
+      }
+    }
+  }
+}

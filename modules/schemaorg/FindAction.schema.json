@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Action.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Action.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "FindAction.schema.json",
+  "x-oold-uuid": "6482f86c-5247-56d1-86b7-44ccc208604c",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/FindAction",
+  "x-oold-instance-rdf-type": [
+    "schema:FindAction"
+  ],
+  "title": "FindAction",
+  "description": "The act of finding an object.\\n\\nRelated actions:\\n\\n* [[SearchAction]]: FindAction is generally lead by a SearchAction, but not necessarily.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:FindAction"
+      ]
+    }
+  }
+}

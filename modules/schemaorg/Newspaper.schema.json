@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Periodical.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Periodical.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Newspaper.schema.json",
+  "x-oold-uuid": "0066ee54-7f9c-56b1-8927-5eab1bffdff4",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Newspaper",
+  "x-oold-instance-rdf-type": [
+    "schema:Newspaper"
+  ],
+  "title": "Newspaper",
+  "description": "A publication containing information about varied topics that are pertinent to general information, a geographic area, or a specific subject matter (i.e. business, culture, education). Often published daily.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Newspaper"
+      ]
+    }
+  }
+}

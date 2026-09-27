@@ -1,0 +1,150 @@
+{
+  "@context": [
+    "MedicalEntity.schema.json",
+    {
+      "associatedPathophysiology": {
+        "@id": "schema:associatedPathophysiology",
+        "@container": "@set"
+      },
+      "bodyLocation": {
+        "@id": "schema:bodyLocation",
+        "@container": "@set"
+      },
+      "connectedTo": {
+        "@id": "schema:connectedTo",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "diagram": {
+        "@id": "schema:diagram",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "partOfSystem": {
+        "@id": "schema:partOfSystem",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "relatedCondition": {
+        "@id": "schema:relatedCondition",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "relatedTherapy": {
+        "@id": "schema:relatedTherapy",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "subStructure": {
+        "@id": "schema:subStructure",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "MedicalEntity.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "AnatomicalStructure.schema.json",
+  "x-oold-uuid": "cfa147ee-2f59-5cc2-aab2-16001220edf3",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/AnatomicalStructure",
+  "x-oold-instance-rdf-type": [
+    "schema:AnatomicalStructure"
+  ],
+  "title": "AnatomicalStructure",
+  "description": "Any part of the human body, typically a component of an anatomical system. Organs, tissues, and cells are all anatomical structures.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:AnatomicalStructure"
+      ]
+    },
+    "associatedPathophysiology": {
+      "title": "Associated Pathophysiology",
+      "description": "If applicable, a description of the pathophysiology associated with the anatomical system, including potential abnormal changes in the mechanical, physical, and biochemical functions of the system.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "bodyLocation": {
+      "title": "Body Location",
+      "description": "Location in the body of the anatomical structure.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "connectedTo": {
+      "title": "Connected To",
+      "description": "Other anatomical structures to which this structure is connected.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "AnatomicalStructure.schema.json"
+      }
+    },
+    "diagram": {
+      "title": "Diagram",
+      "description": "An image containing a diagram that illustrates the structure and/or its component substructures and/or connections with other structures.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "ImageObject.schema.json"
+      }
+    },
+    "partOfSystem": {
+      "title": "Part Of System",
+      "description": "The anatomical or organ system that this structure is part of.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "AnatomicalSystem.schema.json"
+      }
+    },
+    "relatedCondition": {
+      "title": "Related Condition",
+      "description": "A medical condition associated with this anatomy.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "MedicalCondition.schema.json"
+      }
+    },
+    "relatedTherapy": {
+      "title": "Related Therapy",
+      "description": "A medical therapy related to this anatomy.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "MedicalTherapy.schema.json"
+      }
+    },
+    "subStructure": {
+      "title": "Sub Structure",
+      "description": "Component (sub-)structure(s) that comprise this anatomical structure.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "AnatomicalStructure.schema.json"
+      }
+    }
+  }
+}

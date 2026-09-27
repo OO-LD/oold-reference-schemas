@@ -1,0 +1,8 @@
+{
+  "$schema": "Consortium.schema.json",
+  "@context": "Consortium.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:Consortium"
+  ]
+}

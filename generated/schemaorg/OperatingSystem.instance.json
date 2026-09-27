@@ -1,0 +1,8 @@
+{
+  "$schema": "OperatingSystem.schema.json",
+  "@context": "OperatingSystem.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:OperatingSystem"
+  ]
+}

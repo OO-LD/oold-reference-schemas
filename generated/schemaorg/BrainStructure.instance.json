@@ -1,0 +1,8 @@
+{
+  "$schema": "BrainStructure.schema.json",
+  "@context": "BrainStructure.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:BrainStructure"
+  ]
+}

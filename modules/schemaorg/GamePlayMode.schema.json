@@ -1,0 +1,53 @@
+{
+  "@context": [
+    "Enumeration.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Enumeration.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "GamePlayMode.schema.json",
+  "x-oold-uuid": "9b35c773-c730-5d20-9c97-f2c310bdac21",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/GamePlayMode",
+  "x-oold-instance-rdf-type": [
+    "schema:GamePlayMode"
+  ],
+  "title": "GamePlayMode",
+  "description": "Indicates whether this game is multi-player, co-op or single-player.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:GamePlayMode"
+      ]
+    }
+  },
+  "$defs": {
+    "member": {
+      "title": "GamePlayMode member",
+      "description": "One of the 3 member instances of GamePlayMode.",
+      "type": "string",
+      "format": "iri-reference",
+      "enum": [
+        "schema:CoOp",
+        "schema:MultiPlayer",
+        "schema:SinglePlayer"
+      ],
+      "x-oold-ui-enum-titles": [
+        "CoOp",
+        "MultiPlayer",
+        "SinglePlayer"
+      ]
+    }
+  }
+}

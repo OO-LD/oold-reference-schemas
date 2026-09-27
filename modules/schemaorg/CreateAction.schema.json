@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Action.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Action.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "CreateAction.schema.json",
+  "x-oold-uuid": "eab9b317-eb80-580e-bc1d-2b18794790d7",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/CreateAction",
+  "x-oold-instance-rdf-type": [
+    "schema:CreateAction"
+  ],
+  "title": "CreateAction",
+  "description": "The act of deliberately creating/producing/generating/building a result out of the agent.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:CreateAction"
+      ]
+    }
+  }
+}

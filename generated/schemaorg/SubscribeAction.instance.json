@@ -1,0 +1,8 @@
+{
+  "$schema": "SubscribeAction.schema.json",
+  "@context": "SubscribeAction.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:SubscribeAction"
+  ]
+}

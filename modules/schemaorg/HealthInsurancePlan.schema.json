@@ -1,0 +1,159 @@
+{
+  "@context": [
+    "Intangible.schema.json",
+    {
+      "benefitsSummaryUrl": {
+        "@id": "schema:benefitsSummaryUrl",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "contactPoint": {
+        "@id": "schema:contactPoint",
+        "@container": "@set"
+      },
+      "healthPlanDrugOption": {
+        "@id": "schema:healthPlanDrugOption",
+        "@container": "@set"
+      },
+      "healthPlanDrugTier": {
+        "@id": "schema:healthPlanDrugTier",
+        "@container": "@set"
+      },
+      "healthPlanId": {
+        "@id": "schema:healthPlanId",
+        "@container": "@set"
+      },
+      "healthPlanMarketingUrl": {
+        "@id": "schema:healthPlanMarketingUrl",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "includesHealthPlanFormulary": {
+        "@id": "schema:includesHealthPlanFormulary",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "includesHealthPlanNetwork": {
+        "@id": "schema:includesHealthPlanNetwork",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "usesHealthPlanIdStandard": {
+        "@id": "schema:usesHealthPlanIdStandard",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Intangible.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "HealthInsurancePlan.schema.json",
+  "x-oold-uuid": "c6885e08-4b7e-51c5-9c80-fe56e5cc26f5",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/HealthInsurancePlan",
+  "x-oold-instance-rdf-type": [
+    "schema:HealthInsurancePlan"
+  ],
+  "title": "HealthInsurancePlan",
+  "description": "A US-style health insurance plan, including PPOs, EPOs, and HMOs.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:HealthInsurancePlan"
+      ]
+    },
+    "benefitsSummaryUrl": {
+      "title": "Benefits Summary Url",
+      "description": "The URL that goes directly to the summary of benefits and coverage for the specific standard plan or plan variation.",
+      "type": "array",
+      "items": {
+        "$ref": "URL.schema.json"
+      }
+    },
+    "contactPoint": {
+      "title": "Contact Point",
+      "description": "A contact point for a person or organization.",
+      "type": "array",
+      "items": {
+        "$ref": "ContactPoint.schema.json"
+      }
+    },
+    "healthPlanDrugOption": {
+      "title": "Health Plan Drug Option",
+      "description": "TODO.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "healthPlanDrugTier": {
+      "title": "Health Plan Drug Tier",
+      "description": "The tier(s) of drugs offered by this formulary or insurance plan.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "healthPlanId": {
+      "title": "Health Plan Id",
+      "description": "The 14-character, HIOS-generated Plan ID number. (Plan IDs must be unique, even across different markets.)",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "healthPlanMarketingUrl": {
+      "title": "Health Plan Marketing Url",
+      "description": "The URL that goes directly to the plan brochure for the specific standard plan or plan variation.",
+      "type": "array",
+      "items": {
+        "$ref": "URL.schema.json"
+      }
+    },
+    "includesHealthPlanFormulary": {
+      "title": "Includes Health Plan Formulary",
+      "description": "Formularies covered by this plan.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "HealthPlanFormulary.schema.json"
+      }
+    },
+    "includesHealthPlanNetwork": {
+      "title": "Includes Health Plan Network",
+      "description": "Networks covered by this plan.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "HealthPlanNetwork.schema.json"
+      }
+    },
+    "usesHealthPlanIdStandard": {
+      "title": "Uses Health Plan Id Standard",
+      "description": "The standard for interpreting the Plan ID. The preferred is \"HIOS\". See the Centers for Medicare & Medicaid Services for more details.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Text.schema.json"
+          },
+          {
+            "$ref": "URL.schema.json"
+          }
+        ]
+      }
+    }
+  }
+}

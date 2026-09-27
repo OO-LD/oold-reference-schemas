@@ -1,0 +1,721 @@
+{
+  "@context": [
+    "Thing.schema.json",
+    {
+      "about": {
+        "@id": "schema:about",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "actor": {
+        "@id": "schema:actor",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "aggregateRating": {
+        "@id": "schema:aggregateRating",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "attendee": {
+        "@id": "schema:attendee",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "audience": {
+        "@id": "schema:audience",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "composer": {
+        "@id": "schema:composer",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "contributor": {
+        "@id": "schema:contributor",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "director": {
+        "@id": "schema:director",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "doorTime": {
+        "@id": "schema:doorTime",
+        "@container": "@set"
+      },
+      "duration": {
+        "@id": "schema:duration",
+        "@container": "@set"
+      },
+      "endDate": {
+        "@id": "schema:endDate",
+        "@container": "@set"
+      },
+      "eventAttendanceMode": {
+        "@id": "schema:eventAttendanceMode",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "eventSchedule": {
+        "@id": "schema:eventSchedule",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "eventStatus": {
+        "@id": "schema:eventStatus",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "funder": {
+        "@id": "schema:funder",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "funding": {
+        "@id": "schema:funding",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "hasParticipationOffer": {
+        "@id": "schema:hasParticipationOffer",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "hasSponsorshipOffer": {
+        "@id": "schema:hasSponsorshipOffer",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "inLanguage": {
+        "@id": "schema:inLanguage",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "inLanguage_text": {
+        "@id": "schema:inLanguage",
+        "@container": "@set"
+      },
+      "isAccessibleForFree": {
+        "@id": "schema:isAccessibleForFree",
+        "@container": "@set"
+      },
+      "keywords": {
+        "@id": "schema:keywords",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "keywords_text": {
+        "@id": "schema:keywords",
+        "@container": "@set"
+      },
+      "location": {
+        "@id": "schema:location",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "location_text": {
+        "@id": "schema:location",
+        "@container": "@set"
+      },
+      "maximumAttendeeCapacity": {
+        "@id": "schema:maximumAttendeeCapacity",
+        "@container": "@set"
+      },
+      "maximumPhysicalAttendeeCapacity": {
+        "@id": "schema:maximumPhysicalAttendeeCapacity",
+        "@container": "@set"
+      },
+      "maximumVirtualAttendeeCapacity": {
+        "@id": "schema:maximumVirtualAttendeeCapacity",
+        "@container": "@set"
+      },
+      "offers": {
+        "@id": "schema:offers",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "organizer": {
+        "@id": "schema:organizer",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "performer": {
+        "@id": "schema:performer",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "previousStartDate": {
+        "@id": "schema:previousStartDate",
+        "@container": "@set"
+      },
+      "recordedIn": {
+        "@id": "schema:recordedIn",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "remainingAttendeeCapacity": {
+        "@id": "schema:remainingAttendeeCapacity",
+        "@container": "@set"
+      },
+      "review": {
+        "@id": "schema:review",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "sponsor": {
+        "@id": "schema:sponsor",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "startDate": {
+        "@id": "schema:startDate",
+        "@container": "@set"
+      },
+      "subEvent": {
+        "@id": "schema:subEvent",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "superEvent": {
+        "@id": "schema:superEvent",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "translator": {
+        "@id": "schema:translator",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "typicalAgeRange": {
+        "@id": "schema:typicalAgeRange",
+        "@container": "@set"
+      },
+      "workFeatured": {
+        "@id": "schema:workFeatured",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "workPerformed": {
+        "@id": "schema:workPerformed",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Thing.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Event.schema.json",
+  "x-oold-uuid": "b3e7db3e-f825-5847-aaeb-5301ef55d3d3",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Event",
+  "x-oold-instance-rdf-type": [
+    "schema:Event"
+  ],
+  "title": "Event",
+  "description": "An event happening at a certain time and location, such as a concert, lecture, or festival. Ticketing information may be added via the [[offers]] property. Repeated events may be structured as separate Event objects.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Event"
+      ]
+    },
+    "about": {
+      "title": "About",
+      "description": "The subject matter of an object.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Thing.schema.json"
+      }
+    },
+    "actor": {
+      "title": "Actor",
+      "description": "An actor (individual or a group), e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "PerformingGroup.schema.json",
+          "Person.schema.json"
+        ]
+      }
+    },
+    "aggregateRating": {
+      "title": "Aggregate Rating",
+      "description": "The overall rating, based on a collection of reviews or ratings, of the item.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "AggregateRating.schema.json"
+      }
+    },
+    "attendee": {
+      "title": "Attendee",
+      "description": "A person or organization attending the event.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "Organization.schema.json",
+          "Person.schema.json"
+        ]
+      }
+    },
+    "audience": {
+      "title": "Audience",
+      "description": "An intended audience, i.e. a group for whom something was created.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Audience.schema.json"
+      }
+    },
+    "composer": {
+      "title": "Composer",
+      "description": "The person or organization who wrote a composition, or who is the composer of a work performed at some event.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "Organization.schema.json",
+          "Person.schema.json"
+        ]
+      }
+    },
+    "contributor": {
+      "title": "Contributor",
+      "description": "A secondary contributor to the CreativeWork or Event.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "Organization.schema.json",
+          "Person.schema.json"
+        ]
+      }
+    },
+    "director": {
+      "title": "Director",
+      "description": "A director of e.g. TV, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Person.schema.json"
+      }
+    },
+    "doorTime": {
+      "title": "Door Time",
+      "description": "The time admission will commence.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "DateTime.schema.json"
+          },
+          {
+            "$ref": "Time.schema.json"
+          }
+        ]
+      }
+    },
+    "duration": {
+      "title": "Duration",
+      "description": "The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: QuantitativeValue [value-type]: QuantitativeValue -> StructuredValue -> Intangible -> Thing",
+        "anyOf": [
+          {
+            "$ref": "Duration.schema.json"
+          },
+          {
+            "$ref": "QuantitativeValue.schema.json"
+          }
+        ]
+      }
+    },
+    "endDate": {
+      "title": "End Date",
+      "description": "The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Date.schema.json"
+          },
+          {
+            "$ref": "DateTime.schema.json"
+          }
+        ]
+      }
+    },
+    "eventAttendanceMode": {
+      "title": "Event Attendance Mode",
+      "description": "The eventAttendanceMode of an event indicates whether it occurs online, offline, or a mix.",
+      "type": "array",
+      "items": {
+        "$ref": "EventAttendanceModeEnumeration.schema.json#/$defs/member",
+        "x-oold-range": "EventAttendanceModeEnumeration.schema.json"
+      }
+    },
+    "eventSchedule": {
+      "title": "Event Schedule",
+      "description": "Associates an [[Event]] with a [[Schedule]]. There are circumstances where it is preferable to share a schedule for a series of\n      repeating events rather than data on the individual events themselves. For example, a website or application might prefer to publish a schedule for a weekly\n      gym class rather than provide data on every event. A schedule could be processed by applications to add forthcoming events to a calendar. An [[Event]] that\n      is associated with a [[Schedule]] using this property should not have [[startDate]] or [[endDate]] properties. These are instead defined within the associated\n      [[Schedule]], this avoids any ambiguity for clients using the data. The property might have repeated values to specify different schedules, e.g. for different months\n      or seasons.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Schedule.schema.json"
+      }
+    },
+    "eventStatus": {
+      "title": "Event Status",
+      "description": "An eventStatus of an event represents its status; particularly useful when an event is cancelled or rescheduled.",
+      "type": "array",
+      "items": {
+        "$ref": "EventStatusType.schema.json#/$defs/member",
+        "x-oold-range": "EventStatusType.schema.json"
+      }
+    },
+    "funder": {
+      "title": "Funder",
+      "description": "A person or organization that supports (sponsors) something through some kind of financial contribution.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "Organization.schema.json",
+          "Person.schema.json"
+        ]
+      }
+    },
+    "funding": {
+      "title": "Funding",
+      "description": "A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Grant.schema.json"
+      }
+    },
+    "hasParticipationOffer": {
+      "title": "Has Participation Offer",
+      "description": "An offer to participate in the event, for example, Call for Proposals, Call for Speakers, or Call for Performers.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Offer.schema.json"
+      }
+    },
+    "hasSponsorshipOffer": {
+      "title": "Has Sponsorship Offer",
+      "description": "An offer to sponsor the event, for example, Sponsorship Prospectus, Sponsorship Opportunities, or Sponsor Packages.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Offer.schema.json"
+      }
+    },
+    "inLanguage": {
+      "title": "In Language",
+      "description": "The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Language.schema.json"
+      }
+    },
+    "inLanguage_text": {
+      "title": "In Language (text)",
+      "description": "The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "isAccessibleForFree": {
+      "title": "Is Accessible For Free",
+      "description": "A flag to signal that the item, event, or place is accessible for free.",
+      "type": "array",
+      "items": {
+        "$ref": "Boolean.schema.json"
+      }
+    },
+    "keywords": {
+      "title": "Keywords",
+      "description": "Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "DefinedTerm.schema.json"
+      }
+    },
+    "keywords_text": {
+      "title": "Keywords (text)",
+      "description": "Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Text.schema.json"
+          },
+          {
+            "$ref": "URL.schema.json"
+          }
+        ]
+      }
+    },
+    "location": {
+      "title": "Location",
+      "description": "The location of, for example, where an event is happening, where an organization is located, or where an action takes place.",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: PostalAddress [value-type]: PostalAddress -> ContactPoint -> StructuredValue -> Intangible -> Thing; Place [entity]: Place -> Thing; VirtualLocation [entity]: VirtualLocation -> Intangible -> Thing",
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "iri-reference",
+            "x-oold-range": [
+              "Place.schema.json",
+              "VirtualLocation.schema.json"
+            ]
+          },
+          {
+            "$ref": "PostalAddress.schema.json"
+          }
+        ]
+      }
+    },
+    "location_text": {
+      "title": "Location (text)",
+      "description": "The location of, for example, where an event is happening, where an organization is located, or where an action takes place.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "maximumAttendeeCapacity": {
+      "title": "Maximum Attendee Capacity",
+      "description": "The total number of individuals that may attend an event or venue.",
+      "type": "array",
+      "items": {
+        "$ref": "Integer.schema.json"
+      }
+    },
+    "maximumPhysicalAttendeeCapacity": {
+      "title": "Maximum Physical Attendee Capacity",
+      "description": "The maximum physical attendee capacity of an [[Event]] whose [[eventAttendanceMode]] is [[OfflineEventAttendanceMode]] (or the offline aspects, in the case of a [[MixedEventAttendanceMode]]). ",
+      "type": "array",
+      "items": {
+        "$ref": "Integer.schema.json"
+      }
+    },
+    "maximumVirtualAttendeeCapacity": {
+      "title": "Maximum Virtual Attendee Capacity",
+      "description": "The maximum virtual attendee capacity of an [[Event]] whose [[eventAttendanceMode]] is [[OnlineEventAttendanceMode]] (or the online aspects, in the case of a [[MixedEventAttendanceMode]]). ",
+      "type": "array",
+      "items": {
+        "$ref": "Integer.schema.json"
+      }
+    },
+    "offers": {
+      "title": "Offers",
+      "description": "An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.\n      ",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "Demand.schema.json",
+          "Offer.schema.json"
+        ]
+      }
+    },
+    "organizer": {
+      "title": "Organizer",
+      "description": "An organizer of an Event.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "Organization.schema.json",
+          "Person.schema.json"
+        ]
+      }
+    },
+    "performer": {
+      "title": "Performer",
+      "description": "A performer at the event&#x2014;for example, a presenter, musician, musical group or actor.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "Organization.schema.json",
+          "Person.schema.json"
+        ]
+      }
+    },
+    "previousStartDate": {
+      "title": "Previous Start Date",
+      "description": "Used in conjunction with eventStatus for rescheduled or cancelled events. This property contains the previously scheduled start date. For rescheduled events, the startDate property should be used for the newly scheduled start date. In the (rare) case of an event that has been postponed and rescheduled multiple times, this field may be repeated.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Date.schema.json"
+          },
+          {
+            "$ref": "DateTime.schema.json"
+          }
+        ]
+      }
+    },
+    "recordedIn": {
+      "title": "Recorded In",
+      "description": "The CreativeWork that captured all or part of this Event.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "CreativeWork.schema.json"
+      }
+    },
+    "remainingAttendeeCapacity": {
+      "title": "Remaining Attendee Capacity",
+      "description": "The number of attendee places for an event that remain unallocated.",
+      "type": "array",
+      "items": {
+        "$ref": "Integer.schema.json"
+      }
+    },
+    "review": {
+      "title": "Review",
+      "description": "A review of the item.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Review.schema.json"
+      }
+    },
+    "sponsor": {
+      "title": "Sponsor",
+      "description": "A person or organization that supports a thing through a pledge, promise, or financial contribution. E.g. a sponsor of a Medical Study or a corporate sponsor of an event.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "Organization.schema.json",
+          "Person.schema.json"
+        ]
+      }
+    },
+    "startDate": {
+      "title": "Start Date",
+      "description": "The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Date.schema.json"
+          },
+          {
+            "$ref": "DateTime.schema.json"
+          }
+        ]
+      }
+    },
+    "subEvent": {
+      "title": "Sub Event",
+      "description": "An Event that is part of this event. For example, a conference event includes many presentations, each of which is a subEvent of the conference.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Event.schema.json"
+      }
+    },
+    "superEvent": {
+      "title": "Super Event",
+      "description": "An event that this event is a part of. For example, a collection of individual music performances might each have a music festival as their superEvent.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Event.schema.json"
+      }
+    },
+    "translator": {
+      "title": "Translator",
+      "description": "Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "Organization.schema.json",
+          "Person.schema.json"
+        ]
+      }
+    },
+    "typicalAgeRange": {
+      "title": "Typical Age Range",
+      "description": "The typical expected age range, e.g. '7-9', '11-'.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "workFeatured": {
+      "title": "Work Featured",
+      "description": "A work featured in some event, e.g. exhibited in an ExhibitionEvent.\n       Specific subproperties are available for workPerformed (e.g. a play), or a workPresented (a Movie at a ScreeningEvent).",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "CreativeWork.schema.json"
+      }
+    },
+    "workPerformed": {
+      "title": "Work Performed",
+      "description": "A work performed in some event, for example a play performed in a TheaterEvent.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "CreativeWork.schema.json"
+      }
+    }
+  }
+}

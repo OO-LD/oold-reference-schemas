@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "CivicStructure.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "CivicStructure.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Park.schema.json",
+  "x-oold-uuid": "92d80e7d-8052-58ed-81ae-57f306810903",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Park",
+  "x-oold-instance-rdf-type": [
+    "schema:Park"
+  ],
+  "title": "Park",
+  "description": "A park.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Park"
+      ]
+    }
+  }
+}

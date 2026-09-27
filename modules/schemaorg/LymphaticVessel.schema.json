@@ -1,0 +1,84 @@
+{
+  "@context": [
+    "Vessel.schema.json",
+    {
+      "originatesFrom": {
+        "@id": "schema:originatesFrom",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "regionDrained": {
+        "@id": "schema:regionDrained",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "runsTo": {
+        "@id": "schema:runsTo",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Vessel.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "LymphaticVessel.schema.json",
+  "x-oold-uuid": "e941d992-0761-59d1-9cb9-257aa2378fcf",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/LymphaticVessel",
+  "x-oold-instance-rdf-type": [
+    "schema:LymphaticVessel"
+  ],
+  "title": "LymphaticVessel",
+  "description": "A type of blood vessel that specifically carries lymph fluid unidirectionally toward the heart.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:LymphaticVessel"
+      ]
+    },
+    "originatesFrom": {
+      "title": "Originates From",
+      "description": "The vasculature the lymphatic structure originates, or afferents, from.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Vessel.schema.json"
+      }
+    },
+    "regionDrained": {
+      "title": "Region Drained",
+      "description": "The anatomical or organ system drained by this vessel; generally refers to a specific part of an organ.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "AnatomicalStructure.schema.json",
+          "AnatomicalSystem.schema.json"
+        ]
+      }
+    },
+    "runsTo": {
+      "title": "Runs To",
+      "description": "The vasculature the lymphatic structure runs, or efferents, to.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Vessel.schema.json"
+      }
+    }
+  }
+}

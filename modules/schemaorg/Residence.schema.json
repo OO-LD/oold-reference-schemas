@@ -1,0 +1,63 @@
+{
+  "@context": [
+    "Place.schema.json",
+    {
+      "accommodationFloorPlan": {
+        "@id": "schema:accommodationFloorPlan",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "floorLevel": {
+        "@id": "schema:floorLevel",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Place.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Residence.schema.json",
+  "x-oold-uuid": "58274cd7-f39e-5cc1-8027-377f5b3f3971",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Residence",
+  "x-oold-instance-rdf-type": [
+    "schema:Residence"
+  ],
+  "title": "Residence",
+  "description": "The place where a person lives.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Residence"
+      ]
+    },
+    "accommodationFloorPlan": {
+      "title": "Accommodation Floor Plan",
+      "description": "A floorplan of some [[Accommodation]].",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "FloorPlan.schema.json"
+      }
+    },
+    "floorLevel": {
+      "title": "Floor Level",
+      "description": "The floor level for an [[Accommodation]] in a multi-storey building. Since counting\n  systems [vary internationally](https://en.wikipedia.org/wiki/Storey#Consecutive_number_floor_designations), the local system should be used where possible.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    }
+  }
+}

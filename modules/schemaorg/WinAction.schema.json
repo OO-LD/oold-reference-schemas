@@ -1,0 +1,51 @@
+{
+  "@context": [
+    "AchieveAction.schema.json",
+    {
+      "loser": {
+        "@id": "schema:loser",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "AchieveAction.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "WinAction.schema.json",
+  "x-oold-uuid": "339e8dbc-520f-5e17-8960-bb41890c881f",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/WinAction",
+  "x-oold-instance-rdf-type": [
+    "schema:WinAction"
+  ],
+  "title": "WinAction",
+  "description": "The act of achieving victory in a competitive activity.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:WinAction"
+      ]
+    },
+    "loser": {
+      "title": "Loser",
+      "description": "A sub property of participant. The loser of the action.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Person.schema.json"
+      }
+    }
+  }
+}

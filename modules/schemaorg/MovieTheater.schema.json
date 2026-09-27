@@ -1,0 +1,52 @@
+{
+  "@context": [
+    "CivicStructure.schema.json",
+    "EntertainmentBusiness.schema.json",
+    {
+      "screenCount": {
+        "@id": "schema:screenCount",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "CivicStructure.schema.json"
+    },
+    {
+      "$ref": "EntertainmentBusiness.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MovieTheater.schema.json",
+  "x-oold-uuid": "f26cd1a2-edf8-52cd-99cd-079cd8ee85b6",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/MovieTheater",
+  "x-oold-instance-rdf-type": [
+    "schema:MovieTheater"
+  ],
+  "title": "MovieTheater",
+  "description": "A movie theater.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:MovieTheater"
+      ]
+    },
+    "screenCount": {
+      "title": "Screen Count",
+      "description": "The number of screens in the movie theater.",
+      "type": "array",
+      "items": {
+        "$ref": "Number.schema.json"
+      }
+    }
+  }
+}

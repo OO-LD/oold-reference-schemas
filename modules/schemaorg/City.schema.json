@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "AdministrativeArea.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "AdministrativeArea.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "City.schema.json",
+  "x-oold-uuid": "b2d8a9d7-213f-5de6-b2b0-8e9769b31411",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/City",
+  "x-oold-instance-rdf-type": [
+    "schema:City"
+  ],
+  "title": "City",
+  "description": "A city or town.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:City"
+      ]
+    }
+  }
+}

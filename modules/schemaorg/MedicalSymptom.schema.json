@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "MedicalSignOrSymptom.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "MedicalSignOrSymptom.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MedicalSymptom.schema.json",
+  "x-oold-uuid": "b385a44c-3fc6-53b1-8699-c8c096adaa62",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/MedicalSymptom",
+  "x-oold-instance-rdf-type": [
+    "schema:MedicalSymptom"
+  ],
+  "title": "MedicalSymptom",
+  "description": "Any complaint sensed and expressed by the patient (therefore defined as subjective)  like stomachache, lower-back pain, or fatigue.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:MedicalSymptom"
+      ]
+    }
+  }
+}

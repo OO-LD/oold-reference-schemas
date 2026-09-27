@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "GovernmentBuilding.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "GovernmentBuilding.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "DefenceEstablishment.schema.json",
+  "x-oold-uuid": "05ba4c9c-816e-54a4-8b9b-e717ec51b066",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/DefenceEstablishment",
+  "x-oold-instance-rdf-type": [
+    "schema:DefenceEstablishment"
+  ],
+  "title": "DefenceEstablishment",
+  "description": "A defence establishment, such as an army or navy base.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:DefenceEstablishment"
+      ]
+    }
+  }
+}

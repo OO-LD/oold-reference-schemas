@@ -1,0 +1,8 @@
+{
+  "$schema": "Joint.schema.json",
+  "@context": "Joint.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:Joint"
+  ]
+}

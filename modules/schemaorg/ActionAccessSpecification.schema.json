@@ -1,0 +1,230 @@
+{
+  "@context": [
+    "Intangible.schema.json",
+    {
+      "availabilityEnds": {
+        "@id": "schema:availabilityEnds",
+        "@container": "@set"
+      },
+      "availabilityStarts": {
+        "@id": "schema:availabilityStarts",
+        "@container": "@set"
+      },
+      "category": {
+        "@id": "schema:category",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "category_text": {
+        "@id": "schema:category",
+        "@container": "@set"
+      },
+      "eligibleRegion": {
+        "@id": "schema:eligibleRegion",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "eligibleRegion_text": {
+        "@id": "schema:eligibleRegion",
+        "@container": "@set"
+      },
+      "expectsAcceptanceOf": {
+        "@id": "schema:expectsAcceptanceOf",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "ineligibleRegion": {
+        "@id": "schema:ineligibleRegion",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "ineligibleRegion_text": {
+        "@id": "schema:ineligibleRegion",
+        "@container": "@set"
+      },
+      "requiresSubscription": {
+        "@id": "schema:requiresSubscription",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "requiresSubscription_text": {
+        "@id": "schema:requiresSubscription",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Intangible.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ActionAccessSpecification.schema.json",
+  "x-oold-uuid": "1160b3c8-b445-55e7-ba83-c916ce35bc76",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/ActionAccessSpecification",
+  "x-oold-instance-rdf-type": [
+    "schema:ActionAccessSpecification"
+  ],
+  "title": "ActionAccessSpecification",
+  "description": "A set of requirements that must be fulfilled in order to perform an Action.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:ActionAccessSpecification"
+      ]
+    },
+    "availabilityEnds": {
+      "title": "Availability Ends",
+      "description": "The end of the availability of the product or service included in the offer.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Date.schema.json"
+          },
+          {
+            "$ref": "DateTime.schema.json"
+          },
+          {
+            "$ref": "Time.schema.json"
+          }
+        ]
+      }
+    },
+    "availabilityStarts": {
+      "title": "Availability Starts",
+      "description": "The beginning of the availability of the product or service included in the offer.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Date.schema.json"
+          },
+          {
+            "$ref": "DateTime.schema.json"
+          },
+          {
+            "$ref": "Time.schema.json"
+          }
+        ]
+      }
+    },
+    "category": {
+      "title": "Category",
+      "description": "A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "CategoryCode.schema.json",
+          "PhysicalActivityCategory.schema.json",
+          "Thing.schema.json"
+        ]
+      }
+    },
+    "category_text": {
+      "title": "Category (text)",
+      "description": "A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Text.schema.json"
+          },
+          {
+            "$ref": "URL.schema.json"
+          }
+        ]
+      }
+    },
+    "eligibleRegion": {
+      "title": "Eligible Region",
+      "description": "The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.\\n\\nSee also [[ineligibleRegion]].\n    ",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: GeoShape [value-type]: GeoShape -> StructuredValue -> Intangible -> Thing; Place [entity]: Place -> Thing",
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "iri-reference",
+            "x-oold-range": "Place.schema.json"
+          },
+          {
+            "$ref": "GeoShape.schema.json"
+          }
+        ]
+      }
+    },
+    "eligibleRegion_text": {
+      "title": "Eligible Region (text)",
+      "description": "The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.\\n\\nSee also [[ineligibleRegion]].\n    ",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "expectsAcceptanceOf": {
+      "title": "Expects Acceptance Of",
+      "description": "An Offer which must be accepted before the user can perform the Action. For example, the user may need to buy a movie before being able to watch it.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Offer.schema.json"
+      }
+    },
+    "ineligibleRegion": {
+      "title": "Ineligible Region",
+      "description": "The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.\\n\\nSee also [[eligibleRegion]].\n      ",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: GeoShape [value-type]: GeoShape -> StructuredValue -> Intangible -> Thing; Place [entity]: Place -> Thing",
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "iri-reference",
+            "x-oold-range": "Place.schema.json"
+          },
+          {
+            "$ref": "GeoShape.schema.json"
+          }
+        ]
+      }
+    },
+    "ineligibleRegion_text": {
+      "title": "Ineligible Region (text)",
+      "description": "The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.\\n\\nSee also [[eligibleRegion]].\n      ",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "requiresSubscription": {
+      "title": "Requires Subscription",
+      "description": "Indicates if use of the media require a subscription  (either paid or free). Allowed values are ```true``` or ```false``` (note that an earlier version had 'yes', 'no').",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "MediaSubscription.schema.json"
+      }
+    },
+    "requiresSubscription_text": {
+      "title": "Requires Subscription (text)",
+      "description": "Indicates if use of the media require a subscription  (either paid or free). Allowed values are ```true``` or ```false``` (note that an earlier version had 'yes', 'no').",
+      "type": "array",
+      "items": {
+        "$ref": "Boolean.schema.json"
+      }
+    }
+  }
+}

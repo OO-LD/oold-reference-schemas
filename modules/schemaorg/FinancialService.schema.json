@@ -1,0 +1,55 @@
+{
+  "@context": [
+    "LocalBusiness.schema.json",
+    {
+      "feesAndCommissionsSpecification": {
+        "@id": "schema:feesAndCommissionsSpecification",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "LocalBusiness.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "FinancialService.schema.json",
+  "x-oold-uuid": "3fcb0209-0314-5855-8a78-6707757ae6ee",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/FinancialService",
+  "x-oold-instance-rdf-type": [
+    "schema:FinancialService"
+  ],
+  "title": "FinancialService",
+  "description": "Financial services business.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:FinancialService"
+      ]
+    },
+    "feesAndCommissionsSpecification": {
+      "title": "Fees And Commissions Specification",
+      "description": "Description of fees, commissions, and other terms applied either to a class of financial product, or by a financial service organization.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Text.schema.json"
+          },
+          {
+            "$ref": "URL.schema.json"
+          }
+        ]
+      }
+    }
+  }
+}

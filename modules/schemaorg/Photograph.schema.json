@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "CreativeWork.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "CreativeWork.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Photograph.schema.json",
+  "x-oold-uuid": "172947f8-5bf3-505e-8f26-e12a91e3bd52",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Photograph",
+  "x-oold-instance-rdf-type": [
+    "schema:Photograph"
+  ],
+  "title": "Photograph",
+  "description": "A photograph.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Photograph"
+      ]
+    }
+  }
+}

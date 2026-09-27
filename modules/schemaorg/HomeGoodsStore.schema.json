@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Store.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Store.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "HomeGoodsStore.schema.json",
+  "x-oold-uuid": "19554cb5-a65e-578f-9562-e010da62ba78",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/HomeGoodsStore",
+  "x-oold-instance-rdf-type": [
+    "schema:HomeGoodsStore"
+  ],
+  "title": "HomeGoodsStore",
+  "description": "A home goods store.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:HomeGoodsStore"
+      ]
+    }
+  }
+}

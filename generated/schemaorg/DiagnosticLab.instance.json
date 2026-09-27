@@ -1,0 +1,8 @@
+{
+  "$schema": "DiagnosticLab.schema.json",
+  "@context": "DiagnosticLab.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:DiagnosticLab"
+  ]
+}

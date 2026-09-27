@@ -1,0 +1,8 @@
+{
+  "$schema": "SkiResort.schema.json",
+  "@context": "SkiResort.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:SkiResort"
+  ]
+}

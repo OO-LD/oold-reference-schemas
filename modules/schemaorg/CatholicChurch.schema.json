@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Church.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Church.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "CatholicChurch.schema.json",
+  "x-oold-uuid": "1e48587b-af0e-5dc5-a2dc-9e1bd79082f0",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/CatholicChurch",
+  "x-oold-instance-rdf-type": [
+    "schema:CatholicChurch"
+  ],
+  "title": "CatholicChurch",
+  "description": "A Catholic church.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:CatholicChurch"
+      ]
+    }
+  }
+}

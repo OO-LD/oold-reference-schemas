@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Service.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Service.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "TaxiService.schema.json",
+  "x-oold-uuid": "0f64b559-8ab6-5932-b370-1525980d1409",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/TaxiService",
+  "x-oold-instance-rdf-type": [
+    "schema:TaxiService"
+  ],
+  "title": "TaxiService",
+  "description": "A service for a vehicle for hire with a driver for local travel. Fares are usually calculated based on distance traveled.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:TaxiService"
+      ]
+    }
+  }
+}

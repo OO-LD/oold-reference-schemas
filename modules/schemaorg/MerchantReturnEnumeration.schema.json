@@ -1,0 +1,55 @@
+{
+  "@context": [
+    "Enumeration.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Enumeration.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MerchantReturnEnumeration.schema.json",
+  "x-oold-uuid": "41c3e86a-cea1-50a2-90aa-a3dce3822a10",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/MerchantReturnEnumeration",
+  "x-oold-instance-rdf-type": [
+    "schema:MerchantReturnEnumeration"
+  ],
+  "title": "MerchantReturnEnumeration",
+  "description": "Enumerates several kinds of product return policies.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:MerchantReturnEnumeration"
+      ]
+    }
+  },
+  "$defs": {
+    "member": {
+      "title": "MerchantReturnEnumeration member",
+      "description": "One of the 4 member instances of MerchantReturnEnumeration.",
+      "type": "string",
+      "format": "iri-reference",
+      "enum": [
+        "schema:MerchantReturnFiniteReturnWindow",
+        "schema:MerchantReturnNotPermitted",
+        "schema:MerchantReturnUnlimitedWindow",
+        "schema:MerchantReturnUnspecified"
+      ],
+      "x-oold-ui-enum-titles": [
+        "MerchantReturnFiniteReturnWindow",
+        "MerchantReturnNotPermitted",
+        "MerchantReturnUnlimitedWindow",
+        "MerchantReturnUnspecified"
+      ]
+    }
+  }
+}

@@ -1,0 +1,222 @@
+{
+  "@context": [
+    "StructuredValue.schema.json",
+    {
+      "depth": {
+        "@id": "schema:depth",
+        "@container": "@set"
+      },
+      "doesNotShip": {
+        "@id": "schema:doesNotShip",
+        "@container": "@set"
+      },
+      "height": {
+        "@id": "schema:height",
+        "@container": "@set"
+      },
+      "numItems": {
+        "@id": "schema:numItems",
+        "@container": "@set"
+      },
+      "orderValue": {
+        "@id": "schema:orderValue",
+        "@container": "@set"
+      },
+      "seasonalOverride": {
+        "@id": "schema:seasonalOverride",
+        "@container": "@set"
+      },
+      "shippingDestination": {
+        "@id": "schema:shippingDestination",
+        "@container": "@set"
+      },
+      "shippingOrigin": {
+        "@id": "schema:shippingOrigin",
+        "@container": "@set"
+      },
+      "shippingRate": {
+        "@id": "schema:shippingRate",
+        "@container": "@set"
+      },
+      "transitTime": {
+        "@id": "schema:transitTime",
+        "@container": "@set"
+      },
+      "weight": {
+        "@id": "schema:weight",
+        "@container": "@set"
+      },
+      "width": {
+        "@id": "schema:width",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "StructuredValue.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ShippingConditions.schema.json",
+  "x-oold-uuid": "9877c83a-3bf0-5365-b8ad-940ad4f157cc",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/ShippingConditions",
+  "x-oold-instance-rdf-type": [
+    "schema:ShippingConditions"
+  ],
+  "title": "ShippingConditions",
+  "description": "ShippingConditions represent a set of constraints and information about the conditions of shipping a product. Such conditions may apply to only a subset of the products being shipped, depending on aspects of the product like weight, size, price, destination, and others. All the specified conditions must be met for this ShippingConditions to apply.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:ShippingConditions"
+      ]
+    },
+    "depth": {
+      "title": "Depth",
+      "description": "The depth of the item.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Distance.schema.json"
+          },
+          {
+            "$ref": "QuantitativeValue.schema.json"
+          }
+        ]
+      }
+    },
+    "doesNotShip": {
+      "title": "Does Not Ship",
+      "description": "Indicates when shipping to a particular [[shippingDestination]] is not available.",
+      "type": "array",
+      "items": {
+        "$ref": "Boolean.schema.json"
+      }
+    },
+    "height": {
+      "title": "Height",
+      "description": "The height of the item.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Distance.schema.json"
+          },
+          {
+            "$ref": "QuantitativeValue.schema.json"
+          }
+        ]
+      }
+    },
+    "numItems": {
+      "title": "Num Items",
+      "description": "Limits the number of items being shipped for which these conditions apply.",
+      "type": "array",
+      "items": {
+        "$ref": "QuantitativeValue.schema.json"
+      }
+    },
+    "orderValue": {
+      "title": "Order Value",
+      "description": "Minimum and maximum order value for which these shipping conditions are valid.",
+      "type": "array",
+      "items": {
+        "$ref": "MonetaryAmount.schema.json"
+      }
+    },
+    "seasonalOverride": {
+      "title": "Seasonal Override",
+      "description": "Limited period during which these shipping conditions apply.",
+      "type": "array",
+      "items": {
+        "$ref": "OpeningHoursSpecification.schema.json"
+      }
+    },
+    "shippingDestination": {
+      "title": "Shipping Destination",
+      "description": "indicates (possibly multiple) shipping destinations. These can be defined in several ways, e.g. postalCode ranges.",
+      "type": "array",
+      "items": {
+        "$ref": "DefinedRegion.schema.json"
+      }
+    },
+    "shippingOrigin": {
+      "title": "Shipping Origin",
+      "description": "Indicates the origin of a shipment, i.e. where it should be coming from.",
+      "type": "array",
+      "items": {
+        "$ref": "DefinedRegion.schema.json"
+      }
+    },
+    "shippingRate": {
+      "title": "Shipping Rate",
+      "description": "The shipping rate is the cost of shipping to the specified destination. Typically, the maxValue and currency values (of the [[MonetaryAmount]]) are most appropriate.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "MonetaryAmount.schema.json"
+          },
+          {
+            "$ref": "ShippingRateSettings.schema.json"
+          }
+        ]
+      }
+    },
+    "transitTime": {
+      "title": "Transit Time",
+      "description": "The typical delay the order has been sent for delivery and the goods reach the final customer.\n\n  In the context of [[ShippingDeliveryTime]], use the [[QuantitativeValue]]. Typical properties: minValue, maxValue, unitCode (d for DAY).\n\n  In the context of [[ShippingConditions]], use the [[ServicePeriod]]. It has a duration (as a [[QuantitativeValue]]) and also business days and a cut-off time.\n",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "QuantitativeValue.schema.json"
+          },
+          {
+            "$ref": "ServicePeriod.schema.json"
+          }
+        ]
+      }
+    },
+    "weight": {
+      "title": "Weight",
+      "description": "The weight of the product or person.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Mass.schema.json"
+          },
+          {
+            "$ref": "QuantitativeValue.schema.json"
+          }
+        ]
+      }
+    },
+    "width": {
+      "title": "Width",
+      "description": "The width of the item.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Distance.schema.json"
+          },
+          {
+            "$ref": "QuantitativeValue.schema.json"
+          }
+        ]
+      }
+    }
+  }
+}

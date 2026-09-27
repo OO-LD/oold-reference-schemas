@@ -1,0 +1,63 @@
+{
+  "@context": [
+    "Enumeration.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Enumeration.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "PaymentMethodType.schema.json",
+  "x-oold-uuid": "527ddbae-fe6d-5502-9c9d-883c4edfbb2a",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/PaymentMethodType",
+  "x-oold-instance-rdf-type": [
+    "schema:PaymentMethodType"
+  ],
+  "title": "PaymentMethodType",
+  "description": "The type of payment method, only for generic payment types, specific forms of payments, like card payment should be expressed using subclasses of PaymentMethod.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:PaymentMethodType"
+      ]
+    }
+  },
+  "$defs": {
+    "member": {
+      "title": "PaymentMethodType member",
+      "description": "One of the 8 member instances of PaymentMethodType.",
+      "type": "string",
+      "format": "iri-reference",
+      "enum": [
+        "schema:ByBankTransferInAdvance",
+        "schema:ByInvoice",
+        "schema:COD",
+        "schema:Cash",
+        "schema:CheckInAdvance",
+        "schema:DirectDebit",
+        "schema:InStorePrepay",
+        "schema:PhoneCarrierPayment"
+      ],
+      "x-oold-ui-enum-titles": [
+        "ByBankTransferInAdvance",
+        "ByInvoice",
+        "COD",
+        "Cash",
+        "CheckInAdvance",
+        "DirectDebit",
+        "InStorePrepay",
+        "PhoneCarrierPayment"
+      ]
+    }
+  }
+}

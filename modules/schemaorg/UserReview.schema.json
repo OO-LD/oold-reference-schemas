@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Review.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Review.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "UserReview.schema.json",
+  "x-oold-uuid": "19d142dc-6474-5fd6-9341-5cc602cc4fac",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/UserReview",
+  "x-oold-instance-rdf-type": [
+    "schema:UserReview"
+  ],
+  "title": "UserReview",
+  "description": "A review created by an end-user (e.g. consumer, purchaser, attendee etc.), in contrast with [[CriticReview]].",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:UserReview"
+      ]
+    }
+  }
+}

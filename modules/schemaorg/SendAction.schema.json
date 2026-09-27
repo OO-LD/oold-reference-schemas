@@ -1,0 +1,77 @@
+{
+  "@context": [
+    "TransferAction.schema.json",
+    {
+      "deliveryMethod": {
+        "@id": "schema:deliveryMethod",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "recipient": {
+        "@id": "schema:recipient",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "TransferAction.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "SendAction.schema.json",
+  "x-oold-uuid": "cfb59876-1aea-5150-91da-a1f61ca63e13",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/SendAction",
+  "x-oold-instance-rdf-type": [
+    "schema:SendAction"
+  ],
+  "title": "SendAction",
+  "description": "The act of physically/electronically dispatching an object for transfer from an origin to a destination. Related actions:\\n\\n* [[ReceiveAction]]: The reciprocal of SendAction.\\n* [[GiveAction]]: Unlike GiveAction, SendAction does not imply the transfer of ownership (e.g. I can send you my laptop, but I'm not necessarily giving it to you).",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:SendAction"
+      ]
+    },
+    "deliveryMethod": {
+      "title": "Delivery Method",
+      "description": "A sub property of instrument. The method of delivery.",
+      "type": "array",
+      "items": {
+        "$ref": "DeliveryMethod.schema.json#/$defs/member",
+        "x-oold-range": "DeliveryMethod.schema.json"
+      }
+    },
+    "recipient": {
+      "title": "Recipient",
+      "description": "A sub property of participant. The participant who is at the receiving end of the action.",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: ContactPoint [value-type]: ContactPoint -> StructuredValue -> Intangible -> Thing; Audience [entity]: Audience -> Intangible -> Thing; Organization [entity]: Organization -> Thing; Person [entity]: Person -> Thing",
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "iri-reference",
+            "x-oold-range": [
+              "Audience.schema.json",
+              "Organization.schema.json",
+              "Person.schema.json"
+            ]
+          },
+          {
+            "$ref": "ContactPoint.schema.json"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "@context": [
+    "Role.schema.json",
+    {
+      "characterName": {
+        "@id": "schema:characterName",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Role.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "PerformanceRole.schema.json",
+  "x-oold-uuid": "962bcd75-231e-5e64-b6bf-7ee5ce953602",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/PerformanceRole",
+  "x-oold-instance-rdf-type": [
+    "schema:PerformanceRole"
+  ],
+  "title": "PerformanceRole",
+  "description": "A PerformanceRole is a Role that some entity places with regard to a theatrical performance, e.g. in a Movie, TVSeries etc.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:PerformanceRole"
+      ]
+    },
+    "characterName": {
+      "title": "Character Name",
+      "description": "The name of a character played in some acting or performing role, i.e. in a PerformanceRole.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "$schema": "BroadcastChannel.schema.json",
+  "@context": "BroadcastChannel.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:BroadcastChannel"
+  ]
+}

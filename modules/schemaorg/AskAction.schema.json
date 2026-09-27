@@ -1,0 +1,51 @@
+{
+  "@context": [
+    "CommunicateAction.schema.json",
+    {
+      "question": {
+        "@id": "schema:question",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "CommunicateAction.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "AskAction.schema.json",
+  "x-oold-uuid": "e69e3d84-0353-5d4a-a7a9-4ee88d33c902",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/AskAction",
+  "x-oold-instance-rdf-type": [
+    "schema:AskAction"
+  ],
+  "title": "AskAction",
+  "description": "The act of posing a question / favor to someone.\\n\\nRelated actions:\\n\\n* [[ReplyAction]]: Appears generally as a response to AskAction.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:AskAction"
+      ]
+    },
+    "question": {
+      "title": "Question",
+      "description": "A sub property of object. A question.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Question.schema.json"
+      }
+    }
+  }
+}

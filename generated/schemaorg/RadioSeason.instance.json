@@ -1,0 +1,8 @@
+{
+  "$schema": "RadioSeason.schema.json",
+  "@context": "RadioSeason.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:RadioSeason"
+  ]
+}

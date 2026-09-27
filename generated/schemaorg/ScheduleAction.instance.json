@@ -1,0 +1,8 @@
+{
+  "$schema": "ScheduleAction.schema.json",
+  "@context": "ScheduleAction.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:ScheduleAction"
+  ]
+}

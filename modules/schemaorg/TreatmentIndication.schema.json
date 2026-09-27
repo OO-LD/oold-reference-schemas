@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "MedicalIndication.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "MedicalIndication.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "TreatmentIndication.schema.json",
+  "x-oold-uuid": "4a502ec0-bb31-556b-83f7-666afe2b0690",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/TreatmentIndication",
+  "x-oold-instance-rdf-type": [
+    "schema:TreatmentIndication"
+  ],
+  "title": "TreatmentIndication",
+  "description": "An indication for treating an underlying condition, symptom, etc.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:TreatmentIndication"
+      ]
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "$schema": "FAQPage.schema.json",
+  "@context": "FAQPage.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:FAQPage"
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "MedicalEntity.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "MedicalEntity.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "LifestyleModification.schema.json",
+  "x-oold-uuid": "9bd76358-9965-568f-b4fa-929a6296ca8e",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/LifestyleModification",
+  "x-oold-instance-rdf-type": [
+    "schema:LifestyleModification"
+  ],
+  "title": "LifestyleModification",
+  "description": "A process of care involving exercise, changes to diet, fitness routines, and other lifestyle changes aimed at improving a health condition.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:LifestyleModification"
+      ]
+    }
+  }
+}

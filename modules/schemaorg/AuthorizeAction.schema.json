@@ -1,0 +1,63 @@
+{
+  "@context": [
+    "AllocateAction.schema.json",
+    {
+      "recipient": {
+        "@id": "schema:recipient",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "AllocateAction.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "AuthorizeAction.schema.json",
+  "x-oold-uuid": "0c2b3f13-0a10-5636-b1fd-fc8062e0b811",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/AuthorizeAction",
+  "x-oold-instance-rdf-type": [
+    "schema:AuthorizeAction"
+  ],
+  "title": "AuthorizeAction",
+  "description": "The act of granting permission to an object.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:AuthorizeAction"
+      ]
+    },
+    "recipient": {
+      "title": "Recipient",
+      "description": "A sub property of participant. The participant who is at the receiving end of the action.",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: ContactPoint [value-type]: ContactPoint -> StructuredValue -> Intangible -> Thing; Audience [entity]: Audience -> Intangible -> Thing; Organization [entity]: Organization -> Thing; Person [entity]: Person -> Thing",
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "iri-reference",
+            "x-oold-range": [
+              "Audience.schema.json",
+              "Organization.schema.json",
+              "Person.schema.json"
+            ]
+          },
+          {
+            "$ref": "ContactPoint.schema.json"
+          }
+        ]
+      }
+    }
+  }
+}

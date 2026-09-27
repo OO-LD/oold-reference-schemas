@@ -1,0 +1,53 @@
+{
+  "@context": [
+    "MedicalEnumeration.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "MedicalEnumeration.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "DrugCostCategory.schema.json",
+  "x-oold-uuid": "a2b4b043-3933-5e2b-a368-72d0479d917f",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/DrugCostCategory",
+  "x-oold-instance-rdf-type": [
+    "schema:DrugCostCategory"
+  ],
+  "title": "DrugCostCategory",
+  "description": "Enumerated categories of medical drug costs.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:DrugCostCategory"
+      ]
+    }
+  },
+  "$defs": {
+    "member": {
+      "title": "DrugCostCategory member",
+      "description": "One of the 3 member instances of DrugCostCategory.",
+      "type": "string",
+      "format": "iri-reference",
+      "enum": [
+        "schema:ReimbursementCap",
+        "schema:Retail",
+        "schema:Wholesale"
+      ],
+      "x-oold-ui-enum-titles": [
+        "ReimbursementCap",
+        "Retail",
+        "Wholesale"
+      ]
+    }
+  }
+}

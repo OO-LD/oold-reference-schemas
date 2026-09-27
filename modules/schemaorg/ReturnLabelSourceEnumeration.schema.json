@@ -1,0 +1,53 @@
+{
+  "@context": [
+    "Enumeration.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Enumeration.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ReturnLabelSourceEnumeration.schema.json",
+  "x-oold-uuid": "254425bd-34e9-59be-9993-0cb13ca1d28c",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/ReturnLabelSourceEnumeration",
+  "x-oold-instance-rdf-type": [
+    "schema:ReturnLabelSourceEnumeration"
+  ],
+  "title": "ReturnLabelSourceEnumeration",
+  "description": "Enumerates several types of return labels for product returns.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:ReturnLabelSourceEnumeration"
+      ]
+    }
+  },
+  "$defs": {
+    "member": {
+      "title": "ReturnLabelSourceEnumeration member",
+      "description": "One of the 3 member instances of ReturnLabelSourceEnumeration.",
+      "type": "string",
+      "format": "iri-reference",
+      "enum": [
+        "schema:ReturnLabelCustomerResponsibility",
+        "schema:ReturnLabelDownloadAndPrint",
+        "schema:ReturnLabelInBox"
+      ],
+      "x-oold-ui-enum-titles": [
+        "ReturnLabelCustomerResponsibility",
+        "ReturnLabelDownloadAndPrint",
+        "ReturnLabelInBox"
+      ]
+    }
+  }
+}

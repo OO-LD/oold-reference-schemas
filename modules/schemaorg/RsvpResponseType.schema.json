@@ -1,0 +1,53 @@
+{
+  "@context": [
+    "Enumeration.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Enumeration.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "RsvpResponseType.schema.json",
+  "x-oold-uuid": "6a44e6b9-51b8-5ce8-a5eb-33ee927ef20f",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/RsvpResponseType",
+  "x-oold-instance-rdf-type": [
+    "schema:RsvpResponseType"
+  ],
+  "title": "RsvpResponseType",
+  "description": "RsvpResponseType is an enumeration type whose instances represent responding to an RSVP request.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:RsvpResponseType"
+      ]
+    }
+  },
+  "$defs": {
+    "member": {
+      "title": "RsvpResponseType member",
+      "description": "One of the 3 member instances of RsvpResponseType.",
+      "type": "string",
+      "format": "iri-reference",
+      "enum": [
+        "schema:RsvpResponseMaybe",
+        "schema:RsvpResponseNo",
+        "schema:RsvpResponseYes"
+      ],
+      "x-oold-ui-enum-titles": [
+        "RsvpResponseMaybe",
+        "RsvpResponseNo",
+        "RsvpResponseYes"
+      ]
+    }
+  }
+}

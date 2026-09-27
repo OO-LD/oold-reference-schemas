@@ -1,0 +1,48 @@
+{
+  "@context": [
+    "Intangible.schema.json",
+    {
+      "monthsOfExperience": {
+        "@id": "schema:monthsOfExperience",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Intangible.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "OccupationalExperienceRequirements.schema.json",
+  "x-oold-uuid": "5ef53235-9005-5f6c-9240-f5e862e36053",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/OccupationalExperienceRequirements",
+  "x-oold-instance-rdf-type": [
+    "schema:OccupationalExperienceRequirements"
+  ],
+  "title": "OccupationalExperienceRequirements",
+  "description": "Indicates employment-related experience requirements, e.g. [[monthsOfExperience]].",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:OccupationalExperienceRequirements"
+      ]
+    },
+    "monthsOfExperience": {
+      "title": "Months Of Experience",
+      "description": "Indicates the minimal number of months of experience required for a position.",
+      "type": "array",
+      "items": {
+        "$ref": "Number.schema.json"
+      }
+    }
+  }
+}

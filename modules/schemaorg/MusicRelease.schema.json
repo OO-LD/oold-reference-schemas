@@ -1,0 +1,130 @@
+{
+  "@context": [
+    "MusicPlaylist.schema.json",
+    {
+      "catalogNumber": {
+        "@id": "schema:catalogNumber",
+        "@container": "@set"
+      },
+      "creditedTo": {
+        "@id": "schema:creditedTo",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "duration": {
+        "@id": "schema:duration",
+        "@container": "@set"
+      },
+      "musicReleaseFormat": {
+        "@id": "schema:musicReleaseFormat",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "recordLabel": {
+        "@id": "schema:recordLabel",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "releaseOf": {
+        "@id": "schema:releaseOf",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "MusicPlaylist.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MusicRelease.schema.json",
+  "x-oold-uuid": "b98a9ab9-ab03-5447-9f72-332027257740",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/MusicRelease",
+  "x-oold-instance-rdf-type": [
+    "schema:MusicRelease"
+  ],
+  "title": "MusicRelease",
+  "description": "A MusicRelease is a specific release of a music album.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:MusicRelease"
+      ]
+    },
+    "catalogNumber": {
+      "title": "Catalog Number",
+      "description": "The catalog number for the release.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "creditedTo": {
+      "title": "Credited To",
+      "description": "The group the release is credited to if different than the byArtist. For example, Red and Blue is credited to \"Stefani Germanotta Band\", but by Lady Gaga.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "Organization.schema.json",
+          "Person.schema.json"
+        ]
+      }
+    },
+    "duration": {
+      "title": "Duration",
+      "description": "The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: QuantitativeValue [value-type]: QuantitativeValue -> StructuredValue -> Intangible -> Thing",
+        "anyOf": [
+          {
+            "$ref": "Duration.schema.json"
+          },
+          {
+            "$ref": "QuantitativeValue.schema.json"
+          }
+        ]
+      }
+    },
+    "musicReleaseFormat": {
+      "title": "Music Release Format",
+      "description": "Format of this release (the type of recording media used, i.e. compact disc, digital media, LP, etc.).",
+      "type": "array",
+      "items": {
+        "$ref": "MusicReleaseFormatType.schema.json#/$defs/member",
+        "x-oold-range": "MusicReleaseFormatType.schema.json"
+      }
+    },
+    "recordLabel": {
+      "title": "Record Label",
+      "description": "The label that issued the release.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Organization.schema.json"
+      }
+    },
+    "releaseOf": {
+      "title": "Release Of",
+      "description": "The album this is a release of.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "MusicAlbum.schema.json"
+      }
+    }
+  }
+}

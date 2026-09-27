@@ -1,0 +1,66 @@
+{
+  "@context": [
+    "Action.schema.json",
+    {
+      "fromLocation": {
+        "@id": "schema:fromLocation",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "toLocation": {
+        "@id": "schema:toLocation",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Action.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MoveAction.schema.json",
+  "x-oold-uuid": "07a037b7-1998-52b8-afa7-3cfc3839c588",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/MoveAction",
+  "x-oold-instance-rdf-type": [
+    "schema:MoveAction"
+  ],
+  "title": "MoveAction",
+  "description": "The act of an agent relocating to a place.\\n\\nRelated actions:\\n\\n* [[TransferAction]]: Unlike TransferAction, the subject of the move is a living Person or Organization rather than an inanimate object.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:MoveAction"
+      ]
+    },
+    "fromLocation": {
+      "title": "From Location",
+      "description": "A sub property of location. The original location of the object or the agent before the action.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Place.schema.json"
+      }
+    },
+    "toLocation": {
+      "title": "To Location",
+      "description": "A sub property of location. The final location of the object or the agent after the action.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Place.schema.json"
+      }
+    }
+  }
+}

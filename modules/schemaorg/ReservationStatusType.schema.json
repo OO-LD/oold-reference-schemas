@@ -1,0 +1,55 @@
+{
+  "@context": [
+    "StatusEnumeration.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "StatusEnumeration.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ReservationStatusType.schema.json",
+  "x-oold-uuid": "7a8b74fa-0948-539f-a3fd-d7f21701e85a",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/ReservationStatusType",
+  "x-oold-instance-rdf-type": [
+    "schema:ReservationStatusType"
+  ],
+  "title": "ReservationStatusType",
+  "description": "Enumerated status values for Reservation.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:ReservationStatusType"
+      ]
+    }
+  },
+  "$defs": {
+    "member": {
+      "title": "ReservationStatusType member",
+      "description": "One of the 4 member instances of ReservationStatusType.",
+      "type": "string",
+      "format": "iri-reference",
+      "enum": [
+        "schema:ReservationCancelled",
+        "schema:ReservationConfirmed",
+        "schema:ReservationHold",
+        "schema:ReservationPending"
+      ],
+      "x-oold-ui-enum-titles": [
+        "ReservationCancelled",
+        "ReservationConfirmed",
+        "ReservationHold",
+        "ReservationPending"
+      ]
+    }
+  }
+}

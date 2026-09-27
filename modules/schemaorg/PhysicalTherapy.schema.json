@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "MedicalTherapy.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "MedicalTherapy.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "PhysicalTherapy.schema.json",
+  "x-oold-uuid": "276963d2-8f29-5f0b-b6eb-f9c884c176ef",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/PhysicalTherapy",
+  "x-oold-instance-rdf-type": [
+    "schema:PhysicalTherapy"
+  ],
+  "title": "PhysicalTherapy",
+  "description": "A process of progressive physical care and rehabilitation aimed at improving a health condition.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:PhysicalTherapy"
+      ]
+    }
+  }
+}

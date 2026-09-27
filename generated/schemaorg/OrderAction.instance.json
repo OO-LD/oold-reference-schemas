@@ -1,0 +1,8 @@
+{
+  "$schema": "OrderAction.schema.json",
+  "@context": "OrderAction.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:OrderAction"
+  ]
+}

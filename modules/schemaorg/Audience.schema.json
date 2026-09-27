@@ -1,0 +1,63 @@
+{
+  "@context": [
+    "Intangible.schema.json",
+    {
+      "audienceType": {
+        "@id": "schema:audienceType",
+        "@container": "@set"
+      },
+      "geographicArea": {
+        "@id": "schema:geographicArea",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Intangible.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Audience.schema.json",
+  "x-oold-uuid": "1cebe259-c35b-5f38-86a9-463a856a9e4f",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Audience",
+  "x-oold-instance-rdf-type": [
+    "schema:Audience"
+  ],
+  "title": "Audience",
+  "description": "Intended audience for an item, i.e. the group for whom the item was created.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Audience"
+      ]
+    },
+    "audienceType": {
+      "title": "Audience Type",
+      "description": "The target group associated with a given audience (e.g. veterans, car owners, musicians, etc.).",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "geographicArea": {
+      "title": "Geographic Area",
+      "description": "The geographic area associated with the audience.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "AdministrativeArea.schema.json"
+      }
+    }
+  }
+}

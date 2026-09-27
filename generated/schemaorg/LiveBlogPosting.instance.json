@@ -1,0 +1,8 @@
+{
+  "$schema": "LiveBlogPosting.schema.json",
+  "@context": "LiveBlogPosting.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:LiveBlogPosting"
+  ]
+}

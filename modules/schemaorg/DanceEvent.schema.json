@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Event.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Event.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "DanceEvent.schema.json",
+  "x-oold-uuid": "ba2704e8-e289-5dee-841e-81db44f7af2b",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/DanceEvent",
+  "x-oold-instance-rdf-type": [
+    "schema:DanceEvent"
+  ],
+  "title": "DanceEvent",
+  "description": "Event type: A social dance.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:DanceEvent"
+      ]
+    }
+  }
+}

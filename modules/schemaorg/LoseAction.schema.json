@@ -1,0 +1,51 @@
+{
+  "@context": [
+    "AchieveAction.schema.json",
+    {
+      "winner": {
+        "@id": "schema:winner",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "AchieveAction.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "LoseAction.schema.json",
+  "x-oold-uuid": "b88c3783-c3d3-5ac7-b0d3-af03e71aa498",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/LoseAction",
+  "x-oold-instance-rdf-type": [
+    "schema:LoseAction"
+  ],
+  "title": "LoseAction",
+  "description": "The act of being defeated in a competitive activity.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:LoseAction"
+      ]
+    },
+    "winner": {
+      "title": "Winner",
+      "description": "A sub property of participant. The winner of the action.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Person.schema.json"
+      }
+    }
+  }
+}

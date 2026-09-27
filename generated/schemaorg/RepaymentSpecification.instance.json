@@ -1,0 +1,8 @@
+{
+  "$schema": "RepaymentSpecification.schema.json",
+  "@context": "RepaymentSpecification.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:RepaymentSpecification"
+  ]
+}

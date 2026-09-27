@@ -1,0 +1,8 @@
+{
+  "$schema": "CreativeWork.schema.json",
+  "@context": "CreativeWork.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:CreativeWork"
+  ]
+}

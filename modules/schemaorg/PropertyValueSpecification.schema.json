@@ -1,0 +1,183 @@
+{
+  "@context": [
+    "Intangible.schema.json",
+    {
+      "defaultValue": {
+        "@id": "schema:defaultValue",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "defaultValue_text": {
+        "@id": "schema:defaultValue",
+        "@container": "@set"
+      },
+      "maxValue": {
+        "@id": "schema:maxValue",
+        "@container": "@set"
+      },
+      "minValue": {
+        "@id": "schema:minValue",
+        "@container": "@set"
+      },
+      "multipleValues": {
+        "@id": "schema:multipleValues",
+        "@container": "@set"
+      },
+      "readonlyValue": {
+        "@id": "schema:readonlyValue",
+        "@container": "@set"
+      },
+      "stepValue": {
+        "@id": "schema:stepValue",
+        "@container": "@set"
+      },
+      "valueMaxLength": {
+        "@id": "schema:valueMaxLength",
+        "@container": "@set"
+      },
+      "valueMinLength": {
+        "@id": "schema:valueMinLength",
+        "@container": "@set"
+      },
+      "valueName": {
+        "@id": "schema:valueName",
+        "@container": "@set"
+      },
+      "valuePattern": {
+        "@id": "schema:valuePattern",
+        "@container": "@set"
+      },
+      "valueRequired": {
+        "@id": "schema:valueRequired",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Intangible.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "PropertyValueSpecification.schema.json",
+  "x-oold-uuid": "74bff0bb-8b70-543f-bf15-63c1f0ebf8ba",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/PropertyValueSpecification",
+  "x-oold-instance-rdf-type": [
+    "schema:PropertyValueSpecification"
+  ],
+  "title": "PropertyValueSpecification",
+  "description": "A Property value specification.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:PropertyValueSpecification"
+      ]
+    },
+    "defaultValue": {
+      "title": "Default Value",
+      "description": "The default value of the input.  For properties that expect a literal, the default is a literal value, for properties that expect an object, it's an ID reference to one of the current values.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Thing.schema.json"
+      }
+    },
+    "defaultValue_text": {
+      "title": "Default Value (text)",
+      "description": "The default value of the input.  For properties that expect a literal, the default is a literal value, for properties that expect an object, it's an ID reference to one of the current values.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "maxValue": {
+      "title": "Max Value",
+      "description": "The upper value of some characteristic or property.",
+      "type": "array",
+      "items": {
+        "$ref": "Number.schema.json"
+      }
+    },
+    "minValue": {
+      "title": "Min Value",
+      "description": "The lower value of some characteristic or property.",
+      "type": "array",
+      "items": {
+        "$ref": "Number.schema.json"
+      }
+    },
+    "multipleValues": {
+      "title": "Multiple Values",
+      "description": "Whether multiple values are allowed for the property.  Default is false.",
+      "type": "array",
+      "items": {
+        "$ref": "Boolean.schema.json"
+      }
+    },
+    "readonlyValue": {
+      "title": "Readonly Value",
+      "description": "Whether or not a property is mutable.  Default is false. Specifying this for a property that also has a value makes it act similar to a \"hidden\" input in an HTML form.",
+      "type": "array",
+      "items": {
+        "$ref": "Boolean.schema.json"
+      }
+    },
+    "stepValue": {
+      "title": "Step Value",
+      "description": "The stepValue attribute indicates the granularity that is expected (and required) of the value in a PropertyValueSpecification.",
+      "type": "array",
+      "items": {
+        "$ref": "Number.schema.json"
+      }
+    },
+    "valueMaxLength": {
+      "title": "Value Max Length",
+      "description": "Specifies the allowed range for number of characters in a literal value.",
+      "type": "array",
+      "items": {
+        "$ref": "Number.schema.json"
+      }
+    },
+    "valueMinLength": {
+      "title": "Value Min Length",
+      "description": "Specifies the minimum allowed range for number of characters in a literal value.",
+      "type": "array",
+      "items": {
+        "$ref": "Number.schema.json"
+      }
+    },
+    "valueName": {
+      "title": "Value Name",
+      "description": "Indicates the name of the PropertyValueSpecification to be used in URL templates and form encoding in a manner analogous to HTML's input@name.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "valuePattern": {
+      "title": "Value Pattern",
+      "description": "Specifies a regular expression for testing literal values according to the HTML spec.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "valueRequired": {
+      "title": "Value Required",
+      "description": "Whether the property must be filled in to complete the action.  Default is false.",
+      "type": "array",
+      "items": {
+        "$ref": "Boolean.schema.json"
+      }
+    }
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "@context": [
+    "PriceSpecification.schema.json",
+    {
+      "priceComponent": {
+        "@id": "schema:priceComponent",
+        "@container": "@set"
+      },
+      "priceType": {
+        "@id": "schema:priceType",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "priceType_text": {
+        "@id": "schema:priceType",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "PriceSpecification.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "CompoundPriceSpecification.schema.json",
+  "x-oold-uuid": "b8fa342d-3896-5496-9605-caf5874a31ec",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/CompoundPriceSpecification",
+  "x-oold-instance-rdf-type": [
+    "schema:CompoundPriceSpecification"
+  ],
+  "title": "CompoundPriceSpecification",
+  "description": "A compound price specification is one that bundles multiple prices that all apply in combination for different dimensions of consumption. Use the name property of the attached unit price specification for indicating the dimension of a price component (e.g. \"electricity\" or \"final cleaning\").",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:CompoundPriceSpecification"
+      ]
+    },
+    "priceComponent": {
+      "title": "Price Component",
+      "description": "This property links to all [[UnitPriceSpecification]] nodes that apply in parallel for the [[CompoundPriceSpecification]] node.",
+      "type": "array",
+      "items": {
+        "$ref": "PriceSpecification.schema.json"
+      }
+    },
+    "priceType": {
+      "title": "Price Type",
+      "description": "Defines the type of a price specified for an offered product, for example a list price, a (temporary) sale price or a manufacturer suggested retail price. If multiple prices are specified for an offer the [[priceType]] property can be used to identify the type of each such specified price. The value of priceType can be specified as a value from enumeration PriceTypeEnumeration or, a UN/EDIFACT 5387 code, or as a free form text string for price types that are not already predefined in PriceTypeEnumeration.",
+      "type": "array",
+      "items": {
+        "$ref": "PriceTypeEnumeration.schema.json#/$defs/member",
+        "x-oold-range": "PriceTypeEnumeration.schema.json"
+      }
+    },
+    "priceType_text": {
+      "title": "Price Type (text)",
+      "description": "Defines the type of a price specified for an offered product, for example a list price, a (temporary) sale price or a manufacturer suggested retail price. If multiple prices are specified for an offer the [[priceType]] property can be used to identify the type of each such specified price. The value of priceType can be specified as a value from enumeration PriceTypeEnumeration or, a UN/EDIFACT 5387 code, or as a free form text string for price types that are not already predefined in PriceTypeEnumeration.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    }
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "@context": [
+    "Enumeration.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Enumeration.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ReturnMethodEnumeration.schema.json",
+  "x-oold-uuid": "af6d70b9-110d-5e03-a693-623621e2f34b",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/ReturnMethodEnumeration",
+  "x-oold-instance-rdf-type": [
+    "schema:ReturnMethodEnumeration"
+  ],
+  "title": "ReturnMethodEnumeration",
+  "description": "Enumerates several types of product return methods.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:ReturnMethodEnumeration"
+      ]
+    }
+  },
+  "$defs": {
+    "member": {
+      "title": "ReturnMethodEnumeration member",
+      "description": "One of the 4 member instances of ReturnMethodEnumeration.",
+      "type": "string",
+      "format": "iri-reference",
+      "enum": [
+        "schema:KeepProduct",
+        "schema:ReturnAtKiosk",
+        "schema:ReturnByMail",
+        "schema:ReturnInStore"
+      ],
+      "x-oold-ui-enum-titles": [
+        "KeepProduct",
+        "ReturnAtKiosk",
+        "ReturnByMail",
+        "ReturnInStore"
+      ]
+    }
+  }
+}

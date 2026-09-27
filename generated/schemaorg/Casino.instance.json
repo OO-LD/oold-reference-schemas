@@ -1,0 +1,8 @@
+{
+  "$schema": "Casino.schema.json",
+  "@context": "Casino.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:Casino"
+  ]
+}

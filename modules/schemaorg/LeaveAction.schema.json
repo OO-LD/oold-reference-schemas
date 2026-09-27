@@ -1,0 +1,51 @@
+{
+  "@context": [
+    "InteractAction.schema.json",
+    {
+      "event": {
+        "@id": "schema:event",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "InteractAction.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "LeaveAction.schema.json",
+  "x-oold-uuid": "0798f0a5-2583-559e-bb20-67cbb2e1e4a1",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/LeaveAction",
+  "x-oold-instance-rdf-type": [
+    "schema:LeaveAction"
+  ],
+  "title": "LeaveAction",
+  "description": "An agent leaves an event / group with participants/friends at a location.\\n\\nRelated actions:\\n\\n* [[JoinAction]]: The antonym of LeaveAction.\\n* [[UnRegisterAction]]: Unlike UnRegisterAction, LeaveAction implies leaving a group/team of people rather than a service.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:LeaveAction"
+      ]
+    },
+    "event": {
+      "title": "Event",
+      "description": "Upcoming or past event associated with this place, organization, or action.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Event.schema.json"
+      }
+    }
+  }
+}

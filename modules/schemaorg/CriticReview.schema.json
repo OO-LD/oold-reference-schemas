@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Review.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Review.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "CriticReview.schema.json",
+  "x-oold-uuid": "54a79c19-082f-504b-a4d2-0272cfddd35d",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/CriticReview",
+  "x-oold-instance-rdf-type": [
+    "schema:CriticReview"
+  ],
+  "title": "CriticReview",
+  "description": "A [[CriticReview]] is a more specialized form of Review written or published by a source that is recognized for its reviewing activities. These can include online columns, travel and food guides, TV and radio shows, blogs and other independent Web sites. [[CriticReview]]s are typically more in-depth and professionally written. For simpler, casually written user/visitor/viewer/customer reviews, it is more appropriate to use the [[UserReview]] type. Review aggregator sites such as Metacritic already separate out the site's user reviews from selected critic reviews that originate from third-party sources.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:CriticReview"
+      ]
+    }
+  }
+}

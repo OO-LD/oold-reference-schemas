@@ -1,0 +1,48 @@
+{
+  "@context": [
+    "Action.schema.json",
+    {
+      "query": {
+        "@id": "schema:query",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Action.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "SearchAction.schema.json",
+  "x-oold-uuid": "9a69f51f-70ce-5b11-9c25-1fec4a97cb78",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/SearchAction",
+  "x-oold-instance-rdf-type": [
+    "schema:SearchAction"
+  ],
+  "title": "SearchAction",
+  "description": "The act of searching for an object.\\n\\nRelated actions:\\n\\n* [[FindAction]]: SearchAction generally leads to a FindAction, but not necessarily.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:SearchAction"
+      ]
+    },
+    "query": {
+      "title": "Query",
+      "description": "A sub property of instrument. The query used on this action.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    }
+  }
+}

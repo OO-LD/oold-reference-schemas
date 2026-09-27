@@ -1,0 +1,50 @@
+{
+  "@context": [
+    "MedicalStudy.schema.json",
+    {
+      "trialDesign": {
+        "@id": "schema:trialDesign",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "MedicalStudy.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MedicalTrial.schema.json",
+  "x-oold-uuid": "02380c34-71cd-5ca6-807d-89a1c21ea4fe",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/MedicalTrial",
+  "x-oold-instance-rdf-type": [
+    "schema:MedicalTrial"
+  ],
+  "title": "MedicalTrial",
+  "description": "A medical trial is a type of medical study that uses a scientific process to compare the safety and efficacy of medical therapies or medical procedures. In general, medical trials are controlled and subjects are allocated at random to the different treatment and/or control groups.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:MedicalTrial"
+      ]
+    },
+    "trialDesign": {
+      "title": "Trial Design",
+      "description": "Specifics about the trial design (enumerated).",
+      "type": "array",
+      "items": {
+        "$ref": "MedicalTrialDesign.schema.json#/$defs/member",
+        "x-oold-range": "MedicalTrialDesign.schema.json"
+      }
+    }
+  }
+}

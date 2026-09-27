@@ -1,0 +1,8 @@
+{
+  "$schema": "GiveAction.schema.json",
+  "@context": "GiveAction.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:GiveAction"
+  ]
+}

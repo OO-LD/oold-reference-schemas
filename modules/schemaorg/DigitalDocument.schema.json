@@ -1,0 +1,51 @@
+{
+  "@context": [
+    "CreativeWork.schema.json",
+    {
+      "hasDigitalDocumentPermission": {
+        "@id": "schema:hasDigitalDocumentPermission",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "CreativeWork.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "DigitalDocument.schema.json",
+  "x-oold-uuid": "69104293-c9b0-54d7-a041-7f42fd81da56",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/DigitalDocument",
+  "x-oold-instance-rdf-type": [
+    "schema:DigitalDocument"
+  ],
+  "title": "DigitalDocument",
+  "description": "An electronic file or document.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:DigitalDocument"
+      ]
+    },
+    "hasDigitalDocumentPermission": {
+      "title": "Has Digital Document Permission",
+      "description": "A permission related to the access to this document (e.g. permission to read or write an electronic document). For a public document, specify a grantee with an Audience with audienceType equal to \"public\".",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "DigitalDocumentPermission.schema.json"
+      }
+    }
+  }
+}

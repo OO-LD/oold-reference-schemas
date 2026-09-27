@@ -1,0 +1,71 @@
+{
+  "@context": [
+    "GeoShape.schema.json",
+    {
+      "geoMidpoint": {
+        "@id": "schema:geoMidpoint",
+        "@container": "@set"
+      },
+      "geoRadius": {
+        "@id": "schema:geoRadius",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "GeoShape.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "GeoCircle.schema.json",
+  "x-oold-uuid": "2712784a-7d3e-5507-86ca-1cf91c836313",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/GeoCircle",
+  "x-oold-instance-rdf-type": [
+    "schema:GeoCircle"
+  ],
+  "title": "GeoCircle",
+  "description": "A GeoCircle is a GeoShape representing a circular geographic area. As it is a GeoShape\n          it provides the simple textual property 'circle', but also allows the combination of postalCode alongside geoRadius.\n          The center of the circle can be indicated via the 'geoMidpoint' property, or more approximately using 'address', 'postalCode'.\n       ",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:GeoCircle"
+      ]
+    },
+    "geoMidpoint": {
+      "title": "Geo Midpoint",
+      "description": "Indicates the GeoCoordinates at the centre of a GeoShape, e.g. GeoCircle.",
+      "type": "array",
+      "items": {
+        "$ref": "GeoCoordinates.schema.json"
+      }
+    },
+    "geoRadius": {
+      "title": "Geo Radius",
+      "description": "Indicates the approximate radius of a GeoCircle (metres unless indicated otherwise via Distance notation).",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: Distance [value-type]: Distance -> Quantity",
+        "anyOf": [
+          {
+            "$ref": "Number.schema.json"
+          },
+          {
+            "$ref": "Text.schema.json"
+          },
+          {
+            "$ref": "Distance.schema.json"
+          }
+        ]
+      }
+    }
+  }
+}

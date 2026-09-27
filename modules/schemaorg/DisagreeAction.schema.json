@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "ReactAction.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "ReactAction.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "DisagreeAction.schema.json",
+  "x-oold-uuid": "490d45a3-92c5-5e51-a3b2-0bc6a8d5381b",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/DisagreeAction",
+  "x-oold-instance-rdf-type": [
+    "schema:DisagreeAction"
+  ],
+  "title": "DisagreeAction",
+  "description": "The act of expressing a difference of opinion with the object. An agent disagrees to/about an object (a proposition, topic or theme) with participants.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:DisagreeAction"
+      ]
+    }
+  }
+}

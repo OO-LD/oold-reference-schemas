@@ -1,0 +1,203 @@
+{
+  "@context": [
+    "ConstraintNode.schema.json",
+    {
+      "measuredProperty": {
+        "@id": "schema:measuredProperty",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "measurementDenominator": {
+        "@id": "schema:measurementDenominator",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "measurementMethod": {
+        "@id": "schema:measurementMethod",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "measurementMethod_text": {
+        "@id": "schema:measurementMethod",
+        "@container": "@set"
+      },
+      "measurementQualifier": {
+        "@id": "schema:measurementQualifier",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "measurementTechnique": {
+        "@id": "schema:measurementTechnique",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "measurementTechnique_text": {
+        "@id": "schema:measurementTechnique",
+        "@container": "@set"
+      },
+      "populationType": {
+        "@id": "schema:populationType",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "statType": {
+        "@id": "schema:statType",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "statType_text": {
+        "@id": "schema:statType",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "ConstraintNode.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "StatisticalVariable.schema.json",
+  "x-oold-uuid": "1373b5da-e128-56da-8298-cbcd82808226",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/StatisticalVariable",
+  "x-oold-instance-rdf-type": [
+    "schema:StatisticalVariable"
+  ],
+  "title": "StatisticalVariable",
+  "description": "[[StatisticalVariable]] represents any type of statistical metric that can be measured at a place and time. The usage pattern for [[StatisticalVariable]] is typically expressed using [[Observation]] with an explicit [[populationType]], which is a type, typically drawn from Schema.org. Each [[StatisticalVariable]] is marked as a [[ConstraintNode]], meaning that some properties (those listed using [[constraintProperty]]) serve in this setting solely to define the statistical variable rather than literally describe a specific person, place or thing. For example, a [[StatisticalVariable]] Median_Height_Person_Female representing the median height of women, could be written as follows: the population type is [[Person]]; the measuredProperty [[height]]; the [[statType]] [[median]]; the [[gender]] [[Female]]. It is important to note that there are many kinds of scientific quantitative observation which are not fully, perfectly or unambiguously described following this pattern, or with solely Schema.org terminology. The approach taken here is designed to allow partial, incremental or minimal description of [[StatisticalVariable]]s, and the use of detailed sets of entity and property IDs from external repositories. The [[measurementMethod]], [[unitCode]] and [[unitText]] properties can also be used to clarify the specific nature and notation of an observed measurement. ",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:StatisticalVariable"
+      ]
+    },
+    "measuredProperty": {
+      "title": "Measured Property",
+      "description": "The measuredProperty of an [[Observation]], typically via its [[StatisticalVariable]]. There are various kinds of applicable [[Property]]: a schema.org property, a property from other RDF-compatible systems, e.g. W3C RDF Data Cube, Data Commons, Wikidata, or schema.org extensions such as [GS1's](https://www.gs1.org/voc/?show=properties).",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Property.schema.json"
+      }
+    },
+    "measurementDenominator": {
+      "title": "Measurement Denominator",
+      "description": "Identifies the denominator variable when an observation represents a ratio or percentage.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "StatisticalVariable.schema.json"
+      }
+    },
+    "measurementMethod": {
+      "title": "Measurement Method",
+      "description": "A subproperty of [[measurementTechnique]] that can be used for specifying specific methods, in particular via [[MeasurementMethodEnum]].",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "DefinedTerm.schema.json",
+          "MeasurementMethodEnum.schema.json"
+        ]
+      }
+    },
+    "measurementMethod_text": {
+      "title": "Measurement Method (text)",
+      "description": "A subproperty of [[measurementTechnique]] that can be used for specifying specific methods, in particular via [[MeasurementMethodEnum]].",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Text.schema.json"
+          },
+          {
+            "$ref": "URL.schema.json"
+          }
+        ]
+      }
+    },
+    "measurementQualifier": {
+      "title": "Measurement Qualifier",
+      "description": "Provides additional qualification to an observation. For example, a GDP observation measures the Nominal value.",
+      "type": "array",
+      "items": {
+        "$ref": "Enumeration.schema.json#/$defs/member",
+        "x-oold-range": "Enumeration.schema.json"
+      }
+    },
+    "measurementTechnique": {
+      "title": "Measurement Technique",
+      "description": "A technique, method or technology used in an [[Observation]], [[StatisticalVariable]] or [[Dataset]] (or [[DataDownload]], [[DataCatalog]]), corresponding to the method used for measuring the corresponding variable(s) (for datasets, described using [[variableMeasured]]; for [[Observation]], a [[StatisticalVariable]]). Often but not necessarily each [[variableMeasured]] will have an explicit representation as (or mapping to) an property such as those defined in Schema.org, or other RDF vocabularies and \"knowledge graphs\". In that case the subproperty of [[variableMeasured]] called [[measuredProperty]] is applicable.\n    \nThe [[measurementTechnique]] property helps when extra clarification is needed about how a [[measuredProperty]] was measured. This is oriented towards scientific and scholarly dataset publication but may have broader applicability; it is not intended as a full representation of measurement, but can often serve as a high level summary for dataset discovery. \n\nFor example, if [[variableMeasured]] is: molecule concentration, [[measurementTechnique]] could be: \"mass spectrometry\" or \"nmr spectroscopy\" or \"colorimetry\" or \"immunofluorescence\". If the [[variableMeasured]] is \"depression rating\", the [[measurementTechnique]] could be \"Zung Scale\" or \"HAM-D\" or \"Beck Depression Inventory\". \n\nIf there are several [[variableMeasured]] properties recorded for some given data object, use a [[PropertyValue]] for each [[variableMeasured]] and attach the corresponding [[measurementTechnique]]. The value can also be from an enumeration, organized as a [[MeasurementMethodEnum]].",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "DefinedTerm.schema.json",
+          "MeasurementMethodEnum.schema.json"
+        ]
+      }
+    },
+    "measurementTechnique_text": {
+      "title": "Measurement Technique (text)",
+      "description": "A technique, method or technology used in an [[Observation]], [[StatisticalVariable]] or [[Dataset]] (or [[DataDownload]], [[DataCatalog]]), corresponding to the method used for measuring the corresponding variable(s) (for datasets, described using [[variableMeasured]]; for [[Observation]], a [[StatisticalVariable]]). Often but not necessarily each [[variableMeasured]] will have an explicit representation as (or mapping to) an property such as those defined in Schema.org, or other RDF vocabularies and \"knowledge graphs\". In that case the subproperty of [[variableMeasured]] called [[measuredProperty]] is applicable.\n    \nThe [[measurementTechnique]] property helps when extra clarification is needed about how a [[measuredProperty]] was measured. This is oriented towards scientific and scholarly dataset publication but may have broader applicability; it is not intended as a full representation of measurement, but can often serve as a high level summary for dataset discovery. \n\nFor example, if [[variableMeasured]] is: molecule concentration, [[measurementTechnique]] could be: \"mass spectrometry\" or \"nmr spectroscopy\" or \"colorimetry\" or \"immunofluorescence\". If the [[variableMeasured]] is \"depression rating\", the [[measurementTechnique]] could be \"Zung Scale\" or \"HAM-D\" or \"Beck Depression Inventory\". \n\nIf there are several [[variableMeasured]] properties recorded for some given data object, use a [[PropertyValue]] for each [[variableMeasured]] and attach the corresponding [[measurementTechnique]]. The value can also be from an enumeration, organized as a [[MeasurementMethodEnum]].",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Text.schema.json"
+          },
+          {
+            "$ref": "URL.schema.json"
+          }
+        ]
+      }
+    },
+    "populationType": {
+      "title": "Population Type",
+      "description": "Indicates the populationType common to all members of a [[StatisticalPopulation]] or all cases within the scope of a [[StatisticalVariable]].",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Class.schema.json"
+      }
+    },
+    "statType": {
+      "title": "Stat Type",
+      "description": "Indicates the kind of statistic represented by a [[StatisticalVariable]], e.g. mean, count etc. The value of statType is a property, either from within Schema.org (e.g. [[median]], [[marginOfError]], [[maxValue]], [[minValue]]) or from other compatible (e.g. RDF) systems such as DataCommons.org or Wikidata.org. ",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Property.schema.json"
+      }
+    },
+    "statType_text": {
+      "title": "Stat Type (text)",
+      "description": "Indicates the kind of statistic represented by a [[StatisticalVariable]], e.g. mean, count etc. The value of statType is a property, either from within Schema.org (e.g. [[median]], [[marginOfError]], [[maxValue]], [[minValue]]) or from other compatible (e.g. RDF) systems such as DataCommons.org or Wikidata.org. ",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Text.schema.json"
+          },
+          {
+            "$ref": "URL.schema.json"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "@context": [
+    "BioChemEntity.schema.json",
+    {
+      "alternativeOf": {
+        "@id": "schema:alternativeOf",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "encodesBioChemEntity": {
+        "@id": "schema:encodesBioChemEntity",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "expressedIn": {
+        "@id": "schema:expressedIn",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "hasBioPolymerSequence": {
+        "@id": "schema:hasBioPolymerSequence",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "BioChemEntity.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Gene.schema.json",
+  "x-oold-uuid": "3312901f-6fca-5d05-9f8d-0e87bac06ca5",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Gene",
+  "x-oold-instance-rdf-type": [
+    "schema:Gene"
+  ],
+  "title": "Gene",
+  "description": "A discrete unit of inheritance which affects one or more biological traits (Source: [https://en.wikipedia.org/wiki/Gene](https://en.wikipedia.org/wiki/Gene)). Examples include FOXP2 (Forkhead box protein P2), SCARNA21 (small Cajal body-specific RNA 21), A- (agouti genotype).",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Gene"
+      ]
+    },
+    "alternativeOf": {
+      "title": "Alternative Of",
+      "description": "Another gene which is a variation of this one.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Gene.schema.json"
+      }
+    },
+    "encodesBioChemEntity": {
+      "title": "Encodes Bio Chem Entity",
+      "description": "Another BioChemEntity encoded by this one. ",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "BioChemEntity.schema.json"
+      }
+    },
+    "expressedIn": {
+      "title": "Expressed In",
+      "description": "Tissue, organ, biological sample, etc in which activity of this gene has been observed experimentally. For example brain, digestive system.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "AnatomicalStructure.schema.json",
+          "AnatomicalSystem.schema.json",
+          "BioChemEntity.schema.json",
+          "DefinedTerm.schema.json"
+        ]
+      }
+    },
+    "hasBioPolymerSequence": {
+      "title": "Has Bio Polymer Sequence",
+      "description": "A symbolic representation of a BioChemEntity. For example, a nucleotide sequence of a Gene or an amino acid sequence of a Protein.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    }
+  }
+}

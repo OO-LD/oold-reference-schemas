@@ -1,0 +1,54 @@
+{
+  "@context": [
+    "Legislation.schema.json",
+    "MediaObject.schema.json",
+    {
+      "legislationLegalValue": {
+        "@id": "schema:legislationLegalValue",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Legislation.schema.json"
+    },
+    {
+      "$ref": "MediaObject.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "LegislationObject.schema.json",
+  "x-oold-uuid": "fbc312d3-510a-52de-bbb8-b985e945dca7",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/LegislationObject",
+  "x-oold-instance-rdf-type": [
+    "schema:LegislationObject"
+  ],
+  "title": "LegislationObject",
+  "description": "A specific object or file containing a Legislation. Note that the same Legislation can be published in multiple files. For example, a digitally signed PDF, a plain PDF and an HTML version.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:LegislationObject"
+      ]
+    },
+    "legislationLegalValue": {
+      "title": "Legislation Legal Value",
+      "description": "The legal value of this legislation file. The same legislation can be written in multiple files with different legal values. Typically a digitally signed PDF have a \"stronger\" legal value than the HTML file of the same act.",
+      "type": "array",
+      "items": {
+        "$ref": "LegalValueLevel.schema.json#/$defs/member",
+        "x-oold-range": "LegalValueLevel.schema.json"
+      }
+    }
+  }
+}

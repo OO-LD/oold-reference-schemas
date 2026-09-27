@@ -1,0 +1,8 @@
+{
+  "$schema": "MeasurementMethodEnum.schema.json",
+  "@context": "MeasurementMethodEnum.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:MeasurementMethodEnum"
+  ]
+}

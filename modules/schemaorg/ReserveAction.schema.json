@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "PlanAction.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "PlanAction.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ReserveAction.schema.json",
+  "x-oold-uuid": "bc81fc7f-cfdf-5ca3-bfc9-0328610aad66",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/ReserveAction",
+  "x-oold-instance-rdf-type": [
+    "schema:ReserveAction"
+  ],
+  "title": "ReserveAction",
+  "description": "Reserving a concrete object.\\n\\nRelated actions:\\n\\n* [[ScheduleAction]]: Unlike ScheduleAction, ReserveAction reserves concrete objects (e.g. a table, a hotel) towards a time slot / spatial allocation.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:ReserveAction"
+      ]
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "$schema": "ApprovedIndication.schema.json",
+  "@context": "ApprovedIndication.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:ApprovedIndication"
+  ]
+}

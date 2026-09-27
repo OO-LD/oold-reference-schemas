@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Organization.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Organization.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "GovernmentOrganization.schema.json",
+  "x-oold-uuid": "811002b0-123a-502c-ab89-0e9b374e8f54",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/GovernmentOrganization",
+  "x-oold-instance-rdf-type": [
+    "schema:GovernmentOrganization"
+  ],
+  "title": "GovernmentOrganization",
+  "description": "A governmental organization or agency.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:GovernmentOrganization"
+      ]
+    }
+  }
+}

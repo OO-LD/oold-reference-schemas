@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "DoseSchedule.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "DoseSchedule.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "RecommendedDoseSchedule.schema.json",
+  "x-oold-uuid": "06b58331-027e-5d8f-b0a0-4448cf308958",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/RecommendedDoseSchedule",
+  "x-oold-instance-rdf-type": [
+    "schema:RecommendedDoseSchedule"
+  ],
+  "title": "RecommendedDoseSchedule",
+  "description": "A recommended dosing schedule for a drug or supplement as prescribed or recommended by an authority or by the drug/supplement's manufacturer. Capture the recommending authority in the recognizingAuthority property of MedicalEntity.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:RecommendedDoseSchedule"
+      ]
+    }
+  }
+}

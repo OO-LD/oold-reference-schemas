@@ -1,0 +1,18 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Number.schema.json",
+  "x-oold-uuid": "320faaf8-8838-5904-9e40-847c1a3c2907",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Number",
+  "x-oold-instance-rdf-type": [
+    "schema:Number"
+  ],
+  "title": "Number",
+  "description": "Data type: Number.",
+  "type": "number"
+}

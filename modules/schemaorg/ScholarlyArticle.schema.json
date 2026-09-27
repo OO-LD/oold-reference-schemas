@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Article.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Article.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ScholarlyArticle.schema.json",
+  "x-oold-uuid": "704b5394-344a-551f-ba2e-5176f11424b4",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/ScholarlyArticle",
+  "x-oold-instance-rdf-type": [
+    "schema:ScholarlyArticle"
+  ],
+  "title": "ScholarlyArticle",
+  "description": "A scholarly article.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:ScholarlyArticle"
+      ]
+    }
+  }
+}

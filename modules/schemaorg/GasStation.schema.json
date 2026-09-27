@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "AutomotiveBusiness.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "AutomotiveBusiness.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "GasStation.schema.json",
+  "x-oold-uuid": "dda639f7-c834-5e61-a428-1867df09afe9",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/GasStation",
+  "x-oold-instance-rdf-type": [
+    "schema:GasStation"
+  ],
+  "title": "GasStation",
+  "description": "A gas station.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:GasStation"
+      ]
+    }
+  }
+}

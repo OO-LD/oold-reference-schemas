@@ -1,0 +1,66 @@
+{
+  "@context": [
+    "CreativeWork.schema.json",
+    {
+      "associatedMedia": {
+        "@id": "schema:associatedMedia",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "tocEntry": {
+        "@id": "schema:tocEntry",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "CreativeWork.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "HyperToc.schema.json",
+  "x-oold-uuid": "82d1f907-83c3-5304-bec7-662dc1418f9a",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/HyperToc",
+  "x-oold-instance-rdf-type": [
+    "schema:HyperToc"
+  ],
+  "title": "HyperToc",
+  "description": "A HyperToc represents a hypertext table of contents for complex media objects, such as [[VideoObject]], [[AudioObject]]. Items in the table of contents are indicated using the [[tocEntry]] property, and typed [[HyperTocEntry]]. For cases where the same larger work is split into multiple files, [[associatedMedia]] can be used on individual [[HyperTocEntry]] items.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:HyperToc"
+      ]
+    },
+    "associatedMedia": {
+      "title": "Associated Media",
+      "description": "A media object that encodes this CreativeWork. This property is a synonym for encoding.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "MediaObject.schema.json"
+      }
+    },
+    "tocEntry": {
+      "title": "Toc Entry",
+      "description": "Indicates a [[HyperTocEntry]] in a [[HyperToc]].",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "HyperTocEntry.schema.json"
+      }
+    }
+  }
+}

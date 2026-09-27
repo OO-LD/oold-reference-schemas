@@ -1,0 +1,124 @@
+{
+  "@context": [
+    "Event.schema.json",
+    {
+      "assesses": {
+        "@id": "schema:assesses",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "assesses_text": {
+        "@id": "schema:assesses",
+        "@container": "@set"
+      },
+      "educationalLevel": {
+        "@id": "schema:educationalLevel",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "educationalLevel_text": {
+        "@id": "schema:educationalLevel",
+        "@container": "@set"
+      },
+      "teaches": {
+        "@id": "schema:teaches",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "teaches_text": {
+        "@id": "schema:teaches",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Event.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "EducationEvent.schema.json",
+  "x-oold-uuid": "7f1ef8a8-cd5b-58c6-9793-9fe7942a567a",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/EducationEvent",
+  "x-oold-instance-rdf-type": [
+    "schema:EducationEvent"
+  ],
+  "title": "EducationEvent",
+  "description": "Event type: Education event.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:EducationEvent"
+      ]
+    },
+    "assesses": {
+      "title": "Assesses",
+      "description": "The item being described is intended to assess the competency or learning outcome defined by the referenced term.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "DefinedTerm.schema.json"
+      }
+    },
+    "assesses_text": {
+      "title": "Assesses (text)",
+      "description": "The item being described is intended to assess the competency or learning outcome defined by the referenced term.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "educationalLevel": {
+      "title": "Educational Level",
+      "description": "The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "DefinedTerm.schema.json"
+      }
+    },
+    "educationalLevel_text": {
+      "title": "Educational Level (text)",
+      "description": "The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Text.schema.json"
+          },
+          {
+            "$ref": "URL.schema.json"
+          }
+        ]
+      }
+    },
+    "teaches": {
+      "title": "Teaches",
+      "description": "The item being described is intended to help a person learn the competency or learning outcome defined by the referenced term.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "DefinedTerm.schema.json"
+      }
+    },
+    "teaches_text": {
+      "title": "Teaches (text)",
+      "description": "The item being described is intended to help a person learn the competency or learning outcome defined by the referenced term.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    }
+  }
+}

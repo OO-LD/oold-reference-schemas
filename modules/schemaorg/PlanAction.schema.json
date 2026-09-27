@@ -1,0 +1,55 @@
+{
+  "@context": [
+    "OrganizeAction.schema.json",
+    {
+      "scheduledTime": {
+        "@id": "schema:scheduledTime",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "OrganizeAction.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "PlanAction.schema.json",
+  "x-oold-uuid": "887148f7-6b23-5449-b25d-c8036d2cb851",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/PlanAction",
+  "x-oold-instance-rdf-type": [
+    "schema:PlanAction"
+  ],
+  "title": "PlanAction",
+  "description": "The act of planning the execution of an event/task/action/reservation/plan to a future date.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:PlanAction"
+      ]
+    },
+    "scheduledTime": {
+      "title": "Scheduled Time",
+      "description": "The time the object is scheduled to.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Date.schema.json"
+          },
+          {
+            "$ref": "DateTime.schema.json"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "BodyOfWater.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "BodyOfWater.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "LakeBodyOfWater.schema.json",
+  "x-oold-uuid": "39f2c03a-7ccd-5ea0-be7e-3cb6556e91c1",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/LakeBodyOfWater",
+  "x-oold-instance-rdf-type": [
+    "schema:LakeBodyOfWater"
+  ],
+  "title": "LakeBodyOfWater",
+  "description": "A lake (for example, Lake Pontrachain).",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:LakeBodyOfWater"
+      ]
+    }
+  }
+}

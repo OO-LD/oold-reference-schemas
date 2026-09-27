@@ -1,0 +1,111 @@
+{
+  "@context": [
+    "CreativeWork.schema.json",
+    {
+      "artist": {
+        "@id": "schema:artist",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "colorist": {
+        "@id": "schema:colorist",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "inker": {
+        "@id": "schema:inker",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "letterer": {
+        "@id": "schema:letterer",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "penciler": {
+        "@id": "schema:penciler",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "CreativeWork.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ComicStory.schema.json",
+  "x-oold-uuid": "bb291996-c79f-5c1f-834a-69207b5140f1",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/ComicStory",
+  "x-oold-instance-rdf-type": [
+    "schema:ComicStory"
+  ],
+  "title": "ComicStory",
+  "description": "The term \"story\" is any indivisible, re-printable\n    \tunit of a comic, including the interior stories, covers, and backmatter. Most\n    \tcomics have at least two stories: a cover (ComicCoverArt) and an interior story.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:ComicStory"
+      ]
+    },
+    "artist": {
+      "title": "Artist",
+      "description": "The primary artist for a work\n    \tin a medium other than pencils or digital line art--for example, if the\n    \tprimary artwork is done in watercolors or digital paints.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Person.schema.json"
+      }
+    },
+    "colorist": {
+      "title": "Colorist",
+      "description": "The individual who adds color to inked drawings.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Person.schema.json"
+      }
+    },
+    "inker": {
+      "title": "Inker",
+      "description": "The individual who traces over the pencil drawings in ink after pencils are complete.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Person.schema.json"
+      }
+    },
+    "letterer": {
+      "title": "Letterer",
+      "description": "The individual who adds lettering, including speech balloons and sound effects, to artwork.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Person.schema.json"
+      }
+    },
+    "penciler": {
+      "title": "Penciler",
+      "description": "The individual who draws the primary narrative artwork.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Person.schema.json"
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "$schema": "WPFooter.schema.json",
+  "@context": "WPFooter.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:WPFooter"
+  ]
+}

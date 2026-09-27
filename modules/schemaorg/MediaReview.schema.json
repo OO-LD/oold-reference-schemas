@@ -1,0 +1,87 @@
+{
+  "@context": [
+    "Review.schema.json",
+    {
+      "mediaAuthenticityCategory": {
+        "@id": "schema:mediaAuthenticityCategory",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "originalMediaContextDescription": {
+        "@id": "schema:originalMediaContextDescription",
+        "@container": "@set"
+      },
+      "originalMediaLink": {
+        "@id": "schema:originalMediaLink",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Review.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MediaReview.schema.json",
+  "x-oold-uuid": "272ed2f1-f067-5741-9b41-5672ae91b482",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/MediaReview",
+  "x-oold-instance-rdf-type": [
+    "schema:MediaReview"
+  ],
+  "title": "MediaReview",
+  "description": "A [[MediaReview]] is a more specialized form of Review dedicated to the evaluation of media content online, typically in the context of fact-checking and misinformation.\n    For more general reviews of media in the broader sense, use [[UserReview]], [[CriticReview]] or other [[Review]] types. This definition is\n    a work in progress. While the [[MediaManipulationRatingEnumeration]] list reflects significant community review amongst fact-checkers and others working\n    to combat misinformation, the specific structures for representing media objects, their versions and publication context, are still evolving. Similarly, best practices for the relationship between [[MediaReview]] and [[ClaimReview]] markup have not yet been finalized.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:MediaReview"
+      ]
+    },
+    "mediaAuthenticityCategory": {
+      "title": "Media Authenticity Category",
+      "description": "Indicates a MediaManipulationRatingEnumeration classification of a media object (in the context of how it was published or shared).",
+      "type": "array",
+      "items": {
+        "$ref": "MediaManipulationRatingEnumeration.schema.json#/$defs/member",
+        "x-oold-range": "MediaManipulationRatingEnumeration.schema.json"
+      }
+    },
+    "originalMediaContextDescription": {
+      "title": "Original Media Context Description",
+      "description": "Describes, in a [[MediaReview]] when dealing with [[DecontextualizedContent]], background information that can contribute to better interpretation of the [[MediaObject]].",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "originalMediaLink": {
+      "title": "Original Media Link",
+      "description": "Link to the page containing an original version of the content, or directly to an online copy of the original [[MediaObject]] content, e.g. video file.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "URL.schema.json"
+          },
+          {
+            "type": "string",
+            "format": "iri-reference",
+            "x-oold-range": [
+              "MediaObject.schema.json",
+              "WebPage.schema.json"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

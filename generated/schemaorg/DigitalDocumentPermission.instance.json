@@ -1,0 +1,8 @@
+{
+  "$schema": "DigitalDocumentPermission.schema.json",
+  "@context": "DigitalDocumentPermission.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:DigitalDocumentPermission"
+  ]
+}

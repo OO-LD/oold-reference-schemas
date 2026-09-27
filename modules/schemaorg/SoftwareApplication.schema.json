@@ -1,0 +1,427 @@
+{
+  "@context": [
+    "CreativeWork.schema.json",
+    {
+      "applicationCategory": {
+        "@id": "schema:applicationCategory",
+        "@container": "@set"
+      },
+      "applicationSubCategory": {
+        "@id": "schema:applicationSubCategory",
+        "@container": "@set"
+      },
+      "applicationSuite": {
+        "@id": "schema:applicationSuite",
+        "@container": "@set"
+      },
+      "availableOnDevice": {
+        "@id": "schema:availableOnDevice",
+        "@container": "@set"
+      },
+      "countriesNotSupported": {
+        "@id": "schema:countriesNotSupported",
+        "@container": "@set"
+      },
+      "countriesSupported": {
+        "@id": "schema:countriesSupported",
+        "@container": "@set"
+      },
+      "downloadUrl": {
+        "@id": "schema:downloadUrl",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "featureList": {
+        "@id": "schema:featureList",
+        "@container": "@set"
+      },
+      "fileSize": {
+        "@id": "schema:fileSize",
+        "@container": "@set"
+      },
+      "installUrl": {
+        "@id": "schema:installUrl",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "memoryRequirements": {
+        "@id": "schema:memoryRequirements",
+        "@container": "@set"
+      },
+      "operatingSystem": {
+        "@id": "schema:operatingSystem",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "operatingSystem_text": {
+        "@id": "schema:operatingSystem",
+        "@container": "@set"
+      },
+      "permissions": {
+        "@id": "schema:permissions",
+        "@container": "@set"
+      },
+      "processorRequirements": {
+        "@id": "schema:processorRequirements",
+        "@container": "@set"
+      },
+      "releaseNotes": {
+        "@id": "schema:releaseNotes",
+        "@container": "@set"
+      },
+      "runtimePlatform": {
+        "@id": "schema:runtimePlatform",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "runtimePlatform_text": {
+        "@id": "schema:runtimePlatform",
+        "@container": "@set"
+      },
+      "screenshot": {
+        "@id": "schema:screenshot",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "softwareAddOn": {
+        "@id": "schema:softwareAddOn",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "softwareHelp": {
+        "@id": "schema:softwareHelp",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "softwareRequirements": {
+        "@id": "schema:softwareRequirements",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "softwareRequirements_text": {
+        "@id": "schema:softwareRequirements",
+        "@container": "@set"
+      },
+      "softwareVersion": {
+        "@id": "schema:softwareVersion",
+        "@container": "@set"
+      },
+      "storageRequirements": {
+        "@id": "schema:storageRequirements",
+        "@container": "@set"
+      },
+      "supportingData": {
+        "@id": "schema:supportingData",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "CreativeWork.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "SoftwareApplication.schema.json",
+  "x-oold-uuid": "babf615e-1e62-5ef5-b7b1-bef75bbf0388",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/SoftwareApplication",
+  "x-oold-instance-rdf-type": [
+    "schema:SoftwareApplication"
+  ],
+  "title": "SoftwareApplication",
+  "description": "A software application.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:SoftwareApplication"
+      ]
+    },
+    "applicationCategory": {
+      "title": "Application Category",
+      "description": "Type of software application, e.g. 'Game, Multimedia'.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Text.schema.json"
+          },
+          {
+            "$ref": "URL.schema.json"
+          }
+        ]
+      }
+    },
+    "applicationSubCategory": {
+      "title": "Application Sub Category",
+      "description": "Subcategory of the application, e.g. 'Arcade Game'.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Text.schema.json"
+          },
+          {
+            "$ref": "URL.schema.json"
+          }
+        ]
+      }
+    },
+    "applicationSuite": {
+      "title": "Application Suite",
+      "description": "The name of the application suite to which the application belongs (e.g. Excel belongs to Office).",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "availableOnDevice": {
+      "title": "Available On Device",
+      "description": "Device required to run the application. Used in cases where a specific make/model is required to run the application.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "countriesNotSupported": {
+      "title": "Countries Not Supported",
+      "description": "Countries for which the application is not supported. You can also provide the two-letter ISO 3166-1 alpha-2 country code.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "countriesSupported": {
+      "title": "Countries Supported",
+      "description": "Countries for which the application is supported. You can also provide the two-letter ISO 3166-1 alpha-2 country code.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "downloadUrl": {
+      "title": "Download Url",
+      "description": "If the file can be downloaded, URL to download the binary.",
+      "type": "array",
+      "items": {
+        "$ref": "URL.schema.json"
+      }
+    },
+    "featureList": {
+      "title": "Feature List",
+      "description": "Features or modules provided by this application (and possibly required by other applications).",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Text.schema.json"
+          },
+          {
+            "$ref": "URL.schema.json"
+          }
+        ]
+      }
+    },
+    "fileSize": {
+      "title": "File Size",
+      "description": "Size of the application / package (e.g. 18MB). In the absence of a unit (MB, KB etc.), KB will be assumed.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "installUrl": {
+      "title": "Install Url",
+      "description": "URL at which the app may be installed, if different from the URL of the item.",
+      "type": "array",
+      "items": {
+        "$ref": "URL.schema.json"
+      }
+    },
+    "memoryRequirements": {
+      "title": "Memory Requirements",
+      "description": "Minimum memory requirements.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Text.schema.json"
+          },
+          {
+            "$ref": "URL.schema.json"
+          }
+        ]
+      }
+    },
+    "operatingSystem": {
+      "title": "Operating System",
+      "description": "Operating systems supported (Windows 7, OS X 10.6, Android 1.6).",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "OperatingSystem.schema.json"
+      }
+    },
+    "operatingSystem_text": {
+      "title": "Operating System (text)",
+      "description": "Operating systems supported (Windows 7, OS X 10.6, Android 1.6).",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "permissions": {
+      "title": "Permissions",
+      "description": "Permission(s) required to run the app (for example, a mobile app may require full internet access or may run only on wifi).",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "processorRequirements": {
+      "title": "Processor Requirements",
+      "description": "Processor architecture required to run the application (e.g. IA64).",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "releaseNotes": {
+      "title": "Release Notes",
+      "description": "Description of what changed in this version.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Text.schema.json"
+          },
+          {
+            "$ref": "URL.schema.json"
+          }
+        ]
+      }
+    },
+    "runtimePlatform": {
+      "title": "Runtime Platform",
+      "description": "Runtime platform or script interpreter dependencies (example: Java v1, Python 2.3, .NET Framework 3.0).",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "RuntimePlatform.schema.json"
+      }
+    },
+    "runtimePlatform_text": {
+      "title": "Runtime Platform (text)",
+      "description": "Runtime platform or script interpreter dependencies (example: Java v1, Python 2.3, .NET Framework 3.0).",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "screenshot": {
+      "title": "Screenshot",
+      "description": "A link to a screenshot image of the app.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "URL.schema.json"
+          },
+          {
+            "type": "string",
+            "format": "iri-reference",
+            "x-oold-range": "ImageObject.schema.json"
+          }
+        ]
+      }
+    },
+    "softwareAddOn": {
+      "title": "Software Add On",
+      "description": "Additional content for a software application.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "SoftwareApplication.schema.json"
+      }
+    },
+    "softwareHelp": {
+      "title": "Software Help",
+      "description": "Software application help.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "CreativeWork.schema.json"
+      }
+    },
+    "softwareRequirements": {
+      "title": "Software Requirements",
+      "description": "Component dependency requirements for application. This includes runtime environments and shared libraries that are not included in the application distribution package, but required to run the application (examples: DirectX, Java or .NET runtime).",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "SoftwareApplication.schema.json"
+      }
+    },
+    "softwareRequirements_text": {
+      "title": "Software Requirements (text)",
+      "description": "Component dependency requirements for application. This includes runtime environments and shared libraries that are not included in the application distribution package, but required to run the application (examples: DirectX, Java or .NET runtime).",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Text.schema.json"
+          },
+          {
+            "$ref": "URL.schema.json"
+          }
+        ]
+      }
+    },
+    "softwareVersion": {
+      "title": "Software Version",
+      "description": "Version of the software instance.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "storageRequirements": {
+      "title": "Storage Requirements",
+      "description": "Storage requirements (free space required).",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Text.schema.json"
+          },
+          {
+            "$ref": "URL.schema.json"
+          }
+        ]
+      }
+    },
+    "supportingData": {
+      "title": "Supporting Data",
+      "description": "Supporting data for a SoftwareApplication.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "DataFeed.schema.json"
+      }
+    }
+  }
+}

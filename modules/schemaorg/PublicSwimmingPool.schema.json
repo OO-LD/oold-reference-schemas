@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "SportsActivityLocation.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "SportsActivityLocation.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "PublicSwimmingPool.schema.json",
+  "x-oold-uuid": "e3c79614-dcad-5858-9db9-6ae093ec3252",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/PublicSwimmingPool",
+  "x-oold-instance-rdf-type": [
+    "schema:PublicSwimmingPool"
+  ],
+  "title": "PublicSwimmingPool",
+  "description": "A public swimming pool.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:PublicSwimmingPool"
+      ]
+    }
+  }
+}

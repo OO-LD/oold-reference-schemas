@@ -1,0 +1,84 @@
+{
+  "@context": [
+    "TechArticle.schema.json",
+    {
+      "assemblyVersion": {
+        "@id": "schema:assemblyVersion",
+        "@container": "@set"
+      },
+      "executableLibraryName": {
+        "@id": "schema:executableLibraryName",
+        "@container": "@set"
+      },
+      "programmingModel": {
+        "@id": "schema:programmingModel",
+        "@container": "@set"
+      },
+      "targetPlatform": {
+        "@id": "schema:targetPlatform",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "TechArticle.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "APIReference.schema.json",
+  "x-oold-uuid": "d27b9dc8-7c87-5061-9824-f1cd3a3114d0",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/APIReference",
+  "x-oold-instance-rdf-type": [
+    "schema:APIReference"
+  ],
+  "title": "APIReference",
+  "description": "Reference documentation for application programming interfaces (APIs).",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:APIReference"
+      ]
+    },
+    "assemblyVersion": {
+      "title": "Assembly Version",
+      "description": "Associated product/technology version. E.g., .NET Framework 4.5.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "executableLibraryName": {
+      "title": "Executable Library Name",
+      "description": "Library file name, e.g., mscorlib.dll, system.web.dll.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "programmingModel": {
+      "title": "Programming Model",
+      "description": "Indicates whether API is managed or unmanaged.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "targetPlatform": {
+      "title": "Target Platform",
+      "description": "Type of app development: phone, Metro style, desktop, XBox, etc.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    }
+  }
+}

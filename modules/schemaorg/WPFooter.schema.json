@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "WebPageElement.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "WebPageElement.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "WPFooter.schema.json",
+  "x-oold-uuid": "ddda1051-4ead-5d8a-8c57-e36bba829593",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/WPFooter",
+  "x-oold-instance-rdf-type": [
+    "schema:WPFooter"
+  ],
+  "title": "WPFooter",
+  "description": "The footer section of the page.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:WPFooter"
+      ]
+    }
+  }
+}

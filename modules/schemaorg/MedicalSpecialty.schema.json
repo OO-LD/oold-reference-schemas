@@ -1,0 +1,133 @@
+{
+  "@context": [
+    "MedicalEnumeration.schema.json",
+    "Specialty.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "MedicalEnumeration.schema.json"
+    },
+    {
+      "$ref": "Specialty.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MedicalSpecialty.schema.json",
+  "x-oold-uuid": "c67e90a9-f598-51d5-b6b8-e58607a6591f",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/MedicalSpecialty",
+  "x-oold-instance-rdf-type": [
+    "schema:MedicalSpecialty"
+  ],
+  "title": "MedicalSpecialty",
+  "description": "Any specific branch of medical science or practice. Medical specialities include clinical specialties that pertain to particular organ systems and their respective disease states, as well as allied health specialties. Enumerated type.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:MedicalSpecialty"
+      ]
+    }
+  },
+  "$defs": {
+    "member": {
+      "title": "MedicalSpecialty member",
+      "description": "One of the 41 member instances of MedicalSpecialty.",
+      "type": "string",
+      "format": "iri-reference",
+      "enum": [
+        "schema:Anesthesia",
+        "schema:Cardiovascular",
+        "schema:CommunityHealth",
+        "schema:Dentistry",
+        "schema:Dermatology",
+        "schema:DietNutrition",
+        "schema:Emergency",
+        "schema:Endocrine",
+        "schema:Gastroenterologic",
+        "schema:Genetic",
+        "schema:Geriatric",
+        "schema:Gynecologic",
+        "schema:Hematologic",
+        "schema:Infectious",
+        "schema:LaboratoryScience",
+        "schema:Midwifery",
+        "schema:Musculoskeletal",
+        "schema:Neurologic",
+        "schema:Nursing",
+        "schema:Obstetric",
+        "schema:Oncologic",
+        "schema:Optometric",
+        "schema:Otolaryngologic",
+        "schema:Pathology",
+        "schema:Pediatric",
+        "schema:PharmacySpecialty",
+        "schema:Physiotherapy",
+        "schema:PlasticSurgery",
+        "schema:Podiatric",
+        "schema:PrimaryCare",
+        "schema:Psychiatric",
+        "schema:PublicHealth",
+        "schema:Pulmonary",
+        "schema:Radiography",
+        "schema:Renal",
+        "schema:RespiratoryTherapy",
+        "schema:Rheumatologic",
+        "schema:SpeechPathology",
+        "schema:Surgical",
+        "schema:Toxicologic",
+        "schema:Urologic"
+      ],
+      "x-oold-ui-enum-titles": [
+        "Anesthesia",
+        "Cardiovascular",
+        "CommunityHealth",
+        "Dentistry",
+        "Dermatology",
+        "DietNutrition",
+        "Emergency",
+        "Endocrine",
+        "Gastroenterologic",
+        "Genetic",
+        "Geriatric",
+        "Gynecologic",
+        "Hematologic",
+        "Infectious",
+        "LaboratoryScience",
+        "Midwifery",
+        "Musculoskeletal",
+        "Neurologic",
+        "Nursing",
+        "Obstetric",
+        "Oncologic",
+        "Optometric",
+        "Otolaryngologic",
+        "Pathology",
+        "Pediatric",
+        "PharmacySpecialty",
+        "Physiotherapy",
+        "PlasticSurgery",
+        "Podiatric",
+        "PrimaryCare",
+        "Psychiatric",
+        "PublicHealth",
+        "Pulmonary",
+        "Radiography",
+        "Renal",
+        "RespiratoryTherapy",
+        "Rheumatologic",
+        "SpeechPathology",
+        "Surgical",
+        "Toxicologic",
+        "Urologic"
+      ]
+    }
+  }
+}

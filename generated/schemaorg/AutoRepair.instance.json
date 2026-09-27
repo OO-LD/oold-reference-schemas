@@ -1,0 +1,8 @@
+{
+  "$schema": "AutoRepair.schema.json",
+  "@context": "AutoRepair.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:AutoRepair"
+  ]
+}

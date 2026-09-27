@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "InsertAction.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "InsertAction.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "AppendAction.schema.json",
+  "x-oold-uuid": "467c3e30-5b4b-5bc1-aae8-038e8d7fa0ab",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/AppendAction",
+  "x-oold-instance-rdf-type": [
+    "schema:AppendAction"
+  ],
+  "title": "AppendAction",
+  "description": "The act of inserting at the end if an ordered collection.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:AppendAction"
+      ]
+    }
+  }
+}

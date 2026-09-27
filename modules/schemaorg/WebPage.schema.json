@@ -1,0 +1,186 @@
+{
+  "@context": [
+    "CreativeWork.schema.json",
+    {
+      "breadcrumb": {
+        "@id": "schema:breadcrumb",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "breadcrumb_text": {
+        "@id": "schema:breadcrumb",
+        "@container": "@set"
+      },
+      "lastReviewed": {
+        "@id": "schema:lastReviewed",
+        "@type": "xsd:date",
+        "@container": "@set"
+      },
+      "mainContentOfPage": {
+        "@id": "schema:mainContentOfPage",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "primaryImageOfPage": {
+        "@id": "schema:primaryImageOfPage",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "relatedLink": {
+        "@id": "schema:relatedLink",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "reviewedBy": {
+        "@id": "schema:reviewedBy",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "significantLink": {
+        "@id": "schema:significantLink",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "speakable": {
+        "@id": "schema:speakable",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "specialty": {
+        "@id": "schema:specialty",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "CreativeWork.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "WebPage.schema.json",
+  "x-oold-uuid": "aacac303-158e-59e8-b2d7-f1c498707561",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/WebPage",
+  "x-oold-instance-rdf-type": [
+    "schema:WebPage"
+  ],
+  "title": "WebPage",
+  "description": "A web page. Every web page is implicitly assumed to be declared to be of type WebPage, so the various properties about that webpage, such as <code>breadcrumb</code> may be used. We recommend explicit declaration if these properties are specified, but if they are found outside of an itemscope, they will be assumed to be about the page.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:WebPage"
+      ]
+    },
+    "breadcrumb": {
+      "title": "Breadcrumb",
+      "description": "A set of links that can help a user understand and navigate a website hierarchy.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "BreadcrumbList.schema.json"
+      }
+    },
+    "breadcrumb_text": {
+      "title": "Breadcrumb (text)",
+      "description": "A set of links that can help a user understand and navigate a website hierarchy.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "lastReviewed": {
+      "title": "Last Reviewed",
+      "description": "Date on which the content on this web page was last reviewed for accuracy and/or completeness.",
+      "type": "array",
+      "items": {
+        "$ref": "Date.schema.json"
+      }
+    },
+    "mainContentOfPage": {
+      "title": "Main Content Of Page",
+      "description": "Indicates if this web page element is the main subject of the page.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "WebPageElement.schema.json"
+      }
+    },
+    "primaryImageOfPage": {
+      "title": "Primary Image Of Page",
+      "description": "Indicates the main image on the page.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "ImageObject.schema.json"
+      }
+    },
+    "relatedLink": {
+      "title": "Related Link",
+      "description": "A link related to this web page, for example to other related web pages.",
+      "type": "array",
+      "items": {
+        "$ref": "URL.schema.json"
+      }
+    },
+    "reviewedBy": {
+      "title": "Reviewed By",
+      "description": "People or organizations that have reviewed the content on this web page for accuracy and/or completeness.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "Organization.schema.json",
+          "Person.schema.json"
+        ]
+      }
+    },
+    "significantLink": {
+      "title": "Significant Link",
+      "description": "One of the more significant URLs on the page. Typically, these are the non-navigation links that are clicked on the most.",
+      "type": "array",
+      "items": {
+        "$ref": "URL.schema.json"
+      }
+    },
+    "speakable": {
+      "title": "Speakable",
+      "description": "Indicates sections of a Web page that are particularly 'speakable' in the sense of being highlighted as being especially appropriate for text-to-speech conversion. Other sections of a page may also be usefully spoken in particular circumstances; the 'speakable' property serves to indicate the parts most likely to be generally useful for speech.\n\nThe *speakable* property can be repeated an arbitrary number of times, with three kinds of possible 'content-locator' values:\n\n1.) *id-value* URL references - uses *id-value* of an element in the page being annotated. The simplest use of *speakable* has (potentially relative) URL values, referencing identified sections of the document concerned.\n\n2.) CSS Selectors - addresses content in the annotated page, e.g. via class attribute. Use the [[cssSelector]] property.\n\n3.)  XPaths - addresses content via XPaths (assuming an XML view of the content). Use the [[xpath]] property.\n\n\nFor more sophisticated markup of speakable sections beyond simple ID references, either CSS selectors or XPath expressions to pick out document section(s) as speakable. For this\nwe define a supporting type, [[SpeakableSpecification]]  which is defined to be a possible value of the *speakable* property.\n         ",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "URL.schema.json"
+          },
+          {
+            "type": "string",
+            "format": "iri-reference",
+            "x-oold-range": "SpeakableSpecification.schema.json"
+          }
+        ]
+      }
+    },
+    "specialty": {
+      "title": "Specialty",
+      "description": "One of the domain specialities to which this web page's content applies.",
+      "type": "array",
+      "items": {
+        "$ref": "Specialty.schema.json#/$defs/member",
+        "x-oold-range": "Specialty.schema.json"
+      }
+    }
+  }
+}

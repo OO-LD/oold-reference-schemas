@@ -1,0 +1,60 @@
+{
+  "@context": [
+    "Article.schema.json",
+    {
+      "dependencies": {
+        "@id": "schema:dependencies",
+        "@container": "@set"
+      },
+      "proficiencyLevel": {
+        "@id": "schema:proficiencyLevel",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Article.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "TechArticle.schema.json",
+  "x-oold-uuid": "b068270f-9501-50aa-ad62-73a03671b7a9",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/TechArticle",
+  "x-oold-instance-rdf-type": [
+    "schema:TechArticle"
+  ],
+  "title": "TechArticle",
+  "description": "A technical article - Example: How-to (task) topics, step-by-step, procedural troubleshooting, specifications, etc.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:TechArticle"
+      ]
+    },
+    "dependencies": {
+      "title": "Dependencies",
+      "description": "Prerequisites needed to fulfill steps in article.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "proficiencyLevel": {
+      "title": "Proficiency Level",
+      "description": "Proficiency needed for this content; expected values: 'Beginner', 'Expert'.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    }
+  }
+}

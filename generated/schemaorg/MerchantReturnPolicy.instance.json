@@ -1,0 +1,8 @@
+{
+  "$schema": "MerchantReturnPolicy.schema.json",
+  "@context": "MerchantReturnPolicy.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:MerchantReturnPolicy"
+  ]
+}

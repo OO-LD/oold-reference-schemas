@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Offer.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Offer.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "OfferForLease.schema.json",
+  "x-oold-uuid": "635a1120-bf8c-52c3-aa58-3081b32b5d6e",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/OfferForLease",
+  "x-oold-instance-rdf-type": [
+    "schema:OfferForLease"
+  ],
+  "title": "OfferForLease",
+  "description": "An [[OfferForLease]] in Schema.org represents an [[Offer]] to lease out something, i.e. an [[Offer]] whose\n  [[businessFunction]] is [lease out](http://purl.org/goodrelations/v1#LeaseOut.). See [Good Relations](https://en.wikipedia.org/wiki/GoodRelations) for\n  background on the underlying concepts.\n  ",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:OfferForLease"
+      ]
+    }
+  }
+}

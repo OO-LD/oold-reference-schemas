@@ -1,0 +1,8 @@
+{
+  "$schema": "CreditCard.schema.json",
+  "@context": "CreditCard.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:CreditCard"
+  ]
+}

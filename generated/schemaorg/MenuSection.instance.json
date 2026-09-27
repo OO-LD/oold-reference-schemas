@@ -1,0 +1,8 @@
+{
+  "$schema": "MenuSection.schema.json",
+  "@context": "MenuSection.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:MenuSection"
+  ]
+}

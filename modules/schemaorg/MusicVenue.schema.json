@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "CivicStructure.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "CivicStructure.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MusicVenue.schema.json",
+  "x-oold-uuid": "2ce0fbf5-cfd4-5fae-af18-e0a1906ee0e9",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/MusicVenue",
+  "x-oold-instance-rdf-type": [
+    "schema:MusicVenue"
+  ],
+  "title": "MusicVenue",
+  "description": "A music venue.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:MusicVenue"
+      ]
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "$schema": "PrependAction.schema.json",
+  "@context": "PrependAction.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:PrependAction"
+  ]
+}

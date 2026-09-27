@@ -1,0 +1,98 @@
+{
+  "@context": [
+    "StructuredValue.schema.json",
+    {
+      "acquiredFrom": {
+        "@id": "schema:acquiredFrom",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "ownedFrom": {
+        "@id": "schema:ownedFrom",
+        "@type": "xsd:dateTime",
+        "@container": "@set"
+      },
+      "ownedThrough": {
+        "@id": "schema:ownedThrough",
+        "@type": "xsd:dateTime",
+        "@container": "@set"
+      },
+      "typeOfGood": {
+        "@id": "schema:typeOfGood",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "StructuredValue.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "OwnershipInfo.schema.json",
+  "x-oold-uuid": "f0497e80-d1cd-529a-b09e-66d283c4cf65",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/OwnershipInfo",
+  "x-oold-instance-rdf-type": [
+    "schema:OwnershipInfo"
+  ],
+  "title": "OwnershipInfo",
+  "description": "A structured value providing information about when a certain organization or person owned a certain product.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:OwnershipInfo"
+      ]
+    },
+    "acquiredFrom": {
+      "title": "Acquired From",
+      "description": "The organization or person from which the product was acquired.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "Organization.schema.json",
+          "Person.schema.json"
+        ]
+      }
+    },
+    "ownedFrom": {
+      "title": "Owned From",
+      "description": "The date and time of obtaining the product.",
+      "type": "array",
+      "items": {
+        "$ref": "DateTime.schema.json"
+      }
+    },
+    "ownedThrough": {
+      "title": "Owned Through",
+      "description": "The date and time of giving up ownership on the product.",
+      "type": "array",
+      "items": {
+        "$ref": "DateTime.schema.json"
+      }
+    },
+    "typeOfGood": {
+      "title": "Type Of Good",
+      "description": "The product that this structured value is referring to.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "Product.schema.json",
+          "Service.schema.json"
+        ]
+      }
+    }
+  }
+}

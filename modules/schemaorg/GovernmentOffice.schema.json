@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "LocalBusiness.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "LocalBusiness.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "GovernmentOffice.schema.json",
+  "x-oold-uuid": "ba3e6c2e-c7b4-50d9-9357-d4ab1b0267c4",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/GovernmentOffice",
+  "x-oold-instance-rdf-type": [
+    "schema:GovernmentOffice"
+  ],
+  "title": "GovernmentOffice",
+  "description": "A government office&#x2014;for example, an IRS or DMV office.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:GovernmentOffice"
+      ]
+    }
+  }
+}

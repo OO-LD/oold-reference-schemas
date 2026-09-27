@@ -1,0 +1,249 @@
+{
+  "@context": [
+    "Trip.schema.json",
+    {
+      "aircraft": {
+        "@id": "schema:aircraft",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "aircraft_text": {
+        "@id": "schema:aircraft",
+        "@container": "@set"
+      },
+      "arrivalAirport": {
+        "@id": "schema:arrivalAirport",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "arrivalGate": {
+        "@id": "schema:arrivalGate",
+        "@container": "@set"
+      },
+      "arrivalTerminal": {
+        "@id": "schema:arrivalTerminal",
+        "@container": "@set"
+      },
+      "boardingPolicy": {
+        "@id": "schema:boardingPolicy",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "departureAirport": {
+        "@id": "schema:departureAirport",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "departureGate": {
+        "@id": "schema:departureGate",
+        "@container": "@set"
+      },
+      "departureTerminal": {
+        "@id": "schema:departureTerminal",
+        "@container": "@set"
+      },
+      "estimatedFlightDuration": {
+        "@id": "schema:estimatedFlightDuration",
+        "@container": "@set"
+      },
+      "flightDistance": {
+        "@id": "schema:flightDistance",
+        "@container": "@set"
+      },
+      "flightNumber": {
+        "@id": "schema:flightNumber",
+        "@container": "@set"
+      },
+      "mealService": {
+        "@id": "schema:mealService",
+        "@container": "@set"
+      },
+      "seller": {
+        "@id": "schema:seller",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "webCheckinTime": {
+        "@id": "schema:webCheckinTime",
+        "@type": "xsd:dateTime",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Trip.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Flight.schema.json",
+  "x-oold-uuid": "fb8ecb0e-8b2f-557a-bf6c-786da70c5640",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Flight",
+  "x-oold-instance-rdf-type": [
+    "schema:Flight"
+  ],
+  "title": "Flight",
+  "description": "An airline flight.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Flight"
+      ]
+    },
+    "aircraft": {
+      "title": "Aircraft",
+      "description": "The kind of aircraft (e.g., \"Boeing 747\").",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Vehicle.schema.json"
+      }
+    },
+    "aircraft_text": {
+      "title": "Aircraft (text)",
+      "description": "The kind of aircraft (e.g., \"Boeing 747\").",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "arrivalAirport": {
+      "title": "Arrival Airport",
+      "description": "The airport where the flight terminates.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Airport.schema.json"
+      }
+    },
+    "arrivalGate": {
+      "title": "Arrival Gate",
+      "description": "Identifier of the flight's arrival gate.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "arrivalTerminal": {
+      "title": "Arrival Terminal",
+      "description": "Identifier of the flight's arrival terminal.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "boardingPolicy": {
+      "title": "Boarding Policy",
+      "description": "The type of boarding policy used by the airline (e.g. zone-based or group-based).",
+      "type": "array",
+      "items": {
+        "$ref": "BoardingPolicyType.schema.json#/$defs/member",
+        "x-oold-range": "BoardingPolicyType.schema.json"
+      }
+    },
+    "departureAirport": {
+      "title": "Departure Airport",
+      "description": "The airport where the flight originates.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Airport.schema.json"
+      }
+    },
+    "departureGate": {
+      "title": "Departure Gate",
+      "description": "Identifier of the flight's departure gate.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "departureTerminal": {
+      "title": "Departure Terminal",
+      "description": "Identifier of the flight's departure terminal.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "estimatedFlightDuration": {
+      "title": "Estimated Flight Duration",
+      "description": "The estimated time the flight will take.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Duration.schema.json"
+          },
+          {
+            "$ref": "Text.schema.json"
+          }
+        ]
+      }
+    },
+    "flightDistance": {
+      "title": "Flight Distance",
+      "description": "The distance of the flight.",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: Distance [value-type]: Distance -> Quantity",
+        "anyOf": [
+          {
+            "$ref": "Text.schema.json"
+          },
+          {
+            "$ref": "Distance.schema.json"
+          }
+        ]
+      }
+    },
+    "flightNumber": {
+      "title": "Flight Number",
+      "description": "The unique identifier for a flight including the airline IATA code. For example, if describing United flight 110, where the IATA code for United is 'UA', the flightNumber is 'UA110'.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "mealService": {
+      "title": "Meal Service",
+      "description": "Description of the meals that will be provided or available for purchase.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "seller": {
+      "title": "Seller",
+      "description": "An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "Organization.schema.json",
+          "Person.schema.json"
+        ]
+      }
+    },
+    "webCheckinTime": {
+      "title": "Web Checkin Time",
+      "description": "The time when a passenger can check into the flight online.",
+      "type": "array",
+      "items": {
+        "$ref": "DateTime.schema.json"
+      }
+    }
+  }
+}

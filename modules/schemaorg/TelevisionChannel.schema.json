@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "BroadcastChannel.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "BroadcastChannel.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "TelevisionChannel.schema.json",
+  "x-oold-uuid": "c76e380b-034b-51ec-a930-408502ed425e",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/TelevisionChannel",
+  "x-oold-instance-rdf-type": [
+    "schema:TelevisionChannel"
+  ],
+  "title": "TelevisionChannel",
+  "description": "A unique instance of a television BroadcastService on a CableOrSatelliteService lineup.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:TelevisionChannel"
+      ]
+    }
+  }
+}

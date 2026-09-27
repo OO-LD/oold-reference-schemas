@@ -1,0 +1,8 @@
+{
+  "$schema": "PawnShop.schema.json",
+  "@context": "PawnShop.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:PawnShop"
+  ]
+}

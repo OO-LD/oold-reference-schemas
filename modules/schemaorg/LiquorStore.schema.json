@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Store.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Store.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "LiquorStore.schema.json",
+  "x-oold-uuid": "ab2ed2c5-60e0-533e-adaa-52ec0be599b3",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/LiquorStore",
+  "x-oold-instance-rdf-type": [
+    "schema:LiquorStore"
+  ],
+  "title": "LiquorStore",
+  "description": "A shop that sells alcoholic drinks such as wine, beer, whisky and other spirits.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:LiquorStore"
+      ]
+    }
+  }
+}

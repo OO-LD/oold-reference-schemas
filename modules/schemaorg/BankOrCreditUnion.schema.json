@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "FinancialService.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "FinancialService.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "BankOrCreditUnion.schema.json",
+  "x-oold-uuid": "d7bc664c-dc8e-5661-9b7b-473377e98d6c",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/BankOrCreditUnion",
+  "x-oold-instance-rdf-type": [
+    "schema:BankOrCreditUnion"
+  ],
+  "title": "BankOrCreditUnion",
+  "description": "Bank or credit union.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:BankOrCreditUnion"
+      ]
+    }
+  }
+}

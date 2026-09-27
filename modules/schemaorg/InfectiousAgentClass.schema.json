@@ -1,0 +1,59 @@
+{
+  "@context": [
+    "MedicalEnumeration.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "MedicalEnumeration.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "InfectiousAgentClass.schema.json",
+  "x-oold-uuid": "46b825fd-1f71-571f-a157-3ae32bb10ddf",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/InfectiousAgentClass",
+  "x-oold-instance-rdf-type": [
+    "schema:InfectiousAgentClass"
+  ],
+  "title": "InfectiousAgentClass",
+  "description": "Classes of agents or pathogens that transmit infectious diseases. Enumerated type.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:InfectiousAgentClass"
+      ]
+    }
+  },
+  "$defs": {
+    "member": {
+      "title": "InfectiousAgentClass member",
+      "description": "One of the 6 member instances of InfectiousAgentClass.",
+      "type": "string",
+      "format": "iri-reference",
+      "enum": [
+        "schema:Bacteria",
+        "schema:Fungus",
+        "schema:MulticellularParasite",
+        "schema:Prion",
+        "schema:Protozoa",
+        "schema:Virus"
+      ],
+      "x-oold-ui-enum-titles": [
+        "Bacteria",
+        "Fungus",
+        "MulticellularParasite",
+        "Prion",
+        "Protozoa",
+        "Virus"
+      ]
+    }
+  }
+}

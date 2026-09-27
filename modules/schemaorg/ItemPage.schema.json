@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "WebPage.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "WebPage.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ItemPage.schema.json",
+  "x-oold-uuid": "cf1c1f19-fd6b-5373-b23e-3b6dc33c2280",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/ItemPage",
+  "x-oold-instance-rdf-type": [
+    "schema:ItemPage"
+  ],
+  "title": "ItemPage",
+  "description": "A page devoted to a single item, such as a particular product or hotel.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:ItemPage"
+      ]
+    }
+  }
+}

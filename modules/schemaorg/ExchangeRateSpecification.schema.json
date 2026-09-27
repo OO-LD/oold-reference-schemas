@@ -1,0 +1,80 @@
+{
+  "@context": [
+    "StructuredValue.schema.json",
+    {
+      "currency": {
+        "@id": "schema:currency",
+        "@container": "@set"
+      },
+      "currentExchangeRate": {
+        "@id": "schema:currentExchangeRate",
+        "@container": "@set"
+      },
+      "exchangeRateSpread": {
+        "@id": "schema:exchangeRateSpread",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "StructuredValue.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ExchangeRateSpecification.schema.json",
+  "x-oold-uuid": "d738ed0b-77e3-596f-b956-768854db04be",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/ExchangeRateSpecification",
+  "x-oold-instance-rdf-type": [
+    "schema:ExchangeRateSpecification"
+  ],
+  "title": "ExchangeRateSpecification",
+  "description": "A structured value representing exchange rate.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:ExchangeRateSpecification"
+      ]
+    },
+    "currency": {
+      "title": "Currency",
+      "description": "The currency in which the monetary amount is expressed.\\n\\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217), e.g. \"USD\"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies, e.g. \"BTC\"; well known names for [Local Exchange Trading Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types, e.g. \"Ithaca HOUR\".",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "currentExchangeRate": {
+      "title": "Current Exchange Rate",
+      "description": "The current price of a currency.",
+      "type": "array",
+      "items": {
+        "$ref": "UnitPriceSpecification.schema.json"
+      }
+    },
+    "exchangeRateSpread": {
+      "title": "Exchange Rate Spread",
+      "description": "The difference between the price at which a broker or other intermediary buys and sells foreign currency.",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: MonetaryAmount [value-type]: MonetaryAmount -> StructuredValue -> Intangible -> Thing",
+        "anyOf": [
+          {
+            "$ref": "Number.schema.json"
+          },
+          {
+            "$ref": "MonetaryAmount.schema.json"
+          }
+        ]
+      }
+    }
+  }
+}

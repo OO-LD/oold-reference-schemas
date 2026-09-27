@@ -1,0 +1,8 @@
+{
+  "$schema": "MedicalStudy.schema.json",
+  "@context": "MedicalStudy.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:MedicalStudy"
+  ]
+}

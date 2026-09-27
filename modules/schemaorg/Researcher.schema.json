@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Audience.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Audience.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Researcher.schema.json",
+  "x-oold-uuid": "daf1a8c0-ef1d-566a-9249-73846cdaf4bf",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Researcher",
+  "x-oold-instance-rdf-type": [
+    "schema:Researcher"
+  ],
+  "title": "Researcher",
+  "description": "Researchers.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Researcher"
+      ]
+    }
+  }
+}

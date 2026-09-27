@@ -1,0 +1,91 @@
+{
+  "@context": [
+    "StructuredValue.schema.json",
+    {
+      "businessDays": {
+        "@id": "schema:businessDays",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "cutoffTime": {
+        "@id": "schema:cutoffTime",
+        "@type": "xsd:time",
+        "@container": "@set"
+      },
+      "duration": {
+        "@id": "schema:duration",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "StructuredValue.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ServicePeriod.schema.json",
+  "x-oold-uuid": "5f1af58e-c8e0-531e-900d-32f4a3c75de6",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/ServicePeriod",
+  "x-oold-instance-rdf-type": [
+    "schema:ServicePeriod"
+  ],
+  "title": "ServicePeriod",
+  "description": "ServicePeriod represents a duration with some constraints about cutoff time and business days. This is used e.g. in shipping for handling times or transit time.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:ServicePeriod"
+      ]
+    },
+    "businessDays": {
+      "title": "Business Days",
+      "description": "Days of the week when the merchant typically operates, indicated via opening hours markup.",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: OpeningHoursSpecification [value-type]: OpeningHoursSpecification -> StructuredValue -> Intangible -> Thing; DayOfWeek [entity]: DayOfWeek -> Enumeration -> Intangible -> Thing",
+        "anyOf": [
+          {
+            "$ref": "DayOfWeek.schema.json#/$defs/member",
+            "x-oold-range": "DayOfWeek.schema.json"
+          },
+          {
+            "$ref": "OpeningHoursSpecification.schema.json"
+          }
+        ]
+      }
+    },
+    "cutoffTime": {
+      "title": "Cutoff Time",
+      "description": "Order cutoff time allows merchants to describe the time after which they will no longer process orders received on that day. For orders processed after cutoff time, one day gets added to the delivery time estimate. This property is expected to be most typically used via the [[ShippingRateSettings]] publication pattern. The time is indicated using the ISO-8601 Time format, e.g. \"23:30:00-05:00\" would represent 6:30 pm Eastern Standard Time (EST) which is 5 hours behind Coordinated Universal Time (UTC).",
+      "type": "array",
+      "items": {
+        "$ref": "Time.schema.json"
+      }
+    },
+    "duration": {
+      "title": "Duration",
+      "description": "The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: QuantitativeValue [value-type]: QuantitativeValue -> StructuredValue -> Intangible -> Thing",
+        "anyOf": [
+          {
+            "$ref": "Duration.schema.json"
+          },
+          {
+            "$ref": "QuantitativeValue.schema.json"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "FinancialService.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "FinancialService.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "InsuranceAgency.schema.json",
+  "x-oold-uuid": "63b7136b-4576-5204-88bd-2b6ce8600668",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/InsuranceAgency",
+  "x-oold-instance-rdf-type": [
+    "schema:InsuranceAgency"
+  ],
+  "title": "InsuranceAgency",
+  "description": "An Insurance agency.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:InsuranceAgency"
+      ]
+    }
+  }
+}

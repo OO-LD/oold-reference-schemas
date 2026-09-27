@@ -1,0 +1,211 @@
+{
+  "@context": [
+    "Game.schema.json",
+    "SoftwareApplication.schema.json",
+    {
+      "actor": {
+        "@id": "schema:actor",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "cheatCode": {
+        "@id": "schema:cheatCode",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "director": {
+        "@id": "schema:director",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "gameEdition": {
+        "@id": "schema:gameEdition",
+        "@container": "@set"
+      },
+      "gamePlatform": {
+        "@id": "schema:gamePlatform",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "gamePlatform_text": {
+        "@id": "schema:gamePlatform",
+        "@container": "@set"
+      },
+      "gameServer": {
+        "@id": "schema:gameServer",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "gameTip": {
+        "@id": "schema:gameTip",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "musicBy": {
+        "@id": "schema:musicBy",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "playMode": {
+        "@id": "schema:playMode",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "trailer": {
+        "@id": "schema:trailer",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Game.schema.json"
+    },
+    {
+      "$ref": "SoftwareApplication.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "VideoGame.schema.json",
+  "x-oold-uuid": "3c3f1be4-4189-5385-800f-8a451ff29bc8",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/VideoGame",
+  "x-oold-instance-rdf-type": [
+    "schema:VideoGame"
+  ],
+  "title": "VideoGame",
+  "description": "A video game is an electronic game that involves human interaction with a user interface to generate visual feedback on a video device.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:VideoGame"
+      ]
+    },
+    "actor": {
+      "title": "Actor",
+      "description": "An actor (individual or a group), e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "PerformingGroup.schema.json",
+          "Person.schema.json"
+        ]
+      }
+    },
+    "cheatCode": {
+      "title": "Cheat Code",
+      "description": "Cheat codes to the game.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "CreativeWork.schema.json"
+      }
+    },
+    "director": {
+      "title": "Director",
+      "description": "A director of e.g. TV, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Person.schema.json"
+      }
+    },
+    "gameEdition": {
+      "title": "Game Edition",
+      "description": "The edition of a video game.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "gamePlatform": {
+      "title": "Game Platform",
+      "description": "The electronic systems used to play <a href=\"http://en.wikipedia.org/wiki/Category:Video_game_platforms\">video games</a>.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Thing.schema.json"
+      }
+    },
+    "gamePlatform_text": {
+      "title": "Game Platform (text)",
+      "description": "The electronic systems used to play <a href=\"http://en.wikipedia.org/wiki/Category:Video_game_platforms\">video games</a>.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Text.schema.json"
+          },
+          {
+            "$ref": "URL.schema.json"
+          }
+        ]
+      }
+    },
+    "gameServer": {
+      "title": "Game Server",
+      "description": "The server on which  it is possible to play the game.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "GameServer.schema.json"
+      }
+    },
+    "gameTip": {
+      "title": "Game Tip",
+      "description": "Links to tips, tactics, etc.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "CreativeWork.schema.json"
+      }
+    },
+    "musicBy": {
+      "title": "Music By",
+      "description": "The composer of the soundtrack.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "MusicGroup.schema.json",
+          "Person.schema.json"
+        ]
+      }
+    },
+    "playMode": {
+      "title": "Play Mode",
+      "description": "Indicates whether this game is multi-player, co-op or single-player.  The game can be marked as multi-player, co-op and single-player at the same time.",
+      "type": "array",
+      "items": {
+        "$ref": "GamePlayMode.schema.json#/$defs/member",
+        "x-oold-range": "GamePlayMode.schema.json"
+      }
+    },
+    "trailer": {
+      "title": "Trailer",
+      "description": "The trailer of a movie or TV/radio series, season, episode, etc.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "VideoObject.schema.json"
+      }
+    }
+  }
+}

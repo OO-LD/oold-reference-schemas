@@ -1,0 +1,51 @@
+{
+  "@context": [
+    "OnlineStore.schema.json",
+    {
+      "hasStore": {
+        "@id": "schema:hasStore",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "OnlineStore.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "OnlineMarketplace.schema.json",
+  "x-oold-uuid": "b1fd5ea5-27e9-55db-b42c-f5a7e7b51487",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/OnlineMarketplace",
+  "x-oold-instance-rdf-type": [
+    "schema:OnlineMarketplace"
+  ],
+  "title": "OnlineMarketplace",
+  "description": "An eCommerce marketplace.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:OnlineMarketplace"
+      ]
+    },
+    "hasStore": {
+      "title": "Has Store",
+      "description": "An eCommerce store part of an online marketplace.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "OnlineStore.schema.json"
+      }
+    }
+  }
+}

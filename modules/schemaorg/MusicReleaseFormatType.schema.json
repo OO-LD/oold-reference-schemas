@@ -1,0 +1,61 @@
+{
+  "@context": [
+    "Enumeration.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Enumeration.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MusicReleaseFormatType.schema.json",
+  "x-oold-uuid": "3ec31e5e-b052-56c4-8e19-1b54adce743c",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/MusicReleaseFormatType",
+  "x-oold-instance-rdf-type": [
+    "schema:MusicReleaseFormatType"
+  ],
+  "title": "MusicReleaseFormatType",
+  "description": "Format of this release (the type of recording media used, i.e. compact disc, digital media, LP, etc.).",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:MusicReleaseFormatType"
+      ]
+    }
+  },
+  "$defs": {
+    "member": {
+      "title": "MusicReleaseFormatType member",
+      "description": "One of the 7 member instances of MusicReleaseFormatType.",
+      "type": "string",
+      "format": "iri-reference",
+      "enum": [
+        "schema:CDFormat",
+        "schema:CassetteFormat",
+        "schema:DVDFormat",
+        "schema:DigitalAudioTapeFormat",
+        "schema:DigitalFormat",
+        "schema:LaserDiscFormat",
+        "schema:VinylFormat"
+      ],
+      "x-oold-ui-enum-titles": [
+        "CDFormat",
+        "CassetteFormat",
+        "DVDFormat",
+        "DigitalAudioTapeFormat",
+        "DigitalFormat",
+        "LaserDiscFormat",
+        "VinylFormat"
+      ]
+    }
+  }
+}

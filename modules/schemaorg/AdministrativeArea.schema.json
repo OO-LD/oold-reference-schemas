@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Place.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Place.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "AdministrativeArea.schema.json",
+  "x-oold-uuid": "8c5bdd03-6dd9-55e3-a11d-be9c242dd162",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/AdministrativeArea",
+  "x-oold-instance-rdf-type": [
+    "schema:AdministrativeArea"
+  ],
+  "title": "AdministrativeArea",
+  "description": "A geographical region, typically under the jurisdiction of a particular government.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:AdministrativeArea"
+      ]
+    }
+  }
+}

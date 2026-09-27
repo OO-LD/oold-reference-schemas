@@ -1,0 +1,51 @@
+{
+  "@context": [
+    "LocalBusiness.schema.json",
+    {
+      "archiveHeld": {
+        "@id": "schema:archiveHeld",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "LocalBusiness.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ArchiveOrganization.schema.json",
+  "x-oold-uuid": "10407003-bc93-5990-b06c-c3c402925246",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/ArchiveOrganization",
+  "x-oold-instance-rdf-type": [
+    "schema:ArchiveOrganization"
+  ],
+  "title": "ArchiveOrganization",
+  "description": "An organization with archival holdings. An organization which keeps and preserves archival material and typically makes it accessible to the public.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:ArchiveOrganization"
+      ]
+    },
+    "archiveHeld": {
+      "title": "Archive Held",
+      "description": "Collection, [fonds](https://en.wikipedia.org/wiki/Fonds), or item held, kept or maintained by an [[ArchiveOrganization]].",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "ArchiveComponent.schema.json"
+      }
+    }
+  }
+}

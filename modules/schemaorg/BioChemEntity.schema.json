@@ -1,0 +1,305 @@
+{
+  "@context": [
+    "Thing.schema.json",
+    {
+      "associatedDisease": {
+        "@id": "schema:associatedDisease",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "bioChemInteraction": {
+        "@id": "schema:bioChemInteraction",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "bioChemSimilarity": {
+        "@id": "schema:bioChemSimilarity",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "biologicalRole": {
+        "@id": "schema:biologicalRole",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "funding": {
+        "@id": "schema:funding",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "hasBioChemEntityPart": {
+        "@id": "schema:hasBioChemEntityPart",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "hasMolecularFunction": {
+        "@id": "schema:hasMolecularFunction",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "hasRepresentation": {
+        "@id": "schema:hasRepresentation",
+        "@container": "@set"
+      },
+      "isEncodedByBioChemEntity": {
+        "@id": "schema:isEncodedByBioChemEntity",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "isInvolvedInBiologicalProcess": {
+        "@id": "schema:isInvolvedInBiologicalProcess",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "isLocatedInSubcellularLocation": {
+        "@id": "schema:isLocatedInSubcellularLocation",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "isPartOfBioChemEntity": {
+        "@id": "schema:isPartOfBioChemEntity",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "taxonomicRange": {
+        "@id": "schema:taxonomicRange",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "taxonomicRange_text": {
+        "@id": "schema:taxonomicRange",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Thing.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "BioChemEntity.schema.json",
+  "x-oold-uuid": "d088355d-21db-5a93-bed1-686b2bb312d3",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/BioChemEntity",
+  "x-oold-instance-rdf-type": [
+    "schema:BioChemEntity"
+  ],
+  "title": "BioChemEntity",
+  "description": "Any biological, chemical, or biochemical thing. For example: a protein; a gene; a chemical; a synthetic chemical.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:BioChemEntity"
+      ]
+    },
+    "associatedDisease": {
+      "title": "Associated Disease",
+      "description": "Disease associated to this BioChemEntity. Such disease can be a MedicalCondition or a URL. If you want to add an evidence supporting the association, please use PropertyValue.",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: PropertyValue [value-type]: PropertyValue -> StructuredValue -> Intangible -> Thing; MedicalCondition [entity]: MedicalCondition -> MedicalEntity -> Thing",
+        "anyOf": [
+          {
+            "$ref": "URL.schema.json"
+          },
+          {
+            "type": "string",
+            "format": "iri-reference",
+            "x-oold-range": "MedicalCondition.schema.json"
+          },
+          {
+            "$ref": "PropertyValue.schema.json"
+          }
+        ]
+      }
+    },
+    "bioChemInteraction": {
+      "title": "Bio Chem Interaction",
+      "description": "A BioChemEntity that is known to interact with this item.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "BioChemEntity.schema.json"
+      }
+    },
+    "bioChemSimilarity": {
+      "title": "Bio Chem Similarity",
+      "description": "A similar BioChemEntity, e.g., obtained by fingerprint similarity algorithms.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "BioChemEntity.schema.json"
+      }
+    },
+    "biologicalRole": {
+      "title": "Biological Role",
+      "description": "A role played by the BioChemEntity within a biological context.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "DefinedTerm.schema.json"
+      }
+    },
+    "funding": {
+      "title": "Funding",
+      "description": "A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Grant.schema.json"
+      }
+    },
+    "hasBioChemEntityPart": {
+      "title": "Has Bio Chem Entity Part",
+      "description": "Indicates a BioChemEntity that (in some sense) has this BioChemEntity as a part. ",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "BioChemEntity.schema.json"
+      }
+    },
+    "hasMolecularFunction": {
+      "title": "Has Molecular Function",
+      "description": "Molecular function performed by this BioChemEntity; please use PropertyValue if you want to include any evidence.",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: PropertyValue [value-type]: PropertyValue -> StructuredValue -> Intangible -> Thing; DefinedTerm [entity]: DefinedTerm -> Intangible -> Thing",
+        "anyOf": [
+          {
+            "$ref": "URL.schema.json"
+          },
+          {
+            "type": "string",
+            "format": "iri-reference",
+            "x-oold-range": "DefinedTerm.schema.json"
+          },
+          {
+            "$ref": "PropertyValue.schema.json"
+          }
+        ]
+      }
+    },
+    "hasRepresentation": {
+      "title": "Has Representation",
+      "description": "A common representation such as a protein sequence or chemical structure for this entity. For images use schema.org/image.",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: PropertyValue [value-type]: PropertyValue -> StructuredValue -> Intangible -> Thing",
+        "anyOf": [
+          {
+            "$ref": "Text.schema.json"
+          },
+          {
+            "$ref": "URL.schema.json"
+          },
+          {
+            "$ref": "PropertyValue.schema.json"
+          }
+        ]
+      }
+    },
+    "isEncodedByBioChemEntity": {
+      "title": "Is Encoded By Bio Chem Entity",
+      "description": "Another BioChemEntity encoding by this one.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Gene.schema.json"
+      }
+    },
+    "isInvolvedInBiologicalProcess": {
+      "title": "Is Involved In Biological Process",
+      "description": "Biological process this BioChemEntity is involved in; please use PropertyValue if you want to include any evidence.",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: PropertyValue [value-type]: PropertyValue -> StructuredValue -> Intangible -> Thing; DefinedTerm [entity]: DefinedTerm -> Intangible -> Thing",
+        "anyOf": [
+          {
+            "$ref": "URL.schema.json"
+          },
+          {
+            "type": "string",
+            "format": "iri-reference",
+            "x-oold-range": "DefinedTerm.schema.json"
+          },
+          {
+            "$ref": "PropertyValue.schema.json"
+          }
+        ]
+      }
+    },
+    "isLocatedInSubcellularLocation": {
+      "title": "Is Located In Subcellular Location",
+      "description": "Subcellular location where this BioChemEntity is located; please use PropertyValue if you want to include any evidence.",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: PropertyValue [value-type]: PropertyValue -> StructuredValue -> Intangible -> Thing; DefinedTerm [entity]: DefinedTerm -> Intangible -> Thing",
+        "anyOf": [
+          {
+            "$ref": "URL.schema.json"
+          },
+          {
+            "type": "string",
+            "format": "iri-reference",
+            "x-oold-range": "DefinedTerm.schema.json"
+          },
+          {
+            "$ref": "PropertyValue.schema.json"
+          }
+        ]
+      }
+    },
+    "isPartOfBioChemEntity": {
+      "title": "Is Part Of Bio Chem Entity",
+      "description": "Indicates a BioChemEntity that is (in some sense) a part of this BioChemEntity. ",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "BioChemEntity.schema.json"
+      }
+    },
+    "taxonomicRange": {
+      "title": "Taxonomic Range",
+      "description": "The taxonomic grouping of the organism that expresses, encodes, or in some way related to the BioChemEntity.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "DefinedTerm.schema.json",
+          "Taxon.schema.json"
+        ]
+      }
+    },
+    "taxonomicRange_text": {
+      "title": "Taxonomic Range (text)",
+      "description": "The taxonomic grouping of the organism that expresses, encodes, or in some way related to the BioChemEntity.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Text.schema.json"
+          },
+          {
+            "$ref": "URL.schema.json"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "@context": [
+    "Intangible.schema.json",
+    {
+      "game": {
+        "@id": "schema:game",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "playersOnline": {
+        "@id": "schema:playersOnline",
+        "@container": "@set"
+      },
+      "serverStatus": {
+        "@id": "schema:serverStatus",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Intangible.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "GameServer.schema.json",
+  "x-oold-uuid": "101857e9-7e3b-59fc-bd2a-cb696433cc3a",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/GameServer",
+  "x-oold-instance-rdf-type": [
+    "schema:GameServer"
+  ],
+  "title": "GameServer",
+  "description": "Server that provides game interaction in a multiplayer game.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:GameServer"
+      ]
+    },
+    "game": {
+      "title": "Game",
+      "description": "Video game which is played on this server.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "VideoGame.schema.json"
+      }
+    },
+    "playersOnline": {
+      "title": "Players Online",
+      "description": "Number of players on the server.",
+      "type": "array",
+      "items": {
+        "$ref": "Integer.schema.json"
+      }
+    },
+    "serverStatus": {
+      "title": "Server Status",
+      "description": "Status of a game server.",
+      "type": "array",
+      "items": {
+        "$ref": "GameServerStatus.schema.json#/$defs/member",
+        "x-oold-range": "GameServerStatus.schema.json"
+      }
+    }
+  }
+}

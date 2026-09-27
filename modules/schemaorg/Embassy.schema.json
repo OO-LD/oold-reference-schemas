@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "GovernmentBuilding.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "GovernmentBuilding.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Embassy.schema.json",
+  "x-oold-uuid": "a9f24a75-8671-53c7-b3e3-f366947c903b",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Embassy",
+  "x-oold-instance-rdf-type": [
+    "schema:Embassy"
+  ],
+  "title": "Embassy",
+  "description": "An embassy.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Embassy"
+      ]
+    }
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "@context": [
+    "Enumeration.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Enumeration.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "PriceTypeEnumeration.schema.json",
+  "x-oold-uuid": "549fa321-f59c-5870-99ad-0fd343f5bd4b",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/PriceTypeEnumeration",
+  "x-oold-instance-rdf-type": [
+    "schema:PriceTypeEnumeration"
+  ],
+  "title": "PriceTypeEnumeration",
+  "description": "Enumerates different price types, for example list price, invoice price, and sale price.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:PriceTypeEnumeration"
+      ]
+    }
+  },
+  "$defs": {
+    "member": {
+      "title": "PriceTypeEnumeration member",
+      "description": "One of the 8 member instances of PriceTypeEnumeration.",
+      "type": "string",
+      "format": "iri-reference",
+      "enum": [
+        "schema:InvoicePrice",
+        "schema:ListPrice",
+        "schema:MSRP",
+        "schema:MinimumAdvertisedPrice",
+        "schema:RegularPrice",
+        "schema:SRP",
+        "schema:SalePrice",
+        "schema:StrikethroughPrice"
+      ],
+      "x-oold-ui-enum-titles": [
+        "InvoicePrice",
+        "ListPrice",
+        "MSRP",
+        "MinimumAdvertisedPrice",
+        "RegularPrice",
+        "SRP",
+        "SalePrice",
+        "StrikethroughPrice"
+      ]
+    }
+  }
+}

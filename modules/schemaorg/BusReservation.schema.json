@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Reservation.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Reservation.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "BusReservation.schema.json",
+  "x-oold-uuid": "e07afb50-69e0-5a9d-a2af-cf2e11604637",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/BusReservation",
+  "x-oold-instance-rdf-type": [
+    "schema:BusReservation"
+  ],
+  "title": "BusReservation",
+  "description": "A reservation for bus travel. \\n\\nNote: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations. For offers of tickets, use [[Offer]].",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:BusReservation"
+      ]
+    }
+  }
+}

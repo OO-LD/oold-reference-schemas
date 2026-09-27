@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "ImageObject.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "ImageObject.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Barcode.schema.json",
+  "x-oold-uuid": "76cbbd79-f977-5890-9c8f-ef02069d3aed",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Barcode",
+  "x-oold-instance-rdf-type": [
+    "schema:Barcode"
+  ],
+  "title": "Barcode",
+  "description": "An image of a visual machine-readable code such as a barcode or QR code.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Barcode"
+      ]
+    }
+  }
+}

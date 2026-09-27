@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "HomeAndConstructionBusiness.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "HomeAndConstructionBusiness.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "HVACBusiness.schema.json",
+  "x-oold-uuid": "8e24b6b0-bea0-5e08-bc54-fe10134bbe41",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/HVACBusiness",
+  "x-oold-instance-rdf-type": [
+    "schema:HVACBusiness"
+  ],
+  "title": "HVACBusiness",
+  "description": "A business that provides Heating, Ventilation and Air Conditioning services.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:HVACBusiness"
+      ]
+    }
+  }
+}

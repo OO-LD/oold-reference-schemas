@@ -1,0 +1,67 @@
+{
+  "@context": [
+    "EnergyEfficiencyEnumeration.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "EnergyEfficiencyEnumeration.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "EUEnergyEfficiencyEnumeration.schema.json",
+  "x-oold-uuid": "2e9662d8-7f94-541f-8769-5d6965ba4377",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/EUEnergyEfficiencyEnumeration",
+  "x-oold-instance-rdf-type": [
+    "schema:EUEnergyEfficiencyEnumeration"
+  ],
+  "title": "EUEnergyEfficiencyEnumeration",
+  "description": "Enumerates the EU energy efficiency classes A-G as well as A+, A++, and A+++ as defined in EU directive 2017/1369.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:EUEnergyEfficiencyEnumeration"
+      ]
+    }
+  },
+  "$defs": {
+    "member": {
+      "title": "EUEnergyEfficiencyEnumeration member",
+      "description": "One of the 10 member instances of EUEnergyEfficiencyEnumeration.",
+      "type": "string",
+      "format": "iri-reference",
+      "enum": [
+        "schema:EUEnergyEfficiencyCategoryA",
+        "schema:EUEnergyEfficiencyCategoryA1Plus",
+        "schema:EUEnergyEfficiencyCategoryA2Plus",
+        "schema:EUEnergyEfficiencyCategoryA3Plus",
+        "schema:EUEnergyEfficiencyCategoryB",
+        "schema:EUEnergyEfficiencyCategoryC",
+        "schema:EUEnergyEfficiencyCategoryD",
+        "schema:EUEnergyEfficiencyCategoryE",
+        "schema:EUEnergyEfficiencyCategoryF",
+        "schema:EUEnergyEfficiencyCategoryG"
+      ],
+      "x-oold-ui-enum-titles": [
+        "EUEnergyEfficiencyCategoryA",
+        "EUEnergyEfficiencyCategoryA1Plus",
+        "EUEnergyEfficiencyCategoryA2Plus",
+        "EUEnergyEfficiencyCategoryA3Plus",
+        "EUEnergyEfficiencyCategoryB",
+        "EUEnergyEfficiencyCategoryC",
+        "EUEnergyEfficiencyCategoryD",
+        "EUEnergyEfficiencyCategoryE",
+        "EUEnergyEfficiencyCategoryF",
+        "EUEnergyEfficiencyCategoryG"
+      ]
+    }
+  }
+}

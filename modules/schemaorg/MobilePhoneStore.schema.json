@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Store.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Store.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MobilePhoneStore.schema.json",
+  "x-oold-uuid": "2e2ad1da-2264-57ef-b2a7-ccdf6670e251",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/MobilePhoneStore",
+  "x-oold-instance-rdf-type": [
+    "schema:MobilePhoneStore"
+  ],
+  "title": "MobilePhoneStore",
+  "description": "A store that sells mobile phones and related accessories.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:MobilePhoneStore"
+      ]
+    }
+  }
+}

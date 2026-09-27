@@ -1,0 +1,8 @@
+{
+  "$schema": "EmployeeRole.schema.json",
+  "@context": "EmployeeRole.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:EmployeeRole"
+  ]
+}

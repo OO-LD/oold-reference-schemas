@@ -1,0 +1,56 @@
+{
+  "@context": [
+    "Accommodation.schema.json",
+    {
+      "numberOfRooms": {
+        "@id": "schema:numberOfRooms",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Accommodation.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "House.schema.json",
+  "x-oold-uuid": "d0b62c62-2f19-513d-b63b-76190c95249b",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/House",
+  "x-oold-instance-rdf-type": [
+    "schema:House"
+  ],
+  "title": "House",
+  "description": "A house is a building or structure that has the ability to be occupied for habitation by humans or other creatures (source: Wikipedia, the free encyclopedia, see <a href=\"http://en.wikipedia.org/wiki/House\">http://en.wikipedia.org/wiki/House</a>).",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:House"
+      ]
+    },
+    "numberOfRooms": {
+      "title": "Number Of Rooms",
+      "description": "The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.\nTypical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: QuantitativeValue [value-type]: QuantitativeValue -> StructuredValue -> Intangible -> Thing",
+        "anyOf": [
+          {
+            "$ref": "Number.schema.json"
+          },
+          {
+            "$ref": "QuantitativeValue.schema.json"
+          }
+        ]
+      }
+    }
+  }
+}

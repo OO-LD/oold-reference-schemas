@@ -1,0 +1,8 @@
+{
+  "$schema": "GameAvailabilityEnumeration.schema.json",
+  "@context": "GameAvailabilityEnumeration.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:GameAvailabilityEnumeration"
+  ]
+}

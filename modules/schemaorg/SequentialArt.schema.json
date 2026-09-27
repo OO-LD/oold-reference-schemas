@@ -1,0 +1,39 @@
+{
+  "@context": [
+    "Book.schema.json",
+    "VisualArtwork.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Book.schema.json"
+    },
+    {
+      "$ref": "VisualArtwork.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "SequentialArt.schema.json",
+  "x-oold-uuid": "e17a22b9-b78f-547d-9ed9-88b9dec149da",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/SequentialArt",
+  "x-oold-instance-rdf-type": [
+    "schema:SequentialArt"
+  ],
+  "title": "SequentialArt",
+  "description": "An art forms that use images deployed in a specific order for the purpose of graphic storytelling (i.e., narration of graphic stories) or conveying information. Examples of SequentialArt are Franco-Belgian Bande Dessinée, Comics in the USA and 漫画 (Manga) in Japan.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:SequentialArt"
+      ]
+    }
+  }
+}

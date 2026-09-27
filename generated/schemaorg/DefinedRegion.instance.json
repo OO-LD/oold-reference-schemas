@@ -1,0 +1,8 @@
+{
+  "$schema": "DefinedRegion.schema.json",
+  "@context": "DefinedRegion.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:DefinedRegion"
+  ]
+}

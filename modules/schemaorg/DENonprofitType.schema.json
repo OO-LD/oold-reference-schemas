@@ -1,0 +1,61 @@
+{
+  "@context": [
+    "NonprofitType.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "NonprofitType.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "DENonprofitType.schema.json",
+  "x-oold-uuid": "1ae1a463-8829-5b98-8b45-32968f85ddb5",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/DENonprofitType",
+  "x-oold-instance-rdf-type": [
+    "schema:DENonprofitType"
+  ],
+  "title": "DENonprofitType",
+  "description": "DENonprofitType: Non-profit organization type originating from Germany in accordance with article 52 of the German fiscal code (Abgabenverordnung or AO).",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:DENonprofitType"
+      ]
+    }
+  },
+  "$defs": {
+    "member": {
+      "title": "DENonprofitType member",
+      "description": "One of the 7 member instances of DENonprofitType.",
+      "type": "string",
+      "format": "iri-reference",
+      "enum": [
+        "schema:DECooperativeCharity",
+        "schema:DEFoundationCharity",
+        "schema:DEJointStockCompanyCharity",
+        "schema:DELimitedLiabilityCharity",
+        "schema:DENotRegisteredAssociationCharity",
+        "schema:DEPublicCharity",
+        "schema:DERegisteredAssociationCharity"
+      ],
+      "x-oold-ui-enum-titles": [
+        "DECooperativeCharity",
+        "DEFoundationCharity",
+        "DEJointStockCompanyCharity",
+        "DELimitedLiabilityCharity",
+        "DENotRegisteredAssociationCharity",
+        "DEPublicCharity",
+        "DERegisteredAssociationCharity"
+      ]
+    }
+  }
+}

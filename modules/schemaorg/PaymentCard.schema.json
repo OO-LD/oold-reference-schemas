@@ -1,0 +1,103 @@
+{
+  "@context": [
+    "FinancialProduct.schema.json",
+    "PaymentMethod.schema.json",
+    {
+      "cashBack": {
+        "@id": "schema:cashBack",
+        "@container": "@set"
+      },
+      "contactlessPayment": {
+        "@id": "schema:contactlessPayment",
+        "@container": "@set"
+      },
+      "floorLimit": {
+        "@id": "schema:floorLimit",
+        "@container": "@set"
+      },
+      "monthlyMinimumRepaymentAmount": {
+        "@id": "schema:monthlyMinimumRepaymentAmount",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "FinancialProduct.schema.json"
+    },
+    {
+      "$ref": "PaymentMethod.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "PaymentCard.schema.json",
+  "x-oold-uuid": "5aa4a977-ec52-54ee-8ae8-e78929b11dca",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/PaymentCard",
+  "x-oold-instance-rdf-type": [
+    "schema:PaymentCard"
+  ],
+  "title": "PaymentCard",
+  "description": "A payment method using a credit, debit, store or other card to associate the payment with an account.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:PaymentCard"
+      ]
+    },
+    "cashBack": {
+      "title": "Cash Back",
+      "description": "A cardholder benefit that pays the cardholder a small percentage of their net expenditures.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Boolean.schema.json"
+          },
+          {
+            "$ref": "Number.schema.json"
+          }
+        ]
+      }
+    },
+    "contactlessPayment": {
+      "title": "Contactless Payment",
+      "description": "A secure method for consumers to purchase products or services via debit, credit or smartcards by using RFID or NFC technology.",
+      "type": "array",
+      "items": {
+        "$ref": "Boolean.schema.json"
+      }
+    },
+    "floorLimit": {
+      "title": "Floor Limit",
+      "description": "A floor limit is the amount of money above which credit card transactions must be authorized.",
+      "type": "array",
+      "items": {
+        "$ref": "MonetaryAmount.schema.json"
+      }
+    },
+    "monthlyMinimumRepaymentAmount": {
+      "title": "Monthly Minimum Repayment Amount",
+      "description": "The minimum payment is the lowest amount of money that one is required to pay on a credit card statement each month.",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: MonetaryAmount [value-type]: MonetaryAmount -> StructuredValue -> Intangible -> Thing",
+        "anyOf": [
+          {
+            "$ref": "Number.schema.json"
+          },
+          {
+            "$ref": "MonetaryAmount.schema.json"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "$schema": "NonprofitType.schema.json",
+  "@context": "NonprofitType.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:NonprofitType"
+  ]
+}

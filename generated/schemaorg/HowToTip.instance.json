@@ -1,0 +1,8 @@
+{
+  "$schema": "HowToTip.schema.json",
+  "@context": "HowToTip.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:HowToTip"
+  ]
+}

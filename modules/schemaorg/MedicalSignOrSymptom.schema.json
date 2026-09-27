@@ -1,0 +1,56 @@
+{
+  "@context": [
+    "MedicalCondition.schema.json",
+    {
+      "possibleTreatment": {
+        "@id": "schema:possibleTreatment",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "MedicalCondition.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MedicalSignOrSymptom.schema.json",
+  "x-oold-uuid": "a992433b-d958-5b79-9cec-512e35fa7217",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/MedicalSignOrSymptom",
+  "x-oold-instance-rdf-type": [
+    "schema:MedicalSignOrSymptom"
+  ],
+  "title": "MedicalSignOrSymptom",
+  "description": "Any feature associated or not with a medical condition. In medicine a symptom is generally subjective while a sign is objective.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:MedicalSignOrSymptom"
+      ]
+    },
+    "possibleTreatment": {
+      "title": "Possible Treatment",
+      "description": "A possible treatment to address this condition, sign or symptom.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "Drug.schema.json",
+          "DrugClass.schema.json",
+          "LifestyleModification.schema.json",
+          "MedicalTherapy.schema.json"
+        ]
+      }
+    }
+  }
+}

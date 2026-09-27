@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Enumeration.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Enumeration.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "WarrantyScope.schema.json",
+  "x-oold-uuid": "4349a117-bc83-5349-b733-5bac5e4a0bc1",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/WarrantyScope",
+  "x-oold-instance-rdf-type": [
+    "schema:WarrantyScope"
+  ],
+  "title": "WarrantyScope",
+  "description": "A range of services that will be provided to a customer free of charge in case of a defect or malfunction of a product.\\n\\nCommonly used values:\\n\\n* http://purl.org/goodrelations/v1#Labor-BringIn\\n* http://purl.org/goodrelations/v1#PartsAndLabor-BringIn\\n* http://purl.org/goodrelations/v1#PartsAndLabor-PickUp\n      ",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:WarrantyScope"
+      ]
+    }
+  }
+}

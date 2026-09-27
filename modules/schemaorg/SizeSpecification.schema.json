@@ -1,0 +1,150 @@
+{
+  "@context": [
+    "QualitativeValue.schema.json",
+    {
+      "hasMeasurement": {
+        "@id": "schema:hasMeasurement",
+        "@container": "@set"
+      },
+      "sizeGroup": {
+        "@id": "schema:sizeGroup",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "sizeGroup_text": {
+        "@id": "schema:sizeGroup",
+        "@container": "@set"
+      },
+      "sizeSystem": {
+        "@id": "schema:sizeSystem",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "sizeSystem_text": {
+        "@id": "schema:sizeSystem",
+        "@container": "@set"
+      },
+      "suggestedAge": {
+        "@id": "schema:suggestedAge",
+        "@container": "@set"
+      },
+      "suggestedGender": {
+        "@id": "schema:suggestedGender",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "suggestedGender_text": {
+        "@id": "schema:suggestedGender",
+        "@container": "@set"
+      },
+      "suggestedMeasurement": {
+        "@id": "schema:suggestedMeasurement",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "QualitativeValue.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "SizeSpecification.schema.json",
+  "x-oold-uuid": "7cf18f93-9f87-5a0e-93bb-68efc49b3807",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/SizeSpecification",
+  "x-oold-instance-rdf-type": [
+    "schema:SizeSpecification"
+  ],
+  "title": "SizeSpecification",
+  "description": "Size related properties of a product, typically a size code ([[name]]) and optionally a [[sizeSystem]], [[sizeGroup]], and product measurements ([[hasMeasurement]]). In addition, the intended audience can be defined through [[suggestedAge]], [[suggestedGender]], and suggested body measurements ([[suggestedMeasurement]]).",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:SizeSpecification"
+      ]
+    },
+    "hasMeasurement": {
+      "title": "Has Measurement",
+      "description": "A measurement of an item, For example, the inseam of pants, the wheel size of a bicycle, the gauge of a screw, or the carbon footprint measured for certification by an authority. Usually an exact measurement, but can also be a range of measurements for adjustable products, for example belts and ski bindings.",
+      "type": "array",
+      "items": {
+        "$ref": "QuantitativeValue.schema.json"
+      }
+    },
+    "sizeGroup": {
+      "title": "Size Group",
+      "description": "The size group (also known as \"size type\") for a product's size. Size groups are common in the fashion industry to define size segments and suggested audiences for wearable products. Multiple values can be combined, for example \"men's big and tall\", \"petite maternity\" or \"regular\".",
+      "type": "array",
+      "items": {
+        "$ref": "SizeGroupEnumeration.schema.json#/$defs/member",
+        "x-oold-range": "SizeGroupEnumeration.schema.json"
+      }
+    },
+    "sizeGroup_text": {
+      "title": "Size Group (text)",
+      "description": "The size group (also known as \"size type\") for a product's size. Size groups are common in the fashion industry to define size segments and suggested audiences for wearable products. Multiple values can be combined, for example \"men's big and tall\", \"petite maternity\" or \"regular\".",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "sizeSystem": {
+      "title": "Size System",
+      "description": "The size system used to identify a product's size. Typically either a standard (for example, \"GS1\" or \"ISO-EN13402\"), country code (for example \"US\" or \"JP\"), or a measuring system (for example \"Metric\" or \"Imperial\").",
+      "type": "array",
+      "items": {
+        "$ref": "SizeSystemEnumeration.schema.json#/$defs/member",
+        "x-oold-range": "SizeSystemEnumeration.schema.json"
+      }
+    },
+    "sizeSystem_text": {
+      "title": "Size System (text)",
+      "description": "The size system used to identify a product's size. Typically either a standard (for example, \"GS1\" or \"ISO-EN13402\"), country code (for example \"US\" or \"JP\"), or a measuring system (for example \"Metric\" or \"Imperial\").",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "suggestedAge": {
+      "title": "Suggested Age",
+      "description": "The age or age range for the intended audience or person, for example 3-12 months for infants, 1-5 years for toddlers.",
+      "type": "array",
+      "items": {
+        "$ref": "QuantitativeValue.schema.json"
+      }
+    },
+    "suggestedGender": {
+      "title": "Suggested Gender",
+      "description": "The suggested gender of the intended person or audience, for example \"male\", \"female\", or \"unisex\".",
+      "type": "array",
+      "items": {
+        "$ref": "GenderType.schema.json#/$defs/member",
+        "x-oold-range": "GenderType.schema.json"
+      }
+    },
+    "suggestedGender_text": {
+      "title": "Suggested Gender (text)",
+      "description": "The suggested gender of the intended person or audience, for example \"male\", \"female\", or \"unisex\".",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "suggestedMeasurement": {
+      "title": "Suggested Measurement",
+      "description": "A suggested range of body measurements for the intended audience or person, for example inseam between 32 and 34 inches or height between 170 and 190 cm. Typically found on a size chart for wearable products.",
+      "type": "array",
+      "items": {
+        "$ref": "QuantitativeValue.schema.json"
+      }
+    }
+  }
+}

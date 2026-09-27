@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Event.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Event.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "LiteraryEvent.schema.json",
+  "x-oold-uuid": "13f6ea82-8726-5a6b-b044-42696658bb1c",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/LiteraryEvent",
+  "x-oold-instance-rdf-type": [
+    "schema:LiteraryEvent"
+  ],
+  "title": "LiteraryEvent",
+  "description": "Event type: Literary event.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:LiteraryEvent"
+      ]
+    }
+  }
+}

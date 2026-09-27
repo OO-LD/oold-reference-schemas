@@ -1,0 +1,134 @@
+{
+  "@context": [
+    "StructuredValue.schema.json",
+    {
+      "doesNotShip": {
+        "@id": "schema:doesNotShip",
+        "@container": "@set"
+      },
+      "freeShippingThreshold": {
+        "@id": "schema:freeShippingThreshold",
+        "@container": "@set"
+      },
+      "isUnlabelledFallback": {
+        "@id": "schema:isUnlabelledFallback",
+        "@container": "@set"
+      },
+      "orderPercentage": {
+        "@id": "schema:orderPercentage",
+        "@container": "@set"
+      },
+      "shippingDestination": {
+        "@id": "schema:shippingDestination",
+        "@container": "@set"
+      },
+      "shippingRate": {
+        "@id": "schema:shippingRate",
+        "@container": "@set"
+      },
+      "weightPercentage": {
+        "@id": "schema:weightPercentage",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "StructuredValue.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ShippingRateSettings.schema.json",
+  "x-oold-uuid": "f6cb6fe2-acaa-5f3b-a7e8-0cde792c94d8",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/ShippingRateSettings",
+  "x-oold-instance-rdf-type": [
+    "schema:ShippingRateSettings"
+  ],
+  "title": "ShippingRateSettings",
+  "description": "A ShippingRateSettings represents re-usable pieces of shipping information. It is designed for publication on an URL that may be referenced via the [[shippingSettingsLink]] property of an [[OfferShippingDetails]]. Several occurrences can be published, distinguished and matched (i.e. identified/referenced) by their different values for [[shippingLabel]].",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:ShippingRateSettings"
+      ]
+    },
+    "doesNotShip": {
+      "title": "Does Not Ship",
+      "description": "Indicates when shipping to a particular [[shippingDestination]] is not available.",
+      "type": "array",
+      "items": {
+        "$ref": "Boolean.schema.json"
+      }
+    },
+    "freeShippingThreshold": {
+      "title": "Free Shipping Threshold",
+      "description": "A monetary value above (or at) which the shipping rate becomes free. Intended to be used via an [[OfferShippingDetails]] with [[shippingSettingsLink]] matching this [[ShippingRateSettings]].",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "DeliveryChargeSpecification.schema.json"
+          },
+          {
+            "$ref": "MonetaryAmount.schema.json"
+          }
+        ]
+      }
+    },
+    "isUnlabelledFallback": {
+      "title": "Is Unlabelled Fallback",
+      "description": "This can be marked 'true' to indicate that some published [[DeliveryTimeSettings]] or [[ShippingRateSettings]] are intended to apply to all [[OfferShippingDetails]] published by the same merchant, when referenced by a [[shippingSettingsLink]] in those settings. It is not meaningful to use a 'true' value for this property alongside a transitTimeLabel (for [[DeliveryTimeSettings]]) or shippingLabel (for [[ShippingRateSettings]]), since this property is for use with unlabelled settings.",
+      "type": "array",
+      "items": {
+        "$ref": "Boolean.schema.json"
+      }
+    },
+    "orderPercentage": {
+      "title": "Order Percentage",
+      "description": "Value representing the fraction of the value of the order that is charged as shipping cost. Example: 0.10 would mean shipping rate is 10% of the total order value.",
+      "type": "array",
+      "items": {
+        "$ref": "Number.schema.json"
+      }
+    },
+    "shippingDestination": {
+      "title": "Shipping Destination",
+      "description": "indicates (possibly multiple) shipping destinations. These can be defined in several ways, e.g. postalCode ranges.",
+      "type": "array",
+      "items": {
+        "$ref": "DefinedRegion.schema.json"
+      }
+    },
+    "shippingRate": {
+      "title": "Shipping Rate",
+      "description": "The shipping rate is the cost of shipping to the specified destination. Typically, the maxValue and currency values (of the [[MonetaryAmount]]) are most appropriate.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "MonetaryAmount.schema.json"
+          },
+          {
+            "$ref": "ShippingRateSettings.schema.json"
+          }
+        ]
+      }
+    },
+    "weightPercentage": {
+      "title": "Weight Percentage",
+      "description": "Value representing the fraction of the weight that is used to compute the shipping price. Example: 0.10 and a shipping weight of 15kg would add $1.5 to the order price, where the $ is the currency of the order.",
+      "type": "array",
+      "items": {
+        "$ref": "Number.schema.json"
+      }
+    }
+  }
+}

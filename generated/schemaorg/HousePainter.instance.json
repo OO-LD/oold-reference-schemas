@@ -1,0 +1,8 @@
+{
+  "$schema": "HousePainter.schema.json",
+  "@context": "HousePainter.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:HousePainter"
+  ]
+}

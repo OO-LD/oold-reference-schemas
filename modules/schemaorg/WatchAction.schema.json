@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "ConsumeAction.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "ConsumeAction.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "WatchAction.schema.json",
+  "x-oold-uuid": "113e2ee5-49a9-55e7-aa60-41036da80ac5",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/WatchAction",
+  "x-oold-instance-rdf-type": [
+    "schema:WatchAction"
+  ],
+  "title": "WatchAction",
+  "description": "The act of consuming dynamic/moving visual content.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:WatchAction"
+      ]
+    }
+  }
+}

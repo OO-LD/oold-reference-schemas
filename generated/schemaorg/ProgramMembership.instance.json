@@ -1,0 +1,8 @@
+{
+  "$schema": "ProgramMembership.schema.json",
+  "@context": "ProgramMembership.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:ProgramMembership"
+  ]
+}

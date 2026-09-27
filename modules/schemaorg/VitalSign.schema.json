@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "MedicalSign.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "MedicalSign.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "VitalSign.schema.json",
+  "x-oold-uuid": "c68de70c-32e4-5e11-a0d8-db8bc3e1738b",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/VitalSign",
+  "x-oold-instance-rdf-type": [
+    "schema:VitalSign"
+  ],
+  "title": "VitalSign",
+  "description": "Vital signs are measures of various physiological functions in order to assess the most basic body functions.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:VitalSign"
+      ]
+    }
+  }
+}

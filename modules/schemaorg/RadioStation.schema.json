@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "LocalBusiness.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "LocalBusiness.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "RadioStation.schema.json",
+  "x-oold-uuid": "0765c1a0-2947-5fc8-a14a-fda484a2878b",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/RadioStation",
+  "x-oold-instance-rdf-type": [
+    "schema:RadioStation"
+  ],
+  "title": "RadioStation",
+  "description": "A radio station.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:RadioStation"
+      ]
+    }
+  }
+}

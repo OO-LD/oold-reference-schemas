@@ -1,0 +1,8 @@
+{
+  "$schema": "Cooperative.schema.json",
+  "@context": "Cooperative.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:Cooperative"
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "MediaGallery.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "MediaGallery.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ImageGallery.schema.json",
+  "x-oold-uuid": "6bda8cbd-d08d-50f5-810f-27e1e4fd912e",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/ImageGallery",
+  "x-oold-instance-rdf-type": [
+    "schema:ImageGallery"
+  ],
+  "title": "ImageGallery",
+  "description": "Web page type: Image gallery page.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:ImageGallery"
+      ]
+    }
+  }
+}

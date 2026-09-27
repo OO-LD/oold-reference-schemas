@@ -1,0 +1,202 @@
+{
+  "@context": [
+    "StructuredValue.schema.json",
+    {
+      "areaServed": {
+        "@id": "schema:areaServed",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "areaServed_text": {
+        "@id": "schema:areaServed",
+        "@container": "@set"
+      },
+      "availableLanguage": {
+        "@id": "schema:availableLanguage",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "availableLanguage_text": {
+        "@id": "schema:availableLanguage",
+        "@container": "@set"
+      },
+      "contactOption": {
+        "@id": "schema:contactOption",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "contactType": {
+        "@id": "schema:contactType",
+        "@container": "@set"
+      },
+      "email": {
+        "@id": "schema:email",
+        "@container": "@set"
+      },
+      "faxNumber": {
+        "@id": "schema:faxNumber",
+        "@container": "@set"
+      },
+      "hoursAvailable": {
+        "@id": "schema:hoursAvailable",
+        "@container": "@set"
+      },
+      "productSupported": {
+        "@id": "schema:productSupported",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "productSupported_text": {
+        "@id": "schema:productSupported",
+        "@container": "@set"
+      },
+      "telephone": {
+        "@id": "schema:telephone",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "StructuredValue.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ContactPoint.schema.json",
+  "x-oold-uuid": "9c8d1605-9b91-55a3-aaa3-0ecc6a91f19e",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/ContactPoint",
+  "x-oold-instance-rdf-type": [
+    "schema:ContactPoint"
+  ],
+  "title": "ContactPoint",
+  "description": "A contact point&#x2014;for example, a Customer Complaints department.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:ContactPoint"
+      ]
+    },
+    "areaServed": {
+      "title": "Area Served",
+      "description": "The geographic area where a service or offered item is provided.",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: GeoShape [value-type]: GeoShape -> StructuredValue -> Intangible -> Thing; AdministrativeArea [entity]: AdministrativeArea -> Place -> Thing; Place [entity]: Place -> Thing",
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "iri-reference",
+            "x-oold-range": [
+              "AdministrativeArea.schema.json",
+              "Place.schema.json"
+            ]
+          },
+          {
+            "$ref": "GeoShape.schema.json"
+          }
+        ]
+      }
+    },
+    "areaServed_text": {
+      "title": "Area Served (text)",
+      "description": "The geographic area where a service or offered item is provided.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "availableLanguage": {
+      "title": "Available Language",
+      "description": "A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]].",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Language.schema.json"
+      }
+    },
+    "availableLanguage_text": {
+      "title": "Available Language (text)",
+      "description": "A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]].",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "contactOption": {
+      "title": "Contact Option",
+      "description": "An option available on this contact point (e.g. a toll-free number or support for hearing-impaired callers).",
+      "type": "array",
+      "items": {
+        "$ref": "ContactPointOption.schema.json#/$defs/member",
+        "x-oold-range": "ContactPointOption.schema.json"
+      }
+    },
+    "contactType": {
+      "title": "Contact Type",
+      "description": "A person or organization can have different contact points, for different purposes. For example, a sales contact point, a PR contact point and so on. This property is used to specify the kind of contact point.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "email": {
+      "title": "Email",
+      "description": "Email address.",
+      "type": "array",
+      "items": {
+        "$ref": "Email.schema.json"
+      }
+    },
+    "faxNumber": {
+      "title": "Fax Number",
+      "description": "The fax number.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "hoursAvailable": {
+      "title": "Hours Available",
+      "description": "The hours during which this service or contact is available.",
+      "type": "array",
+      "items": {
+        "$ref": "OpeningHoursSpecification.schema.json"
+      }
+    },
+    "productSupported": {
+      "title": "Product Supported",
+      "description": "The product or service this support contact point is related to (such as product support for a particular product line). This can be a specific product or product line (e.g. \"iPhone\") or a general category of products or services (e.g. \"smartphones\").",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Product.schema.json"
+      }
+    },
+    "productSupported_text": {
+      "title": "Product Supported (text)",
+      "description": "The product or service this support contact point is related to (such as product support for a particular product line). This can be a specific product or product line (e.g. \"iPhone\") or a general category of products or services (e.g. \"smartphones\").",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "telephone": {
+      "title": "Telephone",
+      "description": "The telephone number.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    }
+  }
+}

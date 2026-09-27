@@ -1,0 +1,49 @@
+{
+  "@context": [
+    "Enumeration.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Enumeration.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MeasurementMethodEnum.schema.json",
+  "x-oold-uuid": "703c372e-8a76-5638-bc7e-5736b2af39e4",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/MeasurementMethodEnum",
+  "x-oold-instance-rdf-type": [
+    "schema:MeasurementMethodEnum"
+  ],
+  "title": "MeasurementMethodEnum",
+  "description": "Enumeration(s) for use with [[measurementMethod]].",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:MeasurementMethodEnum"
+      ]
+    }
+  },
+  "$defs": {
+    "member": {
+      "title": "MeasurementMethodEnum member",
+      "description": "One of the 1 member instances of MeasurementMethodEnum.",
+      "type": "string",
+      "format": "iri-reference",
+      "enum": [
+        "schema:ExampleMeasurementMethodEnum"
+      ],
+      "x-oold-ui-enum-titles": [
+        "ExampleMeasurementMethodEnum"
+      ]
+    }
+  }
+}

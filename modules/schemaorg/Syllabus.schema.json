@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "LearningResource.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "LearningResource.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Syllabus.schema.json",
+  "x-oold-uuid": "7c8e81e7-c68a-59c5-88a2-b91a1a8a8b0e",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Syllabus",
+  "x-oold-instance-rdf-type": [
+    "schema:Syllabus"
+  ],
+  "title": "Syllabus",
+  "description": "A syllabus that describes the material covered in a course, often with several such sections per [[Course]] so that a distinct [[timeRequired]] can be provided for that section of the [[Course]].",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Syllabus"
+      ]
+    }
+  }
+}

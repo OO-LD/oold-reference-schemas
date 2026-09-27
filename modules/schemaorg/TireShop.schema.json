@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Store.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Store.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "TireShop.schema.json",
+  "x-oold-uuid": "77a575d7-8bb5-5592-a3d2-0bafa81d2d4e",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/TireShop",
+  "x-oold-instance-rdf-type": [
+    "schema:TireShop"
+  ],
+  "title": "TireShop",
+  "description": "A tire shop.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:TireShop"
+      ]
+    }
+  }
+}

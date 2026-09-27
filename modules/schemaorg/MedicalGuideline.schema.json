@@ -1,0 +1,90 @@
+{
+  "@context": [
+    "MedicalEntity.schema.json",
+    {
+      "evidenceLevel": {
+        "@id": "schema:evidenceLevel",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "evidenceOrigin": {
+        "@id": "schema:evidenceOrigin",
+        "@container": "@set"
+      },
+      "guidelineDate": {
+        "@id": "schema:guidelineDate",
+        "@type": "xsd:date",
+        "@container": "@set"
+      },
+      "guidelineSubject": {
+        "@id": "schema:guidelineSubject",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "MedicalEntity.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MedicalGuideline.schema.json",
+  "x-oold-uuid": "c8d6a333-4381-5073-871d-abd28792541a",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/MedicalGuideline",
+  "x-oold-instance-rdf-type": [
+    "schema:MedicalGuideline"
+  ],
+  "title": "MedicalGuideline",
+  "description": "Any recommendation made by a standard society (e.g. ACC/AHA) or consensus statement that denotes how to diagnose and treat a particular condition. Note: this type should be used to tag the actual guideline recommendation; if the guideline recommendation occurs in a larger scholarly article, use MedicalScholarlyArticle to tag the overall article, not this type. Note also: the organization making the recommendation should be captured in the recognizingAuthority base property of MedicalEntity.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:MedicalGuideline"
+      ]
+    },
+    "evidenceLevel": {
+      "title": "Evidence Level",
+      "description": "Strength of evidence of the data used to formulate the guideline (enumerated).",
+      "type": "array",
+      "items": {
+        "$ref": "MedicalEvidenceLevel.schema.json#/$defs/member",
+        "x-oold-range": "MedicalEvidenceLevel.schema.json"
+      }
+    },
+    "evidenceOrigin": {
+      "title": "Evidence Origin",
+      "description": "Source of the data used to formulate the guidance, e.g. RCT, consensus opinion, etc.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "guidelineDate": {
+      "title": "Guideline Date",
+      "description": "Date on which this guideline's recommendation was made.",
+      "type": "array",
+      "items": {
+        "$ref": "Date.schema.json"
+      }
+    },
+    "guidelineSubject": {
+      "title": "Guideline Subject",
+      "description": "The medical conditions, treatments, etc. that are the subject of the guideline.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "MedicalEntity.schema.json"
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "$schema": "NewsMediaOrganization.schema.json",
+  "@context": "NewsMediaOrganization.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:NewsMediaOrganization"
+  ]
+}

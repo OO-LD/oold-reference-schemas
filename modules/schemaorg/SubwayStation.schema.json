@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "CivicStructure.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "CivicStructure.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "SubwayStation.schema.json",
+  "x-oold-uuid": "f4408da0-614b-5a64-b30f-6db1d99d18af",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/SubwayStation",
+  "x-oold-instance-rdf-type": [
+    "schema:SubwayStation"
+  ],
+  "title": "SubwayStation",
+  "description": "A subway station.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:SubwayStation"
+      ]
+    }
+  }
+}

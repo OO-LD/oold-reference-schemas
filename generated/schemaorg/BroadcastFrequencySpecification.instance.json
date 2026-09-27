@@ -1,0 +1,8 @@
+{
+  "$schema": "BroadcastFrequencySpecification.schema.json",
+  "@context": "BroadcastFrequencySpecification.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:BroadcastFrequencySpecification"
+  ]
+}

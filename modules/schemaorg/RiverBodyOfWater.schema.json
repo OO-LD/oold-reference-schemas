@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "BodyOfWater.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "BodyOfWater.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "RiverBodyOfWater.schema.json",
+  "x-oold-uuid": "efca32fd-ba07-5b72-a1fd-23c0c2e4a311",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/RiverBodyOfWater",
+  "x-oold-instance-rdf-type": [
+    "schema:RiverBodyOfWater"
+  ],
+  "title": "RiverBodyOfWater",
+  "description": "A river (for example, the broad majestic Shannon).",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:RiverBodyOfWater"
+      ]
+    }
+  }
+}

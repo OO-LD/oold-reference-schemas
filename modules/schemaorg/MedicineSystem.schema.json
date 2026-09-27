@@ -1,0 +1,59 @@
+{
+  "@context": [
+    "MedicalEnumeration.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "MedicalEnumeration.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MedicineSystem.schema.json",
+  "x-oold-uuid": "9eb7fbdf-e15f-5e96-9879-2d022174b5f3",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/MedicineSystem",
+  "x-oold-instance-rdf-type": [
+    "schema:MedicineSystem"
+  ],
+  "title": "MedicineSystem",
+  "description": "Systems of medical practice.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:MedicineSystem"
+      ]
+    }
+  },
+  "$defs": {
+    "member": {
+      "title": "MedicineSystem member",
+      "description": "One of the 6 member instances of MedicineSystem.",
+      "type": "string",
+      "format": "iri-reference",
+      "enum": [
+        "schema:Ayurvedic",
+        "schema:Chiropractic",
+        "schema:Homeopathic",
+        "schema:Osteopathic",
+        "schema:TraditionalChinese",
+        "schema:WesternConventional"
+      ],
+      "x-oold-ui-enum-titles": [
+        "Ayurvedic",
+        "Chiropractic",
+        "Homeopathic",
+        "Osteopathic",
+        "TraditionalChinese",
+        "WesternConventional"
+      ]
+    }
+  }
+}

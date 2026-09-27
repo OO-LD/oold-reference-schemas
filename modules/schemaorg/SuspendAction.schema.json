@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "ControlAction.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "ControlAction.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "SuspendAction.schema.json",
+  "x-oold-uuid": "31b9a7c7-9d09-5abc-9410-64cf3dbeb272",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/SuspendAction",
+  "x-oold-instance-rdf-type": [
+    "schema:SuspendAction"
+  ],
+  "title": "SuspendAction",
+  "description": "The act of momentarily pausing a device or application (e.g. pause music playback or pause a timer).",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:SuspendAction"
+      ]
+    }
+  }
+}

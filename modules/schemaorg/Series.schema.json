@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Intangible.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Intangible.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Series.schema.json",
+  "x-oold-uuid": "792c5bf4-2ace-595e-a5c2-7359e995bd05",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Series",
+  "x-oold-instance-rdf-type": [
+    "schema:Series"
+  ],
+  "title": "Series",
+  "description": "A Series in schema.org is a group of related items, typically but not necessarily of the same kind. See also [[CreativeWorkSeries]], [[EventSeries]].",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Series"
+      ]
+    }
+  }
+}

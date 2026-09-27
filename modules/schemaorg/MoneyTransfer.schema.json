@@ -1,0 +1,83 @@
+{
+  "@context": [
+    "TransferAction.schema.json",
+    {
+      "amount": {
+        "@id": "schema:amount",
+        "@container": "@set"
+      },
+      "beneficiaryBank": {
+        "@id": "schema:beneficiaryBank",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "beneficiaryBank_text": {
+        "@id": "schema:beneficiaryBank",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "TransferAction.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MoneyTransfer.schema.json",
+  "x-oold-uuid": "50455ddf-8439-50dd-90e3-ca4933d52613",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/MoneyTransfer",
+  "x-oold-instance-rdf-type": [
+    "schema:MoneyTransfer"
+  ],
+  "title": "MoneyTransfer",
+  "description": "The act of transferring money from one place to another place. This may occur electronically or physically.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:MoneyTransfer"
+      ]
+    },
+    "amount": {
+      "title": "Amount",
+      "description": "The amount of money.",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: MonetaryAmount [value-type]: MonetaryAmount -> StructuredValue -> Intangible -> Thing",
+        "anyOf": [
+          {
+            "$ref": "Number.schema.json"
+          },
+          {
+            "$ref": "MonetaryAmount.schema.json"
+          }
+        ]
+      }
+    },
+    "beneficiaryBank": {
+      "title": "Beneficiary Bank",
+      "description": "A bank or bank’s branch, financial institution or international financial institution operating the beneficiary’s bank account or releasing funds for the beneficiary.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "BankOrCreditUnion.schema.json"
+      }
+    },
+    "beneficiaryBank_text": {
+      "title": "Beneficiary Bank (text)",
+      "description": "A bank or bank’s branch, financial institution or international financial institution operating the beneficiary’s bank account or releasing funds for the beneficiary.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    }
+  }
+}

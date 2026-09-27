@@ -1,0 +1,66 @@
+{
+  "@context": [
+    "MedicalIntangible.schema.json",
+    {
+      "diagnosis": {
+        "@id": "schema:diagnosis",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "distinguishingSign": {
+        "@id": "schema:distinguishingSign",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "MedicalIntangible.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "DDxElement.schema.json",
+  "x-oold-uuid": "7d5499b9-6626-5a67-8133-b2a324c55f03",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/DDxElement",
+  "x-oold-instance-rdf-type": [
+    "schema:DDxElement"
+  ],
+  "title": "DDxElement",
+  "description": "An alternative, closely-related condition typically considered later in the differential diagnosis process along with the signs that are used to distinguish it.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:DDxElement"
+      ]
+    },
+    "diagnosis": {
+      "title": "Diagnosis",
+      "description": "One or more alternative conditions considered in the differential diagnosis process as output of a diagnosis process.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "MedicalCondition.schema.json"
+      }
+    },
+    "distinguishingSign": {
+      "title": "Distinguishing Sign",
+      "description": "One of a set of signs and symptoms that can be used to distinguish this diagnosis from others in the differential diagnosis.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "MedicalSignOrSymptom.schema.json"
+      }
+    }
+  }
+}

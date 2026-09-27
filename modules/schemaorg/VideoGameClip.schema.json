@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Clip.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Clip.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "VideoGameClip.schema.json",
+  "x-oold-uuid": "f320d483-55f1-51b6-83f0-9faac64bc6ce",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/VideoGameClip",
+  "x-oold-instance-rdf-type": [
+    "schema:VideoGameClip"
+  ],
+  "title": "VideoGameClip",
+  "description": "A short segment/part of a video game.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:VideoGameClip"
+      ]
+    }
+  }
+}

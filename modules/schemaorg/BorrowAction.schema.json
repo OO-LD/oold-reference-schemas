@@ -1,0 +1,54 @@
+{
+  "@context": [
+    "TransferAction.schema.json",
+    {
+      "lender": {
+        "@id": "schema:lender",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "TransferAction.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "BorrowAction.schema.json",
+  "x-oold-uuid": "4b438ddb-9416-5d60-aa06-20d4d21bd636",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/BorrowAction",
+  "x-oold-instance-rdf-type": [
+    "schema:BorrowAction"
+  ],
+  "title": "BorrowAction",
+  "description": "The act of obtaining an object under an agreement to return it at a later date. Reciprocal of LendAction.\\n\\nRelated actions:\\n\\n* [[LendAction]]: Reciprocal of BorrowAction.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:BorrowAction"
+      ]
+    },
+    "lender": {
+      "title": "Lender",
+      "description": "A sub property of participant. The person that lends the object being borrowed.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "Organization.schema.json",
+          "Person.schema.json"
+        ]
+      }
+    }
+  }
+}

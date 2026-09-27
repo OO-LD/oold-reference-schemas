@@ -1,0 +1,105 @@
+{
+  "@context": [
+    "InteractAction.schema.json",
+    {
+      "about": {
+        "@id": "schema:about",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "inLanguage": {
+        "@id": "schema:inLanguage",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "inLanguage_text": {
+        "@id": "schema:inLanguage",
+        "@container": "@set"
+      },
+      "recipient": {
+        "@id": "schema:recipient",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "InteractAction.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "CommunicateAction.schema.json",
+  "x-oold-uuid": "1c1a966e-ddd7-565b-949f-9eca6ad1e0ed",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/CommunicateAction",
+  "x-oold-instance-rdf-type": [
+    "schema:CommunicateAction"
+  ],
+  "title": "CommunicateAction",
+  "description": "The act of conveying information to another person via a communication medium (instrument) such as speech, email, or telephone conversation.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:CommunicateAction"
+      ]
+    },
+    "about": {
+      "title": "About",
+      "description": "The subject matter of an object.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Thing.schema.json"
+      }
+    },
+    "inLanguage": {
+      "title": "In Language",
+      "description": "The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Language.schema.json"
+      }
+    },
+    "inLanguage_text": {
+      "title": "In Language (text)",
+      "description": "The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "recipient": {
+      "title": "Recipient",
+      "description": "A sub property of participant. The participant who is at the receiving end of the action.",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: ContactPoint [value-type]: ContactPoint -> StructuredValue -> Intangible -> Thing; Audience [entity]: Audience -> Intangible -> Thing; Organization [entity]: Organization -> Thing; Person [entity]: Person -> Thing",
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "iri-reference",
+            "x-oold-range": [
+              "Audience.schema.json",
+              "Organization.schema.json",
+              "Person.schema.json"
+            ]
+          },
+          {
+            "$ref": "ContactPoint.schema.json"
+          }
+        ]
+      }
+    }
+  }
+}

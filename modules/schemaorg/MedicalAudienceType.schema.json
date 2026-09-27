@@ -1,0 +1,51 @@
+{
+  "@context": [
+    "MedicalEnumeration.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "MedicalEnumeration.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MedicalAudienceType.schema.json",
+  "x-oold-uuid": "b5e1152c-fd40-5e72-9d31-af61691e7b8b",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/MedicalAudienceType",
+  "x-oold-instance-rdf-type": [
+    "schema:MedicalAudienceType"
+  ],
+  "title": "MedicalAudienceType",
+  "description": "Target audiences types for medical web pages. Enumerated type.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:MedicalAudienceType"
+      ]
+    }
+  },
+  "$defs": {
+    "member": {
+      "title": "MedicalAudienceType member",
+      "description": "One of the 2 member instances of MedicalAudienceType.",
+      "type": "string",
+      "format": "iri-reference",
+      "enum": [
+        "schema:Clinician",
+        "schema:MedicalResearcher"
+      ],
+      "x-oold-ui-enum-titles": [
+        "Clinician",
+        "MedicalResearcher"
+      ]
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "$schema": "GatedResidenceCommunity.schema.json",
+  "@context": "GatedResidenceCommunity.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:GatedResidenceCommunity"
+  ]
+}

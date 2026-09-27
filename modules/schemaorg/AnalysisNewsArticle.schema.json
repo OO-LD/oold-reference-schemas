@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "NewsArticle.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "NewsArticle.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "AnalysisNewsArticle.schema.json",
+  "x-oold-uuid": "9587d3c8-0da0-5cdd-8d46-1e0443a08228",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/AnalysisNewsArticle",
+  "x-oold-instance-rdf-type": [
+    "schema:AnalysisNewsArticle"
+  ],
+  "title": "AnalysisNewsArticle",
+  "description": "An AnalysisNewsArticle is a [[NewsArticle]] that, while based on factual reporting, incorporates the expertise of the author/producer, offering interpretations and conclusions.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:AnalysisNewsArticle"
+      ]
+    }
+  }
+}

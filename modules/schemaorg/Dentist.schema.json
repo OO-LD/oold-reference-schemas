@@ -1,0 +1,43 @@
+{
+  "@context": [
+    "LocalBusiness.schema.json",
+    "MedicalBusiness.schema.json",
+    "MedicalOrganization.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "LocalBusiness.schema.json"
+    },
+    {
+      "$ref": "MedicalBusiness.schema.json"
+    },
+    {
+      "$ref": "MedicalOrganization.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Dentist.schema.json",
+  "x-oold-uuid": "ea3a8a82-ab2b-53e1-be65-ce77906d07e8",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Dentist",
+  "x-oold-instance-rdf-type": [
+    "schema:Dentist"
+  ],
+  "title": "Dentist",
+  "description": "A dentist.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Dentist"
+      ]
+    }
+  }
+}

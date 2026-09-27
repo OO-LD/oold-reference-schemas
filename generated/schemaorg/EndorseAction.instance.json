@@ -1,0 +1,8 @@
+{
+  "$schema": "EndorseAction.schema.json",
+  "@context": "EndorseAction.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:EndorseAction"
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "@context": [
+    "CivicStructure.schema.json",
+    "Organization.schema.json",
+    {
+      "alumni": {
+        "@id": "schema:alumni",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "CivicStructure.schema.json"
+    },
+    {
+      "$ref": "Organization.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "EducationalOrganization.schema.json",
+  "x-oold-uuid": "b2c3714d-7a45-5257-bbad-5520b852008d",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/EducationalOrganization",
+  "x-oold-instance-rdf-type": [
+    "schema:EducationalOrganization"
+  ],
+  "title": "EducationalOrganization",
+  "description": "An educational organization.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:EducationalOrganization"
+      ]
+    },
+    "alumni": {
+      "title": "Alumni",
+      "description": "Alumni of an organization.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Person.schema.json"
+      }
+    }
+  }
+}

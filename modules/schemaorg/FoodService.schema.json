@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Service.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Service.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "FoodService.schema.json",
+  "x-oold-uuid": "a8de4f60-1c1c-5614-8a47-02ba5351aeb7",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/FoodService",
+  "x-oold-instance-rdf-type": [
+    "schema:FoodService"
+  ],
+  "title": "FoodService",
+  "description": "A food service, like breakfast, lunch, or dinner.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:FoodService"
+      ]
+    }
+  }
+}

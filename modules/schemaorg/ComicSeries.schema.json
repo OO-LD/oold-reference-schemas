@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Periodical.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Periodical.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ComicSeries.schema.json",
+  "x-oold-uuid": "85bd4252-29d0-510e-b5bb-89e833ad7110",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/ComicSeries",
+  "x-oold-instance-rdf-type": [
+    "schema:ComicSeries"
+  ],
+  "title": "ComicSeries",
+  "description": "A sequential publication of comic stories under a\n    \tunifying title, for example \"The Amazing Spider-Man\" or \"Groo the\n    \tWanderer\".",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:ComicSeries"
+      ]
+    }
+  }
+}

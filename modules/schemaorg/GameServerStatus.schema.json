@@ -1,0 +1,55 @@
+{
+  "@context": [
+    "StatusEnumeration.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "StatusEnumeration.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "GameServerStatus.schema.json",
+  "x-oold-uuid": "448e48d5-a150-5d54-b7c6-985ae6b5553c",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/GameServerStatus",
+  "x-oold-instance-rdf-type": [
+    "schema:GameServerStatus"
+  ],
+  "title": "GameServerStatus",
+  "description": "Status of a game server.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:GameServerStatus"
+      ]
+    }
+  },
+  "$defs": {
+    "member": {
+      "title": "GameServerStatus member",
+      "description": "One of the 4 member instances of GameServerStatus.",
+      "type": "string",
+      "format": "iri-reference",
+      "enum": [
+        "schema:OfflinePermanently",
+        "schema:OfflineTemporarily",
+        "schema:Online",
+        "schema:OnlineFull"
+      ],
+      "x-oold-ui-enum-titles": [
+        "OfflinePermanently",
+        "OfflineTemporarily",
+        "Online",
+        "OnlineFull"
+      ]
+    }
+  }
+}

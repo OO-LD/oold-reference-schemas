@@ -1,0 +1,128 @@
+{
+  "@context": [
+    "Intangible.schema.json",
+    {
+      "hostingOrganization": {
+        "@id": "schema:hostingOrganization",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "member": {
+        "@id": "schema:member",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "membershipNumber": {
+        "@id": "schema:membershipNumber",
+        "@container": "@set"
+      },
+      "membershipPointsEarned": {
+        "@id": "schema:membershipPointsEarned",
+        "@container": "@set"
+      },
+      "program": {
+        "@id": "schema:program",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "programName": {
+        "@id": "schema:programName",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Intangible.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ProgramMembership.schema.json",
+  "x-oold-uuid": "28764978-6ea1-5b97-b043-d0aab78e78ac",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/ProgramMembership",
+  "x-oold-instance-rdf-type": [
+    "schema:ProgramMembership"
+  ],
+  "title": "ProgramMembership",
+  "description": "Used to describe membership in a loyalty programs (e.g. \"StarAliance\"), traveler clubs (e.g. \"AAA\"), purchase clubs (\"Safeway Club\"), etc.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:ProgramMembership"
+      ]
+    },
+    "hostingOrganization": {
+      "title": "Hosting Organization",
+      "description": "The Organization (airline, travelers' club, retailer, etc.) the membership is made with or which offers the  MemberProgram.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "Organization.schema.json"
+      }
+    },
+    "member": {
+      "title": "Member",
+      "description": "A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "Organization.schema.json",
+          "Person.schema.json"
+        ]
+      }
+    },
+    "membershipNumber": {
+      "title": "Membership Number",
+      "description": "A unique identifier for the membership.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "membershipPointsEarned": {
+      "title": "Membership Points Earned",
+      "description": "The number of membership points earned by the member. If necessary, the unitText can be used to express the units the points are issued in. (E.g. stars, miles, etc.)",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: QuantitativeValue [value-type]: QuantitativeValue -> StructuredValue -> Intangible -> Thing",
+        "anyOf": [
+          {
+            "$ref": "Number.schema.json"
+          },
+          {
+            "$ref": "QuantitativeValue.schema.json"
+          }
+        ]
+      }
+    },
+    "program": {
+      "title": "Program",
+      "description": "The [MemberProgram](https://schema.org/MemberProgram) associated with a [ProgramMembership](https://schema.org/ProgramMembership).",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "MemberProgram.schema.json"
+      }
+    },
+    "programName": {
+      "title": "Program Name",
+      "description": "The program providing the membership. It is preferable to use [:program](https://schema.org/program) instead.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    }
+  }
+}

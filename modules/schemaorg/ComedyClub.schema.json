@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "EntertainmentBusiness.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "EntertainmentBusiness.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ComedyClub.schema.json",
+  "x-oold-uuid": "2ba5cbc0-e148-5b2e-ae64-071d036c31d3",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/ComedyClub",
+  "x-oold-instance-rdf-type": [
+    "schema:ComedyClub"
+  ],
+  "title": "ComedyClub",
+  "description": "A comedy club.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:ComedyClub"
+      ]
+    }
+  }
+}

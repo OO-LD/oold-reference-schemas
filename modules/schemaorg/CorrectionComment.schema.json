@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Comment.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Comment.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "CorrectionComment.schema.json",
+  "x-oold-uuid": "b560a64e-6bc6-5c6b-8d53-15e6da6da97c",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/CorrectionComment",
+  "x-oold-instance-rdf-type": [
+    "schema:CorrectionComment"
+  ],
+  "title": "CorrectionComment",
+  "description": "A [[comment]] that corrects [[CreativeWork]].",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:CorrectionComment"
+      ]
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "RadioChannel.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "RadioChannel.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "FMRadioChannel.schema.json",
+  "x-oold-uuid": "a4601329-f69e-548c-9d35-11662c6d72fb",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/FMRadioChannel",
+  "x-oold-instance-rdf-type": [
+    "schema:FMRadioChannel"
+  ],
+  "title": "FMRadioChannel",
+  "description": "A radio channel that uses FM.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:FMRadioChannel"
+      ]
+    }
+  }
+}

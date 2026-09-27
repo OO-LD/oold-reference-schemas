@@ -1,0 +1,98 @@
+{
+  "@context": [
+    "Reservation.schema.json",
+    {
+      "boardingGroup": {
+        "@id": "schema:boardingGroup",
+        "@container": "@set"
+      },
+      "passengerPriorityStatus": {
+        "@id": "schema:passengerPriorityStatus",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "passengerPriorityStatus_text": {
+        "@id": "schema:passengerPriorityStatus",
+        "@container": "@set"
+      },
+      "passengerSequenceNumber": {
+        "@id": "schema:passengerSequenceNumber",
+        "@container": "@set"
+      },
+      "securityScreening": {
+        "@id": "schema:securityScreening",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Reservation.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "FlightReservation.schema.json",
+  "x-oold-uuid": "eb584680-3424-5d22-b08f-8a969dbe8d65",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/FlightReservation",
+  "x-oold-instance-rdf-type": [
+    "schema:FlightReservation"
+  ],
+  "title": "FlightReservation",
+  "description": "A reservation for air travel.\\n\\nNote: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations. For offers of tickets, use [[Offer]].",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:FlightReservation"
+      ]
+    },
+    "boardingGroup": {
+      "title": "Boarding Group",
+      "description": "The airline-specific indicator of boarding order / preference.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "passengerPriorityStatus": {
+      "title": "Passenger Priority Status",
+      "description": "The priority status assigned to a passenger for security or boarding (e.g. FastTrack or Priority).",
+      "type": "array",
+      "items": {
+        "$ref": "QualitativeValue.schema.json#/$defs/member",
+        "x-oold-range": "QualitativeValue.schema.json"
+      }
+    },
+    "passengerPriorityStatus_text": {
+      "title": "Passenger Priority Status (text)",
+      "description": "The priority status assigned to a passenger for security or boarding (e.g. FastTrack or Priority).",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "passengerSequenceNumber": {
+      "title": "Passenger Sequence Number",
+      "description": "The passenger's sequence number as assigned by the airline.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "securityScreening": {
+      "title": "Security Screening",
+      "description": "The type of security screening the passenger is subject to.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    }
+  }
+}

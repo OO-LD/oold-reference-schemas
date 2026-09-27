@@ -1,0 +1,62 @@
+{
+  "@context": [
+    "ConsumeAction.schema.json",
+    {
+      "gameAvailabilityType": {
+        "@id": "schema:gameAvailabilityType",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "gameAvailabilityType_text": {
+        "@id": "schema:gameAvailabilityType",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "ConsumeAction.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "PlayGameAction.schema.json",
+  "x-oold-uuid": "e6ff735f-6734-594b-9a1c-fc24de91d9a4",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/PlayGameAction",
+  "x-oold-instance-rdf-type": [
+    "schema:PlayGameAction"
+  ],
+  "title": "PlayGameAction",
+  "description": "The act of playing a video game.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:PlayGameAction"
+      ]
+    },
+    "gameAvailabilityType": {
+      "title": "Game Availability Type",
+      "description": "Indicates the availability type of the game content associated with this action, such as whether it is a full version or a demo.",
+      "type": "array",
+      "items": {
+        "$ref": "GameAvailabilityEnumeration.schema.json#/$defs/member",
+        "x-oold-range": "GameAvailabilityEnumeration.schema.json"
+      }
+    },
+    "gameAvailabilityType_text": {
+      "title": "Game Availability Type (text)",
+      "description": "Indicates the availability type of the game content associated with this action, such as whether it is a full version or a demo.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    }
+  }
+}

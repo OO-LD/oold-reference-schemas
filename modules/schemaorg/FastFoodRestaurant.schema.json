@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "FoodEstablishment.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "FoodEstablishment.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "FastFoodRestaurant.schema.json",
+  "x-oold-uuid": "de409683-c821-5fc0-bc69-17ef88e5473c",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/FastFoodRestaurant",
+  "x-oold-instance-rdf-type": [
+    "schema:FastFoodRestaurant"
+  ],
+  "title": "FastFoodRestaurant",
+  "description": "A fast-food restaurant.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:FastFoodRestaurant"
+      ]
+    }
+  }
+}

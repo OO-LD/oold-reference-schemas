@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "AssessAction.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "AssessAction.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "IgnoreAction.schema.json",
+  "x-oold-uuid": "6bd2ae4d-d949-5414-ac92-a5e3e8483507",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/IgnoreAction",
+  "x-oold-instance-rdf-type": [
+    "schema:IgnoreAction"
+  ],
+  "title": "IgnoreAction",
+  "description": "The act of intentionally disregarding the object. An agent ignores an object.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:IgnoreAction"
+      ]
+    }
+  }
+}

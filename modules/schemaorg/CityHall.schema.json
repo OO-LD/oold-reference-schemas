@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "GovernmentBuilding.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "GovernmentBuilding.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "CityHall.schema.json",
+  "x-oold-uuid": "c5203a5e-ce43-5dc3-954e-57aad4e3f000",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/CityHall",
+  "x-oold-instance-rdf-type": [
+    "schema:CityHall"
+  ],
+  "title": "CityHall",
+  "description": "A city hall.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:CityHall"
+      ]
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Article.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Article.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "SatiricalArticle.schema.json",
+  "x-oold-uuid": "f3fd1406-2a48-5588-b55f-f2253c207a2c",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/SatiricalArticle",
+  "x-oold-instance-rdf-type": [
+    "schema:SatiricalArticle"
+  ],
+  "title": "SatiricalArticle",
+  "description": "An [[Article]] whose content is primarily [[satirical]](https://en.wikipedia.org/wiki/Satire) in nature, i.e. unlikely to be literally true. A satirical article is sometimes but not necessarily also a [[NewsArticle]]. [[ScholarlyArticle]]s are also sometimes satirized.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:SatiricalArticle"
+      ]
+    }
+  }
+}

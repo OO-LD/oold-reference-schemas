@@ -1,0 +1,55 @@
+{
+  "@context": [
+    "StatusEnumeration.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "StatusEnumeration.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ActionStatusType.schema.json",
+  "x-oold-uuid": "86684514-0c0d-5181-8fba-e8dd37af7b92",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/ActionStatusType",
+  "x-oold-instance-rdf-type": [
+    "schema:ActionStatusType"
+  ],
+  "title": "ActionStatusType",
+  "description": "The status of an Action.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:ActionStatusType"
+      ]
+    }
+  },
+  "$defs": {
+    "member": {
+      "title": "ActionStatusType member",
+      "description": "One of the 4 member instances of ActionStatusType.",
+      "type": "string",
+      "format": "iri-reference",
+      "enum": [
+        "schema:ActiveActionStatus",
+        "schema:CompletedActionStatus",
+        "schema:FailedActionStatus",
+        "schema:PotentialActionStatus"
+      ],
+      "x-oold-ui-enum-titles": [
+        "ActiveActionStatus",
+        "CompletedActionStatus",
+        "FailedActionStatus",
+        "PotentialActionStatus"
+      ]
+    }
+  }
+}

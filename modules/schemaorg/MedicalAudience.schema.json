@@ -1,0 +1,39 @@
+{
+  "@context": [
+    "Audience.schema.json",
+    "PeopleAudience.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Audience.schema.json"
+    },
+    {
+      "$ref": "PeopleAudience.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MedicalAudience.schema.json",
+  "x-oold-uuid": "ae76daca-6bd7-558b-bf34-188865597671",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/MedicalAudience",
+  "x-oold-instance-rdf-type": [
+    "schema:MedicalAudience"
+  ],
+  "title": "MedicalAudience",
+  "description": "Target audiences for medical web pages.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:MedicalAudience"
+      ]
+    }
+  }
+}

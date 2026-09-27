@@ -1,0 +1,43 @@
+{
+  "@context": [
+    "CreativeWork.schema.json",
+    "ItemList.schema.json",
+    "ListItem.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "CreativeWork.schema.json"
+    },
+    {
+      "$ref": "ItemList.schema.json"
+    },
+    {
+      "$ref": "ListItem.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "HowToSection.schema.json",
+  "x-oold-uuid": "f1aa74d4-8965-5e9e-bf9b-fad2000dc602",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/HowToSection",
+  "x-oold-instance-rdf-type": [
+    "schema:HowToSection"
+  ],
+  "title": "HowToSection",
+  "description": "A sub-grouping of steps in the instructions for how to achieve a result (e.g. steps for making a pie crust within a pie recipe).",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:HowToSection"
+      ]
+    }
+  }
+}

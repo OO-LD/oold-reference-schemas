@@ -1,0 +1,202 @@
+{
+  "@context": [
+    "Enumeration.schema.json",
+    {
+      "additionalProperty": {
+        "@id": "schema:additionalProperty",
+        "@container": "@set"
+      },
+      "equal": {
+        "@id": "schema:equal",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "greater": {
+        "@id": "schema:greater",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "greaterOrEqual": {
+        "@id": "schema:greaterOrEqual",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "lesser": {
+        "@id": "schema:lesser",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "lesserOrEqual": {
+        "@id": "schema:lesserOrEqual",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "nonEqual": {
+        "@id": "schema:nonEqual",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "valueReference": {
+        "@id": "schema:valueReference",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "valueReference_text": {
+        "@id": "schema:valueReference",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Enumeration.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "QualitativeValue.schema.json",
+  "x-oold-uuid": "6293c10f-e601-5430-a12e-cbf722a9271a",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/QualitativeValue",
+  "x-oold-instance-rdf-type": [
+    "schema:QualitativeValue"
+  ],
+  "title": "QualitativeValue",
+  "description": "A predefined value for a product characteristic, e.g. the power cord plug type 'US' or the garment sizes 'S', 'M', 'L', and 'XL'.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:QualitativeValue"
+      ]
+    },
+    "additionalProperty": {
+      "title": "Additional Property",
+      "description": "A property-value pair representing an additional characteristic of the entity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.\\n\\nNote: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.\n",
+      "type": "array",
+      "items": {
+        "$ref": "PropertyValue.schema.json"
+      }
+    },
+    "equal": {
+      "title": "Equal",
+      "description": "This ordering relation for qualitative values indicates that the subject is equal to the object.",
+      "type": "array",
+      "items": {
+        "$ref": "QualitativeValue.schema.json#/$defs/member",
+        "x-oold-range": "QualitativeValue.schema.json"
+      }
+    },
+    "greater": {
+      "title": "Greater",
+      "description": "This ordering relation for qualitative values indicates that the subject is greater than the object.",
+      "type": "array",
+      "items": {
+        "$ref": "QualitativeValue.schema.json#/$defs/member",
+        "x-oold-range": "QualitativeValue.schema.json"
+      }
+    },
+    "greaterOrEqual": {
+      "title": "Greater Or Equal",
+      "description": "This ordering relation for qualitative values indicates that the subject is greater than or equal to the object.",
+      "type": "array",
+      "items": {
+        "$ref": "QualitativeValue.schema.json#/$defs/member",
+        "x-oold-range": "QualitativeValue.schema.json"
+      }
+    },
+    "lesser": {
+      "title": "Lesser",
+      "description": "This ordering relation for qualitative values indicates that the subject is lesser than the object.",
+      "type": "array",
+      "items": {
+        "$ref": "QualitativeValue.schema.json#/$defs/member",
+        "x-oold-range": "QualitativeValue.schema.json"
+      }
+    },
+    "lesserOrEqual": {
+      "title": "Lesser Or Equal",
+      "description": "This ordering relation for qualitative values indicates that the subject is lesser than or equal to the object.",
+      "type": "array",
+      "items": {
+        "$ref": "QualitativeValue.schema.json#/$defs/member",
+        "x-oold-range": "QualitativeValue.schema.json"
+      }
+    },
+    "nonEqual": {
+      "title": "Non Equal",
+      "description": "This ordering relation for qualitative values indicates that the subject is not equal to the object.",
+      "type": "array",
+      "items": {
+        "$ref": "QualitativeValue.schema.json#/$defs/member",
+        "x-oold-range": "QualitativeValue.schema.json"
+      }
+    },
+    "valueReference": {
+      "title": "Value Reference",
+      "description": "A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: PropertyValue [value-type]: PropertyValue -> StructuredValue -> Intangible -> Thing; QuantitativeValue [value-type]: QuantitativeValue -> StructuredValue -> Intangible -> Thing; StructuredValue [value-type]: StructuredValue -> Intangible -> Thing; DefinedTerm [entity]: DefinedTerm -> Intangible -> Thing; Enumeration [entity]: Enumeration -> Intangible -> Thing; MeasurementTypeEnumeration [entity]: MeasurementTypeEnumeration -> Enumeration -> Intangible -> Thing; QualitativeValue [entity]: QualitativeValue -> Enumeration -> Intangible -> Thing",
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "iri-reference",
+            "x-oold-range": [
+              "DefinedTerm.schema.json",
+              "Enumeration.schema.json",
+              "MeasurementTypeEnumeration.schema.json",
+              "QualitativeValue.schema.json"
+            ]
+          },
+          {
+            "$ref": "PropertyValue.schema.json"
+          },
+          {
+            "$ref": "QuantitativeValue.schema.json"
+          },
+          {
+            "$ref": "StructuredValue.schema.json"
+          }
+        ]
+      }
+    },
+    "valueReference_text": {
+      "title": "Value Reference (text)",
+      "description": "A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    }
+  },
+  "$defs": {
+    "member": {
+      "title": "QualitativeValue member",
+      "description": "One of the 6 member instances of QualitativeValue.",
+      "type": "string",
+      "format": "iri-reference",
+      "enum": [
+        "schema:AllWheelDriveConfiguration",
+        "schema:FourWheelDriveConfiguration",
+        "schema:FrontWheelDriveConfiguration",
+        "schema:LeftHandDriving",
+        "schema:RearWheelDriveConfiguration",
+        "schema:RightHandDriving"
+      ],
+      "x-oold-ui-enum-titles": [
+        "AllWheelDriveConfiguration",
+        "FourWheelDriveConfiguration",
+        "FrontWheelDriveConfiguration",
+        "LeftHandDriving",
+        "RearWheelDriveConfiguration",
+        "RightHandDriving"
+      ]
+    }
+  }
+}

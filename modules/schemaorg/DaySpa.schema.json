@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "HealthAndBeautyBusiness.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "HealthAndBeautyBusiness.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "DaySpa.schema.json",
+  "x-oold-uuid": "d76f4989-b782-5e37-bec8-bdf8ac8916e8",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/DaySpa",
+  "x-oold-instance-rdf-type": [
+    "schema:DaySpa"
+  ],
+  "title": "DaySpa",
+  "description": "A day spa.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:DaySpa"
+      ]
+    }
+  }
+}

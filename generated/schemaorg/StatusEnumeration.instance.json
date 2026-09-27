@@ -1,0 +1,8 @@
+{
+  "$schema": "StatusEnumeration.schema.json",
+  "@context": "StatusEnumeration.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:StatusEnumeration"
+  ]
+}

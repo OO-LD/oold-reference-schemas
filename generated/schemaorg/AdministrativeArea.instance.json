@@ -1,0 +1,8 @@
+{
+  "$schema": "AdministrativeArea.schema.json",
+  "@context": "AdministrativeArea.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:AdministrativeArea"
+  ]
+}

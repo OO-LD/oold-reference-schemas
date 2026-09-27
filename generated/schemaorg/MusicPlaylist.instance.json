@@ -1,0 +1,8 @@
+{
+  "$schema": "MusicPlaylist.schema.json",
+  "@context": "MusicPlaylist.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:MusicPlaylist"
+  ]
+}

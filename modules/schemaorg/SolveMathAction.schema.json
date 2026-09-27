@@ -1,0 +1,48 @@
+{
+  "@context": [
+    "Action.schema.json",
+    {
+      "eduQuestionType": {
+        "@id": "schema:eduQuestionType",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Action.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "SolveMathAction.schema.json",
+  "x-oold-uuid": "14b5aaa6-dd6e-5e60-98f5-1c81ead0a1e8",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/SolveMathAction",
+  "x-oold-instance-rdf-type": [
+    "schema:SolveMathAction"
+  ],
+  "title": "SolveMathAction",
+  "description": "The action that takes in a math expression and directs users to a page potentially capable of solving/simplifying that expression.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:SolveMathAction"
+      ]
+    },
+    "eduQuestionType": {
+      "title": "Edu Question Type",
+      "description": "For questions that are part of learning resources (e.g. Quiz), eduQuestionType indicates the format of question being given. Example: \"Multiple choice\", \"Open ended\", \"Flashcard\".",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "InsertAction.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "InsertAction.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "PrependAction.schema.json",
+  "x-oold-uuid": "aa121931-bdd3-5993-8547-11527fe1e9c0",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/PrependAction",
+  "x-oold-instance-rdf-type": [
+    "schema:PrependAction"
+  ],
+  "title": "PrependAction",
+  "description": "The act of inserting at the beginning if an ordered collection.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:PrependAction"
+      ]
+    }
+  }
+}

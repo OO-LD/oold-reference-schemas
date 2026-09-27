@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "LodgingBusiness.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "LodgingBusiness.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Hostel.schema.json",
+  "x-oold-uuid": "a70735fd-1db8-5d69-b707-118ad3f4effe",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Hostel",
+  "x-oold-instance-rdf-type": [
+    "schema:Hostel"
+  ],
+  "title": "Hostel",
+  "description": "A hostel - cheap accommodation, often in shared dormitories.\n<br /><br />\nSee also the <a href=\"/docs/hotels.html\">dedicated document on the use of schema.org for marking up hotels and other forms of accommodations</a>.\n",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Hostel"
+      ]
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "$schema": "CollegeOrUniversity.schema.json",
+  "@context": "CollegeOrUniversity.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:CollegeOrUniversity"
+  ]
+}

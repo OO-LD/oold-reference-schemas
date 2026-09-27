@@ -1,0 +1,8 @@
+{
+  "$schema": "PhotographAction.schema.json",
+  "@context": "PhotographAction.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:PhotographAction"
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "@context": [
+    "QuantitativeValueDistribution.schema.json",
+    {
+      "currency": {
+        "@id": "schema:currency",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "QuantitativeValueDistribution.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MonetaryAmountDistribution.schema.json",
+  "x-oold-uuid": "e68c4537-44dd-5190-b3e3-7fc725f43019",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/MonetaryAmountDistribution",
+  "x-oold-instance-rdf-type": [
+    "schema:MonetaryAmountDistribution"
+  ],
+  "title": "MonetaryAmountDistribution",
+  "description": "A statistical distribution of monetary amounts.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:MonetaryAmountDistribution"
+      ]
+    },
+    "currency": {
+      "title": "Currency",
+      "description": "The currency in which the monetary amount is expressed.\\n\\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217), e.g. \"USD\"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies, e.g. \"BTC\"; well known names for [Local Exchange Trading Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types, e.g. \"Ithaca HOUR\".",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    }
+  }
+}

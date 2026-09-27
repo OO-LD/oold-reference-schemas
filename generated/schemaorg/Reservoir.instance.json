@@ -1,0 +1,8 @@
+{
+  "$schema": "Reservoir.schema.json",
+  "@context": "Reservoir.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:Reservoir"
+  ]
+}

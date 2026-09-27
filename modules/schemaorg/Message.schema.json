@@ -1,0 +1,221 @@
+{
+  "@context": [
+    "CreativeWork.schema.json",
+    {
+      "bccRecipient": {
+        "@id": "schema:bccRecipient",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "ccRecipient": {
+        "@id": "schema:ccRecipient",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "dateRead": {
+        "@id": "schema:dateRead",
+        "@container": "@set"
+      },
+      "dateReceived": {
+        "@id": "schema:dateReceived",
+        "@type": "xsd:dateTime",
+        "@container": "@set"
+      },
+      "dateSent": {
+        "@id": "schema:dateSent",
+        "@type": "xsd:dateTime",
+        "@container": "@set"
+      },
+      "messageAttachment": {
+        "@id": "schema:messageAttachment",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "recipient": {
+        "@id": "schema:recipient",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "sender": {
+        "@id": "schema:sender",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "toRecipient": {
+        "@id": "schema:toRecipient",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "CreativeWork.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Message.schema.json",
+  "x-oold-uuid": "722aa56b-28a2-548a-a5d6-099babaee996",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Message",
+  "x-oold-instance-rdf-type": [
+    "schema:Message"
+  ],
+  "title": "Message",
+  "description": "A single message from a sender to one or more organizations or people.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:Message"
+      ]
+    },
+    "bccRecipient": {
+      "title": "Bcc Recipient",
+      "description": "A sub property of recipient. The recipient blind copied on a message.",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: ContactPoint [value-type]: ContactPoint -> StructuredValue -> Intangible -> Thing; Organization [entity]: Organization -> Thing; Person [entity]: Person -> Thing",
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "iri-reference",
+            "x-oold-range": [
+              "Organization.schema.json",
+              "Person.schema.json"
+            ]
+          },
+          {
+            "$ref": "ContactPoint.schema.json"
+          }
+        ]
+      }
+    },
+    "ccRecipient": {
+      "title": "Cc Recipient",
+      "description": "A sub property of recipient. The recipient copied on a message.",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: ContactPoint [value-type]: ContactPoint -> StructuredValue -> Intangible -> Thing; Organization [entity]: Organization -> Thing; Person [entity]: Person -> Thing",
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "iri-reference",
+            "x-oold-range": [
+              "Organization.schema.json",
+              "Person.schema.json"
+            ]
+          },
+          {
+            "$ref": "ContactPoint.schema.json"
+          }
+        ]
+      }
+    },
+    "dateRead": {
+      "title": "Date Read",
+      "description": "The date/time at which the message has been read by the recipient if a single recipient exists.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Date.schema.json"
+          },
+          {
+            "$ref": "DateTime.schema.json"
+          }
+        ]
+      }
+    },
+    "dateReceived": {
+      "title": "Date Received",
+      "description": "The date/time the message was received if a single recipient exists.",
+      "type": "array",
+      "items": {
+        "$ref": "DateTime.schema.json"
+      }
+    },
+    "dateSent": {
+      "title": "Date Sent",
+      "description": "The date/time at which the message was sent.",
+      "type": "array",
+      "items": {
+        "$ref": "DateTime.schema.json"
+      }
+    },
+    "messageAttachment": {
+      "title": "Message Attachment",
+      "description": "A CreativeWork attached to the message.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "CreativeWork.schema.json"
+      }
+    },
+    "recipient": {
+      "title": "Recipient",
+      "description": "A sub property of participant. The participant who is at the receiving end of the action.",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: ContactPoint [value-type]: ContactPoint -> StructuredValue -> Intangible -> Thing; Audience [entity]: Audience -> Intangible -> Thing; Organization [entity]: Organization -> Thing; Person [entity]: Person -> Thing",
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "iri-reference",
+            "x-oold-range": [
+              "Audience.schema.json",
+              "Organization.schema.json",
+              "Person.schema.json"
+            ]
+          },
+          {
+            "$ref": "ContactPoint.schema.json"
+          }
+        ]
+      }
+    },
+    "sender": {
+      "title": "Sender",
+      "description": "A sub property of participant. The participant who is at the sending end of the action.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "Audience.schema.json",
+          "Organization.schema.json",
+          "Person.schema.json"
+        ]
+      }
+    },
+    "toRecipient": {
+      "title": "To Recipient",
+      "description": "A sub property of recipient. The recipient who was directly sent the message.",
+      "type": "array",
+      "items": {
+        "$comment": "NOTE[mixed range]: ContactPoint [value-type]: ContactPoint -> StructuredValue -> Intangible -> Thing; Audience [entity]: Audience -> Intangible -> Thing; Organization [entity]: Organization -> Thing; Person [entity]: Person -> Thing",
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "iri-reference",
+            "x-oold-range": [
+              "Audience.schema.json",
+              "Organization.schema.json",
+              "Person.schema.json"
+            ]
+          },
+          {
+            "$ref": "ContactPoint.schema.json"
+          }
+        ]
+      }
+    }
+  }
+}

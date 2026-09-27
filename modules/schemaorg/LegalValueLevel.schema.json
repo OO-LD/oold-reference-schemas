@@ -1,0 +1,55 @@
+{
+  "@context": [
+    "Enumeration.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Enumeration.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "LegalValueLevel.schema.json",
+  "x-oold-uuid": "eee888f0-88e1-5a74-967a-4f9a34b52d54",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/LegalValueLevel",
+  "x-oold-instance-rdf-type": [
+    "schema:LegalValueLevel"
+  ],
+  "title": "LegalValueLevel",
+  "description": "A list of possible levels for the legal validity of a legislation.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:LegalValueLevel"
+      ]
+    }
+  },
+  "$defs": {
+    "member": {
+      "title": "LegalValueLevel member",
+      "description": "One of the 4 member instances of LegalValueLevel.",
+      "type": "string",
+      "format": "iri-reference",
+      "enum": [
+        "schema:AuthoritativeLegalValue",
+        "schema:DefinitiveLegalValue",
+        "schema:OfficialLegalValue",
+        "schema:UnofficialLegalValue"
+      ],
+      "x-oold-ui-enum-titles": [
+        "AuthoritativeLegalValue",
+        "DefinitiveLegalValue",
+        "OfficialLegalValue",
+        "UnofficialLegalValue"
+      ]
+    }
+  }
+}

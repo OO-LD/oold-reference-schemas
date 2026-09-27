@@ -1,0 +1,8 @@
+{
+  "$schema": "BookFormatType.schema.json",
+  "@context": "BookFormatType.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:BookFormatType"
+  ]
+}

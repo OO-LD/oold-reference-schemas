@@ -1,0 +1,8 @@
+{
+  "$schema": "ReviewAction.schema.json",
+  "@context": "ReviewAction.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:ReviewAction"
+  ]
+}

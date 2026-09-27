@@ -1,0 +1,8 @@
+{
+  "$schema": "MobilePhoneStore.schema.json",
+  "@context": "MobilePhoneStore.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:MobilePhoneStore"
+  ]
+}

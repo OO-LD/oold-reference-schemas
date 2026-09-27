@@ -1,0 +1,8 @@
+{
+  "$schema": "SpecialAnnouncement.schema.json",
+  "@context": "SpecialAnnouncement.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:SpecialAnnouncement"
+  ]
+}

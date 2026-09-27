@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Store.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Store.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "OfficeEquipmentStore.schema.json",
+  "x-oold-uuid": "783fb86b-bc53-5d67-bdfd-c86c02dfb7f6",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/OfficeEquipmentStore",
+  "x-oold-instance-rdf-type": [
+    "schema:OfficeEquipmentStore"
+  ],
+  "title": "OfficeEquipmentStore",
+  "description": "An office equipment store.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:OfficeEquipmentStore"
+      ]
+    }
+  }
+}

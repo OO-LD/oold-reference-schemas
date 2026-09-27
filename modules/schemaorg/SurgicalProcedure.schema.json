@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "MedicalProcedure.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "MedicalProcedure.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "SurgicalProcedure.schema.json",
+  "x-oold-uuid": "8fb216ba-15ef-5e22-819a-d7f4ed533449",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/SurgicalProcedure",
+  "x-oold-instance-rdf-type": [
+    "schema:SurgicalProcedure"
+  ],
+  "title": "SurgicalProcedure",
+  "description": "A medical procedure involving an incision with instruments; performed for diagnose, or therapeutic purposes.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:SurgicalProcedure"
+      ]
+    }
+  }
+}

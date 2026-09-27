@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "EducationalOrganization.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "EducationalOrganization.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "HighSchool.schema.json",
+  "x-oold-uuid": "645f7088-3050-5424-9ca8-87ae446c0417",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/HighSchool",
+  "x-oold-instance-rdf-type": [
+    "schema:HighSchool"
+  ],
+  "title": "HighSchool",
+  "description": "A high school.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:HighSchool"
+      ]
+    }
+  }
+}

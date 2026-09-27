@@ -1,0 +1,86 @@
+{
+  "@context": [
+    "PropertyValue.schema.json",
+    {
+      "hoursAvailable": {
+        "@id": "schema:hoursAvailable",
+        "@container": "@set"
+      },
+      "validFrom": {
+        "@id": "schema:validFrom",
+        "@container": "@set"
+      },
+      "validThrough": {
+        "@id": "schema:validThrough",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "PropertyValue.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "LocationFeatureSpecification.schema.json",
+  "x-oold-uuid": "09c012ab-42c6-5380-81d1-5e100addf01c",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/LocationFeatureSpecification",
+  "x-oold-instance-rdf-type": [
+    "schema:LocationFeatureSpecification"
+  ],
+  "title": "LocationFeatureSpecification",
+  "description": "Specifies a location feature by providing a structured value representing a feature of an accommodation as a property-value pair of varying degrees of formality.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:LocationFeatureSpecification"
+      ]
+    },
+    "hoursAvailable": {
+      "title": "Hours Available",
+      "description": "The hours during which this service or contact is available.",
+      "type": "array",
+      "items": {
+        "$ref": "OpeningHoursSpecification.schema.json"
+      }
+    },
+    "validFrom": {
+      "title": "Valid From",
+      "description": "The date when the item becomes valid.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Date.schema.json"
+          },
+          {
+            "$ref": "DateTime.schema.json"
+          }
+        ]
+      }
+    },
+    "validThrough": {
+      "title": "Valid Through",
+      "description": "The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Date.schema.json"
+          },
+          {
+            "$ref": "DateTime.schema.json"
+          }
+        ]
+      }
+    }
+  }
+}

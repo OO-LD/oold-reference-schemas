@@ -1,0 +1,254 @@
+{
+  "@context": [
+    "StructuredValue.schema.json",
+    {
+      "cvdCollectionDate": {
+        "@id": "schema:cvdCollectionDate",
+        "@container": "@set"
+      },
+      "cvdFacilityCounty": {
+        "@id": "schema:cvdFacilityCounty",
+        "@container": "@set"
+      },
+      "cvdFacilityId": {
+        "@id": "schema:cvdFacilityId",
+        "@container": "@set"
+      },
+      "cvdNumBeds": {
+        "@id": "schema:cvdNumBeds",
+        "@container": "@set"
+      },
+      "cvdNumBedsOcc": {
+        "@id": "schema:cvdNumBedsOcc",
+        "@container": "@set"
+      },
+      "cvdNumC19Died": {
+        "@id": "schema:cvdNumC19Died",
+        "@container": "@set"
+      },
+      "cvdNumC19HOPats": {
+        "@id": "schema:cvdNumC19HOPats",
+        "@container": "@set"
+      },
+      "cvdNumC19HospPats": {
+        "@id": "schema:cvdNumC19HospPats",
+        "@container": "@set"
+      },
+      "cvdNumC19MechVentPats": {
+        "@id": "schema:cvdNumC19MechVentPats",
+        "@container": "@set"
+      },
+      "cvdNumC19OFMechVentPats": {
+        "@id": "schema:cvdNumC19OFMechVentPats",
+        "@container": "@set"
+      },
+      "cvdNumC19OverflowPats": {
+        "@id": "schema:cvdNumC19OverflowPats",
+        "@container": "@set"
+      },
+      "cvdNumICUBeds": {
+        "@id": "schema:cvdNumICUBeds",
+        "@container": "@set"
+      },
+      "cvdNumICUBedsOcc": {
+        "@id": "schema:cvdNumICUBedsOcc",
+        "@container": "@set"
+      },
+      "cvdNumTotBeds": {
+        "@id": "schema:cvdNumTotBeds",
+        "@container": "@set"
+      },
+      "cvdNumVent": {
+        "@id": "schema:cvdNumVent",
+        "@container": "@set"
+      },
+      "cvdNumVentUse": {
+        "@id": "schema:cvdNumVentUse",
+        "@container": "@set"
+      },
+      "datePosted": {
+        "@id": "schema:datePosted",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "StructuredValue.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "CDCPMDRecord.schema.json",
+  "x-oold-uuid": "a52ca7bf-a677-592c-8dcb-b79998c0bc0f",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/CDCPMDRecord",
+  "x-oold-instance-rdf-type": [
+    "schema:CDCPMDRecord"
+  ],
+  "title": "CDCPMDRecord",
+  "description": "A CDCPMDRecord is a data structure representing a record in a CDC tabular data format\n      used for hospital data reporting. See [documentation](/docs/cdc-covid.html) for details, and the linked CDC materials for authoritative\n      definitions used as the source here.\n      ",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:CDCPMDRecord"
+      ]
+    },
+    "cvdCollectionDate": {
+      "title": "Cvd Collection Date",
+      "description": "collectiondate - Date for which patient counts are reported.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "DateTime.schema.json"
+          },
+          {
+            "$ref": "Text.schema.json"
+          }
+        ]
+      }
+    },
+    "cvdFacilityCounty": {
+      "title": "Cvd Facility County",
+      "description": "Name of the County of the NHSN facility that this data record applies to. Use [[cvdFacilityId]] to identify the facility. To provide other details, [[healthcareReportingData]] can be used on a [[Hospital]] entry.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "cvdFacilityId": {
+      "title": "Cvd Facility Id",
+      "description": "Identifier of the NHSN facility that this data record applies to. Use [[cvdFacilityCounty]] to indicate the county. To provide other details, [[healthcareReportingData]] can be used on a [[Hospital]] entry.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "cvdNumBeds": {
+      "title": "Cvd Num Beds",
+      "description": "numbeds - HOSPITAL INPATIENT BEDS: Inpatient beds, including all staffed, licensed, and overflow (surge) beds used for inpatients.",
+      "type": "array",
+      "items": {
+        "$ref": "Number.schema.json"
+      }
+    },
+    "cvdNumBedsOcc": {
+      "title": "Cvd Num Beds Occ",
+      "description": "numbedsocc - HOSPITAL INPATIENT BED OCCUPANCY: Total number of staffed inpatient beds that are occupied.",
+      "type": "array",
+      "items": {
+        "$ref": "Number.schema.json"
+      }
+    },
+    "cvdNumC19Died": {
+      "title": "Cvd Num C19 Died",
+      "description": "numc19died - DEATHS: Patients with suspected or confirmed COVID-19 who died in the hospital, ED, or any overflow location.",
+      "type": "array",
+      "items": {
+        "$ref": "Number.schema.json"
+      }
+    },
+    "cvdNumC19HOPats": {
+      "title": "Cvd Num C19 H O Pats",
+      "description": "numc19hopats - HOSPITAL ONSET: Patients hospitalized in an NHSN inpatient care location with onset of suspected or confirmed COVID-19 14 or more days after hospitalization.",
+      "type": "array",
+      "items": {
+        "$ref": "Number.schema.json"
+      }
+    },
+    "cvdNumC19HospPats": {
+      "title": "Cvd Num C19 Hosp Pats",
+      "description": "numc19hosppats - HOSPITALIZED: Patients currently hospitalized in an inpatient care location who have suspected or confirmed COVID-19.",
+      "type": "array",
+      "items": {
+        "$ref": "Number.schema.json"
+      }
+    },
+    "cvdNumC19MechVentPats": {
+      "title": "Cvd Num C19 Mech Vent Pats",
+      "description": "numc19mechventpats - HOSPITALIZED and VENTILATED: Patients hospitalized in an NHSN inpatient care location who have suspected or confirmed COVID-19 and are on a mechanical ventilator.",
+      "type": "array",
+      "items": {
+        "$ref": "Number.schema.json"
+      }
+    },
+    "cvdNumC19OFMechVentPats": {
+      "title": "Cvd Num C19 O F Mech Vent Pats",
+      "description": "numc19ofmechventpats - ED/OVERFLOW and VENTILATED: Patients with suspected or confirmed COVID-19 who are in the ED or any overflow location awaiting an inpatient bed and on a mechanical ventilator.",
+      "type": "array",
+      "items": {
+        "$ref": "Number.schema.json"
+      }
+    },
+    "cvdNumC19OverflowPats": {
+      "title": "Cvd Num C19 Overflow Pats",
+      "description": "numc19overflowpats - ED/OVERFLOW: Patients with suspected or confirmed COVID-19 who are in the ED or any overflow location awaiting an inpatient bed.",
+      "type": "array",
+      "items": {
+        "$ref": "Number.schema.json"
+      }
+    },
+    "cvdNumICUBeds": {
+      "title": "Cvd Num I C U Beds",
+      "description": "numicubeds - ICU BEDS: Total number of staffed inpatient intensive care unit (ICU) beds.",
+      "type": "array",
+      "items": {
+        "$ref": "Number.schema.json"
+      }
+    },
+    "cvdNumICUBedsOcc": {
+      "title": "Cvd Num I C U Beds Occ",
+      "description": "numicubedsocc - ICU BED OCCUPANCY: Total number of staffed inpatient ICU beds that are occupied.",
+      "type": "array",
+      "items": {
+        "$ref": "Number.schema.json"
+      }
+    },
+    "cvdNumTotBeds": {
+      "title": "Cvd Num Tot Beds",
+      "description": "numtotbeds - ALL HOSPITAL BEDS: Total number of all inpatient and outpatient beds, including all staffed, ICU, licensed, and overflow (surge) beds used for inpatients or outpatients.",
+      "type": "array",
+      "items": {
+        "$ref": "Number.schema.json"
+      }
+    },
+    "cvdNumVent": {
+      "title": "Cvd Num Vent",
+      "description": "numvent - MECHANICAL VENTILATORS: Total number of ventilators available.",
+      "type": "array",
+      "items": {
+        "$ref": "Number.schema.json"
+      }
+    },
+    "cvdNumVentUse": {
+      "title": "Cvd Num Vent Use",
+      "description": "numventuse - MECHANICAL VENTILATORS IN USE: Total number of ventilators in use.",
+      "type": "array",
+      "items": {
+        "$ref": "Number.schema.json"
+      }
+    },
+    "datePosted": {
+      "title": "Date Posted",
+      "description": "Publication date of an online listing.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Date.schema.json"
+          },
+          {
+            "$ref": "DateTime.schema.json"
+          }
+        ]
+      }
+    }
+  }
+}

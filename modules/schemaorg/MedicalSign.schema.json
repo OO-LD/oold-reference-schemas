@@ -1,0 +1,65 @@
+{
+  "@context": [
+    "MedicalSignOrSymptom.schema.json",
+    {
+      "identifyingExam": {
+        "@id": "schema:identifyingExam",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "identifyingTest": {
+        "@id": "schema:identifyingTest",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "MedicalSignOrSymptom.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MedicalSign.schema.json",
+  "x-oold-uuid": "b7845241-7121-563c-adfe-c4a4dfac9ecf",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/MedicalSign",
+  "x-oold-instance-rdf-type": [
+    "schema:MedicalSign"
+  ],
+  "title": "MedicalSign",
+  "description": "Any physical manifestation of a person's medical condition discoverable by objective diagnostic tests or physical examination.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:MedicalSign"
+      ]
+    },
+    "identifyingExam": {
+      "title": "Identifying Exam",
+      "description": "A physical examination that can identify this sign.",
+      "type": "array",
+      "items": {
+        "$ref": "PhysicalExam.schema.json#/$defs/member",
+        "x-oold-range": "PhysicalExam.schema.json"
+      }
+    },
+    "identifyingTest": {
+      "title": "Identifying Test",
+      "description": "A diagnostic test that can identify this sign.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "MedicalTest.schema.json"
+      }
+    }
+  }
+}

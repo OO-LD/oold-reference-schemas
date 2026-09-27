@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "PerformingGroup.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "PerformingGroup.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "DanceGroup.schema.json",
+  "x-oold-uuid": "628f0ef1-44a8-54a4-85d8-49ebb0bbd83f",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/DanceGroup",
+  "x-oold-instance-rdf-type": [
+    "schema:DanceGroup"
+  ],
+  "title": "DanceGroup",
+  "description": "A dance group&#x2014;for example, the Alvin Ailey Dance Theater or Riverdance.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:DanceGroup"
+      ]
+    }
+  }
+}

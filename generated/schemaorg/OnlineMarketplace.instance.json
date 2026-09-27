@@ -1,0 +1,8 @@
+{
+  "$schema": "OnlineMarketplace.schema.json",
+  "@context": "OnlineMarketplace.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:OnlineMarketplace"
+  ]
+}

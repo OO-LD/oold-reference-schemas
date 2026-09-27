@@ -1,0 +1,8 @@
+{
+  "$schema": "MedicalGuidelineContraindication.schema.json",
+  "@context": "MedicalGuidelineContraindication.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:MedicalGuidelineContraindication"
+  ]
+}

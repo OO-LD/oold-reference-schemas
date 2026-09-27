@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Event.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Event.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "VisualArtsEvent.schema.json",
+  "x-oold-uuid": "af364e80-bccb-5af6-b439-ac0cf2df1ed0",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/VisualArtsEvent",
+  "x-oold-instance-rdf-type": [
+    "schema:VisualArtsEvent"
+  ],
+  "title": "VisualArtsEvent",
+  "description": "Event type: Visual arts event.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:VisualArtsEvent"
+      ]
+    }
+  }
+}

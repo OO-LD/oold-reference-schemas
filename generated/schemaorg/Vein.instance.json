@@ -1,0 +1,8 @@
+{
+  "$schema": "Vein.schema.json",
+  "@context": "Vein.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:Vein"
+  ]
+}

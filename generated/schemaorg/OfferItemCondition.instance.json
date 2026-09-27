@@ -1,0 +1,8 @@
+{
+  "$schema": "OfferItemCondition.schema.json",
+  "@context": "OfferItemCondition.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:OfferItemCondition"
+  ]
+}

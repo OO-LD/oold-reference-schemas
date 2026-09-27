@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "Organization.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "Organization.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "NGO.schema.json",
+  "x-oold-uuid": "90d57882-16da-5325-8e73-47196cbeaae6",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/NGO",
+  "x-oold-instance-rdf-type": [
+    "schema:NGO"
+  ],
+  "title": "NGO",
+  "description": "Organization: Non-governmental Organization.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:NGO"
+      ]
+    }
+  }
+}

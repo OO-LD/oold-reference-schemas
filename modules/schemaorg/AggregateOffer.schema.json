@@ -1,0 +1,104 @@
+{
+  "@context": [
+    "Offer.schema.json",
+    {
+      "highPrice": {
+        "@id": "schema:highPrice",
+        "@container": "@set"
+      },
+      "lowPrice": {
+        "@id": "schema:lowPrice",
+        "@container": "@set"
+      },
+      "offerCount": {
+        "@id": "schema:offerCount",
+        "@container": "@set"
+      },
+      "offers": {
+        "@id": "schema:offers",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Offer.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "AggregateOffer.schema.json",
+  "x-oold-uuid": "7be9d73c-2d16-552d-9cbb-b2bec83ffd01",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/AggregateOffer",
+  "x-oold-instance-rdf-type": [
+    "schema:AggregateOffer"
+  ],
+  "title": "AggregateOffer",
+  "description": "When a single product is associated with multiple offers (for example, the same pair of shoes is offered by different merchants), then AggregateOffer can be used.\\n\\nNote: AggregateOffers are normally expected to associate multiple offers that all share the same defined [[businessFunction]] value, or default to http://purl.org/goodrelations/v1#Sell if businessFunction is not explicitly defined.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:AggregateOffer"
+      ]
+    },
+    "highPrice": {
+      "title": "High Price",
+      "description": "The highest price of all offers available.\\n\\nUsage guidelines:\\n\\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.\\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Number.schema.json"
+          },
+          {
+            "$ref": "Text.schema.json"
+          }
+        ]
+      }
+    },
+    "lowPrice": {
+      "title": "Low Price",
+      "description": "The lowest price of all offers available.\\n\\nUsage guidelines:\\n\\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.\\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Number.schema.json"
+          },
+          {
+            "$ref": "Text.schema.json"
+          }
+        ]
+      }
+    },
+    "offerCount": {
+      "title": "Offer Count",
+      "description": "The number of offers for the product.",
+      "type": "array",
+      "items": {
+        "$ref": "Integer.schema.json"
+      }
+    },
+    "offers": {
+      "title": "Offers",
+      "description": "An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.\n      ",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "Demand.schema.json",
+          "Offer.schema.json"
+        ]
+      }
+    }
+  }
+}

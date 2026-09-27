@@ -1,0 +1,19 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Email.schema.json",
+  "x-oold-uuid": "f2bd2640-5447-5a55-9bf1-dbf91d828687",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/Text",
+  "x-oold-instance-rdf-type": [
+    "schema:Text"
+  ],
+  "title": "Email",
+  "description": "Data type: Email address.",
+  "$ref": "Text.schema.json",
+  "format": "email"
+}

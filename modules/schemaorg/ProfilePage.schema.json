@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "WebPage.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "WebPage.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ProfilePage.schema.json",
+  "x-oold-uuid": "028ad9d7-28e6-59ce-86cb-08143b0fd868",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/ProfilePage",
+  "x-oold-instance-rdf-type": [
+    "schema:ProfilePage"
+  ],
+  "title": "ProfilePage",
+  "description": "Web page type: Profile page.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:ProfilePage"
+      ]
+    }
+  }
+}

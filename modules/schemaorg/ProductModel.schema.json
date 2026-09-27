@@ -1,0 +1,84 @@
+{
+  "@context": [
+    "Product.schema.json",
+    {
+      "isVariantOf": {
+        "@id": "schema:isVariantOf",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "predecessorOf": {
+        "@id": "schema:predecessorOf",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "successorOf": {
+        "@id": "schema:successorOf",
+        "@type": "@id",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Product.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ProductModel.schema.json",
+  "x-oold-uuid": "6cfa1bc7-f5c3-5ad7-9037-b1bb2b08717c",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/ProductModel",
+  "x-oold-instance-rdf-type": [
+    "schema:ProductModel"
+  ],
+  "title": "ProductModel",
+  "description": "A datasheet or vendor specification of a product (in the sense of a prototypical description).",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:ProductModel"
+      ]
+    },
+    "isVariantOf": {
+      "title": "Is Variant Of",
+      "description": "Indicates the kind of product that this is a variant of. In the case of [[ProductModel]], this is a pointer (from a ProductModel) to a base product from which this product is a variant. It is safe to infer that the variant inherits all product features from the base model, unless defined locally. This is not transitive. In the case of a [[ProductGroup]], the group description also serves as a template, representing a set of Products that vary on explicitly defined, specific dimensions only (so it defines both a set of variants, as well as which values distinguish amongst those variants). When used with [[ProductGroup]], this property can apply to any [[Product]] included in the group.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": [
+          "ProductGroup.schema.json",
+          "ProductModel.schema.json"
+        ]
+      }
+    },
+    "predecessorOf": {
+      "title": "Predecessor Of",
+      "description": "A pointer from a previous, often discontinued variant of the product to its newer variant.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "ProductModel.schema.json"
+      }
+    },
+    "successorOf": {
+      "title": "Successor Of",
+      "description": "A pointer from a newer variant of a product  to its previous, often discontinued predecessor.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "ProductModel.schema.json"
+      }
+    }
+  }
+}

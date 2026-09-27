@@ -1,0 +1,59 @@
+{
+  "@context": [
+    "NonprofitType.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "NonprofitType.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ITNonprofitType.schema.json",
+  "x-oold-uuid": "c6396916-b7c8-59ec-bf82-8d9d4ada3621",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/ITNonprofitType",
+  "x-oold-instance-rdf-type": [
+    "schema:ITNonprofitType"
+  ],
+  "title": "ITNonprofitType",
+  "description": "ITNonprofitType: Non-profit organization type originating from Italy.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:ITNonprofitType"
+      ]
+    }
+  },
+  "$defs": {
+    "member": {
+      "title": "ITNonprofitType member",
+      "description": "One of the 6 member instances of ITNonprofitType.",
+      "type": "string",
+      "format": "iri-reference",
+      "enum": [
+        "schema:ITCooperativeCharity",
+        "schema:ITMutualAidCharity",
+        "schema:ITSocialCompanyCharity",
+        "schema:ITSocialPromotionCharity",
+        "schema:ITSportCompanyCharity",
+        "schema:ITVolunteerAssociationCharity"
+      ],
+      "x-oold-ui-enum-titles": [
+        "ITCooperativeCharity",
+        "ITMutualAidCharity",
+        "ITSocialCompanyCharity",
+        "ITSocialPromotionCharity",
+        "ITSportCompanyCharity",
+        "ITVolunteerAssociationCharity"
+      ]
+    }
+  }
+}

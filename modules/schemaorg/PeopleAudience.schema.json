@@ -1,0 +1,161 @@
+{
+  "@context": [
+    "Audience.schema.json",
+    {
+      "healthCondition": {
+        "@id": "schema:healthCondition",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "requiredGender": {
+        "@id": "schema:requiredGender",
+        "@container": "@set"
+      },
+      "requiredMaxAge": {
+        "@id": "schema:requiredMaxAge",
+        "@container": "@set"
+      },
+      "requiredMinAge": {
+        "@id": "schema:requiredMinAge",
+        "@container": "@set"
+      },
+      "suggestedAge": {
+        "@id": "schema:suggestedAge",
+        "@container": "@set"
+      },
+      "suggestedGender": {
+        "@id": "schema:suggestedGender",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "suggestedGender_text": {
+        "@id": "schema:suggestedGender",
+        "@container": "@set"
+      },
+      "suggestedMaxAge": {
+        "@id": "schema:suggestedMaxAge",
+        "@container": "@set"
+      },
+      "suggestedMeasurement": {
+        "@id": "schema:suggestedMeasurement",
+        "@container": "@set"
+      },
+      "suggestedMinAge": {
+        "@id": "schema:suggestedMinAge",
+        "@container": "@set"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Audience.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "PeopleAudience.schema.json",
+  "x-oold-uuid": "c71e1d6d-368e-5552-8e4f-c9bf713ef208",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/PeopleAudience",
+  "x-oold-instance-rdf-type": [
+    "schema:PeopleAudience"
+  ],
+  "title": "PeopleAudience",
+  "description": "A set of characteristics belonging to people, e.g. who compose an item's target audience.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:PeopleAudience"
+      ]
+    },
+    "healthCondition": {
+      "title": "Health Condition",
+      "description": "Specifying the health condition(s) of a patient, medical study, or other target audience.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference",
+        "x-oold-range": "MedicalCondition.schema.json"
+      }
+    },
+    "requiredGender": {
+      "title": "Required Gender",
+      "description": "Audiences defined by a person's gender.",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "requiredMaxAge": {
+      "title": "Required Max Age",
+      "description": "Audiences defined by a person's maximum age.",
+      "type": "array",
+      "items": {
+        "$ref": "Integer.schema.json"
+      }
+    },
+    "requiredMinAge": {
+      "title": "Required Min Age",
+      "description": "Audiences defined by a person's minimum age.",
+      "type": "array",
+      "items": {
+        "$ref": "Integer.schema.json"
+      }
+    },
+    "suggestedAge": {
+      "title": "Suggested Age",
+      "description": "The age or age range for the intended audience or person, for example 3-12 months for infants, 1-5 years for toddlers.",
+      "type": "array",
+      "items": {
+        "$ref": "QuantitativeValue.schema.json"
+      }
+    },
+    "suggestedGender": {
+      "title": "Suggested Gender",
+      "description": "The suggested gender of the intended person or audience, for example \"male\", \"female\", or \"unisex\".",
+      "type": "array",
+      "items": {
+        "$ref": "GenderType.schema.json#/$defs/member",
+        "x-oold-range": "GenderType.schema.json"
+      }
+    },
+    "suggestedGender_text": {
+      "title": "Suggested Gender (text)",
+      "description": "The suggested gender of the intended person or audience, for example \"male\", \"female\", or \"unisex\".",
+      "type": "array",
+      "items": {
+        "$ref": "Text.schema.json"
+      }
+    },
+    "suggestedMaxAge": {
+      "title": "Suggested Max Age",
+      "description": "Maximum recommended age in years for the audience or user.",
+      "type": "array",
+      "items": {
+        "$ref": "Number.schema.json"
+      }
+    },
+    "suggestedMeasurement": {
+      "title": "Suggested Measurement",
+      "description": "A suggested range of body measurements for the intended audience or person, for example inseam between 32 and 34 inches or height between 170 and 190 cm. Typically found on a size chart for wearable products.",
+      "type": "array",
+      "items": {
+        "$ref": "QuantitativeValue.schema.json"
+      }
+    },
+    "suggestedMinAge": {
+      "title": "Suggested Min Age",
+      "description": "Minimum recommended age in years for the audience or user.",
+      "type": "array",
+      "items": {
+        "$ref": "Number.schema.json"
+      }
+    }
+  }
+}

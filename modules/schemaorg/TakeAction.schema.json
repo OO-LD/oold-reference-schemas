@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "TransferAction.schema.json",
+    {}
+  ],
+  "allOf": [
+    {
+      "$ref": "TransferAction.schema.json"
+    }
+  ],
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "TakeAction.schema.json",
+  "x-oold-uuid": "ae7314a7-c40a-54a4-a4fd-9656622b3e66",
+  "x-oold-version": "0.1.0",
+  "x-oold-iri": "https://schema.org/TakeAction",
+  "x-oold-instance-rdf-type": [
+    "schema:TakeAction"
+  ],
+  "title": "TakeAction",
+  "description": "The act of gaining ownership of an object from an origin. Reciprocal of GiveAction.\\n\\nRelated actions:\\n\\n* [[GiveAction]]: The reciprocal of TakeAction.\\n* [[ReceiveAction]]: Unlike ReceiveAction, TakeAction implies that ownership has been transferred.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The RDF type(s) of this item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "schema:TakeAction"
+      ]
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "$schema": "DriveWheelConfigurationValue.schema.json",
+  "@context": "DriveWheelConfigurationValue.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "schema:DriveWheelConfigurationValue"
+  ]
+}
