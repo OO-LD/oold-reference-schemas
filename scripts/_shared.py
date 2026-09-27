@@ -47,8 +47,13 @@ def chain(schema_file: Path) -> list[Path]:
     it extends a base with `allOf`, it lists another schema in its `@context`, and it points
     a property at another schema with `$ref`. Following only `allOf` leaves the terms of an
     embedded object undefined, so those keys are silently dropped on the way to RDF.
+
+    Two schemas may point at each other, which a vocabulary with value types does (a
+    quantitative value carries a reference value of its own kind). A file is therefore
+    marked on entry rather than on completion, so a reference back into the walk ends it.
     """
     out: list[Path] = []
+    seen: set[Path] = set()
 
     def refs(node) -> list[str]:
         found = []
@@ -64,8 +69,9 @@ def chain(schema_file: Path) -> list[Path]:
         return found
 
     def walk(f: Path) -> None:
-        if not f.is_file() or f in out:
+        if f in seen or not f.is_file():
             return
+        seen.add(f)
         schema = read(f)
         context = schema.get("@context")
         parts = context if isinstance(context, list) else [context]

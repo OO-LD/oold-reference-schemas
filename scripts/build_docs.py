@@ -262,15 +262,15 @@ def synth_instance(name: str, schema: dict, schemas: list[dict]) -> dict | None:
     required = {r for s in schemas for r in (s.get("required") or [])}
 
     doc: dict = {}
-    for name, spec in props.items():
+    for term, spec in props.items():
         if not isinstance(spec, dict):
             continue
         if spec.get("examples"):
-            doc[name] = spec["examples"][0]
+            doc[term] = spec["examples"][0]
         elif "default" in spec:
-            doc[name] = spec["default"]
+            doc[term] = spec["default"]
         elif spec.get("enum"):
-            doc[name] = spec["enum"][0]
+            doc[term] = spec["enum"][0]
     if not required <= doc.keys():
         return None
     if not doc:
