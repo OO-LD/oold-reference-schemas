@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "TemperatureRateOfChange.schema.json",
+  "x-oold-uuid": "a04307c2-ccbf-57d0-b162-81a3be595f60",
+  "x-oold-version": "0.1.0",
+  "title": "TemperatureRateOfChange",
+  "x-oold-multilang-title": {
+    "en": "Temperature Rate of Change"
+  },
+  "description": "The \"Temperature Rate of Change\" measures the difference of a temperature per time (positive: rise, negative: fall), as for instance used with heat sensors. It is for example measured in K/s.",
+  "allOf": [
+    {
+      "$ref": "TemperaturePerTime.schema.json"
+    }
+  ],
+  "@context": [
+    "TemperaturePerTime.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "TemperatureRateOfChange": "qkind:TemperatureRateOfChange"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "TemperatureRateOfChange"
+      ]
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Distance.schema.json",
+  "x-oold-uuid": "5074a29b-a550-5fc9-8e37-9b0a9df0bd69",
+  "x-oold-version": "0.1.0",
+  "title": "Distance",
+  "x-oold-multilang-title": {
+    "en": "Distance",
+    "de": "Entfernung"
+  },
+  "description": "\"Distance\" is a numerical description of how far apart objects are.",
+  "allOf": [
+    {
+      "$ref": "Length.schema.json"
+    }
+  ],
+  "@context": [
+    "Length.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Distance": "qkind:Distance"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Distance"
+      ]
+    }
+  }
+}

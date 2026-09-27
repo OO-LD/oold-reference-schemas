@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MacroscopicTotalCrossSection.schema.json",
+  "x-oold-uuid": "2360d68f-0082-5747-8577-b2fa9b8facba",
+  "x-oold-version": "0.1.0",
+  "title": "MacroscopicTotalCrossSection",
+  "x-oold-multilang-title": {
+    "en": "Macroscopic Total Cross-section"
+  },
+  "description": "\"Macroscopic Total Cross-section\" is the total cross-sections for all atoms or other entities in a given 3D domain, divided by the volume of that domain.",
+  "allOf": [
+    {
+      "$ref": "CrossSection.schema.json"
+    }
+  ],
+  "@context": [
+    "CrossSection.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "MacroscopicTotalCrossSection": "qkind:MacroscopicTotalCrossSection"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "MacroscopicTotalCrossSection"
+      ]
+    }
+  }
+}

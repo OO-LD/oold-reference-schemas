@@ -1,0 +1,41 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "StaticFriction.schema.json",
+  "x-oold-uuid": "bae7311e-d444-5fb5-922b-5b8470ff235a",
+  "x-oold-version": "0.1.0",
+  "title": "StaticFriction",
+  "x-oold-multilang-title": {
+    "en": "Static Friction"
+  },
+  "description": "Static friction is friction between two or more solid objects that are not moving relative to each other. For example, static friction can prevent an object from sliding down a sloped surface.",
+  "allOf": [
+    {
+      "$ref": "Friction.schema.json"
+    }
+  ],
+  "@context": [
+    "Friction.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "StaticFriction": "qkind:StaticFriction"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "StaticFriction"
+      ]
+    }
+  },
+  "x-oold-context": {
+    "StaticFriction": {
+      "http://dbpedia.org/resource/Friction": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MaxOperatingThrust.schema.json",
+  "x-oold-uuid": "b9eb9b07-0fb3-584c-b6df-0d0dda581fb6",
+  "x-oold-version": "0.1.0",
+  "title": "MaxOperatingThrust",
+  "x-oold-multilang-title": {
+    "en": "Max Operating Thrust"
+  },
+  "allOf": [
+    {
+      "$ref": "Thrust.schema.json"
+    }
+  ],
+  "@context": [
+    "Thrust.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "MaxOperatingThrust": "qkind:MaxOperatingThrust"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "MaxOperatingThrust"
+      ]
+    }
+  }
+}

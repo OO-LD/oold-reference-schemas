@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "FLIGHT-PERFORMANCE-RESERVE-PROPELLANT-MASS.schema.json",
+  "x-oold-uuid": "9b95f946-1de5-5e07-a433-02bc23eebc9b",
+  "x-oold-version": "0.1.0",
+  "title": "FLIGHT-PERFORMANCE-RESERVE-PROPELLANT-MASS",
+  "x-oold-multilang-title": {
+    "en": "Flight Performance Reserve Propellant Mass"
+  },
+  "description": "A quantity of propellant, at a nominal mixture ratio, along with fuel bias that is set aside from total propellant loaded to cover for statistical variations of flight hardware characteristics and environment conditions on the day of launch. The launch vehicle is designed to accommodate the maximum FPR loading.",
+  "allOf": [
+    {
+      "$ref": "Mass.schema.json"
+    }
+  ],
+  "@context": [
+    "Mass.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "FLIGHT-PERFORMANCE-RESERVE-PROPELLANT-MASS": "qkind:FLIGHT-PERFORMANCE-RESERVE-PROPELLANT-MASS"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "FLIGHT-PERFORMANCE-RESERVE-PROPELLANT-MASS"
+      ]
+    }
+  }
+}

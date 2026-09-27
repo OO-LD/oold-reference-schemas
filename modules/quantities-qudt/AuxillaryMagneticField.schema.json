@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "AuxillaryMagneticField.schema.json",
+  "x-oold-uuid": "083bc854-46db-5746-90ad-c35135516c66",
+  "x-oold-version": "0.1.0",
+  "title": "AuxillaryMagneticField",
+  "x-oold-multilang-title": {
+    "en": "Auxillary Magnetic Field"
+  },
+  "description": "Magnetic Fields surround magnetic materials and electric currents and are detected by the force they exert on other magnetic materials and moving electric charges. The electric and magnetic fields are two interrelated aspects of a single object, called the electromagnetic field. A pure electric field in one reference frame is observed as a combination of both an electric field and a magnetic field in a moving reference frame. The Auxillary Magnetic Field, H characterizes how the true Magnetic Field B influences the organization of magnetic dipoles in a given medium.",
+  "allOf": [
+    {
+      "$ref": "MagneticFieldStrength.schema.json"
+    }
+  ],
+  "@context": [
+    "MagneticFieldStrength.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "AuxillaryMagneticField": "qkind:AuxillaryMagneticField"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "AuxillaryMagneticField"
+      ]
+    }
+  }
+}

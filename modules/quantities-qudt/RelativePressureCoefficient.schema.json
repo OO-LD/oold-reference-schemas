@@ -1,0 +1,47 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "RelativePressureCoefficient.schema.json",
+  "x-oold-uuid": "7d5aaca5-0d5d-5e79-8ac2-9a9e209310cf",
+  "x-oold-version": "0.1.0",
+  "title": "RelativePressureCoefficient",
+  "x-oold-multilang-title": {
+    "en": "Relative Pressure Coefficient"
+  },
+  "examples": [
+    {
+      "type": [
+        "RelativePressureCoefficient"
+      ],
+      "value": 1.0,
+      "unit": "per_kelvin"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "RelativePressureCoefficient": "qkind:RelativePressureCoefficient",
+      "per_kelvin": "qunit:PER-K",
+      "per_mega_kelvin": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/per_mega_kelvin"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "RelativePressureCoefficient"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "per_kelvin",
+        "per_mega_kelvin"
+      ],
+      "default": "per_kelvin"
+    }
+  }
+}

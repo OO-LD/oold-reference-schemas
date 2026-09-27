@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "GROSS-LIFT-OFF-WEIGHT.schema.json",
+  "x-oold-uuid": "8061114f-a355-5012-b53c-39fca5cbc5a8",
+  "x-oold-version": "0.1.0",
+  "title": "GROSS-LIFT-OFF-WEIGHT",
+  "x-oold-multilang-title": {
+    "en": "Gross Lift-Off Weight"
+  },
+  "description": "The sum of a rocket's inert mass and usable fluids and gases at sea level.",
+  "allOf": [
+    {
+      "$ref": "Mass.schema.json"
+    }
+  ],
+  "@context": [
+    "Mass.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "GROSS-LIFT-OFF-WEIGHT": "qkind:GROSS-LIFT-OFF-WEIGHT"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "GROSS-LIFT-OFF-WEIGHT"
+      ]
+    }
+  }
+}

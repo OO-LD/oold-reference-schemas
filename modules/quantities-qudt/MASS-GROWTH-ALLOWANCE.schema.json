@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MASS-GROWTH-ALLOWANCE.schema.json",
+  "x-oold-uuid": "61e1f096-ca89-5a01-b3f5-40bd78a0c78c",
+  "x-oold-version": "0.1.0",
+  "title": "MASS-GROWTH-ALLOWANCE",
+  "x-oold-multilang-title": {
+    "en": "Mass Growth Allowance"
+  },
+  "description": "A factor applied to basic mass at the lowest level of design detail available based on type and maturity of hardware according to an approved MGA depletion schedule.",
+  "allOf": [
+    {
+      "$ref": "Mass.schema.json"
+    }
+  ],
+  "@context": [
+    "Mass.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "MASS-GROWTH-ALLOWANCE": "qkind:MASS-GROWTH-ALLOWANCE"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "MASS-GROWTH-ALLOWANCE"
+      ]
+    }
+  }
+}

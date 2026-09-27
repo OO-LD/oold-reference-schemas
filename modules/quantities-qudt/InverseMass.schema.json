@@ -1,0 +1,49 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "InverseMass.schema.json",
+  "x-oold-uuid": "01d40c43-6663-572d-80de-0e503436a120",
+  "x-oold-version": "0.1.0",
+  "title": "InverseMass",
+  "x-oold-multilang-title": {
+    "en": "Reciprocal mass"
+  },
+  "examples": [
+    {
+      "type": [
+        "InverseMass"
+      ],
+      "value": 1.0,
+      "unit": "per_kilo_gram"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "InverseMass": "qkind:InverseMass",
+      "per_kilo_gram": "qunit:PER-KiloGM",
+      "per_gram": "qunit:PER-GM",
+      "per_milli_gram": "qunit:PER-MilliGM"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "InverseMass"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "per_kilo_gram",
+        "per_gram",
+        "per_milli_gram"
+      ],
+      "default": "per_kilo_gram"
+    }
+  }
+}

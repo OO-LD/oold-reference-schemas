@@ -1,0 +1,31 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "NucleonNumber.schema.json",
+  "x-oold-uuid": "5644ec02-a843-5f74-946c-883721c162c0",
+  "x-oold-version": "0.1.0",
+  "title": "NucleonNumber",
+  "x-oold-multilang-title": {
+    "en": "Nucleon number",
+    "de": "Nukleonenzahl"
+  },
+  "description": "Number of nucleons in an atomic nucleus.A = Z+N. Nuclides with the same value of A are called isobars.",
+  "allOf": [
+    {
+      "$ref": "Count.schema.json"
+    }
+  ],
+  "@context": [
+    "Count.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "NucleonNumber": "qkind:NucleonNumber"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "NucleonNumber"
+      ]
+    }
+  }
+}

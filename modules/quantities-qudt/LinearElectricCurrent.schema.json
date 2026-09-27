@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "LinearElectricCurrent.schema.json",
+  "x-oold-uuid": "53042a34-f31b-52b8-a499-26a2368d0e12",
+  "x-oold-version": "0.1.0",
+  "title": "LinearElectricCurrent",
+  "x-oold-multilang-title": {
+    "en": "Linear Electric Current"
+  },
+  "description": "\"Linear Electric Linear Current\" is the electric current per unit line.",
+  "allOf": [
+    {
+      "$ref": "LinearElectricCurrentDensity.schema.json"
+    }
+  ],
+  "@context": [
+    "LinearElectricCurrentDensity.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "LinearElectricCurrent": "qkind:LinearElectricCurrent"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "LinearElectricCurrent"
+      ]
+    }
+  }
+}

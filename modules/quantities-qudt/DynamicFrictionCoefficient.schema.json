@@ -1,0 +1,41 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "DynamicFrictionCoefficient.schema.json",
+  "x-oold-uuid": "2fe5b071-3ef4-5b60-96fb-35cb7085cfe7",
+  "x-oold-version": "0.1.0",
+  "title": "DynamicFrictionCoefficient",
+  "x-oold-multilang-title": {
+    "en": "Dynamic Friction Coefficient"
+  },
+  "description": "Kinetic (or dynamic) friction occurs when two objects are moving relative to each other and rub together (like a sled on the ground).",
+  "allOf": [
+    {
+      "$ref": "FrictionCoefficient.schema.json"
+    }
+  ],
+  "@context": [
+    "FrictionCoefficient.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "DynamicFrictionCoefficient": "qkind:DynamicFrictionCoefficient"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "DynamicFrictionCoefficient"
+      ]
+    }
+  },
+  "x-oold-context": {
+    "DynamicFrictionCoefficient": {
+      "http://dbpedia.org/resource/Friction": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

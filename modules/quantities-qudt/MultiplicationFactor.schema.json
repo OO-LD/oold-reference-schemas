@@ -1,0 +1,46 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MultiplicationFactor.schema.json",
+  "x-oold-uuid": "4384c6d9-e966-57c0-b4e7-7f665495be59",
+  "x-oold-version": "0.1.0",
+  "title": "MultiplicationFactor",
+  "x-oold-multilang-title": {
+    "en": "Multiplication Factor"
+  },
+  "description": "The \"Multiplication Factor\" is the ratio of the total number of fission or fission-dependent neutrons produced in a time interval to the total number of neutrons lost by absorption and leakage during the same interval.",
+  "examples": [
+    {
+      "type": [
+        "MultiplicationFactor"
+      ],
+      "value": 1.0,
+      "unit": "unitless"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "MultiplicationFactor": "qkind:MultiplicationFactor",
+      "unitless": "qunit:UNITLESS"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "MultiplicationFactor"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "unitless"
+      ],
+      "default": "unitless"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ElectricalPowerToMassRatio.schema.json",
+  "x-oold-uuid": "888d4417-94f3-5e2c-a121-9afab29d38d4",
+  "x-oold-version": "0.1.0",
+  "title": "ElectricalPowerToMassRatio",
+  "x-oold-multilang-title": {
+    "en": "Electrical Power To Mass Ratio"
+  },
+  "allOf": [
+    {
+      "$ref": "SpecificPower.schema.json"
+    }
+  ],
+  "@context": [
+    "SpecificPower.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ElectricalPowerToMassRatio": "qkind:ElectricalPowerToMassRatio"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ElectricalPowerToMassRatio"
+      ]
+    }
+  }
+}

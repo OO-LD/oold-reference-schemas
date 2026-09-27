@@ -1,0 +1,40 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "HeatFluxDensity.schema.json",
+  "x-oold-uuid": "8bd1ddda-c6c4-5418-afac-16180d92978d",
+  "x-oold-version": "0.1.0",
+  "title": "HeatFluxDensity",
+  "x-oold-multilang-title": {
+    "en": "Heat Flux Density"
+  },
+  "allOf": [
+    {
+      "$ref": "PowerPerArea.schema.json"
+    }
+  ],
+  "@context": [
+    "PowerPerArea.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "HeatFluxDensity": "qkind:HeatFluxDensity"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "HeatFluxDensity"
+      ]
+    }
+  },
+  "x-oold-context": {
+    "HeatFluxDensity": {
+      "https://si-digital-framework.org/quantities/HEFD": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

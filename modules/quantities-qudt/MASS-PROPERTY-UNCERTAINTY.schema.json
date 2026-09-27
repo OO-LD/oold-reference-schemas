@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MASS-PROPERTY-UNCERTAINTY.schema.json",
+  "x-oold-uuid": "3a06c181-a537-5b68-b002-f7a28ff862d0",
+  "x-oold-version": "0.1.0",
+  "title": "MASS-PROPERTY-UNCERTAINTY",
+  "x-oold-multilang-title": {
+    "en": "Mass Property Uncertainty"
+  },
+  "description": "Variation in predicted MP due to lack of definition, manufacturing variations, environment effects, or accuracy limitation of measuring devices.",
+  "allOf": [
+    {
+      "$ref": "Mass.schema.json"
+    }
+  ],
+  "@context": [
+    "Mass.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "MASS-PROPERTY-UNCERTAINTY": "qkind:MASS-PROPERTY-UNCERTAINTY"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "MASS-PROPERTY-UNCERTAINTY"
+      ]
+    }
+  }
+}

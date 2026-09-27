@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "DELTA-V.schema.json",
+  "x-oold-uuid": "c6e4b85a-cce1-53fd-85a0-b7babd166131",
+  "x-oold-version": "0.1.0",
+  "title": "DELTA-V",
+  "x-oold-multilang-title": {
+    "en": "Delta-V"
+  },
+  "description": "The change in translational velocity including all losses for a propulsive system or module. Delta-V losses include, but are not limited to, gravity losses and steering losses.",
+  "allOf": [
+    {
+      "$ref": "Velocity.schema.json"
+    }
+  ],
+  "@context": [
+    "Velocity.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "DELTA-V": "qkind:DELTA-V"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "DELTA-V"
+      ]
+    }
+  }
+}

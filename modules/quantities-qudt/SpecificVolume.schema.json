@@ -1,0 +1,77 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "SpecificVolume.schema.json",
+  "x-oold-uuid": "26ae18e1-1ed1-58dc-9ea7-e62d1d5ce92e",
+  "x-oold-version": "0.1.0",
+  "title": "SpecificVolume",
+  "x-oold-multilang-title": {
+    "en": "Specific Volume"
+  },
+  "description": "\"Specific Volume\" ($\\nu$) is the volume occupied by a unit of mass of a material. It is equal to the inverse of density.",
+  "examples": [
+    {
+      "type": [
+        "SpecificVolume"
+      ],
+      "value": 1.0,
+      "unit": "meter_cubed_per_kilo_gram"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "SpecificVolume": "qkind:SpecificVolume",
+      "meter_cubed_per_kilo_gram": "qunit:M3-PER-KiloGM",
+      "milli_meter_cubed_per_kilo_gram": "qunit:MilliM3-PER-KiloGM",
+      "milli_liter_per_kilo_gram": "qunit:MilliL-PER-KiloGM",
+      "milli_meter_cubed_per_gram": "qunit:MilliM3-PER-GM",
+      "liter_per_kilo_gram": "qunit:L-PER-KiloGM",
+      "centi_meter_cubed_per_gram": "qunit:CentiM3-PER-GM",
+      "deci_meter_cubed_per_kilo_gram": "qunit:DeciM3-PER-KiloGM",
+      "milli_liter_per_gram": "qunit:MilliL-PER-GM",
+      "deci_liter_per_gram": "qunit:DeciL-PER-GM",
+      "liter_per_gram": "qunit:L-PER-GM",
+      "meter_cubed_per_gram": "qunit:M3-PER-GM"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "SpecificVolume"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "meter_cubed_per_kilo_gram",
+        "milli_meter_cubed_per_kilo_gram",
+        "milli_liter_per_kilo_gram",
+        "milli_meter_cubed_per_gram",
+        "liter_per_kilo_gram",
+        "centi_meter_cubed_per_gram",
+        "deci_meter_cubed_per_kilo_gram",
+        "milli_liter_per_gram",
+        "deci_liter_per_gram",
+        "liter_per_gram",
+        "meter_cubed_per_gram"
+      ],
+      "default": "meter_cubed_per_kilo_gram"
+    }
+  },
+  "x-oold-context": {
+    "SpecificVolume": {
+      "https://si-digital-framework.org/quantities/SPVO": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

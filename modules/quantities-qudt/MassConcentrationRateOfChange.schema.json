@@ -1,0 +1,48 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MassConcentrationRateOfChange.schema.json",
+  "x-oold-uuid": "31f4583f-8b09-5de5-be78-1a7ced0b8117",
+  "x-oold-version": "0.1.0",
+  "title": "MassConcentrationRateOfChange",
+  "x-oold-multilang-title": {
+    "en": "Mass Concentration Rate Of Change"
+  },
+  "description": "the rate at which a specific chemical element or compound changes concentration over time, where with concentration expressed as mass per volume. SI unit is kg * m-3 * s-1",
+  "examples": [
+    {
+      "type": [
+        "MassConcentrationRateOfChange"
+      ],
+      "value": 1.0,
+      "unit": "gram_per_day_per_liter"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "MassConcentrationRateOfChange": "qkind:MassConcentrationRateOfChange",
+      "gram_per_day_per_liter": "qunit:GM-PER-L-DAY",
+      "micro_gram_per_day_per_liter": "qunit:MicroGM-PER-L-DAY"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "MassConcentrationRateOfChange"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "gram_per_day_per_liter",
+        "micro_gram_per_day_per_liter"
+      ],
+      "default": "gram_per_day_per_liter"
+    }
+  }
+}

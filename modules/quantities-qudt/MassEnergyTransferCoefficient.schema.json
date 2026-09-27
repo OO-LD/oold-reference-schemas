@@ -1,0 +1,50 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MassEnergyTransferCoefficient.schema.json",
+  "x-oold-uuid": "62d08281-552e-55ad-acdc-5be6123ac375",
+  "x-oold-version": "0.1.0",
+  "title": "MassEnergyTransferCoefficient",
+  "x-oold-multilang-title": {
+    "en": "Mass Energy Transfer Coefficient"
+  },
+  "description": "\"Mass Energy Transfer Coefficient\" is that fraction of the mass attenuation coefficient which contributes to the production of kinetic energy in charged particles.",
+  "examples": [
+    {
+      "type": [
+        "MassEnergyTransferCoefficient"
+      ],
+      "value": 1.0,
+      "unit": "meter_squared_per_kilo_gram"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "MassEnergyTransferCoefficient": "qkind:MassEnergyTransferCoefficient",
+      "meter_squared_per_kilo_gram": "qunit:M2-PER-KiloGM",
+      "centi_meter_squared_per_gram": "qunit:CentiM2-PER-GM",
+      "meter_squared_per_gram": "qunit:M2-PER-GM"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "MassEnergyTransferCoefficient"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "meter_squared_per_kilo_gram",
+        "centi_meter_squared_per_gram",
+        "meter_squared_per_gram"
+      ],
+      "default": "meter_squared_per_kilo_gram"
+    }
+  }
+}

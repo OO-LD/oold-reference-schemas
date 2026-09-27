@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "DutyCycle.schema.json",
+  "x-oold-uuid": "0ddf63f6-9e72-5cb6-9e0e-5e0deca608b2",
+  "x-oold-version": "0.1.0",
+  "title": "DutyCycle",
+  "x-oold-multilang-title": {
+    "en": "Duty Cycle"
+  },
+  "description": "A duty cycle or power cycle is the fraction of one period in which a signal or system is active.",
+  "allOf": [
+    {
+      "$ref": "DimensionlessRatio.schema.json"
+    }
+  ],
+  "@context": [
+    "DimensionlessRatio.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "DutyCycle": "qkind:DutyCycle"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "DutyCycle"
+      ]
+    }
+  }
+}

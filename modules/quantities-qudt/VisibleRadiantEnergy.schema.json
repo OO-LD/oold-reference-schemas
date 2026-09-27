@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "VisibleRadiantEnergy.schema.json",
+  "x-oold-uuid": "fec7990b-044c-5e3a-8298-91756b36c3a2",
+  "x-oold-version": "0.1.0",
+  "title": "VisibleRadiantEnergy",
+  "x-oold-multilang-title": {
+    "en": "Visible Radiant Energy"
+  },
+  "description": "\"Visible Radiant Energy\", also known as luminous energy, is the energy of electromagnetic waves. It is energy of the particles that are emitted, transferred, or received as radiation.",
+  "allOf": [
+    {
+      "$ref": "Energy.schema.json"
+    }
+  ],
+  "@context": [
+    "Energy.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "VisibleRadiantEnergy": "qkind:VisibleRadiantEnergy"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "VisibleRadiantEnergy"
+      ]
+    }
+  }
+}

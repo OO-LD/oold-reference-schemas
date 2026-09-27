@@ -1,0 +1,50 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Emissivity.schema.json",
+  "x-oold-uuid": "ff3b7c47-e671-50a4-8138-2e342ac8395e",
+  "x-oold-version": "0.1.0",
+  "title": "Emissivity",
+  "x-oold-multilang-title": {
+    "en": "Emissivity"
+  },
+  "description": "Emissivity of a material (usually written $\\varepsilon$ or e) is the relative ability of its surface to emit energy by radiation.",
+  "examples": [
+    {
+      "type": [
+        "Emissivity"
+      ],
+      "value": 1.0,
+      "unit": "dimensionless"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Emissivity": "qkind:Emissivity",
+      "dimensionless": "qunit:NUM",
+      "percent": "qunit:PERCENT",
+      "unitless": "qunit:UNITLESS"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Emissivity"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "dimensionless",
+        "percent",
+        "unitless"
+      ],
+      "default": "dimensionless"
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "EnergyDensityOfStates.schema.json",
+  "x-oold-uuid": "cd73bd1d-42a7-5671-896b-bf11ed611b6e",
+  "x-oold-version": "0.1.0",
+  "title": "EnergyDensityOfStates",
+  "x-oold-multilang-title": {
+    "en": "Energy Density of States"
+  },
+  "description": "\"Energy Density of States\" refers to electrons or other entities, e.g. phonons. It can, for example, refer to amount of substance instead of volume.",
+  "examples": [
+    {
+      "type": [
+        "EnergyDensityOfStates"
+      ],
+      "value": 1.0,
+      "unit": "per_joule_per_meter_cubed"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "EnergyDensityOfStates": "qkind:EnergyDensityOfStates",
+      "per_joule_per_meter_cubed": "qunit:PER-J-M3"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "EnergyDensityOfStates"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "per_joule_per_meter_cubed"
+      ],
+      "default": "per_joule_per_meter_cubed"
+    }
+  }
+}

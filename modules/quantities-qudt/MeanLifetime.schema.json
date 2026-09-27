@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MeanLifetime.schema.json",
+  "x-oold-uuid": "463ab2ae-4248-5ddc-a80f-31dca59d3113",
+  "x-oold-version": "0.1.0",
+  "title": "MeanLifetime",
+  "x-oold-multilang-title": {
+    "en": "Mean Lifetime"
+  },
+  "description": "The \"Mean Lifetime\" is the average length of time that an element remains in the set of discrete elements in a decaying quantity, $N(t)$.",
+  "allOf": [
+    {
+      "$ref": "Time.schema.json"
+    }
+  ],
+  "@context": [
+    "Time.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "MeanLifetime": "qkind:MeanLifetime"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "MeanLifetime"
+      ]
+    }
+  }
+}

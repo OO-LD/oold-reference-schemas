@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "SolidStateDiffusionLength.schema.json",
+  "x-oold-uuid": "9a071c3e-82af-50f6-bef8-0aee14562a5d",
+  "x-oold-version": "0.1.0",
+  "title": "SolidStateDiffusionLength",
+  "x-oold-multilang-title": {
+    "en": "Diffusion Length (Solid State Physics)"
+  },
+  "description": "\"Solid State Diffusion Length\" is the average distance traveled by a particle, such as a minority carrier in a semiconductor",
+  "allOf": [
+    {
+      "$ref": "Length.schema.json"
+    }
+  ],
+  "@context": [
+    "Length.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "SolidStateDiffusionLength": "qkind:SolidStateDiffusionLength"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "SolidStateDiffusionLength"
+      ]
+    }
+  }
+}

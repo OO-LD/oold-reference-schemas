@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "FUEL-BIAS.schema.json",
+  "x-oold-uuid": "b5688984-4bf2-5ea9-9847-d1c56e9e8042",
+  "x-oold-version": "0.1.0",
+  "title": "FUEL-BIAS",
+  "x-oold-multilang-title": {
+    "en": "Fuel Bias"
+  },
+  "description": "An additional quantity of fuel to ensure depletion of high-weight oxidizer before fuel for systems with high-oxidizer mixing ratios (e.g., 6:1). This practice allows for more efficient propellant utilization. Denoted as a percentage.",
+  "allOf": [
+    {
+      "$ref": "Dimensionless.schema.json"
+    }
+  ],
+  "@context": [
+    "Dimensionless.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "FUEL-BIAS": "qkind:FUEL-BIAS"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "FUEL-BIAS"
+      ]
+    }
+  }
+}

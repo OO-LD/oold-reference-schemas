@@ -1,0 +1,48 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ThermalConductivitySlope.schema.json",
+  "x-oold-uuid": "68ca7734-ec34-417f-a9b2-258b23ddc6c0",
+  "x-oold-version": "0.1.0",
+  "title": "ThermalConductivitySlope",
+  "x-oold-multilang-title": {
+    "en": "Thermal conductivity slope",
+    "de": "Steigung der Wärmeleitfähigkeit"
+  },
+  "description": "Rate of change of a thermal conductance over time (slope of the thermal conductivity).",
+  "examples": [
+    {
+      "type": [
+        "ThermalConductivitySlope"
+      ],
+      "value": 1.0,
+      "unit": "watt_per_hour_per_kelvin"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "ThermalConductivitySlope": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/ThermalConductivitySlope.schema.json",
+      "watt_per_kelvin_per_second": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/watt_per_kelvin_per_second",
+      "watt_per_hour_per_kelvin": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/watt_per_hour_per_kelvin"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ThermalConductivitySlope"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "watt_per_kelvin_per_second",
+        "watt_per_hour_per_kelvin"
+      ],
+      "default": "watt_per_hour_per_kelvin"
+    }
+  }
+}

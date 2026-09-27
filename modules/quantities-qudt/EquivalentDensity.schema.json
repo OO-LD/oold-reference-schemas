@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "EquivalentDensity.schema.json",
+  "x-oold-uuid": "264c76d5-ade3-53be-a3e1-ab65437ff187",
+  "x-oold-version": "0.1.0",
+  "title": "EquivalentDensity",
+  "x-oold-multilang-title": {
+    "en": "Equivalent Density"
+  },
+  "description": "\"Equivalent Density\" is the mass of a substance that reacts with (or is equivalent to) an arbitrary mass of \nanother substance in a given chemical reaction, per volume.",
+  "allOf": [
+    {
+      "$ref": "Density.schema.json"
+    }
+  ],
+  "@context": [
+    "Density.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "EquivalentDensity": "qkind:EquivalentDensity"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "EquivalentDensity"
+      ]
+    }
+  }
+}

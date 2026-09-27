@@ -1,0 +1,46 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "EvaporativeHeatTransferCoefficient.schema.json",
+  "x-oold-uuid": "fe778dce-cbe8-5850-9d42-538c1ed9aca8",
+  "x-oold-version": "0.1.0",
+  "title": "EvaporativeHeatTransferCoefficient",
+  "x-oold-multilang-title": {
+    "en": "Evaporative Heat Transfer Coefficient"
+  },
+  "description": "\"Evaporative Heat Transfer Coefficient\" is the areic heat transfer coefficient multiplied by the water vapor pressure difference between skind and the environment, and by the exchange area.",
+  "examples": [
+    {
+      "type": [
+        "EvaporativeHeatTransferCoefficient"
+      ],
+      "value": 1.0,
+      "unit": "watt_per_meter_squared_per_pascal"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "EvaporativeHeatTransferCoefficient": "qkind:EvaporativeHeatTransferCoefficient",
+      "watt_per_meter_squared_per_pascal": "qunit:W-PER-M2-PA"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "EvaporativeHeatTransferCoefficient"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "watt_per_meter_squared_per_pascal"
+      ],
+      "default": "watt_per_meter_squared_per_pascal"
+    }
+  }
+}

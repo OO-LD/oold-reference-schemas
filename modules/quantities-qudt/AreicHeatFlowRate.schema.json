@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "AreicHeatFlowRate.schema.json",
+  "x-oold-uuid": "e4e4be24-a160-562a-932a-1a36bf7fff9d",
+  "x-oold-version": "0.1.0",
+  "title": "AreicHeatFlowRate",
+  "x-oold-multilang-title": {
+    "en": "Aeric Heat Flow Rate"
+  },
+  "description": "Density of heat flow rate.",
+  "allOf": [
+    {
+      "$ref": "PowerPerArea.schema.json"
+    }
+  ],
+  "@context": [
+    "PowerPerArea.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "AreicHeatFlowRate": "qkind:AreicHeatFlowRate"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "AreicHeatFlowRate"
+      ]
+    }
+  }
+}

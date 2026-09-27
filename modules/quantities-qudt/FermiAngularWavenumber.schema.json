@@ -1,0 +1,29 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "FermiAngularWavenumber.schema.json",
+  "x-oold-uuid": "7a5bf247-1b19-54db-a52a-ef0bf1a3fd28",
+  "x-oold-version": "0.1.0",
+  "title": "FermiAngularWavenumber",
+  "x-oold-multilang-title": {
+    "en": "Fermi Angular Wavenumber"
+  },
+  "allOf": [
+    {
+      "$ref": "InverseLength.schema.json"
+    }
+  ],
+  "@context": [
+    "InverseLength.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "FermiAngularWavenumber": "qkind:FermiAngularWavenumber"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "FermiAngularWavenumber"
+      ]
+    }
+  }
+}

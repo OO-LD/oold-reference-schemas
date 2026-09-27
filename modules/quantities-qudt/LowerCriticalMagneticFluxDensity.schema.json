@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "LowerCriticalMagneticFluxDensity.schema.json",
+  "x-oold-uuid": "e54917d4-9a3b-5a02-b60f-280f68490fa4",
+  "x-oold-version": "0.1.0",
+  "title": "LowerCriticalMagneticFluxDensity",
+  "x-oold-multilang-title": {
+    "en": "Lower Critical Magnetic Flux Density"
+  },
+  "description": "\"Lower Critical Magnetic Flux Density\" for type II superconductors, is the threshold magnetic flux density for magnetic flux entering the superconductor.",
+  "allOf": [
+    {
+      "$ref": "MagneticFluxDensity.schema.json"
+    }
+  ],
+  "@context": [
+    "MagneticFluxDensity.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "LowerCriticalMagneticFluxDensity": "qkind:LowerCriticalMagneticFluxDensity"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "LowerCriticalMagneticFluxDensity"
+      ]
+    }
+  }
+}

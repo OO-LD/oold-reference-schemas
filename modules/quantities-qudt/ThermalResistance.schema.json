@@ -1,0 +1,58 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ThermalResistance.schema.json",
+  "x-oold-uuid": "55e45a78-a828-5422-8a5a-c2e6893d1d95",
+  "x-oold-version": "0.1.0",
+  "title": "ThermalResistance",
+  "x-oold-multilang-title": {
+    "en": "Thermal resistance",
+    "de": "Thermischer Widerstand"
+  },
+  "description": "$\\textit{Thermal Resistance}$ is a heat property and a measure of a temperature difference by which an object or material resists a heat flow (heat per time unit or thermal resistance). Thermal resistance is the reciprocal thermal conductance. the thermodynamic temperature difference divided by heat flow rate. Thermal resistance $R$ has the units $\\frac{m^2 \\cdot K}{W}$.",
+  "examples": [
+    {
+      "type": [
+        "ThermalResistance"
+      ],
+      "value": 1.0,
+      "unit": "kelvin_per_watt"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ThermalResistance": "qkind:ThermalResistance",
+      "kelvin_per_watt": "qunit:K-PER-W"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ThermalResistance"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "kelvin_per_watt"
+      ],
+      "default": "kelvin_per_watt"
+    }
+  },
+  "x-oold-context": {
+    "ThermalResistance": {
+      "http://dbpedia.org/resource/Thermal_resistance": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

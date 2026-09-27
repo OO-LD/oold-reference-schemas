@@ -1,0 +1,62 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Entropy.schema.json",
+  "x-oold-uuid": "cb71f0cf-941a-5870-9eac-e6b2c98ebeda",
+  "x-oold-version": "0.1.0",
+  "title": "Entropy",
+  "x-oold-multilang-title": {
+    "en": "Entropy",
+    "de": "Entropie"
+  },
+  "description": "When a small amount of heat $dQ$ is received by a system whose thermodynamic temperature is $T$, the entropy of the system increases by $dQ/T$, provided that no irreversible change takes place in the system.",
+  "examples": [
+    {
+      "type": [
+        "Entropy"
+      ],
+      "value": 1.0,
+      "unit": "joule_per_kelvin"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Entropy": "qkind:Entropy",
+      "joule_per_kelvin": "qunit:J-PER-K",
+      "kilo_joule_per_kelvin": "qunit:KiloJ-PER-K",
+      "mega_joule_per_kelvin": "qunit:MegaJ-PER-K"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Entropy"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "joule_per_kelvin",
+        "kilo_joule_per_kelvin",
+        "mega_joule_per_kelvin"
+      ],
+      "default": "joule_per_kelvin"
+    }
+  },
+  "x-oold-context": {
+    "Entropy": {
+      "http://dbpedia.org/resource/Entropy": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

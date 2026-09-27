@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MassOfTheEarth.schema.json",
+  "x-oold-uuid": "58c3637b-7e51-5ed8-b51f-7e9dc4ea424f",
+  "x-oold-version": "0.1.0",
+  "title": "MassOfTheEarth",
+  "x-oold-multilang-title": {
+    "en": "Mass Of The Earth"
+  },
+  "description": "Earth mass is the unit of mass equal to that of the Earth.  Earth mass is often used to describe masses of rocky terrestrial planets.",
+  "allOf": [
+    {
+      "$ref": "Mass.schema.json"
+    }
+  ],
+  "@context": [
+    "Mass.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "MassOfTheEarth": "qkind:MassOfTheEarth"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "MassOfTheEarth"
+      ]
+    }
+  }
+}

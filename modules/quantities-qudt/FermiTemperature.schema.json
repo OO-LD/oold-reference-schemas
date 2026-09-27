@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "FermiTemperature.schema.json",
+  "x-oold-uuid": "869c9ca2-3865-5776-b81a-4d9a9576ffa9",
+  "x-oold-version": "0.1.0",
+  "title": "FermiTemperature",
+  "x-oold-multilang-title": {
+    "en": "Fermi Temperature"
+  },
+  "description": "\"Fermi Temperature\" is the temperature associated with the Fermi energy.",
+  "allOf": [
+    {
+      "$ref": "Temperature.schema.json"
+    }
+  ],
+  "@context": [
+    "Temperature.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "FermiTemperature": "qkind:FermiTemperature"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "FermiTemperature"
+      ]
+    }
+  }
+}

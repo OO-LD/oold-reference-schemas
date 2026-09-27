@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Kerma.schema.json",
+  "x-oold-uuid": "7ad0e917-48bb-5eed-ac17-c39491d0626e",
+  "x-oold-version": "0.1.0",
+  "title": "Kerma",
+  "x-oold-multilang-title": {
+    "en": "Kerma"
+  },
+  "description": "\"Kerma\" is the sum of the initial kinetic energies of all the charged particles liberated by uncharged ionizing radiation (i.e., indirectly ionizing radiation such as photons and neutrons) in a sample of matter, divided by the mass of the sample.",
+  "allOf": [
+    {
+      "$ref": "SpecificEnergy.schema.json"
+    }
+  ],
+  "@context": [
+    "SpecificEnergy.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Kerma": "qkind:Kerma"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Kerma"
+      ]
+    }
+  }
+}

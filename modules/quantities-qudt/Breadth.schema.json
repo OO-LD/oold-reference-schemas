@@ -1,0 +1,42 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Breadth.schema.json",
+  "x-oold-uuid": "c2d5b706-ce55-50b7-9cb2-d73ad8f91acd",
+  "x-oold-version": "0.1.0",
+  "title": "Breadth",
+  "x-oold-multilang-title": {
+    "en": "Breadth",
+    "de": "Breite"
+  },
+  "description": "\"Breadth\" is the extent or measure of how broad or wide something is.",
+  "allOf": [
+    {
+      "$ref": "Length.schema.json"
+    }
+  ],
+  "@context": [
+    "Length.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Breadth": "qkind:Breadth"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Breadth"
+      ]
+    }
+  },
+  "x-oold-context": {
+    "Breadth": {
+      "http://dbpedia.org/resource/Length": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

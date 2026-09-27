@@ -1,0 +1,42 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Diameter.schema.json",
+  "x-oold-uuid": "24275b1c-56ea-58dc-ae38-c44409251a64",
+  "x-oold-version": "0.1.0",
+  "title": "Diameter",
+  "x-oold-multilang-title": {
+    "en": "Diameter",
+    "de": "Durchmesser"
+  },
+  "description": "In classical geometry, the \"Diameter\" of a circle is any straight line segment that passes through the center of the circle and whose endpoints lie on the circle.",
+  "allOf": [
+    {
+      "$ref": "Length.schema.json"
+    }
+  ],
+  "@context": [
+    "Length.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Diameter": "qkind:Diameter"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Diameter"
+      ]
+    }
+  },
+  "x-oold-context": {
+    "Diameter": {
+      "http://dbpedia.org/resource/Diameter": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

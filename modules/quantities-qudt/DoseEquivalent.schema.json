@@ -1,0 +1,48 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "DoseEquivalent.schema.json",
+  "x-oold-uuid": "fe1ff8f4-4b16-5f1f-985b-575117e59d3b",
+  "x-oold-version": "0.1.0",
+  "title": "DoseEquivalent",
+  "x-oold-multilang-title": {
+    "en": "Dose Equivalent"
+  },
+  "description": "\"Dose Equivalent\" (former), or $\\textit{Equivalent Absorbed Radiation Dose}$, usually shortened to $\\textit{Equivalent Dose}$, is a computed average measure of the radiation absorbed by a fixed mass of biological tissue, that attempts to account for the different biological damage potential of different types of ionizing radiation. The equivalent dose to a tissue is found by multiplying the absorbed dose, in gray, by a dimensionless \"quality factor\" $Q$, dependent upon radiation type, and by another dimensionless factor $N$, dependent on all other pertinent factors. N depends upon the part of the body irradiated, the time and volume over which the dose was spread, even the species of the subject.",
+  "allOf": [
+    {
+      "$ref": "SpecificEnergy.schema.json"
+    }
+  ],
+  "@context": [
+    "SpecificEnergy.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "DoseEquivalent": "qkind:DoseEquivalent"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "DoseEquivalent"
+      ]
+    }
+  },
+  "x-oold-context": {
+    "DoseEquivalent": {
+      "http://dbpedia.org/resource/Equivalent_dose": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      },
+      "https://si-digital-framework.org/quantities/DOEQ": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

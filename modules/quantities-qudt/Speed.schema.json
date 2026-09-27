@@ -1,0 +1,81 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Speed.schema.json",
+  "x-oold-uuid": "29b1dc01-984d-568f-84c0-3e03ed2ed731",
+  "x-oold-version": "0.1.0",
+  "title": "Speed",
+  "x-oold-multilang-title": {
+    "en": "Speed"
+  },
+  "description": "Speed is the magnitude of velocity.",
+  "examples": [
+    {
+      "type": [
+        "Speed"
+      ],
+      "value": 1.0,
+      "unit": "meter_per_second"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Speed": "qkind:Speed",
+      "meter_per_second": "qunit:M-PER-SEC",
+      "micro_meter_per_minute": "qunit:MicroM-PER-MIN",
+      "micro_meter_per_second": "qunit:MicroM-PER-SEC",
+      "milli_meter_per_minute": "qunit:MilliM-PER-MIN",
+      "milli_meter_per_second": "qunit:MilliM-PER-SEC",
+      "centi_meter_per_second": "qunit:CentiM-PER-SEC",
+      "meter_per_minute": "qunit:M-PER-MIN",
+      "hertz_meter": "qunit:HZ-M",
+      "kilo_hertz_meter": "qunit:KiloHZ-M",
+      "kilo_meter_per_second": "qunit:KiloM-PER-SEC",
+      "mega_hertz_meter": "qunit:MegaHZ-M",
+      "giga_hertz_meter": "qunit:GigaHZ-M",
+      "kilo_meter_mega_hertz": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/kilo_meter_mega_hertz"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Speed"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "meter_per_second",
+        "micro_meter_per_minute",
+        "micro_meter_per_second",
+        "milli_meter_per_minute",
+        "milli_meter_per_second",
+        "centi_meter_per_second",
+        "meter_per_minute",
+        "hertz_meter",
+        "kilo_hertz_meter",
+        "kilo_meter_per_second",
+        "mega_hertz_meter",
+        "giga_hertz_meter",
+        "kilo_meter_mega_hertz"
+      ],
+      "default": "meter_per_second"
+    }
+  },
+  "x-oold-context": {
+    "Speed": {
+      "http://dbpedia.org/resource/Speed": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

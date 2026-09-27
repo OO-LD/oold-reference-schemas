@@ -1,0 +1,46 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ElectricCurrentPerTemperature.schema.json",
+  "x-oold-uuid": "442f95e9-3435-5966-b4f8-7f1d5ed06b13",
+  "x-oold-version": "0.1.0",
+  "title": "ElectricCurrentPerTemperature",
+  "x-oold-multilang-title": {
+    "en": "Electric Current per Temperature"
+  },
+  "description": "\"Electric Current per Temperature\" is used to express how a current is subject to temperature. Originally used in Wien's Law to describe phenomena related to filaments. One use today is to express how a current generator derates with temperature.",
+  "examples": [
+    {
+      "type": [
+        "ElectricCurrentPerTemperature"
+      ],
+      "value": 1.0,
+      "unit": "ampere_per_celsius"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ElectricCurrentPerTemperature": "qkind:ElectricCurrentPerTemperature",
+      "ampere_per_celsius": "qunit:A-PER-DEG_C"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ElectricCurrentPerTemperature"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "ampere_per_celsius"
+      ],
+      "default": "ampere_per_celsius"
+    }
+  }
+}

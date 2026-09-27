@@ -1,0 +1,66 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Luminance.schema.json",
+  "x-oold-uuid": "fad28497-6682-566c-ab9e-bd9d6bd15711",
+  "x-oold-version": "0.1.0",
+  "title": "Luminance",
+  "x-oold-multilang-title": {
+    "en": "Luminance"
+  },
+  "description": "Luminance is a photometric measure of the luminous intensity per unit area of light travelling in a given direction. It describes the amount of light that passes through or is emitted from a particular area, and falls within a given solid angle.",
+  "examples": [
+    {
+      "type": [
+        "Luminance"
+      ],
+      "value": 1.0,
+      "unit": "candela_per_meter_squared"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Luminance": "qkind:Luminance",
+      "candela_per_meter_squared": "qunit:CD-PER-M2",
+      "stilb": "qunit:STILB"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Luminance"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "candela_per_meter_squared",
+        "stilb"
+      ],
+      "default": "candela_per_meter_squared"
+    }
+  },
+  "x-oold-context": {
+    "Luminance": {
+      "http://dbpedia.org/resource/Luminance": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      },
+      "https://si-digital-framework.org/quantities/LUMA": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

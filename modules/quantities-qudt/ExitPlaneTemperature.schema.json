@@ -1,0 +1,29 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ExitPlaneTemperature.schema.json",
+  "x-oold-uuid": "56417a86-9994-5e82-ab40-ada7d4b44973",
+  "x-oold-version": "0.1.0",
+  "title": "ExitPlaneTemperature",
+  "x-oold-multilang-title": {
+    "en": "Exit Plane Temperature"
+  },
+  "allOf": [
+    {
+      "$ref": "Temperature.schema.json"
+    }
+  ],
+  "@context": [
+    "Temperature.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ExitPlaneTemperature": "qkind:ExitPlaneTemperature"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ExitPlaneTemperature"
+      ]
+    }
+  }
+}

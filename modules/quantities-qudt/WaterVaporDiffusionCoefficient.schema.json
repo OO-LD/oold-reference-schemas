@@ -1,0 +1,49 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "WaterVaporDiffusionCoefficient.schema.json",
+  "x-oold-uuid": "31d75c6a-e929-5c32-9263-57387234c870",
+  "x-oold-version": "0.1.0",
+  "title": "WaterVaporDiffusionCoefficient",
+  "x-oold-multilang-title": {
+    "en": "Water vapour diffusion coefficient",
+    "de": "Wasserdampfdiffusionsleitkoeffizient"
+  },
+  "description": "The Water vapour diffusion coefficient describes how easy vapor diffusion happens in a given material.",
+  "examples": [
+    {
+      "type": [
+        "WaterVaporDiffusionCoefficient"
+      ],
+      "value": 1.0,
+      "unit": "kilo_gram_per_meter_per_pascal_per_second"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "WaterVaporDiffusionCoefficient": "qkind:WaterVaporDiffusionCoefficient",
+      "kilo_gram_per_meter_per_pascal_per_second": "qunit:KiloGM-PER-PA-SEC-M",
+      "gram_per_meter_per_pascal_per_second": "qunit:GM-PER-PA-SEC-M"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "WaterVaporDiffusionCoefficient"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "kilo_gram_per_meter_per_pascal_per_second",
+        "gram_per_meter_per_pascal_per_second"
+      ],
+      "default": "kilo_gram_per_meter_per_pascal_per_second"
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ReactorTimeConstant.schema.json",
+  "x-oold-uuid": "6bf46ca1-fcca-5886-971f-9f2c9119a4a7",
+  "x-oold-version": "0.1.0",
+  "title": "ReactorTimeConstant",
+  "x-oold-multilang-title": {
+    "en": "Reactor Time Constant"
+  },
+  "description": "The \"Reactor Time Constant\", also called the reactor period, is the time during which the neutron flux density in a reactor changes by the factor e = 2.718 (e: basis of natural logarithms), when the neutron flux density increases or decreases exponentially.",
+  "allOf": [
+    {
+      "$ref": "Time.schema.json"
+    }
+  ],
+  "@context": [
+    "Time.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ReactorTimeConstant": "qkind:ReactorTimeConstant"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ReactorTimeConstant"
+      ]
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "AccelerationOfGravity.schema.json",
+  "x-oold-uuid": "ef97c736-e77c-56a2-8084-70c2bfd808dc",
+  "x-oold-version": "0.1.0",
+  "title": "AccelerationOfGravity",
+  "x-oold-multilang-title": {
+    "en": "Acceleration Of Gravity"
+  },
+  "description": "The acceleration of freely falling bodies under the influence of terrestrial gravity, equal to approximately 9.81 meters (32 feet) per second per second.",
+  "allOf": [
+    {
+      "$ref": "Acceleration.schema.json"
+    }
+  ],
+  "@context": [
+    "Acceleration.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "AccelerationOfGravity": "qkind:AccelerationOfGravity"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "AccelerationOfGravity"
+      ]
+    }
+  }
+}

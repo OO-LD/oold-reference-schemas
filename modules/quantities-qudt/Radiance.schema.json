@@ -1,0 +1,57 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Radiance.schema.json",
+  "x-oold-uuid": "d50af2b5-cb4c-50b9-9926-6c4888e59657",
+  "x-oold-version": "0.1.0",
+  "title": "Radiance",
+  "x-oold-multilang-title": {
+    "en": "Radiance"
+  },
+  "description": "\"Radiance\" is a radiometric measure that describes the amount of light that passes through or is emitted from a particular area, and falls within a given solid angle in a specified direction.",
+  "examples": [
+    {
+      "type": [
+        "Radiance"
+      ],
+      "value": 1.0,
+      "unit": "watt_per_meter_squared_per_steradian"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Radiance": "qkind:Radiance",
+      "watt_per_meter_squared_per_steradian": "qunit:W-PER-M2-SR"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Radiance"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "watt_per_meter_squared_per_steradian"
+      ],
+      "default": "watt_per_meter_squared_per_steradian"
+    }
+  },
+  "x-oold-context": {
+    "Radiance": {
+      "https://si-digital-framework.org/quantities/RADI": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

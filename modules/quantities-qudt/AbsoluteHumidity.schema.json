@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "AbsoluteHumidity.schema.json",
+  "x-oold-uuid": "905e0bae-4046-5f95-ba62-564fdb8f1c47",
+  "x-oold-version": "0.1.0",
+  "title": "AbsoluteHumidity",
+  "x-oold-multilang-title": {
+    "en": "Absolute Humidity"
+  },
+  "description": "$\\textit{Absolute Humidity}$ is an amount of water vapor, usually discussed per unit volume. \n  Absolute humidity in air ranges from zero to roughly 30 grams per cubic meter when the air is saturated at $30 ^\\circ C$. \n  The absolute humidity changes as air temperature or pressure changes. \n  $$$$\n  This is very inconvenient for chemical engineering calculations, e.g. for clothes dryers, where temperature can vary considerably. \n  As a result, absolute humidity is generally defined in chemical engineering as mass of water vapor per unit mass of dry air,\n   also known as the mass mixing ratio, which is much more rigorous for heat and mass balance calculations. \n  $$$$\n  Mass of water per unit volume as in the equation above would then be defined as volumetric humidity, because of the potential confusion.",
+  "allOf": [
+    {
+      "$ref": "Density.schema.json"
+    }
+  ],
+  "@context": [
+    "Density.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "AbsoluteHumidity": "qkind:AbsoluteHumidity"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "AbsoluteHumidity"
+      ]
+    }
+  }
+}

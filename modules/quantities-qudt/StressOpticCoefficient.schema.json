@@ -1,0 +1,54 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "StressOpticCoefficient.schema.json",
+  "x-oold-uuid": "5079df5b-d908-5725-aebd-171ce0f1bc1b",
+  "x-oold-version": "0.1.0",
+  "title": "StressOpticCoefficient",
+  "x-oold-multilang-title": {
+    "en": "Stress-Optic Coefficient"
+  },
+  "description": "When a ray of light passes through a photoelastic material, its electromagnetic wave components are resolved along the two principal stress directions and each component experiences a different refractive index due to the birefringence. The difference in the refractive indices leads to a relative phase retardation between the two components. Assuming a thin specimen made of isotropic materials, where two-dimensional photoelasticity is applicable, the magnitude of the relative retardation is given by the stress-optic law Δ=((2πt)/λ)C(σ₁-σ₂), where Δ is the induced retardation, C is the stress-optic coefficient, t is the specimen thickness, λ is the vacuum wavelength, and σ₁ and σ₂ are the first and second principal stresses, respectively.",
+  "examples": [
+    {
+      "type": [
+        "StressOpticCoefficient"
+      ],
+      "value": 1.0,
+      "unit": "per_pascal"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "StressOpticCoefficient": "qkind:StressOpticCoefficient",
+      "per_pascal": "qunit:PER-PA",
+      "nano_meter_per_centi_meter_per_mega_pascal": "qunit:NanoM-PER-CentiM-MegaPA",
+      "nano_meter_per_mega_pascal_per_milli_meter": "qunit:NanoM-PER-MilliM-MegaPA",
+      "per_mega_pascal": "qunit:PER-MegaPA",
+      "meter_squared_per_newton": "qunit:M2-PER-N"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "StressOpticCoefficient"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "per_pascal",
+        "nano_meter_per_centi_meter_per_mega_pascal",
+        "nano_meter_per_mega_pascal_per_milli_meter",
+        "per_mega_pascal",
+        "meter_squared_per_newton"
+      ],
+      "default": "per_pascal"
+    }
+  }
+}

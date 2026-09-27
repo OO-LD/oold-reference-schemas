@@ -1,0 +1,45 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "InverseLengthTemperature.schema.json",
+  "x-oold-uuid": "0f94186c-90c8-5d26-9958-5af6b6985d2c",
+  "x-oold-version": "0.1.0",
+  "title": "InverseLengthTemperature",
+  "x-oold-multilang-title": {
+    "en": "Inverse Length Temperature"
+  },
+  "examples": [
+    {
+      "type": [
+        "InverseLengthTemperature"
+      ],
+      "value": 1.0,
+      "unit": "per_kelvin_per_meter"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "InverseLengthTemperature": "qkind:InverseLengthTemperature",
+      "per_kelvin_per_meter": "qunit:PER-M-K"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "InverseLengthTemperature"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "per_kelvin_per_meter"
+      ],
+      "default": "per_kelvin_per_meter"
+    }
+  }
+}

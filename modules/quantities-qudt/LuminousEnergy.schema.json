@@ -1,0 +1,46 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "LuminousEnergy.schema.json",
+  "x-oold-uuid": "dcee8dd4-e722-58d5-abb8-28567c3e7a0c",
+  "x-oold-version": "0.1.0",
+  "title": "LuminousEnergy",
+  "x-oold-multilang-title": {
+    "en": "Luminous Energy"
+  },
+  "description": "Luminous Energy is the perceived energy of light. This is sometimes also called the quantity of light.",
+  "examples": [
+    {
+      "type": [
+        "LuminousEnergy"
+      ],
+      "value": 1.0,
+      "unit": "lumen_second"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "LuminousEnergy": "qkind:LuminousEnergy",
+      "lumen_second": "qunit:LM-SEC"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "LuminousEnergy"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "lumen_second"
+      ],
+      "default": "lumen_second"
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Slowing-DownDensity.schema.json",
+  "x-oold-uuid": "72e926f2-d87e-540c-84ff-1fa039adef5e",
+  "x-oold-version": "0.1.0",
+  "title": "Slowing-DownDensity",
+  "x-oold-multilang-title": {
+    "en": "Slowing-Down Density"
+  },
+  "description": "\"Slowing-Down Density\" is a measure of the rate at which neutrons lose energy in a nuclear reactor through collisions; equal to the number of neutrons that fall below a given energy per unit volume per unit time.",
+  "examples": [
+    {
+      "type": [
+        "Slowing-DownDensity"
+      ],
+      "value": 1.0,
+      "unit": "per_meter_cubed_per_second"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Slowing-DownDensity": "qkind:Slowing-DownDensity",
+      "per_meter_cubed_per_second": "qunit:PER-M3-SEC"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Slowing-DownDensity"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "per_meter_cubed_per_second"
+      ],
+      "default": "per_meter_cubed_per_second"
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "HelmholtzEnergy.schema.json",
+  "x-oold-uuid": "7cf1f307-6962-552c-be80-28e61a15af53",
+  "x-oold-version": "0.1.0",
+  "title": "HelmholtzEnergy",
+  "x-oold-multilang-title": {
+    "en": "Helmholtz energy",
+    "de": "Freie Energie"
+  },
+  "description": "$\\textit{Helmholtz Energy}$ is one of the potentials are used to measure energy changes in systems as they evolve from an initial state to a final state. The potential used depends on the constraints of the system, such as constant temperature or pressure. $\\textit{Internal Energy}$ is the internal energy of the system, $\\textit{Enthalpy}$ is the internal energy of the system plus the energy related to pressure-volume work, and Helmholtz and Gibbs free energy are the energies available in a system to do useful work when the temperature and volume or the pressure and temperature are fixed, respectively. The name $\\textit{Helmholz Free Energy}$ is also used.",
+  "allOf": [
+    {
+      "$ref": "Energy.schema.json"
+    }
+  ],
+  "@context": [
+    "Energy.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "HelmholtzEnergy": "qkind:HelmholtzEnergy"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "HelmholtzEnergy"
+      ]
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MeanEnergyImparted.schema.json",
+  "x-oold-uuid": "e10431f5-aa91-5640-a353-fadcefc0f3c2",
+  "x-oold-version": "0.1.0",
+  "title": "MeanEnergyImparted",
+  "x-oold-multilang-title": {
+    "en": "Mean Energy Imparted"
+  },
+  "description": "The \"Mean Energy Imparted\", is the average energy imparted to irradiated matter.",
+  "allOf": [
+    {
+      "$ref": "Energy.schema.json"
+    }
+  ],
+  "@context": [
+    "Energy.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "MeanEnergyImparted": "qkind:MeanEnergyImparted"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "MeanEnergyImparted"
+      ]
+    }
+  }
+}

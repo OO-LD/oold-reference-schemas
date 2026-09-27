@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "SourceVoltageBetweenSubstances.schema.json",
+  "x-oold-uuid": "d7b24106-d1b4-5f85-ba41-2191d65d7c1d",
+  "x-oold-version": "0.1.0",
+  "title": "SourceVoltageBetweenSubstances",
+  "x-oold-multilang-title": {
+    "en": "Source Voltage Between Substances"
+  },
+  "description": "\"Source Voltage Between Substances\" is the source voltage between substance a and b.",
+  "allOf": [
+    {
+      "$ref": "Voltage.schema.json"
+    }
+  ],
+  "@context": [
+    "Voltage.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "SourceVoltageBetweenSubstances": "qkind:SourceVoltageBetweenSubstances"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "SourceVoltageBetweenSubstances"
+      ]
+    }
+  }
+}

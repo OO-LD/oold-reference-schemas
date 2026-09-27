@@ -1,0 +1,45 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "InversePermittivity.schema.json",
+  "x-oold-uuid": "4307744d-b9bb-582a-a546-240504683af7",
+  "x-oold-version": "0.1.0",
+  "title": "InversePermittivity",
+  "x-oold-multilang-title": {
+    "en": "Inverse Permittivity"
+  },
+  "examples": [
+    {
+      "type": [
+        "InversePermittivity"
+      ],
+      "value": 1.0,
+      "unit": "meter_per_farad"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "InversePermittivity": "qkind:InversePermittivity",
+      "meter_per_farad": "qunit:M-PER-FARAD"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "InversePermittivity"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "meter_per_farad"
+      ],
+      "default": "meter_per_farad"
+    }
+  }
+}

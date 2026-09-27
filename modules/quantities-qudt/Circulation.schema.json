@@ -1,0 +1,41 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Circulation.schema.json",
+  "x-oold-uuid": "ec3279eb-a6a0-57f4-9cd2-b5b384701930",
+  "x-oold-version": "0.1.0",
+  "title": "Circulation",
+  "x-oold-multilang-title": {
+    "en": "Circulation"
+  },
+  "description": "In fluid dynamics, circulation is the line integral around a closed curve of the fluid velocity. It has dimensions of length squared over time.",
+  "allOf": [
+    {
+      "$ref": "AreaPerTime.schema.json"
+    }
+  ],
+  "@context": [
+    "AreaPerTime.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Circulation": "qkind:Circulation"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Circulation"
+      ]
+    }
+  },
+  "x-oold-context": {
+    "Circulation": {
+      "http://dbpedia.org/resource/Circulation_%28fluid_dynamics%29": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

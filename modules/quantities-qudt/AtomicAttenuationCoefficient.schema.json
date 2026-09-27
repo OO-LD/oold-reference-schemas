@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "AtomicAttenuationCoefficient.schema.json",
+  "x-oold-uuid": "81c5fd64-9054-5918-af3b-53f4d68eae2d",
+  "x-oold-version": "0.1.0",
+  "title": "AtomicAttenuationCoefficient",
+  "x-oold-multilang-title": {
+    "en": "Atomic Attenuation Coefficient"
+  },
+  "description": "\"Atomic Attenuation Coefficient\" is a measurement of how strongly a chemical species or substance absorbs or scatters light at a given wavelength, per the number of atoms in the substance.",
+  "allOf": [
+    {
+      "$ref": "Area.schema.json"
+    }
+  ],
+  "@context": [
+    "Area.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "AtomicAttenuationCoefficient": "qkind:AtomicAttenuationCoefficient"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "AtomicAttenuationCoefficient"
+      ]
+    }
+  }
+}

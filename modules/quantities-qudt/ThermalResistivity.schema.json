@@ -1,0 +1,46 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ThermalResistivity.schema.json",
+  "x-oold-uuid": "22acaaf9-b83e-5160-b8a2-9b1a4147e848",
+  "x-oold-version": "0.1.0",
+  "title": "ThermalResistivity",
+  "x-oold-multilang-title": {
+    "en": "Thermal Resistivity"
+  },
+  "description": "The reciprocal of thermal conductivity is thermal resistivity, measured in $kelvin-metres$ per watt ($K \\cdot m/W$).",
+  "examples": [
+    {
+      "type": [
+        "ThermalResistivity"
+      ],
+      "value": 1.0,
+      "unit": "kelvin_meter_per_watt"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ThermalResistivity": "qkind:ThermalResistivity",
+      "kelvin_meter_per_watt": "qunit:M-K-PER-W"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ThermalResistivity"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "kelvin_meter_per_watt"
+      ],
+      "default": "kelvin_meter_per_watt"
+    }
+  }
+}

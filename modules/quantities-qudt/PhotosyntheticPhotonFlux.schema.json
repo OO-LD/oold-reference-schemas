@@ -1,0 +1,50 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "PhotosyntheticPhotonFlux.schema.json",
+  "x-oold-uuid": "6daf9ac4-c6f8-59fb-b5f6-e241f1430f09",
+  "x-oold-version": "0.1.0",
+  "title": "PhotosyntheticPhotonFlux",
+  "x-oold-multilang-title": {
+    "en": "Photosynthetic Photon Flux"
+  },
+  "description": "Photosynthetic Photon Flux (PPF) is a measurement of the total number of photons emitted by a light source each second within the PAR wavelength range and is measured in μmol/s. Lighting manufacturers may specify their grow light products in terms of PPF. It can be considered as analogous to measuring the luminous flux (lumens) of visible light which would typically require the use of an integrating sphere or a goniometer system with spectroradiometer sensor.",
+  "examples": [
+    {
+      "type": [
+        "PhotosyntheticPhotonFlux"
+      ],
+      "value": 1.0,
+      "unit": "mole_per_second"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "PhotosyntheticPhotonFlux": "qkind:PhotosyntheticPhotonFlux",
+      "mole_per_second": "qunit:MOL-PER-SEC",
+      "micro_mole_per_second": "qunit:MicroMOL-PER-SEC",
+      "kilo_mole_per_second": "qunit:KiloMOL-PER-SEC"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "PhotosyntheticPhotonFlux"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "mole_per_second",
+        "micro_mole_per_second",
+        "kilo_mole_per_second"
+      ],
+      "default": "mole_per_second"
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "SpecificInternalEnergy.schema.json",
+  "x-oold-uuid": "aff5b15f-9ff3-598e-a650-71f64badcb81",
+  "x-oold-version": "0.1.0",
+  "title": "SpecificInternalEnergy",
+  "x-oold-multilang-title": {
+    "en": "Specific Internal Energy"
+  },
+  "description": "Energy has corresponding intensive (size-independent) properties for pure materials. A corresponding intensive property is specific internal energy, which is energy per mass of substance involved. Specific internal energy is denoted by a lower case u, with dimension of energy per mass (SI unit: joule/kg).",
+  "allOf": [
+    {
+      "$ref": "SpecificEnergy.schema.json"
+    }
+  ],
+  "@context": [
+    "SpecificEnergy.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "SpecificInternalEnergy": "qkind:SpecificInternalEnergy"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "SpecificInternalEnergy"
+      ]
+    }
+  }
+}

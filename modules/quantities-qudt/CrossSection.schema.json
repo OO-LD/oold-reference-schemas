@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "CrossSection.schema.json",
+  "x-oold-uuid": "a002dbed-f44c-5a86-a375-783a4e7ba6e7",
+  "x-oold-version": "0.1.0",
+  "title": "CrossSection",
+  "x-oold-multilang-title": {
+    "en": "Cross-section"
+  },
+  "description": "\"Cross-section\" is used to express the likelihood of interaction between particles. For a specified target particle and for a specified reaction or process produced by incident charged or uncharged particles of specified type and energy, it is the mean number of such reactions or processes divided by the incident-particle fluence.",
+  "allOf": [
+    {
+      "$ref": "Area.schema.json"
+    }
+  ],
+  "@context": [
+    "Area.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "CrossSection": "qkind:CrossSection"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "CrossSection"
+      ]
+    }
+  }
+}

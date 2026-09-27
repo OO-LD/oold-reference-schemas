@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "AcceptorIonizationEnergy.schema.json",
+  "x-oold-uuid": "c0f0bce2-b276-5c13-898e-cb55bde6cd0f",
+  "x-oold-version": "0.1.0",
+  "title": "AcceptorIonizationEnergy",
+  "x-oold-multilang-title": {
+    "en": "Acceptor Ionization Energy"
+  },
+  "description": "\"Acceptor Ionization Energy\" is the ionization energy of an acceptor.",
+  "allOf": [
+    {
+      "$ref": "IonizationEnergy.schema.json"
+    }
+  ],
+  "@context": [
+    "IonizationEnergy.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "AcceptorIonizationEnergy": "qkind:AcceptorIonizationEnergy"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "AcceptorIonizationEnergy"
+      ]
+    }
+  }
+}

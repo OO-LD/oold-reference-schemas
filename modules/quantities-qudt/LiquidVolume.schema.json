@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "LiquidVolume.schema.json",
+  "x-oold-uuid": "d4fab903-0165-5967-a4fd-a944db63c694",
+  "x-oold-version": "0.1.0",
+  "title": "LiquidVolume",
+  "x-oold-multilang-title": {
+    "en": "Liquid Volume"
+  },
+  "description": "Liquid volume is the volume of a given amount of liquid, that is, the amount of space a liquid takes up. There are a number of different units used to measure liquid volume, but most of them fall under either the metric system of measurement or the Imperial system of measurement.",
+  "allOf": [
+    {
+      "$ref": "Volume.schema.json"
+    }
+  ],
+  "@context": [
+    "Volume.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "LiquidVolume": "qkind:LiquidVolume"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "LiquidVolume"
+      ]
+    }
+  }
+}

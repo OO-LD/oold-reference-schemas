@@ -1,0 +1,79 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Viscosity.schema.json",
+  "x-oold-uuid": "ed71b6bb-a4a7-58b5-b100-82861ad0ea44",
+  "x-oold-version": "0.1.0",
+  "title": "Viscosity",
+  "x-oold-multilang-title": {
+    "en": "Viscosity"
+  },
+  "description": "Viscosity is a measure of the resistance of a fluid which is being deformed by either shear stress or extensional stress. In general terms it is the resistance of a liquid to flow, or its \"thickness\". Viscosity describes a fluid's internal resistance to flow and may be thought of as a measure of fluid friction. [Wikipedia]. In general conversation or in non-scientific contexts, if someone refers to the viscosity of a fluid, they're likely talking about its dynamic (or absolute) viscosity. However, in engineering or scientific contexts, it's essential to clarify which type of viscosity is being discussed, as the interpretation and use of the data may differ depending on whether one is talking about dynamic or kinematic viscosity.",
+  "examples": [
+    {
+      "type": [
+        "Viscosity"
+      ],
+      "value": 1.0,
+      "unit": "pascal_second"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Viscosity": "qkind:Viscosity",
+      "pascal_second": "qunit:PA-SEC",
+      "micro_poise": "qunit:MicroPOISE",
+      "gram_per_hour_per_meter": "qunit:GM-PER-M-HR",
+      "kilo_gram_per_hour_per_meter": "qunit:KiloGM-PER-M-HR",
+      "centi_poise": "qunit:CentiPOISE",
+      "gram_per_meter_per_second": "qunit:GM-PER-M-SEC",
+      "milli_pascal_second": "qunit:MilliPA-SEC",
+      "poise": "qunit:POISE",
+      "gram_per_centi_meter_per_second": "qunit:GM-PER-CentiM-SEC",
+      "deca_poise": "qunit:DecaPOISE",
+      "kilo_gram_per_meter_per_second": "qunit:KiloGM-PER-M-SEC",
+      "kilo_poise": "qunit:KiloPOISE"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Viscosity"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "pascal_second",
+        "micro_poise",
+        "gram_per_hour_per_meter",
+        "kilo_gram_per_hour_per_meter",
+        "centi_poise",
+        "gram_per_meter_per_second",
+        "milli_pascal_second",
+        "poise",
+        "gram_per_centi_meter_per_second",
+        "deca_poise",
+        "kilo_gram_per_meter_per_second",
+        "kilo_poise"
+      ],
+      "default": "pascal_second"
+    }
+  },
+  "x-oold-context": {
+    "Viscosity": {
+      "http://dbpedia.org/resource/Viscosity": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "IonCurrent.schema.json",
+  "x-oold-uuid": "03fe5609-198b-578d-b061-a3dbdf3c720b",
+  "x-oold-version": "0.1.0",
+  "title": "IonCurrent",
+  "x-oold-multilang-title": {
+    "en": "Ion Current"
+  },
+  "description": "An ion current is the influx and/or efflux of ions through an ion channel.",
+  "allOf": [
+    {
+      "$ref": "ElectricCurrent.schema.json"
+    }
+  ],
+  "@context": [
+    "ElectricCurrent.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "IonCurrent": "qkind:IonCurrent"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "IonCurrent"
+      ]
+    }
+  }
+}

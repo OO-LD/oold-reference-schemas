@@ -1,0 +1,68 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ElectricCurrentPhasor.schema.json",
+  "x-oold-uuid": "01c55f7e-a3ee-516a-8b46-9146bd45b3b6",
+  "x-oold-version": "0.1.0",
+  "title": "ElectricCurrentPhasor",
+  "x-oold-multilang-title": {
+    "en": "Electric Current Phasor"
+  },
+  "description": "\"Electric Current Phasor\" is a representation of current as a sinusoidal integral quantity using a complex quantity whose argument is equal to the initial phase and whose modulus is equal to the root-mean-square value. A phasor is a constant complex number, usually expressed in exponential form, representing the complex amplitude (magnitude and phase) of a sinusoidal function of time. Phasors are used by electrical engineers to simplify computations involving sinusoids, where they can often reduce a differential equation problem to an algebraic one.",
+  "examples": [
+    {
+      "type": [
+        "ElectricCurrentPhasor"
+      ],
+      "value": 1.0,
+      "unit": "ampere"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ElectricCurrentPhasor": "qkind:ElectricCurrentPhasor",
+      "ampere": "qunit:A",
+      "atto_ampere": "qunit:AttoA",
+      "femto_ampere": "qunit:FemtoA",
+      "pico_ampere": "qunit:PicoA",
+      "nano_ampere": "qunit:NanoA",
+      "micro_ampere": "qunit:MicroA",
+      "milli_ampere": "qunit:MilliA",
+      "kilo_ampere": "qunit:KiloA",
+      "mega_ampere": "qunit:MegaA",
+      "giga_ampere": "qunit:GigaA",
+      "tera_ampere": "qunit:TeraA",
+      "peta_ampere": "qunit:PetaA"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ElectricCurrentPhasor"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "ampere",
+        "atto_ampere",
+        "femto_ampere",
+        "pico_ampere",
+        "nano_ampere",
+        "micro_ampere",
+        "milli_ampere",
+        "kilo_ampere",
+        "mega_ampere",
+        "giga_ampere",
+        "tera_ampere",
+        "peta_ampere"
+      ],
+      "default": "ampere"
+    }
+  }
+}

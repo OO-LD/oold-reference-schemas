@@ -1,0 +1,42 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "EnergyKinetic.schema.json",
+  "x-oold-uuid": "a572282d-c5c4-5103-99ee-afa0ce8e8519",
+  "x-oold-version": "0.1.0",
+  "title": "EnergyKinetic",
+  "x-oold-multilang-title": {
+    "en": "Kinetic energy",
+    "de": "Kinetische Energie"
+  },
+  "description": "The kinetic energy of an object is the energy which it possesses due to its motion. It is defined as the work needed to accelerate a body of a given mass from rest to its stated velocity.",
+  "allOf": [
+    {
+      "$ref": "Energy.schema.json"
+    }
+  ],
+  "@context": [
+    "Energy.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "EnergyKinetic": "qkind:EnergyKinetic"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "EnergyKinetic"
+      ]
+    }
+  },
+  "x-oold-context": {
+    "EnergyKinetic": {
+      "http://dbpedia.org/resource/Kinetic_energy": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

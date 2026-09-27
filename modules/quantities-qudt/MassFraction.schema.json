@@ -1,0 +1,46 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MassFraction.schema.json",
+  "x-oold-uuid": "48876c8c-86ed-5435-9467-ec0874e92dae",
+  "x-oold-version": "0.1.0",
+  "title": "MassFraction",
+  "x-oold-multilang-title": {
+    "en": "Mass Fraction"
+  },
+  "description": "The \"Mass Fraction\" is the fraction of one substance with mass to the mass of the total mixture .",
+  "examples": [
+    {
+      "type": [
+        "MassFraction"
+      ],
+      "value": 1.0,
+      "unit": "unitless"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "MassFraction": "qkind:MassFraction",
+      "unitless": "qunit:UNITLESS"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "MassFraction"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "unitless"
+      ],
+      "default": "unitless"
+    }
+  }
+}

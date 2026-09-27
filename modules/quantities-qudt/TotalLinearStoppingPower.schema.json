@@ -1,0 +1,52 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "TotalLinearStoppingPower.schema.json",
+  "x-oold-uuid": "d95e7eb1-0378-5c85-97c8-cd21e96c3c86",
+  "x-oold-version": "0.1.0",
+  "title": "TotalLinearStoppingPower",
+  "x-oold-multilang-title": {
+    "en": "Total Linear Stopping Power"
+  },
+  "description": "The \"Total Linear Stopping Power\" is defined as the average energy loss of the particle per unit path length.",
+  "examples": [
+    {
+      "type": [
+        "TotalLinearStoppingPower"
+      ],
+      "value": 1.0,
+      "unit": "joule_per_meter"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "TotalLinearStoppingPower": "qkind:TotalLinearStoppingPower",
+      "joule_per_meter": "qunit:J-PER-M",
+      "electron_volt_per_meter": "qunit:EV-PER-M",
+      "mega_electron_volt_per_centi_meter": "qunit:MegaEV-PER-CentiM",
+      "kilo_electron_volt_per_micro_meter": "qunit:KiloEV-PER-MicroM"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "TotalLinearStoppingPower"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "joule_per_meter",
+        "electron_volt_per_meter",
+        "mega_electron_volt_per_centi_meter",
+        "kilo_electron_volt_per_micro_meter"
+      ],
+      "default": "joule_per_meter"
+    }
+  }
+}

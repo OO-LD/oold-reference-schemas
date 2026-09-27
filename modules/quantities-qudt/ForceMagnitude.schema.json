@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ForceMagnitude.schema.json",
+  "x-oold-uuid": "4f80d474-3b2f-5971-bdcf-fe28391fa016",
+  "x-oold-version": "0.1.0",
+  "title": "ForceMagnitude",
+  "x-oold-multilang-title": {
+    "en": "Force Magnitude"
+  },
+  "description": "The 'magnitude' of a force is its 'size' or 'strength', regardless of the direction in which it acts.",
+  "allOf": [
+    {
+      "$ref": "Force.schema.json"
+    }
+  ],
+  "@context": [
+    "Force.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ForceMagnitude": "qkind:ForceMagnitude"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ForceMagnitude"
+      ]
+    }
+  }
+}

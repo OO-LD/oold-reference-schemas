@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MeanLinearRange.schema.json",
+  "x-oold-uuid": "46e725ac-a931-51bf-828d-906615b3ce50",
+  "x-oold-version": "0.1.0",
+  "title": "MeanLinearRange",
+  "x-oold-multilang-title": {
+    "en": "Mean Linear Range"
+  },
+  "description": "\"Mean Linear Range\" is, in a given material, for specified charged particles of a specified energy, the average displacement of the particles before they stop. That is, the mean totl rectified path length travelled by a particle in the course of slowing down to rest (or to some suitable cut-off energy) in a given substance under specified conditions averaged over a group of particles having the same initial energy.",
+  "allOf": [
+    {
+      "$ref": "Length.schema.json"
+    }
+  ],
+  "@context": [
+    "Length.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "MeanLinearRange": "qkind:MeanLinearRange"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "MeanLinearRange"
+      ]
+    }
+  }
+}

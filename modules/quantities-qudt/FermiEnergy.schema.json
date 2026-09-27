@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "FermiEnergy.schema.json",
+  "x-oold-uuid": "76e5322d-7b8c-5f03-be94-ad8dc87405b1",
+  "x-oold-version": "0.1.0",
+  "title": "FermiEnergy",
+  "x-oold-multilang-title": {
+    "en": "Fermi Energy"
+  },
+  "description": "\"Fermi Energy\" in a metal is the highest occupied energy level at zero thermodynamic temperature.",
+  "allOf": [
+    {
+      "$ref": "Energy.schema.json"
+    }
+  ],
+  "@context": [
+    "Energy.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "FermiEnergy": "qkind:FermiEnergy"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "FermiEnergy"
+      ]
+    }
+  }
+}

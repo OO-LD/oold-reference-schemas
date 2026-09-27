@@ -1,0 +1,46 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Absorptance.schema.json",
+  "x-oold-uuid": "0437421a-9b31-55ab-be84-5b718b2e9417",
+  "x-oold-version": "0.1.0",
+  "title": "Absorptance",
+  "x-oold-multilang-title": {
+    "en": "Absorptance"
+  },
+  "description": "Absorptance is the ratio of the radiation absorbed by a surface to that incident upon it. Also known as absorbance.",
+  "examples": [
+    {
+      "type": [
+        "Absorptance"
+      ],
+      "value": 1.0,
+      "unit": "unitless"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Absorptance": "qkind:Absorptance",
+      "unitless": "qunit:UNITLESS"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Absorptance"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "unitless"
+      ],
+      "default": "unitless"
+    }
+  }
+}

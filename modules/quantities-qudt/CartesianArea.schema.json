@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "CartesianArea.schema.json",
+  "x-oold-uuid": "022058c6-b4a3-517c-b9d5-a00efac71e12",
+  "x-oold-version": "0.1.0",
+  "title": "CartesianArea",
+  "x-oold-multilang-title": {
+    "en": "Cartesian Area"
+  },
+  "description": "\"Area\" is a quantity that expresses the extent of a two-dimensional surface or shape, or planar lamina, in the plane.",
+  "allOf": [
+    {
+      "$ref": "Area.schema.json"
+    }
+  ],
+  "@context": [
+    "Area.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "CartesianArea": "qkind:CartesianArea"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "CartesianArea"
+      ]
+    }
+  }
+}

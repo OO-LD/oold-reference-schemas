@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "DryBulbTemperature.schema.json",
+  "x-oold-uuid": "fde09f3b-6e9b-5c2f-947f-1e1bdb12f20e",
+  "x-oold-version": "0.1.0",
+  "title": "DryBulbTemperature",
+  "x-oold-multilang-title": {
+    "en": "Dry Bulb Temperature"
+  },
+  "description": "The temperature of air measured by a thermometer freely exposed to the air, but shielded from radiation.",
+  "allOf": [
+    {
+      "$ref": "Temperature.schema.json"
+    }
+  ],
+  "@context": [
+    "Temperature.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "DryBulbTemperature": "qkind:DryBulbTemperature"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "DryBulbTemperature"
+      ]
+    }
+  }
+}

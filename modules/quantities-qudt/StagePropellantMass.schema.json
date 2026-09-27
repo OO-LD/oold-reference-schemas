@@ -1,0 +1,29 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "StagePropellantMass.schema.json",
+  "x-oold-uuid": "f4657206-4b58-5f95-9008-296d2c0d7bda",
+  "x-oold-version": "0.1.0",
+  "title": "StagePropellantMass",
+  "x-oold-multilang-title": {
+    "en": "Stage Propellant Mass"
+  },
+  "allOf": [
+    {
+      "$ref": "Mass.schema.json"
+    }
+  ],
+  "@context": [
+    "Mass.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "StagePropellantMass": "qkind:StagePropellantMass"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "StagePropellantMass"
+      ]
+    }
+  }
+}

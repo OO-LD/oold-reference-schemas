@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Tilt.schema.json",
+  "x-oold-uuid": "de7fca61-6701-5b52-80b9-35114fbfc76b",
+  "x-oold-version": "0.1.0",
+  "title": "Tilt",
+  "x-oold-multilang-title": {
+    "en": "Tilt"
+  },
+  "description": "The angle between an object's orientation vector relative to a reference frame.  \n  In the context of architecture, this would refer to the angle between the ground and the face of a surface.",
+  "allOf": [
+    {
+      "$ref": "Angle.schema.json"
+    }
+  ],
+  "@context": [
+    "Angle.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Tilt": "qkind:Tilt"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Tilt"
+      ]
+    }
+  }
+}

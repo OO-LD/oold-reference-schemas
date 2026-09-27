@@ -1,0 +1,46 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "DensityOfStates.schema.json",
+  "x-oold-uuid": "a37f1067-68d4-575a-bdb5-67b17d904d2d",
+  "x-oold-version": "0.1.0",
+  "title": "DensityOfStates",
+  "x-oold-multilang-title": {
+    "en": "Density of states"
+  },
+  "description": "\"Density of States\" is the number of vibrational modes in an infinitesimal interval of angular frequency divided by the range of that interval and by volume.",
+  "examples": [
+    {
+      "type": [
+        "DensityOfStates"
+      ],
+      "value": 1.0,
+      "unit": "second_per_meter_cubed_per_radian"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "DensityOfStates": "qkind:DensityOfStates",
+      "second_per_meter_cubed_per_radian": "qunit:SEC-PER-RAD-M3"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "DensityOfStates"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "second_per_meter_cubed_per_radian"
+      ],
+      "default": "second_per_meter_cubed_per_radian"
+    }
+  }
+}

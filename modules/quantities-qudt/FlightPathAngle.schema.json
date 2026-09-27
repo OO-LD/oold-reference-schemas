@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "FlightPathAngle.schema.json",
+  "x-oold-uuid": "00c10a25-00cf-59fd-bfaf-48764629b35d",
+  "x-oold-version": "0.1.0",
+  "title": "FlightPathAngle",
+  "x-oold-multilang-title": {
+    "en": "Flight Path Angle"
+  },
+  "description": "Flight path angle is defined in two different ways. To the aerodynamicist, it is the angle between the flight path vector (where the airplane is going) and the local atmosphere. To the flight crew, it is normally known as the angle between the flight path vector and the horizon, also known as the climb (or descent) angle.",
+  "allOf": [
+    {
+      "$ref": "Angle.schema.json"
+    }
+  ],
+  "@context": [
+    "Angle.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "FlightPathAngle": "qkind:FlightPathAngle"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "FlightPathAngle"
+      ]
+    }
+  }
+}

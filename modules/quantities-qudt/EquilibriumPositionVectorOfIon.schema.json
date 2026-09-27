@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "EquilibriumPositionVectorOfIon.schema.json",
+  "x-oold-uuid": "75f2f083-a2e8-56f3-bd37-57d099851530",
+  "x-oold-version": "0.1.0",
+  "title": "EquilibriumPositionVectorOfIon",
+  "x-oold-multilang-title": {
+    "en": "Equilibrium Position Vector of Ion"
+  },
+  "description": "\"Equilibrium Position Vector of Ion\" is the position vector of a particle in equilibrium.",
+  "allOf": [
+    {
+      "$ref": "Length.schema.json"
+    }
+  ],
+  "@context": [
+    "Length.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "EquilibriumPositionVectorOfIon": "qkind:EquilibriumPositionVectorOfIon"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "EquilibriumPositionVectorOfIon"
+      ]
+    }
+  }
+}

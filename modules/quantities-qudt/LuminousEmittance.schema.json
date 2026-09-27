@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "LuminousEmittance.schema.json",
+  "x-oold-uuid": "c90b3cc0-8a04-5066-97ae-ca7645bc47dd",
+  "x-oold-version": "0.1.0",
+  "title": "LuminousEmittance",
+  "x-oold-multilang-title": {
+    "en": "Luminous Emmitance"
+  },
+  "description": "\"Luminous Emittance\" is the luminous flux per unit area emitted from a surface.",
+  "allOf": [
+    {
+      "$ref": "LuminousFluxPerArea.schema.json"
+    }
+  ],
+  "@context": [
+    "LuminousFluxPerArea.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "LuminousEmittance": "qkind:LuminousEmittance"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "LuminousEmittance"
+      ]
+    }
+  }
+}

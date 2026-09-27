@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "FirstStageMassRatio.schema.json",
+  "x-oold-uuid": "57cfdf82-10f9-50a4-9e21-eee105f0ebcf",
+  "x-oold-version": "0.1.0",
+  "title": "FirstStageMassRatio",
+  "x-oold-multilang-title": {
+    "en": "First Stage Mass Ratio"
+  },
+  "description": "Mass ratio for the first stage of a multistage launcher.",
+  "allOf": [
+    {
+      "$ref": "MassRatio.schema.json"
+    }
+  ],
+  "@context": [
+    "MassRatio.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "FirstStageMassRatio": "qkind:FirstStageMassRatio"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "FirstStageMassRatio"
+      ]
+    }
+  }
+}

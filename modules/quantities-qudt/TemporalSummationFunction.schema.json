@@ -1,0 +1,46 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "TemporalSummationFunction.schema.json",
+  "x-oold-uuid": "85210337-b104-5b72-8697-2e73a44c6e1b",
+  "x-oold-version": "0.1.0",
+  "title": "TemporalSummationFunction",
+  "x-oold-multilang-title": {
+    "en": "Temporal Summation Function"
+  },
+  "description": "\"Temporal Summation Function\" is the ability of the human eye to produce a composite signal from the signals coming into an eye during a short time interval.",
+  "examples": [
+    {
+      "type": [
+        "TemporalSummationFunction"
+      ],
+      "value": 1.0,
+      "unit": "per_second_per_steradian"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "TemporalSummationFunction": "qkind:TemporalSummationFunction",
+      "per_second_per_steradian": "qunit:PER-SEC-SR"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "TemporalSummationFunction"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "per_second_per_steradian"
+      ],
+      "default": "per_second_per_steradian"
+    }
+  }
+}

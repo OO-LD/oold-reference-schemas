@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "RankineTemperature.schema.json",
+  "x-oold-uuid": "1c1be013-4d4e-55e2-917c-5ee4c4adaa39",
+  "x-oold-version": "0.1.0",
+  "title": "RankineTemperature",
+  "x-oold-multilang-title": {
+    "en": "Rankine temperature"
+  },
+  "description": "quantity which uses a temperature scale with a zero value at the absolute temperature zero (0 K) like the Kelvin scale, but, in contrast with it, uses the scale intervals of the Fahrenheit scale",
+  "allOf": [
+    {
+      "$ref": "ThermodynamicTemperature.schema.json"
+    }
+  ],
+  "@context": [
+    "ThermodynamicTemperature.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "RankineTemperature": "qkind:RankineTemperature"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "RankineTemperature"
+      ]
+    }
+  }
+}

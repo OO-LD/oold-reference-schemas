@@ -1,0 +1,46 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Fluidity.schema.json",
+  "x-oold-uuid": "fbdd4e78-d6e2-52bb-9859-a4a4d6ad15fe",
+  "x-oold-version": "0.1.0",
+  "title": "Fluidity",
+  "x-oold-multilang-title": {
+    "en": "Fluidity"
+  },
+  "description": "fluidity of a material as complement of the dynamic viscosity",
+  "examples": [
+    {
+      "type": [
+        "Fluidity"
+      ],
+      "value": 1.0,
+      "unit": "per_pascal_per_second"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Fluidity": "qkind:Fluidity",
+      "per_pascal_per_second": "qunit:PER-PA-SEC"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Fluidity"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "per_pascal_per_second"
+      ],
+      "default": "per_pascal_per_second"
+    }
+  }
+}

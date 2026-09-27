@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "DonorIonizationEnergy.schema.json",
+  "x-oold-uuid": "f5c5b968-f612-5fab-80cf-dbc0a74706fa",
+  "x-oold-version": "0.1.0",
+  "title": "DonorIonizationEnergy",
+  "x-oold-multilang-title": {
+    "en": "Donor Ionization Energy"
+  },
+  "description": "\"Donor Ionization Energy\" is the ionization energy of a donor.",
+  "allOf": [
+    {
+      "$ref": "IonizationEnergy.schema.json"
+    }
+  ],
+  "@context": [
+    "IonizationEnergy.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "DonorIonizationEnergy": "qkind:DonorIonizationEnergy"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "DonorIonizationEnergy"
+      ]
+    }
+  }
+}

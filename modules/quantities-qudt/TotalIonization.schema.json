@@ -1,0 +1,46 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "TotalIonization.schema.json",
+  "x-oold-uuid": "3d95b4b9-ccf1-558c-909b-4e1ef2baf020",
+  "x-oold-version": "0.1.0",
+  "title": "TotalIonization",
+  "x-oold-multilang-title": {
+    "en": "Total Ionization"
+  },
+  "description": "\"Total Ionization\" by a particle, total mean charge, divided by the elementary charge, $e$, of all positive ions produced by an ionizing charged particle along its entire path and along the paths of any secondary charged particles.",
+  "examples": [
+    {
+      "type": [
+        "TotalIonization"
+      ],
+      "value": 1.0,
+      "unit": "unitless"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "TotalIonization": "qkind:TotalIonization",
+      "unitless": "qunit:UNITLESS"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "TotalIonization"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "unitless"
+      ],
+      "default": "unitless"
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "PhotonIntensity.schema.json",
+  "x-oold-uuid": "24bf224c-3e2a-57b6-a896-f3cd3b9395b2",
+  "x-oold-version": "0.1.0",
+  "title": "PhotonIntensity",
+  "x-oold-multilang-title": {
+    "en": "Photon Intensity"
+  },
+  "description": "A measure of flux of photons per solid angle",
+  "examples": [
+    {
+      "type": [
+        "PhotonIntensity"
+      ],
+      "value": 1.0,
+      "unit": "per_second_per_steradian"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "PhotonIntensity": "qkind:PhotonIntensity",
+      "per_second_per_steradian": "qunit:PER-SEC-SR"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "PhotonIntensity"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "per_second_per_steradian"
+      ],
+      "default": "per_second_per_steradian"
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Enthalpy.schema.json",
+  "x-oold-uuid": "877daca6-abe5-5171-adc9-c6f0ae1ac011",
+  "x-oold-version": "0.1.0",
+  "title": "Enthalpy",
+  "x-oold-multilang-title": {
+    "en": "Enthalpy",
+    "de": "Enthalpie"
+  },
+  "description": "In thermodynamics, $\\textit{enthalpy}$ is the sum of the internal energy $U$ and the product of pressure $p$ and volume $V$ of a system. The characteristic function (also known as thermodynamic potential) $\\textit{enthalpy}$ used to be called $\\textit{heat content}$, which is why it is conventionally indicated by $H$. The specific enthalpy of a working mass is a property of that mass used in thermodynamics, defined as $h=u+p \\cdot v$,  where $u$ is the specific internal energy, $p$ is the pressure, and $v$ is specific volume. In other words, $h = H / m$ where $m$ is the mass of the system. The SI unit for $\\textit{Specific Enthalpy}$ is $\\textit{joules per kilogram}$",
+  "allOf": [
+    {
+      "$ref": "Energy.schema.json"
+    }
+  ],
+  "@context": [
+    "Energy.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Enthalpy": "qkind:Enthalpy"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Enthalpy"
+      ]
+    }
+  },
+  "x-oold-context": {
+    "Enthalpy": {
+      "http://dbpedia.org/resource/Enthalpy": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

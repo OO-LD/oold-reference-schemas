@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "WetBulbTemperature.schema.json",
+  "x-oold-uuid": "343daa86-363c-5bda-9ac9-1f20c65eede0",
+  "x-oold-version": "0.1.0",
+  "title": "WetBulbTemperature",
+  "x-oold-multilang-title": {
+    "en": "Wet Bulb Temperature"
+  },
+  "description": "the temperature of a parcel of air cooled to saturation (100% relative humidity) by the evaporation of water into it, with the latent heat supplied by the parcel.",
+  "allOf": [
+    {
+      "$ref": "Temperature.schema.json"
+    }
+  ],
+  "@context": [
+    "Temperature.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "WetBulbTemperature": "qkind:WetBulbTemperature"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "WetBulbTemperature"
+      ]
+    }
+  }
+}

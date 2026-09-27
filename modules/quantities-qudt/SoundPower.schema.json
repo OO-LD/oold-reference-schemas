@@ -1,0 +1,31 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "SoundPower.schema.json",
+  "x-oold-uuid": "499c7be1-f792-51ba-989d-017a787d40e3",
+  "x-oold-version": "0.1.0",
+  "title": "SoundPower",
+  "x-oold-multilang-title": {
+    "en": "Sound power",
+    "de": "Schallleistung"
+  },
+  "description": "Sound power or acoustic power $P_a$ is a measure of sonic energy $E$ per time $t$ unit. It is measured in watts and can be computed as sound intensity ($I$) times area ($A$).",
+  "allOf": [
+    {
+      "$ref": "Power.schema.json"
+    }
+  ],
+  "@context": [
+    "Power.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "SoundPower": "qkind:SoundPower"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "SoundPower"
+      ]
+    }
+  }
+}

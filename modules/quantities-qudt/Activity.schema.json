@@ -1,0 +1,48 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Activity.schema.json",
+  "x-oold-uuid": "e45bd0c8-c7c8-527d-a9d3-1b11e061b60a",
+  "x-oold-version": "0.1.0",
+  "title": "Activity",
+  "x-oold-multilang-title": {
+    "en": "Activity"
+  },
+  "description": "$\\textit{Activity}$ is the number of decays per unit time of a radioactive sample,\n   the term used to characterise the number of nuclei which disintegrate in a radioactive substance per unit time. \n  Activity is usually measured in Becquerels ($Bq$), where 1 $Bq$ is 1 disintegration per second,\n   in honor of the scientist Henri Becquerel.",
+  "allOf": [
+    {
+      "$ref": "StochasticProcess.schema.json"
+    }
+  ],
+  "@context": [
+    "StochasticProcess.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Activity": "qkind:Activity"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Activity"
+      ]
+    }
+  },
+  "x-oold-context": {
+    "Activity": {
+      "http://dbpedia.org/resource/Radioactive_decay": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      },
+      "https://si-digital-framework.org/quantities/ARRN": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

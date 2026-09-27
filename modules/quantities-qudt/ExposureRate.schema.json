@@ -1,0 +1,48 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ExposureRate.schema.json",
+  "x-oold-uuid": "759cf8e1-6f60-5988-8729-2ea131ad71c2",
+  "x-oold-version": "0.1.0",
+  "title": "ExposureRate",
+  "x-oold-multilang-title": {
+    "en": "Exposure Rate"
+  },
+  "description": "\"Exposure Rate\" expresses the rate of charge production per unit mass of air and is commonly expressed in roentgens per hour (R/h) or milliroentgens per hour (mR/h).",
+  "examples": [
+    {
+      "type": [
+        "ExposureRate"
+      ],
+      "value": 1.0,
+      "unit": "coulomb_per_kilo_gram_per_second"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ExposureRate": "qkind:ExposureRate",
+      "coulomb_per_kilo_gram_per_second": "qunit:C-PER-KiloGM-SEC",
+      "coulomb_per_gram_per_second": "qunit:C-PER-GM-SEC"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ExposureRate"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "coulomb_per_kilo_gram_per_second",
+        "coulomb_per_gram_per_second"
+      ],
+      "default": "coulomb_per_kilo_gram_per_second"
+    }
+  }
+}

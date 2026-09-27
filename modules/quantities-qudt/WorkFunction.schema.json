@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "WorkFunction.schema.json",
+  "x-oold-uuid": "f9f89e87-7cfa-5aef-a59c-208b25b14754",
+  "x-oold-version": "0.1.0",
+  "title": "WorkFunction",
+  "x-oold-multilang-title": {
+    "en": "Work Function"
+  },
+  "description": "\"Work Function\" is the energy difference between an electron at rest at infinity and an electron at a certain energy level. The minimum energy (usually measured in electronvolts) needed to remove an electron from a solid to a point immediately outside the solid surface (or energy needed to move an electron from the Fermi level into vacuum).",
+  "allOf": [
+    {
+      "$ref": "Energy.schema.json"
+    }
+  ],
+  "@context": [
+    "Energy.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "WorkFunction": "qkind:WorkFunction"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "WorkFunction"
+      ]
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "TotalAngularMomentum.schema.json",
+  "x-oold-uuid": "d0b4541d-5a41-557d-b575-cdca502f1973",
+  "x-oold-version": "0.1.0",
+  "title": "TotalAngularMomentum",
+  "x-oold-multilang-title": {
+    "en": "Total Angular Momentum"
+  },
+  "description": "\"Total Angular Momentum\" combines both the spin and orbital angular momentum of all particles and fields. In atomic and nuclear physics, orbital angular momentum is usually denoted by $l$ or $L$ instead of $\\Lambda$. The magnitude of $J$ is quantized so that $J^2 = \\hbar^2 j(j + 1)$, where $j$ is the total angular momentum quantum number.",
+  "allOf": [
+    {
+      "$ref": "AngularMomentum.schema.json"
+    }
+  ],
+  "@context": [
+    "AngularMomentum.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "TotalAngularMomentum": "qkind:TotalAngularMomentum"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "TotalAngularMomentum"
+      ]
+    }
+  }
+}

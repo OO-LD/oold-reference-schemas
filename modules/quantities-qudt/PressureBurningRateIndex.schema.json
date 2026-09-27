@@ -1,0 +1,29 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "PressureBurningRateIndex.schema.json",
+  "x-oold-uuid": "2ba24c91-1c37-5c43-a823-fe91a4fc825a",
+  "x-oold-version": "0.1.0",
+  "title": "PressureBurningRateIndex",
+  "x-oold-multilang-title": {
+    "en": "Pressure Burning Rate Index"
+  },
+  "allOf": [
+    {
+      "$ref": "Dimensionless.schema.json"
+    }
+  ],
+  "@context": [
+    "Dimensionless.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "PressureBurningRateIndex": "qkind:PressureBurningRateIndex"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "PressureBurningRateIndex"
+      ]
+    }
+  }
+}

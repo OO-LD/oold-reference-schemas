@@ -1,0 +1,46 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "NeutronYieldPerFission.schema.json",
+  "x-oold-uuid": "138c8a14-248d-5faa-b3b5-0dfe6656f4ac",
+  "x-oold-version": "0.1.0",
+  "title": "NeutronYieldPerFission",
+  "x-oold-multilang-title": {
+    "en": "Neutron Yield per Fission"
+  },
+  "description": "The \"Neutron Yield per Fission\" is the average number of fission neutrons, both prompt and delayed, emitted per fission event.",
+  "examples": [
+    {
+      "type": [
+        "NeutronYieldPerFission"
+      ],
+      "value": 1.0,
+      "unit": "unitless"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "NeutronYieldPerFission": "qkind:NeutronYieldPerFission",
+      "unitless": "qunit:UNITLESS"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "NeutronYieldPerFission"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "unitless"
+      ],
+      "default": "unitless"
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "LatticePlaneSpacing.schema.json",
+  "x-oold-uuid": "70379540-4475-5f1e-bb66-ec49748bc781",
+  "x-oold-version": "0.1.0",
+  "title": "LatticePlaneSpacing",
+  "x-oold-multilang-title": {
+    "en": "Lattice Plane Spacing"
+  },
+  "description": "\"Lattice Plane Spacing\" is the distance between successive lattice planes.",
+  "allOf": [
+    {
+      "$ref": "Length.schema.json"
+    }
+  ],
+  "@context": [
+    "Length.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "LatticePlaneSpacing": "qkind:LatticePlaneSpacing"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "LatticePlaneSpacing"
+      ]
+    }
+  }
+}

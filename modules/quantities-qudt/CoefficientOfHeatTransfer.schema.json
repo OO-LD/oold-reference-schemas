@@ -1,0 +1,52 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "CoefficientOfHeatTransfer.schema.json",
+  "x-oold-uuid": "46cf5d4e-08e2-5909-a1bb-ad7563535a8e",
+  "x-oold-version": "0.1.0",
+  "title": "CoefficientOfHeatTransfer",
+  "x-oold-multilang-title": {
+    "en": "Coefficient of heat transfer"
+  },
+  "description": "\"Coefficient of Heat Transfer\", in thermodynamics and in mechanical and chemical engineering, is used in calculating the heat transfer, typically by convection or phase transition between a fluid and a solid. The heat transfer coefficient is the proportionality coefficient between the heat flux, that is heat flow per unit area, q/A, and the thermodynamic driving force for the flow of heat (that is, the temperature difference, (Delta T).  Areic heat flow rate divided by thermodynamic temperature difference. In building technology, the \"Coefficient of Heat Transfer\", is often called \"thermal transmittance}\" with the symbol \"U\". It has SI units in watts per squared meter kelvin.",
+  "examples": [
+    {
+      "type": [
+        "CoefficientOfHeatTransfer"
+      ],
+      "value": 1.0,
+      "unit": "watt_per_kelvin_per_meter_squared"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "CoefficientOfHeatTransfer": "qkind:CoefficientOfHeatTransfer",
+      "watt_per_kelvin_per_meter_squared": "qunit:W-PER-M2-K",
+      "gram_per_kelvin_per_second_cubed": "qunit:GM-PER-SEC3-K",
+      "kilo_gram_per_kelvin_per_second_cubed": "qunit:KiloGM-PER-SEC3-K",
+      "kilo_watt_per_kelvin_per_meter_squared": "qunit:KiloW-PER-M2-K"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "CoefficientOfHeatTransfer"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "watt_per_kelvin_per_meter_squared",
+        "gram_per_kelvin_per_second_cubed",
+        "kilo_gram_per_kelvin_per_second_cubed",
+        "kilo_watt_per_kelvin_per_meter_squared"
+      ],
+      "default": "watt_per_kelvin_per_meter_squared"
+    }
+  }
+}

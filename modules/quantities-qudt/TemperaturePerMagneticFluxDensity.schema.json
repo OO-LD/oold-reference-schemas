@@ -1,0 +1,45 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "TemperaturePerMagneticFluxDensity.schema.json",
+  "x-oold-uuid": "844bb46f-ae87-52d2-b8e7-f59939d7e47d",
+  "x-oold-version": "0.1.0",
+  "title": "TemperaturePerMagneticFluxDensity",
+  "x-oold-multilang-title": {
+    "en": "Temperature per Magnetic Flux Density"
+  },
+  "examples": [
+    {
+      "type": [
+        "TemperaturePerMagneticFluxDensity"
+      ],
+      "value": 1.0,
+      "unit": "kelvin_per_tesla"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "TemperaturePerMagneticFluxDensity": "qkind:TemperaturePerMagneticFluxDensity",
+      "kelvin_per_tesla": "qunit:K-PER-T"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "TemperaturePerMagneticFluxDensity"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "kelvin_per_tesla"
+      ],
+      "default": "kelvin_per_tesla"
+    }
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MassPerTime.schema.json",
+  "x-oold-uuid": "b61a75d7-0236-5027-b17c-fa7e8ae10cb3",
+  "x-oold-version": "0.1.0",
+  "title": "MassPerTime",
+  "x-oold-multilang-title": {
+    "en": "Mass per Time"
+  },
+  "examples": [
+    {
+      "type": [
+        "MassPerTime"
+      ],
+      "value": 1.0,
+      "unit": "kilo_gram_per_second"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "MassPerTime": "qkind:MassPerTime",
+      "kilo_gram_per_second": "qunit:KiloGM-PER-SEC",
+      "nano_gram_per_day": "qunit:NanoGM-PER-DAY",
+      "milli_gram_per_day": "qunit:MilliGM-PER-DAY",
+      "milli_gram_per_hour": "qunit:MilliGM-PER-HR",
+      "gram_per_day": "qunit:GM-PER-DAY",
+      "gram_per_hour": "qunit:GM-PER-HR",
+      "milli_gram_per_second": "qunit:MilliGM-PER-SEC",
+      "kilo_gram_per_day": "qunit:KiloGM-PER-DAY",
+      "metric_ton_per_year": "qunit:TONNE-PER-YR",
+      "kilo_gram_per_hour": "qunit:KiloGM-PER-HR",
+      "gram_per_second": "qunit:GM-PER-SEC",
+      "knot_per_year": "qunit:KiloTONNE-PER-YR",
+      "newton_second_per_meter": "qunit:N-SEC-PER-M",
+      "mega_metric_ton_per_year": "qunit:MegaTONNE-PER-YR"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "MassPerTime"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "kilo_gram_per_second",
+        "nano_gram_per_day",
+        "milli_gram_per_day",
+        "milli_gram_per_hour",
+        "gram_per_day",
+        "gram_per_hour",
+        "milli_gram_per_second",
+        "kilo_gram_per_day",
+        "metric_ton_per_year",
+        "kilo_gram_per_hour",
+        "gram_per_second",
+        "knot_per_year",
+        "newton_second_per_meter",
+        "mega_metric_ton_per_year"
+      ],
+      "default": "kilo_gram_per_second"
+    }
+  }
+}

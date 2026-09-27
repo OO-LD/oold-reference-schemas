@@ -1,0 +1,29 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MaxExpectedOperatingThrust.schema.json",
+  "x-oold-uuid": "3a1dd757-be6a-5b38-a816-2d302f407238",
+  "x-oold-version": "0.1.0",
+  "title": "MaxExpectedOperatingThrust",
+  "x-oold-multilang-title": {
+    "en": "Maximum Expected Operating Thrust"
+  },
+  "allOf": [
+    {
+      "$ref": "MaxOperatingThrust.schema.json"
+    }
+  ],
+  "@context": [
+    "MaxOperatingThrust.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "MaxExpectedOperatingThrust": "qkind:MaxExpectedOperatingThrust"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "MaxExpectedOperatingThrust"
+      ]
+    }
+  }
+}

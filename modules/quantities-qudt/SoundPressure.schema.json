@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "SoundPressure.schema.json",
+  "x-oold-uuid": "28f9a77b-22c6-5003-b5d7-e23a5d938191",
+  "x-oold-version": "0.1.0",
+  "title": "SoundPressure",
+  "x-oold-multilang-title": {
+    "en": "Sound pressure"
+  },
+  "description": "Sound Pressure is the difference between instantaneous total pressure and static pressure.",
+  "allOf": [
+    {
+      "$ref": "Pressure.schema.json"
+    }
+  ],
+  "@context": [
+    "Pressure.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "SoundPressure": "qkind:SoundPressure"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "SoundPressure"
+      ]
+    }
+  }
+}

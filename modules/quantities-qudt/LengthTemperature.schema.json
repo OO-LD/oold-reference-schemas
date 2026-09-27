@@ -1,0 +1,49 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "LengthTemperature.schema.json",
+  "x-oold-uuid": "d28e7818-86de-5a3f-bab0-7eefc7bb9aa2",
+  "x-oold-version": "0.1.0",
+  "title": "LengthTemperature",
+  "x-oold-multilang-title": {
+    "en": "Length Temperature"
+  },
+  "examples": [
+    {
+      "type": [
+        "LengthTemperature"
+      ],
+      "value": 1.0,
+      "unit": "kelvin_meter"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "LengthTemperature": "qkind:LengthTemperature",
+      "kelvin_meter": "qunit:M-K",
+      "centi_meter_celsius": "qunit:DEG_C-CentiM",
+      "celsius_meter": "qunit:DEG_C-M"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "LengthTemperature"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "kelvin_meter",
+        "centi_meter_celsius",
+        "celsius_meter"
+      ],
+      "default": "kelvin_meter"
+    }
+  }
+}

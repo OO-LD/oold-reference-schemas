@@ -1,0 +1,29 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "RelativePartialPressure.schema.json",
+  "x-oold-uuid": "99edcb0b-ac12-560f-a33d-6af42aecad67",
+  "x-oold-version": "0.1.0",
+  "title": "RelativePartialPressure",
+  "x-oold-multilang-title": {
+    "en": "Relative Partial Pressure"
+  },
+  "allOf": [
+    {
+      "$ref": "PressureRatio.schema.json"
+    }
+  ],
+  "@context": [
+    "PressureRatio.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "RelativePartialPressure": "qkind:RelativePartialPressure"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "RelativePartialPressure"
+      ]
+    }
+  }
+}

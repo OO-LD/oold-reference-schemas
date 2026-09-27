@@ -1,0 +1,47 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "AreaSpecificLeakRate.schema.json",
+  "x-oold-uuid": "20edfe37-dd3b-593c-beda-3ca7c924b337",
+  "x-oold-version": "0.1.0",
+  "title": "AreaSpecificLeakRate",
+  "x-oold-multilang-title": {
+    "en": "Area Specific Leak Rate"
+  },
+  "description": "Gas leak rate referred to the leaking surface area.",
+  "examples": [
+    {
+      "type": [
+        "AreaSpecificLeakRate"
+      ],
+      "value": 1.0,
+      "unit": "meter_pascal_per_second"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "AreaSpecificLeakRate": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/AreaSpecificLeakRate.schema.json",
+      "meter_pascal_per_second": "qunit:PA-M-PER-SEC",
+      "liter_milli_bar_per_meter_squared_per_second": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/liter_milli_bar_per_meter_squared_per_second"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "AreaSpecificLeakRate"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "meter_pascal_per_second",
+        "liter_milli_bar_per_meter_squared_per_second"
+      ],
+      "default": "meter_pascal_per_second"
+    }
+  }
+}

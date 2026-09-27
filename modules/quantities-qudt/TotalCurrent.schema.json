@@ -1,0 +1,68 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "TotalCurrent.schema.json",
+  "x-oold-uuid": "527cea47-c257-5449-a1a4-f61349f12ee5",
+  "x-oold-version": "0.1.0",
+  "title": "TotalCurrent",
+  "x-oold-multilang-title": {
+    "en": "Total Current"
+  },
+  "description": "\"Total Current\" is the sum of the electric current that is flowing through a surface and the displacement current.",
+  "examples": [
+    {
+      "type": [
+        "TotalCurrent"
+      ],
+      "value": 1.0,
+      "unit": "ampere"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "TotalCurrent": "qkind:TotalCurrent",
+      "ampere": "qunit:A",
+      "atto_ampere": "qunit:AttoA",
+      "femto_ampere": "qunit:FemtoA",
+      "pico_ampere": "qunit:PicoA",
+      "nano_ampere": "qunit:NanoA",
+      "micro_ampere": "qunit:MicroA",
+      "milli_ampere": "qunit:MilliA",
+      "kilo_ampere": "qunit:KiloA",
+      "mega_ampere": "qunit:MegaA",
+      "giga_ampere": "qunit:GigaA",
+      "tera_ampere": "qunit:TeraA",
+      "peta_ampere": "qunit:PetaA"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "TotalCurrent"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "ampere",
+        "atto_ampere",
+        "femto_ampere",
+        "pico_ampere",
+        "nano_ampere",
+        "micro_ampere",
+        "milli_ampere",
+        "kilo_ampere",
+        "mega_ampere",
+        "giga_ampere",
+        "tera_ampere",
+        "peta_ampere"
+      ],
+      "default": "ampere"
+    }
+  }
+}

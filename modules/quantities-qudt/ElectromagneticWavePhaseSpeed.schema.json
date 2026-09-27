@@ -1,0 +1,60 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ElectromagneticWavePhaseSpeed.schema.json",
+  "x-oold-uuid": "0e2b889b-d54e-5b7d-a3c2-e14c3c4b39ab",
+  "x-oold-version": "0.1.0",
+  "title": "ElectromagneticWavePhaseSpeed",
+  "x-oold-multilang-title": {
+    "en": "Electromagnetic Wave Phase Speed"
+  },
+  "description": "\"Electromagnetic Wave Phase Speed\" is the ratio of angular velocity and wavenumber.",
+  "examples": [
+    {
+      "type": [
+        "ElectromagneticWavePhaseSpeed"
+      ],
+      "value": 1.0,
+      "unit": "meter_per_second"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ElectromagneticWavePhaseSpeed": "qkind:ElectromagneticWavePhaseSpeed",
+      "meter_per_second": "qunit:M-PER-SEC",
+      "micro_meter_per_minute": "qunit:MicroM-PER-MIN",
+      "micro_meter_per_second": "qunit:MicroM-PER-SEC",
+      "milli_meter_per_minute": "qunit:MilliM-PER-MIN",
+      "milli_meter_per_second": "qunit:MilliM-PER-SEC",
+      "centi_meter_per_second": "qunit:CentiM-PER-SEC",
+      "meter_per_minute": "qunit:M-PER-MIN",
+      "kilo_meter_per_second": "qunit:KiloM-PER-SEC"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ElectromagneticWavePhaseSpeed"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "meter_per_second",
+        "micro_meter_per_minute",
+        "micro_meter_per_second",
+        "milli_meter_per_minute",
+        "milli_meter_per_second",
+        "centi_meter_per_second",
+        "meter_per_minute",
+        "kilo_meter_per_second"
+      ],
+      "default": "meter_per_second"
+    }
+  }
+}

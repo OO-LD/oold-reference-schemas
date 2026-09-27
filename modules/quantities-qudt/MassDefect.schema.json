@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MassDefect.schema.json",
+  "x-oold-uuid": "98b06c55-0c59-5e78-a13f-f79969b21e2e",
+  "x-oold-version": "0.1.0",
+  "title": "MassDefect",
+  "x-oold-multilang-title": {
+    "en": "Mass Defect"
+  },
+  "description": "The \"Mass Defect\", also termed mass deficit, or mass packing fraction, describes mass change (decrease) in bound systems, particularly atomic nuclei.",
+  "allOf": [
+    {
+      "$ref": "Mass.schema.json"
+    }
+  ],
+  "@context": [
+    "Mass.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "MassDefect": "qkind:MassDefect"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "MassDefect"
+      ]
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MaximumOperatingPressure.schema.json",
+  "x-oold-uuid": "817c053c-4646-5665-a4ba-40e2cffd27fb",
+  "x-oold-version": "0.1.0",
+  "title": "MaximumOperatingPressure",
+  "x-oold-multilang-title": {
+    "en": "Maximum Operating Pressure"
+  },
+  "allOf": [
+    {
+      "$ref": "Pressure.schema.json"
+    }
+  ],
+  "@context": [
+    "Pressure.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "MaximumOperatingPressure": "qkind:MaximumOperatingPressure"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "MaximumOperatingPressure"
+      ]
+    }
+  }
+}

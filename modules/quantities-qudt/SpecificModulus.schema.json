@@ -1,0 +1,63 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "SpecificModulus.schema.json",
+  "x-oold-uuid": "2aeee06f-4fdf-5b97-bc4b-b4c3893af100",
+  "x-oold-version": "0.1.0",
+  "title": "SpecificModulus",
+  "x-oold-multilang-title": {
+    "en": "Specific Modulus"
+  },
+  "description": "<p><b>Specific modulus</b> is a <a href=\"/wiki/Materials_property\" class=\"mw-redirect\" title=\"Materials property\">materials property</a> consisting of the <a href=\"/wiki/Elastic_modulus\" title=\"Elastic modulus\">elastic modulus</a> per mass <a href=\"/wiki/Density\" title=\"Density\">density</a> of a material. It is also known as the <b>stiffness to weight ratio</b> or <b>specific stiffness</b>. High specific modulus materials find wide application in <a href=\"/wiki/Aerospace\" title=\"Aerospace\">aerospace</a> applications where minimum structural <a href=\"/wiki/Weight\" title=\"Weight\">weight</a> is required. The <a href=\"/wiki/Dimensional_analysis\" title=\"Dimensional analysis\">dimensional analysis</a> yields units of distance squared per time squared.</p>",
+  "examples": [
+    {
+      "type": [
+        "SpecificModulus"
+      ],
+      "value": 1.0,
+      "unit": "meter_squared_per_second_squared"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "SpecificModulus": "qkind:SpecificModulus",
+      "meter_squared_per_second_squared": "qunit:M2-PER-SEC2",
+      "meter_cubed_pascal_per_gram": "qunit:PA-M3-PER-GM",
+      "centi_meter_cubed_giga_pascal_per_gram": "qunit:GigaPA-CentiM3-PER-GM",
+      "kilo_meter_squared_per_second_squared": "qunit:KiloM2-PER-SEC2"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "SpecificModulus"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "meter_squared_per_second_squared",
+        "meter_cubed_pascal_per_gram",
+        "centi_meter_cubed_giga_pascal_per_gram",
+        "kilo_meter_squared_per_second_squared"
+      ],
+      "default": "meter_squared_per_second_squared"
+    }
+  },
+  "x-oold-context": {
+    "SpecificModulus": {
+      "http://dbpedia.org/resource/Specific_modulus": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

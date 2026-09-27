@@ -1,0 +1,68 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ElectrolyticConductivity.schema.json",
+  "x-oold-uuid": "4c8a2aa1-efad-5db1-a05f-9ae73ee05fcf",
+  "x-oold-version": "0.1.0",
+  "title": "ElectrolyticConductivity",
+  "x-oold-multilang-title": {
+    "en": "Electrolytic Conductivity"
+  },
+  "description": "\"Electrolytic Conductivity\" of an electrolyte solution is a measure of its ability to conduct electricity.",
+  "examples": [
+    {
+      "type": [
+        "ElectrolyticConductivity"
+      ],
+      "value": 1.0,
+      "unit": "siemens_per_meter"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ElectrolyticConductivity": "qkind:ElectrolyticConductivity",
+      "siemens_per_meter": "qunit:S-PER-M",
+      "pico_siemens_per_meter": "qunit:PicoS-PER-M",
+      "nano_siemens_per_meter": "qunit:NanoS-PER-M",
+      "nano_siemens_per_centi_meter": "qunit:NanoS-PER-CentiM",
+      "micro_siemens_per_meter": "qunit:MicroS-PER-M",
+      "micro_siemens_per_centi_meter": "qunit:MicroS-PER-CentiM",
+      "milli_siemens_per_meter": "qunit:MilliS-PER-M",
+      "deci_siemens_per_meter": "qunit:DeciS-PER-M",
+      "milli_siemens_per_centi_meter": "qunit:MilliS-PER-CentiM",
+      "siemens_per_centi_meter": "qunit:S-PER-CentiM",
+      "kilo_siemens_per_meter": "qunit:KiloS-PER-M",
+      "mega_siemens_per_meter": "qunit:MegaS-PER-M"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ElectrolyticConductivity"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "siemens_per_meter",
+        "pico_siemens_per_meter",
+        "nano_siemens_per_meter",
+        "nano_siemens_per_centi_meter",
+        "micro_siemens_per_meter",
+        "micro_siemens_per_centi_meter",
+        "milli_siemens_per_meter",
+        "deci_siemens_per_meter",
+        "milli_siemens_per_centi_meter",
+        "siemens_per_centi_meter",
+        "kilo_siemens_per_meter",
+        "mega_siemens_per_meter"
+      ],
+      "default": "siemens_per_meter"
+    }
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MassAbsorptionCoefficient.schema.json",
+  "x-oold-uuid": "4270a516-cdbe-5466-abee-a6638b402fea",
+  "x-oold-version": "0.1.0",
+  "title": "MassAbsorptionCoefficient",
+  "x-oold-multilang-title": {
+    "en": "Mass Absorption Coefficient"
+  },
+  "description": "The mass absorption coefficient is the linear absorption coefficient divided by the density of the absorber.",
+  "examples": [
+    {
+      "type": [
+        "MassAbsorptionCoefficient"
+      ],
+      "value": 1.0,
+      "unit": "meter_squared_per_kilo_gram"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "MassAbsorptionCoefficient": "qkind:MassAbsorptionCoefficient",
+      "meter_squared_per_kilo_gram": "qunit:M2-PER-KiloGM",
+      "centi_meter_squared_per_gram": "qunit:CentiM2-PER-GM",
+      "meter_squared_per_gram": "qunit:M2-PER-GM"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "MassAbsorptionCoefficient"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "meter_squared_per_kilo_gram",
+        "centi_meter_squared_per_gram",
+        "meter_squared_per_gram"
+      ],
+      "default": "meter_squared_per_kilo_gram"
+    }
+  }
+}

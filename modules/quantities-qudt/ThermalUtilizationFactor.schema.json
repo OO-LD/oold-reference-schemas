@@ -1,0 +1,46 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ThermalUtilizationFactor.schema.json",
+  "x-oold-uuid": "1ca66235-cc62-5cc4-9bda-2364b1233934",
+  "x-oold-version": "0.1.0",
+  "title": "ThermalUtilizationFactor",
+  "x-oold-multilang-title": {
+    "en": "Thermal Utilization Factor"
+  },
+  "description": "The \"Thermal Utilization Factor\" in an infinite medium, is the ratio of the number of thermal absorbed in a fissionable nuclide or in a nuclear fuel, as specified, to the total number of thermal neutrons absorbed.",
+  "examples": [
+    {
+      "type": [
+        "ThermalUtilizationFactor"
+      ],
+      "value": 1.0,
+      "unit": "unitless"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ThermalUtilizationFactor": "qkind:ThermalUtilizationFactor",
+      "unitless": "qunit:UNITLESS"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ThermalUtilizationFactor"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "unitless"
+      ],
+      "default": "unitless"
+    }
+  }
+}

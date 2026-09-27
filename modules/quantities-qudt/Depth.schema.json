@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Depth.schema.json",
+  "x-oold-uuid": "9c887dd0-f7e0-5d67-baab-92a2ba4be3bc",
+  "x-oold-version": "0.1.0",
+  "title": "Depth",
+  "x-oold-multilang-title": {
+    "en": "Depth"
+  },
+  "description": "Depth typically refers to the vertical measure of length from the surface of a liquid.",
+  "allOf": [
+    {
+      "$ref": "Length.schema.json"
+    }
+  ],
+  "@context": [
+    "Length.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Depth": "qkind:Depth"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Depth"
+      ]
+    }
+  }
+}

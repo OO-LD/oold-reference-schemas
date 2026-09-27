@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "RocketAtmosphericTransverseForce.schema.json",
+  "x-oold-uuid": "58a8aa9d-0dbf-5a20-8fad-263db52d2a1b",
+  "x-oold-version": "0.1.0",
+  "title": "RocketAtmosphericTransverseForce",
+  "x-oold-multilang-title": {
+    "en": "Rocket Atmospheric Transverse Force"
+  },
+  "description": "Transverse force on rocket due to an atmosphere",
+  "allOf": [
+    {
+      "$ref": "Force.schema.json"
+    }
+  ],
+  "@context": [
+    "Force.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "RocketAtmosphericTransverseForce": "qkind:RocketAtmosphericTransverseForce"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "RocketAtmosphericTransverseForce"
+      ]
+    }
+  }
+}

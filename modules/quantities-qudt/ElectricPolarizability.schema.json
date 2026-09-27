@@ -1,0 +1,49 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ElectricPolarizability.schema.json",
+  "x-oold-uuid": "ad99acb7-7111-52a5-ad91-363577e00430",
+  "x-oold-version": "0.1.0",
+  "title": "ElectricPolarizability",
+  "x-oold-multilang-title": {
+    "en": "Electric polarizability",
+    "de": "Elektrische Polarisierbarkeit"
+  },
+  "description": "\"Electric Polarizability\" is the relative tendency of a charge distribution, like the electron cloud of an atom or molecule, to be distorted from its normal shape by an external electric field, which is applied typically by inserting the molecule in a charged parallel-plate capacitor, but may also be caused by the presence of a nearby ion or dipole.",
+  "examples": [
+    {
+      "type": [
+        "ElectricPolarizability"
+      ],
+      "value": 1.0,
+      "unit": "joule_per_mole"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ElectricPolarizability": "qkind:ElectricPolarizability",
+      "joule_per_mole": "qunit:J-PER-MOL",
+      "kilo_joule_per_mole": "qunit:KiloJ-PER-MOL"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ElectricPolarizability"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "joule_per_mole",
+        "kilo_joule_per_mole"
+      ],
+      "default": "joule_per_mole"
+    }
+  }
+}

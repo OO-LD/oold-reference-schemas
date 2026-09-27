@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "NOMINAL-ASCENT-PROPELLANT-MASS.schema.json",
+  "x-oold-uuid": "d5ff55bc-f210-5e6e-9e7f-4cf1bca75dad",
+  "x-oold-version": "0.1.0",
+  "title": "NOMINAL-ASCENT-PROPELLANT-MASS",
+  "x-oold-multilang-title": {
+    "en": "Nominal Ascent Propellant Mass"
+  },
+  "description": "The amount of propellant mass within a stage that is available for impulse for use in nominal payload performance prediction. This mass excludes loaded propellant that has been set aside for off- nominal performance behavior (FPR and fuel bias).",
+  "allOf": [
+    {
+      "$ref": "Mass.schema.json"
+    }
+  ],
+  "@context": [
+    "Mass.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "NOMINAL-ASCENT-PROPELLANT-MASS": "qkind:NOMINAL-ASCENT-PROPELLANT-MASS"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "NOMINAL-ASCENT-PROPELLANT-MASS"
+      ]
+    }
+  }
+}

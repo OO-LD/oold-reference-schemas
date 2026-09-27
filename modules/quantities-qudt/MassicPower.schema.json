@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MassicPower.schema.json",
+  "x-oold-uuid": "c8acb208-c983-59d2-82bf-6f2a59af4e15",
+  "x-oold-version": "0.1.0",
+  "title": "MassicPower",
+  "x-oold-multilang-title": {
+    "en": "Massic power"
+  },
+  "description": "ratio energy divided by time and related mass",
+  "allOf": [
+    {
+      "$ref": "SpecificPower.schema.json"
+    }
+  ],
+  "@context": [
+    "SpecificPower.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "MassicPower": "qkind:MassicPower"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "MassicPower"
+      ]
+    }
+  }
+}

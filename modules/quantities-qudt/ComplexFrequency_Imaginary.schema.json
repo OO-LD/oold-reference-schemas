@@ -1,0 +1,29 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ComplexFrequency_Imaginary.schema.json",
+  "x-oold-uuid": "860d8b6c-e9a0-573d-9bc7-f8556fe080d2",
+  "x-oold-version": "0.1.0",
+  "title": "ComplexFrequency_Imaginary",
+  "x-oold-multilang-title": {
+    "en": "Imaginary part of complex frequency"
+  },
+  "allOf": [
+    {
+      "$ref": "Frequency.schema.json"
+    }
+  ],
+  "@context": [
+    "Frequency.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ComplexFrequency_Imaginary": "qkind:ComplexFrequency_Imaginary"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ComplexFrequency_Imaginary"
+      ]
+    }
+  }
+}

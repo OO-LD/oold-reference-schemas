@@ -1,0 +1,31 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "RadiantFlux.schema.json",
+  "x-oold-uuid": "91a9f32b-98cb-5dc3-9ad2-c3b039d86ba7",
+  "x-oold-version": "0.1.0",
+  "title": "RadiantFlux",
+  "x-oold-multilang-title": {
+    "en": "Radiant flux",
+    "de": "Strahlungsfluss"
+  },
+  "description": "Radiant Flux, or radiant power, is the measure of the total power of electromagnetic radiation (including infrared, ultraviolet, and visible light). The power may be the total emitted from a source, or the total landing on a particular surface.",
+  "allOf": [
+    {
+      "$ref": "Power.schema.json"
+    }
+  ],
+  "@context": [
+    "Power.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "RadiantFlux": "qkind:RadiantFlux"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "RadiantFlux"
+      ]
+    }
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "RecombinationCoefficient.schema.json",
+  "x-oold-uuid": "518bf073-6bae-513a-83f1-61f597ddc074",
+  "x-oold-version": "0.1.0",
+  "title": "RecombinationCoefficient",
+  "x-oold-multilang-title": {
+    "en": "Recombination Coefficient"
+  },
+  "description": "The \"Recombination Coefficient\" is the rate of recombination of positive ions with electrons or negative ions in a gas, per unit volume, divided by the product of the number of positive ions per unit volume and the number of electrons or negative ions per unit volume.",
+  "examples": [
+    {
+      "type": [
+        "RecombinationCoefficient"
+      ],
+      "value": 1.0,
+      "unit": "meter_cubed_per_second"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "RecombinationCoefficient": "qkind:RecombinationCoefficient",
+      "meter_cubed_per_second": "qunit:M3-PER-SEC",
+      "centi_meter_cubed_per_second": "qunit:CentiM3-PER-SEC",
+      "deci_meter_cubed_per_second": "qunit:DeciM3-PER-SEC"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "RecombinationCoefficient"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "meter_cubed_per_second",
+        "centi_meter_cubed_per_second",
+        "deci_meter_cubed_per_second"
+      ],
+      "default": "meter_cubed_per_second"
+    }
+  }
+}

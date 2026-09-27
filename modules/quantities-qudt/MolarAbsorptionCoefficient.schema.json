@@ -1,0 +1,46 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MolarAbsorptionCoefficient.schema.json",
+  "x-oold-uuid": "f7cbdd37-870f-51bf-b9f2-62d8bb177df7",
+  "x-oold-version": "0.1.0",
+  "title": "MolarAbsorptionCoefficient",
+  "x-oold-multilang-title": {
+    "en": "Molar Absorption Coefficient"
+  },
+  "description": "\"Molar Absorption Coefficient\" is a spectrophotometric unit indicating the light a substance absorbs with respect to length, usually centimeters, and concentration, usually moles per liter.",
+  "examples": [
+    {
+      "type": [
+        "MolarAbsorptionCoefficient"
+      ],
+      "value": 1.0,
+      "unit": "meter_squared_per_mole"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "MolarAbsorptionCoefficient": "qkind:MolarAbsorptionCoefficient",
+      "meter_squared_per_mole": "qunit:M2-PER-MOL"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "MolarAbsorptionCoefficient"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "meter_squared_per_mole"
+      ],
+      "default": "meter_squared_per_mole"
+    }
+  }
+}

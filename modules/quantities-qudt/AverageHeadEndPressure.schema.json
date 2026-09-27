@@ -1,0 +1,29 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "AverageHeadEndPressure.schema.json",
+  "x-oold-uuid": "e0ed059c-b201-5747-bde4-4a56c85b8be8",
+  "x-oold-version": "0.1.0",
+  "title": "AverageHeadEndPressure",
+  "x-oold-multilang-title": {
+    "en": "Average Head End Pressure"
+  },
+  "allOf": [
+    {
+      "$ref": "HeadEndPressure.schema.json"
+    }
+  ],
+  "@context": [
+    "HeadEndPressure.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "AverageHeadEndPressure": "qkind:AverageHeadEndPressure"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "AverageHeadEndPressure"
+      ]
+    }
+  }
+}

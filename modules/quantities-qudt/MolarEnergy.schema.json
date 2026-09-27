@@ -1,0 +1,59 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MolarEnergy.schema.json",
+  "x-oold-uuid": "21ec5968-e3c2-533d-98f2-0564838541fa",
+  "x-oold-version": "0.1.0",
+  "title": "MolarEnergy",
+  "x-oold-multilang-title": {
+    "en": "Molar Energy"
+  },
+  "description": "\"Molar Energy\" is the total energy contained by a thermodynamic system. The unit is $$J/mol$$, also expressed as $$joule/mole$$,  or $$joules per mole$$. This unit is commonly used in the SI unit system. The quantity has the dimension of $$M \\cdot L^2 \\cdot  T^{-2} \\cdot N^{-1}$$ where $$M$$ is mass, $$L$$ is length, $$T$$ is time, and $$N$$ is amount of substance.",
+  "examples": [
+    {
+      "type": [
+        "MolarEnergy"
+      ],
+      "value": 1.0,
+      "unit": "joule_per_mole"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "MolarEnergy": "qkind:MolarEnergy",
+      "joule_per_mole": "qunit:J-PER-MOL",
+      "kilo_joule_per_mole": "qunit:KiloJ-PER-MOL"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "MolarEnergy"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "joule_per_mole",
+        "kilo_joule_per_mole"
+      ],
+      "default": "joule_per_mole"
+    }
+  },
+  "x-oold-context": {
+    "MolarEnergy": {
+      "https://si-digital-framework.org/quantities/MOEG": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

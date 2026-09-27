@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "BoilingPoint.schema.json",
+  "x-oold-uuid": "2ab56dc7-ae31-5aa9-8995-de458930f379",
+  "x-oold-version": "0.1.0",
+  "title": "BoilingPoint",
+  "x-oold-multilang-title": {
+    "en": "Boiling Point Temperature"
+  },
+  "description": "A temperature that is the one at which a substance will change its physical state from a liquid to a gas.  It is also the temperature where the liquid and gaseous forms of a pure substance can exist in equilibrium.",
+  "allOf": [
+    {
+      "$ref": "Temperature.schema.json"
+    }
+  ],
+  "@context": [
+    "Temperature.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "BoilingPoint": "qkind:BoilingPoint"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "BoilingPoint"
+      ]
+    }
+  }
+}

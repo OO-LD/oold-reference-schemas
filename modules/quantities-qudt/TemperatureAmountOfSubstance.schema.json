@@ -1,0 +1,47 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "TemperatureAmountOfSubstance.schema.json",
+  "x-oold-uuid": "7d5feb99-6831-5612-a4cc-eccd238be582",
+  "x-oold-version": "0.1.0",
+  "title": "TemperatureAmountOfSubstance",
+  "x-oold-multilang-title": {
+    "en": "Temperature Amount of Substance"
+  },
+  "examples": [
+    {
+      "type": [
+        "TemperatureAmountOfSubstance"
+      ],
+      "value": 1.0,
+      "unit": "kelvin_mole"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "TemperatureAmountOfSubstance": "qkind:TemperatureAmountOfSubstance",
+      "kelvin_mole": "qunit:MOL-K",
+      "celsius_mole": "qunit:MOL-DEG_C"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "TemperatureAmountOfSubstance"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "kelvin_mole",
+        "celsius_mole"
+      ],
+      "default": "kelvin_mole"
+    }
+  }
+}

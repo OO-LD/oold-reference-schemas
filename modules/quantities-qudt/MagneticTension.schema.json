@@ -1,0 +1,68 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MagneticTension.schema.json",
+  "x-oold-uuid": "b08c5155-6901-5c02-ba88-9380cb0808ff",
+  "x-oold-version": "0.1.0",
+  "title": "MagneticTension",
+  "x-oold-multilang-title": {
+    "en": "Magnetic Tension"
+  },
+  "description": "Magnetic Tension is a scalar quantity equal to the line integral of the magnetic field strength H along a specified path linking two points a and b.",
+  "examples": [
+    {
+      "type": [
+        "MagneticTension"
+      ],
+      "value": 1.0,
+      "unit": "ampere"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "MagneticTension": "qkind:MagneticTension",
+      "ampere": "qunit:A",
+      "atto_ampere": "qunit:AttoA",
+      "femto_ampere": "qunit:FemtoA",
+      "pico_ampere": "qunit:PicoA",
+      "nano_ampere": "qunit:NanoA",
+      "micro_ampere": "qunit:MicroA",
+      "milli_ampere": "qunit:MilliA",
+      "kilo_ampere": "qunit:KiloA",
+      "mega_ampere": "qunit:MegaA",
+      "giga_ampere": "qunit:GigaA",
+      "tera_ampere": "qunit:TeraA",
+      "peta_ampere": "qunit:PetaA"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "MagneticTension"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "ampere",
+        "atto_ampere",
+        "femto_ampere",
+        "pico_ampere",
+        "nano_ampere",
+        "micro_ampere",
+        "milli_ampere",
+        "kilo_ampere",
+        "mega_ampere",
+        "giga_ampere",
+        "tera_ampere",
+        "peta_ampere"
+      ],
+      "default": "ampere"
+    }
+  }
+}

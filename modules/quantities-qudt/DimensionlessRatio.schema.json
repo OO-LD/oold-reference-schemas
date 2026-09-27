@@ -1,0 +1,29 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "DimensionlessRatio.schema.json",
+  "x-oold-uuid": "67faac86-0ed7-5875-8aa4-484387e5d5c9",
+  "x-oold-version": "0.1.0",
+  "title": "DimensionlessRatio",
+  "x-oold-multilang-title": {
+    "en": "Dimensionless Ratio"
+  },
+  "allOf": [
+    {
+      "$ref": "Dimensionless.schema.json"
+    }
+  ],
+  "@context": [
+    "Dimensionless.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "DimensionlessRatio": "qkind:DimensionlessRatio"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "DimensionlessRatio"
+      ]
+    }
+  }
+}

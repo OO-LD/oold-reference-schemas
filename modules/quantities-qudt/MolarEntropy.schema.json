@@ -1,0 +1,57 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MolarEntropy.schema.json",
+  "x-oold-uuid": "78bb22c1-7107-5ca7-81ec-3c9fff9991ea",
+  "x-oold-version": "0.1.0",
+  "title": "MolarEntropy",
+  "x-oold-multilang-title": {
+    "en": "Molar Entropy"
+  },
+  "description": "The \"Standard Molar Entropy\" is the entropy content of one mole of substance, under standard conditions (not standard temperature and pressure STP).",
+  "examples": [
+    {
+      "type": [
+        "MolarEntropy"
+      ],
+      "value": 1.0,
+      "unit": "joule_per_kelvin_per_mole"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "MolarEntropy": "qkind:MolarEntropy",
+      "joule_per_kelvin_per_mole": "qunit:J-PER-MOL-K"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "MolarEntropy"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "joule_per_kelvin_per_mole"
+      ],
+      "default": "joule_per_kelvin_per_mole"
+    }
+  },
+  "x-oold-context": {
+    "MolarEntropy": {
+      "https://si-digital-framework.org/quantities/MOEN": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

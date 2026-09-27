@@ -1,0 +1,29 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "VehicleVelocity.schema.json",
+  "x-oold-uuid": "42543b13-af4c-5af8-8462-e7ac8ff8707d",
+  "x-oold-version": "0.1.0",
+  "title": "VehicleVelocity",
+  "x-oold-multilang-title": {
+    "en": "Vehicle Velocity"
+  },
+  "allOf": [
+    {
+      "$ref": "Velocity.schema.json"
+    }
+  ],
+  "@context": [
+    "Velocity.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "VehicleVelocity": "qkind:VehicleVelocity"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "VehicleVelocity"
+      ]
+    }
+  }
+}

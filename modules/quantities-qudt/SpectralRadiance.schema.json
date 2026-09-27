@@ -1,0 +1,64 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "SpectralRadiance.schema.json",
+  "x-oold-uuid": "2e6d9673-5635-5a20-b4f4-e7c677c15a54",
+  "x-oold-version": "0.1.0",
+  "title": "SpectralRadiance",
+  "x-oold-multilang-title": {
+    "en": "Measurement Unit of Spectral Radiance"
+  },
+  "description": "Spectral Radiance is a radiometry term for the power per unit area of electromagnetic radiation per unit wavelength per unit solid angle emerging from a surface.",
+  "examples": [
+    {
+      "type": [
+        "SpectralRadiance"
+      ],
+      "value": 1.0,
+      "unit": "watt_per_meter_cubed"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "SpectralRadiance": "qkind:SpectralRadiance",
+      "watt_per_meter_cubed": "qunit:W-PER-M2-M",
+      "watt_per_meter_cubed_per_steradian": "qunit:W-PER-M2-M-SR",
+      "micro_watt_per_centi_meter_squared_per_micro_meter_per_steradian": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/micro_watt_per_centi_meter_squared_per_micro_meter_per_steradian",
+      "watt_per_meter_squared_per_micro_meter": "qunit:W-PER-M2-MicroM",
+      "watt_per_meter_squared_per_micro_meter_per_steradian": "qunit:W-PER-M2-MicroM-SR",
+      "milli_watt_per_meter_squared_per_nano_meter": "qunit:MilliW-PER-M2-NanoM",
+      "milli_watt_per_meter_squared_per_nano_meter_per_steradian": "qunit:MilliW-PER-M2-NanoM-SR",
+      "milli_watt_per_centi_meter_squared_per_micro_meter_per_steradian": "qunit:MilliW-PER-CentiM2-MicroM-SR",
+      "watt_per_meter_squared_per_nano_meter": "qunit:W-PER-M2-NanoM",
+      "watt_per_meter_squared_per_nano_meter_per_steradian": "qunit:W-PER-M2-NanoM-SR"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "SpectralRadiance"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "watt_per_meter_cubed",
+        "watt_per_meter_cubed_per_steradian",
+        "micro_watt_per_centi_meter_squared_per_micro_meter_per_steradian",
+        "watt_per_meter_squared_per_micro_meter",
+        "watt_per_meter_squared_per_micro_meter_per_steradian",
+        "milli_watt_per_meter_squared_per_nano_meter",
+        "milli_watt_per_meter_squared_per_nano_meter_per_steradian",
+        "milli_watt_per_centi_meter_squared_per_micro_meter_per_steradian",
+        "watt_per_meter_squared_per_nano_meter",
+        "watt_per_meter_squared_per_nano_meter_per_steradian"
+      ],
+      "default": "watt_per_meter_cubed"
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Azimuth.schema.json",
+  "x-oold-uuid": "d912fbf9-0a89-5d56-8036-bb01e07fe232",
+  "x-oold-version": "0.1.0",
+  "title": "Azimuth",
+  "x-oold-multilang-title": {
+    "en": "Azimuth"
+  },
+  "description": "The horizontal angle between an object and a cardinal direction, generally north. \n  In the context of architecture, this would refer to the direction a structure faces relative to the direction north.",
+  "allOf": [
+    {
+      "$ref": "Angle.schema.json"
+    }
+  ],
+  "@context": [
+    "Angle.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Azimuth": "qkind:Azimuth"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Azimuth"
+      ]
+    }
+  }
+}

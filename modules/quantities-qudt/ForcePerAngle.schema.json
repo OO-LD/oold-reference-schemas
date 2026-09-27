@@ -1,0 +1,49 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ForcePerAngle.schema.json",
+  "x-oold-uuid": "15c4097e-d256-572c-97e7-a1dbbfb154dd",
+  "x-oold-version": "0.1.0",
+  "title": "ForcePerAngle",
+  "x-oold-multilang-title": {
+    "en": "Force per Angle"
+  },
+  "examples": [
+    {
+      "type": [
+        "ForcePerAngle"
+      ],
+      "value": 1.0,
+      "unit": "newton_per_radian"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ForcePerAngle": "qkind:ForcePerAngle",
+      "newton_per_radian": "qunit:N-PER-RAD",
+      "newton_per_degree": "qunit:N-M-PER-DEG-M",
+      "kilo_newton_per_degree": "qunit:KiloN-M-PER-DEG-M"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ForcePerAngle"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "newton_per_radian",
+        "newton_per_degree",
+        "kilo_newton_per_degree"
+      ],
+      "default": "newton_per_radian"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "HeadEndPressure.schema.json",
+  "x-oold-uuid": "31cf0c81-2f33-5d06-a0fa-b1a15b46d6e5",
+  "x-oold-version": "0.1.0",
+  "title": "HeadEndPressure",
+  "x-oold-multilang-title": {
+    "en": "Head End Pressure"
+  },
+  "allOf": [
+    {
+      "$ref": "Pressure.schema.json"
+    }
+  ],
+  "@context": [
+    "Pressure.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "HeadEndPressure": "qkind:HeadEndPressure"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "HeadEndPressure"
+      ]
+    }
+  }
+}

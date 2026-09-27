@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "SystolicBloodPressure.schema.json",
+  "x-oold-uuid": "884b9506-5e35-5545-b9ad-5d495e65a1ea",
+  "x-oold-version": "0.1.0",
+  "title": "SystolicBloodPressure",
+  "x-oold-multilang-title": {
+    "en": "Systolic Blood Pressure"
+  },
+  "description": "The pressure of blood in the arteries which rises to a maximum as blood is pumped out by the left ventricle (systole) and drops to a minimum in diastole. The systolic/diastolic pressure is normally ~120/80 mmHg in a young adult.",
+  "allOf": [
+    {
+      "$ref": "Pressure.schema.json"
+    }
+  ],
+  "@context": [
+    "Pressure.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "SystolicBloodPressure": "qkind:SystolicBloodPressure"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "SystolicBloodPressure"
+      ]
+    }
+  }
+}

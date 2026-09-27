@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "FailureRate.schema.json",
+  "x-oold-uuid": "11d1e28e-ce21-52e3-868f-438d4eb40a11",
+  "x-oold-version": "0.1.0",
+  "title": "FailureRate",
+  "x-oold-multilang-title": {
+    "en": "Failure rate"
+  },
+  "description": "limiting value - if it exists - of the ratio between the conditional probability that the fault time t of a resource will fall within a defined interval (t, t + Δt), and the duration of this interval if Δt approaches zero and the unit is in an operational state at the beginning of the interval",
+  "allOf": [
+    {
+      "$ref": "Incidence.schema.json"
+    }
+  ],
+  "@context": [
+    "Incidence.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "FailureRate": "qkind:FailureRate"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "FailureRate"
+      ]
+    }
+  }
+}

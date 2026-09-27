@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ElectricChargeSurfaceDensity.schema.json",
+  "x-oold-uuid": "373a1882-b437-5662-8a65-a731497d5eee",
+  "x-oold-version": "0.1.0",
+  "title": "ElectricChargeSurfaceDensity",
+  "x-oold-multilang-title": {
+    "en": "Electric Charge Surface Density"
+  },
+  "description": "In electromagnetism, charge density is a measure of electric charge per unit volume of space, in one, two or three dimensions. More specifically: the linear, surface, or volume charge density is the amount of electric charge per unit length, surface area, or volume, respectively.",
+  "allOf": [
+    {
+      "$ref": "ElectricChargePerArea.schema.json"
+    }
+  ],
+  "@context": [
+    "ElectricChargePerArea.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ElectricChargeSurfaceDensity": "qkind:ElectricChargeSurfaceDensity"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ElectricChargeSurfaceDensity"
+      ]
+    }
+  }
+}

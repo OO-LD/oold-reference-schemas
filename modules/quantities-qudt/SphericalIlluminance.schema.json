@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "SphericalIlluminance.schema.json",
+  "x-oold-uuid": "80d4e8b7-a89e-5054-ba5a-7f10dcb99838",
+  "x-oold-version": "0.1.0",
+  "title": "SphericalIlluminance",
+  "x-oold-multilang-title": {
+    "en": "Illuminance"
+  },
+  "description": "Spherical illuminance is equal to quotient of the total luminous flux $\\Phi_v$ incident on a small sphere by the cross section area of that sphere.",
+  "allOf": [
+    {
+      "$ref": "Illuminance.schema.json"
+    }
+  ],
+  "@context": [
+    "Illuminance.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "SphericalIlluminance": "qkind:SphericalIlluminance"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "SphericalIlluminance"
+      ]
+    }
+  }
+}

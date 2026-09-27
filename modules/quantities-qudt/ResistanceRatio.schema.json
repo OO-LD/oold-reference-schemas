@@ -1,0 +1,29 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ResistanceRatio.schema.json",
+  "x-oold-uuid": "1a4104b1-0700-5ab9-973f-79ac86392bdd",
+  "x-oold-version": "0.1.0",
+  "title": "ResistanceRatio",
+  "x-oold-multilang-title": {
+    "en": "Resistance Ratio"
+  },
+  "allOf": [
+    {
+      "$ref": "DimensionlessRatio.schema.json"
+    }
+  ],
+  "@context": [
+    "DimensionlessRatio.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ResistanceRatio": "qkind:ResistanceRatio"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ResistanceRatio"
+      ]
+    }
+  }
+}

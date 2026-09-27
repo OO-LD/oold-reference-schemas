@@ -1,0 +1,48 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "IsentropicCompressibility.schema.json",
+  "x-oold-uuid": "cb348455-e271-512e-9daf-d64590f71d78",
+  "x-oold-version": "0.1.0",
+  "title": "IsentropicCompressibility",
+  "x-oold-multilang-title": {
+    "en": "Isentropic Compressibility"
+  },
+  "description": "Isentropic compressibility is the extent to which a material reduces its volume when it is subjected to compressive stresses at a constant value of entropy.",
+  "examples": [
+    {
+      "type": [
+        "IsentropicCompressibility"
+      ],
+      "value": 1.0,
+      "unit": "per_pascal"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "IsentropicCompressibility": "qkind:IsentropicCompressibility",
+      "per_pascal": "qunit:PER-PA",
+      "per_mega_pascal": "qunit:PER-MegaPA"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "IsentropicCompressibility"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "per_pascal",
+        "per_mega_pascal"
+      ],
+      "default": "per_pascal"
+    }
+  }
+}

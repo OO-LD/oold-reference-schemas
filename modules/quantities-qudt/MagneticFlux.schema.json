@@ -1,0 +1,68 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MagneticFlux.schema.json",
+  "x-oold-uuid": "82a515de-9bcc-5af8-a2f3-3974e7ec0f1a",
+  "x-oold-version": "0.1.0",
+  "title": "MagneticFlux",
+  "x-oold-multilang-title": {
+    "en": "Magnetic flux",
+    "de": "Magnetischer Flux"
+  },
+  "description": "\"Magnetic Flux\" is the product of the average magnetic field times the perpendicular area that it penetrates.",
+  "examples": [
+    {
+      "type": [
+        "MagneticFlux"
+      ],
+      "value": 1.0,
+      "unit": "weber"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "MagneticFlux": "qkind:MagneticFlux",
+      "weber": "qunit:WB",
+      "maxwell": "qunit:MX",
+      "unit_pole": "qunit:UnitPole",
+      "milli_weber": "qunit:MilliWB",
+      "meter_newton_per_ampere": "qunit:N-M-PER-A",
+      "kilo_weber": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/kilo_weber"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "MagneticFlux"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "weber",
+        "maxwell",
+        "unit_pole",
+        "milli_weber",
+        "meter_newton_per_ampere",
+        "kilo_weber"
+      ],
+      "default": "weber"
+    }
+  },
+  "x-oold-context": {
+    "MagneticFlux": {
+      "http://dbpedia.org/resource/Magnetic_flux": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

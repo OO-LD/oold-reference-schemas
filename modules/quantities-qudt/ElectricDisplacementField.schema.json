@@ -1,0 +1,29 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ElectricDisplacementField.schema.json",
+  "x-oold-uuid": "5a24fd1c-3d86-5b1c-9148-be921d0fdbed",
+  "x-oold-version": "0.1.0",
+  "title": "ElectricDisplacementField",
+  "x-oold-multilang-title": {
+    "en": "Electric Displacement Field"
+  },
+  "allOf": [
+    {
+      "$ref": "ElectricChargePerArea.schema.json"
+    }
+  ],
+  "@context": [
+    "ElectricChargePerArea.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ElectricDisplacementField": "qkind:ElectricDisplacementField"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ElectricDisplacementField"
+      ]
+    }
+  }
+}

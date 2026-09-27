@@ -1,0 +1,46 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "StructureFactor.schema.json",
+  "x-oold-uuid": "4722a7e1-f121-5d96-ba26-aceaf6d96ceb",
+  "x-oold-version": "0.1.0",
+  "title": "StructureFactor",
+  "x-oold-multilang-title": {
+    "en": "Structure Factor"
+  },
+  "description": "\"Structure Factor\" is a mathematical description of how a material scatters incident radiation.",
+  "examples": [
+    {
+      "type": [
+        "StructureFactor"
+      ],
+      "value": 1.0,
+      "unit": "unitless"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "StructureFactor": "qkind:StructureFactor",
+      "unitless": "qunit:UNITLESS"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "StructureFactor"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "unitless"
+      ],
+      "default": "unitless"
+    }
+  }
+}

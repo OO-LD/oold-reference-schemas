@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "SpecificHelmholtzEnergy.schema.json",
+  "x-oold-uuid": "c9afe669-10a3-5665-b674-df1fa788f6c0",
+  "x-oold-version": "0.1.0",
+  "title": "SpecificHelmholtzEnergy",
+  "x-oold-multilang-title": {
+    "en": "Specific Helmholtz Energy"
+  },
+  "description": "$\\textit{Specific Helmholtz Energy}$ is a \"corresponding intensive property\",\n    which is $\\textit{Helmholz Energy}$ per mass of substance involved.\n  Energy has corresponding intensive (size-independent) properties for pure materials. \n  $\\textit{Specific Helmholz Energy}$ is denoted by a lower case $u$,\n   with dimension of energy per mass (SI unit: $joule/kg$).",
+  "allOf": [
+    {
+      "$ref": "SpecificEnergy.schema.json"
+    }
+  ],
+  "@context": [
+    "SpecificEnergy.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "SpecificHelmholtzEnergy": "qkind:SpecificHelmholtzEnergy"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "SpecificHelmholtzEnergy"
+      ]
+    }
+  }
+}

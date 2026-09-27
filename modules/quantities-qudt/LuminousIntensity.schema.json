@@ -1,0 +1,71 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "LuminousIntensity.schema.json",
+  "x-oold-uuid": "cd5084e9-8d8a-541e-b5d1-21ae983fad3d",
+  "x-oold-version": "0.1.0",
+  "title": "LuminousIntensity",
+  "x-oold-multilang-title": {
+    "en": "Luminous intensity",
+    "de": "Lichtstärke"
+  },
+  "description": "Luminous Intensity is a measure of the wavelength-weighted power emitted by a light source in a particular direction per unit solid angle. The weighting is determined by the luminosity function, a standardized model of the sensitivity of the human eye to different wavelengths.",
+  "examples": [
+    {
+      "type": [
+        "LuminousIntensity"
+      ],
+      "value": 1.0,
+      "unit": "candela"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "LuminousIntensity": "qkind:LuminousIntensity",
+      "candela": "qunit:CD",
+      "millicandela": "qunit:MilliCD",
+      "candlepower": "qunit:CP",
+      "kilo_candela": "qunit:KiloCD"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "LuminousIntensity"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "candela",
+        "millicandela",
+        "candlepower",
+        "kilo_candela"
+      ],
+      "default": "candela"
+    }
+  },
+  "x-oold-context": {
+    "LuminousIntensity": {
+      "http://dbpedia.org/resource/Luminous_intensity": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      },
+      "https://si-digital-framework.org/quantities/LUIN": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

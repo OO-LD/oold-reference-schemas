@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "SoundParticleDisplacement.schema.json",
+  "x-oold-uuid": "7ceec259-ea9e-5770-87a6-70ecd631ab27",
+  "x-oold-version": "0.1.0",
+  "title": "SoundParticleDisplacement",
+  "x-oold-multilang-title": {
+    "en": "Sound Particle Displacement"
+  },
+  "description": "Sound Particle Displacement is the nstantaneous displacement of a particle in a medium from what would be its position in the absence of sound waves.",
+  "allOf": [
+    {
+      "$ref": "Length.schema.json"
+    }
+  ],
+  "@context": [
+    "Length.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "SoundParticleDisplacement": "qkind:SoundParticleDisplacement"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "SoundParticleDisplacement"
+      ]
+    }
+  }
+}

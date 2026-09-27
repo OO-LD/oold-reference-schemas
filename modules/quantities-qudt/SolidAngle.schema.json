@@ -1,0 +1,49 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "SolidAngle.schema.json",
+  "x-oold-uuid": "180b2bc6-09d1-5ed7-a4e6-b95a952dfb05",
+  "x-oold-version": "0.1.0",
+  "title": "SolidAngle",
+  "x-oold-multilang-title": {
+    "en": "Solid angle",
+    "de": "Raumwinkel"
+  },
+  "description": "The solid angle subtended by a surface S is defined as the surface area of a unit sphere covered by the surface S's projection onto the sphere. A solid angle is related to the surface of a sphere in the same way an ordinary angle is related to the circumference of a circle. Since the total surface area of the unit sphere is 4*pi, the measure of solid angle will always be between 0 and 4*pi.",
+  "allOf": [
+    {
+      "$ref": "AreaRatio.schema.json"
+    }
+  ],
+  "@context": [
+    "AreaRatio.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "SolidAngle": "qkind:SolidAngle"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "SolidAngle"
+      ]
+    }
+  },
+  "x-oold-context": {
+    "SolidAngle": {
+      "http://dbpedia.org/resource/Solid_angle": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      },
+      "https://si-digital-framework.org/quantities/ANGS": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

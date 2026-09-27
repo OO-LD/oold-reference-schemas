@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ThermalExpansionCoefficient.schema.json",
+  "x-oold-uuid": "5fa26223-beca-5098-96be-e33fd38ea86a",
+  "x-oold-version": "0.1.0",
+  "title": "ThermalExpansionCoefficient",
+  "x-oold-multilang-title": {
+    "en": "Thermal Expansion Coefficient"
+  },
+  "description": "The \"Thermal Expansion Coefficient\" is a measure of the thermal expansion coefficient of a material, which expresses its elongation (as a ratio) per temperature difference. It is usually measured in 1/K. A positive elongation per (positive) rise of temperature is expressed by a positive value.",
+  "allOf": [
+    {
+      "$ref": "ExpansionRatio.schema.json"
+    }
+  ],
+  "@context": [
+    "ExpansionRatio.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ThermalExpansionCoefficient": "qkind:ThermalExpansionCoefficient"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ThermalExpansionCoefficient"
+      ]
+    }
+  }
+}

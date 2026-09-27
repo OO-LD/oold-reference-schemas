@@ -1,0 +1,48 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "AmountOfSubstancePerMassPressure.schema.json",
+  "x-oold-uuid": "6edd0e59-86c8-5950-824d-854922387dc3",
+  "x-oold-version": "0.1.0",
+  "title": "AmountOfSubstancePerMassPressure",
+  "x-oold-multilang-title": {
+    "en": "Molar Mass variation due to Pressure"
+  },
+  "description": "The \"Variation of Molar Mass\" of a gas as a function of pressure.",
+  "examples": [
+    {
+      "type": [
+        "AmountOfSubstancePerMassPressure"
+      ],
+      "value": 1.0,
+      "unit": "mole_per_kilo_gram_per_pascal"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "AmountOfSubstancePerMassPressure": "qkind:AmountOfSubstancePerMassPressure",
+      "mole_per_kilo_gram_per_pascal": "qunit:MOL-PER-KiloGM-PA",
+      "mole_per_gram_per_pascal": "qunit:MOL-PER-GM-PA"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "AmountOfSubstancePerMassPressure"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "mole_per_kilo_gram_per_pascal",
+        "mole_per_gram_per_pascal"
+      ],
+      "default": "mole_per_kilo_gram_per_pascal"
+    }
+  }
+}

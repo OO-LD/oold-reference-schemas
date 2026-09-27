@@ -1,0 +1,29 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "LengthRatio.schema.json",
+  "x-oold-uuid": "031793bb-135f-5bab-91e4-6bbf96621f93",
+  "x-oold-version": "0.1.0",
+  "title": "LengthRatio",
+  "x-oold-multilang-title": {
+    "en": "Length Ratio"
+  },
+  "allOf": [
+    {
+      "$ref": "DimensionlessRatio.schema.json"
+    }
+  ],
+  "@context": [
+    "DimensionlessRatio.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "LengthRatio": "qkind:LengthRatio"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "LengthRatio"
+      ]
+    }
+  }
+}

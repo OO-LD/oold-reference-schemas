@@ -1,0 +1,29 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "NuclearEnergy.schema.json",
+  "x-oold-uuid": "00fcca05-152e-5a99-b668-44586776938b",
+  "x-oold-version": "0.1.0",
+  "title": "NuclearEnergy",
+  "x-oold-multilang-title": {
+    "en": "Nuclear energy"
+  },
+  "allOf": [
+    {
+      "$ref": "Energy.schema.json"
+    }
+  ],
+  "@context": [
+    "Energy.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "NuclearEnergy": "qkind:NuclearEnergy"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "NuclearEnergy"
+      ]
+    }
+  }
+}

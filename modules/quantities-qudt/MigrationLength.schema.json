@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MigrationLength.schema.json",
+  "x-oold-uuid": "4fe6cc8e-0eb6-5db8-89f4-b790342383cb",
+  "x-oold-version": "0.1.0",
+  "title": "MigrationLength",
+  "x-oold-multilang-title": {
+    "en": "Migration Length"
+  },
+  "description": "\"Migration Length\" is the square root of the migration area.",
+  "allOf": [
+    {
+      "$ref": "Length.schema.json"
+    }
+  ],
+  "@context": [
+    "Length.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "MigrationLength": "qkind:MigrationLength"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "MigrationLength"
+      ]
+    }
+  }
+}

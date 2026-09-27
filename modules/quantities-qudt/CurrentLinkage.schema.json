@@ -1,0 +1,68 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "CurrentLinkage.schema.json",
+  "x-oold-uuid": "9c76ad47-f403-50a2-884c-90c49786ec6f",
+  "x-oold-version": "0.1.0",
+  "title": "CurrentLinkage",
+  "x-oold-multilang-title": {
+    "en": "Current Linkage"
+  },
+  "description": "\"Current Linkage\" is the net electric current through a surface delimited by a closed loop.",
+  "examples": [
+    {
+      "type": [
+        "CurrentLinkage"
+      ],
+      "value": 1.0,
+      "unit": "ampere"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "CurrentLinkage": "qkind:CurrentLinkage",
+      "ampere": "qunit:A",
+      "atto_ampere": "qunit:AttoA",
+      "femto_ampere": "qunit:FemtoA",
+      "pico_ampere": "qunit:PicoA",
+      "nano_ampere": "qunit:NanoA",
+      "micro_ampere": "qunit:MicroA",
+      "milli_ampere": "qunit:MilliA",
+      "kilo_ampere": "qunit:KiloA",
+      "mega_ampere": "qunit:MegaA",
+      "giga_ampere": "qunit:GigaA",
+      "tera_ampere": "qunit:TeraA",
+      "peta_ampere": "qunit:PetaA"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "CurrentLinkage"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "ampere",
+        "atto_ampere",
+        "femto_ampere",
+        "pico_ampere",
+        "nano_ampere",
+        "micro_ampere",
+        "milli_ampere",
+        "kilo_ampere",
+        "mega_ampere",
+        "giga_ampere",
+        "tera_ampere",
+        "peta_ampere"
+      ],
+      "default": "ampere"
+    }
+  }
+}

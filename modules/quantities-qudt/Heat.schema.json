@@ -1,0 +1,42 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Heat.schema.json",
+  "x-oold-uuid": "cba88507-fe87-5a5f-bebc-2a29a5691f03",
+  "x-oold-version": "0.1.0",
+  "title": "Heat",
+  "x-oold-multilang-title": {
+    "en": "Heat",
+    "de": "Wärme"
+  },
+  "description": "\"Heat\" is the energy transferred by a thermal process.  Heat can be measured in terms of the dynamical units of energy, as the erg, joule, etc., or in terms of the amount of energy required to produce a definite thermal change in some substance, as, for example, the energy required per degree to raise the temperature of a unit mass of water at some temperature ( calorie, Btu).",
+  "allOf": [
+    {
+      "$ref": "ThermalEnergy.schema.json"
+    }
+  ],
+  "@context": [
+    "ThermalEnergy.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Heat": "qkind:Heat"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Heat"
+      ]
+    }
+  },
+  "x-oold-context": {
+    "Heat": {
+      "http://dbpedia.org/resource/Heat": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

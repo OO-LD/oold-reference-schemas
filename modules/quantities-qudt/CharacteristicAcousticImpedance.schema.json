@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "CharacteristicAcousticImpedance.schema.json",
+  "x-oold-uuid": "8fab4f29-a54f-56db-8cab-bd1cb60b9501",
+  "x-oold-version": "0.1.0",
+  "title": "CharacteristicAcousticImpedance",
+  "x-oold-multilang-title": {
+    "en": "Characteristic Acoustic Impedance"
+  },
+  "description": "Characteristic impedance at a point in a non-dissipative medium and for a plane progressive wave, the quotient of the sound pressure $p$ by the component of the sound particle velocity $v$ in the direction of the wave propagation.",
+  "allOf": [
+    {
+      "$ref": "AcousticImpedance.schema.json"
+    }
+  ],
+  "@context": [
+    "AcousticImpedance.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "CharacteristicAcousticImpedance": "qkind:CharacteristicAcousticImpedance"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "CharacteristicAcousticImpedance"
+      ]
+    }
+  }
+}

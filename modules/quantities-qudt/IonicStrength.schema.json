@@ -1,0 +1,68 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "IonicStrength.schema.json",
+  "x-oold-uuid": "b691a525-fb3f-5892-a203-e1246382b04b",
+  "x-oold-version": "0.1.0",
+  "title": "IonicStrength",
+  "x-oold-multilang-title": {
+    "en": "Ionic Strength"
+  },
+  "description": "The \"Ionic Strength\" of a solution is a measure of the concentration of ions in that solution.",
+  "examples": [
+    {
+      "type": [
+        "IonicStrength"
+      ],
+      "value": 1.0,
+      "unit": "mole_per_kilo_gram"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "IonicStrength": "qkind:IonicStrength",
+      "mole_per_kilo_gram": "qunit:MOL-PER-KiloGM",
+      "femto_mole_per_kilo_gram": "qunit:FemtoMOL-PER-KiloGM",
+      "pico_mole_per_kilo_gram": "qunit:PicoMOL-PER-KiloGM",
+      "nano_mole_per_kilo_gram": "qunit:NanoMOL-PER-KiloGM",
+      "nano_mole_per_gram": "qunit:NanoMOL-PER-GM",
+      "micro_mole_per_kilo_gram": "qunit:MicroMOL-PER-KiloGM",
+      "milli_mole_per_kilo_gram": "qunit:MilliMOL-PER-KiloGM",
+      "micro_mole_per_gram": "qunit:MicroMOL-PER-GM",
+      "centi_mole_per_kilo_gram": "qunit:CentiMOL-PER-KiloGM",
+      "milli_mole_per_gram": "qunit:MilliMOL-PER-GM",
+      "kilo_mole_per_kilo_gram": "qunit:KiloMOL-PER-KiloGM",
+      "mole_per_gram": "qunit:MOL-PER-GM"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "IonicStrength"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "mole_per_kilo_gram",
+        "femto_mole_per_kilo_gram",
+        "pico_mole_per_kilo_gram",
+        "nano_mole_per_kilo_gram",
+        "nano_mole_per_gram",
+        "micro_mole_per_kilo_gram",
+        "milli_mole_per_kilo_gram",
+        "micro_mole_per_gram",
+        "centi_mole_per_kilo_gram",
+        "milli_mole_per_gram",
+        "kilo_mole_per_kilo_gram",
+        "mole_per_gram"
+      ],
+      "default": "mole_per_kilo_gram"
+    }
+  }
+}

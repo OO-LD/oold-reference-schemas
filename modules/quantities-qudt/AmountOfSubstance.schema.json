@@ -1,0 +1,79 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "AmountOfSubstance.schema.json",
+  "x-oold-uuid": "2f222621-d774-5171-93dc-5eab674e3721",
+  "x-oold-version": "0.1.0",
+  "title": "AmountOfSubstance",
+  "x-oold-multilang-title": {
+    "en": "Amount of substance",
+    "de": "Stoffmenge"
+  },
+  "description": "$\\textit{Amount of Substance}$ is a standards-defined quantity that measures the size of an ensemble of elementary entities,\n   such as atoms, molecules, electrons, and other particles. \n  It is sometimes referred to as chemical amount.\n\n  The International System of Units (SI) defines the amount of substance to be proportional to the number of elementary entities present. \n  The SI unit for amount of substance is mole. \n  It has the unit symbol $mol$.\n\n  The mole is defined as the amount of substance that contains an equal number of elementary entities as there are atoms in 0.012kg of the isotope carbon-12. \n  This number is called Avogadro's number and has the value $6.02214179(30) \\times 10^{23}$. \n  \n  The only other unit of amount of substance in current use is the $pound-mole$ with the symbol $lb-mol$,\n   which is sometimes used in chemical engineering in the United States. \n  One $pound-mole$ is exactly $453.59237 mol$.",
+  "examples": [
+    {
+      "type": [
+        "AmountOfSubstance"
+      ],
+      "value": 1.0,
+      "unit": "mole"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "AmountOfSubstance": "qkind:AmountOfSubstance",
+      "mole": "qunit:MOL",
+      "femto_mole": "qunit:FemtoMOL",
+      "pico_mole": "qunit:PicoMOL",
+      "nano_mole": "qunit:NanoMOL",
+      "micro_mole": "qunit:MicroMOL",
+      "milli_mole": "qunit:MilliMOL",
+      "centi_mole": "qunit:CentiMOL",
+      "kilo_mole": "qunit:KiloMOL"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "AmountOfSubstance"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "mole",
+        "femto_mole",
+        "pico_mole",
+        "nano_mole",
+        "micro_mole",
+        "milli_mole",
+        "centi_mole",
+        "kilo_mole"
+      ],
+      "default": "mole"
+    }
+  },
+  "x-oold-context": {
+    "AmountOfSubstance": {
+      "http://dbpedia.org/resource/Amount_of_substance": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      },
+      "https://si-digital-framework.org/quantities/AMSU": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

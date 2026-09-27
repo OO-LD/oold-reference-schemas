@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ThermalAdmittance.schema.json",
+  "x-oold-uuid": "b82f3ae5-f1c2-5607-aac3-8b12aba13dd7",
+  "x-oold-version": "0.1.0",
+  "title": "ThermalAdmittance",
+  "x-oold-multilang-title": {
+    "en": "Thermal Admittance"
+  },
+  "description": "The heat transfer coefficient is also known as thermal admittance in the sense that the material may be seen as admitting heat to flow.",
+  "allOf": [
+    {
+      "$ref": "CoefficientOfHeatTransfer.schema.json"
+    }
+  ],
+  "@context": [
+    "CoefficientOfHeatTransfer.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ThermalAdmittance": "qkind:ThermalAdmittance"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ThermalAdmittance"
+      ]
+    }
+  }
+}

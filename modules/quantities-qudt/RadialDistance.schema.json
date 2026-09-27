@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "RadialDistance.schema.json",
+  "x-oold-uuid": "1c582dc8-1597-51f9-9cb8-3fa8f973389b",
+  "x-oold-version": "0.1.0",
+  "title": "RadialDistance",
+  "x-oold-multilang-title": {
+    "en": "Radial Distance"
+  },
+  "description": "In classical geometry, the \"Radial Distance\" is a coordinate in polar coordinate systems (r, $\\theta$). Basically the radial distance is the scalar Euclidean distance between a point and the origin of the system of coordinates.",
+  "allOf": [
+    {
+      "$ref": "Length.schema.json"
+    }
+  ],
+  "@context": [
+    "Length.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "RadialDistance": "qkind:RadialDistance"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "RadialDistance"
+      ]
+    }
+  }
+}

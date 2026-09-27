@@ -1,0 +1,48 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ThermalInsulance.schema.json",
+  "x-oold-uuid": "8139b637-34d3-516c-827b-33f08ced96fb",
+  "x-oold-version": "0.1.0",
+  "title": "ThermalInsulance",
+  "x-oold-multilang-title": {
+    "en": "Thermal Insulance"
+  },
+  "description": "$\\textit{Thermal Insulance}$ is the reduction of heat transfer (the transfer of thermal energy between objects of differing temperature) between objects in thermal contact or in range of radiative influence. In building technology, this quantity is often called $\\textit{Thermal Resistance}$, with the symbol $R$.",
+  "examples": [
+    {
+      "type": [
+        "ThermalInsulance"
+      ],
+      "value": 1.0,
+      "unit": "kelvin_meter_squared_per_watt"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ThermalInsulance": "qkind:ThermalInsulance",
+      "kelvin_meter_squared_per_watt": "qunit:M2-K-PER-W",
+      "clo_unit": "qunit:CLO"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ThermalInsulance"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "kelvin_meter_squared_per_watt",
+        "clo_unit"
+      ],
+      "default": "kelvin_meter_squared_per_watt"
+    }
+  }
+}

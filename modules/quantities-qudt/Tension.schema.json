@@ -1,0 +1,40 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Tension.schema.json",
+  "x-oold-uuid": "4874b6ee-8d7b-5f65-a7fe-5868c48fa956",
+  "x-oold-version": "0.1.0",
+  "title": "Tension",
+  "x-oold-multilang-title": {
+    "en": "Tension"
+  },
+  "allOf": [
+    {
+      "$ref": "ForceMagnitude.schema.json"
+    }
+  ],
+  "@context": [
+    "ForceMagnitude.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Tension": "qkind:Tension"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Tension"
+      ]
+    }
+  },
+  "x-oold-context": {
+    "Tension": {
+      "http://dbpedia.org/resource/Tension": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

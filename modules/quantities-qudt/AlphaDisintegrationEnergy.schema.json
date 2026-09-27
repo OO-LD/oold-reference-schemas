@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "AlphaDisintegrationEnergy.schema.json",
+  "x-oold-uuid": "fe05b78a-868b-51be-8f9b-cc20d5778090",
+  "x-oold-version": "0.1.0",
+  "title": "AlphaDisintegrationEnergy",
+  "x-oold-multilang-title": {
+    "en": "Alpha Disintegration Energy"
+  },
+  "description": "The \"Alpha Disintegration Energy\" is the sum of the kinetic energy of the alpha-particle produced in the disintegration process and the recoil energy of the product atom in the reference frame in which the emitting nucleus is at rest before its disintegration.",
+  "allOf": [
+    {
+      "$ref": "Energy.schema.json"
+    }
+  ],
+  "@context": [
+    "Energy.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "AlphaDisintegrationEnergy": "qkind:AlphaDisintegrationEnergy"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "AlphaDisintegrationEnergy"
+      ]
+    }
+  }
+}

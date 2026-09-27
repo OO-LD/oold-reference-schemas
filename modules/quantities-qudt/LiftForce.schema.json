@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "LiftForce.schema.json",
+  "x-oold-uuid": "640ee9c8-ab96-5ca2-ae9a-83571a2e057e",
+  "x-oold-version": "0.1.0",
+  "title": "LiftForce",
+  "x-oold-multilang-title": {
+    "en": "Lift Force"
+  },
+  "description": "The lift force, lifting force or simply lift is the sum of all the forces on a body that force it to move perpendicular to the direction of flow.",
+  "allOf": [
+    {
+      "$ref": "Force.schema.json"
+    }
+  ],
+  "@context": [
+    "Force.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "LiftForce": "qkind:LiftForce"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "LiftForce"
+      ]
+    }
+  }
+}

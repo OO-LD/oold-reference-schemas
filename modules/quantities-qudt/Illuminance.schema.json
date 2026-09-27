@@ -1,0 +1,49 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Illuminance.schema.json",
+  "x-oold-uuid": "0e767858-fc7a-5df0-a3be-780057b78446",
+  "x-oold-version": "0.1.0",
+  "title": "Illuminance",
+  "x-oold-multilang-title": {
+    "en": "Illuminance",
+    "de": "Beleuchtungsstärke"
+  },
+  "description": "Illuminance is the total luminous flux incident on a surface, per unit area. It is a measure of the intensity of the incident light, wavelength-weighted by the luminosity function to correlate with human brightness perception.",
+  "allOf": [
+    {
+      "$ref": "LuminousFluxPerArea.schema.json"
+    }
+  ],
+  "@context": [
+    "LuminousFluxPerArea.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Illuminance": "qkind:Illuminance"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Illuminance"
+      ]
+    }
+  },
+  "x-oold-context": {
+    "Illuminance": {
+      "http://dbpedia.org/resource/Illuminance": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      },
+      "https://si-digital-framework.org/quantities/ILLU": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "CubicExpansionCoefficient.schema.json",
+  "x-oold-uuid": "74621602-59c6-5b45-be63-69b78ee192aa",
+  "x-oold-version": "0.1.0",
+  "title": "CubicExpansionCoefficient",
+  "x-oold-multilang-title": {
+    "en": "Cubic expansion coefficient",
+    "de": "Volumenausdehnungskoeffizient"
+  },
+  "allOf": [
+    {
+      "$ref": "ExpansionRatio.schema.json"
+    }
+  ],
+  "@context": [
+    "ExpansionRatio.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "CubicExpansionCoefficient": "qkind:CubicExpansionCoefficient"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "CubicExpansionCoefficient"
+      ]
+    }
+  }
+}

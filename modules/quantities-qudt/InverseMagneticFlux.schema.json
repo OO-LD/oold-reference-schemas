@@ -1,0 +1,47 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "InverseMagneticFlux.schema.json",
+  "x-oold-uuid": "ec17c4ff-58f0-52d4-8957-2a95d9024b78",
+  "x-oold-version": "0.1.0",
+  "title": "InverseMagneticFlux",
+  "x-oold-multilang-title": {
+    "en": "Inverse Magnetic Flux"
+  },
+  "examples": [
+    {
+      "type": [
+        "InverseMagneticFlux"
+      ],
+      "value": 1.0,
+      "unit": "hertz_per_volt"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "InverseMagneticFlux": "qkind:InverseMagneticFlux",
+      "hertz_per_volt": "qunit:HZ-PER-V",
+      "per_weber": "qunit:PER-WB"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "InverseMagneticFlux"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "hertz_per_volt",
+        "per_weber"
+      ],
+      "default": "hertz_per_volt"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "WebTime.schema.json",
+  "x-oold-uuid": "02ed3a47-8531-578b-90f1-1bcaefa3f86c",
+  "x-oold-version": "0.1.0",
+  "title": "WebTime",
+  "x-oold-multilang-title": {
+    "en": "Web Time"
+  },
+  "allOf": [
+    {
+      "$ref": "Time.schema.json"
+    }
+  ],
+  "@context": [
+    "Time.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "WebTime": "qkind:WebTime"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "WebTime"
+      ]
+    }
+  }
+}

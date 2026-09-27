@@ -1,0 +1,87 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Length.schema.json",
+  "x-oold-uuid": "ee9c7e5c-343e-542c-b5a8-b4648315902f",
+  "x-oold-version": "0.1.0",
+  "title": "Length",
+  "x-oold-multilang-title": {
+    "en": "Length",
+    "de": "Länge"
+  },
+  "description": "In geometric measurements, length most commonly refers to the est dimension of an object. In some contexts, the term \"length\" is reserved for a certain dimension of an object along which the length is measured.",
+  "examples": [
+    {
+      "type": [
+        "Length"
+      ],
+      "value": 1.0,
+      "unit": "meter"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Length": "qkind:Length",
+      "meter": "qunit:M",
+      "fermi": "qunit:FM",
+      "pico_meter": "qunit:PicoM",
+      "nano_meter": "qunit:NanoM",
+      "micro_meter": "qunit:MicroM",
+      "milli_meter": "qunit:MilliM",
+      "centi_meter": "qunit:CentiM",
+      "deci_meter": "qunit:DeciM",
+      "deca_meter": "qunit:DecaM",
+      "hecto_meter": "qunit:HectoM",
+      "kilo_meter": "qunit:KiloM",
+      "astronomical_unit": "qunit:AU"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Length"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "meter",
+        "fermi",
+        "pico_meter",
+        "nano_meter",
+        "micro_meter",
+        "milli_meter",
+        "centi_meter",
+        "deci_meter",
+        "deca_meter",
+        "hecto_meter",
+        "kilo_meter",
+        "astronomical_unit"
+      ],
+      "default": "meter"
+    }
+  },
+  "x-oold-context": {
+    "Length": {
+      "http://dbpedia.org/resource/Length": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      },
+      "https://si-digital-framework.org/quantities/LENG": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

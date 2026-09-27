@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ConvectiveHeatTransfer.schema.json",
+  "x-oold-uuid": "145875ad-d7eb-5b64-b048-ff90e703a942",
+  "x-oold-version": "0.1.0",
+  "title": "ConvectiveHeatTransfer",
+  "x-oold-multilang-title": {
+    "en": "Convective Heat Transfer"
+  },
+  "description": "\"Convective Heat Transfer\" is convective heat transfer coefficient multiplied by temperature difference and exchange area.",
+  "allOf": [
+    {
+      "$ref": "HeatFlowRate.schema.json"
+    }
+  ],
+  "@context": [
+    "HeatFlowRate.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ConvectiveHeatTransfer": "qkind:ConvectiveHeatTransfer"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ConvectiveHeatTransfer"
+      ]
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ThermalEnergy.schema.json",
+  "x-oold-uuid": "487ed07f-775b-5dc2-b0f8-185d06e33fb8",
+  "x-oold-version": "0.1.0",
+  "title": "ThermalEnergy",
+  "x-oold-multilang-title": {
+    "en": "Thermal Energy"
+  },
+  "description": "\"Thermal Energy\" is the portion of the thermodynamic or internal energy of a system that is responsible for the temperature of the system. From a macroscopic thermodynamic description, the thermal energy of a system is given by its constant volume specific heat capacity C(T), a temperature coefficient also called thermal capacity, at any given absolute temperature (T): $U_{thermal} = C(T) \\cdot T$.",
+  "allOf": [
+    {
+      "$ref": "Energy.schema.json"
+    }
+  ],
+  "@context": [
+    "Energy.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ThermalEnergy": "qkind:ThermalEnergy"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ThermalEnergy"
+      ]
+    }
+  },
+  "x-oold-context": {
+    "ThermalEnergy": {
+      "http://dbpedia.org/resource/Thermal_energy": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

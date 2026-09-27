@@ -1,0 +1,45 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "AreaTemperature.schema.json",
+  "x-oold-uuid": "2c27b4cb-42c8-5429-9931-e28ebd6a601b",
+  "x-oold-version": "0.1.0",
+  "title": "AreaTemperature",
+  "x-oold-multilang-title": {
+    "en": "Area Temperature"
+  },
+  "examples": [
+    {
+      "type": [
+        "AreaTemperature"
+      ],
+      "value": 1.0,
+      "unit": "kelvin_meter_squared"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "AreaTemperature": "qkind:AreaTemperature",
+      "kelvin_meter_squared": "qunit:M2-K"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "AreaTemperature"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "kelvin_meter_squared"
+      ],
+      "default": "kelvin_meter_squared"
+    }
+  }
+}

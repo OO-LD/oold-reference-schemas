@@ -1,0 +1,65 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "SpecificEntropy.schema.json",
+  "x-oold-uuid": "96b8069e-a0bd-5888-92e7-efe11651bcf1",
+  "x-oold-version": "0.1.0",
+  "title": "SpecificEntropy",
+  "x-oold-multilang-title": {
+    "en": "Specific Entropy"
+  },
+  "description": "\"Specific Entropy\" is entropy per unit of mass.",
+  "examples": [
+    {
+      "type": [
+        "SpecificEntropy"
+      ],
+      "value": 1.0,
+      "unit": "joule_per_kelvin_per_kilo_gram"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "SpecificEntropy": "qkind:SpecificEntropy",
+      "joule_per_kelvin_per_kilo_gram": "qunit:J-PER-KiloGM-K",
+      "joule_per_gram_per_kelvin": "qunit:J-PER-GM-K",
+      "kilo_joule_per_kelvin_per_kilo_gram": "qunit:KiloJ-PER-KiloGM-K",
+      "joule_per_celsius_per_kilo_gram": "qunit:J-PER-KiloGM-DEG_C",
+      "joule_per_celsius_per_gram": "qunit:J-PER-GM-DEG_C"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "SpecificEntropy"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "joule_per_kelvin_per_kilo_gram",
+        "joule_per_celsius_per_kilo_gram",
+        "joule_per_gram_per_kelvin",
+        "joule_per_celsius_per_gram",
+        "kilo_joule_per_kelvin_per_kilo_gram"
+      ],
+      "default": "joule_per_kelvin_per_kilo_gram"
+    }
+  },
+  "x-oold-context": {
+    "SpecificEntropy": {
+      "http://dbpedia.org/resource/Entropy": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

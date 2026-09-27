@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "GravitationalAttraction.schema.json",
+  "x-oold-uuid": "2389ed86-3953-5a34-9689-39f5fa9559b2",
+  "x-oold-version": "0.1.0",
+  "title": "GravitationalAttraction",
+  "x-oold-multilang-title": {
+    "en": "Gravitational Attraction"
+  },
+  "description": "The force of attraction between all masses in the universe; especially the attraction of the earth's mass for bodies near its surface; the more remote the body the less the gravity; the gravitation between two bodies is proportional to the product of their masses and inversely proportional to the square of the distance between them.",
+  "allOf": [
+    {
+      "$ref": "Force.schema.json"
+    }
+  ],
+  "@context": [
+    "Force.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "GravitationalAttraction": "qkind:GravitationalAttraction"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "GravitationalAttraction"
+      ]
+    }
+  }
+}

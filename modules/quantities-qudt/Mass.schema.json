@@ -1,0 +1,115 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Mass.schema.json",
+  "x-oold-uuid": "e9be062d-e2d1-5d10-8913-97a18212f920",
+  "x-oold-version": "0.1.0",
+  "title": "Mass",
+  "x-oold-multilang-title": {
+    "en": "Mass",
+    "de": "Masse"
+  },
+  "description": "In physics, mass, more specifically inertial mass, can be defined as a quantitative measure of an object's resistance to acceleration. The SI unit of mass is the kilogram ($kg$)",
+  "examples": [
+    {
+      "type": [
+        "Mass"
+      ],
+      "value": 1.0,
+      "unit": "kilo_gram"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Mass": "qkind:Mass",
+      "kilo_gram": "qunit:KiloGM",
+      "dalton": "qunit:DA",
+      "femto_gram": "qunit:FemtoGM",
+      "pico_gram": "qunit:PicoGM",
+      "nano_gram": "qunit:NanoGM",
+      "micro_gram": "qunit:MicroGM",
+      "milli_gram": "qunit:MilliGM",
+      "centi_gram": "qunit:CentiGM",
+      "deci_gram": "qunit:DeciGM",
+      "carat": "qunit:CARAT",
+      "gram": "qunit:GM",
+      "deca_gram": "qunit:DecaGM",
+      "ampere_turn": "qunit:TON_Assay",
+      "troy_ounce": "qunit:OZ_TROY",
+      "hecto_gram": "qunit:HectoGM",
+      "troy_pound": "qunit:LB_T",
+      "pound": "qunit:LB",
+      "deci_metric_ton": "qunit:DeciTONNE",
+      "klbm": "qunit:KiloLB",
+      "tn": "qunit:TON",
+      "ton": "qunit:TON_SHORT",
+      "mega_gram": "qunit:MegaGM",
+      "metric_ton": "qunit:TONNE",
+      "knot": "qunit:KiloTONNE",
+      "mega_metric_ton": "qunit:MegaTONNE",
+      "mtn": "qunit:MegaTON"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Mass"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "kilo_gram",
+        "dalton",
+        "femto_gram",
+        "pico_gram",
+        "nano_gram",
+        "micro_gram",
+        "milli_gram",
+        "centi_gram",
+        "deci_gram",
+        "carat",
+        "gram",
+        "deca_gram",
+        "ampere_turn",
+        "troy_ounce",
+        "hecto_gram",
+        "troy_pound",
+        "pound",
+        "deci_metric_ton",
+        "klbm",
+        "tn",
+        "ton",
+        "mega_gram",
+        "metric_ton",
+        "knot",
+        "mtn",
+        "mega_metric_ton"
+      ],
+      "default": "kilo_gram"
+    }
+  },
+  "x-oold-context": {
+    "Mass": {
+      "http://dbpedia.org/resource/Mass": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      },
+      "https://si-digital-framework.org/quantities/MASS": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

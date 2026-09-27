@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Half-ValueThickness.schema.json",
+  "x-oold-uuid": "3c905c5f-f487-5816-b882-78e68e643c27",
+  "x-oold-version": "0.1.0",
+  "title": "Half-ValueThickness",
+  "x-oold-multilang-title": {
+    "en": "Half-Value Thickness"
+  },
+  "description": "The \"Half-Value Thickness\" is the thickness of the material at which the intensity of radiation entering it is reduced by one half.",
+  "allOf": [
+    {
+      "$ref": "Length.schema.json"
+    }
+  ],
+  "@context": [
+    "Length.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Half-ValueThickness": "qkind:Half-ValueThickness"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Half-ValueThickness"
+      ]
+    }
+  }
+}

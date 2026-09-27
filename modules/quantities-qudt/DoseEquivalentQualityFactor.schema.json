@@ -1,0 +1,46 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "DoseEquivalentQualityFactor.schema.json",
+  "x-oold-uuid": "335aa823-b1ee-5c1d-94a3-e6540fe79cc7",
+  "x-oold-version": "0.1.0",
+  "title": "DoseEquivalentQualityFactor",
+  "x-oold-multilang-title": {
+    "en": "Dose Equivalent Quality Factor"
+  },
+  "description": "\"Dose Equivalent Quality Factor\" is a factor in the caculation and measurement of dose equivalent, by which the absorbed dose is to be weighted in order to account for different biological effectiveness of radiations, for radiation protection purposes.",
+  "examples": [
+    {
+      "type": [
+        "DoseEquivalentQualityFactor"
+      ],
+      "value": 1.0,
+      "unit": "unitless"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "DoseEquivalentQualityFactor": "qkind:DoseEquivalentQualityFactor",
+      "unitless": "qunit:UNITLESS"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "DoseEquivalentQualityFactor"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "unitless"
+      ],
+      "default": "unitless"
+    }
+  }
+}

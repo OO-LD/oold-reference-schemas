@@ -1,0 +1,46 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "InternalConversionFactor.schema.json",
+  "x-oold-uuid": "aa15cc29-d89d-51b0-89b7-4915a1b7d332",
+  "x-oold-version": "0.1.0",
+  "title": "InternalConversionFactor",
+  "x-oold-multilang-title": {
+    "en": "InternalConversionFactor"
+  },
+  "description": "The \"InternalConversionFactor\" describes the rate of internal conversion. It is the ratio of the number of internal conversion electrons to the number of gamma quanta emitted by the radioactive atom in a given transition.",
+  "examples": [
+    {
+      "type": [
+        "InternalConversionFactor"
+      ],
+      "value": 1.0,
+      "unit": "unitless"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "InternalConversionFactor": "qkind:InternalConversionFactor",
+      "unitless": "qunit:UNITLESS"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "InternalConversionFactor"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "unitless"
+      ],
+      "default": "unitless"
+    }
+  }
+}

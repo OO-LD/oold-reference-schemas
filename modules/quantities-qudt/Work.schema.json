@@ -1,0 +1,31 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Work.schema.json",
+  "x-oold-uuid": "1be0e061-6fe4-5f6e-9acb-6395577080b5",
+  "x-oold-version": "0.1.0",
+  "title": "Work",
+  "x-oold-multilang-title": {
+    "en": "Work",
+    "de": "Arbeit"
+  },
+  "description": "A force is said to do Work when it acts on a body so that there is a displacement of the point of application, however small, in the direction of the force.  The concepts of work and energy are closely tied to the concept of force because an applied force can do work on an object and cause a change in energy. Energy is defined as the ability to do work. Work is done on an object when an applied force moves it through a distance. Kinetic energy is the energy of an object in motion. The net work is equal to the change in kinetic energy.",
+  "allOf": [
+    {
+      "$ref": "Energy.schema.json"
+    }
+  ],
+  "@context": [
+    "Energy.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Work": "qkind:Work"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Work"
+      ]
+    }
+  }
+}

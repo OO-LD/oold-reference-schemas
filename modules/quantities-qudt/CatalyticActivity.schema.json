@@ -1,0 +1,76 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "CatalyticActivity.schema.json",
+  "x-oold-uuid": "be579463-8aff-5dcd-b9fd-6a34466c98b4",
+  "x-oold-version": "0.1.0",
+  "title": "CatalyticActivity",
+  "x-oold-multilang-title": {
+    "en": "Catalytic Activity"
+  },
+  "description": "An index of the actual or potential activity of a catalyst. The catalytic activity of an enzyme or an enzyme-containing preparation is defined as the property measured by the increase in the rate of conversion of a specified chemical reaction that the enzyme produces in a specified assay system. Catalytic activity is an extensive quantity and is a property of the enzyme, not of the reaction mixture; it is thus conceptually different from rate of conversion although measured by and equidimensional with it. The unit for catalytic activity is the $katal$; it may also be expressed in mol $s^{-1}$. Dimensions: $N T^{-1}$. Former terms such as catalytic ability, catalytic amount, and enzymic activity are no er recommended. Derived quantities are molar catalytic activity, specific catalytic activity, and catalytic activity concentration. Source(s): <a href=\"http://www.answers.com/topic/catalytic-activity-biochemistry\">www.answers.com</a>",
+  "examples": [
+    {
+      "type": [
+        "CatalyticActivity"
+      ],
+      "value": 1.0,
+      "unit": "katal"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "CatalyticActivity": "qkind:CatalyticActivity",
+      "katal": "qunit:KAT",
+      "pico_katal": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/pico_katal",
+      "nano_katal": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/nano_katal",
+      "micro_katal": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/micro_katal",
+      "mole_per_hour": "qunit:MOL-PER-HR",
+      "milli_katal": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/milli_katal",
+      "kilo_mole_per_hour": "qunit:KiloMOL-PER-HR"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "CatalyticActivity"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "katal",
+        "pico_katal",
+        "nano_katal",
+        "micro_katal",
+        "mole_per_hour",
+        "milli_katal",
+        "kilo_mole_per_hour"
+      ],
+      "default": "katal"
+    }
+  },
+  "x-oold-context": {
+    "CatalyticActivity": {
+      "http://dbpedia.org/resource/Catalysis": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      },
+      "https://si-digital-framework.org/quantities/CATA": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

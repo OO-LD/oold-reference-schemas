@@ -1,0 +1,46 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "PhotonRadiance.schema.json",
+  "x-oold-uuid": "cca5fb12-6c33-5044-b494-f4a9e7a34913",
+  "x-oold-version": "0.1.0",
+  "title": "PhotonRadiance",
+  "x-oold-multilang-title": {
+    "en": "Photon Radiance"
+  },
+  "description": "A measure of flux of photons per surface area per solid angle",
+  "examples": [
+    {
+      "type": [
+        "PhotonRadiance"
+      ],
+      "value": 1.0,
+      "unit": "per_meter_squared_per_second_per_steradian"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "PhotonRadiance": "qkind:PhotonRadiance",
+      "per_meter_squared_per_second_per_steradian": "qunit:PER-SEC-M2-SR"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "PhotonRadiance"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "per_meter_squared_per_second_per_steradian"
+      ],
+      "default": "per_meter_squared_per_second_per_steradian"
+    }
+  }
+}

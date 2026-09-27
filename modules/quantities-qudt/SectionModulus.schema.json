@@ -1,0 +1,56 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "SectionModulus.schema.json",
+  "x-oold-uuid": "6431223a-2530-52b9-8a72-e63b4f62ca09",
+  "x-oold-version": "0.1.0",
+  "title": "SectionModulus",
+  "x-oold-multilang-title": {
+    "en": "Section Modulus"
+  },
+  "description": "The Section Modulus is a geometric property for a given cross-section used in the design of beams or flexural members.",
+  "examples": [
+    {
+      "type": [
+        "SectionModulus"
+      ],
+      "value": 1.0,
+      "unit": "meter_cubed"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "SectionModulus": "qkind:SectionModulus",
+      "meter_cubed": "qunit:M3",
+      "micro_meter_cubed": "qunit:MicroM3",
+      "milli_meter_cubed": "qunit:MilliM3",
+      "centi_meter_cubed": "qunit:CentiM3",
+      "deci_meter_cubed": "qunit:DeciM3",
+      "deca_meter_cubed": "qunit:DecaM3"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "SectionModulus"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "meter_cubed",
+        "micro_meter_cubed",
+        "milli_meter_cubed",
+        "centi_meter_cubed",
+        "deci_meter_cubed",
+        "deca_meter_cubed"
+      ],
+      "default": "meter_cubed"
+    }
+  }
+}

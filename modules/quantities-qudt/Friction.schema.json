@@ -1,0 +1,41 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Friction.schema.json",
+  "x-oold-uuid": "92473183-e458-54a8-bd13-de8f0aefff19",
+  "x-oold-version": "0.1.0",
+  "title": "Friction",
+  "x-oold-multilang-title": {
+    "en": "Friction"
+  },
+  "description": "\"Friction\" is the force of two surfaces In contact, or the force of a medium acting on a moving object (that is air on an aircraft). When contacting surfaces move relative to each other, the friction between the two objects converts kinetic energy into thermal energy.",
+  "allOf": [
+    {
+      "$ref": "Force.schema.json"
+    }
+  ],
+  "@context": [
+    "Force.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Friction": "qkind:Friction"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Friction"
+      ]
+    }
+  },
+  "x-oold-context": {
+    "Friction": {
+      "http://dbpedia.org/resource/Friction": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "StochasticProcess.schema.json",
+  "x-oold-uuid": "bec11680-5837-5097-b615-7eb8ac35eab4",
+  "x-oold-version": "0.1.0",
+  "title": "StochasticProcess",
+  "x-oold-multilang-title": {
+    "en": "Stochastic Process"
+  },
+  "description": "In probability theory, a stochastic process, or sometimes random process  is a collection of random variables; this is often used to represent the evolution of some random value, or system, over time. This is the probabilistic counterpart to a deterministic process (or deterministic system).",
+  "allOf": [
+    {
+      "$ref": "Frequency.schema.json"
+    }
+  ],
+  "@context": [
+    "Frequency.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "StochasticProcess": "qkind:StochasticProcess"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "StochasticProcess"
+      ]
+    }
+  },
+  "x-oold-context": {
+    "StochasticProcess": {
+      "http://dbpedia.org/resource/Stochastic_process": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

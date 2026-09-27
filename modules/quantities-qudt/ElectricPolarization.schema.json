@@ -1,0 +1,59 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ElectricPolarization.schema.json",
+  "x-oold-uuid": "b2f047e5-e8fe-5cc8-bc80-399216214caa",
+  "x-oold-version": "0.1.0",
+  "title": "ElectricPolarization",
+  "x-oold-multilang-title": {
+    "en": "Electric polarization",
+    "de": "Elektrische Polarisation"
+  },
+  "description": "\"Electric Polarization\" is the relative shift of positive and negative electric charge in opposite directions within an insulator, or dielectric, induced by an external electric field. Polarization occurs when an electric field distorts the negative cloud of electrons around positive atomic nuclei in a direction opposite the field. This slight separation of charge makes one side of the atom somewhat positive and the opposite side somewhat negative. In some materials whose molecules are permanently polarized by chemical forces, such as water molecules, some of the polarization is caused by molecules rotating into the same alignment under the influence of the electric field. One of the measures of polarization is electric dipole moment, which equals the distance between the slightly shifted centres of positive and negative charge multiplied by the amount of one of the charges. Polarization P in its quantitative meaning is the amount of dipole moment p per unit volume V of a polarized material, P = p/V.",
+  "examples": [
+    {
+      "type": [
+        "ElectricPolarization"
+      ],
+      "value": 1.0,
+      "unit": "coulomb_per_meter_squared"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ElectricPolarization": "qkind:ElectricPolarization",
+      "coulomb_per_meter_squared": "qunit:C-PER-M2",
+      "micro_coulomb_per_meter_squared": "qunit:MicroC-PER-M2",
+      "milli_coulomb_per_meter_squared": "qunit:MilliC-PER-M2",
+      "kilo_coulomb_per_meter_squared": "qunit:KiloC-PER-M2",
+      "coulomb_per_centi_meter_squared": "qunit:C-PER-CentiM2",
+      "coulomb_per_milli_meter_squared": "qunit:C-PER-MilliM2",
+      "mega_coulomb_per_meter_squared": "qunit:MegaC-PER-M2"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ElectricPolarization"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "coulomb_per_meter_squared",
+        "micro_coulomb_per_meter_squared",
+        "milli_coulomb_per_meter_squared",
+        "kilo_coulomb_per_meter_squared",
+        "coulomb_per_centi_meter_squared",
+        "coulomb_per_milli_meter_squared",
+        "mega_coulomb_per_meter_squared"
+      ],
+      "default": "coulomb_per_meter_squared"
+    }
+  }
+}

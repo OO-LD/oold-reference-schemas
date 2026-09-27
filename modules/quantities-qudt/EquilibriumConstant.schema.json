@@ -1,0 +1,46 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "EquilibriumConstant.schema.json",
+  "x-oold-uuid": "b7d41b44-919f-5323-9bac-585d326e7933",
+  "x-oold-version": "0.1.0",
+  "title": "EquilibriumConstant",
+  "x-oold-multilang-title": {
+    "en": "Equilibrium Constant"
+  },
+  "description": "The \"Equlilbrium Constant\", also known as the thermodynamic equilibrium constant, is an expression that gives us a ratio of the products and reactants of a reaction at equilibrium with respect to a specific unit.",
+  "examples": [
+    {
+      "type": [
+        "EquilibriumConstant"
+      ],
+      "value": 1.0,
+      "unit": "unitless"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "EquilibriumConstant": "qkind:EquilibriumConstant",
+      "unitless": "qunit:UNITLESS"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "EquilibriumConstant"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "unitless"
+      ],
+      "default": "unitless"
+    }
+  }
+}

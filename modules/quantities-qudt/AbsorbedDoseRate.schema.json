@@ -1,0 +1,77 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "AbsorbedDoseRate.schema.json",
+  "x-oold-uuid": "2a24ce5e-8c58-5426-b905-fe16c38b632b",
+  "x-oold-version": "0.1.0",
+  "title": "AbsorbedDoseRate",
+  "x-oold-multilang-title": {
+    "en": "Absorbed Dose Rate"
+  },
+  "description": "\"Absorbed Dose Rate\" is the absorbed dose of ionizing radiation imparted at a given location per unit of time (second, minute, hour, or day).",
+  "examples": [
+    {
+      "type": [
+        "AbsorbedDoseRate"
+      ],
+      "value": 1.0,
+      "unit": "gray_per_second"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "AbsorbedDoseRate": "qkind:AbsorbedDoseRate",
+      "gray_per_second": "qunit:GRAY-PER-SEC",
+      "nano_sievert_per_hour": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/nano_sievert_per_hour",
+      "micro_sievert_per_hour": "qunit:MicroSV-PER-HR",
+      "nano_gray_per_second": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/nano_gray_per_second",
+      "milli_sievert_per_hour": "qunit:MilliSV-PER-HR",
+      "micro_gray_per_second": "qunit:MicroGRAY-PER-SEC",
+      "sievert_per_hour": "qunit:SV-PER-HR",
+      "milli_gray_per_second": "qunit:MilliGRAY-PER-SEC",
+      "watt_per_kilo_gram": "qunit:W-PER-KiloGM",
+      "watt_per_gram": "qunit:W-PER-GM",
+      "milli_watt_per_milli_gram": "qunit:MilliW-PER-MilliGM"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "AbsorbedDoseRate"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "gray_per_second",
+        "nano_sievert_per_hour",
+        "micro_sievert_per_hour",
+        "nano_gray_per_second",
+        "milli_sievert_per_hour",
+        "micro_gray_per_second",
+        "sievert_per_hour",
+        "milli_gray_per_second",
+        "watt_per_kilo_gram",
+        "watt_per_gram",
+        "milli_watt_per_milli_gram"
+      ],
+      "default": "gray_per_second"
+    }
+  },
+  "x-oold-context": {
+    "AbsorbedDoseRate": {
+      "https://si-digital-framework.org/quantities/ABDR": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MomentOfInertia_Y.schema.json",
+  "x-oold-uuid": "3ddd409f-a063-55f8-83ce-a73d722628b0",
+  "x-oold-version": "0.1.0",
+  "title": "MomentOfInertia_Y",
+  "x-oold-multilang-title": {
+    "en": "Moment of Inertia in the Y axis"
+  },
+  "description": "The rotational inertia or resistance to change in direction or speed of rotation about a defined axis.",
+  "allOf": [
+    {
+      "$ref": "MomentOfInertia.schema.json"
+    }
+  ],
+  "@context": [
+    "MomentOfInertia.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "MomentOfInertia_Y": "qkind:MomentOfInertia_Y"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "MomentOfInertia_Y"
+      ]
+    }
+  }
+}

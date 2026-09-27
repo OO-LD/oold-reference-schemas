@@ -1,0 +1,47 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "GasPressureDependentFlowCoefficient.schema.json",
+  "x-oold-uuid": "4fc8d13b-628d-5279-ac5a-bdb2c40305af",
+  "x-oold-version": "0.1.0",
+  "title": "GasPressureDependentFlowCoefficient",
+  "x-oold-multilang-title": {
+    "en": "Gas Pressure Dependent Flow Coefficient"
+  },
+  "description": "Slope of the flow coefficient with respect to gas pressure.",
+  "examples": [
+    {
+      "type": [
+        "GasPressureDependentFlowCoefficient"
+      ],
+      "value": 1.0,
+      "unit": "meter_squared_per_pascal_per_second"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "GasPressureDependentFlowCoefficient": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/GasPressureDependentFlowCoefficient.schema.json",
+      "meter_squared_per_pascal_per_second": "qunit:M2-PER-SEC-PA",
+      "liter_per_meter_per_milli_bar_per_second": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/liter_per_meter_per_milli_bar_per_second"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "GasPressureDependentFlowCoefficient"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "meter_squared_per_pascal_per_second",
+        "liter_per_meter_per_milli_bar_per_second"
+      ],
+      "default": "meter_squared_per_pascal_per_second"
+    }
+  }
+}

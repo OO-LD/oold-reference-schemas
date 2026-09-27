@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MagneticQuantumNumber.schema.json",
+  "x-oold-uuid": "42786048-fcdf-5843-a54b-de7957c34c5e",
+  "x-oold-version": "0.1.0",
+  "title": "MagneticQuantumNumber",
+  "x-oold-multilang-title": {
+    "en": "Magnetic Quantum Number"
+  },
+  "description": "The \"Magnetic Quantum Number\" describes the specific orbital (or \"cloud\") within that subshell, and yields the projection of the orbital angular momentum along a specified axis.",
+  "allOf": [
+    {
+      "$ref": "QuantumNumber.schema.json"
+    }
+  ],
+  "@context": [
+    "QuantumNumber.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "MagneticQuantumNumber": "qkind:MagneticQuantumNumber"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "MagneticQuantumNumber"
+      ]
+    }
+  }
+}

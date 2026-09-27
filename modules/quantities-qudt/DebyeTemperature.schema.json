@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "DebyeTemperature.schema.json",
+  "x-oold-uuid": "bb7902b2-0906-5fa5-8581-83c383ed4254",
+  "x-oold-version": "0.1.0",
+  "title": "DebyeTemperature",
+  "x-oold-multilang-title": {
+    "en": "Debye Temperature"
+  },
+  "description": "\"Debye Temperature\" is the temperature at which the highest-frequency mode (and hence all modes) are excited.",
+  "allOf": [
+    {
+      "$ref": "Temperature.schema.json"
+    }
+  ],
+  "@context": [
+    "Temperature.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "DebyeTemperature": "qkind:DebyeTemperature"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "DebyeTemperature"
+      ]
+    }
+  }
+}

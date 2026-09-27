@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ParticleCurrent.schema.json",
+  "x-oold-uuid": "696c218a-30c3-5d4d-8c07-a1ecf9f185c7",
+  "x-oold-version": "0.1.0",
+  "title": "ParticleCurrent",
+  "x-oold-multilang-title": {
+    "en": "Particle Current"
+  },
+  "description": "\"Particle Current\" can be used to describe the net number of particles passing through a surface in an infinitesimal time interval.",
+  "allOf": [
+    {
+      "$ref": "Frequency.schema.json"
+    }
+  ],
+  "@context": [
+    "Frequency.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ParticleCurrent": "qkind:ParticleCurrent"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ParticleCurrent"
+      ]
+    }
+  }
+}

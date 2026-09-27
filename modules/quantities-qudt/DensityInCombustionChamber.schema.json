@@ -1,0 +1,29 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "DensityInCombustionChamber.schema.json",
+  "x-oold-uuid": "6837c50b-e0b8-5f76-835e-5fdd56bf054f",
+  "x-oold-version": "0.1.0",
+  "title": "DensityInCombustionChamber",
+  "x-oold-multilang-title": {
+    "en": "Density In Combustion Chamber"
+  },
+  "allOf": [
+    {
+      "$ref": "MassDensity.schema.json"
+    }
+  ],
+  "@context": [
+    "MassDensity.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "DensityInCombustionChamber": "qkind:DensityInCombustionChamber"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "DensityInCombustionChamber"
+      ]
+    }
+  }
+}

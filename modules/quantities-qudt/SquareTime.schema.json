@@ -1,0 +1,56 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "SquareTime.schema.json",
+  "x-oold-uuid": "276d05cf-68e3-550d-ab71-84a47e560063",
+  "x-oold-version": "0.1.0",
+  "title": "SquareTime",
+  "x-oold-multilang-title": {
+    "en": "Square Time"
+  },
+  "examples": [
+    {
+      "type": [
+        "SquareTime"
+      ],
+      "value": 1.0,
+      "unit": "second_squared"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "SquareTime": "qkind:SquareTime",
+      "second_squared": "qunit:SEC2"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "SquareTime"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "second_squared"
+      ],
+      "default": "second_squared"
+    }
+  },
+  "x-oold-context": {
+    "SquareTime": {
+      "http://dbpedia.org/resource/Time_Squared": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ElectricField.schema.json",
+  "x-oold-uuid": "4f0b3f4a-40ad-5ffb-b492-a000abe2b30d",
+  "x-oold-version": "0.1.0",
+  "title": "ElectricField",
+  "x-oold-multilang-title": {
+    "en": "Electric Field"
+  },
+  "description": "The space surrounding an electric charge or in the presence of a time-varying magnetic field has a property called an electric field. This electric field exerts a force on other electrically charged objects. In the idealized case, the force exerted between two point charges is inversely proportional to the square of the distance between them. (Coulomb's Law).",
+  "examples": [
+    {
+      "type": [
+        "ElectricField"
+      ],
+      "value": 1.0,
+      "unit": "volt_per_meter"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ElectricField": "qkind:ElectricField",
+      "volt_per_meter": "qunit:V-PER-M",
+      "micro_volt_per_meter": "qunit:MicroV-PER-M",
+      "milli_volt_per_meter": "qunit:MilliV-PER-M",
+      "volt_per_centi_meter": "qunit:V-PER-CentiM",
+      "volt_per_milli_meter": "qunit:V-PER-MilliM",
+      "kilo_volt_per_meter": "qunit:KiloV-PER-M",
+      "mega_volt_per_meter": "qunit:MegaV-PER-M"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ElectricField"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "volt_per_meter",
+        "micro_volt_per_meter",
+        "milli_volt_per_meter",
+        "volt_per_centi_meter",
+        "volt_per_milli_meter",
+        "kilo_volt_per_meter",
+        "mega_volt_per_meter"
+      ],
+      "default": "volt_per_meter"
+    }
+  },
+  "x-oold-context": {
+    "ElectricField": {
+      "http://dbpedia.org/resource/Electric_field": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Force.schema.json",
+  "x-oold-uuid": "1b832c1a-42c0-55eb-9669-bb0cdda18d7f",
+  "x-oold-version": "0.1.0",
+  "title": "Force",
+  "x-oold-multilang-title": {
+    "en": "Force",
+    "de": "Kraft"
+  },
+  "description": "\"Force\" is an influence that causes mass to accelerate. It may be experienced as a lift, a push, or a pull. Force is defined by Newton's Second Law as $F = m \\times a $, where $F$ is force, $m$ is mass and $a$ is acceleration. Net force is mathematically equal to the time rate of change of the momentum of the body on which it acts. Since momentum is a vector quantity (has both a magnitude and direction), force also is a vector quantity.",
+  "examples": [
+    {
+      "type": [
+        "Force"
+      ],
+      "value": 1.0,
+      "unit": "newton"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Force": "qkind:Force",
+      "newton": "qunit:N",
+      "nano_newton": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/nano_newton",
+      "micro_newton": "qunit:MicroN",
+      "dyne": "qunit:DYN",
+      "milli_newton": "qunit:MilliN",
+      "centi_newton": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/centi_newton",
+      "deci_newton": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/deci_newton",
+      "kilo_newton": "qunit:KiloN",
+      "mega_newton": "qunit:MegaN",
+      "giga_newton": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/giga_newton"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Force"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "newton",
+        "nano_newton",
+        "micro_newton",
+        "dyne",
+        "milli_newton",
+        "centi_newton",
+        "deci_newton",
+        "kilo_newton",
+        "mega_newton",
+        "giga_newton"
+      ],
+      "default": "newton"
+    }
+  },
+  "x-oold-context": {
+    "Force": {
+      "http://dbpedia.org/resource/Force": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      },
+      "https://si-digital-framework.org/quantities/FORC": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

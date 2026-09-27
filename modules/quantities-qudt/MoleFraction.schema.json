@@ -1,0 +1,41 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MoleFraction.schema.json",
+  "x-oold-uuid": "75c0b290-d1a4-51fb-8de3-6ffa84bdc59c",
+  "x-oold-version": "0.1.0",
+  "title": "MoleFraction",
+  "x-oold-multilang-title": {
+    "en": "Mole Fraction"
+  },
+  "description": "In chemistry, the mole fraction of a component in a mixture is the relative proportion of molecules belonging to the component to those in the mixture, by number of molecules. It is one way of measuring concentration.",
+  "allOf": [
+    {
+      "$ref": "DimensionlessRatio.schema.json"
+    }
+  ],
+  "@context": [
+    "DimensionlessRatio.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "MoleFraction": "qkind:MoleFraction"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "MoleFraction"
+      ]
+    }
+  },
+  "x-oold-context": {
+    "MoleFraction": {
+      "http://dbpedia.org/resource/Mole_fraction": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "DiffusionLength.schema.json",
+  "x-oold-uuid": "4d3cf91b-99bc-5413-a41b-88cf3c1a814c",
+  "x-oold-version": "0.1.0",
+  "title": "DiffusionLength",
+  "x-oold-multilang-title": {
+    "en": "Diffusion Length"
+  },
+  "description": "\"Diffusion Length\" is the average distance traveled by a particle, or a thermal neutron in a nuclear reactor, from the point at which it is formed to the point at which it is absorbed.",
+  "allOf": [
+    {
+      "$ref": "Length.schema.json"
+    }
+  ],
+  "@context": [
+    "Length.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "DiffusionLength": "qkind:DiffusionLength"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "DiffusionLength"
+      ]
+    }
+  }
+}

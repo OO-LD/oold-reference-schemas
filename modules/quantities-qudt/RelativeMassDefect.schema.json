@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "RelativeMassDefect.schema.json",
+  "x-oold-uuid": "d648b91c-c358-5f4c-b129-9ebb6b148dc4",
+  "x-oold-version": "0.1.0",
+  "title": "RelativeMassDefect",
+  "x-oold-multilang-title": {
+    "en": "Relative Mass Defect"
+  },
+  "description": "The \"Relative Mass Defect\" is the mass defect between the monoisotopic mass of an element and the mass of its A + 1 or its A + 2 isotopic cluster.",
+  "allOf": [
+    {
+      "$ref": "DimensionlessRatio.schema.json"
+    }
+  ],
+  "@context": [
+    "DimensionlessRatio.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "RelativeMassDefect": "qkind:RelativeMassDefect"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "RelativeMassDefect"
+      ]
+    }
+  }
+}

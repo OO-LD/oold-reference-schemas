@@ -1,0 +1,58 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "PropagationCoefficient.schema.json",
+  "x-oold-uuid": "eee790c2-3e77-5ec2-a852-845b671532df",
+  "x-oold-version": "0.1.0",
+  "title": "PropagationCoefficient",
+  "x-oold-multilang-title": {
+    "en": "Propagation coefficient"
+  },
+  "description": "The propagation constant, symbol $\\gamma$, for a given system is defined by the ratio of the amplitude at the source of the wave to the amplitude at some distance x.",
+  "examples": [
+    {
+      "type": [
+        "PropagationCoefficient"
+      ],
+      "value": 1.0,
+      "unit": "per_meter"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "PropagationCoefficient": "qkind:PropagationCoefficient",
+      "per_meter": "qunit:PER-M",
+      "per_kilo_meter": "qunit:PER-KiloM",
+      "per_centi_meter": "qunit:PER-CentiM",
+      "per_milli_meter": "qunit:PER-MilliM",
+      "per_micro_meter": "qunit:PER-MicroM",
+      "per_nano_meter": "qunit:PER-NanoM",
+      "per_pico_meter": "qunit:PER-PicoM"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "PropagationCoefficient"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "per_meter",
+        "per_kilo_meter",
+        "per_centi_meter",
+        "per_milli_meter",
+        "per_micro_meter",
+        "per_nano_meter",
+        "per_pico_meter"
+      ],
+      "default": "per_meter"
+    }
+  }
+}

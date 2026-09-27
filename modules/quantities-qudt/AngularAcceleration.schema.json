@@ -1,0 +1,49 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "AngularAcceleration.schema.json",
+  "x-oold-uuid": "c635dd8c-8ae6-5263-a6d2-b3777f5776bb",
+  "x-oold-version": "0.1.0",
+  "title": "AngularAcceleration",
+  "x-oold-multilang-title": {
+    "en": "Angular acceleration",
+    "de": "Winkelbeschleunigung"
+  },
+  "description": "Angular acceleration is the rate of change of angular velocity over time. Measurement of the change made in the rate of change of an angle that a spinning object undergoes per unit time. It is a vector quantity.  Also called Rotational acceleration. In SI units, it is measured in radians per second squared ($rad/s^2$), and is usually denoted by the Greek letter alpha.",
+  "allOf": [
+    {
+      "$ref": "InverseSquareTime.schema.json"
+    }
+  ],
+  "@context": [
+    "InverseSquareTime.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "AngularAcceleration": "qkind:AngularAcceleration"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "AngularAcceleration"
+      ]
+    }
+  },
+  "x-oold-context": {
+    "AngularAcceleration": {
+      "http://dbpedia.org/resource/Angular_acceleration": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      },
+      "https://si-digital-framework.org/quantities/ACCA": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

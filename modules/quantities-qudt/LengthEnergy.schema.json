@@ -1,0 +1,47 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "LengthEnergy.schema.json",
+  "x-oold-uuid": "ebfe1183-8eec-5b17-a7f2-42ea30869fbb",
+  "x-oold-version": "0.1.0",
+  "title": "LengthEnergy",
+  "x-oold-multilang-title": {
+    "en": "Length Energy"
+  },
+  "examples": [
+    {
+      "type": [
+        "LengthEnergy"
+      ],
+      "value": 1.0,
+      "unit": "electron_volt_meter"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "LengthEnergy": "qkind:LengthEnergy",
+      "electron_volt_meter": "qunit:EV-M",
+      "fermi_mega_electron_volt": "qunit:MegaEV-FemtoM"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "LengthEnergy"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "electron_volt_meter",
+        "fermi_mega_electron_volt"
+      ],
+      "default": "electron_volt_meter"
+    }
+  }
+}

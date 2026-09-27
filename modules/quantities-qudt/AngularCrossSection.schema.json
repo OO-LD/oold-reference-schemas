@@ -1,0 +1,46 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "AngularCrossSection.schema.json",
+  "x-oold-uuid": "a1a449c3-adf3-5ee3-aba8-109c7667b890",
+  "x-oold-version": "0.1.0",
+  "title": "AngularCrossSection",
+  "x-oold-multilang-title": {
+    "en": "Angular Cross-section"
+  },
+  "description": "\"Angular Cross-section\" is the cross-section for ejecting or scattering a particle into an elementary cone, divided by the solid angle $d\\Omega$ of that cone.",
+  "examples": [
+    {
+      "type": [
+        "AngularCrossSection"
+      ],
+      "value": 1.0,
+      "unit": "meter_squared_per_steradian"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "AngularCrossSection": "qkind:AngularCrossSection",
+      "meter_squared_per_steradian": "qunit:M2-PER-SR"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "AngularCrossSection"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "meter_squared_per_steradian"
+      ],
+      "default": "meter_squared_per_steradian"
+    }
+  }
+}

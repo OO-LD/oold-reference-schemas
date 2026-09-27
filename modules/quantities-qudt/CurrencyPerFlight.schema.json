@@ -1,0 +1,29 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "CurrencyPerFlight.schema.json",
+  "x-oold-uuid": "bec103f1-e762-5f1b-8e5b-3863ee35bb41",
+  "x-oold-version": "0.1.0",
+  "title": "CurrencyPerFlight",
+  "x-oold-multilang-title": {
+    "en": "Currency Per Flight"
+  },
+  "allOf": [
+    {
+      "$ref": "DimensionlessRatio.schema.json"
+    }
+  ],
+  "@context": [
+    "DimensionlessRatio.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "CurrencyPerFlight": "qkind:CurrencyPerFlight"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "CurrencyPerFlight"
+      ]
+    }
+  }
+}

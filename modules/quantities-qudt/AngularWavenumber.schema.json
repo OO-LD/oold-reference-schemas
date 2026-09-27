@@ -1,0 +1,31 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "AngularWavenumber.schema.json",
+  "x-oold-uuid": "36722305-78c1-593c-91fd-69449f82fe93",
+  "x-oold-version": "0.1.0",
+  "title": "AngularWavenumber",
+  "x-oold-multilang-title": {
+    "en": "Angular wavenumber",
+    "de": "Kreisrepetenz"
+  },
+  "description": "\"wavenumber\" is the spatial frequency of a wave - the number of waves that exist over a specified distance. More formally, it is the reciprocal of the wavelength. It is also the magnitude of the wave vector.",
+  "allOf": [
+    {
+      "$ref": "InverseLength.schema.json"
+    }
+  ],
+  "@context": [
+    "InverseLength.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "AngularWavenumber": "qkind:AngularWavenumber"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "AngularWavenumber"
+      ]
+    }
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ResidualResistivity.schema.json",
+  "x-oold-uuid": "773f040f-505b-5893-8f7e-e54e1b7eb29f",
+  "x-oold-version": "0.1.0",
+  "title": "ResidualResistivity",
+  "x-oold-multilang-title": {
+    "en": "Residual Resistivity"
+  },
+  "description": "\"Residual Resistivity\" for metals, is the resistivity extrapolated to zero thermodynamic temperature.",
+  "examples": [
+    {
+      "type": [
+        "ResidualResistivity"
+      ],
+      "value": 1.0,
+      "unit": "meter_ohm"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ResidualResistivity": "qkind:ResidualResistivity",
+      "meter_ohm": "qunit:OHM-M",
+      "meter_nano_ohm": "qunit:NanoOHM-M",
+      "meter_micro_ohm": "qunit:MicroOHM-M",
+      "meter_milli_ohm": "qunit:MilliOHM-M",
+      "centi_meter_ohm": "qunit:OHM-CentiM",
+      "kilo_ohm_meter": "qunit:KiloOHM-M",
+      "kilo_meter_ohm": "qunit:OHM-KiloM",
+      "mega_ohm_meter": "qunit:MegaOHM-M",
+      "giga_ohm_meter": "qunit:GigaOHM-M",
+      "kilo_meter_mega_ohm": "qunit:MegaOHM-KiloM"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ResidualResistivity"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "meter_ohm",
+        "meter_nano_ohm",
+        "meter_micro_ohm",
+        "meter_milli_ohm",
+        "centi_meter_ohm",
+        "kilo_ohm_meter",
+        "kilo_meter_ohm",
+        "mega_ohm_meter",
+        "giga_ohm_meter",
+        "kilo_meter_mega_ohm"
+      ],
+      "default": "meter_ohm"
+    }
+  }
+}

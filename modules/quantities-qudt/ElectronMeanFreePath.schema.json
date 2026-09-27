@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ElectronMeanFreePath.schema.json",
+  "x-oold-uuid": "bbae37b2-b2db-5367-89ac-d5fc581286b9",
+  "x-oold-version": "0.1.0",
+  "title": "ElectronMeanFreePath",
+  "x-oold-multilang-title": {
+    "en": "Electron Mean Free Path"
+  },
+  "description": "\"Electron Mean Free Path\" is the mean free path of electrons.",
+  "allOf": [
+    {
+      "$ref": "Length.schema.json"
+    }
+  ],
+  "@context": [
+    "Length.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ElectronMeanFreePath": "qkind:ElectronMeanFreePath"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ElectronMeanFreePath"
+      ]
+    }
+  }
+}

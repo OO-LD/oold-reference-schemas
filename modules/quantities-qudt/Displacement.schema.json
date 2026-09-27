@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Displacement.schema.json",
+  "x-oold-uuid": "22c5c9fd-1072-518c-a4e3-6301f8459bc8",
+  "x-oold-version": "0.1.0",
+  "title": "Displacement",
+  "x-oold-multilang-title": {
+    "en": "Displacement"
+  },
+  "description": "\"Displacement\" is the shortest distance from the initial to the final position of a point P.",
+  "allOf": [
+    {
+      "$ref": "Length.schema.json"
+    }
+  ],
+  "@context": [
+    "Length.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Displacement": "qkind:Displacement"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Displacement"
+      ]
+    }
+  }
+}

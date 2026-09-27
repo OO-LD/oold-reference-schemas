@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MagnetizationField.schema.json",
+  "x-oold-uuid": "656dd9cc-2233-59e3-bc88-b114c9e4c231",
+  "x-oold-version": "0.1.0",
+  "title": "MagnetizationField",
+  "x-oold-multilang-title": {
+    "en": "Magnetization Field"
+  },
+  "description": "The Magnetization Field is defined as the ratio of magnetic moment per unit volume. It is a vector-valued quantity.",
+  "allOf": [
+    {
+      "$ref": "ElectricCurrentPerLength.schema.json"
+    }
+  ],
+  "@context": [
+    "ElectricCurrentPerLength.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "MagnetizationField": "qkind:MagnetizationField"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "MagnetizationField"
+      ]
+    }
+  }
+}

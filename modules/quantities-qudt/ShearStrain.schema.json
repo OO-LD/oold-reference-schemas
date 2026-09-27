@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ShearStrain.schema.json",
+  "x-oold-uuid": "cd5753ab-faf3-5c29-92b9-887c20e8443c",
+  "x-oold-version": "0.1.0",
+  "title": "ShearStrain",
+  "x-oold-multilang-title": {
+    "en": "Shear Strain"
+  },
+  "description": "Shear Strain is the amount of deformation perpendicular to a given line rather than parallel to it.",
+  "allOf": [
+    {
+      "$ref": "Strain.schema.json"
+    }
+  ],
+  "@context": [
+    "Strain.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ShearStrain": "qkind:ShearStrain"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ShearStrain"
+      ]
+    }
+  }
+}

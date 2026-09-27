@@ -1,0 +1,31 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Spin.schema.json",
+  "x-oold-uuid": "ff78da31-39af-553d-81d4-720b73d306ca",
+  "x-oold-version": "0.1.0",
+  "title": "Spin",
+  "x-oold-multilang-title": {
+    "en": "Spin",
+    "de": "Spin"
+  },
+  "description": "In quantum mechanics and particle physics \"Spin\" is an intrinsic form of angular momentum carried by elementary particles, composite particles (hadrons), and atomic nuclei.",
+  "allOf": [
+    {
+      "$ref": "AngularMomentum.schema.json"
+    }
+  ],
+  "@context": [
+    "AngularMomentum.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Spin": "qkind:Spin"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Spin"
+      ]
+    }
+  }
+}

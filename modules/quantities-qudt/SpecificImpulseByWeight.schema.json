@@ -1,0 +1,89 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "SpecificImpulseByWeight.schema.json",
+  "x-oold-uuid": "48d80990-2b44-5a6c-a8ec-ae9e3fdfbcf0",
+  "x-oold-version": "0.1.0",
+  "title": "SpecificImpulseByWeight",
+  "x-oold-multilang-title": {
+    "en": "Specific Impulse by Weight"
+  },
+  "examples": [
+    {
+      "type": [
+        "SpecificImpulseByWeight"
+      ],
+      "value": 1.0,
+      "unit": "second"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "SpecificImpulseByWeight": "qkind:SpecificImpulseByWeight",
+      "second": "qunit:SEC",
+      "atto_second": "qunit:AttoSEC",
+      "femto_second": "qunit:FemtoSEC",
+      "pico_second": "qunit:PicoSEC",
+      "nano_second": "qunit:NanoSEC",
+      "micro_second": "qunit:MicroSEC",
+      "milli_second": "qunit:MilliSEC",
+      "deci_second": "qunit:DeciSEC",
+      "min_sidereal": "qunit:MIN_Sidereal",
+      "minute": "qunit:MIN",
+      "kilo_second": "qunit:KiloSEC",
+      "h_sidereal": "qunit:HR_Sidereal",
+      "hour": "qunit:HR",
+      "day_sidereal": "qunit:DAY_Sidereal",
+      "day": "qunit:DAY",
+      "week": "qunit:WK",
+      "mega_second": "qunit:MegaSEC",
+      "month": "qunit:MO",
+      "tropical_year": "qunit:YR_TROPICAL",
+      "year": "qunit:YR",
+      "a_sidereal": "qunit:YR_Sidereal",
+      "kilo_year": "qunit:KiloYR",
+      "mega_year": "qunit:MegaYR"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "SpecificImpulseByWeight"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "second",
+        "atto_second",
+        "femto_second",
+        "pico_second",
+        "nano_second",
+        "micro_second",
+        "milli_second",
+        "deci_second",
+        "min_sidereal",
+        "minute",
+        "kilo_second",
+        "h_sidereal",
+        "hour",
+        "day_sidereal",
+        "day",
+        "week",
+        "mega_second",
+        "month",
+        "tropical_year",
+        "year",
+        "a_sidereal",
+        "kilo_year",
+        "mega_year"
+      ],
+      "default": "second"
+    }
+  }
+}

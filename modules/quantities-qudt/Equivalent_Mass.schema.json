@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Equivalent_Mass.schema.json",
+  "x-oold-uuid": "ea122144-0096-5c81-8daf-0b53062ccf4a",
+  "x-oold-version": "0.1.0",
+  "title": "Equivalent_Mass",
+  "x-oold-multilang-title": {
+    "en": "Mass Equivalent"
+  },
+  "description": "\"Mass Equivalent\" is the mass of a substance that reacts with (or is equivalent to) an arbitrary mass of \nanother substance in a given chemical reaction.",
+  "allOf": [
+    {
+      "$ref": "Mass.schema.json"
+    }
+  ],
+  "@context": [
+    "Mass.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Equivalent_Mass": "qkind:Equivalent_Mass"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Equivalent_Mass"
+      ]
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ThomsonCoefficient.schema.json",
+  "x-oold-uuid": "c56f5d63-f59d-527e-9a10-5d4c7edda71e",
+  "x-oold-version": "0.1.0",
+  "title": "ThomsonCoefficient",
+  "x-oold-multilang-title": {
+    "en": "Thomson Coefficient"
+  },
+  "description": "\"Thomson Coefficient\" represents Thomson heat power developed, divided by the electric current and the temperature difference.",
+  "examples": [
+    {
+      "type": [
+        "ThomsonCoefficient"
+      ],
+      "value": 1.0,
+      "unit": "volt_per_kelvin"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ThomsonCoefficient": "qkind:ThomsonCoefficient",
+      "volt_per_kelvin": "qunit:V-PER-K"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ThomsonCoefficient"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "volt_per_kelvin"
+      ],
+      "default": "volt_per_kelvin"
+    }
+  }
+}

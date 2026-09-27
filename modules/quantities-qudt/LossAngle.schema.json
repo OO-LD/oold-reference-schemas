@@ -1,0 +1,29 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "LossAngle.schema.json",
+  "x-oold-uuid": "3045ff94-60da-5f55-bdfb-935f7996e4b3",
+  "x-oold-version": "0.1.0",
+  "title": "LossAngle",
+  "x-oold-multilang-title": {
+    "en": "Loss Angle"
+  },
+  "allOf": [
+    {
+      "$ref": "Angle.schema.json"
+    }
+  ],
+  "@context": [
+    "Angle.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "LossAngle": "qkind:LossAngle"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "LossAngle"
+      ]
+    }
+  }
+}

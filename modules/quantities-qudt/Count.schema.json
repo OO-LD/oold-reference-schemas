@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Count.schema.json",
+  "x-oold-uuid": "b0250d36-77f6-592f-9d43-29c8b9d5f8d1",
+  "x-oold-version": "0.1.0",
+  "title": "Count",
+  "x-oold-multilang-title": {
+    "en": "Count"
+  },
+  "description": "\"Count\" is the value of a count of items.",
+  "allOf": [
+    {
+      "$ref": "Dimensionless.schema.json"
+    }
+  ],
+  "@context": [
+    "Dimensionless.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Count": "qkind:Count"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Count"
+      ]
+    }
+  }
+}

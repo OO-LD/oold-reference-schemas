@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "DragCoefficient.schema.json",
+  "x-oold-uuid": "48ab89ca-0517-56ab-9cae-adfb5c2cce08",
+  "x-oold-version": "0.1.0",
+  "title": "DragCoefficient",
+  "x-oold-multilang-title": {
+    "en": "Drag Coefficient"
+  },
+  "description": "In fluid dynamics, the drag coefficient is a dimensionless quantity that is used to quantify the drag or resistance of an object in a fluid environment such as air or water.",
+  "allOf": [
+    {
+      "$ref": "Dimensionless.schema.json"
+    }
+  ],
+  "@context": [
+    "Dimensionless.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "DragCoefficient": "qkind:DragCoefficient"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "DragCoefficient"
+      ]
+    }
+  }
+}

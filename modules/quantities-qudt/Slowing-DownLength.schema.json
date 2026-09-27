@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Slowing-DownLength.schema.json",
+  "x-oold-uuid": "cabedf85-97d2-5a3e-b8d1-96f2b864e0a6",
+  "x-oold-version": "0.1.0",
+  "title": "Slowing-DownLength",
+  "x-oold-multilang-title": {
+    "en": "Slowing-Down Length"
+  },
+  "description": "\"Slowing-Down Length\" is the average straight-line distance that a fast neutron will travel between its introduction into the slowing-downmedium (moderator) and thermalization.",
+  "allOf": [
+    {
+      "$ref": "Length.schema.json"
+    }
+  ],
+  "@context": [
+    "Length.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Slowing-DownLength": "qkind:Slowing-DownLength"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Slowing-DownLength"
+      ]
+    }
+  }
+}

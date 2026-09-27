@@ -1,0 +1,58 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "NuclearQuadrupoleMoment.schema.json",
+  "x-oold-uuid": "7e9c76bc-94c2-5dc8-929b-c8fe039ecf8f",
+  "x-oold-version": "0.1.0",
+  "title": "NuclearQuadrupoleMoment",
+  "x-oold-multilang-title": {
+    "en": "Nuclear Quadrupole Moment"
+  },
+  "description": "\"Nuclear Quadrupole Moment\" is a quantity that characterizes the deviation from spherical symmetry of the electrical charge distribution in an atomic nucleus.",
+  "examples": [
+    {
+      "type": [
+        "NuclearQuadrupoleMoment"
+      ],
+      "value": 1.0,
+      "unit": "meter_squared"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "NuclearQuadrupoleMoment": "qkind:NuclearQuadrupoleMoment",
+      "meter_squared": "qunit:M2",
+      "nano_meter_squared": "qunit:NanoM2",
+      "micro_meter_squared": "qunit:MicroM2",
+      "milli_meter_squared": "qunit:MilliM2",
+      "centi_meter_squared": "qunit:CentiM2",
+      "deci_meter_squared": "qunit:DeciM2",
+      "kilo_meter_squared": "qunit:KiloM2"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "NuclearQuadrupoleMoment"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "meter_squared",
+        "nano_meter_squared",
+        "micro_meter_squared",
+        "milli_meter_squared",
+        "centi_meter_squared",
+        "deci_meter_squared",
+        "kilo_meter_squared"
+      ],
+      "default": "meter_squared"
+    }
+  }
+}

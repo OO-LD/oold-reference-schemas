@@ -1,0 +1,42 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "EnergyInternal.schema.json",
+  "x-oold-uuid": "a1400ee0-d19b-55c0-9bfa-c6fad4965a58",
+  "x-oold-version": "0.1.0",
+  "title": "EnergyInternal",
+  "x-oold-multilang-title": {
+    "en": "Internal energy",
+    "de": "Innere Energie"
+  },
+  "description": "The internal energy is the total energy contained by a thermodynamic system. It is the energy needed to create the system, but excludes the energy to displace the system's surroundings, any energy associated with a move as a whole, or due to external force fields. Internal energy has two major components, kinetic energy and potential energy. The internal energy (U) is the sum of all forms of energy (Ei) intrinsic to a thermodynamic system:  $  U = \\sum_i E_i $",
+  "allOf": [
+    {
+      "$ref": "Energy.schema.json"
+    }
+  ],
+  "@context": [
+    "Energy.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "EnergyInternal": "qkind:EnergyInternal"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "EnergyInternal"
+      ]
+    }
+  },
+  "x-oold-context": {
+    "EnergyInternal": {
+      "http://dbpedia.org/resource/Internal_energy": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

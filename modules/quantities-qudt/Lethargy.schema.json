@@ -1,0 +1,46 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Lethargy.schema.json",
+  "x-oold-uuid": "45b0b940-dbc0-5b23-872c-5156073ef7c5",
+  "x-oold-version": "0.1.0",
+  "title": "Lethargy",
+  "x-oold-multilang-title": {
+    "en": "Lethargy"
+  },
+  "description": "The \"Lethargy\" is a dimensionless logarithm of the ratio of the energy of source neutrons to the energy of neutrons after a collision.",
+  "examples": [
+    {
+      "type": [
+        "Lethargy"
+      ],
+      "value": 1.0,
+      "unit": "unitless"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Lethargy": "qkind:Lethargy",
+      "unitless": "qunit:UNITLESS"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Lethargy"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "unitless"
+      ],
+      "default": "unitless"
+    }
+  }
+}

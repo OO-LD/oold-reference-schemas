@@ -1,0 +1,50 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "SecondPolarMomentOfArea.schema.json",
+  "x-oold-uuid": "8bbfb552-acb8-5419-9f8c-ef7cf24ce319",
+  "x-oold-version": "0.1.0",
+  "title": "SecondPolarMomentOfArea",
+  "x-oold-multilang-title": {
+    "en": "Second Polar Moment of Area"
+  },
+  "description": "The moment of inertia, also called mass moment of inertia, rotational inertia, polar moment of inertia of mass, or the angular mass is a property of a distribution of mass in space that measures its resistance to rotational acceleration about an axis.",
+  "examples": [
+    {
+      "type": [
+        "SecondPolarMomentOfArea"
+      ],
+      "value": 1.0,
+      "unit": "meter_to_the_fourth"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "SecondPolarMomentOfArea": "qkind:SecondPolarMomentOfArea",
+      "meter_to_the_fourth": "qunit:M4",
+      "milli_meter_to_the_fourth": "qunit:MilliM4",
+      "centi_meter_to_the_fourth": "qunit:CentiM4"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "SecondPolarMomentOfArea"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "meter_to_the_fourth",
+        "milli_meter_to_the_fourth",
+        "centi_meter_to_the_fourth"
+      ],
+      "default": "meter_to_the_fourth"
+    }
+  }
+}

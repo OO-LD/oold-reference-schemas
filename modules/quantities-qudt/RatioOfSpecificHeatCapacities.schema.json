@@ -1,0 +1,46 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "RatioOfSpecificHeatCapacities.schema.json",
+  "x-oold-uuid": "a1ce41c9-fb62-5dbc-8d65-207d8b47f527",
+  "x-oold-version": "0.1.0",
+  "title": "RatioOfSpecificHeatCapacities",
+  "x-oold-multilang-title": {
+    "en": "Ratio of Specific Heat Capacities"
+  },
+  "description": "The specific heat ratio of a gas is the ratio of the specific heat at constant pressure,\n   $c_p$, to the specific heat at constant volume, $c_V$. \n  It is sometimes referred to as the $\\textit{adiabatic index}$,\n   or the $\\textit{heat capacity ratio}$,\n   or the $\\textit{isentropic expansion factor}$,\n   or the $\\textit{adiabatic exponent}$,\n  or the $\\textit{isentropic exponent}$.",
+  "examples": [
+    {
+      "type": [
+        "RatioOfSpecificHeatCapacities"
+      ],
+      "value": 1.0,
+      "unit": "unitless"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "RatioOfSpecificHeatCapacities": "qkind:RatioOfSpecificHeatCapacities",
+      "unitless": "qunit:UNITLESS"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "RatioOfSpecificHeatCapacities"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "unitless"
+      ],
+      "default": "unitless"
+    }
+  }
+}

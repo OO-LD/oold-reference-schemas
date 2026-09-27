@@ -1,0 +1,109 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MassConcentration.schema.json",
+  "x-oold-uuid": "8276dacc-03f0-51d9-a492-5398eff293b0",
+  "x-oold-version": "0.1.0",
+  "title": "MassConcentration",
+  "x-oold-multilang-title": {
+    "en": "Mass Concentration"
+  },
+  "description": "The \"Mass Concentration\" of substance B  is defined as the mass of a constituent  divided by the volume of the mixture .",
+  "examples": [
+    {
+      "type": [
+        "MassConcentration"
+      ],
+      "value": 1.0,
+      "unit": "gram_per_liter"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "MassConcentration": "qkind:MassConcentration",
+      "gram_per_liter": "qunit:GM-PER-L",
+      "femto_gram_per_liter": "qunit:FemtoGM-PER-L",
+      "nano_gram_per_meter_cubed": "qunit:NanoGM-PER-M3",
+      "pico_gram_per_liter": "qunit:PicoGM-PER-L",
+      "nano_gram_per_liter": "qunit:NanoGM-PER-L",
+      "pico_gram_per_milli_liter": "qunit:PicoGM-PER-MilliL",
+      "micro_gram_per_meter_cubed": "qunit:MicroGM-PER-M3",
+      "nano_gram_per_deci_liter": "qunit:NanoGM-PER-DeciL",
+      "milli_gram_per_meter_cubed": "qunit:MilliGM-PER-M3",
+      "nano_gram_per_milli_liter": "qunit:NanoGM-PER-MilliL",
+      "micro_gram_per_liter": "qunit:MicroGM-PER-L",
+      "micro_gram_per_deci_liter": "qunit:MicroGM-PER-DeciL",
+      "gram_per_meter_cubed": "qunit:GM-PER-M3",
+      "milli_gram_per_liter": "qunit:MilliGM-PER-L",
+      "nano_gram_per_micro_liter": "qunit:NanoGM-PER-MicroL",
+      "micro_gram_per_milli_liter": "qunit:MicroGM-PER-MilliL",
+      "milli_gram_per_deci_liter": "qunit:MilliGM-PER-DeciL",
+      "gram_per_deci_meter_cubed": "qunit:GM-PER-DeciM3",
+      "kilo_gram_per_meter_cubed": "qunit:KiloGM-PER-M3",
+      "milli_gram_per_milli_liter": "qunit:MilliGM-PER-MilliL",
+      "gram_per_deci_liter": "qunit:GM-PER-DeciL",
+      "mega_gram_per_meter_cubed": "qunit:MegaGM-PER-M3",
+      "gram_per_centi_meter_cubed": "qunit:GM-PER-CentiM3",
+      "gram_per_milli_liter": "qunit:GM-PER-MilliL",
+      "kilo_gram_per_liter": "qunit:KiloGM-PER-L",
+      "kilo_gram_per_deci_meter_cubed": "qunit:KiloGM-PER-DeciM3",
+      "kilo_gram_per_centi_meter_cubed": "qunit:KiloGM-PER-CentiM3"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "MassConcentration"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "gram_per_liter",
+        "femto_gram_per_liter",
+        "nano_gram_per_meter_cubed",
+        "pico_gram_per_liter",
+        "nano_gram_per_liter",
+        "pico_gram_per_milli_liter",
+        "micro_gram_per_meter_cubed",
+        "nano_gram_per_deci_liter",
+        "milli_gram_per_meter_cubed",
+        "nano_gram_per_milli_liter",
+        "micro_gram_per_liter",
+        "micro_gram_per_deci_liter",
+        "gram_per_meter_cubed",
+        "milli_gram_per_liter",
+        "nano_gram_per_micro_liter",
+        "micro_gram_per_milli_liter",
+        "milli_gram_per_deci_liter",
+        "gram_per_deci_meter_cubed",
+        "kilo_gram_per_meter_cubed",
+        "milli_gram_per_milli_liter",
+        "gram_per_deci_liter",
+        "mega_gram_per_meter_cubed",
+        "gram_per_centi_meter_cubed",
+        "gram_per_milli_liter",
+        "kilo_gram_per_liter",
+        "kilo_gram_per_deci_meter_cubed",
+        "kilo_gram_per_centi_meter_cubed"
+      ],
+      "default": "gram_per_liter"
+    }
+  },
+  "x-oold-context": {
+    "MassConcentration": {
+      "https://si-digital-framework.org/quantities/MACO": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

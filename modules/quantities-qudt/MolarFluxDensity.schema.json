@@ -1,0 +1,58 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MolarFluxDensity.schema.json",
+  "x-oold-uuid": "00dbaeb2-4c29-52cd-9ad2-9928be2f1b83",
+  "x-oold-version": "0.1.0",
+  "title": "MolarFluxDensity",
+  "x-oold-multilang-title": {
+    "en": "Molar Flux Density"
+  },
+  "description": "the rate at which moles of a substance pass through a unit area per unit time. It is used for describing the flow of materials in terms of the transport of molecules or particles rather than bulk mass. The SI units are mol m-2 s-1",
+  "examples": [
+    {
+      "type": [
+        "MolarFluxDensity"
+      ],
+      "value": 1.0,
+      "unit": "mole_per_meter_squared_per_second"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "MolarFluxDensity": "qkind:MolarFluxDensity",
+      "mole_per_meter_squared_per_second": "qunit:MOL-PER-M2-SEC",
+      "micro_mole_per_hour_per_meter_squared": "qunit:MicroMOL-PER-M2-HR",
+      "nano_mole_per_meter_squared_per_second": "qunit:NanoMOL-PER-M2-SEC",
+      "milli_mole_per_hour_per_meter_squared": "qunit:MilliMOL-PER-M2-HR",
+      "micro_mole_per_meter_squared_per_second": "qunit:MicroMOL-PER-M2-SEC",
+      "mole_per_hour_per_meter_squared": "qunit:MOL-PER-M2-HR",
+      "milli_mole_per_meter_squared_per_second": "qunit:MilliMOL-PER-M2-SEC"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "MolarFluxDensity"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "mole_per_meter_squared_per_second",
+        "micro_mole_per_hour_per_meter_squared",
+        "nano_mole_per_meter_squared_per_second",
+        "milli_mole_per_hour_per_meter_squared",
+        "micro_mole_per_meter_squared_per_second",
+        "mole_per_hour_per_meter_squared",
+        "milli_mole_per_meter_squared_per_second"
+      ],
+      "default": "mole_per_meter_squared_per_second"
+    }
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "AngularImpulse.schema.json",
+  "x-oold-uuid": "140347dd-94e6-593a-aea4-daf9a1264a0a",
+  "x-oold-version": "0.1.0",
+  "title": "AngularImpulse",
+  "x-oold-multilang-title": {
+    "en": "Angular impulse",
+    "de": "Drehstoß"
+  },
+  "description": "The Angular Impulse, also known as angular momentum, is the moment of linear momentum around a point. It is defined as$H = \\int Mdt$, where $M$ is the moment of force and $t$ is time.",
+  "examples": [
+    {
+      "type": [
+        "AngularImpulse"
+      ],
+      "value": 1.0,
+      "unit": "joule_second"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "AngularImpulse": "qkind:AngularImpulse",
+      "joule_second": "qunit:J-SEC",
+      "electron_volt_second": "qunit:EV-SEC",
+      "atto_joule_second": "qunit:AttoJ-SEC",
+      "meter_newton_second": "qunit:N-M-SEC",
+      "kilo_gram_meter_squared_per_second": "qunit:KiloGM-M2-PER-SEC",
+      "gram_meter_squared_per_second": "qunit:GM-M2-PER-SEC"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "AngularImpulse"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "joule_second",
+        "electron_volt_second",
+        "atto_joule_second",
+        "meter_newton_second",
+        "kilo_gram_meter_squared_per_second",
+        "gram_meter_squared_per_second"
+      ],
+      "default": "joule_second"
+    }
+  },
+  "x-oold-context": {
+    "AngularImpulse": {
+      "http://dbpedia.org/resource/AngularMomentum": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

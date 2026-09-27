@@ -1,0 +1,46 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "CanonicalPartitionFunction.schema.json",
+  "x-oold-uuid": "bb31e94e-7ec4-5358-8382-368a9a40c134",
+  "x-oold-version": "0.1.0",
+  "title": "CanonicalPartitionFunction",
+  "x-oold-multilang-title": {
+    "en": "Canonical Partition Function"
+  },
+  "description": "A \"Canonical Partition Function\" applies to a canonical ensemble, in which the system is allowed to exchange heat with the environment at fixed temperature, volume, and number of particles.",
+  "examples": [
+    {
+      "type": [
+        "CanonicalPartitionFunction"
+      ],
+      "value": 1.0,
+      "unit": "unitless"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "CanonicalPartitionFunction": "qkind:CanonicalPartitionFunction",
+      "unitless": "qunit:UNITLESS"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "CanonicalPartitionFunction"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "unitless"
+      ],
+      "default": "unitless"
+    }
+  }
+}

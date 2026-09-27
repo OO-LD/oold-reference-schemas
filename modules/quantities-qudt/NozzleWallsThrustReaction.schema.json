@@ -1,0 +1,29 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "NozzleWallsThrustReaction.schema.json",
+  "x-oold-uuid": "1d953cfe-ca67-574d-add6-a6f0c42d7483",
+  "x-oold-version": "0.1.0",
+  "title": "NozzleWallsThrustReaction",
+  "x-oold-multilang-title": {
+    "en": "Nozzle Walls Thrust Reaction"
+  },
+  "allOf": [
+    {
+      "$ref": "Force.schema.json"
+    }
+  ],
+  "@context": [
+    "Force.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "NozzleWallsThrustReaction": "qkind:NozzleWallsThrustReaction"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "NozzleWallsThrustReaction"
+      ]
+    }
+  }
+}

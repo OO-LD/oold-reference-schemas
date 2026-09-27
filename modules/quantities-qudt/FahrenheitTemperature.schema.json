@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "FahrenheitTemperature.schema.json",
+  "x-oold-uuid": "ab84f18a-6ca8-5e0a-b17c-23c701c650b3",
+  "x-oold-version": "0.1.0",
+  "title": "FahrenheitTemperature",
+  "x-oold-multilang-title": {
+    "en": "Fahrenheit temperature"
+  },
+  "description": "quantity whose zero point is defined by the temperature of a mixture of ice, water and ammonium chloride (-17.8 °C) and its fixed points on the Fahrenheit scale are 32 °F (melting point of ice) and 212 °F (boiling point of water)",
+  "allOf": [
+    {
+      "$ref": "Temperature.schema.json"
+    }
+  ],
+  "@context": [
+    "Temperature.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "FahrenheitTemperature": "qkind:FahrenheitTemperature"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "FahrenheitTemperature"
+      ]
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MassOfSolidBooster.schema.json",
+  "x-oold-uuid": "3805347e-a7cc-5372-812c-240ee9c72d57",
+  "x-oold-version": "0.1.0",
+  "title": "MassOfSolidBooster",
+  "x-oold-multilang-title": {
+    "en": "Mass Of Solid Booster"
+  },
+  "allOf": [
+    {
+      "$ref": "Mass.schema.json"
+    }
+  ],
+  "@context": [
+    "Mass.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "MassOfSolidBooster": "qkind:MassOfSolidBooster"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "MassOfSolidBooster"
+      ]
+    }
+  }
+}

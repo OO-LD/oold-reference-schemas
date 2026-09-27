@@ -1,0 +1,47 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "InverseSquareTime.schema.json",
+  "x-oold-uuid": "d33f5020-bd93-583b-807f-360af0e833ca",
+  "x-oold-version": "0.1.0",
+  "title": "InverseSquareTime",
+  "x-oold-multilang-title": {
+    "en": "Inverse Square Time"
+  },
+  "examples": [
+    {
+      "type": [
+        "InverseSquareTime"
+      ],
+      "value": 1.0,
+      "unit": "radian_per_second_squared"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "InverseSquareTime": "qkind:InverseSquareTime",
+      "radian_per_second_squared": "qunit:RAD-PER-SEC2",
+      "per_second_squared": "qunit:PER-SEC2"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "InverseSquareTime"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "radian_per_second_squared",
+        "per_second_squared"
+      ],
+      "default": "radian_per_second_squared"
+    }
+  }
+}

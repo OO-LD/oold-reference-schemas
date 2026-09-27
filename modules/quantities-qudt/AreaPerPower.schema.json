@@ -1,0 +1,49 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "AreaPerPower.schema.json",
+  "x-oold-uuid": "4d26c25a-bed1-595e-bf6f-aebbb937aa29",
+  "x-oold-version": "0.1.0",
+  "title": "AreaPerPower",
+  "x-oold-multilang-title": {
+    "en": "Area per heating load",
+    "de": "Fläche pro Heizlast"
+  },
+  "description": "The ratio of an area and the power required for maintaining room temperature at a given level",
+  "examples": [
+    {
+      "type": [
+        "AreaPerPower"
+      ],
+      "value": 1.0,
+      "unit": "meter_squared_per_watt"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "AreaPerPower": "qkind:AreaPerPower",
+      "meter_squared_per_watt": "qunit:M2-PER-W",
+      "meter_squared_per_kilo_watt": "qunit:M2-PER-KiloW"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "AreaPerPower"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "meter_squared_per_watt",
+        "meter_squared_per_kilo_watt"
+      ],
+      "default": "meter_squared_per_watt"
+    }
+  }
+}

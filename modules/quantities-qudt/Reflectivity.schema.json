@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Reflectivity.schema.json",
+  "x-oold-uuid": "cabbcff5-4804-5cd4-adb4-e39bdafa328e",
+  "x-oold-version": "0.1.0",
+  "title": "Reflectivity",
+  "x-oold-multilang-title": {
+    "en": "Reflectivity"
+  },
+  "description": "For homogeneous and semi-infinite materials, reflectivity is the same as reflectance. Reflectivity is the square of the magnitude of the Fresnel reflection coefficient, which is the ratio of the reflected to incident electric field; as such the reflection coefficient can be expressed as a complex number as determined by the Fresnel equations for a single layer, whereas the reflectance is always a positive real number.\n\nFor layered and finite media, according to the CIE, reflectivity is distinguished from reflectance by the fact that reflectivity is a value that applies to thick reflecting objects. When reflection occurs from thin layers of material, internal reflection effects can cause the reflectance to vary with surface thickness. Reflectivity is the limit value of reflectance as the sample becomes thick; it is the intrinsic reflectance of the surface, hence irrespective of other parameters such as the reflectance of the rear surface. Another way to interpret this is that the reflectance is the fraction of electromagnetic power reflected from a specific sample, while reflectivity is a property of the material itself, which would be measured on a perfect machine if the material filled half of all space.",
+  "allOf": [
+    {
+      "$ref": "Reflectance.schema.json"
+    }
+  ],
+  "@context": [
+    "Reflectance.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Reflectivity": "qkind:Reflectivity"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Reflectivity"
+      ]
+    }
+  }
+}

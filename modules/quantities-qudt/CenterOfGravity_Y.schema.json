@@ -1,0 +1,29 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "CenterOfGravity_Y.schema.json",
+  "x-oold-uuid": "6bb48a64-adab-53b2-90fe-cfec20f2ee3a",
+  "x-oold-version": "0.1.0",
+  "title": "CenterOfGravity_Y",
+  "x-oold-multilang-title": {
+    "en": "Center of Gravity in the Y axis"
+  },
+  "allOf": [
+    {
+      "$ref": "Length.schema.json"
+    }
+  ],
+  "@context": [
+    "Length.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "CenterOfGravity_Y": "qkind:CenterOfGravity_Y"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "CenterOfGravity_Y"
+      ]
+    }
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MolarFlowRate.schema.json",
+  "x-oold-uuid": "1ccf7d20-cba9-5e54-a9c0-b3f6c9ca2c6b",
+  "x-oold-version": "0.1.0",
+  "title": "MolarFlowRate",
+  "x-oold-multilang-title": {
+    "en": "Molar Flow Rate"
+  },
+  "description": "Molar Flow Rate is a measure of the amount of substance (the number of molecules) that passes through a given area perpendicular to the flow in a given time. Typically this area is constrained, for example a section through a pipe, but it could also apply to an open flow.",
+  "examples": [
+    {
+      "type": [
+        "MolarFlowRate"
+      ],
+      "value": 1.0,
+      "unit": "mole_per_second"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "MolarFlowRate": "qkind:MolarFlowRate",
+      "mole_per_second": "qunit:MOL-PER-SEC",
+      "micro_mole_per_second": "qunit:MicroMOL-PER-SEC",
+      "mole_per_hour": "qunit:MOL-PER-HR",
+      "mole_per_minute": "qunit:MOL-PER-MIN",
+      "kilo_mole_per_hour": "qunit:KiloMOL-PER-HR",
+      "kilo_mole_per_minute": "qunit:KiloMOL-PER-MIN",
+      "kilo_mole_per_second": "qunit:KiloMOL-PER-SEC"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "MolarFlowRate"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "mole_per_second",
+        "micro_mole_per_second",
+        "mole_per_hour",
+        "mole_per_minute",
+        "kilo_mole_per_hour",
+        "kilo_mole_per_minute",
+        "kilo_mole_per_second"
+      ],
+      "default": "mole_per_second"
+    }
+  }
+}

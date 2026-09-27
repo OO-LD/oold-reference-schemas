@@ -1,0 +1,49 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "LengthMass.schema.json",
+  "x-oold-uuid": "4b7dde37-8745-5f5a-a84d-6783bda3971a",
+  "x-oold-version": "0.1.0",
+  "title": "LengthMass",
+  "x-oold-multilang-title": {
+    "en": "Length Mass"
+  },
+  "examples": [
+    {
+      "type": [
+        "LengthMass"
+      ],
+      "value": 1.0,
+      "unit": "kilo_gram_meter"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "LengthMass": "qkind:LengthMass",
+      "kilo_gram_meter": "qunit:KiloGM-M",
+      "gram_milli_meter": "qunit:GM-MilliM",
+      "gram_meter": "qunit:GM-M"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "LengthMass"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "kilo_gram_meter",
+        "gram_milli_meter",
+        "gram_meter"
+      ],
+      "default": "kilo_gram_meter"
+    }
+  }
+}

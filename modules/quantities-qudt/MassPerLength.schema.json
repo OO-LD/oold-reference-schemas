@@ -1,0 +1,58 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MassPerLength.schema.json",
+  "x-oold-uuid": "c1785119-277b-56f0-b8b0-69c41b019d06",
+  "x-oold-version": "0.1.0",
+  "title": "MassPerLength",
+  "x-oold-multilang-title": {
+    "en": "Mass per Length"
+  },
+  "description": "Linear density, linear mass density or linear mass is a measure of mass per unit of length, and it is a characteristic of strings or other one-dimensional objects. The SI unit of linear density is the kilogram per metre ($kg/m$).",
+  "examples": [
+    {
+      "type": [
+        "MassPerLength"
+      ],
+      "value": 1.0,
+      "unit": "kilo_gram_per_meter"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "MassPerLength": "qkind:MassPerLength",
+      "kilo_gram_per_meter": "qunit:KiloGM-PER-M",
+      "gram_per_kilo_meter": "qunit:GM-PER-KiloM",
+      "milli_gram_per_meter": "qunit:MilliGM-PER-M",
+      "gram_per_meter": "qunit:GM-PER-M",
+      "kilo_gram_per_kilo_meter": "qunit:KiloGM-PER-KiloM",
+      "gram_per_milli_meter": "qunit:GM-PER-MilliM",
+      "kilo_gram_per_milli_meter": "qunit:KiloGM-PER-MilliM"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "MassPerLength"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "kilo_gram_per_meter",
+        "gram_per_kilo_meter",
+        "milli_gram_per_meter",
+        "gram_per_meter",
+        "kilo_gram_per_kilo_meter",
+        "gram_per_milli_meter",
+        "kilo_gram_per_milli_meter"
+      ],
+      "default": "kilo_gram_per_meter"
+    }
+  }
+}

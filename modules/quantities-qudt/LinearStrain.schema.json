@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "LinearStrain.schema.json",
+  "x-oold-uuid": "0c6e03c0-1296-556a-ba2d-7ac65750357e",
+  "x-oold-version": "0.1.0",
+  "title": "LinearStrain",
+  "x-oold-multilang-title": {
+    "en": "Linear Strain"
+  },
+  "description": "A strain is a normalized measure of deformation representing the displacement between particles in the body relative to a reference length.",
+  "allOf": [
+    {
+      "$ref": "LengthRatio.schema.json"
+    }
+  ],
+  "@context": [
+    "LengthRatio.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "LinearStrain": "qkind:LinearStrain"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "LinearStrain"
+      ]
+    }
+  }
+}

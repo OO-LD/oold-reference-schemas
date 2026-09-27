@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MASS-DELIVERED.schema.json",
+  "x-oold-uuid": "a3f14dbd-a73f-5a4f-aa19-595388c74d3e",
+  "x-oold-version": "0.1.0",
+  "title": "MASS-DELIVERED",
+  "x-oold-multilang-title": {
+    "en": "Mass Delivered"
+  },
+  "description": "The minimum mass a propulsive system can deliver to a specified target or location. Most mass- delivered requirements have associated Delta-V requirements, effectively specifying the path between the two points.",
+  "allOf": [
+    {
+      "$ref": "Mass.schema.json"
+    }
+  ],
+  "@context": [
+    "Mass.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "MASS-DELIVERED": "qkind:MASS-DELIVERED"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "MASS-DELIVERED"
+      ]
+    }
+  }
+}

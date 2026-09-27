@@ -1,0 +1,31 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "OsmoticPressure.schema.json",
+  "x-oold-uuid": "a76a1a2e-60f9-52fd-9b4b-da2edfd4047a",
+  "x-oold-version": "0.1.0",
+  "title": "OsmoticPressure",
+  "x-oold-multilang-title": {
+    "en": "Osmotic pressure",
+    "de": "Osmotischer Druck"
+  },
+  "description": "The \"Osmotic Pressure\" is the pressure which needs to be applied to a solution to prevent the inward flow of water across a semipermeable membrane.",
+  "allOf": [
+    {
+      "$ref": "Pressure.schema.json"
+    }
+  ],
+  "@context": [
+    "Pressure.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "OsmoticPressure": "qkind:OsmoticPressure"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "OsmoticPressure"
+      ]
+    }
+  }
+}

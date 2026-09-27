@@ -1,0 +1,46 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "TemperatureVariance.schema.json",
+  "x-oold-uuid": "4a614483-3c7e-51cd-9ff4-2854dc9184f1",
+  "x-oold-version": "0.1.0",
+  "title": "TemperatureVariance",
+  "x-oold-multilang-title": {
+    "en": "Temperature Variance"
+  },
+  "description": "Variance for temperature data.",
+  "examples": [
+    {
+      "type": [
+        "TemperatureVariance"
+      ],
+      "value": 1.0,
+      "unit": "celsius_squared"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "TemperatureVariance": "qkind:TemperatureVariance",
+      "celsius_squared": "qunit:DEG_C2"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "TemperatureVariance"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "celsius_squared"
+      ],
+      "default": "celsius_squared"
+    }
+  }
+}

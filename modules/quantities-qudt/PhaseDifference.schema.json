@@ -1,0 +1,31 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "PhaseDifference.schema.json",
+  "x-oold-uuid": "4d94267d-704a-581c-b3c3-01ab2aab5aa6",
+  "x-oold-version": "0.1.0",
+  "title": "PhaseDifference",
+  "x-oold-multilang-title": {
+    "en": "Phase difference",
+    "de": "Phasenverschiebungswinkel"
+  },
+  "description": "\"Phase Difference\" is the difference, expressed in electrical degrees or time, between two waves having the same frequency and referenced to the same point in time. Two oscillators that have the same frequency and different phases have a phase difference, and the oscillators are said to be out of phase with each other. The amount by which such oscillators are out of step with each other can be expressed in degrees from $0^\\circ$ to $360^\\circ$, or in radians from 0 to ${2\\pi}$. If the phase difference is $180^\\circ$ ($\\pi$ radians), then the two oscillators are said to be in antiphase.",
+  "allOf": [
+    {
+      "$ref": "Angle.schema.json"
+    }
+  ],
+  "@context": [
+    "Angle.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "PhaseDifference": "qkind:PhaseDifference"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "PhaseDifference"
+      ]
+    }
+  }
+}

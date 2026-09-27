@@ -1,0 +1,71 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MomentOfForce.schema.json",
+  "x-oold-uuid": "305a18e4-16d6-519e-8683-eaf9dfce1dec",
+  "x-oold-version": "0.1.0",
+  "title": "MomentOfForce",
+  "x-oold-multilang-title": {
+    "en": "Moment of Force"
+  },
+  "description": "Moment of force (often just moment) is the tendency of a force to twist or rotate an object.",
+  "examples": [
+    {
+      "type": [
+        "MomentOfForce"
+      ],
+      "value": 1.0,
+      "unit": "meter_newton"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "MomentOfForce": "qkind:MomentOfForce",
+      "meter_newton": "qunit:N-M",
+      "meter_micro_newton": "qunit:MicroN-M",
+      "meter_milli_newton": "qunit:MilliN-M",
+      "centi_meter_newton": "qunit:N-CentiM",
+      "centi_newton_meter": "qunit:CentiN-M",
+      "deci_newton_meter": "qunit:DeciN-M",
+      "kilo_newton_meter": "qunit:KiloN-M",
+      "mega_newton_meter": "qunit:MegaN-M"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "MomentOfForce"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "meter_newton",
+        "meter_micro_newton",
+        "meter_milli_newton",
+        "centi_meter_newton",
+        "centi_newton_meter",
+        "deci_newton_meter",
+        "kilo_newton_meter",
+        "mega_newton_meter"
+      ],
+      "default": "meter_newton"
+    }
+  },
+  "x-oold-context": {
+    "MomentOfForce": {
+      "https://si-digital-framework.org/quantities/TORQ": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

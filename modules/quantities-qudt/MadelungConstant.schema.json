@@ -1,0 +1,47 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MadelungConstant.schema.json",
+  "x-oold-uuid": "2e8f37f6-c34a-5c0c-86f4-d680edc4c7f9",
+  "x-oold-version": "0.1.0",
+  "title": "MadelungConstant",
+  "x-oold-multilang-title": {
+    "en": "Madelung constant",
+    "de": "Madelung-Konstante"
+  },
+  "description": "\"Madelung Constant\" is used in determining the electrostatic potential of a single ion in a crystal by approximating the ions by point charges. It is named after Erwin Madelung, a German physicist.",
+  "examples": [
+    {
+      "type": [
+        "MadelungConstant"
+      ],
+      "value": 1.0,
+      "unit": "unitless"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "MadelungConstant": "qkind:MadelungConstant",
+      "unitless": "qunit:UNITLESS"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "MadelungConstant"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "unitless"
+      ],
+      "default": "unitless"
+    }
+  }
+}

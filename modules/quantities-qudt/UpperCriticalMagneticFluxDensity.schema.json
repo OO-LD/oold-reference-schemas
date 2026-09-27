@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "UpperCriticalMagneticFluxDensity.schema.json",
+  "x-oold-uuid": "b7c21109-2f5a-57a2-978f-297e390675e1",
+  "x-oold-version": "0.1.0",
+  "title": "UpperCriticalMagneticFluxDensity",
+  "x-oold-multilang-title": {
+    "en": "Upper Critical Magnetic Flux Density"
+  },
+  "description": "\"Upper Critical Magnetic Flux Density\" for type II superconductors, is the threshold magnetic flux density for disappearance of bulk superconductivity.",
+  "allOf": [
+    {
+      "$ref": "MagneticFluxDensity.schema.json"
+    }
+  ],
+  "@context": [
+    "MagneticFluxDensity.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "UpperCriticalMagneticFluxDensity": "qkind:UpperCriticalMagneticFluxDensity"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "UpperCriticalMagneticFluxDensity"
+      ]
+    }
+  }
+}

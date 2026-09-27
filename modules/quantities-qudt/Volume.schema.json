@@ -1,0 +1,98 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Volume.schema.json",
+  "x-oold-uuid": "f5c54cd7-0ddf-5ff3-b1ef-1aee6ae8f0cb",
+  "x-oold-version": "0.1.0",
+  "title": "Volume",
+  "x-oold-multilang-title": {
+    "en": "Volume"
+  },
+  "description": "The volume of a solid object is the three-dimensional concept of how much space it occupies, often quantified numerically. One-dimensional figures (such as lines) and two-dimensional shapes (such as squares) are assigned zero volume in the three-dimensional space.",
+  "examples": [
+    {
+      "type": [
+        "Volume"
+      ],
+      "value": 1.0,
+      "unit": "kilo_liter"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Volume": "qkind:Volume",
+      "kilo_liter": "qunit:KiloL",
+      "femto_liter": "qunit:FemtoL",
+      "micro_meter_cubed": "qunit:MicroM3",
+      "pico_liter": "qunit:PicoL",
+      "nano_liter": "qunit:NanoL",
+      "milli_meter_cubed": "qunit:MilliM3",
+      "micro_liter": "qunit:MicroL",
+      "centi_meter_cubed": "qunit:CentiM3",
+      "milli_liter": "qunit:MilliL",
+      "centi_liter": "qunit:CentiL",
+      "deci_liter": "qunit:DeciL",
+      "liter": "qunit:L",
+      "deci_meter_cubed": "qunit:DeciM3",
+      "deca_liter": "qunit:DecaL",
+      "hecto_liter": "qunit:HectoL",
+      "meter_cubed": "qunit:M3",
+      "mega_liter": "qunit:MegaL",
+      "deca_meter_cubed": "qunit:DecaM3"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Volume"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "kilo_liter",
+        "femto_liter",
+        "micro_meter_cubed",
+        "pico_liter",
+        "nano_liter",
+        "milli_meter_cubed",
+        "micro_liter",
+        "centi_meter_cubed",
+        "milli_liter",
+        "centi_liter",
+        "deci_liter",
+        "liter",
+        "deci_meter_cubed",
+        "deca_liter",
+        "hecto_liter",
+        "meter_cubed",
+        "mega_liter",
+        "deca_meter_cubed"
+      ],
+      "default": "kilo_liter"
+    }
+  },
+  "x-oold-context": {
+    "Volume": {
+      "http://dbpedia.org/resource/Volume": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      },
+      "https://si-digital-framework.org/quantities/VOLU": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

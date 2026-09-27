@@ -1,0 +1,31 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ChemicalPotential.schema.json",
+  "x-oold-uuid": "7119e1d7-6181-5d4f-acb1-dbee71829517",
+  "x-oold-version": "0.1.0",
+  "title": "ChemicalPotential",
+  "x-oold-multilang-title": {
+    "en": "Chemical potential",
+    "de": "Chemisches Potential des Stoffs B"
+  },
+  "description": "\"Chemical Potential\", also known as partial molar free energy, is a form of potential energy that can be absorbed or released during a chemical reaction.",
+  "allOf": [
+    {
+      "$ref": "MolarEnergy.schema.json"
+    }
+  ],
+  "@context": [
+    "MolarEnergy.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ChemicalPotential": "qkind:ChemicalPotential"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ChemicalPotential"
+      ]
+    }
+  }
+}

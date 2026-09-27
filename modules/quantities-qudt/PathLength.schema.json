@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "PathLength.schema.json",
+  "x-oold-uuid": "00ae7010-dd63-5404-bd82-873cfd7a3254",
+  "x-oold-version": "0.1.0",
+  "title": "PathLength",
+  "x-oold-multilang-title": {
+    "en": "Path Length"
+  },
+  "description": "\"PathLength\" is",
+  "allOf": [
+    {
+      "$ref": "Length.schema.json"
+    }
+  ],
+  "@context": [
+    "Length.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "PathLength": "qkind:PathLength"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "PathLength"
+      ]
+    }
+  }
+}

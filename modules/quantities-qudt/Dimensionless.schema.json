@@ -1,0 +1,173 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Dimensionless.schema.json",
+  "x-oold-uuid": "bcaa33bd-770e-53e0-9d5e-6087d141648b",
+  "x-oold-version": "0.1.0",
+  "title": "Dimensionless",
+  "x-oold-multilang-title": {
+    "en": "Dimensionless"
+  },
+  "description": "In dimensional analysis, a dimensionless quantity or quantity of dimension one is a quantity without an associated physical dimension. It is thus a \"pure\" number, and as such always has a dimension of 1. Dimensionless quantities are widely used in mathematics, physics, engineering, economics, and in everyday life (such as in counting). Numerous well-known quantities, such as $\\pi$, $\\epsilon$, and $\\psi$, are dimensionless. By contrast, non-dimensionless quantities are measured in units of length, area, time, etc. Dimensionless quantities are often defined as products or ratios of quantities that are not dimensionless, but whose dimensions cancel out when their powers are multiplied.",
+  "examples": [
+    {
+      "type": [
+        "Dimensionless"
+      ],
+      "value": 1.0,
+      "unit": "dimensionless"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Dimensionless": "qkind:Dimensionless",
+      "dimensionless": "qunit:NUM",
+      "neper": "qunit:NP",
+      "dec": "qunit:DECADE",
+      "grain": "qunit:GR",
+      "octave": "qunit:OCT",
+      "ppq": "qunit:PPQ",
+      "parts_per_trillion": "qunit:PPT",
+      "vacuum_permittivity": "qunit:PERMITTIVITY_REL",
+      "ppb": "qunit:PPB",
+      "ppm": "qunit:PPM",
+      "permille": "qunit:PPTH",
+      "percent": "qunit:PERCENT",
+      "barn": "qunit:BIT",
+      "point": "qunit:BasePair",
+      "flight": "qunit:FLIGHT",
+      "heartbeat": "qunit:HeartBeat",
+      "nano_technical_atmosphere": "qunit:NAT",
+      "one": "qunit:ONE",
+      "unknown": "qunit:FRACTION",
+      "unitless": "qunit:UNITLESS",
+      "ban": "qunit:BAN",
+      "bel": "qunit:BYTE",
+      "to_the_10": "qunit:TEN",
+      "to_the_100": "qunit:HUNDRED",
+      "kilo_barn": "qunit:KiloBIT",
+      "kibi_barn": "qunit:KibiBIT",
+      "to_the_1000": "qunit:THOUSAND",
+      "kilo_byte": "qunit:KiloBYTE",
+      "kibi_byte": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/kibi_byte",
+      "mega_barn": "qunit:MegaBIT",
+      "mebi_barn": "qunit:MebiBIT",
+      "to_the_1000000": "qunit:MILLION",
+      "mega_byte": "qunit:MegaBYTE",
+      "mebi_byte": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/mebi_byte",
+      "gigabit": "qunit:GigaBIT",
+      "gibi_barn": "qunit:GibiBIT",
+      "to_the_1000000000": "qunit:BILLION_Short",
+      "giga_point": "qunit:GigaBasePair",
+      "giga_byte": "qunit:GigaBYTE",
+      "gibi_byte": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/gibi_byte",
+      "tera_barn": "qunit:TeraBIT",
+      "tebi_barn": "qunit:TebiBIT",
+      "to_the_1000000000000": "qunit:BILLION_Long",
+      "tera_byte": "qunit:TeraBYTE",
+      "tebi_byte": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/tebi_byte",
+      "pebi_barn": "qunit:PebiBIT",
+      "peta_barn": "qunit:PetaBIT",
+      "pebi_byte": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/pebi_byte",
+      "peta_byte": "qunit:PetaBYTE",
+      "exbi_barn": "qunit:ExbiBIT",
+      "exa_barn": "qunit:ExaBIT",
+      "exbi_byte": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/exbi_byte",
+      "exa_byte": "qunit:ExaBYTE",
+      "psu": "qunit:PSU",
+      "pptm": "qunit:PPTM",
+      "sh": "qunit:SHANNON",
+      "count": "qunit:COUNT",
+      "e": "qunit:ERLANG",
+      "hart": "qunit:HART"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Dimensionless"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "dimensionless",
+        "neper",
+        "psu",
+        "dec",
+        "grain",
+        "octave",
+        "ppq",
+        "parts_per_trillion",
+        "vacuum_permittivity",
+        "ppb",
+        "pptm",
+        "ppm",
+        "permille",
+        "percent",
+        "sh",
+        "barn",
+        "count",
+        "e",
+        "point",
+        "flight",
+        "heartbeat",
+        "nano_technical_atmosphere",
+        "one",
+        "unknown",
+        "unitless",
+        "ban",
+        "hart",
+        "bel",
+        "to_the_10",
+        "to_the_100",
+        "kilo_barn",
+        "kibi_barn",
+        "to_the_1000",
+        "kilo_byte",
+        "kibi_byte",
+        "mega_barn",
+        "mebi_barn",
+        "to_the_1000000",
+        "mega_byte",
+        "mebi_byte",
+        "gigabit",
+        "gibi_barn",
+        "to_the_1000000000",
+        "giga_point",
+        "giga_byte",
+        "gibi_byte",
+        "tera_barn",
+        "tebi_barn",
+        "to_the_1000000000000",
+        "tera_byte",
+        "tebi_byte",
+        "pebi_barn",
+        "peta_barn",
+        "pebi_byte",
+        "peta_byte",
+        "exbi_barn",
+        "exa_barn",
+        "exbi_byte",
+        "exa_byte"
+      ],
+      "default": "dimensionless"
+    }
+  },
+  "x-oold-context": {
+    "Dimensionless": {
+      "http://dbpedia.org/resource/Dimensionless_quantity": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

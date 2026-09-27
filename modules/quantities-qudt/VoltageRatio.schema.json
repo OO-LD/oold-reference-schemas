@@ -1,0 +1,29 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "VoltageRatio.schema.json",
+  "x-oold-uuid": "b62313a0-be8e-5248-9be4-95eea7c6f856",
+  "x-oold-version": "0.1.0",
+  "title": "VoltageRatio",
+  "x-oold-multilang-title": {
+    "en": "Voltage Ratio"
+  },
+  "allOf": [
+    {
+      "$ref": "DimensionlessRatio.schema.json"
+    }
+  ],
+  "@context": [
+    "DimensionlessRatio.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "VoltageRatio": "qkind:VoltageRatio"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "VoltageRatio"
+      ]
+    }
+  }
+}

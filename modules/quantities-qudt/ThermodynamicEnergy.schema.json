@@ -1,0 +1,29 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ThermodynamicEnergy.schema.json",
+  "x-oold-uuid": "e58e83b5-1135-5b99-9aa0-dcb40428df2a",
+  "x-oold-version": "0.1.0",
+  "title": "ThermodynamicEnergy",
+  "x-oold-multilang-title": {
+    "en": "Thermodynamic Energy"
+  },
+  "allOf": [
+    {
+      "$ref": "Energy.schema.json"
+    }
+  ],
+  "@context": [
+    "Energy.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ThermodynamicEnergy": "qkind:ThermodynamicEnergy"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ThermodynamicEnergy"
+      ]
+    }
+  }
+}

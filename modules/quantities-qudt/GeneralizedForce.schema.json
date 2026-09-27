@@ -1,0 +1,46 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "GeneralizedForce.schema.json",
+  "x-oold-uuid": "4c0612fa-a326-5f14-ab00-2fb063106af2",
+  "x-oold-version": "0.1.0",
+  "title": "GeneralizedForce",
+  "x-oold-multilang-title": {
+    "en": "Generalized Force"
+  },
+  "description": "Generalized Forces find use in Lagrangian mechanics, where they play a role conjugate to generalized coordinates.",
+  "examples": [
+    {
+      "type": [
+        "GeneralizedForce"
+      ],
+      "value": 1.0,
+      "unit": "unitless"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "GeneralizedForce": "qkind:GeneralizedForce",
+      "unitless": "qunit:UNITLESS"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "GeneralizedForce"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "unitless"
+      ],
+      "default": "unitless"
+    }
+  }
+}

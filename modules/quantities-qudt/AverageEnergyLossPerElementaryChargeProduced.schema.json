@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "AverageEnergyLossPerElementaryChargeProduced.schema.json",
+  "x-oold-uuid": "297cbb81-c60a-534a-8852-18aaa3caeb0f",
+  "x-oold-version": "0.1.0",
+  "title": "AverageEnergyLossPerElementaryChargeProduced",
+  "x-oold-multilang-title": {
+    "en": "Average Energy Loss per Elementary Charge Produced"
+  },
+  "description": "\"Average Energy Loss per Elementary Charge Produced\" is also referred to as average energy loss per ion pair formed.",
+  "allOf": [
+    {
+      "$ref": "Energy.schema.json"
+    }
+  ],
+  "@context": [
+    "Energy.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "AverageEnergyLossPerElementaryChargeProduced": "qkind:AverageEnergyLossPerElementaryChargeProduced"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "AverageEnergyLossPerElementaryChargeProduced"
+      ]
+    }
+  }
+}

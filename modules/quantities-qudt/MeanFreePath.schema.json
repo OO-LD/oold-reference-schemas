@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MeanFreePath.schema.json",
+  "x-oold-uuid": "79e48880-4697-561c-90bd-9fe6081b7747",
+  "x-oold-version": "0.1.0",
+  "title": "MeanFreePath",
+  "x-oold-multilang-title": {
+    "en": "Mean Free Path"
+  },
+  "description": "\"Mean Free Path\" is the average distance travelled by a moving particle (such as an atom, a molecule, a photon) between successive impacts (collisions) which modify its direction or energy or other particle properties.",
+  "allOf": [
+    {
+      "$ref": "Length.schema.json"
+    }
+  ],
+  "@context": [
+    "Length.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "MeanFreePath": "qkind:MeanFreePath"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "MeanFreePath"
+      ]
+    }
+  }
+}

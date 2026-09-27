@@ -1,0 +1,46 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "GeneralizedMomentum.schema.json",
+  "x-oold-uuid": "8f13994f-ed1a-5281-985e-c6c2532ad4a5",
+  "x-oold-version": "0.1.0",
+  "title": "GeneralizedMomentum",
+  "x-oold-multilang-title": {
+    "en": "Generalized Force"
+  },
+  "description": "Generalized Momentum, also known as the canonical or conjugate momentum, extends the concepts of both linear momentum and angular momentum. To distinguish it from generalized momentum, the product of mass and velocity is also referred to as mechanical, kinetic or kinematic momentum.",
+  "examples": [
+    {
+      "type": [
+        "GeneralizedMomentum"
+      ],
+      "value": 1.0,
+      "unit": "unitless"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "GeneralizedMomentum": "qkind:GeneralizedMomentum",
+      "unitless": "qunit:UNITLESS"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "GeneralizedMomentum"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "unitless"
+      ],
+      "default": "unitless"
+    }
+  }
+}

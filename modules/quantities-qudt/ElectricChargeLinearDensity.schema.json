@@ -1,0 +1,46 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ElectricChargeLinearDensity.schema.json",
+  "x-oold-uuid": "4631a0c8-2e5a-5333-b3a8-9b76ff2d0b54",
+  "x-oold-version": "0.1.0",
+  "title": "ElectricChargeLinearDensity",
+  "x-oold-multilang-title": {
+    "en": "Electric Charge Linear Density"
+  },
+  "description": "In electromagnetism, charge density is a measure of electric charge per unit volume of space, in one, two or three dimensions. More specifically: the linear, surface, or volume charge density is the amount of electric charge per unit length, surface area, or volume, respectively.",
+  "examples": [
+    {
+      "type": [
+        "ElectricChargeLinearDensity"
+      ],
+      "value": 1.0,
+      "unit": "coulomb_per_meter"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ElectricChargeLinearDensity": "qkind:ElectricChargeLinearDensity",
+      "coulomb_per_meter": "qunit:C-PER-M"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ElectricChargeLinearDensity"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "coulomb_per_meter"
+      ],
+      "default": "coulomb_per_meter"
+    }
+  }
+}

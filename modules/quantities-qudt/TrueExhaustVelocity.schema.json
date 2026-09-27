@@ -1,0 +1,29 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "TrueExhaustVelocity.schema.json",
+  "x-oold-uuid": "1397ec65-62ae-5659-b527-a5d3738756c7",
+  "x-oold-version": "0.1.0",
+  "title": "TrueExhaustVelocity",
+  "x-oold-multilang-title": {
+    "en": "True Exhaust Velocity"
+  },
+  "allOf": [
+    {
+      "$ref": "Velocity.schema.json"
+    }
+  ],
+  "@context": [
+    "Velocity.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "TrueExhaustVelocity": "qkind:TrueExhaustVelocity"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "TrueExhaustVelocity"
+      ]
+    }
+  }
+}

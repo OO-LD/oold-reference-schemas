@@ -1,0 +1,46 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "GeneralizedCoordinate.schema.json",
+  "x-oold-uuid": "0121ff06-c718-51eb-9f63-0271e5f52e4a",
+  "x-oold-version": "0.1.0",
+  "title": "GeneralizedCoordinate",
+  "x-oold-multilang-title": {
+    "en": "Generalized Coordinate"
+  },
+  "description": "Generalized Coordinates refers to the parameters that describe the configuration of the system relative to some reference configuration. These parameters must uniquely define the configuration of the system relative to the reference configuration.",
+  "examples": [
+    {
+      "type": [
+        "GeneralizedCoordinate"
+      ],
+      "value": 1.0,
+      "unit": "unitless"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "GeneralizedCoordinate": "qkind:GeneralizedCoordinate",
+      "unitless": "qunit:UNITLESS"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "GeneralizedCoordinate"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "unitless"
+      ],
+      "default": "unitless"
+    }
+  }
+}

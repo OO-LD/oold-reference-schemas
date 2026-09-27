@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ActivePower.schema.json",
+  "x-oold-uuid": "d8d82c09-0624-5817-ad4c-0d3d273e0b29",
+  "x-oold-version": "0.1.0",
+  "title": "ActivePower",
+  "x-oold-multilang-title": {
+    "en": "Active Power"
+  },
+  "description": "An $Active Power$ is, under periodic conditions, the mean value, taken over one period $T$, of the instantaneous power $p$. \n  In complex notation, $P = \\mathbf{Re} \\; \\underline{S}$, where $\\underline{S}$ is $\\textit{complex power}$.",
+  "allOf": [
+    {
+      "$ref": "ElectricPower.schema.json"
+    }
+  ],
+  "@context": [
+    "ElectricPower.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ActivePower": "qkind:ActivePower"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ActivePower"
+      ]
+    }
+  }
+}

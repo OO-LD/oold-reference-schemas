@@ -1,0 +1,31 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "RestMass.schema.json",
+  "x-oold-uuid": "cc4866e4-7ced-53df-bb70-9c97a8752530",
+  "x-oold-version": "0.1.0",
+  "title": "RestMass",
+  "x-oold-multilang-title": {
+    "en": "Rest mass",
+    "de": "Ruhemasse"
+  },
+  "description": "The $\\textit{Rest Mass}$, the invariant mass, intrinsic mass, proper mass, or (in the case of bound systems or objects observed in their center of momentum frame) simply mass, is a characteristic of the total energy and momentum of an object or a system of objects that is the same in all frames of reference related by Lorentz transformations. The mass of a particle type X (electron, proton or neutron) when that particle is at rest. For an electron: $m_e = 9,109 382 15(45) 10^{-31} kg$, for a proton: $m_p = 1,672 621 637(83) 10^{-27} kg$, for a neutron: $m_n = 1,674 927 211(84) 10^{-27} kg$. Rest mass is often denoted $m_0$.",
+  "allOf": [
+    {
+      "$ref": "Mass.schema.json"
+    }
+  ],
+  "@context": [
+    "Mass.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "RestMass": "qkind:RestMass"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "RestMass"
+      ]
+    }
+  }
+}

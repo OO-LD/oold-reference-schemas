@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "AngleOfAttack.schema.json",
+  "x-oold-uuid": "1d2dc894-4376-5cf8-935b-61016cbe5bd1",
+  "x-oold-version": "0.1.0",
+  "title": "AngleOfAttack",
+  "x-oold-multilang-title": {
+    "en": "Angle Of Attack"
+  },
+  "description": "Angle of attack  is the angle between the oncoming air or relative wind and a reference line on the airplane or wing.",
+  "allOf": [
+    {
+      "$ref": "Angle.schema.json"
+    }
+  ],
+  "@context": [
+    "Angle.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "AngleOfAttack": "qkind:AngleOfAttack"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "AngleOfAttack"
+      ]
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "OrderOfReflection.schema.json",
+  "x-oold-uuid": "bfe47b8c-b99f-58f2-9d1e-92f296918428",
+  "x-oold-version": "0.1.0",
+  "title": "OrderOfReflection",
+  "x-oold-multilang-title": {
+    "en": "Order of Reflection"
+  },
+  "description": "\"Order of Reflection\" is $n$ in the Bragg's Law equation.",
+  "examples": [
+    {
+      "type": [
+        "OrderOfReflection"
+      ],
+      "value": 1.0,
+      "unit": "unitless"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "OrderOfReflection": "qkind:OrderOfReflection",
+      "unitless": "qunit:UNITLESS"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "OrderOfReflection"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "unitless"
+      ],
+      "default": "unitless"
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Pressure.schema.json",
+  "x-oold-uuid": "b58cb5a4-654f-52e1-804c-74c035d21352",
+  "x-oold-version": "0.1.0",
+  "title": "Pressure",
+  "x-oold-multilang-title": {
+    "en": "Pressure",
+    "de": "Druck"
+  },
+  "description": "Pressure is an effect which occurs when a force is applied on a surface. Pressure is the amount of force acting on a unit area. Pressure is distinct from stress, as the former is the ratio of the component of force normal to a surface to the surface area. Stress is a tensor that relates the vector force to the vector area.",
+  "allOf": [
+    {
+      "$ref": "ForcePerArea.schema.json"
+    }
+  ],
+  "@context": [
+    "ForcePerArea.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Pressure": "qkind:Pressure"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Pressure"
+      ]
+    }
+  },
+  "x-oold-context": {
+    "Pressure": {
+      "http://dbpedia.org/resource/Pressure": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      },
+      "https://si-digital-framework.org/quantities/PRES": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

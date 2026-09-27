@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "GroupSpeedOfSound.schema.json",
+  "x-oold-uuid": "5dc3dc74-fcb8-51e4-9e95-b82204c2f2dd",
+  "x-oold-version": "0.1.0",
+  "title": "GroupSpeedOfSound",
+  "x-oold-multilang-title": {
+    "en": "Group Speed of Sound"
+  },
+  "description": "In a dispersive medium sound speed is a function of sound frequency, through the dispersion relation. The spatial and temporal distribution of a propagating disturbance will continually change. The group speed of sound describes the propagation of the disturbance.",
+  "allOf": [
+    {
+      "$ref": "SpeedOfSound.schema.json"
+    }
+  ],
+  "@context": [
+    "SpeedOfSound.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "GroupSpeedOfSound": "qkind:GroupSpeedOfSound"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "GroupSpeedOfSound"
+      ]
+    }
+  }
+}

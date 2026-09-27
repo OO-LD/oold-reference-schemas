@@ -1,0 +1,45 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ElectricCurrentPerAngle.schema.json",
+  "x-oold-uuid": "f46a3d86-7835-54a1-9d5b-ce2a41a98552",
+  "x-oold-version": "0.1.0",
+  "title": "ElectricCurrentPerAngle",
+  "x-oold-multilang-title": {
+    "en": "Electric Current per Angle"
+  },
+  "examples": [
+    {
+      "type": [
+        "ElectricCurrentPerAngle"
+      ],
+      "value": 1.0,
+      "unit": "ampere_per_radian"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ElectricCurrentPerAngle": "qkind:ElectricCurrentPerAngle",
+      "ampere_per_radian": "qunit:A-PER-RAD"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ElectricCurrentPerAngle"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "ampere_per_radian"
+      ],
+      "default": "ampere_per_radian"
+    }
+  }
+}

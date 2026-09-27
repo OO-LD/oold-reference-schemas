@@ -1,0 +1,93 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "CatalyticActivityConcentration.schema.json",
+  "x-oold-uuid": "6d3afdeb-7207-5dae-90db-b01171c2d1db",
+  "x-oold-version": "0.1.0",
+  "title": "CatalyticActivityConcentration",
+  "x-oold-multilang-title": {
+    "en": "Catalytic Activity Concentration"
+  },
+  "description": "The catalytic activity of an enzyme per unit volume, where volume refers to that of the original enzyme‐containing preparation, not that of the assay system. It may be expressed in katals per litre.",
+  "examples": [
+    {
+      "type": [
+        "CatalyticActivityConcentration"
+      ],
+      "value": 1.0,
+      "unit": "milli_katal_per_liter"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "CatalyticActivityConcentration": "qkind:CatalyticActivityConcentration",
+      "milli_katal_per_liter": "qunit:MilliKAT-PER-L",
+      "pico_mole_per_day_per_liter": "qunit:PicoMOL-PER-L-DAY",
+      "pico_mole_per_hour_per_liter": "qunit:PicoMOL-PER-L-HR",
+      "pico_mole_per_meter_cubed_per_second": "qunit:PicoMOL-PER-M3-SEC",
+      "nano_mole_per_day_per_liter": "qunit:NanoMOL-PER-L-DAY",
+      "nano_mole_per_hour_per_liter": "qunit:NanoMOL-PER-L-HR",
+      "pico_katal_per_liter": "qunit:PicoKAT-PER-L",
+      "milli_mole_per_day_per_meter_cubed": "qunit:MilliMOL-PER-M3-DAY",
+      "nano_mole_per_centi_meter_cubed_per_hour": "qunit:NanoMOL-PER-CentiM3-HR",
+      "micro_mole_per_hour_per_liter": "qunit:MicroMOL-PER-L-HR",
+      "nano_katal_per_liter": "qunit:NanoKAT-PER-L",
+      "mole_per_day_per_meter_cubed": "qunit:MOL-PER-M3-DAY",
+      "mole_per_hour_per_meter_cubed": "qunit:MOL-PER-M3-HR",
+      "micro_katal_per_liter": "qunit:MicroKAT-PER-L",
+      "mole_per_day_per_liter": "qunit:MOL-PER-L-DAY",
+      "mole_per_hour_per_liter": "qunit:MOL-PER-L-HR",
+      "mole_per_meter_cubed_per_second": "qunit:MOL-PER-M2-SEC-M",
+      "katal_per_liter": "qunit:KAT-PER-L",
+      "katal_per_micro_liter": "qunit:KAT-PER-MicroL"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "CatalyticActivityConcentration"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "milli_katal_per_liter",
+        "pico_mole_per_day_per_liter",
+        "pico_mole_per_hour_per_liter",
+        "pico_mole_per_meter_cubed_per_second",
+        "nano_mole_per_day_per_liter",
+        "nano_mole_per_hour_per_liter",
+        "pico_katal_per_liter",
+        "milli_mole_per_day_per_meter_cubed",
+        "nano_mole_per_centi_meter_cubed_per_hour",
+        "micro_mole_per_hour_per_liter",
+        "nano_katal_per_liter",
+        "mole_per_day_per_meter_cubed",
+        "mole_per_hour_per_meter_cubed",
+        "micro_katal_per_liter",
+        "mole_per_day_per_liter",
+        "mole_per_hour_per_liter",
+        "mole_per_meter_cubed_per_second",
+        "katal_per_liter",
+        "katal_per_micro_liter"
+      ],
+      "default": "milli_katal_per_liter"
+    }
+  },
+  "x-oold-context": {
+    "CatalyticActivityConcentration": {
+      "https://si-digital-framework.org/quantities/CTAC": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Permeance.schema.json",
+  "x-oold-uuid": "80e9cf75-5691-5b54-b832-6b588abc2531",
+  "x-oold-version": "0.1.0",
+  "title": "Permeance",
+  "x-oold-multilang-title": {
+    "en": "Permeance"
+  },
+  "description": "\"Permeance\" is the inverse of reluctance. Permeance is a measure of the quantity of flux for a number of current-turns in magnetic circuit. A magnetic circuit almost acts as though the flux is \"conducted\", therefore permeance is larger for large cross sections of a material and smaller for longer lengths. This concept is analogous to electrical conductance in the electric circuit.",
+  "examples": [
+    {
+      "type": [
+        "Permeance"
+      ],
+      "value": 1.0,
+      "unit": "henry"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Permeance": "qkind:Permeance",
+      "henry": "qunit:H",
+      "nano_henry": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/nano_henry",
+      "micro_henry": "qunit:MicroH",
+      "milli_henry": "qunit:MilliH",
+      "kilo_henry": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/kilo_henry",
+      "ph_value": "qunit:PicoH"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Permeance"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "henry",
+        "ph_value",
+        "nano_henry",
+        "micro_henry",
+        "milli_henry",
+        "kilo_henry"
+      ],
+      "default": "henry"
+    }
+  }
+}

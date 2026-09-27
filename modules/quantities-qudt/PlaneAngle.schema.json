@@ -1,0 +1,79 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "PlaneAngle.schema.json",
+  "x-oold-uuid": "cfa8c174-8f3b-586e-9a03-04ab1e2dbc41",
+  "x-oold-version": "0.1.0",
+  "title": "PlaneAngle",
+  "x-oold-multilang-title": {
+    "en": "Plane angle",
+    "de": "Ebener Winkel"
+  },
+  "description": "An angle formed by two straight lines (in the same plane) angle - the space between two lines or planes that intersect; the inclination of one line to another; measured in degrees or radians",
+  "examples": [
+    {
+      "type": [
+        "PlaneAngle"
+      ],
+      "value": 1.0,
+      "unit": "radiation_absorbed_dose"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "PlaneAngle": "qkind:PlaneAngle",
+      "radiation_absorbed_dose": "qunit:RAD",
+      "micro_radian": "qunit:MicroRAD",
+      "minute": "qunit:MIN_Angle",
+      "milli_radian": "qunit:MilliRAD",
+      "grade": "qunit:GON",
+      "degree": "qunit:DEG",
+      "rev": "qunit:REV",
+      "mil_nato": "qunit:MIL"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "PlaneAngle"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "radiation_absorbed_dose",
+        "micro_radian",
+        "minute",
+        "mil_nato",
+        "milli_radian",
+        "grade",
+        "degree",
+        "rev"
+      ],
+      "default": "radiation_absorbed_dose"
+    }
+  },
+  "x-oold-context": {
+    "PlaneAngle": {
+      "http://dbpedia.org/resource/Plane_angle": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      },
+      "https://si-digital-framework.org/quantities/ANGP": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

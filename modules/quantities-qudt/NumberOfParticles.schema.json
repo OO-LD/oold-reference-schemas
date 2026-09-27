@@ -1,0 +1,46 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "NumberOfParticles.schema.json",
+  "x-oold-uuid": "dfb58dc7-a910-5628-ba78-37381d565c57",
+  "x-oold-version": "0.1.0",
+  "title": "NumberOfParticles",
+  "x-oold-multilang-title": {
+    "en": "Number of Particles"
+  },
+  "description": "\"Number of Particles\", also known as the particle number, of a thermodynamic system, conventionally indicated with the letter N, is the number of constituent particles in that system.",
+  "examples": [
+    {
+      "type": [
+        "NumberOfParticles"
+      ],
+      "value": 1.0,
+      "unit": "unitless"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "NumberOfParticles": "qkind:NumberOfParticles",
+      "unitless": "qunit:UNITLESS"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "NumberOfParticles"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "unitless"
+      ],
+      "default": "unitless"
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "GapEnergy.schema.json",
+  "x-oold-uuid": "78b09fe4-74c8-5bf0-9529-d7eb3db0fe78",
+  "x-oold-version": "0.1.0",
+  "title": "GapEnergy",
+  "x-oold-multilang-title": {
+    "en": "Gap Energy"
+  },
+  "description": "\"Gap Energy\" is the difference in energy between the lowest level of conduction band and the highest level of valence band. It is an energy range in a solid where no electron states can exist.",
+  "allOf": [
+    {
+      "$ref": "Energy.schema.json"
+    }
+  ],
+  "@context": [
+    "Energy.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "GapEnergy": "qkind:GapEnergy"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "GapEnergy"
+      ]
+    }
+  }
+}

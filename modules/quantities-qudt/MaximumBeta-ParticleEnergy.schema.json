@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MaximumBeta-ParticleEnergy.schema.json",
+  "x-oold-uuid": "69b54fc6-5f1d-506e-b150-53de18dc035e",
+  "x-oold-version": "0.1.0",
+  "title": "MaximumBeta-ParticleEnergy",
+  "x-oold-multilang-title": {
+    "en": "Maximum Beta-Particle Energy"
+  },
+  "description": "\"Maximum Beta-Particle Energy\" is the maximum energy of the energy spectrum in a beta-particle disintegration process.",
+  "allOf": [
+    {
+      "$ref": "Energy.schema.json"
+    }
+  ],
+  "@context": [
+    "Energy.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "MaximumBeta-ParticleEnergy": "qkind:MaximumBeta-ParticleEnergy"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "MaximumBeta-ParticleEnergy"
+      ]
+    }
+  }
+}

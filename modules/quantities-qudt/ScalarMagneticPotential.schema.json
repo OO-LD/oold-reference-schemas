@@ -1,0 +1,46 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ScalarMagneticPotential.schema.json",
+  "x-oold-uuid": "fc761e5f-ae69-51f2-a4f5-63e06b6cfc85",
+  "x-oold-version": "0.1.0",
+  "title": "ScalarMagneticPotential",
+  "x-oold-multilang-title": {
+    "en": "Scalar Magnetic Potential"
+  },
+  "description": "\"Scalar Magnetic Potential\" is the scalar potential of an irrotational magnetic field strength. The negative of the gradient of the scalar magnetic potential is the irrotational magnetic field strength. The magnetic scalar potential is not unique since any constant scalar field can be added to it without changing its gradient.",
+  "examples": [
+    {
+      "type": [
+        "ScalarMagneticPotential"
+      ],
+      "value": 1.0,
+      "unit": "second_volt_per_meter"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ScalarMagneticPotential": "qkind:ScalarMagneticPotential",
+      "second_volt_per_meter": "qunit:V-SEC-PER-M"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ScalarMagneticPotential"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "second_volt_per_meter"
+      ],
+      "default": "second_volt_per_meter"
+    }
+  }
+}

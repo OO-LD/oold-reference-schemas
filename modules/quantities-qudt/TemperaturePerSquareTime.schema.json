@@ -1,0 +1,45 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "TemperaturePerSquareTime.schema.json",
+  "x-oold-uuid": "a9de5373-05c3-518c-81b3-7eb9ee254fba",
+  "x-oold-version": "0.1.0",
+  "title": "TemperaturePerSquareTime",
+  "x-oold-multilang-title": {
+    "en": "Temperature per Square Time"
+  },
+  "examples": [
+    {
+      "type": [
+        "TemperaturePerSquareTime"
+      ],
+      "value": 1.0,
+      "unit": "kelvin_per_second_squared"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "TemperaturePerSquareTime": "qkind:TemperaturePerSquareTime",
+      "kelvin_per_second_squared": "qunit:K-PER-SEC2"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "TemperaturePerSquareTime"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "kelvin_per_second_squared"
+      ],
+      "default": "kelvin_per_second_squared"
+    }
+  }
+}

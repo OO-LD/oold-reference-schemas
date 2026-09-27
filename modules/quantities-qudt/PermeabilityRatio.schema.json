@@ -1,0 +1,48 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "PermeabilityRatio.schema.json",
+  "x-oold-uuid": "83b5310c-3d62-5578-b62c-3727b49bba56",
+  "x-oold-version": "0.1.0",
+  "title": "PermeabilityRatio",
+  "x-oold-multilang-title": {
+    "en": "Permeability Ratio"
+  },
+  "description": "The ratio of the effective permeability of a porous phase to the absolute permeability.",
+  "examples": [
+    {
+      "type": [
+        "PermeabilityRatio"
+      ],
+      "value": 1.0,
+      "unit": "dimensionless"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "PermeabilityRatio": "qkind:PermeabilityRatio",
+      "dimensionless": "qunit:NUM",
+      "k": "qunit:PERMEABILITY_REL"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "PermeabilityRatio"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "dimensionless",
+        "k"
+      ],
+      "default": "dimensionless"
+    }
+  }
+}

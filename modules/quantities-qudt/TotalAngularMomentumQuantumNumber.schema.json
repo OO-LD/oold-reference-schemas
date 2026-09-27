@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "TotalAngularMomentumQuantumNumber.schema.json",
+  "x-oold-uuid": "176905fa-6516-5b4d-834f-093249932fef",
+  "x-oold-version": "0.1.0",
+  "title": "TotalAngularMomentumQuantumNumber",
+  "x-oold-multilang-title": {
+    "en": "Total Angular Momentum Quantum Number"
+  },
+  "description": "The \"Total Angular Quantum Number\" describes the magnitude of total angular momentum $J$, where $j$ refers to a specific particle and $J$ is used for the whole system.",
+  "allOf": [
+    {
+      "$ref": "QuantumNumber.schema.json"
+    }
+  ],
+  "@context": [
+    "QuantumNumber.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "TotalAngularMomentumQuantumNumber": "qkind:TotalAngularMomentumQuantumNumber"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "TotalAngularMomentumQuantumNumber"
+      ]
+    }
+  }
+}

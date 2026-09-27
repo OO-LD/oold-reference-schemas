@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ShearStress.schema.json",
+  "x-oold-uuid": "f0ab9cfd-e91f-5e7a-8b21-de948729e1ac",
+  "x-oold-version": "0.1.0",
+  "title": "ShearStress",
+  "x-oold-multilang-title": {
+    "en": "Shear Stress"
+  },
+  "description": "Shear stress occurs when the force  occurs in shear, or perpendicular to the normal.",
+  "allOf": [
+    {
+      "$ref": "Stress.schema.json"
+    }
+  ],
+  "@context": [
+    "Stress.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ShearStress": "qkind:ShearStress"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ShearStress"
+      ]
+    }
+  }
+}

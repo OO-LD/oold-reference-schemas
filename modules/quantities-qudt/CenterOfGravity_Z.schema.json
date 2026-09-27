@@ -1,0 +1,29 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "CenterOfGravity_Z.schema.json",
+  "x-oold-uuid": "0b3702d2-568e-5a7c-8c44-0028bf9a7a10",
+  "x-oold-version": "0.1.0",
+  "title": "CenterOfGravity_Z",
+  "x-oold-multilang-title": {
+    "en": "Center of Gravity in the Z axis"
+  },
+  "allOf": [
+    {
+      "$ref": "Length.schema.json"
+    }
+  ],
+  "@context": [
+    "Length.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "CenterOfGravity_Z": "qkind:CenterOfGravity_Z"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "CenterOfGravity_Z"
+      ]
+    }
+  }
+}

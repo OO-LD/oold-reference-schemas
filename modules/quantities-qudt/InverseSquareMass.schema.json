@@ -1,0 +1,47 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "InverseSquareMass.schema.json",
+  "x-oold-uuid": "cebde8e3-8e9c-5492-ace1-a90e9d48a097",
+  "x-oold-version": "0.1.0",
+  "title": "InverseSquareMass",
+  "x-oold-multilang-title": {
+    "en": "Inverse Square Mass"
+  },
+  "examples": [
+    {
+      "type": [
+        "InverseSquareMass"
+      ],
+      "value": 1.0,
+      "unit": "per_kilo_gram_squared"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "InverseSquareMass": "qkind:InverseSquareMass",
+      "per_kilo_gram_squared": "qunit:PER-KiloGM2",
+      "per_gram_squared": "qunit:PER-GM2"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "InverseSquareMass"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "per_kilo_gram_squared",
+        "per_gram_squared"
+      ],
+      "default": "per_kilo_gram_squared"
+    }
+  }
+}

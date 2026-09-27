@@ -1,0 +1,29 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "AreaMass.schema.json",
+  "x-oold-uuid": "801c5206-7ff2-5e99-b4c8-96d99f25aa06",
+  "x-oold-version": "0.1.0",
+  "title": "AreaMass",
+  "x-oold-multilang-title": {
+    "en": "Areic mass"
+  },
+  "allOf": [
+    {
+      "$ref": "MassPerArea.schema.json"
+    }
+  ],
+  "@context": [
+    "MassPerArea.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "AreaMass": "qkind:AreaMass"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "AreaMass"
+      ]
+    }
+  }
+}

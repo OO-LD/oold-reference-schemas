@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "EquilibriumConstantOnConcentrationBasis.schema.json",
+  "x-oold-uuid": "c4990ad6-6b75-52ad-a410-459f6dd16099",
+  "x-oold-version": "0.1.0",
+  "title": "EquilibriumConstantOnConcentrationBasis",
+  "x-oold-multilang-title": {
+    "en": "Equilibrium Constant on Concentration Basis"
+  },
+  "description": "The \"Equlilbrium Constant\", also known as the thermodynamic equilibrium constant, is an expression that gives us a ratio of the products and reactants of a reaction at equilibrium with respect to a specific unit.",
+  "allOf": [
+    {
+      "$ref": "EquilibriumConstant.schema.json"
+    }
+  ],
+  "@context": [
+    "EquilibriumConstant.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "EquilibriumConstantOnConcentrationBasis": "qkind:EquilibriumConstantOnConcentrationBasis"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "EquilibriumConstantOnConcentrationBasis"
+      ]
+    }
+  }
+}

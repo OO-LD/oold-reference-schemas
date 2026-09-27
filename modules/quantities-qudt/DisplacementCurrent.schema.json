@@ -1,0 +1,68 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "DisplacementCurrent.schema.json",
+  "x-oold-uuid": "4a357300-c665-5a1b-9d5d-739b6dffd1fe",
+  "x-oold-version": "0.1.0",
+  "title": "DisplacementCurrent",
+  "x-oold-multilang-title": {
+    "en": "Displacement Current"
+  },
+  "description": "\"Displacement Current\" is a quantity appearing in Maxwell's equations that is defined in terms of the rate of change of electric displacement field. Displacement current has the units of electric current density, and it has an associated magnetic field just as actual currents do. However it is not an electric current of moving charges, but a time-varying electric field. In materials, there is also a contribution from the slight motion of charges bound in atoms, dielectric polarization.",
+  "examples": [
+    {
+      "type": [
+        "DisplacementCurrent"
+      ],
+      "value": 1.0,
+      "unit": "ampere"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "DisplacementCurrent": "qkind:DisplacementCurrent",
+      "ampere": "qunit:A",
+      "atto_ampere": "qunit:AttoA",
+      "femto_ampere": "qunit:FemtoA",
+      "pico_ampere": "qunit:PicoA",
+      "nano_ampere": "qunit:NanoA",
+      "micro_ampere": "qunit:MicroA",
+      "milli_ampere": "qunit:MilliA",
+      "kilo_ampere": "qunit:KiloA",
+      "mega_ampere": "qunit:MegaA",
+      "giga_ampere": "qunit:GigaA",
+      "tera_ampere": "qunit:TeraA",
+      "peta_ampere": "qunit:PetaA"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "DisplacementCurrent"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "ampere",
+        "atto_ampere",
+        "femto_ampere",
+        "pico_ampere",
+        "nano_ampere",
+        "micro_ampere",
+        "milli_ampere",
+        "kilo_ampere",
+        "mega_ampere",
+        "giga_ampere",
+        "tera_ampere",
+        "peta_ampere"
+      ],
+      "default": "ampere"
+    }
+  }
+}

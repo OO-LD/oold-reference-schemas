@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "InfiniteMultiplicationFactor.schema.json",
+  "x-oold-uuid": "7ba2537d-9ce4-54bf-a0bd-d7551a14ebaf",
+  "x-oold-version": "0.1.0",
+  "title": "InfiniteMultiplicationFactor",
+  "x-oold-multilang-title": {
+    "en": "Infinite Multiplication Factor"
+  },
+  "description": "The \"Infinite Multiplication Factor\" is the multiplication factor for an infinite medium or for an infinite repeating lattice.",
+  "allOf": [
+    {
+      "$ref": "MultiplicationFactor.schema.json"
+    }
+  ],
+  "@context": [
+    "MultiplicationFactor.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "InfiniteMultiplicationFactor": "qkind:InfiniteMultiplicationFactor"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "InfiniteMultiplicationFactor"
+      ]
+    }
+  }
+}

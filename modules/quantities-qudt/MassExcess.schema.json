@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MassExcess.schema.json",
+  "x-oold-uuid": "845f46b0-b81c-5e1e-985b-0532aa2428d6",
+  "x-oold-version": "0.1.0",
+  "title": "MassExcess",
+  "x-oold-multilang-title": {
+    "en": "Mass Excess"
+  },
+  "description": "The \"Mass Excess\" of a nuclide is the difference between its actual mass and its mass number in atomic mass units. It is one of the predominant methods for tabulating nuclear mass.",
+  "allOf": [
+    {
+      "$ref": "Mass.schema.json"
+    }
+  ],
+  "@context": [
+    "Mass.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "MassExcess": "qkind:MassExcess"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "MassExcess"
+      ]
+    }
+  }
+}

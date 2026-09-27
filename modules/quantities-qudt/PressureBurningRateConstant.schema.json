@@ -1,0 +1,29 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "PressureBurningRateConstant.schema.json",
+  "x-oold-uuid": "83830804-25d3-579e-ade2-a3ffc9db4d21",
+  "x-oold-version": "0.1.0",
+  "title": "PressureBurningRateConstant",
+  "x-oold-multilang-title": {
+    "en": "Pressure Burning Rate Constant"
+  },
+  "allOf": [
+    {
+      "$ref": "Dimensionless.schema.json"
+    }
+  ],
+  "@context": [
+    "Dimensionless.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "PressureBurningRateConstant": "qkind:PressureBurningRateConstant"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "PressureBurningRateConstant"
+      ]
+    }
+  }
+}

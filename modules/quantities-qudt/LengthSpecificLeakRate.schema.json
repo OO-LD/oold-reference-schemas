@@ -1,0 +1,47 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "LengthSpecificLeakRate.schema.json",
+  "x-oold-uuid": "017c6f07-4b03-5c87-9a8f-f3e26360c3b7",
+  "x-oold-version": "0.1.0",
+  "title": "LengthSpecificLeakRate",
+  "x-oold-multilang-title": {
+    "en": "Length Specific Leak Rate"
+  },
+  "description": "Gas leak rate referred to the length of the leaking seam.",
+  "examples": [
+    {
+      "type": [
+        "LengthSpecificLeakRate"
+      ],
+      "value": 1.0,
+      "unit": "meter_squared_pascal_per_second"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "LengthSpecificLeakRate": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/LengthSpecificLeakRate.schema.json",
+      "meter_squared_pascal_per_second": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/meter_squared_pascal_per_second",
+      "liter_milli_bar_per_meter_per_second": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/liter_milli_bar_per_meter_per_second"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "LengthSpecificLeakRate"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "meter_squared_pascal_per_second",
+        "liter_milli_bar_per_meter_per_second"
+      ],
+      "default": "meter_squared_pascal_per_second"
+    }
+  }
+}

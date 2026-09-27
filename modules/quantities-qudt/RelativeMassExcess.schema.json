@@ -1,0 +1,46 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "RelativeMassExcess.schema.json",
+  "x-oold-uuid": "8e087c93-ce3a-5c18-b9ec-35d5acbd482c",
+  "x-oold-version": "0.1.0",
+  "title": "RelativeMassExcess",
+  "x-oold-multilang-title": {
+    "en": "Relative Mass Excess"
+  },
+  "description": "The \"Relative Mass Excess\" is the mass excess between the monoisotopic mass of an element and the mass of its A + 1 or its A + 2 isotopic cluster (extrapolated from relative mass defect).",
+  "examples": [
+    {
+      "type": [
+        "RelativeMassExcess"
+      ],
+      "value": 1.0,
+      "unit": "unitless"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "RelativeMassExcess": "qkind:RelativeMassExcess",
+      "unitless": "qunit:UNITLESS"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "RelativeMassExcess"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "unitless"
+      ],
+      "default": "unitless"
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ElectromagneticEnergyDensity.schema.json",
+  "x-oold-uuid": "d762c411-8322-5469-b74f-b0626b36aa70",
+  "x-oold-version": "0.1.0",
+  "title": "ElectromagneticEnergyDensity",
+  "x-oold-multilang-title": {
+    "en": "Electromagnetic Energy Density"
+  },
+  "description": "$\\textit{Electromagnetic Energy Density}$, also known as the $\\color{indigo} {\\text{Volumic Electromagnetic Energy}}$, is the energy associated with an electromagnetic field, per unit volume of the field.",
+  "examples": [
+    {
+      "type": [
+        "ElectromagneticEnergyDensity"
+      ],
+      "value": 1.0,
+      "unit": "joule_per_meter_cubed"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ElectromagneticEnergyDensity": "qkind:ElectromagneticEnergyDensity",
+      "joule_per_meter_cubed": "qunit:J-PER-M3",
+      "mega_joule_per_meter_cubed": "qunit:MegaJ-PER-M3"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ElectromagneticEnergyDensity"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "joule_per_meter_cubed",
+        "mega_joule_per_meter_cubed"
+      ],
+      "default": "joule_per_meter_cubed"
+    }
+  }
+}

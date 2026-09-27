@@ -1,0 +1,81 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Acceleration.schema.json",
+  "x-oold-uuid": "347462e6-7d90-5995-af16-f97dc7c9ef48",
+  "x-oold-version": "0.1.0",
+  "title": "Acceleration",
+  "x-oold-multilang-title": {
+    "en": "Acceleration",
+    "de": "Beschleunigung"
+  },
+  "description": "$\\textit{Acceleration}$ is the (instantaneous) rate of change of velocity. \n  Acceleration may be either linear acceleration, or angular acceleration. \n  It is a vector quantity with dimension $length/time^{2}$ for linear acceleration,\n   or in the case of angular acceleration, with dimension $angle/time^{2}$. \n  $$$$\n  In SI units, linear acceleration is measured in $meters/second^{2}$ ($m \\cdot s^{-2}$),\n   and angular acceleration is measured in $radians/second^{2}$. \n  $$$$\n  In physics, any increase or decrease in speed is referred to as acceleration and similarly,\n   motion in a circle at constant speed is also an acceleration, since the direction component of the velocity is changing.",
+  "examples": [
+    {
+      "type": [
+        "Acceleration"
+      ],
+      "value": 1.0,
+      "unit": "newton_per_kilo_gram"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Acceleration": "qkind:Acceleration",
+      "newton_per_kilo_gram": "qunit:N-PER-KiloGM",
+      "newton_per_gram": "qunit:N-PER-GM",
+      "milli_meter_per_second_squared": "qunit:MilliM-PER-SEC2",
+      "centi_meter_per_second_squared": "qunit:CentiM-PER-SEC2",
+      "meter_squared_pascal_per_kilo_gram": "qunit:PA-M2-PER-KiloGM",
+      "meter_per_second_squared": "qunit:M-PER-SEC2",
+      "meter_squared_pascal_per_gram": "qunit:PA-M2-PER-GM",
+      "kilo_meter_per_second_squared": "qunit:KiloM-PER-SEC2",
+      "kilo_pascal_meter_squared_per_gram": "qunit:KiloPA-M2-PER-GM"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Acceleration"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "newton_per_kilo_gram",
+        "newton_per_gram",
+        "milli_meter_per_second_squared",
+        "centi_meter_per_second_squared",
+        "meter_squared_pascal_per_kilo_gram",
+        "meter_per_second_squared",
+        "meter_squared_pascal_per_gram",
+        "kilo_meter_per_second_squared",
+        "kilo_pascal_meter_squared_per_gram"
+      ],
+      "default": "newton_per_kilo_gram"
+    }
+  },
+  "x-oold-context": {
+    "Acceleration": {
+      "http://dbpedia.org/resource/Acceleration": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      },
+      "https://si-digital-framework.org/quantities/ACCE": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

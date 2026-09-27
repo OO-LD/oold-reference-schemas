@@ -1,0 +1,50 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "SpecificSurfaceArea.schema.json",
+  "x-oold-uuid": "64f92421-7a41-523d-9fc5-e51c4be68e08",
+  "x-oold-version": "0.1.0",
+  "title": "SpecificSurfaceArea",
+  "x-oold-multilang-title": {
+    "en": "Specific Surface Area"
+  },
+  "description": "Specific surface area (SSA) is a property of solids defined as the total surface area (SA) of a material per unit mass, (with units of m²/kg or m²/g). It is a physical value that can be used to determine the type and properties of a material (e.g. soil or snow). It has a particular importance for adsorption, heterogeneous catalysis, and reactions on surfaces.",
+  "examples": [
+    {
+      "type": [
+        "SpecificSurfaceArea"
+      ],
+      "value": 1.0,
+      "unit": "meter_squared_per_kilo_gram"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "SpecificSurfaceArea": "qkind:SpecificSurfaceArea",
+      "meter_squared_per_kilo_gram": "qunit:M2-PER-KiloGM",
+      "centi_meter_squared_per_gram": "qunit:CentiM2-PER-GM",
+      "meter_squared_per_gram": "qunit:M2-PER-GM"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "SpecificSurfaceArea"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "meter_squared_per_kilo_gram",
+        "centi_meter_squared_per_gram",
+        "meter_squared_per_gram"
+      ],
+      "default": "meter_squared_per_kilo_gram"
+    }
+  }
+}

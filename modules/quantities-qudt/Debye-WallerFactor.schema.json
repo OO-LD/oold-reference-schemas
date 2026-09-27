@@ -1,0 +1,46 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Debye-WallerFactor.schema.json",
+  "x-oold-uuid": "b2bd139a-c43a-5114-bff8-74df05d1022e",
+  "x-oold-version": "0.1.0",
+  "title": "Debye-WallerFactor",
+  "x-oold-multilang-title": {
+    "en": "Debye-Waller Factor"
+  },
+  "description": "\"Debye-Waller Factor\" (DWF), named after Peter Debye and Ivar Waller, is used in condensed matter physics to describe the attenuation of x-ray scattering or coherent neutron scattering caused by thermal motion. Also, a factor by which the intensity of a diffraction line is reduced because of the lattice vibrations.",
+  "examples": [
+    {
+      "type": [
+        "Debye-WallerFactor"
+      ],
+      "value": 1.0,
+      "unit": "unitless"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Debye-WallerFactor": "qkind:Debye-WallerFactor",
+      "unitless": "qunit:UNITLESS"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Debye-WallerFactor"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "unitless"
+      ],
+      "default": "unitless"
+    }
+  }
+}

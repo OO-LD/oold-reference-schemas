@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Radiosity.schema.json",
+  "x-oold-uuid": "2c869e5a-09fa-5fdf-b818-543b40bacb08",
+  "x-oold-version": "0.1.0",
+  "title": "Radiosity",
+  "x-oold-multilang-title": {
+    "en": "Radiosity"
+  },
+  "description": "Radiosity is the total emitted and reflected radiation leaving a surface.",
+  "allOf": [
+    {
+      "$ref": "PowerPerArea.schema.json"
+    }
+  ],
+  "@context": [
+    "PowerPerArea.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Radiosity": "qkind:Radiosity"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Radiosity"
+      ]
+    }
+  }
+}

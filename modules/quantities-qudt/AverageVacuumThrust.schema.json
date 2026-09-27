@@ -1,0 +1,29 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "AverageVacuumThrust.schema.json",
+  "x-oold-uuid": "b1a42fde-0247-5c6d-b7d2-b8121feed666",
+  "x-oold-version": "0.1.0",
+  "title": "AverageVacuumThrust",
+  "x-oold-multilang-title": {
+    "en": "Average Vacuum Thrust"
+  },
+  "allOf": [
+    {
+      "$ref": "VacuumThrust.schema.json"
+    }
+  ],
+  "@context": [
+    "VacuumThrust.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "AverageVacuumThrust": "qkind:AverageVacuumThrust"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "AverageVacuumThrust"
+      ]
+    }
+  }
+}

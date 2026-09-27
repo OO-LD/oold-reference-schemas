@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "LatticeVector.schema.json",
+  "x-oold-uuid": "ff95a9d8-0837-5e7c-9631-c797e43546cd",
+  "x-oold-version": "0.1.0",
+  "title": "LatticeVector",
+  "x-oold-multilang-title": {
+    "en": "Lattice Vector"
+  },
+  "description": "\"Lattice Vector\" is a translation vector that maps the crystal lattice on itself.",
+  "allOf": [
+    {
+      "$ref": "Length.schema.json"
+    }
+  ],
+  "@context": [
+    "Length.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "LatticeVector": "qkind:LatticeVector"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "LatticeVector"
+      ]
+    }
+  }
+}

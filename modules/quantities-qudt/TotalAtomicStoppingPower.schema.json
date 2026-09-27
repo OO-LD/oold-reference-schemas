@@ -1,0 +1,46 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "TotalAtomicStoppingPower.schema.json",
+  "x-oold-uuid": "261c913d-a725-5923-92a6-03767e4f9c32",
+  "x-oold-version": "0.1.0",
+  "title": "TotalAtomicStoppingPower",
+  "x-oold-multilang-title": {
+    "en": "Total Atomic Stopping Power"
+  },
+  "description": "The \"Total Atomic Stopping Power\" for an ionizing particle passing through an element, is the particle's energy loss per atom within a unit area normal to the particle's path; equal to the linear energy transfer (energy loss per unit path length) divided by the number of atoms per unit volume.",
+  "examples": [
+    {
+      "type": [
+        "TotalAtomicStoppingPower"
+      ],
+      "value": 1.0,
+      "unit": "joule_meter_squared"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "TotalAtomicStoppingPower": "qkind:TotalAtomicStoppingPower",
+      "joule_meter_squared": "qunit:J-M2"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "TotalAtomicStoppingPower"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "joule_meter_squared"
+      ],
+      "default": "joule_meter_squared"
+    }
+  }
+}

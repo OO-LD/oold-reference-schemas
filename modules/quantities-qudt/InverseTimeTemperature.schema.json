@@ -1,0 +1,47 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "InverseTimeTemperature.schema.json",
+  "x-oold-uuid": "95d7cb8c-a1db-560e-b936-826b8f4444bc",
+  "x-oold-version": "0.1.0",
+  "title": "InverseTimeTemperature",
+  "x-oold-multilang-title": {
+    "en": "Inverse Time Temperature"
+  },
+  "examples": [
+    {
+      "type": [
+        "InverseTimeTemperature"
+      ],
+      "value": 1.0,
+      "unit": "hertz_per_kelvin"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "InverseTimeTemperature": "qkind:InverseTimeTemperature",
+      "hertz_per_kelvin": "qunit:HZ-PER-K",
+      "mega_hertz_per_kelvin": "qunit:MegaHZ-PER-K"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "InverseTimeTemperature"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "hertz_per_kelvin",
+        "mega_hertz_per_kelvin"
+      ],
+      "default": "hertz_per_kelvin"
+    }
+  }
+}

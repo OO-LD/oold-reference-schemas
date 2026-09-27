@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "VolumeFraction.schema.json",
+  "x-oold-uuid": "642aecc3-cec2-5d4e-bc4a-1b03ff1ae672",
+  "x-oold-version": "0.1.0",
+  "title": "VolumeFraction",
+  "x-oold-multilang-title": {
+    "en": "Volume Fraction"
+  },
+  "description": "\"Volume Fraction\" is the volume of a constituent divided by the volume of all constituents of the mixture prior to mixing. Volume fraction is also called volume concentration in ideal solutions where the volumes of the constituents are additive (the volume of the solution is equal to the sum of the volumes of its ingredients).",
+  "allOf": [
+    {
+      "$ref": "DimensionlessRatio.schema.json"
+    }
+  ],
+  "@context": [
+    "DimensionlessRatio.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "VolumeFraction": "qkind:VolumeFraction"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "VolumeFraction"
+      ]
+    }
+  }
+}

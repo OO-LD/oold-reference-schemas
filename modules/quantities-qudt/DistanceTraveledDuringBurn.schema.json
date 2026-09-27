@@ -1,0 +1,29 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "DistanceTraveledDuringBurn.schema.json",
+  "x-oold-uuid": "2f5d05b7-338e-5b31-b033-ae55a9d054c5",
+  "x-oold-version": "0.1.0",
+  "title": "DistanceTraveledDuringBurn",
+  "x-oold-multilang-title": {
+    "en": "Distance Traveled During a Burn"
+  },
+  "allOf": [
+    {
+      "$ref": "Distance.schema.json"
+    }
+  ],
+  "@context": [
+    "Distance.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "DistanceTraveledDuringBurn": "qkind:DistanceTraveledDuringBurn"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "DistanceTraveledDuringBurn"
+      ]
+    }
+  }
+}

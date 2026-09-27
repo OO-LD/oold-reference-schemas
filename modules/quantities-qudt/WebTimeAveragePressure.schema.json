@@ -1,0 +1,29 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "WebTimeAveragePressure.schema.json",
+  "x-oold-uuid": "fed564d1-c284-5f0b-9b46-cc40d3edc56c",
+  "x-oold-version": "0.1.0",
+  "title": "WebTimeAveragePressure",
+  "x-oold-multilang-title": {
+    "en": "Web Time Average Pressure"
+  },
+  "allOf": [
+    {
+      "$ref": "Pressure.schema.json"
+    }
+  ],
+  "@context": [
+    "Pressure.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "WebTimeAveragePressure": "qkind:WebTimeAveragePressure"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "WebTimeAveragePressure"
+      ]
+    }
+  }
+}

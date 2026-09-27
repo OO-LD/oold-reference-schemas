@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "LinearExpansionCoefficient.schema.json",
+  "x-oold-uuid": "1f35ae04-9903-5b23-a508-c8017306a1a8",
+  "x-oold-version": "0.1.0",
+  "title": "LinearExpansionCoefficient",
+  "x-oold-multilang-title": {
+    "en": "Linear expansion coefficient",
+    "de": "Linearer Ausdehnungskoeffizient"
+  },
+  "allOf": [
+    {
+      "$ref": "ExpansionRatio.schema.json"
+    }
+  ],
+  "@context": [
+    "ExpansionRatio.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "LinearExpansionCoefficient": "qkind:LinearExpansionCoefficient"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "LinearExpansionCoefficient"
+      ]
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "OlfactoryThreshold.schema.json",
+  "x-oold-uuid": "c666cb2a-4a36-56f1-91ca-980983cfe6a8",
+  "x-oold-version": "0.1.0",
+  "title": "OlfactoryThreshold",
+  "x-oold-multilang-title": {
+    "en": "Olfactory Threshold"
+  },
+  "description": "\"Olfactory Threshold\" are thresholds for the concentrations of various classes of smell that can be detected.",
+  "allOf": [
+    {
+      "$ref": "Concentration.schema.json"
+    }
+  ],
+  "@context": [
+    "Concentration.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "OlfactoryThreshold": "qkind:OlfactoryThreshold"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "OlfactoryThreshold"
+      ]
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "quantities-qudt",
+  "title": "Quantities (QUDT-derived)",
+  "version": "0.1.0",
+  "status": "generated",
+  "scope": "One schema per QUDT quantity kind, each restricting QuantityValue to the units of that kind. Derived from the QUDT Quantity Kind Vocabulary by way of the OpenSemanticLab characteristics package, so it is bulk rather than curated: it extends the quantities module and never replaces it.",
+  "depends_on": [
+    {
+      "module": "quantities",
+      "version": "0.3.0",
+      "reference": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+      "note": "every member extends QuantityValue. The reference names the 0.2 line because that is the newest one published: 0.3 answers 404 until it is released, and a reference that does not resolve fails make validate. The same choice datasets and materials make."
+    }
+  ]
+}

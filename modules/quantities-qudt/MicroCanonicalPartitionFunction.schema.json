@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MicroCanonicalPartitionFunction.schema.json",
+  "x-oold-uuid": "f1180939-7990-5923-9cec-49d28ceafb92",
+  "x-oold-version": "0.1.0",
+  "title": "MicroCanonicalPartitionFunction",
+  "x-oold-multilang-title": {
+    "en": "Micro Canonical Partition Function"
+  },
+  "description": "A \"Micro Canonical Partition Function\" applies to a micro canonical ensemble, in which the system is allowed to exchange heat with the environment at fixed temperature, volume, and a fixed number of particles.",
+  "allOf": [
+    {
+      "$ref": "CanonicalPartitionFunction.schema.json"
+    }
+  ],
+  "@context": [
+    "CanonicalPartitionFunction.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "MicroCanonicalPartitionFunction": "qkind:MicroCanonicalPartitionFunction"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "MicroCanonicalPartitionFunction"
+      ]
+    }
+  }
+}

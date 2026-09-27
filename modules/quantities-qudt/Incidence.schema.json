@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Incidence.schema.json",
+  "x-oold-uuid": "e8d1194a-eb2e-5b9f-8778-67eab5c9cae9",
+  "x-oold-version": "0.1.0",
+  "title": "Incidence",
+  "x-oold-multilang-title": {
+    "en": "Incidence"
+  },
+  "description": "In epidemiology, incidence is a measure of the probability of occurrence of a given medical condition in a population within a specified period of time.",
+  "allOf": [
+    {
+      "$ref": "Frequency.schema.json"
+    }
+  ],
+  "@context": [
+    "Frequency.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Incidence": "qkind:Incidence"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Incidence"
+      ]
+    }
+  }
+}

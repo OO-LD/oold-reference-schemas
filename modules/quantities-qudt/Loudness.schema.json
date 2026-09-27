@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Loudness.schema.json",
+  "x-oold-uuid": "7deca0ab-21f7-51e3-b59b-71d86b890f0d",
+  "x-oold-version": "0.1.0",
+  "title": "Loudness",
+  "x-oold-multilang-title": {
+    "en": "Loudness"
+  },
+  "description": "measure of the subjective hearing sensation on a scale extending from soft to loud; a progressive mono-frequency (single-frequency) wave of frequency 1 kHz and sound pressure level 40 dB, directed head-on to hearers is assigned the loudness 1 sone, and a tone which is identified by the listeners as being n-times as loud as that identified by 1 sone is assigned the loudness n sone",
+  "allOf": [
+    {
+      "$ref": "Dimensionless.schema.json"
+    }
+  ],
+  "@context": [
+    "Dimensionless.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Loudness": "qkind:Loudness"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Loudness"
+      ]
+    }
+  }
+}

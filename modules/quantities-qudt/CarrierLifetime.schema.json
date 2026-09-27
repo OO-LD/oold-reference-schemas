@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "CarrierLifetime.schema.json",
+  "x-oold-uuid": "d4dba64e-4ce9-5ba4-9505-900a3b92d2d2",
+  "x-oold-version": "0.1.0",
+  "title": "CarrierLifetime",
+  "x-oold-multilang-title": {
+    "en": "Carrier LifetIme"
+  },
+  "description": "\"Carrier LifetIme\" is a time constant for recombination or trapping of minority charge carriers in semiconductors.",
+  "allOf": [
+    {
+      "$ref": "Time.schema.json"
+    }
+  ],
+  "@context": [
+    "Time.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "CarrierLifetime": "qkind:CarrierLifetime"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "CarrierLifetime"
+      ]
+    }
+  }
+}

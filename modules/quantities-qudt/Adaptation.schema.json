@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Adaptation.schema.json",
+  "x-oold-uuid": "83d957cf-054d-539c-9ed2-a830d7563441",
+  "x-oold-version": "0.1.0",
+  "title": "Adaptation",
+  "x-oold-multilang-title": {
+    "en": "Adaptation"
+  },
+  "description": "\"Adaptation\" is the recovery of visual ability following exposure to light (dark adaptation).",
+  "allOf": [
+    {
+      "$ref": "Time.schema.json"
+    }
+  ],
+  "@context": [
+    "Time.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Adaptation": "qkind:Adaptation"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Adaptation"
+      ]
+    }
+  }
+}

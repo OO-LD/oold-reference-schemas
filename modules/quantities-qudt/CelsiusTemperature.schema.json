@@ -1,0 +1,42 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "CelsiusTemperature.schema.json",
+  "x-oold-uuid": "7f41c3f8-71b9-551c-bd40-32f756f3fc0d",
+  "x-oold-version": "0.1.0",
+  "title": "CelsiusTemperature",
+  "x-oold-multilang-title": {
+    "en": "Celsius temperature",
+    "de": "Celsius-Temperatur"
+  },
+  "description": "\"Celsius Temperature\", the thermodynamic temperature T_0, is exactly 0.01 kelvin below the thermodynamic temperature of the triple point of water.",
+  "allOf": [
+    {
+      "$ref": "ThermodynamicTemperature.schema.json"
+    }
+  ],
+  "@context": [
+    "ThermodynamicTemperature.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "CelsiusTemperature": "qkind:CelsiusTemperature"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "CelsiusTemperature"
+      ]
+    }
+  },
+  "x-oold-context": {
+    "CelsiusTemperature": {
+      "https://si-digital-framework.org/quantities/TEMC": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

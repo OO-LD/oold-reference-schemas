@@ -1,0 +1,31 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "LinearStiffness.schema.json",
+  "x-oold-uuid": "0459ceb0-7125-5f8c-8bba-85be19091874",
+  "x-oold-version": "0.1.0",
+  "title": "LinearStiffness",
+  "x-oold-multilang-title": {
+    "en": "Linear Force",
+    "de": "Streckenlast"
+  },
+  "description": "Stiffness is the extent to which an object resists deformation in response to an applied force. Linear Stiffness is the term used in the Industry Foundation Classes (IFC) standard.",
+  "allOf": [
+    {
+      "$ref": "ForcePerLength.schema.json"
+    }
+  ],
+  "@context": [
+    "ForcePerLength.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "LinearStiffness": "qkind:LinearStiffness"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "LinearStiffness"
+      ]
+    }
+  }
+}

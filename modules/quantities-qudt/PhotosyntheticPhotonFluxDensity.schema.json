@@ -1,0 +1,68 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "PhotosyntheticPhotonFluxDensity.schema.json",
+  "x-oold-uuid": "930db2af-8671-52fa-b4e9-728fb7f0ae51",
+  "x-oold-version": "0.1.0",
+  "title": "PhotosyntheticPhotonFluxDensity",
+  "x-oold-multilang-title": {
+    "en": "Photosynthetic Photon Flux Density"
+  },
+  "description": "Photosynthetically Active Radiation are the wavelengths of light within the visible range of 400 to 700 nanometers (nm) that are critical for photosynthesis. PPFD measures the amount of PAR light (photons) that arrive at the plant’s surface each second. The PPFD is measured at various distances with a Full-spectrum Quantum Sensor, also known as a PAR meter. Natural sunlight has a PAR value of 900-1500μMol/m2/s when the sun is directly overhead. For a grow light to be effective, it should have PAR values of 500-1500 μMol/m2/s.",
+  "examples": [
+    {
+      "type": [
+        "PhotosyntheticPhotonFluxDensity"
+      ],
+      "value": 1.0,
+      "unit": "mole_per_meter_squared_per_second"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "PhotosyntheticPhotonFluxDensity": "qkind:PhotosyntheticPhotonFluxDensity",
+      "mole_per_meter_squared_per_second": "qunit:MOL-PER-M2-SEC",
+      "pico_mole_per_day_per_meter_squared": "qunit:PicoMOL-PER-M2-DAY",
+      "nano_mole_per_day_per_meter_squared": "qunit:NanoMOL-PER-M2-DAY",
+      "micro_mole_per_day_per_meter_squared": "qunit:MicroMOL-PER-M2-DAY",
+      "micro_mole_per_hour_per_meter_squared": "qunit:MicroMOL-PER-M2-HR",
+      "nano_mole_per_meter_squared_per_second": "qunit:NanoMOL-PER-M2-SEC",
+      "milli_mole_per_day_per_meter_squared": "qunit:MilliMOL-PER-M2-DAY",
+      "milli_mole_per_hour_per_meter_squared": "qunit:MilliMOL-PER-M2-HR",
+      "micro_mole_per_meter_squared_per_second": "qunit:MicroMOL-PER-M2-SEC",
+      "mole_per_day_per_meter_squared": "qunit:MOL-PER-M2-DAY",
+      "mole_per_hour_per_meter_squared": "qunit:MOL-PER-M2-HR",
+      "milli_mole_per_meter_squared_per_second": "qunit:MilliMOL-PER-M2-SEC"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "PhotosyntheticPhotonFluxDensity"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "mole_per_meter_squared_per_second",
+        "pico_mole_per_day_per_meter_squared",
+        "nano_mole_per_day_per_meter_squared",
+        "micro_mole_per_day_per_meter_squared",
+        "micro_mole_per_hour_per_meter_squared",
+        "nano_mole_per_meter_squared_per_second",
+        "milli_mole_per_day_per_meter_squared",
+        "milli_mole_per_hour_per_meter_squared",
+        "micro_mole_per_meter_squared_per_second",
+        "mole_per_day_per_meter_squared",
+        "mole_per_hour_per_meter_squared",
+        "milli_mole_per_meter_squared_per_second"
+      ],
+      "default": "mole_per_meter_squared_per_second"
+    }
+  }
+}

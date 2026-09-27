@@ -1,0 +1,48 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "PressureLossPerLength.schema.json",
+  "x-oold-uuid": "9315ab4c-dde4-56b4-948e-73cc6ba050b1",
+  "x-oold-version": "0.1.0",
+  "title": "PressureLossPerLength",
+  "x-oold-multilang-title": {
+    "en": "Pressure Loss per Length"
+  },
+  "description": "\"Pressure Loss per Length\" refers to the power lost in overcoming the friction between two moving surfaces. Also referred to as \"Friction Loss\".",
+  "examples": [
+    {
+      "type": [
+        "PressureLossPerLength"
+      ],
+      "value": 1.0,
+      "unit": "kilo_gram_per_meter_squared_per_second_squared"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "PressureLossPerLength": "qkind:PressureLossPerLength",
+      "kilo_gram_per_meter_squared_per_second_squared": "qunit:KiloGM-PER-M2-SEC2",
+      "gram_per_meter_squared_per_second_squared": "qunit:GM-PER-M2-SEC2"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "PressureLossPerLength"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "kilo_gram_per_meter_squared_per_second_squared",
+        "gram_per_meter_squared_per_second_squared"
+      ],
+      "default": "kilo_gram_per_meter_squared_per_second_squared"
+    }
+  }
+}

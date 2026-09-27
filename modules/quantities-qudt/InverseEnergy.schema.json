@@ -1,0 +1,47 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "InverseEnergy.schema.json",
+  "x-oold-uuid": "0da38e7b-53f1-5e17-88cc-4bbfbc4c6842",
+  "x-oold-version": "0.1.0",
+  "title": "InverseEnergy",
+  "x-oold-multilang-title": {
+    "en": "Inverse Energy"
+  },
+  "examples": [
+    {
+      "type": [
+        "InverseEnergy"
+      ],
+      "value": 1.0,
+      "unit": "per_hour_per_volt_ampere"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "InverseEnergy": "qkind:InverseEnergy",
+      "per_hour_per_volt_ampere": "qunit:PER-VA-HR",
+      "per_hour_per_kilo_volt_ampere": "qunit:PER-KiloVA-HR"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "InverseEnergy"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "per_hour_per_volt_ampere",
+        "per_hour_per_kilo_volt_ampere"
+      ],
+      "default": "per_hour_per_volt_ampere"
+    }
+  }
+}

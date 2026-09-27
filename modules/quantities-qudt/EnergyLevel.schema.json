@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "EnergyLevel.schema.json",
+  "x-oold-uuid": "58b43062-3bde-5ec8-b77d-2f701f145fc8",
+  "x-oold-version": "0.1.0",
+  "title": "EnergyLevel",
+  "x-oold-multilang-title": {
+    "en": "Energy Level"
+  },
+  "description": "\"Energy Level\" is the ionization energy for an electron at the Fermi energy in the interior of a substance.",
+  "allOf": [
+    {
+      "$ref": "Energy.schema.json"
+    }
+  ],
+  "@context": [
+    "Energy.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "EnergyLevel": "qkind:EnergyLevel"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "EnergyLevel"
+      ]
+    }
+  }
+}

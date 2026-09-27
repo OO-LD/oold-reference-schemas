@@ -1,0 +1,31 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "GibbsEnergy.schema.json",
+  "x-oold-uuid": "a8247c61-52ee-5174-85f1-711f5e5f38b7",
+  "x-oold-version": "0.1.0",
+  "title": "GibbsEnergy",
+  "x-oold-multilang-title": {
+    "en": "Gibbs energy",
+    "de": "Freie Enthalpie"
+  },
+  "description": "Gibbs Energy is one of the potentials used to measure energy changes in systems as they evolve from an initial state to a final state. The potential used depends on the constraints of the system, such as constant temperature or pressure. $\\textit{Internal Energy} is the internal energy of the system, Enthalpy is the internal energy of the system plus the energy related to pressure-volume work, and Helmholtz and Gibbs free energy are the energies available in a system to do useful work when the temperature and volume or the pressure and temperature are fixed, respectively. The name Gibbs Free Energy is also used.",
+  "allOf": [
+    {
+      "$ref": "Energy.schema.json"
+    }
+  ],
+  "@context": [
+    "Energy.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "GibbsEnergy": "qkind:GibbsEnergy"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "GibbsEnergy"
+      ]
+    }
+  }
+}

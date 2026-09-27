@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MolalityOfSolute.schema.json",
+  "x-oold-uuid": "4041cc5b-57dc-5efc-bb97-01f04e4a68ce",
+  "x-oold-version": "0.1.0",
+  "title": "MolalityOfSolute",
+  "x-oold-multilang-title": {
+    "en": "Molality of Solute"
+  },
+  "description": "The \"Molality of Solute\" of a solution is defined as the amount of substance of solute divided by the mass in kg of the solvent.",
+  "allOf": [
+    {
+      "$ref": "AmountOfSubstancePerMass.schema.json"
+    }
+  ],
+  "@context": [
+    "AmountOfSubstancePerMass.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "MolalityOfSolute": "qkind:MolalityOfSolute"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "MolalityOfSolute"
+      ]
+    }
+  }
+}

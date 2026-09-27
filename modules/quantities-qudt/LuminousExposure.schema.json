@@ -1,0 +1,46 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "LuminousExposure.schema.json",
+  "x-oold-uuid": "3e3b614b-b90a-58aa-89b5-dcddd0045fe9",
+  "x-oold-version": "0.1.0",
+  "title": "LuminousExposure",
+  "x-oold-multilang-title": {
+    "en": "Luminous Exposure"
+  },
+  "description": "Luminous Exposure is the time-integrated illuminance.",
+  "examples": [
+    {
+      "type": [
+        "LuminousExposure"
+      ],
+      "value": 1.0,
+      "unit": "hour_lux"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "LuminousExposure": "qkind:LuminousExposure",
+      "hour_lux": "qunit:LUX-HR"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "LuminousExposure"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "hour_lux"
+      ],
+      "default": "hour_lux"
+    }
+  }
+}

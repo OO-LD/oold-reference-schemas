@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "DiffusionArea.schema.json",
+  "x-oold-uuid": "0b80c1b7-5624-573d-acff-39addc27fd98",
+  "x-oold-version": "0.1.0",
+  "title": "DiffusionArea",
+  "x-oold-multilang-title": {
+    "en": "Diffusion Area"
+  },
+  "description": "\"Diffusion Area\" in an infinite homogenous medium, is one-sixth of the mean square distance between the point where a neutron enters a specified class and the point where it leaves that class.",
+  "allOf": [
+    {
+      "$ref": "Area.schema.json"
+    }
+  ],
+  "@context": [
+    "Area.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "DiffusionArea": "qkind:DiffusionArea"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "DiffusionArea"
+      ]
+    }
+  }
+}

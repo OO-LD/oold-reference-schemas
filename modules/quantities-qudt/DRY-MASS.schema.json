@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "DRY-MASS.schema.json",
+  "x-oold-uuid": "40c53544-9288-505c-b9bd-50a76307e6fb",
+  "x-oold-version": "0.1.0",
+  "title": "DRY-MASS",
+  "x-oold-multilang-title": {
+    "en": "Dry Mass"
+  },
+  "description": "Mass of a system without the propellants, pressurants, reserve or residual fluids, personnel and personnel provisions, and cargo.",
+  "allOf": [
+    {
+      "$ref": "Mass.schema.json"
+    }
+  ],
+  "@context": [
+    "Mass.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "DRY-MASS": "qkind:DRY-MASS"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "DRY-MASS"
+      ]
+    }
+  }
+}

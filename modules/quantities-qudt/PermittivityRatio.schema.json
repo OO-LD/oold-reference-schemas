@@ -1,0 +1,41 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "PermittivityRatio.schema.json",
+  "x-oold-uuid": "075c809d-3347-5b80-84bc-ac7070f240ec",
+  "x-oold-version": "0.1.0",
+  "title": "PermittivityRatio",
+  "x-oold-multilang-title": {
+    "en": "Permittivity Ratio"
+  },
+  "description": "\"Permittivity Ratio\" is the ratio of permittivity to the permittivity of a vacuum.",
+  "allOf": [
+    {
+      "$ref": "DimensionlessRatio.schema.json"
+    }
+  ],
+  "@context": [
+    "DimensionlessRatio.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "PermittivityRatio": "qkind:PermittivityRatio"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "PermittivityRatio"
+      ]
+    }
+  },
+  "x-oold-context": {
+    "PermittivityRatio": {
+      "http://dbpedia.org/resource/Permittivity": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

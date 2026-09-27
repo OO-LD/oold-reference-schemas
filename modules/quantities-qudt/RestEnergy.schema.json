@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "RestEnergy.schema.json",
+  "x-oold-uuid": "4390b219-9b2b-5c6e-aaad-67c7eb19a89a",
+  "x-oold-version": "0.1.0",
+  "title": "RestEnergy",
+  "x-oold-multilang-title": {
+    "en": "Rest Energy"
+  },
+  "description": "\"Rest Energy\" is the energy equivalent of the rest mass of a body, equal to the rest mass multiplied by the speed of light squared.",
+  "allOf": [
+    {
+      "$ref": "Energy.schema.json"
+    }
+  ],
+  "@context": [
+    "Energy.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "RestEnergy": "qkind:RestEnergy"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "RestEnergy"
+      ]
+    }
+  }
+}

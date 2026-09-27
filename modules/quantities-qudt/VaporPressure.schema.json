@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "VaporPressure.schema.json",
+  "x-oold-uuid": "0a5491ac-7e59-5f04-b5c7-efd96b101eb2",
+  "x-oold-version": "0.1.0",
+  "title": "VaporPressure",
+  "x-oold-multilang-title": {
+    "en": "Vapor Pressure"
+  },
+  "description": "A pressure that is the one exerted by a substance vapor in thermodynamic equilibrium with either its solid or liquid phase at a given temperature in a closed system.",
+  "allOf": [
+    {
+      "$ref": "Pressure.schema.json"
+    }
+  ],
+  "@context": [
+    "Pressure.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "VaporPressure": "qkind:VaporPressure"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "VaporPressure"
+      ]
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "SecondMomentOfArea.schema.json",
+  "x-oold-uuid": "bd5f31fa-763d-5f4b-9f8b-e79284269e47",
+  "x-oold-version": "0.1.0",
+  "title": "SecondMomentOfArea",
+  "x-oold-multilang-title": {
+    "en": "Second moment of area",
+    "de": "Flächenträgheitsmoment"
+  },
+  "description": "The second moment of area is a property of a physical object that can be used to predict its resistance to bending and deflection. The deflection of an object under load depends not only on the load, but also on the geometry of the object's cross-section.",
+  "examples": [
+    {
+      "type": [
+        "SecondMomentOfArea"
+      ],
+      "value": 1.0,
+      "unit": "meter_to_the_fourth"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "SecondMomentOfArea": "qkind:SecondMomentOfArea",
+      "meter_to_the_fourth": "qunit:M4",
+      "milli_meter_to_the_fourth": "qunit:MilliM4",
+      "centi_meter_to_the_fourth": "qunit:CentiM4"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "SecondMomentOfArea"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "meter_to_the_fourth",
+        "milli_meter_to_the_fourth",
+        "centi_meter_to_the_fourth"
+      ],
+      "default": "meter_to_the_fourth"
+    }
+  }
+}

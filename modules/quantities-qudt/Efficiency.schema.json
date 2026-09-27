@@ -1,0 +1,31 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Efficiency.schema.json",
+  "x-oold-uuid": "8cccae8a-4509-5dcd-89a7-69a33373731a",
+  "x-oold-version": "0.1.0",
+  "title": "Efficiency",
+  "x-oold-multilang-title": {
+    "en": "Efficiency",
+    "de": "Wirkungsgrad"
+  },
+  "description": "Efficiency is the ratio of output power to input power.",
+  "allOf": [
+    {
+      "$ref": "DimensionlessRatio.schema.json"
+    }
+  ],
+  "@context": [
+    "DimensionlessRatio.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Efficiency": "qkind:Efficiency"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Efficiency"
+      ]
+    }
+  }
+}

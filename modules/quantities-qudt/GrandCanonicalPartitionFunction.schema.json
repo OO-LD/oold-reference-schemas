@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "GrandCanonicalPartitionFunction.schema.json",
+  "x-oold-uuid": "4508a29d-c612-592b-b182-0574a104a5bd",
+  "x-oold-version": "0.1.0",
+  "title": "GrandCanonicalPartitionFunction",
+  "x-oold-multilang-title": {
+    "en": "Grand Canonical Partition Function"
+  },
+  "description": "An \"Grand Canonical Partition Function\" for a grand canonical ensemble, a system that can exchange both heat and particles with the environment, which has a constant temperature and a chemical potential.",
+  "allOf": [
+    {
+      "$ref": "CanonicalPartitionFunction.schema.json"
+    }
+  ],
+  "@context": [
+    "CanonicalPartitionFunction.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "GrandCanonicalPartitionFunction": "qkind:GrandCanonicalPartitionFunction"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "GrandCanonicalPartitionFunction"
+      ]
+    }
+  }
+}

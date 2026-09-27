@@ -1,0 +1,48 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ParticleFluence.schema.json",
+  "x-oold-uuid": "0f5611df-8241-5498-93b5-bd0a8e137680",
+  "x-oold-version": "0.1.0",
+  "title": "ParticleFluence",
+  "x-oold-multilang-title": {
+    "en": "Particle Fluence"
+  },
+  "description": "\"Particle Fluence\" is the total number of particles that intersect a unit area in a specific time interval of interest, and has units of /m2 (number of particles per meter squared).",
+  "examples": [
+    {
+      "type": [
+        "ParticleFluence"
+      ],
+      "value": 1.0,
+      "unit": "per_meter_squared"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ParticleFluence": "qkind:ParticleFluence",
+      "per_meter_squared": "qunit:PER-M-M",
+      "per_meter_per_nano_meter": "qunit:PER-M-NanoM"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ParticleFluence"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "per_meter_squared",
+        "per_meter_per_nano_meter"
+      ],
+      "default": "per_meter_squared"
+    }
+  }
+}

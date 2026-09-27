@@ -1,0 +1,88 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "VolumeFlowRate.schema.json",
+  "x-oold-uuid": "fa14092d-e387-562a-aacb-b2a35059aa60",
+  "x-oold-version": "0.1.0",
+  "title": "VolumeFlowRate",
+  "x-oold-multilang-title": {
+    "en": "Volume Flow Rate"
+  },
+  "description": "Volumetric Flow Rate, (also known as volume flow rate, rate of fluid flow or volume velocity) is the volume of fluid which passes through a given surface per unit time.",
+  "examples": [
+    {
+      "type": [
+        "VolumeFlowRate"
+      ],
+      "value": 1.0,
+      "unit": "meter_cubed_per_second"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "VolumeFlowRate": "qkind:VolumeFlowRate",
+      "meter_cubed_per_second": "qunit:M3-PER-SEC",
+      "centi_meter_cubed_per_day": "qunit:CentiM3-PER-DAY",
+      "milli_liter_per_day": "qunit:MilliL-PER-DAY",
+      "centi_meter_cubed_per_hour": "qunit:CentiM3-PER-HR",
+      "milli_liter_per_hour": "qunit:MilliL-PER-HR",
+      "liter_per_day": "qunit:L-PER-DAY",
+      "deci_meter_cubed_per_day": "qunit:DeciM3-PER-DAY",
+      "centi_meter_cubed_per_minute": "qunit:CentiM3-PER-MIN",
+      "milli_liter_per_minute": "qunit:MilliL-PER-MIN",
+      "meter_cubed_per_year": "qunit:M3-PER-YR",
+      "liter_per_hour": "qunit:L-PER-HR",
+      "deci_meter_cubed_per_hour": "qunit:DeciM3-PER-HR",
+      "centi_meter_cubed_per_second": "qunit:CentiM3-PER-SEC",
+      "milli_liter_per_second": "qunit:MilliL-PER-SEC",
+      "meter_cubed_per_day": "qunit:M3-PER-DAY",
+      "liter_per_minute": "qunit:L-PER-MIN",
+      "deci_meter_cubed_per_minute": "qunit:DeciM3-PER-MIN",
+      "kilo_liter_per_hour": "qunit:KiloL-PER-HR",
+      "meter_cubed_per_hour": "qunit:M3-PER-HR",
+      "liter_per_second": "qunit:L-PER-SEC",
+      "deci_meter_cubed_per_second": "qunit:DeciM3-PER-SEC",
+      "meter_cubed_per_minute": "qunit:M3-PER-MIN"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "VolumeFlowRate"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "meter_cubed_per_second",
+        "centi_meter_cubed_per_day",
+        "milli_liter_per_day",
+        "centi_meter_cubed_per_hour",
+        "milli_liter_per_hour",
+        "liter_per_day",
+        "deci_meter_cubed_per_day",
+        "centi_meter_cubed_per_minute",
+        "milli_liter_per_minute",
+        "meter_cubed_per_year",
+        "liter_per_hour",
+        "deci_meter_cubed_per_hour",
+        "centi_meter_cubed_per_second",
+        "milli_liter_per_second",
+        "meter_cubed_per_day",
+        "liter_per_minute",
+        "deci_meter_cubed_per_minute",
+        "kilo_liter_per_hour",
+        "meter_cubed_per_hour",
+        "liter_per_second",
+        "deci_meter_cubed_per_second",
+        "meter_cubed_per_minute"
+      ],
+      "default": "meter_cubed_per_second"
+    }
+  }
+}

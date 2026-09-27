@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Landau-GinzburgNumber.schema.json",
+  "x-oold-uuid": "0edc656a-4a2e-5537-819f-189398ab6b74",
+  "x-oold-version": "0.1.0",
+  "title": "Landau-GinzburgNumber",
+  "x-oold-multilang-title": {
+    "en": "Landau-Ginzburg Number"
+  },
+  "description": "\"Landau-Ginzburg Number\", also known as the Ginzburg-Landau parameter, describes the relationship between London penetration depth and coherence length.",
+  "allOf": [
+    {
+      "$ref": "DimensionlessRatio.schema.json"
+    }
+  ],
+  "@context": [
+    "DimensionlessRatio.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Landau-GinzburgNumber": "qkind:Landau-GinzburgNumber"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Landau-GinzburgNumber"
+      ]
+    }
+  }
+}

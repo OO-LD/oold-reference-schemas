@@ -1,0 +1,46 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MobilityRatio.schema.json",
+  "x-oold-uuid": "b9040e28-a613-5420-99ff-6799d514a4e3",
+  "x-oold-version": "0.1.0",
+  "title": "MobilityRatio",
+  "x-oold-multilang-title": {
+    "en": "Mobility Ratio"
+  },
+  "description": "\"MobilityRatio\" describes permeability of a porous material to a given phase divided by the viscosity of that phase.",
+  "examples": [
+    {
+      "type": [
+        "MobilityRatio"
+      ],
+      "value": 1.0,
+      "unit": "unitless"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "MobilityRatio": "qkind:MobilityRatio",
+      "unitless": "qunit:UNITLESS"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "MobilityRatio"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "unitless"
+      ],
+      "default": "unitless"
+    }
+  }
+}

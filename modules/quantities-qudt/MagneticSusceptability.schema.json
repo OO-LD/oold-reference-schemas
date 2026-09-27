@@ -1,0 +1,46 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MagneticSusceptability.schema.json",
+  "x-oold-uuid": "fc2897c7-035c-5509-8972-7b6048ec5154",
+  "x-oold-version": "0.1.0",
+  "title": "MagneticSusceptability",
+  "x-oold-multilang-title": {
+    "en": "Magnetic Susceptability"
+  },
+  "description": "\"Magnetic Susceptability\" is a scalar or tensor quantity the product of which by the magnetic constant $\\mu_0$ and by the magnetic field strength $H$ is equal to the magnetic polarization $J$. The definition given applies to an isotropic medium. For an anisotropic medium permeability is a second order tensor.",
+  "examples": [
+    {
+      "type": [
+        "MagneticSusceptability"
+      ],
+      "value": 1.0,
+      "unit": "unitless"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "MagneticSusceptability": "qkind:MagneticSusceptability",
+      "unitless": "qunit:UNITLESS"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "MagneticSusceptability"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "unitless"
+      ],
+      "default": "unitless"
+    }
+  }
+}

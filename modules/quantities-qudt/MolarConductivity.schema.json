@@ -1,0 +1,46 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MolarConductivity.schema.json",
+  "x-oold-uuid": "5ea67a27-968a-5832-bd98-c38020c4bd6e",
+  "x-oold-version": "0.1.0",
+  "title": "MolarConductivity",
+  "x-oold-multilang-title": {
+    "en": "Molar Conductivity"
+  },
+  "description": "\"Molar Conductivity\" is the conductivity of an electrolyte solution divided by the molar concentration of the electrolyte, and so measures the efficiency with which a given electrolyte conducts electricity in solution.",
+  "examples": [
+    {
+      "type": [
+        "MolarConductivity"
+      ],
+      "value": 1.0,
+      "unit": "meter_squared_siemens_per_mole"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "MolarConductivity": "qkind:MolarConductivity",
+      "meter_squared_siemens_per_mole": "qunit:S-M2-PER-MOL"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "MolarConductivity"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "meter_squared_siemens_per_mole"
+      ],
+      "default": "meter_squared_siemens_per_mole"
+    }
+  }
+}

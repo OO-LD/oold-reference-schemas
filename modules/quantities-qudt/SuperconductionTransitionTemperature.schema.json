@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "SuperconductionTransitionTemperature.schema.json",
+  "x-oold-uuid": "416ee5dc-68e5-5357-9a81-e352df2a0641",
+  "x-oold-version": "0.1.0",
+  "title": "SuperconductionTransitionTemperature",
+  "x-oold-multilang-title": {
+    "en": "Superconduction Transition Temperature"
+  },
+  "description": "\"Superconduction Transition Temperature\" is the critical thermodynamic temperature of a superconductor.",
+  "allOf": [
+    {
+      "$ref": "Temperature.schema.json"
+    }
+  ],
+  "@context": [
+    "Temperature.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "SuperconductionTransitionTemperature": "qkind:SuperconductionTransitionTemperature"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "SuperconductionTransitionTemperature"
+      ]
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Thrust.schema.json",
+  "x-oold-uuid": "7bf742d6-7349-5bb8-bd77-d1ea5295b2cd",
+  "x-oold-version": "0.1.0",
+  "title": "Thrust",
+  "x-oold-multilang-title": {
+    "en": "Thrust"
+  },
+  "description": "Thrust is a reaction force described quantitatively by Newton's Second and Third Laws. When a system expels or accelerates mass in one direction the accelerated mass will cause a proportional but opposite force on that system.",
+  "allOf": [
+    {
+      "$ref": "Force.schema.json"
+    }
+  ],
+  "@context": [
+    "Force.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Thrust": "qkind:Thrust"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Thrust"
+      ]
+    }
+  },
+  "x-oold-context": {
+    "Thrust": {
+      "http://dbpedia.org/resource/Thrust": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

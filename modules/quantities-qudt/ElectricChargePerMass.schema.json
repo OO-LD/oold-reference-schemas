@@ -1,0 +1,64 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ElectricChargePerMass.schema.json",
+  "x-oold-uuid": "27391d33-7252-54a2-88fe-fb618be785f7",
+  "x-oold-version": "0.1.0",
+  "title": "ElectricChargePerMass",
+  "x-oold-multilang-title": {
+    "en": "Electric Charge Per Mass"
+  },
+  "description": "\"Electric Charge Per Mass\" is the charge associated with a specific mass of a substance. In the SI and ISO systems this is $1 kg$.",
+  "examples": [
+    {
+      "type": [
+        "ElectricChargePerMass"
+      ],
+      "value": 1.0,
+      "unit": "per_second_per_tesla"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ElectricChargePerMass": "qkind:ElectricChargePerMass",
+      "per_second_per_tesla": "qunit:PER-T-SEC",
+      "milli_molar_gas_constant": "qunit:MilliR",
+      "molar_gas_constant": "qunit:R",
+      "milli_coulomb_per_kilo_gram": "qunit:MilliC-PER-KiloGM",
+      "kilo_molar_gas_constant": "qunit:KiloR",
+      "ampere_meter_squared_per_joule_per_second": "qunit:A-M2-PER-J-SEC",
+      "coulomb_per_kilo_gram": "qunit:C-PER-KiloGM",
+      "hertz_per_tesla": "qunit:HZ-PER-T",
+      "coulomb_per_gram": "qunit:C-PER-GM",
+      "mega_hertz_per_tesla": "qunit:MegaHZ-PER-T"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ElectricChargePerMass"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "per_second_per_tesla",
+        "milli_molar_gas_constant",
+        "molar_gas_constant",
+        "milli_coulomb_per_kilo_gram",
+        "kilo_molar_gas_constant",
+        "ampere_meter_squared_per_joule_per_second",
+        "coulomb_per_kilo_gram",
+        "hertz_per_tesla",
+        "coulomb_per_gram",
+        "mega_hertz_per_tesla"
+      ],
+      "default": "per_second_per_tesla"
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Vorticity.schema.json",
+  "x-oold-uuid": "55eac7b3-6313-581b-839d-0bd4957f7788",
+  "x-oold-version": "0.1.0",
+  "title": "Vorticity",
+  "x-oold-multilang-title": {
+    "en": "Vorticity"
+  },
+  "description": "In the simplest sense, vorticity is the tendency for elements of a fluid to \"spin.\" More formally, vorticity can be related to the amount of \"circulation\" or \"rotation\" (or more strictly, the local angular rate of rotation) in a fluid. The average vorticity in a small region of fluid flow is equal to the circulation C around the boundary of the small region, divided by the area A of the small region. Mathematically, vorticity is a vector field and is defined as the curl of the velocity field.",
+  "allOf": [
+    {
+      "$ref": "AngularVelocity.schema.json"
+    }
+  ],
+  "@context": [
+    "AngularVelocity.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Vorticity": "qkind:Vorticity"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Vorticity"
+      ]
+    }
+  }
+}

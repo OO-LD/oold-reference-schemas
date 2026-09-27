@@ -1,0 +1,29 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "FinalOrCurrentVehicleMass.schema.json",
+  "x-oold-uuid": "a6c948d5-809e-504c-ab9f-a3aae14ad79a",
+  "x-oold-version": "0.1.0",
+  "title": "FinalOrCurrentVehicleMass",
+  "x-oold-multilang-title": {
+    "en": "Final Or Current Vehicle Mass"
+  },
+  "allOf": [
+    {
+      "$ref": "Mass.schema.json"
+    }
+  ],
+  "@context": [
+    "Mass.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "FinalOrCurrentVehicleMass": "qkind:FinalOrCurrentVehicleMass"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "FinalOrCurrentVehicleMass"
+      ]
+    }
+  }
+}

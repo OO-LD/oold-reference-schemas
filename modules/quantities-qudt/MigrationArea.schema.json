@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MigrationArea.schema.json",
+  "x-oold-uuid": "1f5c6d48-545a-5639-8956-6d8b589612c2",
+  "x-oold-version": "0.1.0",
+  "title": "MigrationArea",
+  "x-oold-multilang-title": {
+    "en": "Migration Area"
+  },
+  "description": "\"Migration Area\" is the sum of the slowing-down area from fission energy to thermal energy and the diffusion area for thermal neutrons.",
+  "allOf": [
+    {
+      "$ref": "Area.schema.json"
+    }
+  ],
+  "@context": [
+    "Area.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "MigrationArea": "qkind:MigrationArea"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "MigrationArea"
+      ]
+    }
+  }
+}

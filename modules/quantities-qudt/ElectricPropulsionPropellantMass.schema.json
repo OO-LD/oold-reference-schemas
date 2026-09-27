@@ -1,0 +1,29 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ElectricPropulsionPropellantMass.schema.json",
+  "x-oold-uuid": "7d9cb17e-b1c7-5492-a024-f50a69b04ffc",
+  "x-oold-version": "0.1.0",
+  "title": "ElectricPropulsionPropellantMass",
+  "x-oold-multilang-title": {
+    "en": "Electric Propulsion Propellant Mass"
+  },
+  "allOf": [
+    {
+      "$ref": "PropellantMass.schema.json"
+    }
+  ],
+  "@context": [
+    "PropellantMass.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ElectricPropulsionPropellantMass": "qkind:ElectricPropulsionPropellantMass"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ElectricPropulsionPropellantMass"
+      ]
+    }
+  }
+}

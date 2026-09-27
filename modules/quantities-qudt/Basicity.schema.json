@@ -1,0 +1,46 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Basicity.schema.json",
+  "x-oold-uuid": "8189a49e-2c98-599a-8c63-5dbbfaa6b5b6",
+  "x-oold-version": "0.1.0",
+  "title": "Basicity",
+  "x-oold-multilang-title": {
+    "en": "Basicity"
+  },
+  "description": "Chemicals or substances having a pH higher than 7 are said to be basic; higher pH means higher basicity.",
+  "examples": [
+    {
+      "type": [
+        "Basicity"
+      ],
+      "value": 1.0,
+      "unit": "ph_value"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Basicity": "qkind:Basicity",
+      "ph_value": "qunit:PH"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Basicity"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "ph_value"
+      ],
+      "default": "ph_value"
+    }
+  }
+}

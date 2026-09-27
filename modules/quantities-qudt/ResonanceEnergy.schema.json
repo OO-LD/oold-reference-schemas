@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ResonanceEnergy.schema.json",
+  "x-oold-uuid": "0299be3f-8ccc-586f-b297-5ad954b2e3bd",
+  "x-oold-version": "0.1.0",
+  "title": "ResonanceEnergy",
+  "x-oold-multilang-title": {
+    "en": "Resonance Energy"
+  },
+  "description": "\"Resonance Energy\" in a nuclear reaction, is the kinetic energy of an incident particle, in the reference frame of the target, corresponding to a resonance in a nuclear reaction.",
+  "allOf": [
+    {
+      "$ref": "Energy.schema.json"
+    }
+  ],
+  "@context": [
+    "Energy.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ResonanceEnergy": "qkind:ResonanceEnergy"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ResonanceEnergy"
+      ]
+    }
+  }
+}

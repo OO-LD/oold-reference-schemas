@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "IncidenceRate.schema.json",
+  "x-oold-uuid": "877bfc2b-db1c-5e19-b67c-4fede37fdb56",
+  "x-oold-version": "0.1.0",
+  "title": "IncidenceRate",
+  "x-oold-multilang-title": {
+    "en": "Incidence Rate"
+  },
+  "description": "The incidence rate is a measure of the frequency with which a disease or other incident occurs over a specified time period. It is also known as the incidence density rate or person-time incidence rate, when the denominator is the combined person-time of the population at risk (the sum of the time duration of exposure across all persons exposed)",
+  "allOf": [
+    {
+      "$ref": "Incidence.schema.json"
+    }
+  ],
+  "@context": [
+    "Incidence.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "IncidenceRate": "qkind:IncidenceRate"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "IncidenceRate"
+      ]
+    }
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "LinearVelocity.schema.json",
+  "x-oold-uuid": "a05bb9d4-8dca-5745-bee3-55865a3109f2",
+  "x-oold-version": "0.1.0",
+  "title": "LinearVelocity",
+  "x-oold-multilang-title": {
+    "en": "Linear Velocity"
+  },
+  "description": "Linear Velocity, as the name implies deals with speed in a straight line, the units are often $km/hr$ or $m/s$ or $mph$ (miles per hour). Linear Velocity (v) = change in distance/change in time, where $v = \\bigtriangleup d/\\bigtriangleup t$",
+  "examples": [
+    {
+      "type": [
+        "LinearVelocity"
+      ],
+      "value": 1.0,
+      "unit": "meter_per_second"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "LinearVelocity": "qkind:LinearVelocity",
+      "meter_per_second": "qunit:M-PER-SEC",
+      "centi_meter_per_kilo_year": "qunit:CentiM-PER-KiloYR",
+      "milli_meter_per_year": "qunit:MilliM-PER-YR",
+      "centi_meter_per_year": "qunit:CentiM-PER-YR",
+      "milli_meter_per_day": "qunit:MilliM-PER-DAY",
+      "micro_meter_per_minute": "qunit:MicroM-PER-MIN",
+      "meter_per_year": "qunit:M-PER-YR",
+      "milli_meter_per_hour": "qunit:MilliM-PER-HR",
+      "micro_meter_per_second": "qunit:MicroM-PER-SEC",
+      "centi_meter_per_hour": "qunit:CentiM-PER-HR",
+      "meter_per_day": "qunit:M-PER-DAY",
+      "milli_meter_per_minute": "qunit:MilliM-PER-MIN",
+      "meter_per_hour": "qunit:M-PER-HR",
+      "milli_meter_per_second": "qunit:MilliM-PER-SEC",
+      "centi_meter_per_second": "qunit:CentiM-PER-SEC",
+      "kilo_meter_per_day": "qunit:KiloM-PER-DAY",
+      "meter_per_minute": "qunit:M-PER-MIN",
+      "kilo_meter_per_hour": "qunit:KiloM-PER-HR",
+      "hertz_meter": "qunit:HZ-M",
+      "kilo_hertz_meter": "qunit:KiloHZ-M",
+      "kilo_meter_per_second": "qunit:KiloM-PER-SEC",
+      "mega_hertz_meter": "qunit:MegaHZ-M",
+      "giga_hertz_meter": "qunit:GigaHZ-M",
+      "kilo_meter_mega_hertz": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/kilo_meter_mega_hertz"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "LinearVelocity"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "meter_per_second",
+        "centi_meter_per_kilo_year",
+        "milli_meter_per_year",
+        "centi_meter_per_year",
+        "milli_meter_per_day",
+        "micro_meter_per_minute",
+        "meter_per_year",
+        "milli_meter_per_hour",
+        "micro_meter_per_second",
+        "centi_meter_per_hour",
+        "meter_per_day",
+        "milli_meter_per_minute",
+        "meter_per_hour",
+        "milli_meter_per_second",
+        "centi_meter_per_second",
+        "kilo_meter_per_day",
+        "meter_per_minute",
+        "kilo_meter_per_hour",
+        "hertz_meter",
+        "kilo_hertz_meter",
+        "kilo_meter_per_second",
+        "mega_hertz_meter",
+        "giga_hertz_meter",
+        "kilo_meter_mega_hertz"
+      ],
+      "default": "meter_per_second"
+    }
+  },
+  "x-oold-context": {
+    "LinearVelocity": {
+      "http://dbpedia.org/resource/Velocity": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

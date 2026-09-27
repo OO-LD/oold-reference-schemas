@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "StandardChemicalPotential.schema.json",
+  "x-oold-uuid": "c4389e23-2bdd-57d9-82bf-c4bed783818e",
+  "x-oold-version": "0.1.0",
+  "title": "StandardChemicalPotential",
+  "x-oold-multilang-title": {
+    "en": "Standard Chemical Potential"
+  },
+  "description": "\"Standard Chemical Potential\" is the value of the chemical potential at standard conditions",
+  "allOf": [
+    {
+      "$ref": "ChemicalPotential.schema.json"
+    }
+  ],
+  "@context": [
+    "ChemicalPotential.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "StandardChemicalPotential": "qkind:StandardChemicalPotential"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "StandardChemicalPotential"
+      ]
+    }
+  }
+}

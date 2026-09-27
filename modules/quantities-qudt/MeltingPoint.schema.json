@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MeltingPoint.schema.json",
+  "x-oold-uuid": "3dc44dc6-9cfb-5c34-a375-43b3c7bf7017",
+  "x-oold-version": "0.1.0",
+  "title": "MeltingPoint",
+  "x-oold-multilang-title": {
+    "en": "Melting Point Temperature"
+  },
+  "description": "A temperature that is the one at which a substance will change its physical state from a solid to a liquid.  It is also the temperature where the solid and liquid forms of a pure substance can exist in equilibrium.",
+  "allOf": [
+    {
+      "$ref": "Temperature.schema.json"
+    }
+  ],
+  "@context": [
+    "Temperature.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "MeltingPoint": "qkind:MeltingPoint"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "MeltingPoint"
+      ]
+    }
+  }
+}

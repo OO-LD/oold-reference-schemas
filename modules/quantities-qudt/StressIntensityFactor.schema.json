@@ -1,0 +1,48 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "StressIntensityFactor.schema.json",
+  "x-oold-uuid": "64d98c5b-a2a7-5bf4-afcb-38b2ec0f76e1",
+  "x-oold-version": "0.1.0",
+  "title": "StressIntensityFactor",
+  "x-oold-multilang-title": {
+    "en": "Stress Intensity Factor"
+  },
+  "description": "In fracture mechanics, the stress intensity factor (K) is used to predict the stress state (\"stress intensity\") near the tip of a crack or notch caused by a remote load or residual stresses. It is a theoretical construct usually applied to a homogeneous, linear elastic material and is useful for providing a failure criterion for brittle materials, and is a critical technique in the discipline of damage tolerance. The concept can also be applied to materials that exhibit small-scale yielding at a crack tip.",
+  "examples": [
+    {
+      "type": [
+        "StressIntensityFactor"
+      ],
+      "value": 1.0,
+      "unit": "meter_pascal"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "StressIntensityFactor": "qkind:StressIntensityFactor",
+      "meter_pascal": "qunit:PA-M0dot5",
+      "mega_pascal_meter": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/mega_pascal_meter"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "StressIntensityFactor"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "meter_pascal",
+        "mega_pascal_meter"
+      ],
+      "default": "meter_pascal"
+    }
+  }
+}

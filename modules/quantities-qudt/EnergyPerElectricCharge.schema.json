@@ -1,0 +1,72 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "EnergyPerElectricCharge.schema.json",
+  "x-oold-uuid": "ce9a8c0d-fd21-59b2-a628-364ae9fbe9f3",
+  "x-oold-version": "0.1.0",
+  "title": "EnergyPerElectricCharge",
+  "x-oold-multilang-title": {
+    "en": "Energy per electric charge"
+  },
+  "description": "Voltage is a representation of the electric potential energy per unit charge. If a unit of electrical charge were placed in a location, the voltage indicates the potential energy of it at that point. In other words, it is a measurement of the energy contained within an electric field, or an electric circuit, at a given point. Voltage is a scalar quantity. The SI unit of voltage is the volt, such that $1 volt = 1 joule/coulomb$.",
+  "examples": [
+    {
+      "type": [
+        "EnergyPerElectricCharge"
+      ],
+      "value": 1.0,
+      "unit": "volt"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "EnergyPerElectricCharge": "qkind:EnergyPerElectricCharge",
+      "volt": "qunit:V",
+      "femto_volt": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/femto_volt",
+      "pico_volt": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/pico_volt",
+      "nano_volt": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/nano_volt",
+      "abvolt": "qunit:V_Ab",
+      "micro_volt": "qunit:MicroV",
+      "milli_volt": "qunit:MilliV",
+      "statvolt": "qunit:V_Stat",
+      "kilo_volt": "qunit:KiloV",
+      "mega_volt": "qunit:MegaV",
+      "giga_volt": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/giga_volt",
+      "tera_volt": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/tera_volt",
+      "peta_volt": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/peta_volt",
+      "exa_volt": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/exa_volt"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "EnergyPerElectricCharge"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "volt",
+        "femto_volt",
+        "pico_volt",
+        "nano_volt",
+        "abvolt",
+        "micro_volt",
+        "milli_volt",
+        "statvolt",
+        "kilo_volt",
+        "mega_volt",
+        "giga_volt",
+        "tera_volt",
+        "peta_volt",
+        "exa_volt"
+      ],
+      "default": "volt"
+    }
+  }
+}

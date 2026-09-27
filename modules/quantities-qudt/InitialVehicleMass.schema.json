@@ -1,0 +1,29 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "InitialVehicleMass.schema.json",
+  "x-oold-uuid": "a573ff74-e1f1-5ca2-86ce-442b065146dc",
+  "x-oold-version": "0.1.0",
+  "title": "InitialVehicleMass",
+  "x-oold-multilang-title": {
+    "en": "Initial Vehicle Mass"
+  },
+  "allOf": [
+    {
+      "$ref": "Mass.schema.json"
+    }
+  ],
+  "@context": [
+    "Mass.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "InitialVehicleMass": "qkind:InitialVehicleMass"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "InitialVehicleMass"
+      ]
+    }
+  }
+}

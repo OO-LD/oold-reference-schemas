@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "NonNegativeLength.schema.json",
+  "x-oold-uuid": "04772b79-15d6-597f-adf5-b7d44f4e90a5",
+  "x-oold-version": "0.1.0",
+  "title": "NonNegativeLength",
+  "x-oold-multilang-title": {
+    "en": "Positive Length"
+  },
+  "description": "\"NonNegativeLength\" is a measure of length greater than or equal to zero.",
+  "allOf": [
+    {
+      "$ref": "Length.schema.json"
+    }
+  ],
+  "@context": [
+    "Length.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "NonNegativeLength": "qkind:NonNegativeLength"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "NonNegativeLength"
+      ]
+    }
+  }
+}

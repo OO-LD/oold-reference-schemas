@@ -1,0 +1,29 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "OrbitalRadialDistance.schema.json",
+  "x-oold-uuid": "bc45768e-b166-5c18-975f-ae4c802c6e63",
+  "x-oold-version": "0.1.0",
+  "title": "OrbitalRadialDistance",
+  "x-oold-multilang-title": {
+    "en": "Orbital Radial Distance"
+  },
+  "allOf": [
+    {
+      "$ref": "Length.schema.json"
+    }
+  ],
+  "@context": [
+    "Length.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "OrbitalRadialDistance": "qkind:OrbitalRadialDistance"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "OrbitalRadialDistance"
+      ]
+    }
+  }
+}

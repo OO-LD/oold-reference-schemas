@@ -1,0 +1,67 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "AmountOfSubstancePerMass.schema.json",
+  "x-oold-uuid": "efff8e22-b4d6-5024-bd04-4362634938e1",
+  "x-oold-version": "0.1.0",
+  "title": "AmountOfSubstancePerMass",
+  "x-oold-multilang-title": {
+    "en": "Amount of Substance per Mass"
+  },
+  "examples": [
+    {
+      "type": [
+        "AmountOfSubstancePerMass"
+      ],
+      "value": 1.0,
+      "unit": "mole_per_kilo_gram"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "AmountOfSubstancePerMass": "qkind:AmountOfSubstancePerMass",
+      "mole_per_kilo_gram": "qunit:MOL-PER-KiloGM",
+      "femto_mole_per_kilo_gram": "qunit:FemtoMOL-PER-KiloGM",
+      "pico_mole_per_kilo_gram": "qunit:PicoMOL-PER-KiloGM",
+      "nano_mole_per_kilo_gram": "qunit:NanoMOL-PER-KiloGM",
+      "nano_mole_per_gram": "qunit:NanoMOL-PER-GM",
+      "micro_mole_per_kilo_gram": "qunit:MicroMOL-PER-KiloGM",
+      "milli_mole_per_kilo_gram": "qunit:MilliMOL-PER-KiloGM",
+      "micro_mole_per_gram": "qunit:MicroMOL-PER-GM",
+      "centi_mole_per_kilo_gram": "qunit:CentiMOL-PER-KiloGM",
+      "milli_mole_per_gram": "qunit:MilliMOL-PER-GM",
+      "kilo_mole_per_kilo_gram": "qunit:KiloMOL-PER-KiloGM",
+      "mole_per_gram": "qunit:MOL-PER-GM"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "AmountOfSubstancePerMass"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "mole_per_kilo_gram",
+        "femto_mole_per_kilo_gram",
+        "pico_mole_per_kilo_gram",
+        "nano_mole_per_kilo_gram",
+        "nano_mole_per_gram",
+        "micro_mole_per_kilo_gram",
+        "milli_mole_per_kilo_gram",
+        "micro_mole_per_gram",
+        "centi_mole_per_kilo_gram",
+        "milli_mole_per_gram",
+        "kilo_mole_per_kilo_gram",
+        "mole_per_gram"
+      ],
+      "default": "mole_per_kilo_gram"
+    }
+  }
+}

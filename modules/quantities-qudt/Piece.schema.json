@@ -1,0 +1,29 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Piece.schema.json",
+  "x-oold-uuid": "dc14ddb7-0b10-5a98-bfa6-afc265622908",
+  "x-oold-version": "0.1.0",
+  "title": "Piece",
+  "x-oold-multilang-title": {
+    "en": "Piece"
+  },
+  "allOf": [
+    {
+      "$ref": "Count.schema.json"
+    }
+  ],
+  "@context": [
+    "Count.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Piece": "qkind:Piece"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Piece"
+      ]
+    }
+  }
+}

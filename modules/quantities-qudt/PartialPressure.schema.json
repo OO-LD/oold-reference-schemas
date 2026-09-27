@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "PartialPressure.schema.json",
+  "x-oold-uuid": "9bf4b48d-351a-56e9-a123-cd93d798ef12",
+  "x-oold-version": "0.1.0",
+  "title": "PartialPressure",
+  "x-oold-multilang-title": {
+    "en": "Partial Pressure"
+  },
+  "description": "\"Partial Pressure\" is the pressure that the gas would have if it alone occupied the volume of the mixture at the same temperature.",
+  "allOf": [
+    {
+      "$ref": "Pressure.schema.json"
+    }
+  ],
+  "@context": [
+    "Pressure.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "PartialPressure": "qkind:PartialPressure"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "PartialPressure"
+      ]
+    }
+  }
+}

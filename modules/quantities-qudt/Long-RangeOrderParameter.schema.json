@@ -1,0 +1,46 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Long-RangeOrderParameter.schema.json",
+  "x-oold-uuid": "bb3d87d0-90f7-5ebd-84ac-6ee5537c3289",
+  "x-oold-version": "0.1.0",
+  "title": "Long-RangeOrderParameter",
+  "x-oold-multilang-title": {
+    "en": "Long-Range Order Parameter"
+  },
+  "description": "\"Long-Range Order Parameter\" is the fraction of atoms in an Ising ferromagnet having magnetic moments in one direction, minus the fraction having magnetic moments in the opposite direction.",
+  "examples": [
+    {
+      "type": [
+        "Long-RangeOrderParameter"
+      ],
+      "value": 1.0,
+      "unit": "unitless"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Long-RangeOrderParameter": "qkind:Long-RangeOrderParameter",
+      "unitless": "qunit:UNITLESS"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Long-RangeOrderParameter"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "unitless"
+      ],
+      "default": "unitless"
+    }
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "HydraulicPermeability.schema.json",
+  "x-oold-uuid": "1999834e-da4e-5e4f-89dc-83c98c0bb609",
+  "x-oold-version": "0.1.0",
+  "title": "HydraulicPermeability",
+  "x-oold-multilang-title": {
+    "en": "Hydraulic Permeability"
+  },
+  "description": "Permeability is a property of porous materials that is an indication of the ability for fluids (gas or liquid) to flow through them. Fluids can more easily flow through a material with high permeability than one with low permeability. The permeability of a medium is related to the porosity, but also to the shapes of the pores in the medium and their level of connectedness.",
+  "examples": [
+    {
+      "type": [
+        "HydraulicPermeability"
+      ],
+      "value": 1.0,
+      "unit": "meter_squared"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "HydraulicPermeability": "qkind:HydraulicPermeability",
+      "meter_squared": "qunit:M2",
+      "nano_meter_squared": "qunit:NanoM2",
+      "milli_day": "qunit:MilliDARCY",
+      "day": "qunit:DARCY",
+      "micro_meter_squared": "qunit:MicroM2",
+      "milli_meter_squared": "qunit:MilliM2",
+      "centi_meter_squared": "qunit:CentiM2",
+      "deci_meter_squared": "qunit:DeciM2",
+      "kilo_meter_squared": "qunit:KiloM2"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "HydraulicPermeability"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "meter_squared",
+        "nano_meter_squared",
+        "milli_day",
+        "day",
+        "micro_meter_squared",
+        "milli_meter_squared",
+        "centi_meter_squared",
+        "deci_meter_squared",
+        "kilo_meter_squared"
+      ],
+      "default": "meter_squared"
+    }
+  },
+  "x-oold-context": {
+    "HydraulicPermeability": {
+      "http://dbpedia.org/resource/Permeability_(Earth_sciences)": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

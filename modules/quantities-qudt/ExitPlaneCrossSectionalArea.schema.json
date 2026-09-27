@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ExitPlaneCrossSectionalArea.schema.json",
+  "x-oold-uuid": "2c615dd1-ae0c-5b73-b77a-aeb99c960a6e",
+  "x-oold-version": "0.1.0",
+  "title": "ExitPlaneCrossSectionalArea",
+  "x-oold-multilang-title": {
+    "en": "Exit Plane Cross-sectional Area"
+  },
+  "description": "Cross-sectional area at exit plane of nozzle",
+  "allOf": [
+    {
+      "$ref": "Area.schema.json"
+    }
+  ],
+  "@context": [
+    "Area.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ExitPlaneCrossSectionalArea": "qkind:ExitPlaneCrossSectionalArea"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ExitPlaneCrossSectionalArea"
+      ]
+    }
+  }
+}

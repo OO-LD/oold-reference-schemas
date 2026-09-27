@@ -1,0 +1,54 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "LinearElectricCurrentDensity.schema.json",
+  "x-oold-uuid": "6ce762ef-103d-5b15-976d-cfa13914bef4",
+  "x-oold-version": "0.1.0",
+  "title": "LinearElectricCurrentDensity",
+  "x-oold-multilang-title": {
+    "en": "Linear Electric Current Density"
+  },
+  "description": "\"Linear Electric Linear Current Density\" is the electric current per unit length. Electric current, $I$, through a curve $C$ is defined as $I = \\int_C J _s \\times e_n$, where $e_n$ is a unit vector perpendicular to the surface and line vector element, and $dr$ is the differential of position vector $r$.",
+  "examples": [
+    {
+      "type": [
+        "LinearElectricCurrentDensity"
+      ],
+      "value": 1.0,
+      "unit": "ampere_per_meter"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "LinearElectricCurrentDensity": "qkind:LinearElectricCurrentDensity",
+      "ampere_per_meter": "qunit:A-PER-M",
+      "milli_ampere_per_milli_meter": "qunit:MilliA-PER-MilliM",
+      "ampere_per_centi_meter": "qunit:A-PER-CentiM",
+      "ampere_per_milli_meter": "qunit:A-PER-MilliM",
+      "kilo_ampere_per_meter": "qunit:KiloA-PER-M"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "LinearElectricCurrentDensity"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "ampere_per_meter",
+        "milli_ampere_per_milli_meter",
+        "ampere_per_centi_meter",
+        "ampere_per_milli_meter",
+        "kilo_ampere_per_meter"
+      ],
+      "default": "ampere_per_meter"
+    }
+  }
+}

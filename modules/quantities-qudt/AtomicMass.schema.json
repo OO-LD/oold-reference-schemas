@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "AtomicMass.schema.json",
+  "x-oold-uuid": "ba53f057-665b-5a80-8021-878a5dca9b99",
+  "x-oold-version": "0.1.0",
+  "title": "AtomicMass",
+  "x-oold-multilang-title": {
+    "en": "Atomic Mass"
+  },
+  "description": "The \"Atomic Mass\" is the mass of a specific isotope, most often expressed in unified atomic mass units.",
+  "allOf": [
+    {
+      "$ref": "Mass.schema.json"
+    }
+  ],
+  "@context": [
+    "Mass.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "AtomicMass": "qkind:AtomicMass"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "AtomicMass"
+      ]
+    }
+  }
+}

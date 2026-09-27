@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MassFluxDensity.schema.json",
+  "x-oold-uuid": "b2039403-1e71-582e-963e-4a89b43289e7",
+  "x-oold-version": "0.1.0",
+  "title": "MassFluxDensity",
+  "x-oold-multilang-title": {
+    "en": "Mass flux density"
+  },
+  "description": "product of flow velocity and density",
+  "allOf": [
+    {
+      "$ref": "MassPerAreaTime.schema.json"
+    }
+  ],
+  "@context": [
+    "MassPerAreaTime.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "MassFluxDensity": "qkind:MassFluxDensity"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "MassFluxDensity"
+      ]
+    }
+  }
+}

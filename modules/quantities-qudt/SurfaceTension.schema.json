@@ -1,0 +1,42 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "SurfaceTension.schema.json",
+  "x-oold-uuid": "15f7a614-1937-572f-97ea-c08557b488ce",
+  "x-oold-version": "0.1.0",
+  "title": "SurfaceTension",
+  "x-oold-multilang-title": {
+    "en": "Surface tension",
+    "de": "Oberflächenspannung"
+  },
+  "description": "\"Surface Tension\" is a contractive tendency of the surface of a liquid that allows it to resist an external force.",
+  "allOf": [
+    {
+      "$ref": "EnergyPerArea.schema.json"
+    }
+  ],
+  "@context": [
+    "EnergyPerArea.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "SurfaceTension": "qkind:SurfaceTension"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "SurfaceTension"
+      ]
+    }
+  },
+  "x-oold-context": {
+    "SurfaceTension": {
+      "https://si-digital-framework.org/quantities/SUTE": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

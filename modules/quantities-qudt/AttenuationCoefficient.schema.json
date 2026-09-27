@@ -1,0 +1,58 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "AttenuationCoefficient.schema.json",
+  "x-oold-uuid": "0ead3c6c-f611-5bee-b175-b122432d24a7",
+  "x-oold-version": "0.1.0",
+  "title": "AttenuationCoefficient",
+  "x-oold-multilang-title": {
+    "en": "Attenuation Coefficient"
+  },
+  "description": "The attenuation coefficient is a quantity that characterizes how easily a material or medium can be penetrated by a beam of light, sound, particles, or other energy or matter. A large attenuation coefficient means that the beam is quickly \"attenuated\" (weakened) as it passes through the medium, and a small attenuation coefficient means that the medium is relatively transparent to the beam. The Attenuation Coefficient is also called linear attenuation coefficient, narrow beam attenuation coefficient, or absorption coefficient.",
+  "examples": [
+    {
+      "type": [
+        "AttenuationCoefficient"
+      ],
+      "value": 1.0,
+      "unit": "per_meter"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "AttenuationCoefficient": "qkind:AttenuationCoefficient",
+      "per_meter": "qunit:PER-M",
+      "per_kilo_meter": "qunit:PER-KiloM",
+      "per_centi_meter": "qunit:PER-CentiM",
+      "per_milli_meter": "qunit:PER-MilliM",
+      "per_micro_meter": "qunit:PER-MicroM",
+      "per_nano_meter": "qunit:PER-NanoM",
+      "per_pico_meter": "qunit:PER-PicoM"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "AttenuationCoefficient"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "per_meter",
+        "per_kilo_meter",
+        "per_centi_meter",
+        "per_milli_meter",
+        "per_micro_meter",
+        "per_nano_meter",
+        "per_pico_meter"
+      ],
+      "default": "per_meter"
+    }
+  }
+}

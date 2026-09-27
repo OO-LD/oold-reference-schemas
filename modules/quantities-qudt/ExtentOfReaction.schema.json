@@ -1,0 +1,60 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ExtentOfReaction.schema.json",
+  "x-oold-uuid": "8961f381-0264-5fbb-bd5a-925157d7ab9e",
+  "x-oold-version": "0.1.0",
+  "title": "ExtentOfReaction",
+  "x-oold-multilang-title": {
+    "en": "Extent of Reaction"
+  },
+  "description": "In physical chemistry, the \"Extent of Reaction\" is a quantity that measures the extent in which the reaction proceeds.",
+  "examples": [
+    {
+      "type": [
+        "ExtentOfReaction"
+      ],
+      "value": 1.0,
+      "unit": "mole"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ExtentOfReaction": "qkind:ExtentOfReaction",
+      "mole": "qunit:MOL",
+      "femto_mole": "qunit:FemtoMOL",
+      "pico_mole": "qunit:PicoMOL",
+      "nano_mole": "qunit:NanoMOL",
+      "micro_mole": "qunit:MicroMOL",
+      "milli_mole": "qunit:MilliMOL",
+      "centi_mole": "qunit:CentiMOL",
+      "kilo_mole": "qunit:KiloMOL"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ExtentOfReaction"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "mole",
+        "femto_mole",
+        "pico_mole",
+        "nano_mole",
+        "micro_mole",
+        "milli_mole",
+        "centi_mole",
+        "kilo_mole"
+      ],
+      "default": "mole"
+    }
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "SpecificEnergy.schema.json",
+  "x-oold-uuid": "9a32b5a8-4f23-5a0c-b0a9-e9fba9bd252e",
+  "x-oold-version": "0.1.0",
+  "title": "SpecificEnergy",
+  "x-oold-multilang-title": {
+    "en": "Specific Energy"
+  },
+  "description": "$\\textit{Specific Energy}$ is defined as the energy per unit mass. \n  Common metric units are $J/kg$. \n  It is an intensive property. \n  Contrast this with energy, which is an extensive property. \n  There are two main types of specific energy: potential energy and specific kinetic energy. \n  Others are the $\\textit{gray}$ and $\\textit{sievert}$, which are measures for the absorption of radiation. \n  $$$$\n  The concept of specific energy applies to a particular or theoretical way of extracting useful energy from the material considered that is usually implied by context. \n  These intensive properties are each symbolized by using the lower case letter of the symbol for the corresponding extensive property,\n   which is symbolized by a capital letter. \n  For example, the extensive thermodynamic property enthalpy is symbolized by $H$; specific enthalpy is symbolized by $h$.",
+  "examples": [
+    {
+      "type": [
+        "SpecificEnergy"
+      ],
+      "value": 1.0,
+      "unit": "sievert"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "SpecificEnergy": "qkind:SpecificEnergy",
+      "sievert": "qunit:SV",
+      "nano_gray": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/nano_gray",
+      "nano_sievert": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/nano_sievert",
+      "micro_gray": "qunit:MicroGRAY",
+      "micro_sievert": "qunit:MicroSV",
+      "milli_radian": "qunit:MilliRAD_R",
+      "milli_gray": "qunit:MilliGRAY",
+      "milli_sievert": "qunit:MilliSV",
+      "centi_gray": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/centi_gray",
+      "radiation_absorbed_dose": "qunit:RAD_R",
+      "rem": "qunit:REM",
+      "gray": "qunit:GRAY",
+      "joule_per_kilo_gram": "qunit:J-PER-KiloGM",
+      "meter_newton_per_kilo_gram": "qunit:N-M-PER-KiloGM",
+      "milli_joule_per_gram": "qunit:MilliJ-PER-GM",
+      "meter_squared_per_second_squared": "qunit:M2-PER-SEC2",
+      "joule_per_gram": "qunit:J-PER-GM",
+      "meter_newton_per_gram": "qunit:N-M-PER-GM",
+      "kilo_gray": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/kilo_gray",
+      "kilo_joule_per_kilo_gram": "qunit:KiloJ-PER-KiloGM",
+      "mega_gray": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/mega_gray",
+      "mega_joule_per_kilo_gram": "qunit:MegaJ-PER-KiloGM",
+      "kilo_meter_squared_per_second_squared": "qunit:KiloM2-PER-SEC2"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "SpecificEnergy"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "sievert",
+        "nano_gray",
+        "nano_sievert",
+        "micro_gray",
+        "micro_sievert",
+        "milli_radian",
+        "milli_gray",
+        "milli_sievert",
+        "centi_gray",
+        "radiation_absorbed_dose",
+        "rem",
+        "gray",
+        "joule_per_kilo_gram",
+        "meter_newton_per_kilo_gram",
+        "milli_joule_per_gram",
+        "meter_squared_per_second_squared",
+        "joule_per_gram",
+        "meter_newton_per_gram",
+        "kilo_gray",
+        "kilo_joule_per_kilo_gram",
+        "mega_gray",
+        "mega_joule_per_kilo_gram",
+        "kilo_meter_squared_per_second_squared"
+      ],
+      "default": "sievert"
+    }
+  },
+  "x-oold-context": {
+    "SpecificEnergy": {
+      "http://dbpedia.org/resource/Specific_energy": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      },
+      "https://si-digital-framework.org/quantities/SENG": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

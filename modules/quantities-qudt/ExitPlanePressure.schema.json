@@ -1,0 +1,29 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ExitPlanePressure.schema.json",
+  "x-oold-uuid": "d42f78f4-03bd-5873-b1ba-3409d0816d39",
+  "x-oold-version": "0.1.0",
+  "title": "ExitPlanePressure",
+  "x-oold-multilang-title": {
+    "en": "Exit Plane Pressure"
+  },
+  "allOf": [
+    {
+      "$ref": "Pressure.schema.json"
+    }
+  ],
+  "@context": [
+    "Pressure.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ExitPlanePressure": "qkind:ExitPlanePressure"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ExitPlanePressure"
+      ]
+    }
+  }
+}

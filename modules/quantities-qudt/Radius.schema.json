@@ -1,0 +1,41 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Radius.schema.json",
+  "x-oold-uuid": "57a45884-de60-5269-8141-a5cbe4aaa4ac",
+  "x-oold-version": "0.1.0",
+  "title": "Radius",
+  "x-oold-multilang-title": {
+    "en": "Radius"
+  },
+  "description": "In classical geometry, the \"Radius\" of a circle or sphere is any line segment from its center to its perimeter the radius of a circle or sphere is the length of any such segment.",
+  "allOf": [
+    {
+      "$ref": "Length.schema.json"
+    }
+  ],
+  "@context": [
+    "Length.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Radius": "qkind:Radius"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Radius"
+      ]
+    }
+  },
+  "x-oold-context": {
+    "Radius": {
+      "http://dbpedia.org/resource/Radius": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

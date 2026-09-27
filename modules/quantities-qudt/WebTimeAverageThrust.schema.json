@@ -1,0 +1,29 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "WebTimeAverageThrust.schema.json",
+  "x-oold-uuid": "e5068aa8-fec2-52a2-803f-5ecf06a90cbb",
+  "x-oold-version": "0.1.0",
+  "title": "WebTimeAverageThrust",
+  "x-oold-multilang-title": {
+    "en": "Web Time Average Thrust"
+  },
+  "allOf": [
+    {
+      "$ref": "Thrust.schema.json"
+    }
+  ],
+  "@context": [
+    "Thrust.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "WebTimeAverageThrust": "qkind:WebTimeAverageThrust"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "WebTimeAverageThrust"
+      ]
+    }
+  }
+}

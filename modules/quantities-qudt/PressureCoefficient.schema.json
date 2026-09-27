@@ -1,0 +1,51 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "PressureCoefficient.schema.json",
+  "x-oold-uuid": "a1c670ea-697d-58d8-8f1a-79b2c8aca63e",
+  "x-oold-version": "0.1.0",
+  "title": "PressureCoefficient",
+  "x-oold-multilang-title": {
+    "en": "Pressure Coefficient"
+  },
+  "examples": [
+    {
+      "type": [
+        "PressureCoefficient"
+      ],
+      "value": 1.0,
+      "unit": "pascal_per_kelvin"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "PressureCoefficient": "qkind:PressureCoefficient",
+      "pascal_per_kelvin": "qunit:PA-PER-K",
+      "hecto_pascal_per_kelvin": "qunit:HectoPA-PER-K",
+      "kilo_pascal_per_kelvin": "qunit:KiloPA-PER-K",
+      "mega_pascal_per_kelvin": "qunit:MegaPA-PER-K"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "PressureCoefficient"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "pascal_per_kelvin",
+        "hecto_pascal_per_kelvin",
+        "kilo_pascal_per_kelvin",
+        "mega_pascal_per_kelvin"
+      ],
+      "default": "pascal_per_kelvin"
+    }
+  }
+}

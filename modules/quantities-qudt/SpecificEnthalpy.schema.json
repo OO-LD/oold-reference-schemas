@@ -1,0 +1,41 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "SpecificEnthalpy.schema.json",
+  "x-oold-uuid": "405e3d0a-77f5-50a7-bf63-2bb907ae9c47",
+  "x-oold-version": "0.1.0",
+  "title": "SpecificEnthalpy",
+  "x-oold-multilang-title": {
+    "en": "Specific Enthalpy"
+  },
+  "description": "$\\textit{Specific Enthalpy}$ is enthalpy per mass of substance involved. Specific enthalpy is denoted by a lower case h, with dimension of energy per mass (SI unit: joule/kg). In thermodynamics, $\\textit{enthalpy}$ is the sum of the internal energy U and the product of pressure p and volume V of a system: $H = U + pV$.  The internal energy U and the work term pV have dimension of energy, in SI units this is joule; the extensive (linear in size) quantity H has the same dimension.",
+  "allOf": [
+    {
+      "$ref": "SpecificEnergy.schema.json"
+    }
+  ],
+  "@context": [
+    "SpecificEnergy.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "SpecificEnthalpy": "qkind:SpecificEnthalpy"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "SpecificEnthalpy"
+      ]
+    }
+  },
+  "x-oold-context": {
+    "SpecificEnthalpy": {
+      "http://dbpedia.org/resource/Entropy": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

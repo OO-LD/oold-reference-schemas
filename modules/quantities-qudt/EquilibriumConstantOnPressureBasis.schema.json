@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "EquilibriumConstantOnPressureBasis.schema.json",
+  "x-oold-uuid": "d880994e-871c-5522-87b8-c714f0de6f92",
+  "x-oold-version": "0.1.0",
+  "title": "EquilibriumConstantOnPressureBasis",
+  "x-oold-multilang-title": {
+    "en": "Equilibrium Constant on Pressure Basis"
+  },
+  "description": "The \"Equlilbrium Constant\", also known as the thermodynamic equilibrium constant, is an expression that gives us a ratio of the products and reactants of a reaction at equilibrium with respect to a specific unit.",
+  "allOf": [
+    {
+      "$ref": "EquilibriumConstant.schema.json"
+    }
+  ],
+  "@context": [
+    "EquilibriumConstant.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "EquilibriumConstantOnPressureBasis": "qkind:EquilibriumConstantOnPressureBasis"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "EquilibriumConstantOnPressureBasis"
+      ]
+    }
+  }
+}

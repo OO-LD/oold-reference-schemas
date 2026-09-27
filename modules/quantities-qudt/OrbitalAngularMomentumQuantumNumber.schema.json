@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "OrbitalAngularMomentumQuantumNumber.schema.json",
+  "x-oold-uuid": "5c36ed49-914c-5294-ab82-9feb052f5cdb",
+  "x-oold-version": "0.1.0",
+  "title": "OrbitalAngularMomentumQuantumNumber",
+  "x-oold-multilang-title": {
+    "en": "Orbital Angular Momentum Quantum Number"
+  },
+  "description": "The \"Principal Quantum Number\" describes the electron shell, or energy level, of an atom. The value of $n$ ranges from 1 to the shell containing the outermost electron of that atom.",
+  "allOf": [
+    {
+      "$ref": "QuantumNumber.schema.json"
+    }
+  ],
+  "@context": [
+    "QuantumNumber.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "OrbitalAngularMomentumQuantumNumber": "qkind:OrbitalAngularMomentumQuantumNumber"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "OrbitalAngularMomentumQuantumNumber"
+      ]
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "GeneralizedVelocity.schema.json",
+  "x-oold-uuid": "fb411b0c-b699-55a3-93f6-bcd55f1ab03e",
+  "x-oold-version": "0.1.0",
+  "title": "GeneralizedVelocity",
+  "x-oold-multilang-title": {
+    "en": "Generalized Velocity"
+  },
+  "description": "Generalized Velocities are the time derivatives of the generalized coordinates of the system.",
+  "examples": [
+    {
+      "type": [
+        "GeneralizedVelocity"
+      ],
+      "value": 1.0,
+      "unit": "unitless"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "GeneralizedVelocity": "qkind:GeneralizedVelocity",
+      "unitless": "qunit:UNITLESS"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "GeneralizedVelocity"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "unitless"
+      ],
+      "default": "unitless"
+    }
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MassPerEnergy.schema.json",
+  "x-oold-uuid": "dbee78c7-1c25-5e02-babd-2e594e503815",
+  "x-oold-version": "0.1.0",
+  "title": "MassPerEnergy",
+  "x-oold-multilang-title": {
+    "en": "Mass per Energy"
+  },
+  "description": "Mass per Energy is a physical quantity that can be used to relate the energy of a system to its mass.",
+  "examples": [
+    {
+      "type": [
+        "MassPerEnergy"
+      ],
+      "value": 1.0,
+      "unit": "kilo_gram_per_joule"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "MassPerEnergy": "qkind:MassPerEnergy",
+      "kilo_gram_per_joule": "qunit:KiloGM-PER-J",
+      "kilo_gram_per_giga_joule": "qunit:KiloGM-PER-GigaJ",
+      "gram_per_joule": "qunit:GM-PER-J"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "MassPerEnergy"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "kilo_gram_per_joule",
+        "kilo_gram_per_giga_joule",
+        "gram_per_joule"
+      ],
+      "default": "kilo_gram_per_joule"
+    }
+  }
+}

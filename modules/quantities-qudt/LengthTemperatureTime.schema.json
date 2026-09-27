@@ -1,0 +1,47 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "LengthTemperatureTime.schema.json",
+  "x-oold-uuid": "3d8035cb-aa26-5d40-a8e6-cb6317c72700",
+  "x-oold-version": "0.1.0",
+  "title": "LengthTemperatureTime",
+  "x-oold-multilang-title": {
+    "en": "Length Temperature Time"
+  },
+  "examples": [
+    {
+      "type": [
+        "LengthTemperatureTime"
+      ],
+      "value": 1.0,
+      "unit": "celsius_meter_second"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "LengthTemperatureTime": "qkind:LengthTemperatureTime",
+      "celsius_meter_second": "qunit:M-SEC-DEG_C",
+      "centi_meter_celsius_second": "qunit:CentiM-SEC-DEG_C"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "LengthTemperatureTime"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "celsius_meter_second",
+        "centi_meter_celsius_second"
+      ],
+      "default": "celsius_meter_second"
+    }
+  }
+}

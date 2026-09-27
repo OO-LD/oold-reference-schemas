@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ColdReceptorThreshold.schema.json",
+  "x-oold-uuid": "364dc304-7ad8-52c2-bbee-26d77fb270ab",
+  "x-oold-version": "0.1.0",
+  "title": "ColdReceptorThreshold",
+  "x-oold-multilang-title": {
+    "en": "Cold Receptor Threshold"
+  },
+  "description": "\"Cold Receptor Threshold\" is the threshold of cold-sensitive free nerve-ending.",
+  "allOf": [
+    {
+      "$ref": "Temperature.schema.json"
+    }
+  ],
+  "@context": [
+    "Temperature.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ColdReceptorThreshold": "qkind:ColdReceptorThreshold"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ColdReceptorThreshold"
+      ]
+    }
+  }
+}

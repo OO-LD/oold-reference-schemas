@@ -1,0 +1,58 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MassicActivity.schema.json",
+  "x-oold-uuid": "9cb88f0c-3394-51c5-9ecf-9587128ee4b5",
+  "x-oold-version": "0.1.0",
+  "title": "MassicActivity",
+  "x-oold-multilang-title": {
+    "en": "Massic Activity"
+  },
+  "description": "\"Massic Activity\" is the activity divided by the total mass of the sample.",
+  "examples": [
+    {
+      "type": [
+        "MassicActivity"
+      ],
+      "value": 1.0,
+      "unit": "becquerel_per_kilo_gram"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "MassicActivity": "qkind:MassicActivity",
+      "becquerel_per_kilo_gram": "qunit:BQ-PER-KiloGM",
+      "micro_becquerel_per_kilo_gram": "qunit:MicroBQ-PER-KiloGM",
+      "becquerel_per_gram": "qunit:BQ-PER-GM",
+      "milli_becquerel_per_kilo_gram": "qunit:MilliBQ-PER-KiloGM",
+      "milli_becquerel_per_gram": "qunit:MilliBQ-PER-GM",
+      "kilo_becquerel_per_kilo_gram": "qunit:KiloBQ-PER-KiloGM",
+      "mega_becquerel_per_kilo_gram": "qunit:MegaBQ-PER-KiloGM"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "MassicActivity"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "becquerel_per_kilo_gram",
+        "micro_becquerel_per_kilo_gram",
+        "becquerel_per_gram",
+        "milli_becquerel_per_kilo_gram",
+        "milli_becquerel_per_gram",
+        "kilo_becquerel_per_kilo_gram",
+        "mega_becquerel_per_kilo_gram"
+      ],
+      "default": "becquerel_per_kilo_gram"
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "SpecificHeatCapacityAtSaturation.schema.json",
+  "x-oold-uuid": "4500771e-3381-5320-9800-1c704d0b9cb1",
+  "x-oold-version": "0.1.0",
+  "title": "SpecificHeatCapacityAtSaturation",
+  "x-oold-multilang-title": {
+    "en": "Specific Heat Capacity at Saturation"
+  },
+  "description": "Specific heat per constant volume.",
+  "examples": [
+    {
+      "type": [
+        "SpecificHeatCapacityAtSaturation"
+      ],
+      "value": 1.0,
+      "unit": "joule_per_kelvin_per_kilo_gram"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "SpecificHeatCapacityAtSaturation": "qkind:SpecificHeatCapacityAtSaturation",
+      "joule_per_kelvin_per_kilo_gram": "qunit:J-PER-KiloGM-K",
+      "joule_per_gram_per_kelvin": "qunit:J-PER-GM-K",
+      "kilo_joule_per_kelvin_per_kilo_gram": "qunit:KiloJ-PER-KiloGM-K",
+      "joule_per_celsius_per_kilo_gram": "qunit:J-PER-KiloGM-DEG_C",
+      "joule_per_celsius_per_gram": "qunit:J-PER-GM-DEG_C"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "SpecificHeatCapacityAtSaturation"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "joule_per_kelvin_per_kilo_gram",
+        "joule_per_celsius_per_kilo_gram",
+        "joule_per_gram_per_kelvin",
+        "joule_per_celsius_per_gram",
+        "kilo_joule_per_kelvin_per_kilo_gram"
+      ],
+      "default": "joule_per_kelvin_per_kilo_gram"
+    }
+  }
+}

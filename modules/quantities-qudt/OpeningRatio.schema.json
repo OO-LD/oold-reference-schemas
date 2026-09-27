@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "OpeningRatio.schema.json",
+  "x-oold-uuid": "713e8c96-687f-5714-a306-4fc857b33456",
+  "x-oold-version": "0.1.0",
+  "title": "OpeningRatio",
+  "x-oold-multilang-title": {
+    "en": "Opening Ratio"
+  },
+  "description": "In the context of mechanical systems, \"opening ratio\" might refer to the proportion of time \n  or the extent to which a valve or gate is open relative to its maximum capacity.",
+  "allOf": [
+    {
+      "$ref": "DimensionlessRatio.schema.json"
+    }
+  ],
+  "@context": [
+    "DimensionlessRatio.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "OpeningRatio": "qkind:OpeningRatio"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "OpeningRatio"
+      ]
+    }
+  }
+}

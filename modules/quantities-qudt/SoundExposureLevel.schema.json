@@ -1,0 +1,48 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "SoundExposureLevel.schema.json",
+  "x-oold-uuid": "4e21f4a2-c906-5a73-aebb-426c037f5362",
+  "x-oold-version": "0.1.0",
+  "title": "SoundExposureLevel",
+  "x-oold-multilang-title": {
+    "en": "Sound exposure level"
+  },
+  "description": "Sound Exposure Level abbreviated as $SEL$ and $LAE$, is the total noise energy produced from a single noise event, expressed as a logarithmic ratio from a reference level.",
+  "examples": [
+    {
+      "type": [
+        "SoundExposureLevel"
+      ],
+      "value": 1.0,
+      "unit": "bel"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "SoundExposureLevel": "qkind:SoundExposureLevel",
+      "bel": "qunit:B",
+      "decibel": "qunit:DeciB"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "SoundExposureLevel"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "bel",
+        "decibel"
+      ],
+      "default": "bel"
+    }
+  }
+}

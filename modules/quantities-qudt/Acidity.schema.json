@@ -1,0 +1,46 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Acidity.schema.json",
+  "x-oold-uuid": "d74bd57b-722d-57c0-bd13-16fb700b8043",
+  "x-oold-version": "0.1.0",
+  "title": "Acidity",
+  "x-oold-multilang-title": {
+    "en": "Acidity"
+  },
+  "description": "Chemicals or substances having a pH less than 7 are said to be acidic; lower pH means higher acidity.",
+  "examples": [
+    {
+      "type": [
+        "Acidity"
+      ],
+      "value": 1.0,
+      "unit": "ph_value"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Acidity": "qkind:Acidity",
+      "ph_value": "qunit:PH"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Acidity"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "ph_value"
+      ],
+      "default": "ph_value"
+    }
+  }
+}

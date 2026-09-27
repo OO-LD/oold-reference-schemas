@@ -1,0 +1,83 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Area.schema.json",
+  "x-oold-uuid": "1fcf1694-712e-5684-8850-71efdf775bd9",
+  "x-oold-version": "0.1.0",
+  "title": "Area",
+  "x-oold-multilang-title": {
+    "en": "Area",
+    "de": "Fläche"
+  },
+  "description": "Area is a quantity expressing the two-dimensional size of a defined part of a surface, typically a region bounded by a closed curve.",
+  "examples": [
+    {
+      "type": [
+        "Area"
+      ],
+      "value": 1.0,
+      "unit": "meter_squared"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Area": "qkind:Area",
+      "meter_squared": "qunit:M2",
+      "nano_meter_squared": "qunit:NanoM2",
+      "micro_meter_squared": "qunit:MicroM2",
+      "milli_meter_squared": "qunit:MilliM2",
+      "centi_meter_squared": "qunit:CentiM2",
+      "deci_meter_squared": "qunit:DeciM2",
+      "year": "qunit:ARE",
+      "deca_year": "qunit:DecaARE",
+      "hectare": "qunit:HA",
+      "kilo_meter_squared": "qunit:KiloM2"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Area"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "meter_squared",
+        "nano_meter_squared",
+        "micro_meter_squared",
+        "milli_meter_squared",
+        "centi_meter_squared",
+        "deci_meter_squared",
+        "year",
+        "deca_year",
+        "hectare",
+        "kilo_meter_squared"
+      ],
+      "default": "meter_squared"
+    }
+  },
+  "x-oold-context": {
+    "Area": {
+      "http://dbpedia.org/resource/Area": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      },
+      "https://si-digital-framework.org/quantities/AREA": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

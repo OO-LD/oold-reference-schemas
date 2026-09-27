@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "RelativeMolecularMass.schema.json",
+  "x-oold-uuid": "41a31383-6403-5cff-84c0-64b3ab52e6a4",
+  "x-oold-version": "0.1.0",
+  "title": "RelativeMolecularMass",
+  "x-oold-multilang-title": {
+    "en": "Relative Molecular Mass"
+  },
+  "description": "\"Relative Molecular Mass \" is equivalent to the numerical value of the molecular mass expressed in unified atomic mass units. The molecular mass (m) is the mass of a molecule.",
+  "allOf": [
+    {
+      "$ref": "DimensionlessRatio.schema.json"
+    }
+  ],
+  "@context": [
+    "DimensionlessRatio.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "RelativeMolecularMass": "qkind:RelativeMolecularMass"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "RelativeMolecularMass"
+      ]
+    }
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "SoundVolumeVelocity.schema.json",
+  "x-oold-uuid": "4fcfc4ad-b6be-5e7c-97a1-28565fb91932",
+  "x-oold-version": "0.1.0",
+  "title": "SoundVolumeVelocity",
+  "x-oold-multilang-title": {
+    "en": "Sound volume velocity"
+  },
+  "description": "Sound Volume Velocity is the product of particle velocity $v$ and the surface area $S$ through which an acoustic wave of frequency $f$ propagates. Also, the surface integral of the normal component of the sound particle velocity over the cross-section (through which the sound propagates). It is used to calculate acoustic impedance.",
+  "examples": [
+    {
+      "type": [
+        "SoundVolumeVelocity"
+      ],
+      "value": 1.0,
+      "unit": "meter_cubed_per_second"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "SoundVolumeVelocity": "qkind:SoundVolumeVelocity",
+      "meter_cubed_per_second": "qunit:M3-PER-SEC",
+      "centi_meter_cubed_per_second": "qunit:CentiM3-PER-SEC",
+      "deci_meter_cubed_per_second": "qunit:DeciM3-PER-SEC"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "SoundVolumeVelocity"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "meter_cubed_per_second",
+        "centi_meter_cubed_per_second",
+        "deci_meter_cubed_per_second"
+      ],
+      "default": "meter_cubed_per_second"
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ReactionEnergy.schema.json",
+  "x-oold-uuid": "fb812934-8093-5fe7-954a-0a6c341d8b9f",
+  "x-oold-version": "0.1.0",
+  "title": "ReactionEnergy",
+  "x-oold-multilang-title": {
+    "en": "Reaction Energy"
+  },
+  "description": "\"Reaction Energy\" in a nuclear reaction, is the sum of the kinetic energies and photon energies of the reaction products minus the sum of the kinetic and photon energies of the reactants.",
+  "allOf": [
+    {
+      "$ref": "Energy.schema.json"
+    }
+  ],
+  "@context": [
+    "Energy.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ReactionEnergy": "qkind:ReactionEnergy"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ReactionEnergy"
+      ]
+    }
+  }
+}

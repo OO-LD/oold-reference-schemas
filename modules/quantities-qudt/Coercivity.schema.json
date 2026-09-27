@@ -1,0 +1,54 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Coercivity.schema.json",
+  "x-oold-uuid": "aa1087e4-2844-5c44-b8c9-1a4c7ca76806",
+  "x-oold-version": "0.1.0",
+  "title": "Coercivity",
+  "x-oold-multilang-title": {
+    "en": "Coercivity"
+  },
+  "description": "$\\textit{Coercivity}$, also referred to as $\\textit{Coercive Field Strength}$, is the magnetic field strength to be applied to bring the magnetic flux density in a substance from its remaining magnetic flux density to zero. This is defined as the coercive field strength in a substance when either the magnetic flux density or the magnetic polarization and magnetization is brought from its value at magnetic saturation to zero by monotonic reduction of the applied magnetic field strength. The quantity which is brought to zero should be stated, and the appropriate symbol used: $H_{cB}$, $H_{cJ}$ or $H_{cM}$ for the coercivity relating to the magnetic flux density, the magnetic polarization or the magnetization respectively, where $H_{cJ} = H_{cM}$.",
+  "examples": [
+    {
+      "type": [
+        "Coercivity"
+      ],
+      "value": 1.0,
+      "unit": "ampere_per_meter"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Coercivity": "qkind:Coercivity",
+      "ampere_per_meter": "qunit:A-PER-M",
+      "milli_ampere_per_milli_meter": "qunit:MilliA-PER-MilliM",
+      "ampere_per_centi_meter": "qunit:A-PER-CentiM",
+      "ampere_per_milli_meter": "qunit:A-PER-MilliM",
+      "kilo_ampere_per_meter": "qunit:KiloA-PER-M"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Coercivity"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "ampere_per_meter",
+        "milli_ampere_per_milli_meter",
+        "ampere_per_centi_meter",
+        "ampere_per_milli_meter",
+        "kilo_ampere_per_meter"
+      ],
+      "default": "ampere_per_meter"
+    }
+  }
+}

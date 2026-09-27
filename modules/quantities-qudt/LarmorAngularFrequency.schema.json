@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "LarmorAngularFrequency.schema.json",
+  "x-oold-uuid": "a190a51f-7ec1-50b2-aea3-c45ff0ac32d3",
+  "x-oold-version": "0.1.0",
+  "title": "LarmorAngularFrequency",
+  "x-oold-multilang-title": {
+    "en": "Larmor Angular Frequency"
+  },
+  "description": "The \"Larmor Frequency\" describes angular momentum vector precession about the external field axis with an angular frequency.",
+  "allOf": [
+    {
+      "$ref": "AngularFrequency.schema.json"
+    }
+  ],
+  "@context": [
+    "AngularFrequency.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "LarmorAngularFrequency": "qkind:LarmorAngularFrequency"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "LarmorAngularFrequency"
+      ]
+    }
+  }
+}

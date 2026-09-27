@@ -1,0 +1,62 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MolarMass.schema.json",
+  "x-oold-uuid": "57dc5920-ca59-5bc5-b7c1-f41b0a79bad3",
+  "x-oold-version": "0.1.0",
+  "title": "MolarMass",
+  "x-oold-multilang-title": {
+    "en": "Molar mass",
+    "de": "Molmasse"
+  },
+  "description": "In chemistry, the molar mass M is defined as the mass of a given substance (chemical element or chemical compound) divided by its amount of substance. It is a physical property of a given substance. The base SI unit for molar mass is $kg/mol$.",
+  "examples": [
+    {
+      "type": [
+        "MolarMass"
+      ],
+      "value": 1.0,
+      "unit": "kilo_gram_per_mole"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "MolarMass": "qkind:MolarMass",
+      "kilo_gram_per_mole": "qunit:KiloGM-PER-MOL",
+      "gram_per_mole": "qunit:GM-PER-MOL",
+      "kilo_gram_per_kilo_mole": "qunit:KiloGM-PER-KiloMOL"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "MolarMass"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "kilo_gram_per_mole",
+        "gram_per_mole",
+        "kilo_gram_per_kilo_mole"
+      ],
+      "default": "kilo_gram_per_mole"
+    }
+  },
+  "x-oold-context": {
+    "MolarMass": {
+      "http://dbpedia.org/resource/Molar_mass": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

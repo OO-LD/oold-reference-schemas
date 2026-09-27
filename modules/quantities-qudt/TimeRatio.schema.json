@@ -1,0 +1,29 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "TimeRatio.schema.json",
+  "x-oold-uuid": "da552423-849a-536c-80fb-7c6e0f85eca4",
+  "x-oold-version": "0.1.0",
+  "title": "TimeRatio",
+  "x-oold-multilang-title": {
+    "en": "Time Ratio"
+  },
+  "allOf": [
+    {
+      "$ref": "DimensionlessRatio.schema.json"
+    }
+  ],
+  "@context": [
+    "DimensionlessRatio.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "TimeRatio": "qkind:TimeRatio"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "TimeRatio"
+      ]
+    }
+  }
+}

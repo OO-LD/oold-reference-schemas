@@ -1,0 +1,64 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MassConcentrationOfWaterVapour.schema.json",
+  "x-oold-uuid": "73df0db8-ab36-56d7-927b-c38db277a50e",
+  "x-oold-version": "0.1.0",
+  "title": "MassConcentrationOfWaterVapour",
+  "x-oold-multilang-title": {
+    "en": "Mass Concentration of Water Vapour"
+  },
+  "description": "Mass Concentration of Water is one of a number of Concentration quantities defined by ISO 80000.",
+  "examples": [
+    {
+      "type": [
+        "MassConcentrationOfWaterVapour"
+      ],
+      "value": 1.0,
+      "unit": "gram_per_deci_meter_cubed"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "MassConcentrationOfWaterVapour": "qkind:MassConcentrationOfWaterVapour",
+      "gram_per_deci_meter_cubed": "qunit:GM-PER-DeciM3",
+      "nano_gram_per_meter_cubed": "qunit:NanoGM-PER-M3",
+      "micro_gram_per_meter_cubed": "qunit:MicroGM-PER-M3",
+      "milli_gram_per_meter_cubed": "qunit:MilliGM-PER-M3",
+      "gram_per_meter_cubed": "qunit:GM-PER-M3",
+      "kilo_gram_per_meter_cubed": "qunit:KiloGM-PER-M3",
+      "mega_gram_per_meter_cubed": "qunit:MegaGM-PER-M3",
+      "gram_per_centi_meter_cubed": "qunit:GM-PER-CentiM3",
+      "kilo_gram_per_deci_meter_cubed": "qunit:KiloGM-PER-DeciM3",
+      "kilo_gram_per_centi_meter_cubed": "qunit:KiloGM-PER-CentiM3"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "MassConcentrationOfWaterVapour"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "gram_per_deci_meter_cubed",
+        "nano_gram_per_meter_cubed",
+        "micro_gram_per_meter_cubed",
+        "milli_gram_per_meter_cubed",
+        "gram_per_meter_cubed",
+        "kilo_gram_per_meter_cubed",
+        "mega_gram_per_meter_cubed",
+        "gram_per_centi_meter_cubed",
+        "kilo_gram_per_deci_meter_cubed",
+        "kilo_gram_per_centi_meter_cubed"
+      ],
+      "default": "gram_per_deci_meter_cubed"
+    }
+  }
+}

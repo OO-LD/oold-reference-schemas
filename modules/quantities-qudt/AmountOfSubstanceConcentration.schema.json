@@ -1,0 +1,41 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "AmountOfSubstanceConcentration.schema.json",
+  "x-oold-uuid": "ec3d914b-6db2-5306-8384-89afb9a45cc8",
+  "x-oold-version": "0.1.0",
+  "title": "AmountOfSubstanceConcentration",
+  "x-oold-multilang-title": {
+    "en": "Amount of Substance of Concentration"
+  },
+  "description": "\"Amount of Substance of Concentration of B\" is defined as the amount of a constituent divided by the volume of the mixture.",
+  "allOf": [
+    {
+      "$ref": "Concentration.schema.json"
+    }
+  ],
+  "@context": [
+    "Concentration.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "AmountOfSubstanceConcentration": "qkind:AmountOfSubstanceConcentration"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "AmountOfSubstanceConcentration"
+      ]
+    }
+  },
+  "x-oold-context": {
+    "AmountOfSubstanceConcentration": {
+      "https://si-digital-framework.org/quantities/AMSC": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

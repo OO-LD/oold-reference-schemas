@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "CO2Equivalent.schema.json",
+  "x-oold-uuid": "3ba3f32b-c079-55f3-a522-c8159c29a279",
+  "x-oold-version": "0.1.0",
+  "title": "CO2Equivalent",
+  "x-oold-multilang-title": {
+    "en": "CO2Equivalent"
+  },
+  "description": "The CO2 equivalent is a measure used to compare the emissions from various greenhouse gases \n  on the basis of their global-warming potential (GWP), by converting amounts of other gases to the equivalent amount \n  of carbon dioxide with the same global warming potential.",
+  "allOf": [
+    {
+      "$ref": "MassEquivalent.schema.json"
+    }
+  ],
+  "@context": [
+    "MassEquivalent.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "CO2Equivalent": "qkind:CO2Equivalent"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "CO2Equivalent"
+      ]
+    }
+  }
+}

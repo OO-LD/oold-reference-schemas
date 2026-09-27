@@ -1,0 +1,29 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "BucklingFactor.schema.json",
+  "x-oold-uuid": "3e723f9b-7863-5333-a501-ab96ea78c49f",
+  "x-oold-version": "0.1.0",
+  "title": "BucklingFactor",
+  "x-oold-multilang-title": {
+    "en": "Buckling Factor"
+  },
+  "allOf": [
+    {
+      "$ref": "Dimensionless.schema.json"
+    }
+  ],
+  "@context": [
+    "Dimensionless.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "BucklingFactor": "qkind:BucklingFactor"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "BucklingFactor"
+      ]
+    }
+  }
+}

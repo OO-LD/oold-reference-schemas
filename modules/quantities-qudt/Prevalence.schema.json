@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Prevalence.schema.json",
+  "x-oold-uuid": "8ae4971b-bbb1-5913-a90c-0f6a1075e2ae",
+  "x-oold-version": "0.1.0",
+  "title": "Prevalence",
+  "x-oold-multilang-title": {
+    "en": "Prevalence"
+  },
+  "description": "In epidemiology, prevalence is the proportion of a particular population found to be affected by a medical condition (typically a disease or a risk factor such as smoking or seatbelt use) at a specific time. (Wikipedia)",
+  "allOf": [
+    {
+      "$ref": "DimensionlessRatio.schema.json"
+    }
+  ],
+  "@context": [
+    "DimensionlessRatio.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Prevalence": "qkind:Prevalence"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Prevalence"
+      ]
+    }
+  }
+}

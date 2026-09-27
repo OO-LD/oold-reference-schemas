@@ -1,0 +1,41 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "BendingMomentOfForce.schema.json",
+  "x-oold-uuid": "3d007b21-655e-5a68-9b8a-d512f768cd37",
+  "x-oold-version": "0.1.0",
+  "title": "BendingMomentOfForce",
+  "x-oold-multilang-title": {
+    "en": "Bending Moment of Force"
+  },
+  "description": "A bending moment exists in a structural element when a moment is applied to the element so that the element bends. It is the component of moment of force perpendicular to the longitudinal axis of a beam or a shaft.",
+  "allOf": [
+    {
+      "$ref": "Torque.schema.json"
+    }
+  ],
+  "@context": [
+    "Torque.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "BendingMomentOfForce": "qkind:BendingMomentOfForce"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "BendingMomentOfForce"
+      ]
+    }
+  },
+  "x-oold-context": {
+    "BendingMomentOfForce": {
+      "http://dbpedia.org/resource/Torque": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

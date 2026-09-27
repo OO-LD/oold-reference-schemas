@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ConductiveHeatTransferRate.schema.json",
+  "x-oold-uuid": "4fabd9fa-8f05-54b2-96dd-0bfb1ee808f2",
+  "x-oold-version": "0.1.0",
+  "title": "ConductiveHeatTransferRate",
+  "x-oold-multilang-title": {
+    "en": "Conductive Heat Transfer Rate"
+  },
+  "description": "\"Conductive Heat Transfer Rate\" is proportional to temperature gradient and area of contact.",
+  "allOf": [
+    {
+      "$ref": "HeatFlowRate.schema.json"
+    }
+  ],
+  "@context": [
+    "HeatFlowRate.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ConductiveHeatTransferRate": "qkind:ConductiveHeatTransferRate"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ConductiveHeatTransferRate"
+      ]
+    }
+  }
+}

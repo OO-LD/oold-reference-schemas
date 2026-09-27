@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "WaterSolubility.schema.json",
+  "x-oold-uuid": "80510341-a46b-5875-a655-7de8d744f0e1",
+  "x-oold-version": "0.1.0",
+  "title": "WaterSolubility",
+  "x-oold-multilang-title": {
+    "en": "Water Solubility"
+  },
+  "description": "An amount of substance per unit volume that is the concentration of a saturated solution expressed as the ratio of the solute concentration over the volume of water.  A substance's solubility fundamentally depends on several physical and chemical properties of the solution as well as the environment it is in.",
+  "allOf": [
+    {
+      "$ref": "AmountOfSubstancePerVolume.schema.json"
+    }
+  ],
+  "@context": [
+    "AmountOfSubstancePerVolume.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "WaterSolubility": "qkind:WaterSolubility"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "WaterSolubility"
+      ]
+    }
+  }
+}

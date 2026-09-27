@@ -1,0 +1,51 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MagneticMoment.schema.json",
+  "x-oold-uuid": "7d63568f-d3d8-5426-8aba-399d60e611ef",
+  "x-oold-version": "0.1.0",
+  "title": "MagneticMoment",
+  "x-oold-multilang-title": {
+    "en": "Magnetic moment",
+    "de": "Magnetisches Dipolmoment"
+  },
+  "description": "\"Magnetic Moment\", for a magnetic dipole, is a vector quantity equal to the product of the current, the loop area, and the unit vector normal to the loop plane, the direction of which corresponds to the loop orientation. \"Magnetic Moment\" is also referred to as \"Magnetic Area Moment\", and is not to be confused with Magnetic Dipole Moment.",
+  "examples": [
+    {
+      "type": [
+        "MagneticMoment"
+      ],
+      "value": 1.0,
+      "unit": "joule_per_tesla"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "MagneticMoment": "qkind:MagneticMoment",
+      "joule_per_tesla": "qunit:J-PER-T",
+      "electron_volt_per_tesla": "qunit:EV-PER-T",
+      "ampere_meter_squared": "qunit:A-M2"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "MagneticMoment"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "joule_per_tesla",
+        "electron_volt_per_tesla",
+        "ampere_meter_squared"
+      ],
+      "default": "joule_per_tesla"
+    }
+  }
+}

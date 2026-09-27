@@ -1,0 +1,64 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "RotationalFrequency.schema.json",
+  "x-oold-uuid": "8a7f583f-be31-5d92-8de4-5968b0a3403b",
+  "x-oold-version": "0.1.0",
+  "title": "RotationalFrequency",
+  "x-oold-multilang-title": {
+    "en": "RotationalFrequency"
+  },
+  "description": "IfcRotationalFrequencyMeasure is a measure of the number of cycles that an item revolves in unit time. Usually measured in cycles/s.",
+  "examples": [
+    {
+      "type": [
+        "RotationalFrequency"
+      ],
+      "value": 1.0,
+      "unit": "per_second"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "RotationalFrequency": "qkind:RotationalFrequency",
+      "per_second": "qunit:PER-SEC",
+      "milli_hertz": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/milli_hertz",
+      "per_minute": "qunit:REV-PER-MIN",
+      "hertz": "qunit:HZ",
+      "per_milli_second": "qunit:PER-MilliSEC",
+      "kilo_hertz": "qunit:KiloHZ",
+      "mega_hertz": "qunit:MegaHZ",
+      "giga_hertz": "qunit:GigaHZ",
+      "tera_hertz": "qunit:TeraHZ",
+      "peta_hertz": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/peta_hertz"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "RotationalFrequency"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "per_second",
+        "milli_hertz",
+        "per_minute",
+        "hertz",
+        "per_milli_second",
+        "kilo_hertz",
+        "mega_hertz",
+        "giga_hertz",
+        "tera_hertz",
+        "peta_hertz"
+      ],
+      "default": "per_second"
+    }
+  }
+}

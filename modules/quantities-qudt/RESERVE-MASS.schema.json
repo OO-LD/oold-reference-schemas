@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "RESERVE-MASS.schema.json",
+  "x-oold-uuid": "af4250ba-95c2-516c-96ee-bc62f2ecfdc6",
+  "x-oold-version": "0.1.0",
+  "title": "RESERVE-MASS",
+  "x-oold-multilang-title": {
+    "en": "Reserve Mass"
+  },
+  "description": "A quantity of mass held by Program/project management to mitigate the risk of over-predicted performance estimates, under predicted mass estimates, and future operational and mission specific requirements (program mass reserve, manager's mass reserve, launch window reserve, performance reserve, etc.).",
+  "allOf": [
+    {
+      "$ref": "Mass.schema.json"
+    }
+  ],
+  "@context": [
+    "Mass.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "RESERVE-MASS": "qkind:RESERVE-MASS"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "RESERVE-MASS"
+      ]
+    }
+  }
+}

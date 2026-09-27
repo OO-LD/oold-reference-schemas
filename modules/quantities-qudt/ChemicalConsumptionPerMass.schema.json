@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ChemicalConsumptionPerMass.schema.json",
+  "x-oold-uuid": "fecf99a9-e5eb-5ab3-8412-9063e12e07e7",
+  "x-oold-version": "0.1.0",
+  "title": "ChemicalConsumptionPerMass",
+  "x-oold-multilang-title": {
+    "en": "Chemical Consumption per Mass"
+  },
+  "description": "In the context of a chemical durability test, this is measure of how much of a solution (often a corrosive or reactive one) is consumed or used up per unit mass of a material being tested. In other words, this the volume of solution needed to cause a certain level of chemical reaction or damage to a given mass of the material.",
+  "allOf": [
+    {
+      "$ref": "SpecificVolume.schema.json"
+    }
+  ],
+  "@context": [
+    "SpecificVolume.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ChemicalConsumptionPerMass": "qkind:ChemicalConsumptionPerMass"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ChemicalConsumptionPerMass"
+      ]
+    }
+  }
+}

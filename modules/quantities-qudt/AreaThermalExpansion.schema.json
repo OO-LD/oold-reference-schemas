@@ -1,0 +1,46 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "AreaThermalExpansion.schema.json",
+  "x-oold-uuid": "1ad6b428-ff38-5d10-b28b-dc0221bf5b81",
+  "x-oold-version": "0.1.0",
+  "title": "AreaThermalExpansion",
+  "x-oold-multilang-title": {
+    "en": "Area Thermal Expansion"
+  },
+  "description": "When the temperature of a substance changes, the energy that is stored in the intermolecular bonds between atoms changes. When the stored energy increases, so does the length of the molecular bonds. As a result, solids typically expand in response to heating and contract on cooling; this dimensional response to temperature change is expressed by its coefficient of thermal expansion.",
+  "examples": [
+    {
+      "type": [
+        "AreaThermalExpansion"
+      ],
+      "value": 1.0,
+      "unit": "meter_squared_per_kelvin"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "AreaThermalExpansion": "qkind:AreaThermalExpansion",
+      "meter_squared_per_kelvin": "qunit:M2-PER-K"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "AreaThermalExpansion"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "meter_squared_per_kelvin"
+      ],
+      "default": "meter_squared_per_kelvin"
+    }
+  }
+}

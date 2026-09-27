@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "RadiantEmmitance.schema.json",
+  "x-oold-uuid": "7b7e0f4f-719f-5ea0-a5c3-ecb46749a661",
+  "x-oold-version": "0.1.0",
+  "title": "RadiantEmmitance",
+  "x-oold-multilang-title": {
+    "en": "Radiant Emmitance"
+  },
+  "description": "Irradiance and Radiant Emittance are radiometry terms for the power per unit area of electromagnetic radiation at a surface. \"Irradiance\" is used when the electromagnetic radiation is incident on the surface. \"Radiant emmitance\" (or \"radiant exitance\") is used when the radiation is emerging from the surface.",
+  "allOf": [
+    {
+      "$ref": "PowerPerArea.schema.json"
+    }
+  ],
+  "@context": [
+    "PowerPerArea.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "RadiantEmmitance": "qkind:RadiantEmmitance"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "RadiantEmmitance"
+      ]
+    }
+  }
+}

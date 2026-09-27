@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MomentOfInertia_Z.schema.json",
+  "x-oold-uuid": "836be461-e71a-5170-9b06-2f462f697f2c",
+  "x-oold-version": "0.1.0",
+  "title": "MomentOfInertia_Z",
+  "x-oold-multilang-title": {
+    "en": "Moment of Inertia in the Z axis"
+  },
+  "description": "The rotational inertia or resistance to change in direction or speed of rotation about a defined axis.",
+  "allOf": [
+    {
+      "$ref": "MomentOfInertia.schema.json"
+    }
+  ],
+  "@context": [
+    "MomentOfInertia.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "MomentOfInertia_Z": "qkind:MomentOfInertia_Z"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "MomentOfInertia_Z"
+      ]
+    }
+  }
+}

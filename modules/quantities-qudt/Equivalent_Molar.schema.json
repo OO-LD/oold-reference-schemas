@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Equivalent_Molar.schema.json",
+  "x-oold-uuid": "f9c536c2-ed28-5ff4-8276-52539e5e0152",
+  "x-oold-version": "0.1.0",
+  "title": "Equivalent_Molar",
+  "x-oold-multilang-title": {
+    "en": "Molar Equivalent"
+  },
+  "description": "\"Molar Equivalent\" is the amount of a substance that reacts with (or is equivalent to) an arbitrary amount (typically one mole) of \nanother substance in a given chemical reaction.",
+  "allOf": [
+    {
+      "$ref": "AmountOfSubstance.schema.json"
+    }
+  ],
+  "@context": [
+    "AmountOfSubstance.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Equivalent_Molar": "qkind:Equivalent_Molar"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Equivalent_Molar"
+      ]
+    }
+  }
+}

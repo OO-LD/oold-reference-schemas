@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ReverberationTime.schema.json",
+  "x-oold-uuid": "594b0155-a9f7-506a-8c7b-c45f4822387f",
+  "x-oold-version": "0.1.0",
+  "title": "ReverberationTime",
+  "x-oold-multilang-title": {
+    "en": "Reverberation Time"
+  },
+  "description": "Reverberation Time is the time required for reflections of a direct sound to decay by 60 dB below the level of the direct sound.",
+  "allOf": [
+    {
+      "$ref": "Time.schema.json"
+    }
+  ],
+  "@context": [
+    "Time.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ReverberationTime": "qkind:ReverberationTime"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ReverberationTime"
+      ]
+    }
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "BurstFactor.schema.json",
+  "x-oold-uuid": "22fde8dd-b5d6-5be3-bb5c-153e43d3ae94",
+  "x-oold-version": "0.1.0",
+  "title": "BurstFactor",
+  "x-oold-multilang-title": {
+    "en": "Burst factor"
+  },
+  "description": "bursting pressure divided by areic mass",
+  "examples": [
+    {
+      "type": [
+        "BurstFactor"
+      ],
+      "value": 1.0,
+      "unit": "meter_squared_pascal_per_kilo_gram"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "BurstFactor": "qkind:BurstFactor",
+      "meter_squared_pascal_per_kilo_gram": "qunit:PA-M2-PER-KiloGM",
+      "meter_squared_pascal_per_gram": "qunit:PA-M2-PER-GM",
+      "kilo_pascal_meter_squared_per_gram": "qunit:KiloPA-M2-PER-GM"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "BurstFactor"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "meter_squared_pascal_per_kilo_gram",
+        "meter_squared_pascal_per_gram",
+        "kilo_pascal_meter_squared_per_gram"
+      ],
+      "default": "meter_squared_pascal_per_kilo_gram"
+    }
+  }
+}

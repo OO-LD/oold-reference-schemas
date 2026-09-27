@@ -1,0 +1,29 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MolarInternalEnergy.schema.json",
+  "x-oold-uuid": "cd40c1d8-5109-521d-a9cb-3b34f13e2671",
+  "x-oold-version": "0.1.0",
+  "title": "MolarInternalEnergy",
+  "x-oold-multilang-title": {
+    "en": "Molar internal energy"
+  },
+  "allOf": [
+    {
+      "$ref": "MolarEnergy.schema.json"
+    }
+  ],
+  "@context": [
+    "MolarEnergy.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "MolarInternalEnergy": "qkind:MolarInternalEnergy"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "MolarInternalEnergy"
+      ]
+    }
+  }
+}

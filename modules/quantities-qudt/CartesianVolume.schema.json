@@ -1,0 +1,31 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "CartesianVolume.schema.json",
+  "x-oold-uuid": "fed64b81-0634-552b-b200-c195ab1017be",
+  "x-oold-version": "0.1.0",
+  "title": "CartesianVolume",
+  "x-oold-multilang-title": {
+    "en": "Volume",
+    "de": "Volumen"
+  },
+  "description": "\"Volume\" is the quantity of three-dimensional space enclosed by some closed boundary, for example, the space that a substance (solid, liquid, gas, or plasma) or shape occupies or contains.",
+  "allOf": [
+    {
+      "$ref": "Volume.schema.json"
+    }
+  ],
+  "@context": [
+    "Volume.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "CartesianVolume": "qkind:CartesianVolume"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "CartesianVolume"
+      ]
+    }
+  }
+}

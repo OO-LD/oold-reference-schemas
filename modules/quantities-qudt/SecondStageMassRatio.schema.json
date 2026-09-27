@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "SecondStageMassRatio.schema.json",
+  "x-oold-uuid": "85cb752c-0cb7-520b-9217-206d5efe1858",
+  "x-oold-version": "0.1.0",
+  "title": "SecondStageMassRatio",
+  "x-oold-multilang-title": {
+    "en": "Second Stage Mass Ratio"
+  },
+  "description": "Mass ratio for the second stage of a multistage launcher.",
+  "allOf": [
+    {
+      "$ref": "MassRatio.schema.json"
+    }
+  ],
+  "@context": [
+    "MassRatio.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "SecondStageMassRatio": "qkind:SecondStageMassRatio"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "SecondStageMassRatio"
+      ]
+    }
+  }
+}

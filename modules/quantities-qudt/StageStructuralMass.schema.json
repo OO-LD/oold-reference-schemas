@@ -1,0 +1,29 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "StageStructuralMass.schema.json",
+  "x-oold-uuid": "c74bc7a7-558c-5c9a-a7aa-0282ab29e3cd",
+  "x-oold-version": "0.1.0",
+  "title": "StageStructuralMass",
+  "x-oold-multilang-title": {
+    "en": "Stage Structure Mass"
+  },
+  "allOf": [
+    {
+      "$ref": "Mass.schema.json"
+    }
+  ],
+  "@context": [
+    "Mass.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "StageStructuralMass": "qkind:StageStructuralMass"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "StageStructuralMass"
+      ]
+    }
+  }
+}

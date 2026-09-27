@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ActiveEnergy.schema.json",
+  "x-oold-uuid": "153b6d9b-79ec-5894-9fbe-97d2058d995c",
+  "x-oold-version": "0.1.0",
+  "title": "ActiveEnergy",
+  "x-oold-multilang-title": {
+    "en": "Active Energy"
+  },
+  "description": "\"Active Energy\" is the electrical energy transformable into some other form of energy.",
+  "allOf": [
+    {
+      "$ref": "Energy.schema.json"
+    }
+  ],
+  "@context": [
+    "Energy.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ActiveEnergy": "qkind:ActiveEnergy"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ActiveEnergy"
+      ]
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "CharacteristicVelocity.schema.json",
+  "x-oold-uuid": "06321a3e-d416-5337-a8fc-380a77a64e09",
+  "x-oold-version": "0.1.0",
+  "title": "CharacteristicVelocity",
+  "x-oold-multilang-title": {
+    "en": "Characteristic Velocity"
+  },
+  "description": "Characteristic velocity or $c^{*}$ is a measure of the combustion performance of a rocket engine independent of nozzle performance, and is used to compare different propellants and propulsion systems.",
+  "allOf": [
+    {
+      "$ref": "Velocity.schema.json"
+    }
+  ],
+  "@context": [
+    "Velocity.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "CharacteristicVelocity": "qkind:CharacteristicVelocity"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "CharacteristicVelocity"
+      ]
+    }
+  }
+}

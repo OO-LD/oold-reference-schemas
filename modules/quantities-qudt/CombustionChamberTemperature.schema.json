@@ -1,0 +1,29 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "CombustionChamberTemperature.schema.json",
+  "x-oold-uuid": "61a93711-a8ed-5cf8-9974-2f6750b3b13c",
+  "x-oold-version": "0.1.0",
+  "title": "CombustionChamberTemperature",
+  "x-oold-multilang-title": {
+    "en": "Combustion Chamber Temperature"
+  },
+  "allOf": [
+    {
+      "$ref": "ThermodynamicTemperature.schema.json"
+    }
+  ],
+  "@context": [
+    "ThermodynamicTemperature.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "CombustionChamberTemperature": "qkind:CombustionChamberTemperature"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "CombustionChamberTemperature"
+      ]
+    }
+  }
+}

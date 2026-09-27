@@ -1,0 +1,58 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "SpecificActivity.schema.json",
+  "x-oold-uuid": "eb633138-f315-5fd0-9a5f-a2b6ac5b5bc2",
+  "x-oold-version": "0.1.0",
+  "title": "SpecificActivity",
+  "x-oold-multilang-title": {
+    "en": "Specific Activity"
+  },
+  "description": "The \"Specific Activity\" is the number of decays per unit time of a radioactive sample. The SI unit of radioactive activity is the becquerel (Bq), in honor of the scientist Henri Becquerel.",
+  "examples": [
+    {
+      "type": [
+        "SpecificActivity"
+      ],
+      "value": 1.0,
+      "unit": "becquerel_per_kilo_gram"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "SpecificActivity": "qkind:SpecificActivity",
+      "becquerel_per_kilo_gram": "qunit:BQ-PER-KiloGM",
+      "micro_becquerel_per_kilo_gram": "qunit:MicroBQ-PER-KiloGM",
+      "becquerel_per_gram": "qunit:BQ-PER-GM",
+      "milli_becquerel_per_kilo_gram": "qunit:MilliBQ-PER-KiloGM",
+      "milli_becquerel_per_gram": "qunit:MilliBQ-PER-GM",
+      "kilo_becquerel_per_kilo_gram": "qunit:KiloBQ-PER-KiloGM",
+      "mega_becquerel_per_kilo_gram": "qunit:MegaBQ-PER-KiloGM"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "SpecificActivity"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "becquerel_per_kilo_gram",
+        "micro_becquerel_per_kilo_gram",
+        "becquerel_per_gram",
+        "milli_becquerel_per_kilo_gram",
+        "milli_becquerel_per_gram",
+        "kilo_becquerel_per_kilo_gram",
+        "mega_becquerel_per_kilo_gram"
+      ],
+      "default": "becquerel_per_kilo_gram"
+    }
+  }
+}

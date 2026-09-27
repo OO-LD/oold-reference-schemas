@@ -1,0 +1,47 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "VolumePerArea.schema.json",
+  "x-oold-uuid": "c64d0369-be91-52ea-9731-2548eb67383d",
+  "x-oold-version": "0.1.0",
+  "title": "VolumePerArea",
+  "x-oold-multilang-title": {
+    "en": "Volume per Unit Area"
+  },
+  "examples": [
+    {
+      "type": [
+        "VolumePerArea"
+      ],
+      "value": 1.0,
+      "unit": "meter"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "VolumePerArea": "qkind:VolumePerArea",
+      "meter": "qunit:M3-PER-M2",
+      "meter_cubed_per_hectare": "qunit:M3-PER-HA"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "VolumePerArea"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "meter",
+        "meter_cubed_per_hectare"
+      ],
+      "default": "meter"
+    }
+  }
+}

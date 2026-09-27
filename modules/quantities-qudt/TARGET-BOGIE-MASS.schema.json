@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "TARGET-BOGIE-MASS.schema.json",
+  "x-oold-uuid": "a76d2f3b-5b21-5031-a315-e3ab651e5c32",
+  "x-oold-version": "0.1.0",
+  "title": "TARGET-BOGIE-MASS",
+  "x-oold-multilang-title": {
+    "en": "Target Bogie Mass"
+  },
+  "description": "An informal mass limit established by a Project Office (at the Element Integrated Product Team (IPT) level or below) to control mass.",
+  "allOf": [
+    {
+      "$ref": "Mass.schema.json"
+    }
+  ],
+  "@context": [
+    "Mass.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "TARGET-BOGIE-MASS": "qkind:TARGET-BOGIE-MASS"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "TARGET-BOGIE-MASS"
+      ]
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ParticlePositionVector.schema.json",
+  "x-oold-uuid": "c2570a8c-e0a6-5454-a303-491826ff7617",
+  "x-oold-version": "0.1.0",
+  "title": "ParticlePositionVector",
+  "x-oold-multilang-title": {
+    "en": "Particle Position Vector"
+  },
+  "description": "\"Particle Position Vector\" is the position vector of a particle.",
+  "allOf": [
+    {
+      "$ref": "Length.schema.json"
+    }
+  ],
+  "@context": [
+    "Length.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ParticlePositionVector": "qkind:ParticlePositionVector"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ParticlePositionVector"
+      ]
+    }
+  }
+}

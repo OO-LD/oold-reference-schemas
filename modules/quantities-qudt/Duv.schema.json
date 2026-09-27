@@ -1,0 +1,46 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Duv.schema.json",
+  "x-oold-uuid": "fc683fda-817d-517c-9b85-8513530f45e5",
+  "x-oold-version": "0.1.0",
+  "title": "Duv",
+  "x-oold-multilang-title": {
+    "en": "Delta u,v"
+  },
+  "description": "Duv is a metric that is short for Delta u,v (not to be confused with Delta u',v') and describes the distance of a light color point from the black body curve.",
+  "examples": [
+    {
+      "type": [
+        "Duv"
+      ],
+      "value": 1.0,
+      "unit": "unitless"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Duv": "qkind:Duv",
+      "unitless": "qunit:UNITLESS"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Duv"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "unitless"
+      ],
+      "default": "unitless"
+    }
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Permeability.schema.json",
+  "x-oold-uuid": "0f7b7612-7389-5e38-86f0-584b3b8197b1",
+  "x-oold-version": "0.1.0",
+  "title": "Permeability",
+  "x-oold-multilang-title": {
+    "en": "Permeability"
+  },
+  "examples": [
+    {
+      "type": [
+        "Permeability"
+      ],
+      "value": 1.0,
+      "unit": "henry_per_meter"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Permeability": "qkind:Permeability",
+      "henry_per_meter": "qunit:H-PER-M",
+      "nano_henry_per_meter": "qunit:NanoH-PER-M",
+      "micro_henry_per_meter": "qunit:MicroH-PER-M"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Permeability"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "henry_per_meter",
+        "nano_henry_per_meter",
+        "micro_henry_per_meter"
+      ],
+      "default": "henry_per_meter"
+    }
+  },
+  "x-oold-context": {
+    "Permeability": {
+      "https://si-digital-framework.org/quantities/PRME": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

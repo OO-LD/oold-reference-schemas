@@ -1,0 +1,46 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "GruneisenParameter.schema.json",
+  "x-oold-uuid": "566209df-483b-57ee-a388-5b18e0923a5c",
+  "x-oold-version": "0.1.0",
+  "title": "GruneisenParameter",
+  "x-oold-multilang-title": {
+    "en": "Gruneisen Parameter"
+  },
+  "description": "\"Gruneisen Parameter\" named after Eduard Grüneisen, describes the effect that changing the volume of a crystal lattice has on its vibrational properties, and, as a consequence, the effect that changing temperature has on the size or dynamics of the lattice.",
+  "examples": [
+    {
+      "type": [
+        "GruneisenParameter"
+      ],
+      "value": 1.0,
+      "unit": "unitless"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "GruneisenParameter": "qkind:GruneisenParameter",
+      "unitless": "qunit:UNITLESS"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "GruneisenParameter"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "unitless"
+      ],
+      "default": "unitless"
+    }
+  }
+}

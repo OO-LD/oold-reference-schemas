@@ -1,0 +1,59 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "StandardGravitationalParameter.schema.json",
+  "x-oold-uuid": "9a1a2b8a-06d7-54dc-b2ea-44a8cdbd7fd7",
+  "x-oold-version": "0.1.0",
+  "title": "StandardGravitationalParameter",
+  "x-oold-multilang-title": {
+    "en": "Standard Gravitational Parameter"
+  },
+  "description": "In celestial mechanics the standard gravitational parameter of a celestial body is the product of the gravitational constant G and the mass M of the body. Expressed as $\\mu = G \\cdot M$. The SI units of the standard gravitational parameter are $m^{3}s^{-2}$.",
+  "examples": [
+    {
+      "type": [
+        "StandardGravitationalParameter"
+      ],
+      "value": 1.0,
+      "unit": "meter_cubed_per_second_squared"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "StandardGravitationalParameter": "qkind:StandardGravitationalParameter",
+      "meter_cubed_per_second_squared": "qunit:M3-PER-SEC2",
+      "kilo_meter_cubed_per_second_squared": "qunit:KiloM3-PER-SEC2"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "StandardGravitationalParameter"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "meter_cubed_per_second_squared",
+        "kilo_meter_cubed_per_second_squared"
+      ],
+      "default": "meter_cubed_per_second_squared"
+    }
+  },
+  "x-oold-context": {
+    "StandardGravitationalParameter": {
+      "http://dbpedia.org/resource/Standard_gravitational_parameter": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

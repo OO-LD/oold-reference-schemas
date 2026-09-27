@@ -1,0 +1,31 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "PlanarForce.schema.json",
+  "x-oold-uuid": "b2e45bfd-826e-56a8-a0fa-4b10962cb733",
+  "x-oold-version": "0.1.0",
+  "title": "PlanarForce",
+  "x-oold-multilang-title": {
+    "en": "Planar Force",
+    "de": "Flächenlast"
+  },
+  "description": "Another name for Force Per Area, used by the Industry Foundation Classes (IFC) standard.",
+  "allOf": [
+    {
+      "$ref": "ForcePerArea.schema.json"
+    }
+  ],
+  "@context": [
+    "ForcePerArea.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "PlanarForce": "qkind:PlanarForce"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "PlanarForce"
+      ]
+    }
+  }
+}

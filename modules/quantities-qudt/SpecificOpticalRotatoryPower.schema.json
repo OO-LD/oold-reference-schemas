@@ -1,0 +1,48 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "SpecificOpticalRotatoryPower.schema.json",
+  "x-oold-uuid": "77e8f77c-e04f-54e9-a4f3-d616427252b6",
+  "x-oold-version": "0.1.0",
+  "title": "SpecificOpticalRotatoryPower",
+  "x-oold-multilang-title": {
+    "en": "Specific Optical Rotatory Power"
+  },
+  "description": "The \"Specific Optical Rotatory Power\" Angle of optical rotation divided by the optical path length through the medium and by the mass concentration of the substance giving the specific optical rotatory power.",
+  "examples": [
+    {
+      "type": [
+        "SpecificOpticalRotatoryPower"
+      ],
+      "value": 1.0,
+      "unit": "meter_squared_radian_per_kilo_gram"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "SpecificOpticalRotatoryPower": "qkind:SpecificOpticalRotatoryPower",
+      "meter_squared_radian_per_kilo_gram": "qunit:RAD-M2-PER-KiloGM",
+      "meter_squared_radian_per_gram": "qunit:RAD-M2-PER-GM"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "SpecificOpticalRotatoryPower"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "meter_squared_radian_per_kilo_gram",
+        "meter_squared_radian_per_gram"
+      ],
+      "default": "meter_squared_radian_per_kilo_gram"
+    }
+  }
+}

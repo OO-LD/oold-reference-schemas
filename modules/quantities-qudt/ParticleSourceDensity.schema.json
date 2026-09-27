@@ -1,0 +1,46 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ParticleSourceDensity.schema.json",
+  "x-oold-uuid": "fd24274b-97b5-57eb-ad5f-bc98060ffcf6",
+  "x-oold-version": "0.1.0",
+  "title": "ParticleSourceDensity",
+  "x-oold-multilang-title": {
+    "en": "Particle Source Density"
+  },
+  "description": "\"Particle Source Density\" is the rate of production of particles in a 3D domain divided by the volume of that element.",
+  "examples": [
+    {
+      "type": [
+        "ParticleSourceDensity"
+      ],
+      "value": 1.0,
+      "unit": "per_meter_cubed_per_second"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ParticleSourceDensity": "qkind:ParticleSourceDensity",
+      "per_meter_cubed_per_second": "qunit:PER-M3-SEC"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ParticleSourceDensity"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "per_meter_cubed_per_second"
+      ],
+      "default": "per_meter_cubed_per_second"
+    }
+  }
+}

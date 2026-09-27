@@ -1,0 +1,53 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "TimeTemperature.schema.json",
+  "x-oold-uuid": "6f81fb79-192f-50e2-80ee-1ff5dd724f01",
+  "x-oold-version": "0.1.0",
+  "title": "TimeTemperature",
+  "x-oold-multilang-title": {
+    "en": "Time Temperature"
+  },
+  "examples": [
+    {
+      "type": [
+        "TimeTemperature"
+      ],
+      "value": 1.0,
+      "unit": "kelvin_second"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "TimeTemperature": "qkind:TimeTemperature",
+      "kelvin_second": "qunit:K-SEC",
+      "day_kelvin": "qunit:K-DAY",
+      "degree_celsius_wk": "qunit:DEG_C-WK",
+      "celsius_hour": "qunit:DEG_C-HR",
+      "day_celsius": "qunit:DEG_C-DAY"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "TimeTemperature"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "kelvin_second",
+        "celsius_hour",
+        "day_kelvin",
+        "day_celsius",
+        "degree_celsius_wk"
+      ],
+      "default": "kelvin_second"
+    }
+  }
+}

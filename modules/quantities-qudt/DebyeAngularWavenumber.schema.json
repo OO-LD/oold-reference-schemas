@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "DebyeAngularWavenumber.schema.json",
+  "x-oold-uuid": "3d79fbc6-be93-589e-9e71-64f80e6d9e61",
+  "x-oold-version": "0.1.0",
+  "title": "DebyeAngularWavenumber",
+  "x-oold-multilang-title": {
+    "en": "Debye Angular Wavenumber"
+  },
+  "description": "\"Debye Angular Wavenumber\" is the cut-off angular wavenumber in the Debye model of the vibrational spectrum of a solid.",
+  "allOf": [
+    {
+      "$ref": "InverseLength.schema.json"
+    }
+  ],
+  "@context": [
+    "InverseLength.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "DebyeAngularWavenumber": "qkind:DebyeAngularWavenumber"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "DebyeAngularWavenumber"
+      ]
+    }
+  }
+}

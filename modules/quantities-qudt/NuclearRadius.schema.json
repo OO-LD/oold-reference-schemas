@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "NuclearRadius.schema.json",
+  "x-oold-uuid": "15a0e40b-150c-598d-b6a5-0b85921bba29",
+  "x-oold-version": "0.1.0",
+  "title": "NuclearRadius",
+  "x-oold-multilang-title": {
+    "en": "Nuclear Radius"
+  },
+  "description": "\"Nuclear Radius\" is the conventional radius of sphere in which the nuclear matter is included",
+  "allOf": [
+    {
+      "$ref": "Length.schema.json"
+    }
+  ],
+  "@context": [
+    "Length.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "NuclearRadius": "qkind:NuclearRadius"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "NuclearRadius"
+      ]
+    }
+  }
+}

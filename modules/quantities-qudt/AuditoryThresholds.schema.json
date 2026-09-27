@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "AuditoryThresholds.schema.json",
+  "x-oold-uuid": "bb129109-58f9-51da-a141-62c7078632f3",
+  "x-oold-version": "0.1.0",
+  "title": "AuditoryThresholds",
+  "x-oold-multilang-title": {
+    "en": "Auditory Thresholds"
+  },
+  "description": "\"Auditory Thresholds\" is the thresholds of sensitivity to auditory signals and other input to the ear or the sense of hearing.",
+  "allOf": [
+    {
+      "$ref": "SoundPowerLevel.schema.json"
+    }
+  ],
+  "@context": [
+    "SoundPowerLevel.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "AuditoryThresholds": "qkind:AuditoryThresholds"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "AuditoryThresholds"
+      ]
+    }
+  }
+}

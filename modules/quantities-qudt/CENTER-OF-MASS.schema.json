@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "CENTER-OF-MASS.schema.json",
+  "x-oold-uuid": "55d3f263-afd7-5338-8c3d-d35e1e5d8481",
+  "x-oold-version": "0.1.0",
+  "title": "CENTER-OF-MASS",
+  "x-oold-multilang-title": {
+    "en": "Center of Mass (CoM)"
+  },
+  "description": "The point at which the distributed mass of a composite body can be acted upon by a force without inducing any rotation of the composite body.",
+  "allOf": [
+    {
+      "$ref": "PositionVector.schema.json"
+    }
+  ],
+  "@context": [
+    "PositionVector.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "CENTER-OF-MASS": "qkind:CENTER-OF-MASS"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "CENTER-OF-MASS"
+      ]
+    }
+  }
+}

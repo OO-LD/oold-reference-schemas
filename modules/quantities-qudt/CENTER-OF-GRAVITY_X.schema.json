@@ -1,0 +1,29 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "CENTER-OF-GRAVITY_X.schema.json",
+  "x-oold-uuid": "89d1a9df-9ae2-56df-9c0f-df46b74cb96b",
+  "x-oold-version": "0.1.0",
+  "title": "CENTER-OF-GRAVITY_X",
+  "x-oold-multilang-title": {
+    "en": "Center of Gravity in the X axis"
+  },
+  "allOf": [
+    {
+      "$ref": "Length.schema.json"
+    }
+  ],
+  "@context": [
+    "Length.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "CENTER-OF-GRAVITY_X": "qkind:CENTER-OF-GRAVITY_X"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "CENTER-OF-GRAVITY_X"
+      ]
+    }
+  }
+}

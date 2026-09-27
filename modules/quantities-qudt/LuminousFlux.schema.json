@@ -1,0 +1,67 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "LuminousFlux.schema.json",
+  "x-oold-uuid": "aee74c2e-34ed-5893-9c1a-b03d0f115a0f",
+  "x-oold-version": "0.1.0",
+  "title": "LuminousFlux",
+  "x-oold-multilang-title": {
+    "en": "Luminous flux",
+    "de": "Lichtstrom"
+  },
+  "description": "Luminous Flux or Luminous Power is the measure of the perceived power of light. It differs from radiant flux, the measure of the total power of light emitted, in that luminous flux is adjusted to reflect the varying sensitivity of the human eye to different wavelengths of light.",
+  "examples": [
+    {
+      "type": [
+        "LuminousFlux"
+      ],
+      "value": 1.0,
+      "unit": "lumen"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "LuminousFlux": "qkind:LuminousFlux",
+      "lumen": "qunit:LM",
+      "kilo_lumen": "qunit:KiloLM"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "LuminousFlux"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "lumen",
+        "kilo_lumen"
+      ],
+      "default": "lumen"
+    }
+  },
+  "x-oold-context": {
+    "LuminousFlux": {
+      "http://dbpedia.org/resource/Luminous_flux": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      },
+      "https://si-digital-framework.org/quantities/LUFL": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

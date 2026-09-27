@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Stress.schema.json",
+  "x-oold-uuid": "74ae1de6-6beb-525e-a52e-edabf09ab228",
+  "x-oold-version": "0.1.0",
+  "title": "Stress",
+  "x-oold-multilang-title": {
+    "en": "Stress"
+  },
+  "description": "Stress is a measure of the average amount of force exerted per unit area of a surface within a deformable body on which internal forces act. In other words, it is a measure of the intensity or internal distribution of the total internal forces acting within a deformable body across imaginary surfaces. These internal forces are produced between the particles in the body as a reaction to external forces applied on the body. Stress is defined as ${\\rm{Stress}} = \\frac{F}{A}$.",
+  "allOf": [
+    {
+      "$ref": "ForcePerArea.schema.json"
+    }
+  ],
+  "@context": [
+    "ForcePerArea.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Stress": "qkind:Stress"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Stress"
+      ]
+    }
+  }
+}

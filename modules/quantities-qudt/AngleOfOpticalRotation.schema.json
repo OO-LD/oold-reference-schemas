@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "AngleOfOpticalRotation.schema.json",
+  "x-oold-uuid": "63d076aa-990f-55ac-bc4b-36a07dbd99e9",
+  "x-oold-version": "0.1.0",
+  "title": "AngleOfOpticalRotation",
+  "x-oold-multilang-title": {
+    "en": "Angle of Optical Rotation"
+  },
+  "description": "The \"Angle of Optical Rotation\" is the angle through which plane-polarized light is rotated clockwise, as seen when facing the light source, in passing through an optically active medium.",
+  "allOf": [
+    {
+      "$ref": "Angle.schema.json"
+    }
+  ],
+  "@context": [
+    "Angle.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "AngleOfOpticalRotation": "qkind:AngleOfOpticalRotation"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "AngleOfOpticalRotation"
+      ]
+    }
+  }
+}

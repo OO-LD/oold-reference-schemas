@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Slowing-DownArea.schema.json",
+  "x-oold-uuid": "3bb93168-722e-5893-b632-cd3889967bf0",
+  "x-oold-version": "0.1.0",
+  "title": "Slowing-DownArea",
+  "x-oold-multilang-title": {
+    "en": "Slowing-Down Area"
+  },
+  "description": "\"Slowing-Down Area\" in an infinite homogenous medium, is one-sixth of the mean square distance between the neutron source and the point where a neutron reaches a given energy.",
+  "allOf": [
+    {
+      "$ref": "Area.schema.json"
+    }
+  ],
+  "@context": [
+    "Area.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Slowing-DownArea": "qkind:Slowing-DownArea"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Slowing-DownArea"
+      ]
+    }
+  }
+}

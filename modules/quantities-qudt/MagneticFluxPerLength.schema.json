@@ -1,0 +1,50 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MagneticFluxPerLength.schema.json",
+  "x-oold-uuid": "bb4c4273-347b-5d59-b4d0-b083dd8135a5",
+  "x-oold-version": "0.1.0",
+  "title": "MagneticFluxPerLength",
+  "x-oold-multilang-title": {
+    "en": "Magnetic flux per length"
+  },
+  "description": "\"Magnetic Flux per Length\" is a quantity in the SI and C.G.S. Systems of Quantities.",
+  "examples": [
+    {
+      "type": [
+        "MagneticFluxPerLength"
+      ],
+      "value": 1.0,
+      "unit": "newton_per_ampere"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "MagneticFluxPerLength": "qkind:MagneticFluxPerLength",
+      "newton_per_ampere": "qunit:N-PER-A",
+      "meter_tesla": "qunit:T-M",
+      "second_volt_per_meter": "qunit:V-SEC-PER-M"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "MagneticFluxPerLength"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "newton_per_ampere",
+        "meter_tesla",
+        "second_volt_per_meter"
+      ],
+      "default": "newton_per_ampere"
+    }
+  }
+}

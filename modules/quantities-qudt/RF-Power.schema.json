@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "RF-Power.schema.json",
+  "x-oold-uuid": "0eab93f8-6d93-59bc-bdfa-90d6af162d71",
+  "x-oold-version": "0.1.0",
+  "title": "RF-Power",
+  "x-oold-multilang-title": {
+    "en": "RF-Power Level"
+  },
+  "description": "Radio-Frequency Power. Power level of electromagnetic waves alternating at the frequency of radio waves (up to 10^10 Hz).",
+  "allOf": [
+    {
+      "$ref": "SignalStrength.schema.json"
+    }
+  ],
+  "@context": [
+    "SignalStrength.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "RF-Power": "qkind:RF-Power"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "RF-Power"
+      ]
+    }
+  }
+}

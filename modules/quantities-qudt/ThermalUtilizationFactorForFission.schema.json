@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ThermalUtilizationFactorForFission.schema.json",
+  "x-oold-uuid": "3df9fbff-888b-55cb-9130-2e604817aa3b",
+  "x-oold-version": "0.1.0",
+  "title": "ThermalUtilizationFactorForFission",
+  "x-oold-multilang-title": {
+    "en": "Thermal Utilization Factor For Fission"
+  },
+  "description": "Probability that a neutron that gets absorbed does so in the fuel material.",
+  "allOf": [
+    {
+      "$ref": "Dimensionless.schema.json"
+    }
+  ],
+  "@context": [
+    "Dimensionless.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ThermalUtilizationFactorForFission": "qkind:ThermalUtilizationFactorForFission"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ThermalUtilizationFactorForFission"
+      ]
+    }
+  }
+}

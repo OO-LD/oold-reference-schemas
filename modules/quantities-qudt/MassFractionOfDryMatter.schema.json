@@ -1,0 +1,46 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MassFractionOfDryMatter.schema.json",
+  "x-oold-uuid": "66292bcd-eac1-546d-bcc3-007bcf3430d3",
+  "x-oold-version": "0.1.0",
+  "title": "MassFractionOfDryMatter",
+  "x-oold-multilang-title": {
+    "en": "Mass Fraction of Dry Matter"
+  },
+  "description": "\"Mass Fraction of Dry Matter\" is one of a number of Concentration quantities defined by ISO 80000.",
+  "examples": [
+    {
+      "type": [
+        "MassFractionOfDryMatter"
+      ],
+      "value": 1.0,
+      "unit": "unitless"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "MassFractionOfDryMatter": "qkind:MassFractionOfDryMatter",
+      "unitless": "qunit:UNITLESS"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "MassFractionOfDryMatter"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "unitless"
+      ],
+      "default": "unitless"
+    }
+  }
+}

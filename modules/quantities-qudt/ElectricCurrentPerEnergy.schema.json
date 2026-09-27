@@ -1,0 +1,45 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ElectricCurrentPerEnergy.schema.json",
+  "x-oold-uuid": "89839410-1b5d-5986-8314-ca9df841107b",
+  "x-oold-version": "0.1.0",
+  "title": "ElectricCurrentPerEnergy",
+  "x-oold-multilang-title": {
+    "en": "Electric Current per Energy"
+  },
+  "examples": [
+    {
+      "type": [
+        "ElectricCurrentPerEnergy"
+      ],
+      "value": 1.0,
+      "unit": "ampere_per_joule"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ElectricCurrentPerEnergy": "qkind:ElectricCurrentPerEnergy",
+      "ampere_per_joule": "qunit:A-PER-J"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ElectricCurrentPerEnergy"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "ampere_per_joule"
+      ],
+      "default": "ampere_per_joule"
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "RadiativeHeatTransfer.schema.json",
+  "x-oold-uuid": "6060213e-d1c3-544d-8a18-f27eb5d3dc0f",
+  "x-oold-version": "0.1.0",
+  "title": "RadiativeHeatTransfer",
+  "x-oold-multilang-title": {
+    "en": "Radiative Heat Transfer"
+  },
+  "description": "\"Radiative Heat Transfer\" is proportional to $(T_1^4 - T_2^4)$ and area of the surface, where $T_1$ and $T_2$ are thermodynamic temperatures of two black surfaces, for non totally black surfaces an additional factor less than 1 is needed.",
+  "allOf": [
+    {
+      "$ref": "HeatFlowRate.schema.json"
+    }
+  ],
+  "@context": [
+    "HeatFlowRate.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "RadiativeHeatTransfer": "qkind:RadiativeHeatTransfer"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "RadiativeHeatTransfer"
+      ]
+    }
+  }
+}

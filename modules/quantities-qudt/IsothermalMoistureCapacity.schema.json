@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "IsothermalMoistureCapacity.schema.json",
+  "x-oold-uuid": "3cd5a696-56f4-5901-94bb-bfc7cfa614fb",
+  "x-oold-version": "0.1.0",
+  "title": "IsothermalMoistureCapacity",
+  "x-oold-multilang-title": {
+    "en": "Isothermal Moisture Capacity"
+  },
+  "description": "\"Isothermal Moisture Capacity\" is the capacity of a material to absorb moisture in the Effective Moisture Penetration Depth (EMPD) model.",
+  "allOf": [
+    {
+      "$ref": "SpecificVolume.schema.json"
+    }
+  ],
+  "@context": [
+    "SpecificVolume.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "IsothermalMoistureCapacity": "qkind:IsothermalMoistureCapacity"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "IsothermalMoistureCapacity"
+      ]
+    }
+  }
+}

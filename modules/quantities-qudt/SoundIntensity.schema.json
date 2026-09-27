@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "SoundIntensity.schema.json",
+  "x-oold-uuid": "7450be7f-3aa3-552e-9da4-bb8a6d952f9f",
+  "x-oold-version": "0.1.0",
+  "title": "SoundIntensity",
+  "x-oold-multilang-title": {
+    "en": "Sound intensity"
+  },
+  "description": "Sound intensity or acoustic intensity ($I$) is defined as the sound power $P_a$ per unit area $A$. The usual context is the noise measurement of sound intensity in the air at a listener's location as a sound energy quantity.",
+  "allOf": [
+    {
+      "$ref": "PowerPerArea.schema.json"
+    }
+  ],
+  "@context": [
+    "PowerPerArea.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "SoundIntensity": "qkind:SoundIntensity"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "SoundIntensity"
+      ]
+    }
+  }
+}

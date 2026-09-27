@@ -1,0 +1,47 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "InverseTemperature.schema.json",
+  "x-oold-uuid": "06018a46-bc2e-5b34-bab4-cc7e8d71bf87",
+  "x-oold-version": "0.1.0",
+  "title": "InverseTemperature",
+  "x-oold-multilang-title": {
+    "en": "Inverse Temperature"
+  },
+  "examples": [
+    {
+      "type": [
+        "InverseTemperature"
+      ],
+      "value": 1.0,
+      "unit": "per_kelvin"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "InverseTemperature": "qkind:InverseTemperature",
+      "per_kelvin": "qunit:PER-K",
+      "per_mega_kelvin": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/per_mega_kelvin"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "InverseTemperature"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "per_kelvin",
+        "per_mega_kelvin"
+      ],
+      "default": "per_kelvin"
+    }
+  }
+}

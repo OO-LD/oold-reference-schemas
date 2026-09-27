@@ -1,0 +1,50 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MassAttenuationCoefficient.schema.json",
+  "x-oold-uuid": "6a7ba5aa-1883-572e-8086-67e4e0f83ef8",
+  "x-oold-version": "0.1.0",
+  "title": "MassAttenuationCoefficient",
+  "x-oold-multilang-title": {
+    "en": "Mass Attenuation Coefficient"
+  },
+  "description": "\"Mass Attenuation Coefficient\" is a measurement of how strongly a chemical species or substance absorbs or scatters light at a given wavelength, per unit mass.",
+  "examples": [
+    {
+      "type": [
+        "MassAttenuationCoefficient"
+      ],
+      "value": 1.0,
+      "unit": "meter_squared_per_kilo_gram"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "MassAttenuationCoefficient": "qkind:MassAttenuationCoefficient",
+      "meter_squared_per_kilo_gram": "qunit:M2-PER-KiloGM",
+      "centi_meter_squared_per_gram": "qunit:CentiM2-PER-GM",
+      "meter_squared_per_gram": "qunit:M2-PER-GM"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "MassAttenuationCoefficient"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "meter_squared_per_kilo_gram",
+        "centi_meter_squared_per_gram",
+        "meter_squared_per_gram"
+      ],
+      "default": "meter_squared_per_kilo_gram"
+    }
+  }
+}

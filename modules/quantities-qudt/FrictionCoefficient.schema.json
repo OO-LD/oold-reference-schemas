@@ -1,0 +1,41 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "FrictionCoefficient.schema.json",
+  "x-oold-uuid": "8f66d565-d52b-52ba-b7fe-2840caf54ffa",
+  "x-oold-version": "0.1.0",
+  "title": "FrictionCoefficient",
+  "x-oold-multilang-title": {
+    "en": "Friction Coefficient"
+  },
+  "description": "\"Friction Coefficient\" is the ratio of the force of friction between two bodies and the force pressing them together",
+  "allOf": [
+    {
+      "$ref": "DimensionlessRatio.schema.json"
+    }
+  ],
+  "@context": [
+    "DimensionlessRatio.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "FrictionCoefficient": "qkind:FrictionCoefficient"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "FrictionCoefficient"
+      ]
+    }
+  },
+  "x-oold-context": {
+    "FrictionCoefficient": {
+      "http://dbpedia.org/resource/Friction": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "EnergyPerTemperature.schema.json",
+  "x-oold-uuid": "c16b766e-af3e-547d-a640-7e8eee408e7c",
+  "x-oold-version": "0.1.0",
+  "title": "EnergyPerTemperature",
+  "x-oold-multilang-title": {
+    "en": "Energy per temperature"
+  },
+  "examples": [
+    {
+      "type": [
+        "EnergyPerTemperature"
+      ],
+      "value": 1.0,
+      "unit": "joule_per_kelvin"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "EnergyPerTemperature": "qkind:EnergyPerTemperature",
+      "joule_per_kelvin": "qunit:J-PER-K",
+      "electron_volt_per_kelvin": "qunit:EV-PER-K",
+      "kilo_joule_per_kelvin": "qunit:KiloJ-PER-K",
+      "mega_joule_per_kelvin": "qunit:MegaJ-PER-K"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "EnergyPerTemperature"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "joule_per_kelvin",
+        "electron_volt_per_kelvin",
+        "kilo_joule_per_kelvin",
+        "mega_joule_per_kelvin"
+      ],
+      "default": "joule_per_kelvin"
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "SoundExposure.schema.json",
+  "x-oold-uuid": "dac4a86a-2558-53e6-835f-1f526ebc7d4b",
+  "x-oold-version": "0.1.0",
+  "title": "SoundExposure",
+  "x-oold-multilang-title": {
+    "en": "Sound exposure"
+  },
+  "description": "Sound Exposure is the energy of the A-weighted sound calculated over the measurement time(s). For a given period of time, an increase of 10 dB(A) in sound pressure level corresponds to a tenfold increase in E.",
+  "examples": [
+    {
+      "type": [
+        "SoundExposure"
+      ],
+      "value": 1.0,
+      "unit": "pascal_squared_second"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "SoundExposure": "qkind:SoundExposure",
+      "pascal_squared_second": "qunit:PA2-SEC"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "SoundExposure"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "pascal_squared_second"
+      ],
+      "default": "pascal_squared_second"
+    }
+  }
+}

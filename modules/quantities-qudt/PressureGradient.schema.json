@@ -1,0 +1,56 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "PressureGradient.schema.json",
+  "x-oold-uuid": "731e73ec-9945-5a1f-bc5a-6f5c4f67b422",
+  "x-oold-version": "0.1.0",
+  "title": "PressureGradient",
+  "x-oold-multilang-title": {
+    "en": "Pressure gradient"
+  },
+  "description": "differential pressure divided by the associated length",
+  "examples": [
+    {
+      "type": [
+        "PressureGradient"
+      ],
+      "value": 1.0,
+      "unit": "pascal_per_meter"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "PressureGradient": "qkind:PressureGradient",
+      "pascal_per_meter": "qunit:PA-PER-M",
+      "pico_pascal_per_kilo_meter": "qunit:PicoPA-PER-KiloM",
+      "milli_pascal_per_meter": "qunit:MilliPA-PER-M",
+      "hecto_pascal_per_meter": "qunit:HectoPA-PER-M",
+      "kilo_pascal_per_meter": "qunit:KiloPA-PER-M",
+      "kilo_pascal_per_milli_meter": "qunit:KiloPA-PER-MilliM"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "PressureGradient"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "pascal_per_meter",
+        "pico_pascal_per_kilo_meter",
+        "milli_pascal_per_meter",
+        "hecto_pascal_per_meter",
+        "kilo_pascal_per_meter",
+        "kilo_pascal_per_milli_meter"
+      ],
+      "default": "pascal_per_meter"
+    }
+  }
+}

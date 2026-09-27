@@ -1,0 +1,41 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "HeatingValue.schema.json",
+  "x-oold-uuid": "a8882045-1d0e-5563-927c-ef63406f97ab",
+  "x-oold-version": "0.1.0",
+  "title": "HeatingValue",
+  "x-oold-multilang-title": {
+    "en": "Calorific Value"
+  },
+  "description": "The heating value (or energy value or calorific value) of a substance, usually a fuel or food (see food energy), is the amount of heat released during the combustion of a specified amount of it.",
+  "allOf": [
+    {
+      "$ref": "SpecificEnergy.schema.json"
+    }
+  ],
+  "@context": [
+    "SpecificEnergy.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "HeatingValue": "qkind:HeatingValue"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "HeatingValue"
+      ]
+    }
+  },
+  "x-oold-context": {
+    "HeatingValue": {
+      "http://dbpedia.org/resource/Specific_energy": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

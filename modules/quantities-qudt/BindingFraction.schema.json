@@ -1,0 +1,46 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "BindingFraction.schema.json",
+  "x-oold-uuid": "e08204ee-5deb-50bc-b510-3e916d3081cd",
+  "x-oold-version": "0.1.0",
+  "title": "BindingFraction",
+  "x-oold-multilang-title": {
+    "en": "Binding Fraction"
+  },
+  "description": "The \"Binding Fraction\" is the ratio of the binding energy of a nucleus to the atomic mass number.",
+  "examples": [
+    {
+      "type": [
+        "BindingFraction"
+      ],
+      "value": 1.0,
+      "unit": "unitless"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "BindingFraction": "qkind:BindingFraction",
+      "unitless": "qunit:UNITLESS"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "BindingFraction"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "unitless"
+      ],
+      "default": "unitless"
+    }
+  }
+}

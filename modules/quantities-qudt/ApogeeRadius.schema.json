@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ApogeeRadius.schema.json",
+  "x-oold-uuid": "abce00a0-1967-5e0d-98ef-7b6a5bb573b0",
+  "x-oold-version": "0.1.0",
+  "title": "ApogeeRadius",
+  "x-oold-multilang-title": {
+    "en": "Apogee Radius"
+  },
+  "description": "Apogee radius of an elliptical orbit",
+  "allOf": [
+    {
+      "$ref": "Radius.schema.json"
+    }
+  ],
+  "@context": [
+    "Radius.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ApogeeRadius": "qkind:ApogeeRadius"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ApogeeRadius"
+      ]
+    }
+  }
+}

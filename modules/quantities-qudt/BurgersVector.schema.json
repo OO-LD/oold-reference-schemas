@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "BurgersVector.schema.json",
+  "x-oold-uuid": "2aeb29e2-0464-500c-8df9-79d1625f6e75",
+  "x-oold-version": "0.1.0",
+  "title": "BurgersVector",
+  "x-oold-multilang-title": {
+    "en": "Burgers Vector"
+  },
+  "description": "\"Burgers Vector\" is the vector characterizing a dislocation, i.e. the closing vector in a Burgers circuit encircling a dislocation line.",
+  "allOf": [
+    {
+      "$ref": "Length.schema.json"
+    }
+  ],
+  "@context": [
+    "Length.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "BurgersVector": "qkind:BurgersVector"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "BurgersVector"
+      ]
+    }
+  }
+}

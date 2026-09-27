@@ -1,0 +1,46 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "LeakageFactor.schema.json",
+  "x-oold-uuid": "0d18f34d-f556-5fd1-9847-6c561e5d6810",
+  "x-oold-version": "0.1.0",
+  "title": "LeakageFactor",
+  "x-oold-multilang-title": {
+    "en": "Leakage Factor"
+  },
+  "description": "\"Leakage Factor\" is the ratio of the total magnetic flux to the useful magnetic flux of a magnetic circuit.",
+  "examples": [
+    {
+      "type": [
+        "LeakageFactor"
+      ],
+      "value": 1.0,
+      "unit": "unitless"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "LeakageFactor": "qkind:LeakageFactor",
+      "unitless": "qunit:UNITLESS"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "LeakageFactor"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "unitless"
+      ],
+      "default": "unitless"
+    }
+  }
+}

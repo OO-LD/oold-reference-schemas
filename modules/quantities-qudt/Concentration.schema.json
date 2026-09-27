@@ -1,0 +1,79 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Concentration.schema.json",
+  "x-oold-uuid": "4ce5add3-85d2-545a-b8ab-50e4b222dab4",
+  "x-oold-version": "0.1.0",
+  "title": "Concentration",
+  "x-oold-multilang-title": {
+    "en": "Concentration"
+  },
+  "description": "In chemistry, concentration is defined as the abundance of a constituent divided by the total volume of a mixture. Furthermore, in chemistry, four types of mathematical description can be distinguished: mass concentration, molar concentration, number concentration, and volume concentration. The term concentration can be applied to any kind of chemical mixture, but most frequently it refers to solutes in solutions.",
+  "examples": [
+    {
+      "type": [
+        "Concentration"
+      ],
+      "value": 1.0,
+      "unit": "mole_per_meter_cubed"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Concentration": "qkind:Concentration",
+      "mole_per_meter_cubed": "qunit:MOL-PER-M3",
+      "femto_mole_per_liter": "qunit:FemtoMOL-PER-L",
+      "pico_mole_per_meter_cubed": "qunit:PicoMOL-PER-M3",
+      "pico_mole_per_liter": "qunit:PicoMOL-PER-L",
+      "nano_mole_per_liter": "qunit:NanoMOL-PER-L",
+      "milli_mole_per_meter_cubed": "qunit:MilliMOL-PER-M3",
+      "micro_mole_per_liter": "qunit:MicroMOL-PER-L",
+      "milli_mole_per_liter": "qunit:MilliMOL-PER-L",
+      "centi_mole_per_liter": "qunit:CentiMOL-PER-L",
+      "kilo_mole_per_meter_cubed": "qunit:KiloMOL-PER-M3",
+      "mole_per_liter": "qunit:MOL-PER-L",
+      "mole_per_deci_meter_cubed": "qunit:MOL-PER-DeciM3"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Concentration"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "mole_per_meter_cubed",
+        "femto_mole_per_liter",
+        "pico_mole_per_meter_cubed",
+        "pico_mole_per_liter",
+        "nano_mole_per_liter",
+        "milli_mole_per_meter_cubed",
+        "micro_mole_per_liter",
+        "milli_mole_per_liter",
+        "centi_mole_per_liter",
+        "kilo_mole_per_meter_cubed",
+        "mole_per_liter",
+        "mole_per_deci_meter_cubed"
+      ],
+      "default": "mole_per_meter_cubed"
+    }
+  },
+  "x-oold-context": {
+    "Concentration": {
+      "http://dbpedia.org/resource/Concentration": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

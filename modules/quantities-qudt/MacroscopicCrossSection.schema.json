@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MacroscopicCrossSection.schema.json",
+  "x-oold-uuid": "7825b2bb-b4c2-5834-8224-e4e6d4f364e8",
+  "x-oold-version": "0.1.0",
+  "title": "MacroscopicCrossSection",
+  "x-oold-multilang-title": {
+    "en": "Macroscopic Cross-section"
+  },
+  "description": "\"Macroscopic Cross-section\" is the sum of the cross-sections for a reaction or process of a specified type over all atoms or other entities in a given 3D domain, divided by the volume of that domain.",
+  "allOf": [
+    {
+      "$ref": "CrossSection.schema.json"
+    }
+  ],
+  "@context": [
+    "CrossSection.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "MacroscopicCrossSection": "qkind:MacroscopicCrossSection"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "MacroscopicCrossSection"
+      ]
+    }
+  }
+}

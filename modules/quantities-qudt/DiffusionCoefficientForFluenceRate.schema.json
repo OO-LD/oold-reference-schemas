@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "DiffusionCoefficientForFluenceRate.schema.json",
+  "x-oold-uuid": "fadb71c3-03c5-5656-bd54-245387aa2ca8",
+  "x-oold-version": "0.1.0",
+  "title": "DiffusionCoefficientForFluenceRate",
+  "x-oold-multilang-title": {
+    "en": "Diffusion Coefficient for Fluence Rate"
+  },
+  "description": "The \"Diffusion Coefficient for Fluence Rate\" is a proportionality constant between the .",
+  "allOf": [
+    {
+      "$ref": "Length.schema.json"
+    }
+  ],
+  "@context": [
+    "Length.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "DiffusionCoefficientForFluenceRate": "qkind:DiffusionCoefficientForFluenceRate"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "DiffusionCoefficientForFluenceRate"
+      ]
+    }
+  }
+}

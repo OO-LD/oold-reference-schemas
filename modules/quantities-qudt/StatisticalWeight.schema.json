@@ -1,0 +1,46 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "StatisticalWeight.schema.json",
+  "x-oold-uuid": "1641d442-4ea4-543d-853d-b7c3bc0b3ee7",
+  "x-oold-version": "0.1.0",
+  "title": "StatisticalWeight",
+  "x-oold-multilang-title": {
+    "en": "Statistical Weight"
+  },
+  "description": "A \"Statistical Weight\" is the relative probability (possibly unnormalized) of a particular feature of a state.",
+  "examples": [
+    {
+      "type": [
+        "StatisticalWeight"
+      ],
+      "value": 1.0,
+      "unit": "unitless"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "StatisticalWeight": "qkind:StatisticalWeight",
+      "unitless": "qunit:UNITLESS"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "StatisticalWeight"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "unitless"
+      ],
+      "default": "unitless"
+    }
+  }
+}

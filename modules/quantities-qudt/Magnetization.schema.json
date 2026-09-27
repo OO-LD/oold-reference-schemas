@@ -1,0 +1,31 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Magnetization.schema.json",
+  "x-oold-uuid": "6657e0d5-f552-5ae2-b465-f952260b5c3e",
+  "x-oold-version": "0.1.0",
+  "title": "Magnetization",
+  "x-oold-multilang-title": {
+    "en": "Magnetization",
+    "de": "Magnetisierung"
+  },
+  "description": "\"Magnetization\" is defined as the ratio of magnetic moment per unit volume. It is a vector-valued quantity.",
+  "allOf": [
+    {
+      "$ref": "LinearElectricCurrent.schema.json"
+    }
+  ],
+  "@context": [
+    "LinearElectricCurrent.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Magnetization": "qkind:Magnetization"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Magnetization"
+      ]
+    }
+  }
+}

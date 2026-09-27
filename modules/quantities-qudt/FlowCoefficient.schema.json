@@ -1,0 +1,51 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "FlowCoefficient.schema.json",
+  "x-oold-uuid": "ecdbba08-0505-5fbd-ba05-9d163d99f70d",
+  "x-oold-version": "0.1.0",
+  "title": "FlowCoefficient",
+  "x-oold-multilang-title": {
+    "en": "Flow Coefficient"
+  },
+  "description": "Molar flow conductance of a vacuum component, the throughput per unit pressure difference referred to the flow path length.",
+  "examples": [
+    {
+      "type": [
+        "FlowCoefficient"
+      ],
+      "value": 1.0,
+      "unit": "meter_squared_per_second"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "FlowCoefficient": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/FlowCoefficient.schema.json",
+      "meter_squared_per_second": "qunit:M2-PER-SEC",
+      "milli_meter_squared_per_second": "qunit:MilliM2-PER-SEC",
+      "centi_meter_squared_per_second": "qunit:CentiM2-PER-SEC",
+      "liter_per_meter_per_second": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/liter_per_meter_per_second"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "FlowCoefficient"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "meter_squared_per_second",
+        "milli_meter_squared_per_second",
+        "centi_meter_squared_per_second",
+        "liter_per_meter_per_second"
+      ],
+      "default": "meter_squared_per_second"
+    }
+  }
+}

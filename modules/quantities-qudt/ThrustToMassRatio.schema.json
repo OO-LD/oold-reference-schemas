@@ -1,0 +1,29 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ThrustToMassRatio.schema.json",
+  "x-oold-uuid": "993eb85e-6303-5bd2-bf24-dafc18760215",
+  "x-oold-version": "0.1.0",
+  "title": "ThrustToMassRatio",
+  "x-oold-multilang-title": {
+    "en": "Thrust To Mass Ratio"
+  },
+  "allOf": [
+    {
+      "$ref": "Acceleration.schema.json"
+    }
+  ],
+  "@context": [
+    "Acceleration.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ThrustToMassRatio": "qkind:ThrustToMassRatio"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ThrustToMassRatio"
+      ]
+    }
+  }
+}

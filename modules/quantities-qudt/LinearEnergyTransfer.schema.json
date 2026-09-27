@@ -1,0 +1,63 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "LinearEnergyTransfer.schema.json",
+  "x-oold-uuid": "e471db8f-a7d8-5359-a1ad-86773c4d671b",
+  "x-oold-version": "0.1.0",
+  "title": "LinearEnergyTransfer",
+  "x-oold-multilang-title": {
+    "en": "Linear Energy Transfer"
+  },
+  "description": "\"Linear Energy Transfer\"  (LET) is the linear density of energy lost by a charged ionizing particle travelling through matter.Typically, this measure is used to quantify the effects of ionizing radiation on biological specimens or electronic devices.",
+  "examples": [
+    {
+      "type": [
+        "LinearEnergyTransfer"
+      ],
+      "value": 1.0,
+      "unit": "joule_per_meter"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "LinearEnergyTransfer": "qkind:LinearEnergyTransfer",
+      "joule_per_meter": "qunit:J-PER-M",
+      "electron_volt_per_meter": "qunit:EV-PER-M",
+      "mega_electron_volt_per_centi_meter": "qunit:MegaEV-PER-CentiM",
+      "kilo_electron_volt_per_micro_meter": "qunit:KiloEV-PER-MicroM"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "LinearEnergyTransfer"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "joule_per_meter",
+        "electron_volt_per_meter",
+        "mega_electron_volt_per_centi_meter",
+        "kilo_electron_volt_per_micro_meter"
+      ],
+      "default": "joule_per_meter"
+    }
+  },
+  "x-oold-context": {
+    "LinearEnergyTransfer": {
+      "http://dbpedia.org/resource/Linear_energy_transfer": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

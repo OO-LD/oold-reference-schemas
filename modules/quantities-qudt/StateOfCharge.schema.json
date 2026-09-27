@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "StateOfCharge.schema.json",
+  "x-oold-uuid": "d443875d-fab1-594b-91b2-07cd59e9e0fa",
+  "x-oold-version": "0.1.0",
+  "title": "StateOfCharge",
+  "x-oold-multilang-title": {
+    "en": "State of charge"
+  },
+  "description": "\"\"State of Charge\",quantifies the remaining capacity available in a battery at a given time and in relation to a given state of ageing.",
+  "allOf": [
+    {
+      "$ref": "DimensionlessRatio.schema.json"
+    }
+  ],
+  "@context": [
+    "DimensionlessRatio.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "StateOfCharge": "qkind:StateOfCharge"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "StateOfCharge"
+      ]
+    }
+  }
+}

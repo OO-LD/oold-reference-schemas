@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "TotalPressure.schema.json",
+  "x-oold-uuid": "0301595d-3ef3-5fcb-98b6-3e87d8b3d34c",
+  "x-oold-version": "0.1.0",
+  "title": "TotalPressure",
+  "x-oold-multilang-title": {
+    "en": "Total Pressure"
+  },
+  "description": "The total pressure is the sum of the dynamic and static pressures, that is $P_0 = P + q$.",
+  "allOf": [
+    {
+      "$ref": "Pressure.schema.json"
+    }
+  ],
+  "@context": [
+    "Pressure.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "TotalPressure": "qkind:TotalPressure"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "TotalPressure"
+      ]
+    }
+  }
+}

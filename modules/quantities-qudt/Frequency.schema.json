@@ -1,0 +1,111 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Frequency.schema.json",
+  "x-oold-uuid": "c543ebb8-5338-5a1a-9382-f57faad6170d",
+  "x-oold-version": "0.1.0",
+  "title": "Frequency",
+  "x-oold-multilang-title": {
+    "en": "Frequency",
+    "de": "Frequenz"
+  },
+  "description": "\"Frequency\" is the number of occurrences of a repeating event per unit time. The repetition of the events may be periodic (that is. the length of time between event repetitions is fixed) or aperiodic (i.e. the length of time between event repetitions varies). Therefore, we distinguish between periodic and aperiodic frequencies. In the SI system, periodic frequency is measured in hertz (Hz) or multiples of hertz, while aperiodic frequency is measured in becquerel (Bq).  In spectroscopy, $\\nu$ is mostly used. Light passing through different media keeps its frequency, but not its wavelength or wavenumber.",
+  "examples": [
+    {
+      "type": [
+        "Frequency"
+      ],
+      "value": 1.0,
+      "unit": "per_second"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Frequency": "qkind:Frequency",
+      "per_second": "qunit:PER-SEC",
+      "nano_becquerel": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/nano_becquerel",
+      "per_year": "qunit:PER-YR",
+      "per_month": "qunit:PER-MO",
+      "micro_becquerel": "qunit:MicroBQ",
+      "per_week": "qunit:PER-WK",
+      "per_day": "qunit:PER-DAY",
+      "per_hour": "qunit:PER-HR",
+      "milli_becquerel": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/milli_becquerel",
+      "milli_hertz": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/milli_hertz",
+      "per_minute": "qunit:PER-MIN",
+      "becquerel": "qunit:BQ",
+      "hertz": "qunit:HZ",
+      "per_milli_second": "qunit:PER-MilliSEC",
+      "kilo_becquerel": "qunit:KiloBQ",
+      "kilo_hertz": "qunit:KiloHZ",
+      "mega_becquerel": "qunit:MegaBQ",
+      "mega_hertz": "qunit:MegaHZ",
+      "giga_becquerel": "qunit:GigaBQ",
+      "giga_hertz": "qunit:GigaHZ",
+      "tera_becquerel": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/tera_becquerel",
+      "tera_hertz": "qunit:TeraHZ",
+      "peta_becquerel": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/peta_becquerel",
+      "peta_hertz": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/peta_hertz"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Frequency"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "per_second",
+        "nano_becquerel",
+        "per_year",
+        "per_month",
+        "micro_becquerel",
+        "per_week",
+        "per_day",
+        "per_hour",
+        "milli_becquerel",
+        "milli_hertz",
+        "per_minute",
+        "becquerel",
+        "hertz",
+        "per_milli_second",
+        "kilo_becquerel",
+        "kilo_hertz",
+        "mega_becquerel",
+        "mega_hertz",
+        "giga_becquerel",
+        "giga_hertz",
+        "tera_becquerel",
+        "tera_hertz",
+        "peta_becquerel",
+        "peta_hertz"
+      ],
+      "default": "per_second"
+    }
+  },
+  "x-oold-context": {
+    "Frequency": {
+      "http://dbpedia.org/resource/Frequency": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      },
+      "https://si-digital-framework.org/quantities/FREQ": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

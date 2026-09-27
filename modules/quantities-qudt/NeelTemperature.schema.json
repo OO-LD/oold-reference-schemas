@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "NeelTemperature.schema.json",
+  "x-oold-uuid": "f27cc098-49a1-54f0-87e4-2dcf5354c5c6",
+  "x-oold-version": "0.1.0",
+  "title": "NeelTemperature",
+  "x-oold-multilang-title": {
+    "en": "Neel Temperature"
+  },
+  "description": "\"Neel Temperature\" is the critical thermodynamic temperature of an antiferromagnet.",
+  "allOf": [
+    {
+      "$ref": "Temperature.schema.json"
+    }
+  ],
+  "@context": [
+    "Temperature.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "NeelTemperature": "qkind:NeelTemperature"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "NeelTemperature"
+      ]
+    }
+  }
+}

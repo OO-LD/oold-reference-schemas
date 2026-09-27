@@ -1,0 +1,57 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "DegreeOfDissociation.schema.json",
+  "x-oold-uuid": "5da8fef3-4073-5438-a00b-7c7c454f9018",
+  "x-oold-version": "0.1.0",
+  "title": "DegreeOfDissociation",
+  "x-oold-multilang-title": {
+    "en": "Degree of Dissociation"
+  },
+  "description": "The \"Degree of Dissociation\" is the fraction of original solute molecules that have dissociated.",
+  "examples": [
+    {
+      "type": [
+        "DegreeOfDissociation"
+      ],
+      "value": 1.0,
+      "unit": "unitless"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "DegreeOfDissociation": "qkind:DegreeOfDissociation",
+      "unitless": "qunit:UNITLESS"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "DegreeOfDissociation"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "unitless"
+      ],
+      "default": "unitless"
+    }
+  },
+  "x-oold-context": {
+    "DegreeOfDissociation": {
+      "http://dbpedia.org/resource/Faraday_constant": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

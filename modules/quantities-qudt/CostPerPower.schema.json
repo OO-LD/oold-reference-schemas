@@ -1,0 +1,49 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "CostPerPower.schema.json",
+  "x-oold-uuid": "b2db9500-8e17-5cf7-91d9-135cefe43650",
+  "x-oold-version": "0.1.0",
+  "title": "CostPerPower",
+  "x-oold-multilang-title": {
+    "en": "Cost per power",
+    "de": "Anschaffungskosten pro Watt"
+  },
+  "description": "In photovoltaics, cost per power of electricity produced measures the cost of installing the hardware relative to the power produced.",
+  "examples": [
+    {
+      "type": [
+        "CostPerPower"
+      ],
+      "value": 1.0,
+      "unit": "euro_per_w"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "CostPerPower": "qkind:CostPerPower",
+      "euro_per_w": "qunit:CCY_EUR-PER-W",
+      "euro_per_kw": "qunit:CCY_EUR-PER-KiloW"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "CostPerPower"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "euro_per_w",
+        "euro_per_kw"
+      ],
+      "default": "euro_per_w"
+    }
+  }
+}

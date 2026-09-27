@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "SpecificEnergyImparted.schema.json",
+  "x-oold-uuid": "99368549-565a-5844-b921-0bc2acf27631",
+  "x-oold-version": "0.1.0",
+  "title": "SpecificEnergyImparted",
+  "x-oold-multilang-title": {
+    "en": "Specific Energy Imparted"
+  },
+  "description": "The \"Specific Energy Imparted\", is the energy imparted to an element of irradiated matter divided by the mass, dm, of that element.",
+  "allOf": [
+    {
+      "$ref": "SpecificEnergy.schema.json"
+    }
+  ],
+  "@context": [
+    "SpecificEnergy.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "SpecificEnergyImparted": "qkind:SpecificEnergyImparted"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "SpecificEnergyImparted"
+      ]
+    }
+  }
+}

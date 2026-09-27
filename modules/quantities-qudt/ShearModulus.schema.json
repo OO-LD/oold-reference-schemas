@@ -1,0 +1,62 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ShearModulus.schema.json",
+  "x-oold-uuid": "1aa2d583-aaac-5af2-9af3-56124b0dbc67",
+  "x-oold-version": "0.1.0",
+  "title": "ShearModulus",
+  "x-oold-multilang-title": {
+    "en": "Shear Modulus"
+  },
+  "description": "The Shear Modulus or modulus of rigidity, denoted by $G$, or sometimes $S$ or $\\mu$, is defined as the ratio of shear stress to the shear strain.",
+  "examples": [
+    {
+      "type": [
+        "ShearModulus"
+      ],
+      "value": 1.0,
+      "unit": "pascal"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ShearModulus": "qkind:ShearModulus",
+      "pascal": "qunit:PA",
+      "pico_pascal": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/pico_pascal",
+      "micro_pascal": "qunit:MicroPA",
+      "milli_pascal": "qunit:MilliPA",
+      "deca_pascal": "qunit:DecaPA",
+      "hecto_pascal": "qunit:HectoPA",
+      "kilo_pascal": "qunit:KiloPA",
+      "mega_pascal": "qunit:MegaPA",
+      "giga_pascal": "qunit:GigaPA"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ShearModulus"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "pascal",
+        "pico_pascal",
+        "micro_pascal",
+        "milli_pascal",
+        "deca_pascal",
+        "hecto_pascal",
+        "kilo_pascal",
+        "mega_pascal",
+        "giga_pascal"
+      ],
+      "default": "pascal"
+    }
+  }
+}

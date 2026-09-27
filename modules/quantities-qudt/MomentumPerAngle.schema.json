@@ -1,0 +1,45 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MomentumPerAngle.schema.json",
+  "x-oold-uuid": "9ecfc2e0-9756-5a46-9701-e0a2c23e57fb",
+  "x-oold-version": "0.1.0",
+  "title": "MomentumPerAngle",
+  "x-oold-multilang-title": {
+    "en": "Momentum per Angle"
+  },
+  "examples": [
+    {
+      "type": [
+        "MomentumPerAngle"
+      ],
+      "value": 1.0,
+      "unit": "newton_second_per_radian"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "MomentumPerAngle": "qkind:MomentumPerAngle",
+      "newton_second_per_radian": "qunit:N-SEC-PER-RAD"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "MomentumPerAngle"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "newton_second_per_radian"
+      ],
+      "default": "newton_second_per_radian"
+    }
+  }
+}

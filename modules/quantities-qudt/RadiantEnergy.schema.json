@@ -1,0 +1,31 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "RadiantEnergy.schema.json",
+  "x-oold-uuid": "f27fad2a-3c15-5c80-a219-65b7ddc00016",
+  "x-oold-version": "0.1.0",
+  "title": "RadiantEnergy",
+  "x-oold-multilang-title": {
+    "en": "Radiant energy",
+    "de": "Strahlungsenergie"
+  },
+  "description": "In radiometry,\"Radiant Energy} is the energy of electromagnetic waves. The quantity of radiant energy may be calculated by integrating radiant flux (or power) with respect to time.  In nuclear physics, $\\textit{Radiant Energy\" is energy, excluding rest energy, of the particles that are emitted, transferred, or received.",
+  "allOf": [
+    {
+      "$ref": "Energy.schema.json"
+    }
+  ],
+  "@context": [
+    "Energy.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "RadiantEnergy": "qkind:RadiantEnergy"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "RadiantEnergy"
+      ]
+    }
+  }
+}

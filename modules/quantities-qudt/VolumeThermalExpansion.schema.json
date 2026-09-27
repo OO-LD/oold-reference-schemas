@@ -1,0 +1,52 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "VolumeThermalExpansion.schema.json",
+  "x-oold-uuid": "fa99fdcf-e84d-5a00-8472-386406ac1416",
+  "x-oold-version": "0.1.0",
+  "title": "VolumeThermalExpansion",
+  "x-oold-multilang-title": {
+    "en": "Volume Thermal Expansion"
+  },
+  "description": "When the temperature of a substance changes, the energy that is stored in the intermolecular bonds between atoms changes. When the stored energy increases, so does the length of the molecular bonds. As a result, solids typically expand in response to heating and contract on cooling; this dimensional response to temperature change is expressed by its coefficient of thermal expansion.\n\nDifferent coefficients of thermal expansion can be defined for a substance depending on whether the expansion is measured by:\n\n    * linear thermal expansion\n    * area thermal expansion\n    * volumetric thermal expansion\n\nThese characteristics are closely related. The volumetric thermal expansion coefficient can be defined for both liquids and solids. The linear thermal expansion can only be defined for solids, and is common in engineering applications.\n\nSome substances expand when cooled, such as freezing water, so they have negative thermal expansion coefficients. [Wikipedia]",
+  "examples": [
+    {
+      "type": [
+        "VolumeThermalExpansion"
+      ],
+      "value": 1.0,
+      "unit": "meter_cubed_per_kelvin"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "VolumeThermalExpansion": "qkind:VolumeThermalExpansion",
+      "meter_cubed_per_kelvin": "qunit:M3-PER-K",
+      "centi_meter_cubed_per_kelvin": "qunit:CentiM3-PER-K",
+      "milli_liter_per_kelvin": "qunit:MilliL-PER-K",
+      "liter_per_kelvin": "qunit:L-PER-K"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "VolumeThermalExpansion"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "meter_cubed_per_kelvin",
+        "centi_meter_cubed_per_kelvin",
+        "milli_liter_per_kelvin",
+        "liter_per_kelvin"
+      ],
+      "default": "meter_cubed_per_kelvin"
+    }
+  }
+}

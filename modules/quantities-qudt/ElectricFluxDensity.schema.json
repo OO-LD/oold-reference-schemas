@@ -1,0 +1,49 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ElectricFluxDensity.schema.json",
+  "x-oold-uuid": "554c1d1b-9453-5a17-9366-575d25dc4c6b",
+  "x-oold-version": "0.1.0",
+  "title": "ElectricFluxDensity",
+  "x-oold-multilang-title": {
+    "en": "Electric flux density",
+    "de": "Elektrische Flussdichte"
+  },
+  "description": "$\\textit{Electric Flux Density}$, also referred to as $\\textit{Electric Displacement}$, is related to electric charge density by the following equation: $\\text{div} \\; D = \\rho$, where $\\text{div}$ denotes the divergence.",
+  "allOf": [
+    {
+      "$ref": "ElectricChargePerArea.schema.json"
+    }
+  ],
+  "@context": [
+    "ElectricChargePerArea.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ElectricFluxDensity": "qkind:ElectricFluxDensity"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ElectricFluxDensity"
+      ]
+    }
+  },
+  "x-oold-context": {
+    "ElectricFluxDensity": {
+      "http://dbpedia.org/resource/Electric_flux": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      },
+      "https://si-digital-framework.org/quantities/ELFD": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

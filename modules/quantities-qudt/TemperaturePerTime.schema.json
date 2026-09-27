@@ -1,0 +1,57 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "TemperaturePerTime.schema.json",
+  "x-oold-uuid": "b124402a-1c76-538b-81dd-41babc0cd7e2",
+  "x-oold-version": "0.1.0",
+  "title": "TemperaturePerTime",
+  "x-oold-multilang-title": {
+    "en": "Temperature per Time"
+  },
+  "examples": [
+    {
+      "type": [
+        "TemperaturePerTime"
+      ],
+      "value": 1.0,
+      "unit": "kelvin_per_second"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "TemperaturePerTime": "qkind:TemperaturePerTime",
+      "kelvin_per_second": "qunit:K-PER-SEC",
+      "kelvin_per_hour": "qunit:K-PER-HR",
+      "kelvin_per_minute": "qunit:K-PER-MIN",
+      "celsius_per_year": "qunit:DEG_C-PER-YR",
+      "celsius_per_hour": "qunit:DEG_C-PER-HR",
+      "celsius_per_minute": "qunit:DEG_C-PER-MIN",
+      "celsius_per_second": "qunit:DEG_C-PER-SEC"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "TemperaturePerTime"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "kelvin_per_second",
+        "celsius_per_year",
+        "kelvin_per_hour",
+        "celsius_per_hour",
+        "kelvin_per_minute",
+        "celsius_per_minute",
+        "celsius_per_second"
+      ],
+      "default": "kelvin_per_second"
+    }
+  }
+}

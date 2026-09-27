@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "RotationalStiffness.schema.json",
+  "x-oold-uuid": "9d1ede2d-2379-5fb1-b69d-f7704250740e",
+  "x-oold-version": "0.1.0",
+  "title": "RotationalStiffness",
+  "x-oold-multilang-title": {
+    "en": "Rotational Stiffness"
+  },
+  "description": "Rotational Stiffness is the extent to which an object resists deformation in response to an applied torque.",
+  "allOf": [
+    {
+      "$ref": "TorquePerAngle.schema.json"
+    }
+  ],
+  "@context": [
+    "TorquePerAngle.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "RotationalStiffness": "qkind:RotationalStiffness"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "RotationalStiffness"
+      ]
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ResonanceEscapeProbability.schema.json",
+  "x-oold-uuid": "3ff27728-d12a-51ff-82c3-47ad28c0ab3a",
+  "x-oold-version": "0.1.0",
+  "title": "ResonanceEscapeProbability",
+  "x-oold-multilang-title": {
+    "en": "Resonance Escape Probability"
+  },
+  "description": "The \"Resonance Escape Probability\" is the fraction of fission neutrons that manage to slow down from fission to thermal energies without being absorbed. In an infinite medium, the probability that a neutron slowing down will traverse all or some specified portion of the range of resonance energies without being absorbed.",
+  "examples": [
+    {
+      "type": [
+        "ResonanceEscapeProbability"
+      ],
+      "value": 1.0,
+      "unit": "unitless"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ResonanceEscapeProbability": "qkind:ResonanceEscapeProbability",
+      "unitless": "qunit:UNITLESS"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ResonanceEscapeProbability"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "unitless"
+      ],
+      "default": "unitless"
+    }
+  }
+}

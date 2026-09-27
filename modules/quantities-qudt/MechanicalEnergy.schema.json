@@ -1,0 +1,41 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MechanicalEnergy.schema.json",
+  "x-oold-uuid": "7f4e4ae7-033a-51d2-903c-951e9efd306b",
+  "x-oold-version": "0.1.0",
+  "title": "MechanicalEnergy",
+  "x-oold-multilang-title": {
+    "en": "Mechanical Energy"
+  },
+  "description": "Mechanical Energy is the sum of potential energy and kinetic energy. It is the energy associated with the motion and position of an object.",
+  "allOf": [
+    {
+      "$ref": "Energy.schema.json"
+    }
+  ],
+  "@context": [
+    "Energy.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "MechanicalEnergy": "qkind:MechanicalEnergy"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "MechanicalEnergy"
+      ]
+    }
+  },
+  "x-oold-context": {
+    "MechanicalEnergy": {
+      "http://dbpedia.org/resource/Mechanical_energy": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "SpecificHeatCapacity.schema.json",
+  "x-oold-uuid": "8fa24695-3141-5841-b654-12f705d138d6",
+  "x-oold-version": "0.1.0",
+  "title": "SpecificHeatCapacity",
+  "x-oold-multilang-title": {
+    "en": "Specific Heat Capacity"
+  },
+  "description": "Specific Heat Capacity of a solid or liquid is defined as the heat required to raise unit mass of substance by one degree of temperature. This is Heat Capacity divided by Mass. Note that there are corresponding molar quantities.",
+  "examples": [
+    {
+      "type": [
+        "SpecificHeatCapacity"
+      ],
+      "value": 1.0,
+      "unit": "joule_per_kelvin_per_kilo_gram"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "SpecificHeatCapacity": "qkind:SpecificHeatCapacity",
+      "joule_per_kelvin_per_kilo_gram": "qunit:J-PER-KiloGM-K",
+      "meter_squared_per_kelvin_per_second_squared": "qunit:M2-PER-SEC2-K",
+      "joule_per_gram_per_kelvin": "qunit:J-PER-GM-K",
+      "kilo_joule_per_kelvin_per_kilo_gram": "qunit:KiloJ-PER-KiloGM-K",
+      "joule_per_celsius_per_kilo_gram": "qunit:J-PER-KiloGM-DEG_C",
+      "joule_per_celsius_per_gram": "qunit:J-PER-GM-DEG_C"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "SpecificHeatCapacity"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "joule_per_kelvin_per_kilo_gram",
+        "joule_per_celsius_per_kilo_gram",
+        "meter_squared_per_kelvin_per_second_squared",
+        "joule_per_gram_per_kelvin",
+        "joule_per_celsius_per_gram",
+        "kilo_joule_per_kelvin_per_kilo_gram"
+      ],
+      "default": "joule_per_kelvin_per_kilo_gram"
+    }
+  },
+  "x-oold-context": {
+    "SpecificHeatCapacity": {
+      "http://dbpedia.org/resource/Specific_heat_capacity": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      },
+      "https://si-digital-framework.org/quantities/SHEC": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

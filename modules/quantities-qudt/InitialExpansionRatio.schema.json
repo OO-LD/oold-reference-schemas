@@ -1,0 +1,29 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "InitialExpansionRatio.schema.json",
+  "x-oold-uuid": "47c1c967-b7fe-517f-95d3-d969aade0e12",
+  "x-oold-version": "0.1.0",
+  "title": "InitialExpansionRatio",
+  "x-oold-multilang-title": {
+    "en": "Initial Expansion Ratio"
+  },
+  "allOf": [
+    {
+      "$ref": "ExpansionRatio.schema.json"
+    }
+  ],
+  "@context": [
+    "ExpansionRatio.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "InitialExpansionRatio": "qkind:InitialExpansionRatio"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "InitialExpansionRatio"
+      ]
+    }
+  }
+}

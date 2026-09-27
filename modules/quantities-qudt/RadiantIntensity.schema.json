@@ -1,0 +1,57 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "RadiantIntensity.schema.json",
+  "x-oold-uuid": "e7fa402c-f56d-511e-8172-7e5f976a1c9f",
+  "x-oold-version": "0.1.0",
+  "title": "RadiantIntensity",
+  "x-oold-multilang-title": {
+    "en": "Radiant Intensity"
+  },
+  "description": "Radiant Intensity is a measure of the intensity of electromagnetic radiation. It is defined as power per unit solid angle.",
+  "examples": [
+    {
+      "type": [
+        "RadiantIntensity"
+      ],
+      "value": 1.0,
+      "unit": "watt_per_steradian"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "RadiantIntensity": "qkind:RadiantIntensity",
+      "watt_per_steradian": "qunit:W-PER-SR"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "RadiantIntensity"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "watt_per_steradian"
+      ],
+      "default": "watt_per_steradian"
+    }
+  },
+  "x-oold-context": {
+    "RadiantIntensity": {
+      "https://si-digital-framework.org/quantities/RAIN": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

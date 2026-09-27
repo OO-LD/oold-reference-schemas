@@ -1,0 +1,29 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MassOfElectricalPowerSupply.schema.json",
+  "x-oold-uuid": "dbbc6a4f-e070-57ac-8135-afb96caaf32d",
+  "x-oold-version": "0.1.0",
+  "title": "MassOfElectricalPowerSupply",
+  "x-oold-multilang-title": {
+    "en": "Mass Of Electrical Power Supply"
+  },
+  "allOf": [
+    {
+      "$ref": "Mass.schema.json"
+    }
+  ],
+  "@context": [
+    "Mass.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "MassOfElectricalPowerSupply": "qkind:MassOfElectricalPowerSupply"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "MassOfElectricalPowerSupply"
+      ]
+    }
+  }
+}

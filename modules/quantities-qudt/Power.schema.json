@@ -1,0 +1,135 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Power.schema.json",
+  "x-oold-uuid": "a819b531-01b8-54ad-923f-9f13dfb41794",
+  "x-oold-version": "0.1.0",
+  "title": "Power",
+  "x-oold-multilang-title": {
+    "en": "Power",
+    "de": "Leistung"
+  },
+  "description": "Power is the rate at which work is performed or energy is transmitted, or the amount of energy required or expended for a given unit of time. As a rate of change of work done or the energy of a subsystem, power is: $P = W/t$, where $P$ is power, $W$ is work and {t} is time.",
+  "examples": [
+    {
+      "type": [
+        "Power"
+      ],
+      "value": 1.0,
+      "unit": "watt"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Power": "qkind:Power",
+      "watt": "qunit:W",
+      "pico_joule_per_second": "qunit:PicoJ-PER-SEC",
+      "pico_watt": "qunit:PicoW",
+      "nano_joule_per_second": "qunit:NanoJ-PER-SEC",
+      "nano_watt": "qunit:NanoW",
+      "micro_joule_per_second": "qunit:MicroJ-PER-SEC",
+      "micro_watt": "qunit:MicroW",
+      "hour_watt_per_year": "qunit:W-HR-PER-YR",
+      "joule_per_hour": "qunit:J-PER-HR",
+      "liter_pascal_per_second": "qunit:PA-L-PER-SEC",
+      "milli_joule_per_second": "qunit:MilliJ-PER-SEC",
+      "milli_watt": "qunit:MilliW",
+      "hecto_pascal_liter_per_second": "qunit:HectoPA-L-PER-SEC",
+      "liter_milli_bar_per_second": "qunit:MilliBAR-L-PER-SEC",
+      "kilo_joule_per_hour": "qunit:KiloJ-PER-HR",
+      "joule_per_second": "qunit:J-PER-SEC",
+      "meter_cubed_pascal_per_second": "qunit:PA-M3-PER-SEC",
+      "bar_liter_per_second": "qunit:BAR-L-PER-SEC",
+      "hecto_pascal_meter_cubed_per_second": "qunit:HectoPA-M3-PER-SEC",
+      "mega_joule_per_hour": "qunit:MegaJ-PER-HR",
+      "liter_mega_pascal_per_second": "qunit:MegaPA-L-PER-SEC",
+      "kilo_joule_per_second": "qunit:KiloJ-PER-SEC",
+      "kilo_watt": "qunit:KiloW",
+      "giga_joule_per_hour": "qunit:GigaJ-PER-HR",
+      "mega_joule_per_second": "qunit:MegaJ-PER-SEC",
+      "mega_pascal_meter_cubed_per_second": "qunit:MegaPA-M3-PER-SEC",
+      "mega_watt": "qunit:MegaW",
+      "hour_tera_watt_per_year": "qunit:TeraW-HR-PER-YR",
+      "giga_joule_per_second": "qunit:GigaJ-PER-SEC",
+      "giga_watt": "qunit:GigaW",
+      "tera_joule_per_second": "qunit:TeraJ-PER-SEC",
+      "tera_watt": "qunit:TeraW",
+      "peta_joule_per_second": "qunit:PetaJ-PER-SEC",
+      "peta_watt": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/peta_watt",
+      "exa_joule_per_second": "qunit:ExaJ-PER-SEC",
+      "exa_watt": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/exa_watt"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Power"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "watt",
+        "pico_joule_per_second",
+        "pico_watt",
+        "nano_joule_per_second",
+        "nano_watt",
+        "micro_joule_per_second",
+        "micro_watt",
+        "hour_watt_per_year",
+        "joule_per_hour",
+        "liter_pascal_per_second",
+        "milli_joule_per_second",
+        "milli_watt",
+        "hecto_pascal_liter_per_second",
+        "liter_milli_bar_per_second",
+        "kilo_joule_per_hour",
+        "joule_per_second",
+        "meter_cubed_pascal_per_second",
+        "bar_liter_per_second",
+        "hecto_pascal_meter_cubed_per_second",
+        "mega_joule_per_hour",
+        "liter_mega_pascal_per_second",
+        "kilo_joule_per_second",
+        "kilo_watt",
+        "giga_joule_per_hour",
+        "mega_joule_per_second",
+        "mega_pascal_meter_cubed_per_second",
+        "mega_watt",
+        "hour_tera_watt_per_year",
+        "giga_joule_per_second",
+        "giga_watt",
+        "tera_joule_per_second",
+        "tera_watt",
+        "peta_joule_per_second",
+        "peta_watt",
+        "exa_joule_per_second",
+        "exa_watt"
+      ],
+      "default": "watt"
+    }
+  },
+  "x-oold-context": {
+    "Power": {
+      "http://dbpedia.org/resource/Power": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      },
+      "https://si-digital-framework.org/quantities/POWR": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "PositivePlaneAngle.schema.json",
+  "x-oold-uuid": "84aa24df-02cb-576a-b92f-da7f55dcac6e",
+  "x-oold-version": "0.1.0",
+  "title": "PositivePlaneAngle",
+  "x-oold-multilang-title": {
+    "en": "Positive Plane Angle"
+  },
+  "description": "A \"PositivePlaneAngle\" is a plane angle strictly greater than zero.",
+  "allOf": [
+    {
+      "$ref": "PlaneAngle.schema.json"
+    }
+  ],
+  "@context": [
+    "PlaneAngle.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "PositivePlaneAngle": "qkind:PositivePlaneAngle"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "PositivePlaneAngle"
+      ]
+    }
+  }
+}

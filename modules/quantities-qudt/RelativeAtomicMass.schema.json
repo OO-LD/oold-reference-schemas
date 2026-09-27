@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "RelativeAtomicMass.schema.json",
+  "x-oold-uuid": "1e5c0bad-db35-5cd5-91ec-727ff16e88d9",
+  "x-oold-version": "0.1.0",
+  "title": "RelativeAtomicMass",
+  "x-oold-multilang-title": {
+    "en": "Relative Atomic Mass"
+  },
+  "description": "\"Relative Atomic Mass \" is a dimensionless physical quantity, the ratio of the average mass of atoms of an element (from a given source) to 1/12 of the mass of an atom of carbon-12 (known as the unified atomic mass unit)",
+  "allOf": [
+    {
+      "$ref": "DimensionlessRatio.schema.json"
+    }
+  ],
+  "@context": [
+    "DimensionlessRatio.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "RelativeAtomicMass": "qkind:RelativeAtomicMass"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "RelativeAtomicMass"
+      ]
+    }
+  }
+}

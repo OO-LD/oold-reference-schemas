@@ -1,0 +1,29 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "IgnitionIntervalTime.schema.json",
+  "x-oold-uuid": "3323f81c-aeda-5c7f-b04f-c95cdc3e4f68",
+  "x-oold-version": "0.1.0",
+  "title": "IgnitionIntervalTime",
+  "x-oold-multilang-title": {
+    "en": "Ignition interval time"
+  },
+  "allOf": [
+    {
+      "$ref": "Time.schema.json"
+    }
+  ],
+  "@context": [
+    "Time.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "IgnitionIntervalTime": "qkind:IgnitionIntervalTime"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "IgnitionIntervalTime"
+      ]
+    }
+  }
+}

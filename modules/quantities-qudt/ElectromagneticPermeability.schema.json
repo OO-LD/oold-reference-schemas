@@ -1,0 +1,61 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ElectromagneticPermeability.schema.json",
+  "x-oold-uuid": "3f643ed2-dc23-5d8a-b1c8-23dfa357c16b",
+  "x-oold-version": "0.1.0",
+  "title": "ElectromagneticPermeability",
+  "x-oold-multilang-title": {
+    "en": "Permeability"
+  },
+  "description": "$\\textit{Permeability}$ is the degree of magnetization of a material that responds linearly to an applied magnetic field. \n  In general permeability is a tensor-valued quantity. \n  The definition given applies to an isotropic medium. \n  For an anisotropic medium permeability is a second order tensor. \n  In electromagnetism, permeability is the measure of the ability of a material to support the formation of a magnetic field within itself. \n  In other words, it is the degree of magnetization that a material obtains in response to an applied magnetic field. \n  Magnetic permeability is typically represented by the Greek letter $\\mu$. \n  The term was coined in September, 1885 by Oliver Heaviside. \n  The reciprocal of magnetic permeability is $\\textit{Magnetic Reluctivity}$.",
+  "examples": [
+    {
+      "type": [
+        "ElectromagneticPermeability"
+      ],
+      "value": 1.0,
+      "unit": "henry_per_meter"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ElectromagneticPermeability": "qkind:ElectromagneticPermeability",
+      "henry_per_meter": "qunit:H-PER-M",
+      "nano_henry_per_meter": "qunit:NanoH-PER-M",
+      "micro_henry_per_meter": "qunit:MicroH-PER-M"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ElectromagneticPermeability"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "henry_per_meter",
+        "nano_henry_per_meter",
+        "micro_henry_per_meter"
+      ],
+      "default": "henry_per_meter"
+    }
+  },
+  "x-oold-context": {
+    "ElectromagneticPermeability": {
+      "http://dbpedia.org/resource/Permeability": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

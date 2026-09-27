@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "FirstMomentOfArea.schema.json",
+  "x-oold-uuid": "0a1c176c-39c8-5b16-858e-4439af7f4e80",
+  "x-oold-version": "0.1.0",
+  "title": "FirstMomentOfArea",
+  "x-oold-multilang-title": {
+    "en": "First Moment of Area"
+  },
+  "description": "The first moment of area is the summation of area times distance to an axis. It is a measure of the distribution of the area of a shape in relationship to an axis.",
+  "allOf": [
+    {
+      "$ref": "Volume.schema.json"
+    }
+  ],
+  "@context": [
+    "Volume.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "FirstMomentOfArea": "qkind:FirstMomentOfArea"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "FirstMomentOfArea"
+      ]
+    }
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ModulusOfElasticity.schema.json",
+  "x-oold-uuid": "b341ca53-8049-5b7e-992e-1d7cf3c06ddc",
+  "x-oold-version": "0.1.0",
+  "title": "ModulusOfElasticity",
+  "x-oold-multilang-title": {
+    "en": "Modulus of Elasticity"
+  },
+  "description": "The Modulus of Elasticity is the mathematical description of an object or substance's tendency to be deformed elastically (that is, non-permanently) when a force is applied to it.",
+  "examples": [
+    {
+      "type": [
+        "ModulusOfElasticity"
+      ],
+      "value": 1.0,
+      "unit": "pascal"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ModulusOfElasticity": "qkind:ModulusOfElasticity",
+      "pascal": "qunit:PA",
+      "pico_pascal": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/pico_pascal",
+      "micro_pascal": "qunit:MicroPA",
+      "milli_pascal": "qunit:MilliPA",
+      "deca_pascal": "qunit:DecaPA",
+      "hecto_pascal": "qunit:HectoPA",
+      "kilo_pascal": "qunit:KiloPA",
+      "mega_pascal": "qunit:MegaPA",
+      "giga_pascal": "qunit:GigaPA"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ModulusOfElasticity"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "pascal",
+        "pico_pascal",
+        "micro_pascal",
+        "milli_pascal",
+        "deca_pascal",
+        "hecto_pascal",
+        "kilo_pascal",
+        "mega_pascal",
+        "giga_pascal"
+      ],
+      "default": "pascal"
+    }
+  }
+}

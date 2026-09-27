@@ -1,0 +1,69 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "DatasetOfBits.schema.json",
+  "x-oold-uuid": "26a49d82-f049-5a4d-bc42-d150cfb386a8",
+  "x-oold-version": "0.1.0",
+  "title": "DatasetOfBits",
+  "x-oold-multilang-title": {
+    "en": "Dataset of bits"
+  },
+  "examples": [
+    {
+      "type": [
+        "DatasetOfBits"
+      ],
+      "value": 1.0,
+      "unit": "barn"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "DatasetOfBits": "qkind:DatasetOfBits",
+      "barn": "qunit:BIT",
+      "kilo_barn": "qunit:KiloBIT",
+      "kibi_barn": "qunit:KibiBIT",
+      "mega_barn": "qunit:MegaBIT",
+      "mebi_barn": "qunit:MebiBIT",
+      "gigabit": "qunit:GigaBIT",
+      "gibi_barn": "qunit:GibiBIT",
+      "tera_barn": "qunit:TeraBIT",
+      "tebi_barn": "qunit:TebiBIT",
+      "pebi_barn": "qunit:PebiBIT",
+      "peta_barn": "qunit:PetaBIT",
+      "exbi_barn": "qunit:ExbiBIT",
+      "exa_barn": "qunit:ExaBIT"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "DatasetOfBits"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "barn",
+        "kilo_barn",
+        "kibi_barn",
+        "mega_barn",
+        "mebi_barn",
+        "gigabit",
+        "gibi_barn",
+        "tera_barn",
+        "tebi_barn",
+        "pebi_barn",
+        "peta_barn",
+        "exbi_barn",
+        "exa_barn"
+      ],
+      "default": "barn"
+    }
+  }
+}

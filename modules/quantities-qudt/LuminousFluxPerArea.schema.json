@@ -1,0 +1,50 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "LuminousFluxPerArea.schema.json",
+  "x-oold-uuid": "79225fde-5f80-59d1-802f-8181c06b4cfa",
+  "x-oold-version": "0.1.0",
+  "title": "LuminousFluxPerArea",
+  "x-oold-multilang-title": {
+    "en": "Luminous Flux per Area"
+  },
+  "description": "In photometry, illuminance is the total luminous flux incident on a surface, per unit area. It is a measure of how much the incident light illuminates the surface, wavelength-weighted by the luminosity function to correlate with human brightness perception. Similarly, luminous emittance is the luminous flux per unit area emitted from a surface. In SI derived units these are measured in $lux (lx)$ or $lumens per square metre$ ($cd \\cdot m^{-2}$). In the CGS system, the unit of illuminance is the $phot$, which is equal to $10,000 lux$. The $foot-candle$ is a non-metric unit of illuminance that is used in photography.",
+  "examples": [
+    {
+      "type": [
+        "LuminousFluxPerArea"
+      ],
+      "value": 1.0,
+      "unit": "lux"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "LuminousFluxPerArea": "qkind:LuminousFluxPerArea",
+      "lux": "qunit:LUX",
+      "candela_per_meter_squared": "qunit:CD-PER-M2",
+      "phot": "qunit:PHOT"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "LuminousFluxPerArea"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "lux",
+        "candela_per_meter_squared",
+        "phot"
+      ],
+      "default": "lux"
+    }
+  }
+}

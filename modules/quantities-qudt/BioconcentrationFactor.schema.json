@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "BioconcentrationFactor.schema.json",
+  "x-oold-uuid": "d13acd97-e791-5b47-8488-2bd17bf12ab8",
+  "x-oold-version": "0.1.0",
+  "title": "BioconcentrationFactor",
+  "x-oold-multilang-title": {
+    "en": "Bioconcentration Factor"
+  },
+  "description": "The bioconcentration factor is the ratio of the concentration of a chemical substance in biota over the concentration of the same chemical substance in water. It is related to the octanol-water partition coefficient.",
+  "allOf": [
+    {
+      "$ref": "DimensionlessRatio.schema.json"
+    }
+  ],
+  "@context": [
+    "DimensionlessRatio.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "BioconcentrationFactor": "qkind:BioconcentrationFactor"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "BioconcentrationFactor"
+      ]
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MolarAttenuationCoefficient.schema.json",
+  "x-oold-uuid": "56a827e5-3330-5207-9e10-f02eecf577ad",
+  "x-oold-version": "0.1.0",
+  "title": "MolarAttenuationCoefficient",
+  "x-oold-multilang-title": {
+    "en": "Molar Attenuation Coefficient"
+  },
+  "description": "\"Molar Attenuation Coefficient\" is a measurement of how strongly a chemical species or substance absorbs or scatters light at a given wavelength, per amount of substance.",
+  "examples": [
+    {
+      "type": [
+        "MolarAttenuationCoefficient"
+      ],
+      "value": 1.0,
+      "unit": "meter_squared_per_mole"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "MolarAttenuationCoefficient": "qkind:MolarAttenuationCoefficient",
+      "meter_squared_per_mole": "qunit:M2-PER-MOL"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "MolarAttenuationCoefficient"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "meter_squared_per_mole"
+      ],
+      "default": "meter_squared_per_mole"
+    }
+  }
+}

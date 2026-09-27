@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "SpatialSummationFunction.schema.json",
+  "x-oold-uuid": "f00faa77-3bc5-5f9f-b027-a0986bf4028f",
+  "x-oold-version": "0.1.0",
+  "title": "SpatialSummationFunction",
+  "x-oold-multilang-title": {
+    "en": "Spatial Summation Function"
+  },
+  "description": "\"Spatial Summation Function\" is he ability to produce a composite signal from the signals coming into the eyes from different directions.",
+  "allOf": [
+    {
+      "$ref": "Length.schema.json"
+    }
+  ],
+  "@context": [
+    "Length.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "SpatialSummationFunction": "qkind:SpatialSummationFunction"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "SpatialSummationFunction"
+      ]
+    }
+  }
+}

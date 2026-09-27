@@ -1,0 +1,48 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MagneticDipoleMoment.schema.json",
+  "x-oold-uuid": "6d902d56-7a1a-5a89-bde7-cea878179186",
+  "x-oold-version": "0.1.0",
+  "title": "MagneticDipoleMoment",
+  "x-oold-multilang-title": {
+    "en": "Magnetic Dipole Moment"
+  },
+  "description": "\"Magnetic Dipole Moment\" is the magnetic moment of a system is a measure of the magnitude and the direction of its magnetism. Magnetic moment usually refers to its Magnetic Dipole Moment, and quantifies the contribution of the system's internal magnetism to the external dipolar magnetic field produced by the system (that is, the component of the external magnetic field that is inversely proportional to the cube of the distance to the observer). The Magnetic Dipole Moment is a vector-valued quantity. For a particle or nucleus, vector quantity causing an increment $\\Delta W = -\\mu \\cdot B$ to its energy $W$ in an external magnetic field with magnetic flux density $B$.",
+  "examples": [
+    {
+      "type": [
+        "MagneticDipoleMoment"
+      ],
+      "value": 1.0,
+      "unit": "meter_weber"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "MagneticDipoleMoment": "qkind:MagneticDipoleMoment",
+      "meter_weber": "qunit:WB-M",
+      "meter_squared_newton_per_ampere": "qunit:N-M2-PER-A"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "MagneticDipoleMoment"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "meter_weber",
+        "meter_squared_newton_per_ampere"
+      ],
+      "default": "meter_weber"
+    }
+  }
+}

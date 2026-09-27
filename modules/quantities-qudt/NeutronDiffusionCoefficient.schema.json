@@ -1,0 +1,53 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "NeutronDiffusionCoefficient.schema.json",
+  "x-oold-uuid": "1bfa3148-30e8-5a74-ba42-f89688132372",
+  "x-oold-version": "0.1.0",
+  "title": "NeutronDiffusionCoefficient",
+  "x-oold-multilang-title": {
+    "en": "Diffusion coefficient",
+    "de": "Diffusionskoeffizient"
+  },
+  "description": "The \"Diffusion Coefficient\" is",
+  "examples": [
+    {
+      "type": [
+        "NeutronDiffusionCoefficient"
+      ],
+      "value": 1.0,
+      "unit": "meter_squared_per_second"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "NeutronDiffusionCoefficient": "qkind:NeutronDiffusionCoefficient",
+      "meter_squared_per_second": "qunit:M2-PER-SEC",
+      "milli_meter_squared_per_second": "qunit:MilliM2-PER-SEC",
+      "centi_meter_squared_per_second": "qunit:CentiM2-PER-SEC",
+      "liter_per_meter_per_second": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/liter_per_meter_per_second"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "NeutronDiffusionCoefficient"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "meter_squared_per_second",
+        "milli_meter_squared_per_second",
+        "centi_meter_squared_per_second",
+        "liter_per_meter_per_second"
+      ],
+      "default": "meter_squared_per_second"
+    }
+  }
+}

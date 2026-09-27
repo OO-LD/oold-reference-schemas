@@ -1,0 +1,45 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "PowerArea.schema.json",
+  "x-oold-uuid": "ce3eefbd-aa42-5a1b-90bd-544840917d6a",
+  "x-oold-version": "0.1.0",
+  "title": "PowerArea",
+  "x-oold-multilang-title": {
+    "en": "Power Area"
+  },
+  "examples": [
+    {
+      "type": [
+        "PowerArea"
+      ],
+      "value": 1.0,
+      "unit": "meter_squared_watt"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "PowerArea": "qkind:PowerArea",
+      "meter_squared_watt": "qunit:W-M2"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "PowerArea"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "meter_squared_watt"
+      ],
+      "default": "meter_squared_watt"
+    }
+  }
+}

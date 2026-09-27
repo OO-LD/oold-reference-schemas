@@ -1,0 +1,58 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "LinearIonization.schema.json",
+  "x-oold-uuid": "1199859d-9699-59cf-9609-fefc5c904183",
+  "x-oold-version": "0.1.0",
+  "title": "LinearIonization",
+  "x-oold-multilang-title": {
+    "en": "Linear Ionization"
+  },
+  "description": "\"Linear Ionization\"  is a description of how the ionization of an atom or molecule takes place. For example, an ion with a +2 charge can be created only from an ion with a +1 charge or a +3 charge. That is, the numerical charge of an atom or molecule must change sequentially, always moving from one number to an adjacent, or sequential, number. Using sequential ionization definition.",
+  "examples": [
+    {
+      "type": [
+        "LinearIonization"
+      ],
+      "value": 1.0,
+      "unit": "per_meter"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "LinearIonization": "qkind:LinearIonization",
+      "per_meter": "qunit:PER-M",
+      "per_kilo_meter": "qunit:PER-KiloM",
+      "per_centi_meter": "qunit:PER-CentiM",
+      "per_milli_meter": "qunit:PER-MilliM",
+      "per_micro_meter": "qunit:PER-MicroM",
+      "per_nano_meter": "qunit:PER-NanoM",
+      "per_pico_meter": "qunit:PER-PicoM"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "LinearIonization"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "per_meter",
+        "per_kilo_meter",
+        "per_centi_meter",
+        "per_milli_meter",
+        "per_micro_meter",
+        "per_nano_meter",
+        "per_pico_meter"
+      ],
+      "default": "per_meter"
+    }
+  }
+}

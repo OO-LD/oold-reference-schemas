@@ -1,0 +1,70 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ExchangeIntegral.schema.json",
+  "x-oold-uuid": "e45b76ea-9ca8-5972-997b-6808b31b3b92",
+  "x-oold-version": "0.1.0",
+  "title": "ExchangeIntegral",
+  "x-oold-multilang-title": {
+    "en": "Exchange Integral"
+  },
+  "description": "\"Exchange Integral\" is the constituent of the interaction energy between the spins of adjacent electrons in matter arising from the overlap of electron state functions.",
+  "examples": [
+    {
+      "type": [
+        "ExchangeIntegral"
+      ],
+      "value": 1.0,
+      "unit": "joule"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ExchangeIntegral": "qkind:ExchangeIntegral",
+      "joule": "qunit:J",
+      "atto_joule": "qunit:AttoJ",
+      "femto_joule": "qunit:FemtoJ",
+      "pico_joule": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/pico_joule",
+      "nano_joule": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/nano_joule",
+      "micro_joule": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/micro_joule",
+      "milli_joule": "qunit:MilliJ",
+      "kilo_joule": "qunit:KiloJ",
+      "mega_joule": "qunit:MegaJ",
+      "giga_joule": "qunit:GigaJ",
+      "tera_joule": "qunit:TeraJ",
+      "peta_joule": "qunit:PetaJ",
+      "exa_joule": "qunit:ExaJ"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ExchangeIntegral"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "joule",
+        "atto_joule",
+        "femto_joule",
+        "pico_joule",
+        "nano_joule",
+        "micro_joule",
+        "milli_joule",
+        "kilo_joule",
+        "mega_joule",
+        "giga_joule",
+        "tera_joule",
+        "peta_joule",
+        "exa_joule"
+      ],
+      "default": "joule"
+    }
+  }
+}

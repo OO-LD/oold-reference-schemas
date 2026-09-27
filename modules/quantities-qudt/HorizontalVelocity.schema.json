@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "HorizontalVelocity.schema.json",
+  "x-oold-uuid": "6713dc0c-e346-5125-95f2-d28e8f6bd8bb",
+  "x-oold-version": "0.1.0",
+  "title": "HorizontalVelocity",
+  "x-oold-multilang-title": {
+    "en": "Horizontal Velocity"
+  },
+  "description": "Component of a projectile's velocity, which acts parallel to the ground and does not lift the projectile in the air.",
+  "allOf": [
+    {
+      "$ref": "Velocity.schema.json"
+    }
+  ],
+  "@context": [
+    "Velocity.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "HorizontalVelocity": "qkind:HorizontalVelocity"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "HorizontalVelocity"
+      ]
+    }
+  }
+}

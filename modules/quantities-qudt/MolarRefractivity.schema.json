@@ -1,0 +1,54 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MolarRefractivity.schema.json",
+  "x-oold-uuid": "f8e46376-1065-56cf-bbf2-7ebe2af14849",
+  "x-oold-version": "0.1.0",
+  "title": "MolarRefractivity",
+  "x-oold-multilang-title": {
+    "en": "Molar Refractivity"
+  },
+  "description": "A quantity kind that is a measure of the total polarizability of a mole of substance that depends on the temperature, the index of refraction and the pressure.",
+  "examples": [
+    {
+      "type": [
+        "MolarRefractivity"
+      ],
+      "value": 1.0,
+      "unit": "meter_cubed_per_mole"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "MolarRefractivity": "qkind:MolarRefractivity",
+      "meter_cubed_per_mole": "qunit:M3-PER-MOL",
+      "centi_meter_cubed_per_mole": "qunit:CentiM3-PER-MOL",
+      "liter_per_mole": "qunit:L-PER-MOL",
+      "deci_meter_cubed_per_mole": "qunit:DeciM3-PER-MOL",
+      "liter_per_micro_mole": "qunit:L-PER-MicroMOL"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "MolarRefractivity"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "meter_cubed_per_mole",
+        "centi_meter_cubed_per_mole",
+        "liter_per_mole",
+        "deci_meter_cubed_per_mole",
+        "liter_per_micro_mole"
+      ],
+      "default": "meter_cubed_per_mole"
+    }
+  }
+}

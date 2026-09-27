@@ -1,0 +1,31 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ElectricPower.schema.json",
+  "x-oold-uuid": "06164d3f-ebb9-5a42-add7-826696cc5387",
+  "x-oold-version": "0.1.0",
+  "title": "ElectricPower",
+  "x-oold-multilang-title": {
+    "en": "Electric power",
+    "de": "Wirkleistung"
+  },
+  "description": "\"Electric Power\" is the rate at which electrical energy is transferred by an electric circuit. In the simple case of direct current circuits, electric power can be calculated as the product of the potential difference in the circuit (V) and the amount of current flowing in the circuit (I): $P = VI$, where $P$ is the power, $V$ is the potential difference, and $I$ is the current. However, in general electric power is calculated by taking the integral of the vector cross-product of the electrical and magnetic fields over a specified area.",
+  "allOf": [
+    {
+      "$ref": "Power.schema.json"
+    }
+  ],
+  "@context": [
+    "Power.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ElectricPower": "qkind:ElectricPower"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ElectricPower"
+      ]
+    }
+  }
+}

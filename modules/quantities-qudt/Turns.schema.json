@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Turns.schema.json",
+  "x-oold-uuid": "6db1146c-61d3-5070-8ae1-5f54e56df7d4",
+  "x-oold-version": "0.1.0",
+  "title": "Turns",
+  "x-oold-multilang-title": {
+    "en": "Turns"
+  },
+  "description": "\"Turns\" is the number of turns in a winding.",
+  "allOf": [
+    {
+      "$ref": "Count.schema.json"
+    }
+  ],
+  "@context": [
+    "Count.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Turns": "qkind:Turns"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Turns"
+      ]
+    }
+  }
+}

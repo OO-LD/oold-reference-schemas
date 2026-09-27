@@ -1,0 +1,71 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ElectricalConductance.schema.json",
+  "x-oold-uuid": "c33c63c6-3b20-5b29-aa15-38ce8a8a3195",
+  "x-oold-version": "0.1.0",
+  "title": "ElectricalConductance",
+  "x-oold-multilang-title": {
+    "en": "Electrical conductance"
+  },
+  "description": "measure of the capability of a material to conduct electric current, the value of which is defined as the reciprocal of the electrical resistance",
+  "examples": [
+    {
+      "type": [
+        "ElectricalConductance"
+      ],
+      "value": 1.0,
+      "unit": "siemens"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ElectricalConductance": "qkind:ElectricalConductance",
+      "siemens": "qunit:S",
+      "pico_siemens": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/pico_siemens",
+      "nano_siemens": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/nano_siemens",
+      "micro_siemens": "qunit:MicroS",
+      "milli_siemens": "qunit:MilliS",
+      "deci_siemens": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/deci_siemens",
+      "kilo_siemens": "qunit:KiloS",
+      "mega_siemens": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/mega_siemens"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ElectricalConductance"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "siemens",
+        "pico_siemens",
+        "nano_siemens",
+        "micro_siemens",
+        "milli_siemens",
+        "deci_siemens",
+        "kilo_siemens",
+        "mega_siemens"
+      ],
+      "default": "siemens"
+    }
+  },
+  "x-oold-context": {
+    "ElectricalConductance": {
+      "https://si-digital-framework.org/quantities/ELCO": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

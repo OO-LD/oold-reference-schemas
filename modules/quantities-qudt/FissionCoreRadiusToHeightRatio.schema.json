@@ -1,0 +1,29 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "FissionCoreRadiusToHeightRatio.schema.json",
+  "x-oold-uuid": "58245ed6-bf6f-515d-b056-01290b82c811",
+  "x-oold-version": "0.1.0",
+  "title": "FissionCoreRadiusToHeightRatio",
+  "x-oold-multilang-title": {
+    "en": "Fission Core Radius To Height Ratio"
+  },
+  "allOf": [
+    {
+      "$ref": "DimensionlessRatio.schema.json"
+    }
+  ],
+  "@context": [
+    "DimensionlessRatio.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "FissionCoreRadiusToHeightRatio": "qkind:FissionCoreRadiusToHeightRatio"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "FissionCoreRadiusToHeightRatio"
+      ]
+    }
+  }
+}

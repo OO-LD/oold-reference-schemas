@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "INERT-MASS.schema.json",
+  "x-oold-uuid": "a142144f-1fb3-5491-91b5-0f624bdcbb94",
+  "x-oold-version": "0.1.0",
+  "title": "INERT-MASS",
+  "x-oold-multilang-title": {
+    "en": "Inert Mass"
+  },
+  "description": "The sum of the vehicle dry mass, residual fluids and gasses, personnel and personnel provisions, and cargo.",
+  "allOf": [
+    {
+      "$ref": "Mass.schema.json"
+    }
+  ],
+  "@context": [
+    "Mass.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "INERT-MASS": "qkind:INERT-MASS"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "INERT-MASS"
+      ]
+    }
+  }
+}

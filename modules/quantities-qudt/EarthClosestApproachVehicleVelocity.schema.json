@@ -1,0 +1,29 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "EarthClosestApproachVehicleVelocity.schema.json",
+  "x-oold-uuid": "a4fc82b5-131a-5f54-85b1-cee34bb708ab",
+  "x-oold-version": "0.1.0",
+  "title": "EarthClosestApproachVehicleVelocity",
+  "x-oold-multilang-title": {
+    "en": "Earth Closest Approach Vehicle Velocity"
+  },
+  "allOf": [
+    {
+      "$ref": "VehicleVelocity.schema.json"
+    }
+  ],
+  "@context": [
+    "VehicleVelocity.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "EarthClosestApproachVehicleVelocity": "qkind:EarthClosestApproachVehicleVelocity"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "EarthClosestApproachVehicleVelocity"
+      ]
+    }
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Flux.schema.json",
+  "x-oold-uuid": "676564fe-1a34-56cd-a95a-12cec7c2ce9e",
+  "x-oold-version": "0.1.0",
+  "title": "Flux",
+  "x-oold-multilang-title": {
+    "en": "Flux"
+  },
+  "description": "Flux describes any effect that appears to pass or travel (whether it actually moves or not) through a surface or substance. [Wikipedia]",
+  "examples": [
+    {
+      "type": [
+        "Flux"
+      ],
+      "value": 1.0,
+      "unit": "per_meter_squared_per_second"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Flux": "qkind:Flux",
+      "per_meter_squared_per_second": "qunit:PER-M2-SEC",
+      "micro_meter_per_day_per_liter": "qunit:MicroM-PER-L-DAY",
+      "meter_per_day_per_liter": "qunit:M-PER-L-DAY"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Flux"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "per_meter_squared_per_second",
+        "micro_meter_per_day_per_liter",
+        "meter_per_day_per_liter"
+      ],
+      "default": "per_meter_squared_per_second"
+    }
+  }
+}

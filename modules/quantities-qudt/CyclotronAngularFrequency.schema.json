@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "CyclotronAngularFrequency.schema.json",
+  "x-oold-uuid": "5ff27cfd-df43-5372-a70b-e4040f61d68b",
+  "x-oold-version": "0.1.0",
+  "title": "CyclotronAngularFrequency",
+  "x-oold-multilang-title": {
+    "en": "Larmor Angular Frequency"
+  },
+  "description": "The \"Cyclotron Angular Frequency\" describes angular momentum vector precession about the external field axis with an angular frequency.",
+  "allOf": [
+    {
+      "$ref": "AngularFrequency.schema.json"
+    }
+  ],
+  "@context": [
+    "AngularFrequency.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "CyclotronAngularFrequency": "qkind:CyclotronAngularFrequency"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "CyclotronAngularFrequency"
+      ]
+    }
+  }
+}

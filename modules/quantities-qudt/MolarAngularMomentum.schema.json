@@ -1,0 +1,45 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MolarAngularMomentum.schema.json",
+  "x-oold-uuid": "692fa5ea-3a11-56a8-b7a6-332c9b1b1dce",
+  "x-oold-version": "0.1.0",
+  "title": "MolarAngularMomentum",
+  "x-oold-multilang-title": {
+    "en": "Molar Angular Momentum"
+  },
+  "examples": [
+    {
+      "type": [
+        "MolarAngularMomentum"
+      ],
+      "value": 1.0,
+      "unit": "joule_second_per_mole"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "MolarAngularMomentum": "qkind:MolarAngularMomentum",
+      "joule_second_per_mole": "qunit:J-SEC-PER-MOL"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "MolarAngularMomentum"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "joule_second_per_mole"
+      ],
+      "default": "joule_second_per_mole"
+    }
+  }
+}

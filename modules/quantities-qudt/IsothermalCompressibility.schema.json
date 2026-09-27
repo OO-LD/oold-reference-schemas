@@ -1,0 +1,49 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "IsothermalCompressibility.schema.json",
+  "x-oold-uuid": "3c3443b8-e139-5c6f-9867-93f1d9f7d27a",
+  "x-oold-version": "0.1.0",
+  "title": "IsothermalCompressibility",
+  "x-oold-multilang-title": {
+    "en": "Isothermal compressibility",
+    "de": "Isotherme Kompressibilität"
+  },
+  "description": "The isothermal compressibility defines the rate of change of system volume with pressure.",
+  "examples": [
+    {
+      "type": [
+        "IsothermalCompressibility"
+      ],
+      "value": 1.0,
+      "unit": "per_pascal"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "IsothermalCompressibility": "qkind:IsothermalCompressibility",
+      "per_pascal": "qunit:PER-PA",
+      "per_mega_pascal": "qunit:PER-MegaPA"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "IsothermalCompressibility"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "per_pascal",
+        "per_mega_pascal"
+      ],
+      "default": "per_pascal"
+    }
+  }
+}

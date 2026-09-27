@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "RelativeHumidity.schema.json",
+  "x-oold-uuid": "a07538ca-42b9-5d66-9752-f58ab5db755f",
+  "x-oold-version": "0.1.0",
+  "title": "RelativeHumidity",
+  "x-oold-multilang-title": {
+    "en": "Relative Humidity"
+  },
+  "description": "$\\textit{Relative Humidity}$ is the ratio of the partial pressure of water vapor in an air-water mixture to the saturated vapor pressure of water at a prescribed temperature. \n  The relative humidity of air depends not only on temperature but also on the pressure of the system of interest. \n  $$$$\n  $\\textit{Relative Humidity}$ is also referred to as $\\textit{Relative Partial Pressure}$. \n  $$$$\n  Relative partial pressure is often referred to as $RH$ and expressed in percent.",
+  "allOf": [
+    {
+      "$ref": "RelativePartialPressure.schema.json"
+    }
+  ],
+  "@context": [
+    "RelativePartialPressure.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "RelativeHumidity": "qkind:RelativeHumidity"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "RelativeHumidity"
+      ]
+    }
+  }
+}

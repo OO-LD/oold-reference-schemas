@@ -1,0 +1,41 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MolecularMass.schema.json",
+  "x-oold-uuid": "25501c44-6822-5554-9e88-1c1b7bace23b",
+  "x-oold-version": "0.1.0",
+  "title": "MolecularMass",
+  "x-oold-multilang-title": {
+    "en": "Molecular Mass"
+  },
+  "description": "The molecular mass, or molecular weight of a chemical compound is the mass of one molecule of that compound, relative to the unified atomic mass unit, u. Molecular mass should not be confused with molar mass, which is the mass of one mole of a substance.",
+  "allOf": [
+    {
+      "$ref": "Mass.schema.json"
+    }
+  ],
+  "@context": [
+    "Mass.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "MolecularMass": "qkind:MolecularMass"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "MolecularMass"
+      ]
+    }
+  },
+  "x-oold-context": {
+    "MolecularMass": {
+      "http://dbpedia.org/resource/Molecular_mass": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

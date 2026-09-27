@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "BiodegredationHalfLife.schema.json",
+  "x-oold-uuid": "053f9587-dee8-5c8b-809d-6ada48db67cd",
+  "x-oold-version": "0.1.0",
+  "title": "BiodegredationHalfLife",
+  "x-oold-multilang-title": {
+    "en": "Biodegredation Half Life"
+  },
+  "description": "A time that quantifies how long it takes to reduce a substance's concentration by 50% from any concentration point in time in a water or soil environment by either bacteria or another living organism.",
+  "allOf": [
+    {
+      "$ref": "Time.schema.json"
+    }
+  ],
+  "@context": [
+    "Time.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "BiodegredationHalfLife": "qkind:BiodegredationHalfLife"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "BiodegredationHalfLife"
+      ]
+    }
+  }
+}

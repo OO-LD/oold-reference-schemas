@@ -1,0 +1,74 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MassRatio.schema.json",
+  "x-oold-uuid": "feea4244-1eab-5f65-98b3-6cda1157f75f",
+  "x-oold-version": "0.1.0",
+  "title": "MassRatio",
+  "x-oold-multilang-title": {
+    "en": "Mass Ratio"
+  },
+  "description": "In aerospace engineering, mass ratio is a measure of the efficiency of a rocket. It describes how much more massive the vehicle is with propellant than without; that is, it is the ratio of the rocket's wet mass (vehicle plus contents plus propellant) to its dry mass (vehicle plus contents)",
+  "examples": [
+    {
+      "type": [
+        "MassRatio"
+      ],
+      "value": 1.0,
+      "unit": "g_per_g"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "MassRatio": "qkind:MassRatio",
+      "g_per_g": "qunit:GM-PER-GM",
+      "femto_gram_per_kilo_gram": "qunit:FemtoGM-PER-KiloGM",
+      "pico_gram_per_kilo_gram": "qunit:PicoGM-PER-KiloGM",
+      "nano_gram_per_kilo_gram": "qunit:NanoGM-PER-KiloGM",
+      "pico_gram_per_gram": "qunit:PicoGM-PER-GM",
+      "pico_gram_per_milli_gram": "qunit:PicoGM-PER-MilliGM",
+      "micro_gram_per_kilo_gram": "qunit:MicroGM-PER-KiloGM",
+      "milli_gram_per_kilo_gram": "qunit:MilliGM-PER-KiloGM",
+      "nano_gram_per_milli_gram": "qunit:NanoGM-PER-MilliGM",
+      "micro_gram_per_gram": "qunit:MicroGM-PER-GM",
+      "gram_per_kilo_gram": "qunit:GM-PER-KiloGM",
+      "milli_gram_per_gram": "qunit:MilliGM-PER-GM",
+      "micro_gram_per_milli_gram": "qunit:MicroGM-PER-MilliGM",
+      "gram_per_hecto_gram": "qunit:GM-PER-HectoGM",
+      "kg_per_kg": "qunit:KiloGM-PER-KiloGM"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "MassRatio"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "g_per_g",
+        "femto_gram_per_kilo_gram",
+        "pico_gram_per_kilo_gram",
+        "nano_gram_per_kilo_gram",
+        "pico_gram_per_gram",
+        "pico_gram_per_milli_gram",
+        "micro_gram_per_kilo_gram",
+        "milli_gram_per_kilo_gram",
+        "nano_gram_per_milli_gram",
+        "micro_gram_per_gram",
+        "gram_per_kilo_gram",
+        "milli_gram_per_gram",
+        "micro_gram_per_milli_gram",
+        "gram_per_hecto_gram",
+        "kg_per_kg"
+      ],
+      "default": "g_per_g"
+    }
+  }
+}

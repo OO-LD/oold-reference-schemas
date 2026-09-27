@@ -1,0 +1,46 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MagneticReluctivity.schema.json",
+  "x-oold-uuid": "4b028ad3-52e5-57d0-b10e-8ab1735f03c2",
+  "x-oold-version": "0.1.0",
+  "title": "MagneticReluctivity",
+  "x-oold-multilang-title": {
+    "en": "Magnetic Reluctivity"
+  },
+  "description": "Length Per Unit Magnetic Flux is the the resistance of a material to the establishment of a magnetic field in it. It is the reciprocal of Magnetic Permeability, the inverse of the measure of the ability of a material to support the formation of a magnetic field within itself.",
+  "examples": [
+    {
+      "type": [
+        "MagneticReluctivity"
+      ],
+      "value": 1.0,
+      "unit": "per_meter_per_tesla"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "MagneticReluctivity": "qkind:MagneticReluctivity",
+      "per_meter_per_tesla": "qunit:PER-T-M"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "MagneticReluctivity"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "per_meter_per_tesla"
+      ],
+      "default": "per_meter_per_tesla"
+    }
+  }
+}

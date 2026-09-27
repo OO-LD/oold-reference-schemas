@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ChargeNumber.schema.json",
+  "x-oold-uuid": "0accaf04-56ef-52ee-8816-1e974f36e3ba",
+  "x-oold-version": "0.1.0",
+  "title": "ChargeNumber",
+  "x-oold-multilang-title": {
+    "en": "Charge Number"
+  },
+  "description": "The \"Charge Number\", or just valance of an ion is the coefficient that, when multiplied by the elementary charge, gives the ion's charge.",
+  "allOf": [
+    {
+      "$ref": "Dimensionless.schema.json"
+    }
+  ],
+  "@context": [
+    "Dimensionless.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ChargeNumber": "qkind:ChargeNumber"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ChargeNumber"
+      ]
+    }
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MolarVolume.schema.json",
+  "x-oold-uuid": "80447c00-1b96-5c23-a3d7-5ae4dc365fa8",
+  "x-oold-version": "0.1.0",
+  "title": "MolarVolume",
+  "x-oold-multilang-title": {
+    "en": "Molar volume",
+    "de": "Molvolumen"
+  },
+  "description": "The molar volume, symbol $V_m$, is the volume occupied by one mole of a substance (chemical element or chemical compound) at a given temperature and pressure. It is equal to the molar mass ($M$) divided by the mass density ($\\rho$). It has the SI unit cubic metres per mole ($m^{1}/mol$). For ideal gases, the molar volume is given by the ideal gas equation: this is a good approximation for many common gases at standard temperature and pressure. For crystalline solids, the molar volume can be measured by X-ray crystallography.",
+  "examples": [
+    {
+      "type": [
+        "MolarVolume"
+      ],
+      "value": 1.0,
+      "unit": "meter_cubed_per_mole"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "MolarVolume": "qkind:MolarVolume",
+      "meter_cubed_per_mole": "qunit:M3-PER-MOL",
+      "centi_meter_cubed_per_mole": "qunit:CentiM3-PER-MOL",
+      "liter_per_mole": "qunit:L-PER-MOL",
+      "deci_meter_cubed_per_mole": "qunit:DeciM3-PER-MOL",
+      "liter_per_micro_mole": "qunit:L-PER-MicroMOL"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "MolarVolume"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "meter_cubed_per_mole",
+        "centi_meter_cubed_per_mole",
+        "liter_per_mole",
+        "deci_meter_cubed_per_mole",
+        "liter_per_micro_mole"
+      ],
+      "default": "meter_cubed_per_mole"
+    }
+  },
+  "x-oold-context": {
+    "MolarVolume": {
+      "http://dbpedia.org/resource/Molar_volume": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

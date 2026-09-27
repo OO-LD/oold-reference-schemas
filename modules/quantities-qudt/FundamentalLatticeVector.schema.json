@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "FundamentalLatticeVector.schema.json",
+  "x-oold-uuid": "cf6c6cff-a49b-53ff-80cf-d4cb418b3be5",
+  "x-oold-version": "0.1.0",
+  "title": "FundamentalLatticeVector",
+  "x-oold-multilang-title": {
+    "en": "Fundamental Lattice vector"
+  },
+  "description": "\"Fundamental Lattice vector\" are fundamental translation vectors for the crystal lattice.",
+  "allOf": [
+    {
+      "$ref": "LatticeVector.schema.json"
+    }
+  ],
+  "@context": [
+    "LatticeVector.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "FundamentalLatticeVector": "qkind:FundamentalLatticeVector"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "FundamentalLatticeVector"
+      ]
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "LuminousEfficacy.schema.json",
+  "x-oold-uuid": "64253eb9-2383-544f-9b75-71c7e07cff76",
+  "x-oold-version": "0.1.0",
+  "title": "LuminousEfficacy",
+  "x-oold-multilang-title": {
+    "en": "Luminous Efficacy"
+  },
+  "description": "Luminous Efficacy is the ratio of luminous flux (in lumens) to power (usually measured in watts). Depending on context, the power can be either the radiant flux of the source's output, or it can be the total electric power consumed by the source.",
+  "examples": [
+    {
+      "type": [
+        "LuminousEfficacy"
+      ],
+      "value": 1.0,
+      "unit": "lumen_per_watt"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "LuminousEfficacy": "qkind:LuminousEfficacy",
+      "lumen_per_watt": "qunit:LM-PER-W"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "LuminousEfficacy"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "lumen_per_watt"
+      ],
+      "default": "lumen_per_watt"
+    }
+  }
+}

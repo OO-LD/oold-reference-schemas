@@ -1,0 +1,52 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ThermalDiffusionRatioCoefficient.schema.json",
+  "x-oold-uuid": "e86c6ab0-958a-515d-a6b3-7bbec5a4c8e6",
+  "x-oold-version": "0.1.0",
+  "title": "ThermalDiffusionRatioCoefficient",
+  "x-oold-multilang-title": {
+    "en": "Thermal Diffusion Coefficient"
+  },
+  "description": "The \"Thermal Diffusion Coefficient\" is .",
+  "examples": [
+    {
+      "type": [
+        "ThermalDiffusionRatioCoefficient"
+      ],
+      "value": 1.0,
+      "unit": "meter_squared_per_second"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ThermalDiffusionRatioCoefficient": "qkind:ThermalDiffusionRatioCoefficient",
+      "meter_squared_per_second": "qunit:M2-PER-SEC",
+      "milli_meter_squared_per_second": "qunit:MilliM2-PER-SEC",
+      "centi_meter_squared_per_second": "qunit:CentiM2-PER-SEC",
+      "liter_per_meter_per_second": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/liter_per_meter_per_second"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ThermalDiffusionRatioCoefficient"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "meter_squared_per_second",
+        "milli_meter_squared_per_second",
+        "centi_meter_squared_per_second",
+        "liter_per_meter_per_second"
+      ],
+      "default": "meter_squared_per_second"
+    }
+  }
+}

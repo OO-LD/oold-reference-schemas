@@ -1,0 +1,29 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ExhaustStreamPower.schema.json",
+  "x-oold-uuid": "dab6db78-5362-5c7e-a445-9c243af7cfbf",
+  "x-oold-version": "0.1.0",
+  "title": "ExhaustStreamPower",
+  "x-oold-multilang-title": {
+    "en": "Exhaust Stream Power"
+  },
+  "allOf": [
+    {
+      "$ref": "Power.schema.json"
+    }
+  ],
+  "@context": [
+    "Power.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ExhaustStreamPower": "qkind:ExhaustStreamPower"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ExhaustStreamPower"
+      ]
+    }
+  }
+}

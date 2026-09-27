@@ -1,0 +1,47 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "CombinedNonEvaporativeHeatTransferCoefficient.schema.json",
+  "x-oold-uuid": "a4e5b512-56a6-5c60-be79-3f4224e41487",
+  "x-oold-version": "0.1.0",
+  "title": "CombinedNonEvaporativeHeatTransferCoefficient",
+  "x-oold-multilang-title": {
+    "en": "Combined Non Evaporative Heat Transfer Coefficient"
+  },
+  "examples": [
+    {
+      "type": [
+        "CombinedNonEvaporativeHeatTransferCoefficient"
+      ],
+      "value": 1.0,
+      "unit": "watt_per_kelvin_per_meter_squared"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "CombinedNonEvaporativeHeatTransferCoefficient": "qkind:CombinedNonEvaporativeHeatTransferCoefficient",
+      "watt_per_kelvin_per_meter_squared": "qunit:W-PER-M2-K",
+      "kilo_watt_per_kelvin_per_meter_squared": "qunit:KiloW-PER-M2-K"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "CombinedNonEvaporativeHeatTransferCoefficient"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "watt_per_kelvin_per_meter_squared",
+        "kilo_watt_per_kelvin_per_meter_squared"
+      ],
+      "default": "watt_per_kelvin_per_meter_squared"
+    }
+  }
+}

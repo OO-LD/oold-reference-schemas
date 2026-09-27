@@ -1,0 +1,41 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "SignalStrength.schema.json",
+  "x-oold-uuid": "2b4e65f2-6005-5114-87ca-6d47b859e932",
+  "x-oold-version": "0.1.0",
+  "title": "SignalStrength",
+  "x-oold-multilang-title": {
+    "en": "Signal Strength"
+  },
+  "description": "In telecommunications, particularly in radio, signal strength refers to the magnitude of the electric field at a reference point that is a significant distance from the transmitting antenna. It may also be referred to as received signal level or field strength. Typically, it is expressed in voltage per length or signal power received by a reference antenna. High-powered transmissions, such as those used in broadcasting, are expressed in dB-millivolts per metre (dBmV/m).",
+  "allOf": [
+    {
+      "$ref": "ElectricField.schema.json"
+    }
+  ],
+  "@context": [
+    "ElectricField.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "SignalStrength": "qkind:SignalStrength"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "SignalStrength"
+      ]
+    }
+  },
+  "x-oold-context": {
+    "SignalStrength": {
+      "http://dbpedia.org/resource/Signal_strength": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

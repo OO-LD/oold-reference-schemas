@@ -1,0 +1,46 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "RadianceFactor.schema.json",
+  "x-oold-uuid": "345c17d8-0635-5007-a59e-9fc5146df63b",
+  "x-oold-version": "0.1.0",
+  "title": "RadianceFactor",
+  "x-oold-multilang-title": {
+    "en": "Radiance Factor"
+  },
+  "description": "Radiance Factor is the ratio of the radiance of the surface element in the given direction to that of a perfect reflecting or transmitting diffuser identically irradiated unit.",
+  "examples": [
+    {
+      "type": [
+        "RadianceFactor"
+      ],
+      "value": 1.0,
+      "unit": "unitless"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "RadianceFactor": "qkind:RadianceFactor",
+      "unitless": "qunit:UNITLESS"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "RadianceFactor"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "unitless"
+      ],
+      "default": "unitless"
+    }
+  }
+}

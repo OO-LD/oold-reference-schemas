@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Reflectance.schema.json",
+  "x-oold-uuid": "e5e3a7fe-15ab-5bea-a32d-b082ed17e1d5",
+  "x-oold-version": "0.1.0",
+  "title": "Reflectance",
+  "x-oold-multilang-title": {
+    "en": "Reflectance"
+  },
+  "description": "Reflectance generally refers to the fraction of incident power that is reflected at an interface, while the term \"reflection coefficient\" is used for the fraction of electric field reflected. Reflectance is always a real number between zero and 1.0.",
+  "allOf": [
+    {
+      "$ref": "DimensionlessRatio.schema.json"
+    }
+  ],
+  "@context": [
+    "DimensionlessRatio.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Reflectance": "qkind:Reflectance"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Reflectance"
+      ]
+    }
+  }
+}

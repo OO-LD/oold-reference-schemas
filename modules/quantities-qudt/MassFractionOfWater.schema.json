@@ -1,0 +1,46 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MassFractionOfWater.schema.json",
+  "x-oold-uuid": "61abf479-e793-5d3c-9410-10403c265c05",
+  "x-oold-version": "0.1.0",
+  "title": "MassFractionOfWater",
+  "x-oold-multilang-title": {
+    "en": "Mass Fraction of Water"
+  },
+  "description": "Mass Fraction of Water is one of a number of Concentration quantities defined by ISO 80000.",
+  "examples": [
+    {
+      "type": [
+        "MassFractionOfWater"
+      ],
+      "value": 1.0,
+      "unit": "unitless"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "MassFractionOfWater": "qkind:MassFractionOfWater",
+      "unitless": "qunit:UNITLESS"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "MassFractionOfWater"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "unitless"
+      ],
+      "default": "unitless"
+    }
+  }
+}

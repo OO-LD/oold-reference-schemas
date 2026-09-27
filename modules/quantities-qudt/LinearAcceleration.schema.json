@@ -1,0 +1,40 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "LinearAcceleration.schema.json",
+  "x-oold-uuid": "a2a2e32d-40b6-5c90-b0cd-1b4af5e0c6d2",
+  "x-oold-version": "0.1.0",
+  "title": "LinearAcceleration",
+  "x-oold-multilang-title": {
+    "en": "Linear Acceleration"
+  },
+  "allOf": [
+    {
+      "$ref": "Acceleration.schema.json"
+    }
+  ],
+  "@context": [
+    "Acceleration.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "LinearAcceleration": "qkind:LinearAcceleration"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "LinearAcceleration"
+      ]
+    }
+  },
+  "x-oold-context": {
+    "LinearAcceleration": {
+      "http://dbpedia.org/resource/Acceleration": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

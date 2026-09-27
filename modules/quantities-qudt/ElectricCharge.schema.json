@@ -1,0 +1,114 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ElectricCharge.schema.json",
+  "x-oold-uuid": "b7248b1f-0445-5ec9-9e6f-f6e6b472d8de",
+  "x-oold-version": "0.1.0",
+  "title": "ElectricCharge",
+  "x-oold-multilang-title": {
+    "en": "Electric charge",
+    "de": "Elektrische Ladung"
+  },
+  "description": "\"Electric Charge\" is a fundamental conserved property of some subatomic particles, which determines their electromagnetic interaction. Electrically charged matter is influenced by, and produces, electromagnetic fields. The electric charge on a body may be positive or negative. Two positively charged bodies experience a mutual repulsive force, as do two negatively charged bodies. A positively charged body and a negatively charged body experience an attractive force. Electric charge is carried by discrete particles and can be positive or negative. The sign convention is such that the elementary electric charge $e$, that is, the charge of the proton, is positive. The SI derived unit of electric charge is the coulomb.",
+  "examples": [
+    {
+      "type": [
+        "ElectricCharge"
+      ],
+      "value": 1.0,
+      "unit": "coulomb"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ElectricCharge": "qkind:ElectricCharge",
+      "coulomb": "qunit:C",
+      "yocto_coulomb": "qunit:YoctoC",
+      "zepto_coulomb": "qunit:ZeptoC",
+      "elementary_charge": "qunit:ElementaryCharge",
+      "atto_coulomb": "qunit:AttoC",
+      "femto_coulomb": "qunit:FemtoC",
+      "pico_coulomb": "qunit:PicoC",
+      "statcoulomb": "qunit:C_Stat",
+      "nano_coulomb": "qunit:NanoC",
+      "micro_coulomb": "qunit:MicroC",
+      "milli_ampere_second": "qunit:MilliA-SEC",
+      "milli_coulomb": "qunit:MilliC",
+      "centi_coulomb": "qunit:CentiC",
+      "deci_coulomb": "qunit:DeciC",
+      "ampere_second": "qunit:A-SEC",
+      "hour_milli_ampere": "qunit:MilliA-HR",
+      "abcoulomb": "qunit:C_Ab",
+      "deca_coulomb": "qunit:DecaC",
+      "hecto_coulomb": "qunit:HectoC",
+      "kilo_coulomb": "qunit:KiloC",
+      "ampere_hour": "qunit:A-HR",
+      "mega_coulomb": "qunit:MegaC",
+      "hour_kilo_ampere": "qunit:KiloA-HR",
+      "giga_coulomb": "qunit:GigaC",
+      "tera_coulomb": "qunit:TeraC",
+      "peta_coulomb": "qunit:PetaC",
+      "exa_coulomb": "qunit:ExaC",
+      "zetta_coulomb": "qunit:ZettaC",
+      "yotta_coulomb": "qunit:YottaC"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ElectricCharge"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "coulomb",
+        "yocto_coulomb",
+        "zepto_coulomb",
+        "elementary_charge",
+        "atto_coulomb",
+        "femto_coulomb",
+        "pico_coulomb",
+        "statcoulomb",
+        "nano_coulomb",
+        "micro_coulomb",
+        "milli_ampere_second",
+        "milli_coulomb",
+        "centi_coulomb",
+        "deci_coulomb",
+        "ampere_second",
+        "hour_milli_ampere",
+        "abcoulomb",
+        "deca_coulomb",
+        "hecto_coulomb",
+        "kilo_coulomb",
+        "ampere_hour",
+        "mega_coulomb",
+        "hour_kilo_ampere",
+        "giga_coulomb",
+        "tera_coulomb",
+        "peta_coulomb",
+        "exa_coulomb",
+        "zetta_coulomb",
+        "yotta_coulomb"
+      ],
+      "default": "coulomb"
+    }
+  },
+  "x-oold-context": {
+    "ElectricCharge": {
+      "https://si-digital-framework.org/quantities/ELCH": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

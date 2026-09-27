@@ -1,0 +1,29 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "FissionFuelUtilizationFactor.schema.json",
+  "x-oold-uuid": "c11d565a-6b49-50c9-be08-c3ba7b9a106c",
+  "x-oold-version": "0.1.0",
+  "title": "FissionFuelUtilizationFactor",
+  "x-oold-multilang-title": {
+    "en": "Fission Fuel Utilization Factor"
+  },
+  "allOf": [
+    {
+      "$ref": "Dimensionless.schema.json"
+    }
+  ],
+  "@context": [
+    "Dimensionless.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "FissionFuelUtilizationFactor": "qkind:FissionFuelUtilizationFactor"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "FissionFuelUtilizationFactor"
+      ]
+    }
+  }
+}

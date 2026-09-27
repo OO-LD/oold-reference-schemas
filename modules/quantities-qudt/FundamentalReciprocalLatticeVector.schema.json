@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "FundamentalReciprocalLatticeVector.schema.json",
+  "x-oold-uuid": "db0431d4-d0ea-5820-a783-8ea18c8e04af",
+  "x-oold-version": "0.1.0",
+  "title": "FundamentalReciprocalLatticeVector",
+  "x-oold-multilang-title": {
+    "en": "Fundamental Reciprocal Lattice Vector"
+  },
+  "description": "\"Fundamental Reciprocal Lattice Vector\" are fundamental, or primary, translation vectors the reciprocal lattice.",
+  "allOf": [
+    {
+      "$ref": "AngularReciprocalLatticeVector.schema.json"
+    }
+  ],
+  "@context": [
+    "AngularReciprocalLatticeVector.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "FundamentalReciprocalLatticeVector": "qkind:FundamentalReciprocalLatticeVector"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "FundamentalReciprocalLatticeVector"
+      ]
+    }
+  }
+}

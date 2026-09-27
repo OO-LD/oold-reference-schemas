@@ -1,0 +1,60 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ElectricChargeVolumeDensity.schema.json",
+  "x-oold-uuid": "ef9be82e-8329-5e35-a630-f2703fd7595d",
+  "x-oold-version": "0.1.0",
+  "title": "ElectricChargeVolumeDensity",
+  "x-oold-multilang-title": {
+    "en": "Electric Charge Volume Density"
+  },
+  "description": "In electromagnetism, charge density is a measure of electric charge per unit volume of space, in one, two or three dimensions. More specifically: the linear, surface, or volume charge density is the amount of electric charge per unit length, surface area, or volume, respectively. The respective SI units are $C \\cdot m^{-1}$, $C \\cdot m^{-2}$ or $C \\cdot m^{-3}$.",
+  "examples": [
+    {
+      "type": [
+        "ElectricChargeVolumeDensity"
+      ],
+      "value": 1.0,
+      "unit": "coulomb_per_meter_cubed"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ElectricChargeVolumeDensity": "qkind:ElectricChargeVolumeDensity",
+      "coulomb_per_meter_cubed": "qunit:C-PER-M3",
+      "micro_coulomb_per_meter_cubed": "qunit:MicroC-PER-M3",
+      "milli_coulomb_per_meter_cubed": "qunit:MilliC-PER-M3",
+      "kilo_coulomb_per_meter_cubed": "qunit:KiloC-PER-M3",
+      "coulomb_per_centi_meter_cubed": "qunit:C-PER-CentiM3",
+      "mega_coulomb_per_meter_cubed": "qunit:MegaC-PER-M3",
+      "coulomb_per_milli_meter_cubed": "qunit:C-PER-MilliM3",
+      "giga_coulomb_per_meter_cubed": "qunit:GigaC-PER-M3"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ElectricChargeVolumeDensity"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "coulomb_per_meter_cubed",
+        "micro_coulomb_per_meter_cubed",
+        "milli_coulomb_per_meter_cubed",
+        "kilo_coulomb_per_meter_cubed",
+        "coulomb_per_centi_meter_cubed",
+        "mega_coulomb_per_meter_cubed",
+        "coulomb_per_milli_meter_cubed",
+        "giga_coulomb_per_meter_cubed"
+      ],
+      "default": "coulomb_per_meter_cubed"
+    }
+  }
+}

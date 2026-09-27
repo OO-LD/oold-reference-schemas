@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ConductionSpeed.schema.json",
+  "x-oold-uuid": "2a1c80f8-e8fb-5867-b9e1-38bbaf83d105",
+  "x-oold-version": "0.1.0",
+  "title": "ConductionSpeed",
+  "x-oold-multilang-title": {
+    "en": "Conduction Speed"
+  },
+  "description": "\"Conduction Speed\" is the speed of impulses in nerve fibers.",
+  "allOf": [
+    {
+      "$ref": "Speed.schema.json"
+    }
+  ],
+  "@context": [
+    "Speed.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ConductionSpeed": "qkind:ConductionSpeed"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ConductionSpeed"
+      ]
+    }
+  }
+}

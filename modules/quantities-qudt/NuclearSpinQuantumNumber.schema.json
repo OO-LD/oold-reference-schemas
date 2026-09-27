@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "NuclearSpinQuantumNumber.schema.json",
+  "x-oold-uuid": "a2849571-97dc-5db1-a46e-9efca2d2a645",
+  "x-oold-version": "0.1.0",
+  "title": "NuclearSpinQuantumNumber",
+  "x-oold-multilang-title": {
+    "en": "Nuclear Spin Quantum Number"
+  },
+  "description": "The \"Spin Quantum Number\"  describes the spin (intrinsic angular momentum) of the electron within that orbital, and gives the projection of the spin angular momentum S along the specified axis",
+  "allOf": [
+    {
+      "$ref": "SpinQuantumNumber.schema.json"
+    }
+  ],
+  "@context": [
+    "SpinQuantumNumber.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "NuclearSpinQuantumNumber": "qkind:NuclearSpinQuantumNumber"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "NuclearSpinQuantumNumber"
+      ]
+    }
+  }
+}

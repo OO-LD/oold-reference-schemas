@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "PhaseSpeedOfSound.schema.json",
+  "x-oold-uuid": "fb720501-803a-5bd1-8a40-2d9ef0353000",
+  "x-oold-version": "0.1.0",
+  "title": "PhaseSpeedOfSound",
+  "x-oold-multilang-title": {
+    "en": "Phase speed of sound"
+  },
+  "description": "In a dispersive medium sound speed is a function of sound frequency, through the dispersion relation. The spatial and temporal distribution of a propagating disturbance will continually change. Each frequency component propagates at its own Phase Velocity of Sound.",
+  "allOf": [
+    {
+      "$ref": "SpeedOfSound.schema.json"
+    }
+  ],
+  "@context": [
+    "SpeedOfSound.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "PhaseSpeedOfSound": "qkind:PhaseSpeedOfSound"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "PhaseSpeedOfSound"
+      ]
+    }
+  }
+}

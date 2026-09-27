@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "AmbientPressure.schema.json",
+  "x-oold-uuid": "2db9d2e2-4c98-5062-b5f7-64ebc6e146fb",
+  "x-oold-version": "0.1.0",
+  "title": "AmbientPressure",
+  "x-oold-multilang-title": {
+    "en": "Ambient Pressure"
+  },
+  "description": "The ambient pressure on an object is the pressure of the surrounding medium, such as a gas or liquid, which comes into contact with the object.\nThe SI unit of pressure is the pascal (Pa), which is a very small unit relative to atmospheric pressure on Earth, so kilopascals ($kPa$) are more commonly used in this context.",
+  "allOf": [
+    {
+      "$ref": "Pressure.schema.json"
+    }
+  ],
+  "@context": [
+    "Pressure.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "AmbientPressure": "qkind:AmbientPressure"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "AmbientPressure"
+      ]
+    }
+  }
+}

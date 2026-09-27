@@ -1,0 +1,47 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "PowerFactor.schema.json",
+  "x-oold-uuid": "22f7dff8-a261-5f63-93ed-23ec2ac8c95c",
+  "x-oold-version": "0.1.0",
+  "title": "PowerFactor",
+  "x-oold-multilang-title": {
+    "en": "Power factor",
+    "de": "Leistungsfaktor"
+  },
+  "description": "\"Power Factor\", under periodic conditions, is the ratio of the absolute value of the active power $P$ to the apparent power $S$.",
+  "examples": [
+    {
+      "type": [
+        "PowerFactor"
+      ],
+      "value": 1.0,
+      "unit": "unitless"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "PowerFactor": "qkind:PowerFactor",
+      "unitless": "qunit:UNITLESS"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "PowerFactor"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "unitless"
+      ],
+      "default": "unitless"
+    }
+  }
+}

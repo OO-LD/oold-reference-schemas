@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "PrincipalQuantumNumber.schema.json",
+  "x-oold-uuid": "83c66986-8aad-5ac5-a74c-c377907c78d3",
+  "x-oold-version": "0.1.0",
+  "title": "PrincipalQuantumNumber",
+  "x-oold-multilang-title": {
+    "en": "Principal Quantum Number"
+  },
+  "description": "The \"Principal Quantum Number\" describes the electron shell, or energy level, of an atom. The value of $n$ ranges from 1 to the shell containing the outermost electron of that atom.",
+  "allOf": [
+    {
+      "$ref": "QuantumNumber.schema.json"
+    }
+  ],
+  "@context": [
+    "QuantumNumber.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "PrincipalQuantumNumber": "qkind:PrincipalQuantumNumber"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "PrincipalQuantumNumber"
+      ]
+    }
+  }
+}

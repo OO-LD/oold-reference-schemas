@@ -1,0 +1,46 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "OsmoticCoefficient.schema.json",
+  "x-oold-uuid": "e6037d9f-43ba-5a36-80d5-6b8d7bfc3268",
+  "x-oold-version": "0.1.0",
+  "title": "OsmoticCoefficient",
+  "x-oold-multilang-title": {
+    "en": "Osmotic Coefficient"
+  },
+  "description": "The \"Osmotic Coefficient\" is a quantity which characterises the deviation of a solvent from ideal behavior.",
+  "examples": [
+    {
+      "type": [
+        "OsmoticCoefficient"
+      ],
+      "value": 1.0,
+      "unit": "unitless"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "OsmoticCoefficient": "qkind:OsmoticCoefficient",
+      "unitless": "qunit:UNITLESS"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "OsmoticCoefficient"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "unitless"
+      ],
+      "default": "unitless"
+    }
+  }
+}

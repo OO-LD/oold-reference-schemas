@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Transmittance.schema.json",
+  "x-oold-uuid": "908b79ae-c173-5ed1-b08f-b2947512ee6d",
+  "x-oold-version": "0.1.0",
+  "title": "Transmittance",
+  "x-oold-multilang-title": {
+    "en": "Transmittance"
+  },
+  "description": "Transmittance is the fraction of incident light (electromagnetic radiation) at a specified wavelength that passes through a sample.",
+  "allOf": [
+    {
+      "$ref": "DimensionlessRatio.schema.json"
+    }
+  ],
+  "@context": [
+    "DimensionlessRatio.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Transmittance": "qkind:Transmittance"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Transmittance"
+      ]
+    }
+  }
+}

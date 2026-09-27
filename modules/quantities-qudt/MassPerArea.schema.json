@@ -1,0 +1,84 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MassPerArea.schema.json",
+  "x-oold-uuid": "b9612bfb-909c-5eab-9e57-e8d8a6c86082",
+  "x-oold-version": "0.1.0",
+  "title": "MassPerArea",
+  "x-oold-multilang-title": {
+    "en": "Mass per Area"
+  },
+  "description": "The area density (also known as areal density, surface density, or superficial density) of a two-dimensional object is calculated as the mass per unit area. The SI derived unit is: kilogram per square metre  ($kg \\cdot m^{-2}$).",
+  "examples": [
+    {
+      "type": [
+        "MassPerArea"
+      ],
+      "value": 1.0,
+      "unit": "kilo_gram_per_meter_squared"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "MassPerArea": "qkind:MassPerArea",
+      "kilo_gram_per_meter_squared": "qunit:KiloGM-PER-M2",
+      "milli_gram_per_hectare": "qunit:MilliGM-PER-HA",
+      "nano_gram_per_centi_meter_squared": "qunit:NanoGM-PER-CentiM2",
+      "gram_per_hectare": "qunit:GM-PER-HA",
+      "kilo_gram_per_kilo_meter_squared": "qunit:KiloGM-PER-KiloM2",
+      "milli_gram_per_meter_squared": "qunit:MilliGM-PER-M2",
+      "micro_gram_per_inch_squared": "qunit:MicroGM-PER-IN2",
+      "micro_gram_per_centi_meter_squared": "qunit:MicroGM-PER-CentiM2",
+      "kilo_gram_per_hectare": "qunit:KiloGM-PER-HA",
+      "milli_gram_per_deci_meter_squared": "qunit:MilliGM-PER-DeciM2",
+      "gram_per_meter_squared": "qunit:GM-PER-M2",
+      "milli_gram_per_centi_meter_squared": "qunit:MilliGM-PER-CentiM2",
+      "gram_per_foot_squared": "qunit:GM-PER-FT2",
+      "mega_gram_per_hectare": "qunit:MegaGM-PER-HA",
+      "metric_ton_per_hectare": "qunit:TONNE-PER-HA",
+      "gram_per_inch_squared": "qunit:GM-PER-IN2",
+      "gram_per_centi_meter_squared": "qunit:GM-PER-CentiM2",
+      "kilo_gram_per_foot_squared": "qunit:KiloGM-PER-FT2",
+      "gram_per_milli_meter_squared": "qunit:GM-PER-MilliM2",
+      "kilo_gram_per_centi_meter_squared": "qunit:KiloGM-PER-CentiM2"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "MassPerArea"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "kilo_gram_per_meter_squared",
+        "milli_gram_per_hectare",
+        "nano_gram_per_centi_meter_squared",
+        "gram_per_hectare",
+        "kilo_gram_per_kilo_meter_squared",
+        "milli_gram_per_meter_squared",
+        "micro_gram_per_inch_squared",
+        "micro_gram_per_centi_meter_squared",
+        "kilo_gram_per_hectare",
+        "milli_gram_per_deci_meter_squared",
+        "gram_per_meter_squared",
+        "milli_gram_per_centi_meter_squared",
+        "gram_per_foot_squared",
+        "mega_gram_per_hectare",
+        "metric_ton_per_hectare",
+        "gram_per_inch_squared",
+        "gram_per_centi_meter_squared",
+        "kilo_gram_per_foot_squared",
+        "gram_per_milli_meter_squared",
+        "kilo_gram_per_centi_meter_squared"
+      ],
+      "default": "kilo_gram_per_meter_squared"
+    }
+  }
+}

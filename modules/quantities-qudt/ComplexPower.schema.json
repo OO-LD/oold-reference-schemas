@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ComplexPower.schema.json",
+  "x-oold-uuid": "2e156bd3-451d-56e9-aa27-d9604de376f1",
+  "x-oold-version": "0.1.0",
+  "title": "ComplexPower",
+  "x-oold-multilang-title": {
+    "en": "Complex Power"
+  },
+  "description": "$\\textit{Complex Power}$, under sinusoidal conditions,\n   is the product of the phasor $\\mathbf{U}$ representing the voltage between the terminals of a linear two-terminal element,\n   or two-terminal circuit and the complex conjugate of the phasor $I$ representing the electric current in the element or circuit.",
+  "allOf": [
+    {
+      "$ref": "ElectricPower.schema.json"
+    }
+  ],
+  "@context": [
+    "ElectricPower.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ComplexPower": "qkind:ComplexPower"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ComplexPower"
+      ]
+    }
+  }
+}

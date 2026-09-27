@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "FishBiotransformationHalfLife.schema.json",
+  "x-oold-uuid": "f75817e6-c9af-5ba9-b9d3-ed582403f82c",
+  "x-oold-version": "0.1.0",
+  "title": "FishBiotransformationHalfLife",
+  "x-oold-multilang-title": {
+    "en": "Fish Biotransformation Half Life"
+  },
+  "description": "A time that quantifies how long its takes to transform 50% of a substance's total concentration from any concentration point in time in fish via whole body metabolic reactions.",
+  "allOf": [
+    {
+      "$ref": "Time.schema.json"
+    }
+  ],
+  "@context": [
+    "Time.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "FishBiotransformationHalfLife": "qkind:FishBiotransformationHalfLife"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "FishBiotransformationHalfLife"
+      ]
+    }
+  }
+}

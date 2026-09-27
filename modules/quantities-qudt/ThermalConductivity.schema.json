@@ -1,0 +1,68 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ThermalConductivity.schema.json",
+  "x-oold-uuid": "60f1d4c9-0b5d-5f15-a5c3-8d7741ba689e",
+  "x-oold-version": "0.1.0",
+  "title": "ThermalConductivity",
+  "x-oold-multilang-title": {
+    "en": "Thermal Conductivity"
+  },
+  "description": "In physics, thermal conductivity, $k$ (also denoted as $\\lambda$), is the property of a material's ability to conduct heat. It appears primarily in Fourier's Law for heat conduction and is the areic heat flow rate divided by temperature gradient.",
+  "examples": [
+    {
+      "type": [
+        "ThermalConductivity"
+      ],
+      "value": 1.0,
+      "unit": "watt_per_kelvin_per_meter"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ThermalConductivity": "qkind:ThermalConductivity",
+      "watt_per_kelvin_per_meter": "qunit:W-PER-M-K",
+      "milli_watt_per_kelvin_per_meter": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/milli_watt_per_kelvin_per_meter",
+      "kilo_watt_per_kelvin_per_meter": "qunit:KiloW-PER-M-K"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ThermalConductivity"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "watt_per_kelvin_per_meter",
+        "milli_watt_per_kelvin_per_meter",
+        "kilo_watt_per_kelvin_per_meter"
+      ],
+      "default": "watt_per_kelvin_per_meter"
+    }
+  },
+  "x-oold-context": {
+    "ThermalConductivity": {
+      "http://dbpedia.org/resource/Thermal_conductivity": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      },
+      "https://si-digital-framework.org/quantities/TCON": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Permittivity.schema.json",
+  "x-oold-uuid": "a2c1b304-0a2b-51e7-a8eb-fa4524755702",
+  "x-oold-version": "0.1.0",
+  "title": "Permittivity",
+  "x-oold-multilang-title": {
+    "en": "Permittivity"
+  },
+  "description": "\"Permittivity\" is a physical quantity that describes how an electric field affects, and is affected by a dielectric medium, and is determined by the ability of a material to polarize in response to the field, and thereby reduce the total electric field inside the material.  Permittivity is often a scalar valued quantity, however in the general case it is tensor-valued.",
+  "examples": [
+    {
+      "type": [
+        "Permittivity"
+      ],
+      "value": 1.0,
+      "unit": "farad_per_meter"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Permittivity": "qkind:Permittivity",
+      "farad_per_meter": "qunit:FARAD-PER-M",
+      "pico_farad_per_meter": "qunit:PicoFARAD-PER-M",
+      "nano_farad_per_meter": "qunit:NanoFARAD-PER-M",
+      "micro_farad_per_kilo_meter": "qunit:MicroFARAD-PER-KiloM",
+      "micro_farad_per_meter": "qunit:MicroFARAD-PER-M",
+      "farad_per_kilo_meter": "qunit:FARAD-PER-KiloM"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Permittivity"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "farad_per_meter",
+        "pico_farad_per_meter",
+        "nano_farad_per_meter",
+        "micro_farad_per_kilo_meter",
+        "micro_farad_per_meter",
+        "farad_per_kilo_meter"
+      ],
+      "default": "farad_per_meter"
+    }
+  },
+  "x-oold-context": {
+    "Permittivity": {
+      "http://dbpedia.org/resource/Permittivity": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      },
+      "https://si-digital-framework.org/quantities/PRMI": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

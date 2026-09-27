@@ -1,0 +1,49 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "SpecificAcousticImpedance.schema.json",
+  "x-oold-uuid": "c00b3d7a-bb40-5127-b2b4-92f5bda88d14",
+  "x-oold-version": "0.1.0",
+  "title": "SpecificAcousticImpedance",
+  "x-oold-multilang-title": {
+    "en": "Specific Acoustic Impedance"
+  },
+  "examples": [
+    {
+      "type": [
+        "SpecificAcousticImpedance"
+      ],
+      "value": 1.0,
+      "unit": "rayl"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "SpecificAcousticImpedance": "qkind:SpecificAcousticImpedance",
+      "rayl": "qunit:RAYL",
+      "newton_second_per_meter_cubed": "qunit:N-SEC-PER-M3",
+      "kilo_gram_per_meter_squared_per_second": "qunit:KiloGM-PER-M2-SEC"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "SpecificAcousticImpedance"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "rayl",
+        "newton_second_per_meter_cubed",
+        "kilo_gram_per_meter_squared_per_second"
+      ],
+      "default": "rayl"
+    }
+  }
+}

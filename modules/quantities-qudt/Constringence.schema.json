@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Constringence.schema.json",
+  "x-oold-uuid": "7e1a8df5-32dd-5a2e-b03e-057cba16fe45",
+  "x-oold-version": "0.1.0",
+  "title": "Constringence",
+  "x-oold-multilang-title": {
+    "en": "Constringence"
+  },
+  "description": "In optics and lens design, constringence of a transparent material, also known as the Abbe number or the V-number, is an approximate measure of the material's dispersion (change of refractive index versus wavelength), with high values of V indicating low dispersion.",
+  "allOf": [
+    {
+      "$ref": "DimensionlessRatio.schema.json"
+    }
+  ],
+  "@context": [
+    "DimensionlessRatio.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Constringence": "qkind:Constringence"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Constringence"
+      ]
+    }
+  }
+}

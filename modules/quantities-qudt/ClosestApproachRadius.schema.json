@@ -1,0 +1,29 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ClosestApproachRadius.schema.json",
+  "x-oold-uuid": "cef8c92a-98b1-5f3a-b49b-e706ef200090",
+  "x-oold-version": "0.1.0",
+  "title": "ClosestApproachRadius",
+  "x-oold-multilang-title": {
+    "en": "Closest Approach Radius"
+  },
+  "allOf": [
+    {
+      "$ref": "Radius.schema.json"
+    }
+  ],
+  "@context": [
+    "Radius.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ClosestApproachRadius": "qkind:ClosestApproachRadius"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ClosestApproachRadius"
+      ]
+    }
+  }
+}

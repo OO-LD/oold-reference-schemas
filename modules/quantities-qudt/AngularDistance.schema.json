@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "AngularDistance.schema.json",
+  "x-oold-uuid": "95c5ca7c-d32d-588a-a490-d8bc28e9cbb8",
+  "x-oold-version": "0.1.0",
+  "title": "AngularDistance",
+  "x-oold-multilang-title": {
+    "en": "Angular Distance"
+  },
+  "description": "Angular distance travelled by orbiting vehicle measured from the azimuth of closest approach.",
+  "allOf": [
+    {
+      "$ref": "Angle.schema.json"
+    }
+  ],
+  "@context": [
+    "Angle.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "AngularDistance": "qkind:AngularDistance"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "AngularDistance"
+      ]
+    }
+  }
+}

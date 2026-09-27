@@ -1,0 +1,54 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "BatteryCapacity.schema.json",
+  "x-oold-uuid": "fcaf254c-1f7b-575a-8fcd-8c480130dd4c",
+  "x-oold-version": "0.1.0",
+  "title": "BatteryCapacity",
+  "x-oold-multilang-title": {
+    "en": "Battery capacity"
+  },
+  "description": "quantity of electricity or electrical charge which a fully charged battery can supply under specified conditions as a product of discharge current and discharge time",
+  "examples": [
+    {
+      "type": [
+        "BatteryCapacity"
+      ],
+      "value": 1.0,
+      "unit": "ampere_second"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "BatteryCapacity": "qkind:BatteryCapacity",
+      "ampere_second": "qunit:A-SEC",
+      "milli_ampere_second": "qunit:MilliA-SEC",
+      "hour_milli_ampere": "qunit:MilliA-HR",
+      "ampere_hour": "qunit:A-HR",
+      "hour_kilo_ampere": "qunit:KiloA-HR"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "BatteryCapacity"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "ampere_second",
+        "milli_ampere_second",
+        "hour_milli_ampere",
+        "ampere_hour",
+        "hour_kilo_ampere"
+      ],
+      "default": "ampere_second"
+    }
+  }
+}

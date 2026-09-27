@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MASS-MARGIN.schema.json",
+  "x-oold-uuid": "ab8bedd4-1632-574e-87e7-2ed839ad7893",
+  "x-oold-version": "0.1.0",
+  "title": "MASS-MARGIN",
+  "x-oold-multilang-title": {
+    "en": "Mass Margin"
+  },
+  "description": "Requirement minus predicted value. Margin is used as a metric in risk management. Positive margin mitigates the risk of mass increases from requirements maturation and implementation, underestimated predicted system, or subsystem mass.",
+  "allOf": [
+    {
+      "$ref": "Mass.schema.json"
+    }
+  ],
+  "@context": [
+    "Mass.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "MASS-MARGIN": "qkind:MASS-MARGIN"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "MASS-MARGIN"
+      ]
+    }
+  }
+}

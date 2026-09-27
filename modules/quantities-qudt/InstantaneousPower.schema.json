@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "InstantaneousPower.schema.json",
+  "x-oold-uuid": "d1fc5c3f-cd5f-59e3-86f4-01c22d343569",
+  "x-oold-version": "0.1.0",
+  "title": "InstantaneousPower",
+  "x-oold-multilang-title": {
+    "en": "Instantaneous Power"
+  },
+  "description": "For a two-terminal element or a two-terminal circuit with terminals A and B, \n   $\\textit{Instantaneous Power}$ is the product of the voltage $u_{AB}$ between the terminals and the electric current i in the element or circuit: \n  $$p = u_{AB} \\cdot i$$\n  Where $u_{AB}$ is the line integral of the electric field strength from A to B,\n    and where the electric current in the element or circuit is taken positive if its direction is from A to B and negative in the opposite case. \n  $$$$\n  For an n-terminal circuit, it is the sum of the instantaneous powers relative to the n - 1 pairs of terminals when one of the terminals is chosen as a common terminal for the pairs. \n  $$$$\n  For a polyphase element, it is the sum of the instantaneous powers in all phase elements of a polyphase element.  \n  $$$$\n  For a polyphase line consisting of m line conductors and one neutral conductor, it is the sum of the m instantaneous powers expressed for each line conductor by the product of the polyphase line-to-neutral voltage and the corresponding line current.",
+  "allOf": [
+    {
+      "$ref": "ElectricPower.schema.json"
+    }
+  ],
+  "@context": [
+    "ElectricPower.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "InstantaneousPower": "qkind:InstantaneousPower"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "InstantaneousPower"
+      ]
+    }
+  }
+}

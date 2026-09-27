@@ -1,0 +1,50 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ParticleFluenceRate.schema.json",
+  "x-oold-uuid": "674cc997-6cb7-5a02-ad5c-78a671459acd",
+  "x-oold-version": "0.1.0",
+  "title": "ParticleFluenceRate",
+  "x-oold-multilang-title": {
+    "en": "Particle Fluence Rate"
+  },
+  "description": "\"Particle Fluence Rate\" can be defined as the total number of particles (typically Gamma Ray Photons ) crossing over a sphere of unit cross section which surrounds a Point Source of Ionising Radiation.",
+  "examples": [
+    {
+      "type": [
+        "ParticleFluenceRate"
+      ],
+      "value": 1.0,
+      "unit": "per_meter_squared_per_second"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ParticleFluenceRate": "qkind:ParticleFluenceRate",
+      "per_meter_squared_per_second": "qunit:PER-M2-SEC",
+      "micro_meter_per_day_per_liter": "qunit:MicroM-PER-L-DAY",
+      "meter_per_day_per_liter": "qunit:M-PER-L-DAY"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ParticleFluenceRate"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "per_meter_squared_per_second",
+        "micro_meter_per_day_per_liter",
+        "meter_per_day_per_liter"
+      ],
+      "default": "per_meter_squared_per_second"
+    }
+  }
+}

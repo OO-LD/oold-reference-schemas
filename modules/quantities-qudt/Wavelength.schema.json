@@ -1,0 +1,31 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Wavelength.schema.json",
+  "x-oold-uuid": "63b3e955-e2ee-540b-8345-25f44672012d",
+  "x-oold-version": "0.1.0",
+  "title": "Wavelength",
+  "x-oold-multilang-title": {
+    "en": "Wavelength",
+    "de": "Wellenlänge"
+  },
+  "description": "For a monochromatic wave, \"wavelength\" is the distance between two successive points in a direction perpendicular to the wavefront where at a given instant the phase differs by $2\\pi$. The wavelength of a sinusoidal wave is the spatial period of the wave—the distance over which the wave's shape repeats. The SI unit of wavelength is the meter.",
+  "allOf": [
+    {
+      "$ref": "Length.schema.json"
+    }
+  ],
+  "@context": [
+    "Length.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Wavelength": "qkind:Wavelength"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Wavelength"
+      ]
+    }
+  }
+}

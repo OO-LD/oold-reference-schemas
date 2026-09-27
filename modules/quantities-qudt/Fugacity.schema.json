@@ -1,0 +1,63 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Fugacity.schema.json",
+  "x-oold-uuid": "8a40f5d0-db99-5056-8778-2d8e905f50d4",
+  "x-oold-version": "0.1.0",
+  "title": "Fugacity",
+  "x-oold-multilang-title": {
+    "en": "Fugacity",
+    "de": "Fugazität"
+  },
+  "description": "\"Fugacity\" of a real gas is an effective pressure which replaces the true mechanical pressure in accurate chemical equilibrium calculations. It is equal to the pressure of an ideal gas which has the same chemical potential as the real gas.",
+  "examples": [
+    {
+      "type": [
+        "Fugacity"
+      ],
+      "value": 1.0,
+      "unit": "pascal"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Fugacity": "qkind:Fugacity",
+      "pascal": "qunit:PA",
+      "pico_pascal": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/pico_pascal",
+      "micro_pascal": "qunit:MicroPA",
+      "milli_pascal": "qunit:MilliPA",
+      "deca_pascal": "qunit:DecaPA",
+      "hecto_pascal": "qunit:HectoPA",
+      "kilo_pascal": "qunit:KiloPA",
+      "mega_pascal": "qunit:MegaPA",
+      "giga_pascal": "qunit:GigaPA"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Fugacity"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "pascal",
+        "pico_pascal",
+        "micro_pascal",
+        "milli_pascal",
+        "deca_pascal",
+        "hecto_pascal",
+        "kilo_pascal",
+        "mega_pascal",
+        "giga_pascal"
+      ],
+      "default": "pascal"
+    }
+  }
+}

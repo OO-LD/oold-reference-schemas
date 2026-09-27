@@ -1,0 +1,46 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "PackingFraction.schema.json",
+  "x-oold-uuid": "e81fc91e-a071-5270-aadd-01d6aaf80e62",
+  "x-oold-version": "0.1.0",
+  "title": "PackingFraction",
+  "x-oold-multilang-title": {
+    "en": "Packing Fraction"
+  },
+  "description": "The \"Packing Fraction\" is the fraction of volume in a crystal structure that is occupied by atoms.",
+  "examples": [
+    {
+      "type": [
+        "PackingFraction"
+      ],
+      "value": 1.0,
+      "unit": "unitless"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "PackingFraction": "qkind:PackingFraction",
+      "unitless": "qunit:UNITLESS"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "PackingFraction"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "unitless"
+      ],
+      "default": "unitless"
+    }
+  }
+}

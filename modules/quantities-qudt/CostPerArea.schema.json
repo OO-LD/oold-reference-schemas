@@ -1,0 +1,49 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "CostPerArea.schema.json",
+  "x-oold-uuid": "6904291c-88ec-50b3-b1ac-276f3ac61dcb",
+  "x-oold-version": "0.1.0",
+  "title": "CostPerArea",
+  "x-oold-multilang-title": {
+    "en": "Cost per area",
+    "de": "Kosten pro Fläche"
+  },
+  "description": "In the construction industry, cost per area is the unit rate which, when multiplied by the gross internal floor area (GIFA), gives the total building works estimate (i.e.works cost estimate less main contractor’s preliminaries and main contractor’s overheads and profit).",
+  "examples": [
+    {
+      "type": [
+        "CostPerArea"
+      ],
+      "value": 1.0,
+      "unit": "euro_per_m_squared"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "CostPerArea": "qkind:CostPerArea",
+      "euro_per_m_squared": "qunit:CCY_EUR-PER-M2",
+      "chf_per_ha": "qunit:CCY_CHF-PER-HA"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "CostPerArea"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "euro_per_m_squared",
+        "chf_per_ha"
+      ],
+      "default": "euro_per_m_squared"
+    }
+  }
+}

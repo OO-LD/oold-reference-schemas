@@ -1,0 +1,42 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Weight.schema.json",
+  "x-oold-uuid": "0ed75cfa-55dc-55ad-bbbe-cbf4e22744c0",
+  "x-oold-version": "0.1.0",
+  "title": "Weight",
+  "x-oold-multilang-title": {
+    "en": "Weight",
+    "de": "Gewicht"
+  },
+  "description": "The force with which a body is attracted toward an astronomical body.  Or, the product of the mass of a body and the acceleration acting on a body.  In a dynamic situation, the weight can be a multiple of that under resting conditions. Weight also varies on other planets in accordance with their gravity.",
+  "allOf": [
+    {
+      "$ref": "Force.schema.json"
+    }
+  ],
+  "@context": [
+    "Force.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Weight": "qkind:Weight"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Weight"
+      ]
+    }
+  },
+  "x-oold-context": {
+    "Weight": {
+      "http://dbpedia.org/resource/Weight": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

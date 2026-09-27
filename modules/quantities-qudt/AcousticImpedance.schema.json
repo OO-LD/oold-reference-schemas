@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "AcousticImpedance.schema.json",
+  "x-oold-uuid": "1122e0bc-34a9-581f-aea3-1f6967f701d6",
+  "x-oold-version": "0.1.0",
+  "title": "AcousticImpedance",
+  "x-oold-multilang-title": {
+    "en": "Acoustic Impediance"
+  },
+  "description": "Acoustic impedance at a surface is the complex quotient of the average sound pressure over that surface by the sound volume flow rate through that surface.",
+  "allOf": [
+    {
+      "$ref": "MassPerAreaTime.schema.json"
+    }
+  ],
+  "@context": [
+    "MassPerAreaTime.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "AcousticImpedance": "qkind:AcousticImpedance"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "AcousticImpedance"
+      ]
+    }
+  }
+}

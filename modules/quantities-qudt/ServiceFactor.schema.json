@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ServiceFactor.schema.json",
+  "x-oold-uuid": "878ac43a-f7e0-5aa7-8650-88cb0b79caeb",
+  "x-oold-version": "0.1.0",
+  "title": "ServiceFactor",
+  "x-oold-multilang-title": {
+    "en": "Service Factor"
+  },
+  "description": "The value indicates the multiplier of the rated power that equipment can handle for some period of time when operating according to a manufacturer's specified conditions; typically applicable to motors.",
+  "allOf": [
+    {
+      "$ref": "DimensionlessRatio.schema.json"
+    }
+  ],
+  "@context": [
+    "DimensionlessRatio.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ServiceFactor": "qkind:ServiceFactor"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ServiceFactor"
+      ]
+    }
+  }
+}

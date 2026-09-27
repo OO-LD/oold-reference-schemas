@@ -1,0 +1,73 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ElectricConductivity.schema.json",
+  "x-oold-uuid": "ccf7deb1-ac09-5b50-8236-5d40e54f6d56",
+  "x-oold-version": "0.1.0",
+  "title": "ElectricConductivity",
+  "x-oold-multilang-title": {
+    "en": "Electric conductivity",
+    "de": "Elektrische Leitfähigkeit"
+  },
+  "description": "The quantity kind $\\textit{Electric Conductivity}$ or $\\textit{Specific Conductance}$ is a measure of a material's ability to conduct an electric current. \n  When an electrical potential difference is placed across a conductor, its movable charges flow, giving rise to an electric current. \n  The conductivity $\\sigma$ is defined as the ratio of the electric current density $J$ to the electric field, $E$: $J = \\sigma E$. \n  In isotropic materials, conductivity is scalar-valued, however in general, conductivity is a tensor-valued quantity.",
+  "examples": [
+    {
+      "type": [
+        "ElectricConductivity"
+      ],
+      "value": 1.0,
+      "unit": "siemens_per_meter"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ElectricConductivity": "qkind:ElectricConductivity",
+      "siemens_per_meter": "qunit:S-PER-M",
+      "pico_siemens_per_meter": "qunit:PicoS-PER-M",
+      "statmho": "qunit:S_Stat",
+      "nano_siemens_per_meter": "qunit:NanoS-PER-M",
+      "nano_siemens_per_centi_meter": "qunit:NanoS-PER-CentiM",
+      "micro_siemens_per_meter": "qunit:MicroS-PER-M",
+      "micro_siemens_per_centi_meter": "qunit:MicroS-PER-CentiM",
+      "milli_siemens_per_meter": "qunit:MilliS-PER-M",
+      "deci_siemens_per_meter": "qunit:DeciS-PER-M",
+      "milli_siemens_per_centi_meter": "qunit:MilliS-PER-CentiM",
+      "siemens_per_centi_meter": "qunit:S-PER-CentiM",
+      "kilo_siemens_per_meter": "qunit:KiloS-PER-M",
+      "mega_siemens_per_meter": "qunit:MegaS-PER-M",
+      "absiemens": "qunit:S_Ab"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ElectricConductivity"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "siemens_per_meter",
+        "pico_siemens_per_meter",
+        "statmho",
+        "nano_siemens_per_meter",
+        "nano_siemens_per_centi_meter",
+        "micro_siemens_per_meter",
+        "micro_siemens_per_centi_meter",
+        "milli_siemens_per_meter",
+        "deci_siemens_per_meter",
+        "milli_siemens_per_centi_meter",
+        "siemens_per_centi_meter",
+        "kilo_siemens_per_meter",
+        "mega_siemens_per_meter",
+        "absiemens"
+      ],
+      "default": "siemens_per_meter"
+    }
+  }
+}

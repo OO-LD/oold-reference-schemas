@@ -1,0 +1,84 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "EnergyPerArea.schema.json",
+  "x-oold-uuid": "46d8ae43-3dda-5e36-8d8e-76800d85ee12",
+  "x-oold-version": "0.1.0",
+  "title": "EnergyPerArea",
+  "x-oold-multilang-title": {
+    "en": "Energy per Area"
+  },
+  "description": "Energy per unit area is a measure of the energy either impinging upon or generated from a given unit of area. This can be a measure of the \"toughness\" of a material, being the amount of energy that needs to be applied per unit area of a crack to cause it to fracture. This is a constant for a given material..",
+  "examples": [
+    {
+      "type": [
+        "EnergyPerArea"
+      ],
+      "value": 1.0,
+      "unit": "kilo_gram_per_second_squared"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "EnergyPerArea": "qkind:EnergyPerArea",
+      "kilo_gram_per_second_squared": "qunit:KiloGM-PER-SEC2",
+      "nano_newton_per_meter": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/nano_newton_per_meter",
+      "erg_per_meter_squared": "qunit:ERG-PER-M2",
+      "micro_newton_per_meter": "qunit:MicroN-M-PER-M2",
+      "erg_per_centi_meter_squared": "qunit:ERG-PER-CentiM2",
+      "milli_joule_per_meter_squared": "qunit:MilliJ-PER-M2",
+      "milli_newton_per_meter": "qunit:MilliN-M-PER-M2",
+      "centi_newton_per_meter": "qunit:CentiN-M-PER-M2",
+      "joule_per_meter_squared": "qunit:J-PER-M2",
+      "newton_per_meter": "qunit:N-M-PER-M2",
+      "second_watt_per_meter_squared": "qunit:W-SEC-PER-M2",
+      "gram_per_second_squared": "qunit:GM-PER-SEC2",
+      "kilo_newton_per_meter": "qunit:KiloN-M-PER-M2",
+      "hour_watt_per_meter_squared": "qunit:W-HR-PER-M2",
+      "joule_per_centi_meter_squared": "qunit:J-PER-CentiM2",
+      "mega_joule_per_meter_squared": "qunit:MegaJ-PER-M2",
+      "mega_newton_per_meter": "qunit:MegaN-M-PER-M2",
+      "hour_kilo_watt_per_meter_squared": "qunit:KiloW-HR-PER-M2",
+      "giga_joule_per_meter_squared": "qunit:GigaJ-PER-M2",
+      "giga_newton_per_meter": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/giga_newton_per_meter"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "EnergyPerArea"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "kilo_gram_per_second_squared",
+        "nano_newton_per_meter",
+        "erg_per_meter_squared",
+        "micro_newton_per_meter",
+        "erg_per_centi_meter_squared",
+        "milli_joule_per_meter_squared",
+        "milli_newton_per_meter",
+        "centi_newton_per_meter",
+        "joule_per_meter_squared",
+        "newton_per_meter",
+        "second_watt_per_meter_squared",
+        "gram_per_second_squared",
+        "kilo_newton_per_meter",
+        "hour_watt_per_meter_squared",
+        "joule_per_centi_meter_squared",
+        "mega_joule_per_meter_squared",
+        "mega_newton_per_meter",
+        "hour_kilo_watt_per_meter_squared",
+        "giga_joule_per_meter_squared",
+        "giga_newton_per_meter"
+      ],
+      "default": "kilo_gram_per_second_squared"
+    }
+  }
+}

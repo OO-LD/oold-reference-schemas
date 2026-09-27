@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "TotalCrossSection.schema.json",
+  "x-oold-uuid": "198956c9-3610-5dd0-8347-46aef5674329",
+  "x-oold-version": "0.1.0",
+  "title": "TotalCrossSection",
+  "x-oold-multilang-title": {
+    "en": "Total Cross-section"
+  },
+  "description": "\"Total Cross-section\" is related to the absorbance of the light intensity through Beer-Lambert's law. It is the sum of all cross-sections corresponding to the various reactions or processes between an incident particle of specified type and energy and a target particle.",
+  "allOf": [
+    {
+      "$ref": "CrossSection.schema.json"
+    }
+  ],
+  "@context": [
+    "CrossSection.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "TotalCrossSection": "qkind:TotalCrossSection"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "TotalCrossSection"
+      ]
+    }
+  }
+}

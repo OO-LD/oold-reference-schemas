@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "LogOctanolAirPartitionCoefficient.schema.json",
+  "x-oold-uuid": "1892a6e7-458b-5473-8a8d-6e68e555352d",
+  "x-oold-version": "0.1.0",
+  "title": "LogOctanolAirPartitionCoefficient",
+  "x-oold-multilang-title": {
+    "en": "Octanol Air Partition Coefficient"
+  },
+  "description": "A dimensionless ratio that is the logarithm of the ratio of a compound's concentration within a two phase mixture of liquid octanol and gaseous air at equilibrium.  More simply, it is a comparison of the solubilities of the compound solute in these two immiscible substances.",
+  "allOf": [
+    {
+      "$ref": "DimensionlessRatio.schema.json"
+    }
+  ],
+  "@context": [
+    "DimensionlessRatio.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "LogOctanolAirPartitionCoefficient": "qkind:LogOctanolAirPartitionCoefficient"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "LogOctanolAirPartitionCoefficient"
+      ]
+    }
+  }
+}

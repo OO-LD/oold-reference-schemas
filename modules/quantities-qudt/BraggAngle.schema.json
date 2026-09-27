@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "BraggAngle.schema.json",
+  "x-oold-uuid": "9a7f3c02-8f7b-5055-a03f-ef1d0ec722ee",
+  "x-oold-version": "0.1.0",
+  "title": "BraggAngle",
+  "x-oold-multilang-title": {
+    "en": "Bragg Angle"
+  },
+  "description": "\"Bragg Angle\" describes the condition for a plane wave to be diffracted from a family of lattice planes, the angle between the wavevector of the incident plane wave, and the lattice planes.",
+  "allOf": [
+    {
+      "$ref": "Angle.schema.json"
+    }
+  ],
+  "@context": [
+    "Angle.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "BraggAngle": "qkind:BraggAngle"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "BraggAngle"
+      ]
+    }
+  }
+}

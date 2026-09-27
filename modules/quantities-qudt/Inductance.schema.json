@@ -1,0 +1,79 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Inductance.schema.json",
+  "x-oold-uuid": "70429034-4ec4-5e1b-b91d-2b2736233473",
+  "x-oold-version": "0.1.0",
+  "title": "Inductance",
+  "x-oold-multilang-title": {
+    "en": "Inductance",
+    "de": "Induktivität"
+  },
+  "description": "\"Inductance\" is an electromagentic quantity that characterizes a circuit's resistance to any change of electric current; a change in the electric current through induces an opposing electromotive force (EMF). Quantitatively, inductance is proportional to the magnetic flux per unit of electric current.",
+  "examples": [
+    {
+      "type": [
+        "Inductance"
+      ],
+      "value": 1.0,
+      "unit": "henry"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Inductance": "qkind:Inductance",
+      "henry": "qunit:H",
+      "abhenry": "qunit:H_Ab",
+      "nano_henry": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/nano_henry",
+      "micro_henry": "qunit:MicroH",
+      "milli_henry": "qunit:MilliH",
+      "kilo_henry": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/kilo_henry",
+      "stathenry": "qunit:H_Stat",
+      "ph_value": "qunit:PicoH"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Inductance"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "henry",
+        "ph_value",
+        "abhenry",
+        "nano_henry",
+        "micro_henry",
+        "milli_henry",
+        "kilo_henry",
+        "stathenry"
+      ],
+      "default": "henry"
+    }
+  },
+  "x-oold-context": {
+    "Inductance": {
+      "http://dbpedia.org/resource/Inductance": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      },
+      "https://si-digital-framework.org/quantities/ELIN": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

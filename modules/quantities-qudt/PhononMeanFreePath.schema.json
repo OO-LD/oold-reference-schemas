@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "PhononMeanFreePath.schema.json",
+  "x-oold-uuid": "05ead501-1114-5f24-adcf-e86c6645c303",
+  "x-oold-version": "0.1.0",
+  "title": "PhononMeanFreePath",
+  "x-oold-multilang-title": {
+    "en": "Phonon Mean Free Path"
+  },
+  "description": "\"Phonon Mean Free Path\" is the mean free path of phonons.",
+  "allOf": [
+    {
+      "$ref": "Length.schema.json"
+    }
+  ],
+  "@context": [
+    "Length.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "PhononMeanFreePath": "qkind:PhononMeanFreePath"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "PhononMeanFreePath"
+      ]
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "InitialVelocity.schema.json",
+  "x-oold-uuid": "10412bab-ccf8-564e-8480-aa8965f19f56",
+  "x-oold-version": "0.1.0",
+  "title": "InitialVelocity",
+  "x-oold-multilang-title": {
+    "en": "Initial Velocity"
+  },
+  "description": "The velocity of a moving body at starting; especially, the velocity of a projectile as it leaves the mouth of a firearm from which it is discharged.",
+  "allOf": [
+    {
+      "$ref": "Velocity.schema.json"
+    }
+  ],
+  "@context": [
+    "Velocity.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "InitialVelocity": "qkind:InitialVelocity"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "InitialVelocity"
+      ]
+    }
+  }
+}

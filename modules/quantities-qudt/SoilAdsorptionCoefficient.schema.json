@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "SoilAdsorptionCoefficient.schema.json",
+  "x-oold-uuid": "8a3a8be1-f119-53c5-bb43-a0d6ae3efac2",
+  "x-oold-version": "0.1.0",
+  "title": "SoilAdsorptionCoefficient",
+  "x-oold-multilang-title": {
+    "en": "Soil Adsorption Coefficient"
+  },
+  "description": "A specific volume that is the ratio of the amount of substance adsorbed per unit weight of organic carbon in the soil or sediment to the concentration of the chemical in aqueous solution at equilibrium.",
+  "allOf": [
+    {
+      "$ref": "SpecificVolume.schema.json"
+    }
+  ],
+  "@context": [
+    "SpecificVolume.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "SoilAdsorptionCoefficient": "qkind:SoilAdsorptionCoefficient"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "SoilAdsorptionCoefficient"
+      ]
+    }
+  }
+}

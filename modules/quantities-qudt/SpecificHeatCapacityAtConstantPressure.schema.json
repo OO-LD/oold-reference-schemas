@@ -1,0 +1,54 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "SpecificHeatCapacityAtConstantPressure.schema.json",
+  "x-oold-uuid": "12b88b32-ed2f-58c5-aa63-3841b687b985",
+  "x-oold-version": "0.1.0",
+  "title": "SpecificHeatCapacityAtConstantPressure",
+  "x-oold-multilang-title": {
+    "en": "Specific heat capacity at constant pressure"
+  },
+  "description": "Specific heat at a constant pressure.",
+  "examples": [
+    {
+      "type": [
+        "SpecificHeatCapacityAtConstantPressure"
+      ],
+      "value": 1.0,
+      "unit": "joule_per_kelvin_per_kilo_gram"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "SpecificHeatCapacityAtConstantPressure": "qkind:SpecificHeatCapacityAtConstantPressure",
+      "joule_per_kelvin_per_kilo_gram": "qunit:J-PER-KiloGM-K",
+      "joule_per_gram_per_kelvin": "qunit:J-PER-GM-K",
+      "kilo_joule_per_kelvin_per_kilo_gram": "qunit:KiloJ-PER-KiloGM-K",
+      "joule_per_celsius_per_kilo_gram": "qunit:J-PER-KiloGM-DEG_C",
+      "joule_per_celsius_per_gram": "qunit:J-PER-GM-DEG_C"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "SpecificHeatCapacityAtConstantPressure"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "joule_per_kelvin_per_kilo_gram",
+        "joule_per_celsius_per_kilo_gram",
+        "joule_per_gram_per_kelvin",
+        "joule_per_celsius_per_gram",
+        "kilo_joule_per_kelvin_per_kilo_gram"
+      ],
+      "default": "joule_per_kelvin_per_kilo_gram"
+    }
+  }
+}

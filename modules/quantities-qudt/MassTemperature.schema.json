@@ -1,0 +1,47 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MassTemperature.schema.json",
+  "x-oold-uuid": "6847f51b-03eb-5ed6-b4cd-a9e82af5e51a",
+  "x-oold-version": "0.1.0",
+  "title": "MassTemperature",
+  "x-oold-multilang-title": {
+    "en": "Mass Temperature"
+  },
+  "examples": [
+    {
+      "type": [
+        "MassTemperature"
+      ],
+      "value": 1.0,
+      "unit": "kelvin_kilo_gram"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "MassTemperature": "qkind:MassTemperature",
+      "kelvin_kilo_gram": "qunit:KiloGM-K",
+      "gram_kelvin": "qunit:GM-K"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "MassTemperature"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "kelvin_kilo_gram",
+        "gram_kelvin"
+      ],
+      "default": "kelvin_kilo_gram"
+    }
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MassFlowRate.schema.json",
+  "x-oold-uuid": "4a0860ff-03e6-5af1-9b7c-64e3b837fc81",
+  "x-oold-version": "0.1.0",
+  "title": "MassFlowRate",
+  "x-oold-multilang-title": {
+    "en": "Mass Flow Rate"
+  },
+  "description": "\"Mass Flow Rate\" is a measure of Mass flux. The common symbol is $\\dot{m}$ (pronounced $m-dot$), although sometimes $\\mu$ is used. The SI units are $kg s-1$.",
+  "examples": [
+    {
+      "type": [
+        "MassFlowRate"
+      ],
+      "value": 1.0,
+      "unit": "kilo_gram_per_second"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "MassFlowRate": "qkind:MassFlowRate",
+      "kilo_gram_per_second": "qunit:KiloGM-PER-SEC",
+      "nano_gram_per_day": "qunit:NanoGM-PER-DAY",
+      "milli_gram_per_day": "qunit:MilliGM-PER-DAY",
+      "gram_per_year": "qunit:GM-PER-YR",
+      "milli_gram_per_hour": "qunit:MilliGM-PER-HR",
+      "gram_per_day": "qunit:GM-PER-DAY",
+      "milli_gram_per_minute": "qunit:MilliGM-PER-MIN",
+      "kilo_gram_per_year": "qunit:KiloGM-PER-YR",
+      "gram_per_hour": "qunit:GM-PER-HR",
+      "milli_gram_per_second": "qunit:MilliGM-PER-SEC",
+      "kilo_gram_per_day": "qunit:KiloGM-PER-DAY",
+      "gram_per_minute": "qunit:GM-PER-MIN",
+      "metric_ton_per_year": "qunit:TONNE-PER-YR",
+      "kilo_gram_per_hour": "qunit:KiloGM-PER-HR",
+      "gram_per_second": "qunit:GM-PER-SEC",
+      "metric_ton_per_day": "qunit:TONNE-PER-DAY",
+      "kilo_gram_per_minute": "qunit:KiloGM-PER-MIN",
+      "knot_per_year": "qunit:KiloTONNE-PER-YR",
+      "metric_ton_per_hour": "qunit:TONNE-PER-HR",
+      "metric_ton_per_minute": "qunit:TONNE-PER-MIN",
+      "mega_metric_ton_per_year": "qunit:MegaTONNE-PER-YR",
+      "metric_ton_per_second": "qunit:TONNE-PER-SEC"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "MassFlowRate"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "kilo_gram_per_second",
+        "nano_gram_per_day",
+        "milli_gram_per_day",
+        "gram_per_year",
+        "milli_gram_per_hour",
+        "gram_per_day",
+        "milli_gram_per_minute",
+        "kilo_gram_per_year",
+        "gram_per_hour",
+        "milli_gram_per_second",
+        "kilo_gram_per_day",
+        "gram_per_minute",
+        "metric_ton_per_year",
+        "kilo_gram_per_hour",
+        "gram_per_second",
+        "metric_ton_per_day",
+        "kilo_gram_per_minute",
+        "knot_per_year",
+        "metric_ton_per_hour",
+        "metric_ton_per_minute",
+        "mega_metric_ton_per_year",
+        "metric_ton_per_second"
+      ],
+      "default": "kilo_gram_per_second"
+    }
+  },
+  "x-oold-context": {
+    "MassFlowRate": {
+      "http://dbpedia.org/resource/Mass_flow_rate": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

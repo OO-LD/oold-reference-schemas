@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "EnergyFluenceRate.schema.json",
+  "x-oold-uuid": "be37b1c6-0f23-5f87-b627-2138ce574d4f",
+  "x-oold-version": "0.1.0",
+  "title": "EnergyFluenceRate",
+  "x-oold-multilang-title": {
+    "en": "Energy Fluence Rate"
+  },
+  "description": "\"Energy Fluence Rate\" can be used to describe the energy fluence delivered per unit time.",
+  "allOf": [
+    {
+      "$ref": "PowerPerArea.schema.json"
+    }
+  ],
+  "@context": [
+    "PowerPerArea.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "EnergyFluenceRate": "qkind:EnergyFluenceRate"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "EnergyFluenceRate"
+      ]
+    }
+  }
+}

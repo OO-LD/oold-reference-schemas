@@ -1,0 +1,41 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Altitude.schema.json",
+  "x-oold-uuid": "2423ce4a-8e5c-5a27-8249-2fd72d06ee04",
+  "x-oold-version": "0.1.0",
+  "title": "Altitude",
+  "x-oold-multilang-title": {
+    "en": "Altitude"
+  },
+  "description": "Altitude or height is defined based on the context in which it is used (aviation, geometry, geographical survey, sport, and more). As a general definition, altitude is a distance measurement, usually in the vertical or \"up\" direction, between a reference datum and a point or object. The reference datum also often varies according to the context. [Wikipedia]",
+  "allOf": [
+    {
+      "$ref": "Length.schema.json"
+    }
+  ],
+  "@context": [
+    "Length.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Altitude": "qkind:Altitude"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Altitude"
+      ]
+    }
+  },
+  "x-oold-context": {
+    "Altitude": {
+      "http://dbpedia.org/resource/Altitude": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

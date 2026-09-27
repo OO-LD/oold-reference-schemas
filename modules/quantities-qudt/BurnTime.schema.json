@@ -1,0 +1,29 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "BurnTime.schema.json",
+  "x-oold-uuid": "73108f4d-d6b1-5fe2-ad96-2094480cfc69",
+  "x-oold-version": "0.1.0",
+  "title": "BurnTime",
+  "x-oold-multilang-title": {
+    "en": "Burn Time"
+  },
+  "allOf": [
+    {
+      "$ref": "Time.schema.json"
+    }
+  ],
+  "@context": [
+    "Time.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "BurnTime": "qkind:BurnTime"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "BurnTime"
+      ]
+    }
+  }
+}

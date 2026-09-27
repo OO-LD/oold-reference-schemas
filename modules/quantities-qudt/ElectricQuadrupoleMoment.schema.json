@@ -1,0 +1,47 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ElectricQuadrupoleMoment.schema.json",
+  "x-oold-uuid": "7fdace54-bea6-5a29-af32-ab2124bc8087",
+  "x-oold-version": "0.1.0",
+  "title": "ElectricQuadrupoleMoment",
+  "x-oold-multilang-title": {
+    "en": "Electric quadrupole moment",
+    "de": "Elektrisches Quadrupolmoment"
+  },
+  "description": "The Electric Quadrupole Moment is a quantity which describes the effective shape of the ellipsoid of nuclear charge distribution. A non-zero quadrupole moment Q indicates that the charge distribution is not spherically symmetric. By convention, the value of Q is taken to be positive if the ellipsoid is prolate and negative if it is oblate. In general, the electric quadrupole moment is tensor-valued.",
+  "examples": [
+    {
+      "type": [
+        "ElectricQuadrupoleMoment"
+      ],
+      "value": 1.0,
+      "unit": "coulomb_meter_squared"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ElectricQuadrupoleMoment": "qkind:ElectricQuadrupoleMoment",
+      "coulomb_meter_squared": "qunit:C-M2"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ElectricQuadrupoleMoment"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "coulomb_meter_squared"
+      ],
+      "default": "coulomb_meter_squared"
+    }
+  }
+}

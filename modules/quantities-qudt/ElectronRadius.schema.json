@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ElectronRadius.schema.json",
+  "x-oold-uuid": "7e89dce6-62b3-53ee-aa53-eb5ae4ca4eb4",
+  "x-oold-version": "0.1.0",
+  "title": "ElectronRadius",
+  "x-oold-multilang-title": {
+    "en": "Electron Radius"
+  },
+  "description": "\"Electron Radius\", also known as the Lorentz radius or the Thomson scattering length, is based on a classical (i.e., non-quantum) relativistic model of the electron.",
+  "allOf": [
+    {
+      "$ref": "Length.schema.json"
+    }
+  ],
+  "@context": [
+    "Length.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ElectronRadius": "qkind:ElectronRadius"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ElectronRadius"
+      ]
+    }
+  }
+}

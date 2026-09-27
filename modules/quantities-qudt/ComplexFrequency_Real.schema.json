@@ -1,0 +1,29 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ComplexFrequency_Real.schema.json",
+  "x-oold-uuid": "586b905d-cd82-5d0c-a94f-e79a97b6f229",
+  "x-oold-version": "0.1.0",
+  "title": "ComplexFrequency_Real",
+  "x-oold-multilang-title": {
+    "en": "Real part of complex frequency"
+  },
+  "allOf": [
+    {
+      "$ref": "Frequency.schema.json"
+    }
+  ],
+  "@context": [
+    "Frequency.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ComplexFrequency_Real": "qkind:ComplexFrequency_Real"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ComplexFrequency_Real"
+      ]
+    }
+  }
+}

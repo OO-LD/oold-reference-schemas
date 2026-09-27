@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "EllipticalOrbitPerigeeVelocity.schema.json",
+  "x-oold-uuid": "aabb19e4-a406-5b32-adf8-94d97cb462b6",
+  "x-oold-version": "0.1.0",
+  "title": "EllipticalOrbitPerigeeVelocity",
+  "x-oold-multilang-title": {
+    "en": "Elliptical Orbit Perigee Velocity"
+  },
+  "description": "Velocity at apogee for an elliptical orbit velocity.",
+  "allOf": [
+    {
+      "$ref": "VehicleVelocity.schema.json"
+    }
+  ],
+  "@context": [
+    "VehicleVelocity.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "EllipticalOrbitPerigeeVelocity": "qkind:EllipticalOrbitPerigeeVelocity"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "EllipticalOrbitPerigeeVelocity"
+      ]
+    }
+  }
+}

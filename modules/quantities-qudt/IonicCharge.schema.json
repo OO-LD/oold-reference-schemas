@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "IonicCharge.schema.json",
+  "x-oold-uuid": "b5335e62-cf01-5a14-b489-876b4e6accec",
+  "x-oold-version": "0.1.0",
+  "title": "IonicCharge",
+  "x-oold-multilang-title": {
+    "en": "Ionic Charge"
+  },
+  "description": "The total charge of an ion. The charge of an electron; the charge of any ion is equal to this electron charge in magnitude, or is an integral multiple of it.",
+  "allOf": [
+    {
+      "$ref": "ElectricCharge.schema.json"
+    }
+  ],
+  "@context": [
+    "ElectricCharge.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "IonicCharge": "qkind:IonicCharge"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "IonicCharge"
+      ]
+    }
+  }
+}

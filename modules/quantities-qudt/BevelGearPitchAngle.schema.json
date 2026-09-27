@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "BevelGearPitchAngle.schema.json",
+  "x-oold-uuid": "e587d4f0-3c13-5c96-90c7-617187b9055d",
+  "x-oold-version": "0.1.0",
+  "title": "BevelGearPitchAngle",
+  "x-oold-multilang-title": {
+    "en": "Bevel Gear Pitch Angle"
+  },
+  "description": "Pitch angle in bevel gears is the angle between an element of a pitch cone and its axis. In external and internal bevel gears, the pitch angles are respectively less than and greater than 90 degrees.",
+  "allOf": [
+    {
+      "$ref": "Angle.schema.json"
+    }
+  ],
+  "@context": [
+    "Angle.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "BevelGearPitchAngle": "qkind:BevelGearPitchAngle"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "BevelGearPitchAngle"
+      ]
+    }
+  }
+}

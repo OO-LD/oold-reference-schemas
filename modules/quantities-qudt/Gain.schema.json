@@ -1,0 +1,41 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Gain.schema.json",
+  "x-oold-uuid": "064063da-7251-5522-948c-f03fca30ebbc",
+  "x-oold-version": "0.1.0",
+  "title": "Gain",
+  "x-oold-multilang-title": {
+    "en": "Gain"
+  },
+  "description": "A general term used to denote an increase in signal power or signal strength in transmission from one point to another. Gain is usually expressed in decibels and is widely used to denote transducer gain.  An increase or amplification. In radar there are two general usages of the term: (a) antenna gain, or gain factor, is the ratio of the power transmitted along the beam axis to that of an isotropic radiator transmitting the same total power; (b) receiver gain, or video gain, is the amplification given a signal by the receiver.",
+  "allOf": [
+    {
+      "$ref": "DimensionlessRatio.schema.json"
+    }
+  ],
+  "@context": [
+    "DimensionlessRatio.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Gain": "qkind:Gain"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Gain"
+      ]
+    }
+  },
+  "x-oold-context": {
+    "Gain": {
+      "http://dbpedia.org/resource/Gain": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "TotalMassStoppingPower.schema.json",
+  "x-oold-uuid": "c02cab00-88b0-5f12-b174-944247c8e903",
+  "x-oold-version": "0.1.0",
+  "title": "TotalMassStoppingPower",
+  "x-oold-multilang-title": {
+    "en": "Total Mass Stopping Power"
+  },
+  "description": "If a substance is compared in gaseous and solid form, then the linear stopping powers of the two states are very different just because of the different density. One therefore often divides S(E) by the density of the material to obtain the \"Mass Stopping Power\". The mass stopping power then depends only very little on the density of the material.",
+  "examples": [
+    {
+      "type": [
+        "TotalMassStoppingPower"
+      ],
+      "value": 1.0,
+      "unit": "joule_meter_squared_per_kilo_gram"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "TotalMassStoppingPower": "qkind:TotalMassStoppingPower",
+      "joule_meter_squared_per_kilo_gram": "qunit:J-M2-PER-KiloGM",
+      "joule_meter_squared_per_gram": "qunit:J-M2-PER-GM"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "TotalMassStoppingPower"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "joule_meter_squared_per_kilo_gram",
+        "joule_meter_squared_per_gram"
+      ],
+      "default": "joule_meter_squared_per_kilo_gram"
+    }
+  }
+}

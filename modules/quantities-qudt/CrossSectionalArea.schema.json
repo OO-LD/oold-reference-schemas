@@ -1,0 +1,29 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "CrossSectionalArea.schema.json",
+  "x-oold-uuid": "fcfbe2c7-9889-50da-a7b9-97215ad2bd60",
+  "x-oold-version": "0.1.0",
+  "title": "CrossSectionalArea",
+  "x-oold-multilang-title": {
+    "en": "Cross-sectional Area"
+  },
+  "allOf": [
+    {
+      "$ref": "Area.schema.json"
+    }
+  ],
+  "@context": [
+    "Area.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "CrossSectionalArea": "qkind:CrossSectionalArea"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "CrossSectionalArea"
+      ]
+    }
+  }
+}

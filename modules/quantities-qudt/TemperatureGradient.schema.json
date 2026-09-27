@@ -1,0 +1,48 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "TemperatureGradient.schema.json",
+  "x-oold-uuid": "6bd60a9a-d518-5c0d-b70d-e4eb4b727073",
+  "x-oold-version": "0.1.0",
+  "title": "TemperatureGradient",
+  "x-oold-multilang-title": {
+    "en": "Temperature Gradient"
+  },
+  "description": "The temperature gradient measures the difference of a temperature per length, as for instance used in an external wall or its layers. It is usually measured in K/m.",
+  "examples": [
+    {
+      "type": [
+        "TemperatureGradient"
+      ],
+      "value": 1.0,
+      "unit": "kelvin_per_meter"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "TemperatureGradient": "qkind:TemperatureGradient",
+      "kelvin_per_meter": "qunit:K-PER-M",
+      "celsius_per_meter": "qunit:DEG_C-PER-M"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "TemperatureGradient"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "kelvin_per_meter",
+        "celsius_per_meter"
+      ],
+      "default": "kelvin_per_meter"
+    }
+  }
+}

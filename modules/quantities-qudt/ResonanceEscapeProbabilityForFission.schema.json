@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ResonanceEscapeProbabilityForFission.schema.json",
+  "x-oold-uuid": "fce9b748-bf85-5dbe-b74a-6b35a9d2062b",
+  "x-oold-version": "0.1.0",
+  "title": "ResonanceEscapeProbabilityForFission",
+  "x-oold-multilang-title": {
+    "en": "Resonance Escape Probability For Fission"
+  },
+  "description": "Fraction of fission neutrons that manage to slow down from fission to thermal energies without being absorbed.",
+  "allOf": [
+    {
+      "$ref": "Dimensionless.schema.json"
+    }
+  ],
+  "@context": [
+    "Dimensionless.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ResonanceEscapeProbabilityForFission": "qkind:ResonanceEscapeProbabilityForFission"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ResonanceEscapeProbabilityForFission"
+      ]
+    }
+  }
+}

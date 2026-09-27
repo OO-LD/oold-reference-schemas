@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Population.schema.json",
+  "x-oold-uuid": "2d1d1f04-bf8d-5791-80ad-371211ea8969",
+  "x-oold-version": "0.1.0",
+  "title": "Population",
+  "x-oold-multilang-title": {
+    "en": "Population"
+  },
+  "description": "Population typically refers to the number of people in a single area, whether it be a city or town, region, country, continent, or the world, but can also represent the number of any kind of entity.",
+  "allOf": [
+    {
+      "$ref": "Count.schema.json"
+    }
+  ],
+  "@context": [
+    "Count.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Population": "qkind:Population"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Population"
+      ]
+    }
+  }
+}

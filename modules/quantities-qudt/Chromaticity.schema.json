@@ -1,0 +1,46 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Chromaticity.schema.json",
+  "x-oold-uuid": "0d78a2e6-6cc9-5cef-98d0-e88f14d5bdaa",
+  "x-oold-version": "0.1.0",
+  "title": "Chromaticity",
+  "x-oold-multilang-title": {
+    "en": "Chromaticity"
+  },
+  "description": "Chromaticity is an objective specification of the quality of a color regardless of its luminance",
+  "examples": [
+    {
+      "type": [
+        "Chromaticity"
+      ],
+      "value": 1.0,
+      "unit": "unitless"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Chromaticity": "qkind:Chromaticity",
+      "unitless": "qunit:UNITLESS"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Chromaticity"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "unitless"
+      ],
+      "default": "unitless"
+    }
+  }
+}

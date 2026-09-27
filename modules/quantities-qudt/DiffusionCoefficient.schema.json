@@ -1,0 +1,53 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "DiffusionCoefficient.schema.json",
+  "x-oold-uuid": "9f693a8e-95ec-5924-8b10-9c678328b872",
+  "x-oold-version": "0.1.0",
+  "title": "DiffusionCoefficient",
+  "x-oold-multilang-title": {
+    "en": "Diffusion coefficient",
+    "de": "Diffusionskoeffizient"
+  },
+  "description": "The \"Diffusion Coefficient\" is a proportionality constant between the molar flux due to molecular diffusion and the gradient in the concentration of the species (or the driving force for diffusion). Diffusivity is encountered in Fick's law and numerous other equations of physical chemistry.",
+  "examples": [
+    {
+      "type": [
+        "DiffusionCoefficient"
+      ],
+      "value": 1.0,
+      "unit": "meter_squared_per_second"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "DiffusionCoefficient": "qkind:DiffusionCoefficient",
+      "meter_squared_per_second": "qunit:M2-PER-SEC",
+      "milli_meter_squared_per_second": "qunit:MilliM2-PER-SEC",
+      "centi_meter_squared_per_second": "qunit:CentiM2-PER-SEC",
+      "liter_per_meter_per_second": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/liter_per_meter_per_second"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "DiffusionCoefficient"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "meter_squared_per_second",
+        "milli_meter_squared_per_second",
+        "centi_meter_squared_per_second",
+        "liter_per_meter_per_second"
+      ],
+      "default": "meter_squared_per_second"
+    }
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Conductance.schema.json",
+  "x-oold-uuid": "0e1e7031-084d-5e20-b42b-5ceba993d916",
+  "x-oold-version": "0.1.0",
+  "title": "Conductance",
+  "x-oold-multilang-title": {
+    "en": "Conductance"
+  },
+  "description": "$\\textit{Conductance}$, for a resistive two-terminal element or two-terminal circuit with terminals A and B, quotient of the electric current i in the element or circuit by the voltage $u_{AB}$ between the terminals: $G = \\frac{1}{R}$, where the electric current is taken as positive if its direction is from A to B and negative in the opposite case. The conductance of an element or circuit is the inverse of its resistance.",
+  "examples": [
+    {
+      "type": [
+        "Conductance"
+      ],
+      "value": 1.0,
+      "unit": "siemens"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Conductance": "qkind:Conductance",
+      "siemens": "qunit:S",
+      "pico_siemens": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/pico_siemens",
+      "nano_siemens": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/nano_siemens",
+      "micro_siemens": "qunit:MicroS",
+      "micro_n": "qunit:MicroMHO",
+      "milli_siemens": "qunit:MilliS",
+      "deci_siemens": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/deci_siemens",
+      "kilo_siemens": "qunit:KiloS",
+      "mega_siemens": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/mega_siemens"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Conductance"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "siemens",
+        "pico_siemens",
+        "nano_siemens",
+        "micro_siemens",
+        "micro_n",
+        "milli_siemens",
+        "deci_siemens",
+        "kilo_siemens",
+        "mega_siemens"
+      ],
+      "default": "siemens"
+    }
+  }
+}

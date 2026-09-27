@@ -1,0 +1,53 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MagneticVectorPotential.schema.json",
+  "x-oold-uuid": "4e658af1-bb26-5ba7-8eb7-2669e48708e2",
+  "x-oold-version": "0.1.0",
+  "title": "MagneticVectorPotential",
+  "x-oold-multilang-title": {
+    "en": "Magnetic vector potential",
+    "de": "Magnetisches Potenzial"
+  },
+  "description": "\"Magnetic Vector Potential\" is the vector potential of the magnetic flux density. The magnetic vector potential is not unique since any irrotational vector field quantity can be added to a given magnetic vector potential without changing its rotation. Under static conditions the magnetic vector potential is often chosen so that its divergence is zero.",
+  "examples": [
+    {
+      "type": [
+        "MagneticVectorPotential"
+      ],
+      "value": 1.0,
+      "unit": "weber_per_meter"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "MagneticVectorPotential": "qkind:MagneticVectorPotential",
+      "weber_per_meter": "qunit:WB-PER-M",
+      "second_volt_per_meter": "qunit:V-SEC-PER-M",
+      "weber_per_milli_meter": "qunit:WB-PER-MilliM",
+      "kilo_weber_per_meter": "qunit:KiloWB-PER-M"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "MagneticVectorPotential"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "weber_per_meter",
+        "second_volt_per_meter",
+        "weber_per_milli_meter",
+        "kilo_weber_per_meter"
+      ],
+      "default": "weber_per_meter"
+    }
+  }
+}

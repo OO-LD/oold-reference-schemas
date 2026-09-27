@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ShannonDiversityIndex.schema.json",
+  "x-oold-uuid": "ab8d90e4-cf37-5a00-a31a-76e87df91860",
+  "x-oold-version": "0.1.0",
+  "title": "ShannonDiversityIndex",
+  "x-oold-multilang-title": {
+    "en": "Shannon Diversity Index"
+  },
+  "description": "Information entropy applied to a collection of indiviual organisms [of selected species] in a sample area. A measure of biodiversity.",
+  "allOf": [
+    {
+      "$ref": "InformationEntropy.schema.json"
+    }
+  ],
+  "@context": [
+    "InformationEntropy.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ShannonDiversityIndex": "qkind:ShannonDiversityIndex"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ShannonDiversityIndex"
+      ]
+    }
+  }
+}

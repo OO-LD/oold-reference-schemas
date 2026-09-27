@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "IonConcentration.schema.json",
+  "x-oold-uuid": "0e8c5f1a-9053-50cc-bc81-45c63ae0d57c",
+  "x-oold-version": "0.1.0",
+  "title": "IonConcentration",
+  "x-oold-multilang-title": {
+    "en": "Ion Concentration"
+  },
+  "description": "\"Ion Concentration\" is the number of ions per unit volume. Also known as ion density.",
+  "allOf": [
+    {
+      "$ref": "InverseVolume.schema.json"
+    }
+  ],
+  "@context": [
+    "InverseVolume.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "IonConcentration": "qkind:IonConcentration"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "IonConcentration"
+      ]
+    }
+  }
+}

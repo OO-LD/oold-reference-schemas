@@ -1,0 +1,46 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "LandeGFactor.schema.json",
+  "x-oold-uuid": "476da0b5-7027-53d9-b6f5-b70f394fc641",
+  "x-oold-version": "0.1.0",
+  "title": "LandeGFactor",
+  "x-oold-multilang-title": {
+    "en": "Lande g-Factor"
+  },
+  "description": "The \"Lande g-Factor\" is a particular example of a g-factor, namely for an electron with both spin and orbital angular momenta. It is named after Alfred Landé, who first described it in 1921.",
+  "examples": [
+    {
+      "type": [
+        "LandeGFactor"
+      ],
+      "value": 1.0,
+      "unit": "unitless"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "LandeGFactor": "qkind:LandeGFactor",
+      "unitless": "qunit:UNITLESS"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "LandeGFactor"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "unitless"
+      ],
+      "default": "unitless"
+    }
+  }
+}

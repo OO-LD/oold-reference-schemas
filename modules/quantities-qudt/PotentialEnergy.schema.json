@@ -1,0 +1,42 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "PotentialEnergy.schema.json",
+  "x-oold-uuid": "0dbd1a69-0ea0-550c-b83b-ac795f460fa6",
+  "x-oold-version": "0.1.0",
+  "title": "PotentialEnergy",
+  "x-oold-multilang-title": {
+    "en": "Potential energy",
+    "de": "Potentielle Energie"
+  },
+  "description": "Energy possessed by a body by virtue of its position in a gravity field in contrast with kinetic energy, that possessed by virtue of its motion.",
+  "allOf": [
+    {
+      "$ref": "Energy.schema.json"
+    }
+  ],
+  "@context": [
+    "Energy.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "PotentialEnergy": "qkind:PotentialEnergy"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "PotentialEnergy"
+      ]
+    }
+  },
+  "x-oold-context": {
+    "PotentialEnergy": {
+      "http://dbpedia.org/resource/Potential_energy": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

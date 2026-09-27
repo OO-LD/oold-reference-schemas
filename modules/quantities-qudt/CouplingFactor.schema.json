@@ -1,0 +1,46 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "CouplingFactor.schema.json",
+  "x-oold-uuid": "a3325a97-66ef-547a-87ed-55767d92f4de",
+  "x-oold-version": "0.1.0",
+  "title": "CouplingFactor",
+  "x-oold-multilang-title": {
+    "en": "Coupling factor"
+  },
+  "description": "\"Coupling Factor\" is the ratio of an electromagnetic quantity, usually voltage or current, appearing at a specified location of a given circuit to the corresponding quantity at a specified location in the circuit from which energy is transferred by coupling.",
+  "examples": [
+    {
+      "type": [
+        "CouplingFactor"
+      ],
+      "value": 1.0,
+      "unit": "unitless"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "CouplingFactor": "qkind:CouplingFactor",
+      "unitless": "qunit:UNITLESS"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "CouplingFactor"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "unitless"
+      ],
+      "default": "unitless"
+    }
+  }
+}

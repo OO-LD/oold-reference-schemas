@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "EnergyContent.schema.json",
+  "x-oold-uuid": "40402cb3-470f-5f39-9e35-e20b06ba615b",
+  "x-oold-version": "0.1.0",
+  "title": "EnergyContent",
+  "x-oold-multilang-title": {
+    "en": "Energy content"
+  },
+  "description": "saved quantity of energy which can be used physically or chemically",
+  "allOf": [
+    {
+      "$ref": "Energy.schema.json"
+    }
+  ],
+  "@context": [
+    "Energy.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "EnergyContent": "qkind:EnergyContent"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "EnergyContent"
+      ]
+    }
+  }
+}

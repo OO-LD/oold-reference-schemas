@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "AbsoluteActivity.schema.json",
+  "x-oold-uuid": "21ccd415-85d4-5a7f-97e6-8ffe96373f47",
+  "x-oold-version": "0.1.0",
+  "title": "AbsoluteActivity",
+  "x-oold-multilang-title": {
+    "en": "Absolute Activity"
+  },
+  "description": "The \"Absolute Activity\" is the exponential of the ratio of the chemical potential to $RT$ where $R$ is the gas constant and $T$ the thermodynamic temperature.",
+  "allOf": [
+    {
+      "$ref": "InverseVolume.schema.json"
+    }
+  ],
+  "@context": [
+    "InverseVolume.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "AbsoluteActivity": "qkind:AbsoluteActivity"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "AbsoluteActivity"
+      ]
+    }
+  }
+}

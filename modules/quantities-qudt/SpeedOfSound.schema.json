@@ -1,0 +1,42 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "SpeedOfSound.schema.json",
+  "x-oold-uuid": "2fa92a29-59c4-56ac-831a-219705ad4288",
+  "x-oold-version": "0.1.0",
+  "title": "SpeedOfSound",
+  "x-oold-multilang-title": {
+    "en": "Speed of sound",
+    "de": "Schallgeschwindigkeit"
+  },
+  "description": "The speed of sound is the distance travelled during a unit of time by a sound wave propagating through an elastic medium.",
+  "allOf": [
+    {
+      "$ref": "Speed.schema.json"
+    }
+  ],
+  "@context": [
+    "Speed.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "SpeedOfSound": "qkind:SpeedOfSound"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "SpeedOfSound"
+      ]
+    }
+  },
+  "x-oold-context": {
+    "SpeedOfSound": {
+      "http://dbpedia.org/resource/Speed_of_sound": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "SpeedOfLight.schema.json",
+  "x-oold-uuid": "ead5dcb1-6a9a-5c25-9862-f31eca41609d",
+  "x-oold-version": "0.1.0",
+  "title": "SpeedOfLight",
+  "x-oold-multilang-title": {
+    "en": "Speed of light",
+    "de": "Lichtgeschwindigkeit"
+  },
+  "description": "The quantity kind $\\text{Speed of Light}$ is the speed of electomagnetic waves in a given medium.",
+  "allOf": [
+    {
+      "$ref": "Speed.schema.json"
+    }
+  ],
+  "@context": [
+    "Speed.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "SpeedOfLight": "qkind:SpeedOfLight"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "SpeedOfLight"
+      ]
+    }
+  },
+  "x-oold-context": {
+    "SpeedOfLight": {
+      "http://dbpedia.org/resource/Speed_of_light": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "RichardsonConstant.schema.json",
+  "x-oold-uuid": "a78b60b5-e433-540b-ba1f-2970c4a21f07",
+  "x-oold-version": "0.1.0",
+  "title": "RichardsonConstant",
+  "x-oold-multilang-title": {
+    "en": "Richardson Constant"
+  },
+  "description": "\"Richardson Constant\" is a constant used in developing thermionic emission current density for a metal.",
+  "examples": [
+    {
+      "type": [
+        "RichardsonConstant"
+      ],
+      "value": 1.0,
+      "unit": "ampere_per_kelvin_squared_per_meter_squared"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "RichardsonConstant": "qkind:RichardsonConstant",
+      "ampere_per_kelvin_squared_per_meter_squared": "qunit:A-PER-M2-K2"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "RichardsonConstant"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "ampere_per_kelvin_squared_per_meter_squared"
+      ],
+      "default": "ampere_per_kelvin_squared_per_meter_squared"
+    }
+  }
+}

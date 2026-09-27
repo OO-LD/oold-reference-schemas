@@ -1,0 +1,42 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MagneticFieldStrength_H.schema.json",
+  "x-oold-uuid": "5066212a-dfda-5519-af30-7363bd1c5c79",
+  "x-oold-version": "0.1.0",
+  "title": "MagneticFieldStrength_H",
+  "x-oold-multilang-title": {
+    "en": "Magnetic field strength",
+    "de": "Magnetische Feldstärke"
+  },
+  "description": "$\\textit{Magnetic Field Strength}$ is a vector quantity obtained at a given point by subtracting the magnetization $M$ from the magnetic flux density $B$ divided by the magnetic constant $\\mu_0$. The magnetic field strength is related to the total current density $J_{tot}$ via: $\\text{rot} H = J_{tot}$.",
+  "allOf": [
+    {
+      "$ref": "ElectricCurrentPerLength.schema.json"
+    }
+  ],
+  "@context": [
+    "ElectricCurrentPerLength.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "MagneticFieldStrength_H": "qkind:MagneticFieldStrength_H"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "MagneticFieldStrength_H"
+      ]
+    }
+  },
+  "x-oold-context": {
+    "MagneticFieldStrength_H": {
+      "https://si-digital-framework.org/quantities/MAFD": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

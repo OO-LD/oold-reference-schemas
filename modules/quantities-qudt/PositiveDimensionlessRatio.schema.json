@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "PositiveDimensionlessRatio.schema.json",
+  "x-oold-uuid": "49b7ea6a-747e-5732-84e9-925d1d3b3b0f",
+  "x-oold-version": "0.1.0",
+  "title": "PositiveDimensionlessRatio",
+  "x-oold-multilang-title": {
+    "en": "Positive Dimensionless Ratio"
+  },
+  "description": "A \"Positive Dimensionless Ratio\" is a dimensionless ratio that is greater than zero",
+  "allOf": [
+    {
+      "$ref": "DimensionlessRatio.schema.json"
+    }
+  ],
+  "@context": [
+    "DimensionlessRatio.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "PositiveDimensionlessRatio": "qkind:PositiveDimensionlessRatio"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "PositiveDimensionlessRatio"
+      ]
+    }
+  }
+}

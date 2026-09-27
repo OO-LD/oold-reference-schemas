@@ -1,0 +1,29 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "PropellantTemperature.schema.json",
+  "x-oold-uuid": "a78a937a-78d6-5bf8-9d04-af65b0ae5b4a",
+  "x-oold-version": "0.1.0",
+  "title": "PropellantTemperature",
+  "x-oold-multilang-title": {
+    "en": "Propellant Temperature"
+  },
+  "allOf": [
+    {
+      "$ref": "Temperature.schema.json"
+    }
+  ],
+  "@context": [
+    "Temperature.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "PropellantTemperature": "qkind:PropellantTemperature"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "PropellantTemperature"
+      ]
+    }
+  }
+}

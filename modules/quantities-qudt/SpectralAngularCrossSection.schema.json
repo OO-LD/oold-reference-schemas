@@ -1,0 +1,46 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "SpectralAngularCrossSection.schema.json",
+  "x-oold-uuid": "4e1cadc1-79b3-55b3-9ed4-0a4ea0c3ff5a",
+  "x-oold-version": "0.1.0",
+  "title": "SpectralAngularCrossSection",
+  "x-oold-multilang-title": {
+    "en": "Spectral Angular Cross-section"
+  },
+  "description": "\"Spectral Angular Cross-section\" is the cross-section for ejecting or scattering a particle into an elementary cone with energy $E$ in an energy interval, divided by the solid angle $d\\Omega$ of that cone and the range $dE$ of that interval.",
+  "examples": [
+    {
+      "type": [
+        "SpectralAngularCrossSection"
+      ],
+      "value": 1.0,
+      "unit": "meter_squared_per_joule_per_steradian"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "SpectralAngularCrossSection": "qkind:SpectralAngularCrossSection",
+      "meter_squared_per_joule_per_steradian": "qunit:M2-PER-SR-J"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "SpectralAngularCrossSection"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "meter_squared_per_joule_per_steradian"
+      ],
+      "default": "meter_squared_per_joule_per_steradian"
+    }
+  }
+}

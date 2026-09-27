@@ -1,0 +1,50 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Unbalance.schema.json",
+  "x-oold-uuid": "ff5fdfac-c614-548f-b470-5bd8cc2a9b68",
+  "x-oold-version": "0.1.0",
+  "title": "Unbalance",
+  "x-oold-multilang-title": {
+    "en": "Unbalance"
+  },
+  "description": "unsteady rotation of a body resulting from an anxious distribution of mass, expressed as the product of radius and related mass",
+  "examples": [
+    {
+      "type": [
+        "Unbalance"
+      ],
+      "value": 1.0,
+      "unit": "kilo_gram_meter"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Unbalance": "qkind:Unbalance",
+      "kilo_gram_meter": "qunit:KiloGM-M",
+      "gram_milli_meter": "qunit:GM-MilliM",
+      "gram_meter": "qunit:GM-M"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Unbalance"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "kilo_gram_meter",
+        "gram_milli_meter",
+        "gram_meter"
+      ],
+      "default": "kilo_gram_meter"
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "NozzleThroatCrossSectionalArea.schema.json",
+  "x-oold-uuid": "d827a75e-0225-570e-a3a1-ac154234dad2",
+  "x-oold-version": "0.1.0",
+  "title": "NozzleThroatCrossSectionalArea",
+  "x-oold-multilang-title": {
+    "en": "Nozzle Throat Cross-sectional Area"
+  },
+  "description": "Cross-sectional area of the nozzle at the throat.",
+  "allOf": [
+    {
+      "$ref": "Area.schema.json"
+    }
+  ],
+  "@context": [
+    "Area.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "NozzleThroatCrossSectionalArea": "qkind:NozzleThroatCrossSectionalArea"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "NozzleThroatCrossSectionalArea"
+      ]
+    }
+  }
+}

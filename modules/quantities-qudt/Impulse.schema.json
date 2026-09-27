@@ -1,0 +1,52 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Impulse.schema.json",
+  "x-oold-uuid": "b294fadc-8e77-5ce9-8845-484251019444",
+  "x-oold-version": "0.1.0",
+  "title": "Impulse",
+  "x-oold-multilang-title": {
+    "en": "Impulse"
+  },
+  "description": "product of force and time",
+  "examples": [
+    {
+      "type": [
+        "Impulse"
+      ],
+      "value": 1.0,
+      "unit": "kilo_gram_meter_per_second"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Impulse": "qkind:Impulse",
+      "kilo_gram_meter_per_second": "qunit:KiloGM-M-PER-SEC",
+      "centi_meter_gram_per_second": "qunit:GM-CentiM-PER-SEC",
+      "gram_meter_per_second": "qunit:GM-M-PER-SEC",
+      "centi_meter_kilo_gram_per_second": "qunit:KiloGM-CentiM-PER-SEC"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Impulse"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "kilo_gram_meter_per_second",
+        "centi_meter_gram_per_second",
+        "gram_meter_per_second",
+        "centi_meter_kilo_gram_per_second"
+      ],
+      "default": "kilo_gram_meter_per_second"
+    }
+  }
+}

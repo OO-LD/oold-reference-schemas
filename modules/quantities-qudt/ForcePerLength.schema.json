@@ -1,0 +1,63 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ForcePerLength.schema.json",
+  "x-oold-uuid": "4496d2b6-6d71-5453-92a8-1e9e05297338",
+  "x-oold-version": "0.1.0",
+  "title": "ForcePerLength",
+  "x-oold-multilang-title": {
+    "en": "Force per Length"
+  },
+  "examples": [
+    {
+      "type": [
+        "ForcePerLength"
+      ],
+      "value": 1.0,
+      "unit": "newton_per_meter"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ForcePerLength": "qkind:ForcePerLength",
+      "newton_per_meter": "qunit:N-PER-M",
+      "nano_newton_per_meter": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/nano_newton_per_meter",
+      "micro_newton_per_meter": "qunit:MicroN-M-PER-M2",
+      "milli_newton_per_meter": "qunit:MilliN-PER-M",
+      "centi_newton_per_meter": "qunit:CentiN-M-PER-M2",
+      "newton_per_centi_meter": "qunit:N-PER-CentiM",
+      "newton_per_milli_meter": "qunit:N-PER-MilliM",
+      "kilo_newton_per_meter": "qunit:KiloN-PER-M",
+      "mega_newton_per_meter": "qunit:MegaN-M-PER-M2",
+      "giga_newton_per_meter": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/giga_newton_per_meter"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ForcePerLength"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "newton_per_meter",
+        "nano_newton_per_meter",
+        "micro_newton_per_meter",
+        "milli_newton_per_meter",
+        "centi_newton_per_meter",
+        "newton_per_centi_meter",
+        "newton_per_milli_meter",
+        "kilo_newton_per_meter",
+        "mega_newton_per_meter",
+        "giga_newton_per_meter"
+      ],
+      "default": "newton_per_meter"
+    }
+  }
+}

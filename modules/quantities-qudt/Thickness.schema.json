@@ -1,0 +1,41 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Thickness.schema.json",
+  "x-oold-uuid": "d34599c9-8028-5400-b402-962f7a36cc44",
+  "x-oold-version": "0.1.0",
+  "title": "Thickness",
+  "x-oold-multilang-title": {
+    "en": "Thickness"
+  },
+  "description": "\"Thickness\" is the the smallest of three dimensions: length, width, thickness.",
+  "allOf": [
+    {
+      "$ref": "Length.schema.json"
+    }
+  ],
+  "@context": [
+    "Length.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Thickness": "qkind:Thickness"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Thickness"
+      ]
+    }
+  },
+  "x-oold-context": {
+    "Thickness": {
+      "http://dbpedia.org/resource/Thickness": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

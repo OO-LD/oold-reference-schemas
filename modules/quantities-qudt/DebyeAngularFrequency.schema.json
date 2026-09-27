@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "DebyeAngularFrequency.schema.json",
+  "x-oold-uuid": "a284f00a-432c-5ca0-9e8b-1c61eb0d30ed",
+  "x-oold-version": "0.1.0",
+  "title": "DebyeAngularFrequency",
+  "x-oold-multilang-title": {
+    "en": "Debye Angular Frequency"
+  },
+  "description": "\"Debye Angular Frequency\" is the cut-off angular frequency in the Debye model of the vibrational spectrum of a solid.",
+  "allOf": [
+    {
+      "$ref": "AngularFrequency.schema.json"
+    }
+  ],
+  "@context": [
+    "AngularFrequency.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "DebyeAngularFrequency": "qkind:DebyeAngularFrequency"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "DebyeAngularFrequency"
+      ]
+    }
+  }
+}

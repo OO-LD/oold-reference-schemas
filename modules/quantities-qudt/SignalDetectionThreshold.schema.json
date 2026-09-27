@@ -1,0 +1,45 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "SignalDetectionThreshold.schema.json",
+  "x-oold-uuid": "e88b7d96-0c9a-542a-8202-c70965346701",
+  "x-oold-version": "0.1.0",
+  "title": "SignalDetectionThreshold",
+  "x-oold-multilang-title": {
+    "en": "Signal Detection Threshold"
+  },
+  "examples": [
+    {
+      "type": [
+        "SignalDetectionThreshold"
+      ],
+      "value": 1.0,
+      "unit": "dbc"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "SignalDetectionThreshold": "qkind:SignalDetectionThreshold",
+      "dbc": "qunit:DeciB_C"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "SignalDetectionThreshold"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "dbc"
+      ],
+      "default": "dbc"
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "LorenzCoefficient.schema.json",
+  "x-oold-uuid": "3861c9cc-b54a-5667-89b4-b9c93410b6e6",
+  "x-oold-version": "0.1.0",
+  "title": "LorenzCoefficient",
+  "x-oold-multilang-title": {
+    "en": "Lorenz Coefficient"
+  },
+  "description": "\"Lorenz Coefficient\" is part mof the Lorenz curve.",
+  "examples": [
+    {
+      "type": [
+        "LorenzCoefficient"
+      ],
+      "value": 1.0,
+      "unit": "volt_squared_per_kelvin_squared"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "LorenzCoefficient": "qkind:LorenzCoefficient",
+      "volt_squared_per_kelvin_squared": "qunit:V2-PER-K2"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "LorenzCoefficient"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "volt_squared_per_kelvin_squared"
+      ],
+      "default": "volt_squared_per_kelvin_squared"
+    }
+  }
+}

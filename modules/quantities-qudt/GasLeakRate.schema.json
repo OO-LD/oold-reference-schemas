@@ -1,0 +1,54 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "GasLeakRate.schema.json",
+  "x-oold-uuid": "5d473924-b79a-56d5-a5ef-5f6a656953ce",
+  "x-oold-version": "0.1.0",
+  "title": "GasLeakRate",
+  "x-oold-multilang-title": {
+    "en": "Gas leak rate"
+  },
+  "description": "ratio of the pV value of a gas (product of pressure and volume of a given quantity of gas at the respective temperature) flowing through a pipe cross-section during a time interval and the related interval",
+  "examples": [
+    {
+      "type": [
+        "GasLeakRate"
+      ],
+      "value": 1.0,
+      "unit": "meter_cubed_pascal_per_second"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "GasLeakRate": "qkind:GasLeakRate",
+      "meter_cubed_pascal_per_second": "qunit:PA-M3-PER-SEC",
+      "liter_milli_bar_per_second": "qunit:MilliBAR-L-PER-SEC",
+      "bar_liter_per_second": "qunit:BAR-L-PER-SEC",
+      "hecto_pascal_meter_cubed_per_second": "qunit:HectoPA-M3-PER-SEC",
+      "mega_pascal_meter_cubed_per_second": "qunit:MegaPA-M3-PER-SEC"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "GasLeakRate"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "meter_cubed_pascal_per_second",
+        "liter_milli_bar_per_second",
+        "bar_liter_per_second",
+        "hecto_pascal_meter_cubed_per_second",
+        "mega_pascal_meter_cubed_per_second"
+      ],
+      "default": "meter_cubed_pascal_per_second"
+    }
+  }
+}

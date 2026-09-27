@@ -1,0 +1,46 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Dissipance.schema.json",
+  "x-oold-uuid": "cc0f0bae-47e7-5032-8049-bb60b9a878a6",
+  "x-oold-version": "0.1.0",
+  "title": "Dissipance",
+  "x-oold-multilang-title": {
+    "en": "Dissipance"
+  },
+  "description": "Dissipance, or dissipation factor for sound power, is the ratio of dissipated sound power to incident sound power. The dissipation factor (DF) is a measure of loss-rate of energy of a mode of oscillation (mechanical, electrical, or electromechanical) in a dissipative system. It is the reciprocal of quality factor, which represents the quality of oscillation.",
+  "examples": [
+    {
+      "type": [
+        "Dissipance"
+      ],
+      "value": 1.0,
+      "unit": "unitless"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Dissipance": "qkind:Dissipance",
+      "unitless": "qunit:UNITLESS"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Dissipance"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "unitless"
+      ],
+      "default": "unitless"
+    }
+  }
+}

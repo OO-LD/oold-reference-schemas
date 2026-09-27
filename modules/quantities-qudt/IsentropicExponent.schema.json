@@ -1,0 +1,47 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "IsentropicExponent.schema.json",
+  "x-oold-uuid": "0690877a-b08b-57b2-b8b2-939e940e02ea",
+  "x-oold-version": "0.1.0",
+  "title": "IsentropicExponent",
+  "x-oold-multilang-title": {
+    "en": "Isentropic exponent",
+    "de": "Isentropenexponent"
+  },
+  "description": "$\\textit{Isentropic Exponent}$ is a variant of $\\textit{Specific Heat Ratio Capacities}$. \n  For an ideal gas $\\textit{Isentropic Exponent}$, $\\varkappa$. is equal to $\\gamma$,\n   the ratio of its specific heat capacities $c_p$ and $c_v$ under steady pressure and volume.",
+  "examples": [
+    {
+      "type": [
+        "IsentropicExponent"
+      ],
+      "value": 1.0,
+      "unit": "unitless"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "IsentropicExponent": "qkind:IsentropicExponent",
+      "unitless": "qunit:UNITLESS"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "IsentropicExponent"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "unitless"
+      ],
+      "default": "unitless"
+    }
+  }
+}

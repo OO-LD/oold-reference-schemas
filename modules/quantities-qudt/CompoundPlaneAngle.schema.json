@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "CompoundPlaneAngle.schema.json",
+  "x-oold-uuid": "116611f9-5169-5317-bee0-d3df1d1796be",
+  "x-oold-version": "0.1.0",
+  "title": "CompoundPlaneAngle",
+  "x-oold-multilang-title": {
+    "en": "Compound Plane Angle"
+  },
+  "description": "A \"Compound Plane Angle\" is a compound measure of plane angle in degrees, minutes, seconds, and optionally millionth-seconds of arc.",
+  "allOf": [
+    {
+      "$ref": "PlaneAngle.schema.json"
+    }
+  ],
+  "@context": [
+    "PlaneAngle.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "CompoundPlaneAngle": "qkind:CompoundPlaneAngle"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "CompoundPlaneAngle"
+      ]
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "LinearForce.schema.json",
+  "x-oold-uuid": "07c57bfb-44bc-521d-978e-e17c347b3eb4",
+  "x-oold-version": "0.1.0",
+  "title": "LinearForce",
+  "x-oold-multilang-title": {
+    "en": "Linear Force",
+    "de": "Streckenlast"
+  },
+  "description": "Another name for Force Per Length, used by the Industry Foundation Classes (IFC) standard.",
+  "allOf": [
+    {
+      "$ref": "ForcePerLength.schema.json"
+    }
+  ],
+  "@context": [
+    "ForcePerLength.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "LinearForce": "qkind:LinearForce"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "LinearForce"
+      ]
+    }
+  }
+}

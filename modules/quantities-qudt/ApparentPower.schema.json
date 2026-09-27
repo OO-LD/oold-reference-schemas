@@ -1,0 +1,31 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ApparentPower.schema.json",
+  "x-oold-uuid": "9a9b930a-8a17-5c13-925e-18bea1363e3a",
+  "x-oold-version": "0.1.0",
+  "title": "ApparentPower",
+  "x-oold-multilang-title": {
+    "en": "Apparent power",
+    "de": "Scheinleistung"
+  },
+  "description": "\"Apparent Power\" is the product of the rms voltage $U$ between the terminals of a two-terminal element or two-terminal circuit and the rms electric current I in the element or circuit. Under sinusoidal conditions, the apparent power is the modulus of the complex power.",
+  "allOf": [
+    {
+      "$ref": "ElectricPower.schema.json"
+    }
+  ],
+  "@context": [
+    "ElectricPower.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ApparentPower": "qkind:ApparentPower"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ApparentPower"
+      ]
+    }
+  }
+}

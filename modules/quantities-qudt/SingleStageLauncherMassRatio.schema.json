@@ -1,0 +1,29 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "SingleStageLauncherMassRatio.schema.json",
+  "x-oold-uuid": "0964da9e-f1d9-5299-8971-48151a660792",
+  "x-oold-version": "0.1.0",
+  "title": "SingleStageLauncherMassRatio",
+  "x-oold-multilang-title": {
+    "en": "Single Stage Launcher Mass Ratio"
+  },
+  "allOf": [
+    {
+      "$ref": "MassRatio.schema.json"
+    }
+  ],
+  "@context": [
+    "MassRatio.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "SingleStageLauncherMassRatio": "qkind:SingleStageLauncherMassRatio"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "SingleStageLauncherMassRatio"
+      ]
+    }
+  }
+}

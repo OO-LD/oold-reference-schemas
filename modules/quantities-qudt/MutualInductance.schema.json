@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MutualInductance.schema.json",
+  "x-oold-uuid": "51cb2a05-6574-5eee-958c-6ede005561d8",
+  "x-oold-version": "0.1.0",
+  "title": "MutualInductance",
+  "x-oold-multilang-title": {
+    "en": "Mutual Inductance"
+  },
+  "description": "$\\textit{Mutual Inductance}$ is the non-diagonal term of the inductance matrix. For two loops, the symbol $M$ is used for $L_{12}$.",
+  "allOf": [
+    {
+      "$ref": "Inductance.schema.json"
+    }
+  ],
+  "@context": [
+    "Inductance.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "MutualInductance": "qkind:MutualInductance"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "MutualInductance"
+      ]
+    }
+  }
+}

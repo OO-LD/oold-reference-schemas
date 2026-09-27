@@ -1,0 +1,48 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "LogarithmicFrequencyInterval.schema.json",
+  "x-oold-uuid": "ebd21870-684d-59d8-9565-9eef19e04241",
+  "x-oold-version": "0.1.0",
+  "title": "LogarithmicFrequencyInterval",
+  "x-oold-multilang-title": {
+    "en": "Logarithmic frequency interval",
+    "de": "Frequenzmaßintervall"
+  },
+  "examples": [
+    {
+      "type": [
+        "LogarithmicFrequencyInterval"
+      ],
+      "value": 1.0,
+      "unit": "unitless"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "LogarithmicFrequencyInterval": "qkind:LogarithmicFrequencyInterval",
+      "unitless": "qunit:UNITLESS",
+      "octave": "qunit:OCT"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "LogarithmicFrequencyInterval"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "unitless",
+        "octave"
+      ],
+      "default": "unitless"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "PropellantMass.schema.json",
+  "x-oold-uuid": "3cca82ea-6a34-5bc7-9d20-9236e827ea73",
+  "x-oold-version": "0.1.0",
+  "title": "PropellantMass",
+  "x-oold-multilang-title": {
+    "en": "Propellant Mass"
+  },
+  "allOf": [
+    {
+      "$ref": "Mass.schema.json"
+    }
+  ],
+  "@context": [
+    "Mass.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "PropellantMass": "qkind:PropellantMass"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "PropellantMass"
+      ]
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "CartesianCoordinates.schema.json",
+  "x-oold-uuid": "c8457fe4-bcf1-5a08-8818-28cd270ddfa1",
+  "x-oold-version": "0.1.0",
+  "title": "CartesianCoordinates",
+  "x-oold-multilang-title": {
+    "en": "Cartesian coordinates",
+    "de": "Kartesische Koordinaten"
+  },
+  "description": "\"Cartesian Coordinates\" specify each point uniquely in a plane by a pair of numerical coordinates, which are the signed distances from the point to two fixed perpendicular directed lines, measured in the same unit of length.",
+  "allOf": [
+    {
+      "$ref": "Length.schema.json"
+    }
+  ],
+  "@context": [
+    "Length.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "CartesianCoordinates": "qkind:CartesianCoordinates"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "CartesianCoordinates"
+      ]
+    }
+  }
+}

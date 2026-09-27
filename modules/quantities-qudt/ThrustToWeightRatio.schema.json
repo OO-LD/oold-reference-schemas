@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ThrustToWeightRatio.schema.json",
+  "x-oold-uuid": "4ca14f3c-a53f-5418-9c9a-11f750f429e7",
+  "x-oold-version": "0.1.0",
+  "title": "ThrustToWeightRatio",
+  "x-oold-multilang-title": {
+    "en": "Thrust To Weight Ratio"
+  },
+  "description": "Thrust-to-weight ratio is a ratio of thrust to weight of a rocket, jet engine, propeller engine, or a vehicle propelled by such an engine. It is a dimensionless quantity and is an indicator of the performance of the engine or vehicle.",
+  "allOf": [
+    {
+      "$ref": "DimensionlessRatio.schema.json"
+    }
+  ],
+  "@context": [
+    "DimensionlessRatio.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ThrustToWeightRatio": "qkind:ThrustToWeightRatio"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ThrustToWeightRatio"
+      ]
+    }
+  }
+}

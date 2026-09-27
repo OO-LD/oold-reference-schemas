@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "EnergyImparted.schema.json",
+  "x-oold-uuid": "a4ca4199-72bd-586e-9ab6-c19db17d04d9",
+  "x-oold-version": "0.1.0",
+  "title": "EnergyImparted",
+  "x-oold-multilang-title": {
+    "en": "Energy Imparted"
+  },
+  "description": "The \"Energy Imparted\", is a physical quantity associated with the energy delivered to a particular volume of matter by all the directly and indirectly ionizing particles (i.e. charged and uncharged) entering that volume.",
+  "allOf": [
+    {
+      "$ref": "Energy.schema.json"
+    }
+  ],
+  "@context": [
+    "Energy.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "EnergyImparted": "qkind:EnergyImparted"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "EnergyImparted"
+      ]
+    }
+  }
+}

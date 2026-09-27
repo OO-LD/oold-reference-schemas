@@ -1,0 +1,59 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MagneticFluxDensity.schema.json",
+  "x-oold-uuid": "91fc2f11-0c7f-5262-8dce-39bc0278562b",
+  "x-oold-version": "0.1.0",
+  "title": "MagneticFluxDensity",
+  "x-oold-multilang-title": {
+    "en": "Magnetic flux density",
+    "de": "Magnetische Flussdichte"
+  },
+  "description": "\"Magnetic Flux Density\" is a vector quantity and is the magnetic flux per unit area of a magnetic field at right angles to the magnetic force. It can be defined in terms of the effects the field has, for example by $B = F/q v \\sin \\theta$, where $F$ is the force a moving charge $q$ would experience if it was travelling at a velocity $v$ in a direction making an angle θ with that of the field. The magnetic field strength is also a vector quantity and is related to $B$ by: $H = B/\\mu$, where $\\mu$ is the permeability of the medium.",
+  "examples": [
+    {
+      "type": [
+        "MagneticFluxDensity"
+      ],
+      "value": 1.0,
+      "unit": "tesla"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "MagneticFluxDensity": "qkind:MagneticFluxDensity",
+      "tesla": "qunit:T",
+      "nano_tesla": "qunit:NanoT",
+      "gamma": "qunit:GAMMA",
+      "micro_tesla": "qunit:MicroT",
+      "milli_tesla": "qunit:MilliT",
+      "kilo_tesla": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/kilo_tesla",
+      "abt": "qunit:T_Ab"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "MagneticFluxDensity"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "tesla",
+        "nano_tesla",
+        "gamma",
+        "micro_tesla",
+        "abt",
+        "milli_tesla",
+        "kilo_tesla"
+      ],
+      "default": "tesla"
+    }
+  }
+}

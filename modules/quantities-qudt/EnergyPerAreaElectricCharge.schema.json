@@ -1,0 +1,46 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "EnergyPerAreaElectricCharge.schema.json",
+  "x-oold-uuid": "fad7c565-9feb-576d-8be2-4a8dd5ec3d7a",
+  "x-oold-version": "0.1.0",
+  "title": "EnergyPerAreaElectricCharge",
+  "x-oold-multilang-title": {
+    "en": "Energy Per Area Electric Charge"
+  },
+  "description": "\"Energy Per Area Electric Charge\" is the amount of electric energy associated with a unit of area.",
+  "examples": [
+    {
+      "type": [
+        "EnergyPerAreaElectricCharge"
+      ],
+      "value": 1.0,
+      "unit": "volt_per_meter_squared"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "EnergyPerAreaElectricCharge": "qkind:EnergyPerAreaElectricCharge",
+      "volt_per_meter_squared": "qunit:V-PER-M2"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "EnergyPerAreaElectricCharge"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "volt_per_meter_squared"
+      ],
+      "default": "volt_per_meter_squared"
+    }
+  }
+}

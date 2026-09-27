@@ -1,0 +1,51 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "AreaTime.schema.json",
+  "x-oold-uuid": "990c8c6a-812a-50a3-9649-7a2038885114",
+  "x-oold-version": "0.1.0",
+  "title": "AreaTime",
+  "x-oold-multilang-title": {
+    "en": "Area Time"
+  },
+  "examples": [
+    {
+      "type": [
+        "AreaTime"
+      ],
+      "value": 1.0,
+      "unit": "meter_squared_second"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "AreaTime": "qkind:AreaTime",
+      "meter_squared_second": "qunit:M2-SEC",
+      "centi_meter_squared_second": "qunit:CentiM2-SEC",
+      "centi_meter_squared_minute": "qunit:CentiM2-MIN",
+      "meter_squared_minute": "qunit:M2-MIN"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "AreaTime"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "meter_squared_second",
+        "centi_meter_squared_second",
+        "centi_meter_squared_minute",
+        "meter_squared_minute"
+      ],
+      "default": "meter_squared_second"
+    }
+  }
+}

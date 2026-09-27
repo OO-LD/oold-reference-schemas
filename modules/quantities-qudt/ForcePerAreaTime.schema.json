@@ -1,0 +1,51 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ForcePerAreaTime.schema.json",
+  "x-oold-uuid": "5ffdbf4d-b0e9-5c7e-8ce0-298e48ee3197",
+  "x-oold-version": "0.1.0",
+  "title": "ForcePerAreaTime",
+  "x-oold-multilang-title": {
+    "en": "Force Per Area Time"
+  },
+  "examples": [
+    {
+      "type": [
+        "ForcePerAreaTime"
+      ],
+      "value": 1.0,
+      "unit": "pascal_per_second"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ForcePerAreaTime": "qkind:ForcePerAreaTime",
+      "pascal_per_second": "qunit:PA-PER-SEC",
+      "pascal_per_hour": "qunit:PA-PER-HR",
+      "pascal_per_minute": "qunit:PA-PER-MIN",
+      "hecto_pascal_per_hour": "qunit:HectoPA-PER-HR"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ForcePerAreaTime"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "pascal_per_second",
+        "pascal_per_hour",
+        "pascal_per_minute",
+        "hecto_pascal_per_hour"
+      ],
+      "default": "pascal_per_second"
+    }
+  }
+}

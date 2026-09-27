@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "LuminousFluxRatio.schema.json",
+  "x-oold-uuid": "bb723efa-d62b-5aed-9426-7ff03b896fb7",
+  "x-oold-version": "0.1.0",
+  "title": "LuminousFluxRatio",
+  "x-oold-multilang-title": {
+    "en": "Luminous Flux Ratio"
+  },
+  "description": "Luminous Flux Ratio (or Relative Luminous Flux or Relative Luminous Power) is the measure of the perceived power of light. It differs from radiant flux, the measure of the total power of light emitted, in that luminous flux is adjusted to reflect the varying sensitivity of the human eye to different wavelengths of light. It is expressed as a percentage or fraction of full power.",
+  "allOf": [
+    {
+      "$ref": "DimensionlessRatio.schema.json"
+    }
+  ],
+  "@context": [
+    "DimensionlessRatio.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "LuminousFluxRatio": "qkind:LuminousFluxRatio"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "LuminousFluxRatio"
+      ]
+    }
+  }
+}

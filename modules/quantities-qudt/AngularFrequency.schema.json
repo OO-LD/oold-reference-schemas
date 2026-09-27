@@ -1,0 +1,62 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "AngularFrequency.schema.json",
+  "x-oold-uuid": "9534c898-b7d4-5510-adfa-6673507a4e10",
+  "x-oold-version": "0.1.0",
+  "title": "AngularFrequency",
+  "x-oold-multilang-title": {
+    "en": "Angular frequency",
+    "de": "Kreisfrequenz"
+  },
+  "description": "\"Angular frequency\", symbol $\\omega$ (also referred to by the terms angular speed, radial frequency, circular frequency, orbital frequency, radian frequency, and pulsatance) is a scalar measure of rotation rate. Angular frequency (or angular speed) is the magnitude of the vector quantity angular velocity.",
+  "examples": [
+    {
+      "type": [
+        "AngularFrequency"
+      ],
+      "value": 1.0,
+      "unit": "radian_per_second"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "AngularFrequency": "qkind:AngularFrequency",
+      "radian_per_second": "qunit:RAD-PER-SEC",
+      "radian_per_hour": "qunit:RAD-PER-HR",
+      "radian_per_minute": "qunit:RAD-PER-MIN"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "AngularFrequency"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "radian_per_second",
+        "radian_per_hour",
+        "radian_per_minute"
+      ],
+      "default": "radian_per_second"
+    }
+  },
+  "x-oold-context": {
+    "AngularFrequency": {
+      "http://dbpedia.org/resource/Angular_frequency": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

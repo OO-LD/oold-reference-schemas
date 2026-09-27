@@ -1,0 +1,29 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "PressureRatio.schema.json",
+  "x-oold-uuid": "7014422e-d349-57de-9d4c-a0fb6e3d74d3",
+  "x-oold-version": "0.1.0",
+  "title": "PressureRatio",
+  "x-oold-multilang-title": {
+    "en": "Pressure Ratio"
+  },
+  "allOf": [
+    {
+      "$ref": "DimensionlessRatio.schema.json"
+    }
+  ],
+  "@context": [
+    "DimensionlessRatio.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "PressureRatio": "qkind:PressureRatio"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "PressureRatio"
+      ]
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "SpecificHeatPressure.schema.json",
+  "x-oold-uuid": "f27c1fdb-1295-5ad2-b624-50acb52f702f",
+  "x-oold-version": "0.1.0",
+  "title": "SpecificHeatPressure",
+  "x-oold-multilang-title": {
+    "en": "Specific Heat Pressure"
+  },
+  "description": "Specific heat at a constant pressure.",
+  "examples": [
+    {
+      "type": [
+        "SpecificHeatPressure"
+      ],
+      "value": 1.0,
+      "unit": "joule_per_kelvin_per_kilo_gram_per_pascal"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "SpecificHeatPressure": "qkind:SpecificHeatPressure",
+      "joule_per_kelvin_per_kilo_gram_per_pascal": "qunit:J-PER-KiloGM-K-PA",
+      "joule_per_gram_per_kelvin_per_pascal": "qunit:J-PER-GM-K-PA"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "SpecificHeatPressure"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "joule_per_kelvin_per_kilo_gram_per_pascal",
+        "joule_per_gram_per_kelvin_per_pascal"
+      ],
+      "default": "joule_per_kelvin_per_kilo_gram_per_pascal"
+    }
+  }
+}

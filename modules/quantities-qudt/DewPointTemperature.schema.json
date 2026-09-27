@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "DewPointTemperature.schema.json",
+  "x-oold-uuid": "8d34f0cc-11e7-58bf-a887-aa0be724fe4e",
+  "x-oold-version": "0.1.0",
+  "title": "DewPointTemperature",
+  "x-oold-multilang-title": {
+    "en": "Dew Point Temperature"
+  },
+  "description": "\"Dew Point Temperature\" is the temperature at which vapour in air reaches saturation.",
+  "allOf": [
+    {
+      "$ref": "Temperature.schema.json"
+    }
+  ],
+  "@context": [
+    "Temperature.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "DewPointTemperature": "qkind:DewPointTemperature"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "DewPointTemperature"
+      ]
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "PropellantMeanBulkTemperature.schema.json",
+  "x-oold-uuid": "df6291d2-dc52-53ff-b314-4631f058ff18",
+  "x-oold-version": "0.1.0",
+  "title": "PropellantMeanBulkTemperature",
+  "x-oold-multilang-title": {
+    "en": "Propellant Mean Bulk Temperature"
+  },
+  "allOf": [
+    {
+      "$ref": "PropellantTemperature.schema.json"
+    }
+  ],
+  "@context": [
+    "PropellantTemperature.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "PropellantMeanBulkTemperature": "qkind:PropellantMeanBulkTemperature"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "PropellantMeanBulkTemperature"
+      ]
+    }
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "BulkModulus.schema.json",
+  "x-oold-uuid": "1c930bb3-24ca-5e5b-84c2-5be2079b2d21",
+  "x-oold-version": "0.1.0",
+  "title": "BulkModulus",
+  "x-oold-multilang-title": {
+    "en": "Bulk Modulus"
+  },
+  "description": "The bulk modulus of a substance measures the substance's resistance to uniform compression. It is defined as the ratio of the infinitesimal pressure increase to the resulting relative decrease of the volume.",
+  "examples": [
+    {
+      "type": [
+        "BulkModulus"
+      ],
+      "value": 1.0,
+      "unit": "pascal"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "BulkModulus": "qkind:BulkModulus",
+      "pascal": "qunit:PA",
+      "pico_pascal": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/pico_pascal",
+      "micro_pascal": "qunit:MicroPA",
+      "milli_pascal": "qunit:MilliPA",
+      "deca_pascal": "qunit:DecaPA",
+      "hecto_pascal": "qunit:HectoPA",
+      "kilo_pascal": "qunit:KiloPA",
+      "mega_pascal": "qunit:MegaPA",
+      "giga_pascal": "qunit:GigaPA"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "BulkModulus"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "pascal",
+        "pico_pascal",
+        "micro_pascal",
+        "milli_pascal",
+        "deca_pascal",
+        "hecto_pascal",
+        "kilo_pascal",
+        "mega_pascal",
+        "giga_pascal"
+      ],
+      "default": "pascal"
+    }
+  }
+}

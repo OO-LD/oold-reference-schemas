@@ -1,0 +1,70 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ElectricFieldStrength.schema.json",
+  "x-oold-uuid": "c66c35bc-f6bd-5b08-a2e9-763d78a082cb",
+  "x-oold-version": "0.1.0",
+  "title": "ElectricFieldStrength",
+  "x-oold-multilang-title": {
+    "en": "Electric field strength",
+    "de": "Elektrische Feldstärke"
+  },
+  "description": "$\\textit{Electric Field Strength}$ is the magnitude and direction of an electric field, expressed by the value of $E$, also referred to as $\\color{indigo} {\\textit{electric field intensity}}$ or simply the electric field.",
+  "examples": [
+    {
+      "type": [
+        "ElectricFieldStrength"
+      ],
+      "value": 1.0,
+      "unit": "volt_per_meter"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ElectricFieldStrength": "qkind:ElectricFieldStrength",
+      "volt_per_meter": "qunit:V-PER-M",
+      "micro_volt_per_meter": "qunit:MicroV-PER-M",
+      "milli_volt_per_meter": "qunit:MilliV-PER-M",
+      "volt_per_centi_meter": "qunit:V-PER-CentiM",
+      "volt_per_milli_meter": "qunit:V-PER-MilliM",
+      "kilo_volt_per_meter": "qunit:KiloV-PER-M",
+      "mega_volt_per_meter": "qunit:MegaV-PER-M"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ElectricFieldStrength"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "volt_per_meter",
+        "micro_volt_per_meter",
+        "milli_volt_per_meter",
+        "volt_per_centi_meter",
+        "volt_per_milli_meter",
+        "kilo_volt_per_meter",
+        "mega_volt_per_meter"
+      ],
+      "default": "volt_per_meter"
+    }
+  },
+  "x-oold-context": {
+    "ElectricFieldStrength": {
+      "https://si-digital-framework.org/quantities/ELFS": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

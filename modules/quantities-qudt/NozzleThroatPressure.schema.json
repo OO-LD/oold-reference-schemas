@@ -1,0 +1,29 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "NozzleThroatPressure.schema.json",
+  "x-oold-uuid": "6ea9da91-7989-54da-a6d0-059bfba4ddbe",
+  "x-oold-version": "0.1.0",
+  "title": "NozzleThroatPressure",
+  "x-oold-multilang-title": {
+    "en": "Nozzle Throat Pressure"
+  },
+  "allOf": [
+    {
+      "$ref": "Pressure.schema.json"
+    }
+  ],
+  "@context": [
+    "Pressure.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "NozzleThroatPressure": "qkind:NozzleThroatPressure"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "NozzleThroatPressure"
+      ]
+    }
+  }
+}

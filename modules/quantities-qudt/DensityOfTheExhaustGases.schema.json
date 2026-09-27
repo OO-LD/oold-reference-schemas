@@ -1,0 +1,29 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "DensityOfTheExhaustGases.schema.json",
+  "x-oold-uuid": "0ae584a5-bdf9-5705-a72f-864c11e61486",
+  "x-oold-version": "0.1.0",
+  "title": "DensityOfTheExhaustGases",
+  "x-oold-multilang-title": {
+    "en": "Density Of The Exhaust Gases"
+  },
+  "allOf": [
+    {
+      "$ref": "Density.schema.json"
+    }
+  ],
+  "@context": [
+    "Density.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "DensityOfTheExhaustGases": "qkind:DensityOfTheExhaustGases"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "DensityOfTheExhaustGases"
+      ]
+    }
+  }
+}

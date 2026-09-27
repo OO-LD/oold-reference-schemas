@@ -1,0 +1,68 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "EnergyDensity.schema.json",
+  "x-oold-uuid": "a7079f30-2242-50c9-b5d1-0367541f3c54",
+  "x-oold-version": "0.1.0",
+  "title": "EnergyDensity",
+  "x-oold-multilang-title": {
+    "en": "Energy Density"
+  },
+  "description": "Energy density is defined as energy per unit volume. The SI unit for energy density is the joule per cubic meter.",
+  "examples": [
+    {
+      "type": [
+        "EnergyDensity"
+      ],
+      "value": 1.0,
+      "unit": "joule_per_meter_cubed"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "EnergyDensity": "qkind:EnergyDensity",
+      "joule_per_meter_cubed": "qunit:J-PER-M3",
+      "hour_watt_per_meter_cubed": "qunit:W-HR-PER-M3",
+      "mega_joule_per_meter_cubed": "qunit:MegaJ-PER-M3"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "EnergyDensity"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "joule_per_meter_cubed",
+        "hour_watt_per_meter_cubed",
+        "mega_joule_per_meter_cubed"
+      ],
+      "default": "joule_per_meter_cubed"
+    }
+  },
+  "x-oold-context": {
+    "EnergyDensity": {
+      "http://dbpedia.org/resource/Energy_density": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      },
+      "https://si-digital-framework.org/quantities/ENGD": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

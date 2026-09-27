@@ -1,0 +1,45 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "InverseAmountOfSubstance.schema.json",
+  "x-oold-uuid": "03376cde-4b36-580a-9a9f-6290fb6340af",
+  "x-oold-version": "0.1.0",
+  "title": "InverseAmountOfSubstance",
+  "x-oold-multilang-title": {
+    "en": "Inverse amount of substance"
+  },
+  "examples": [
+    {
+      "type": [
+        "InverseAmountOfSubstance"
+      ],
+      "value": 1.0,
+      "unit": "per_mole"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "InverseAmountOfSubstance": "qkind:InverseAmountOfSubstance",
+      "per_mole": "qunit:PER-MOL"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "InverseAmountOfSubstance"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "per_mole"
+      ],
+      "default": "per_mole"
+    }
+  }
+}

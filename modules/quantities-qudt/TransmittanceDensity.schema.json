@@ -1,0 +1,46 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "TransmittanceDensity.schema.json",
+  "x-oold-uuid": "e295c46a-feeb-511f-b50e-c7307a013593",
+  "x-oold-version": "0.1.0",
+  "title": "TransmittanceDensity",
+  "x-oold-multilang-title": {
+    "en": "Transmittance Density"
+  },
+  "description": "Transmittance is the fraction of incident light (electromagnetic radiation) at a specified wavelength that passes through a sample.",
+  "examples": [
+    {
+      "type": [
+        "TransmittanceDensity"
+      ],
+      "value": 1.0,
+      "unit": "unitless"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "TransmittanceDensity": "qkind:TransmittanceDensity",
+      "unitless": "qunit:UNITLESS"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "TransmittanceDensity"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "unitless"
+      ],
+      "default": "unitless"
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "DisplacementVectorOfIon.schema.json",
+  "x-oold-uuid": "ee57e9ea-6fbe-580a-8376-5aa62cafed15",
+  "x-oold-version": "0.1.0",
+  "title": "DisplacementVectorOfIon",
+  "x-oold-multilang-title": {
+    "en": "Displacement Vector of Ion"
+  },
+  "description": "\"Displacement Vector of Ion\" is the .",
+  "allOf": [
+    {
+      "$ref": "Length.schema.json"
+    }
+  ],
+  "@context": [
+    "Length.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "DisplacementVectorOfIon": "qkind:DisplacementVectorOfIon"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "DisplacementVectorOfIon"
+      ]
+    }
+  }
+}

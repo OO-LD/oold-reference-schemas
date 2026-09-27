@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ElevationRelativeToNAP.schema.json",
+  "x-oold-uuid": "ca3e2877-dac8-5f00-baef-b338479a3c44",
+  "x-oold-version": "0.1.0",
+  "title": "ElevationRelativeToNAP",
+  "x-oold-multilang-title": {
+    "en": "Elevation relative to NAP"
+  },
+  "description": "Height measurement relative to the Normaal Amsterdams Peil (NAP) (en: Amsterdam Ordnance System). Being a form of gravity related height",
+  "allOf": [
+    {
+      "$ref": "Altitude.schema.json"
+    }
+  ],
+  "@context": [
+    "Altitude.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ElevationRelativeToNAP": "qkind:ElevationRelativeToNAP"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ElevationRelativeToNAP"
+      ]
+    }
+  }
+}

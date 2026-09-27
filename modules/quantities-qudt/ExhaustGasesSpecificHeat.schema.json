@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ExhaustGasesSpecificHeat.schema.json",
+  "x-oold-uuid": "2435e3d4-17be-5441-8892-bf902cfc939a",
+  "x-oold-version": "0.1.0",
+  "title": "ExhaustGasesSpecificHeat",
+  "x-oold-multilang-title": {
+    "en": "Exhaust Gases Specific Heat"
+  },
+  "description": "Specific heat of exhaust gases at constant pressure.",
+  "allOf": [
+    {
+      "$ref": "SpecificHeatCapacity.schema.json"
+    }
+  ],
+  "@context": [
+    "SpecificHeatCapacity.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ExhaustGasesSpecificHeat": "qkind:ExhaustGasesSpecificHeat"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ExhaustGasesSpecificHeat"
+      ]
+    }
+  }
+}

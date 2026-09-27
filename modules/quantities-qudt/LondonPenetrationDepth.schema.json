@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "LondonPenetrationDepth.schema.json",
+  "x-oold-uuid": "956f7143-2fec-58ba-8d84-b3744876ad5d",
+  "x-oold-version": "0.1.0",
+  "title": "LondonPenetrationDepth",
+  "x-oold-multilang-title": {
+    "en": "London Penetration Depth"
+  },
+  "description": "\"London Penetration Depth\" characterizes the distance to which a magnetic field penetrates into a superconductor and becomes equal to 1/e times that of the magnetic field at the surface of the superconductor.",
+  "allOf": [
+    {
+      "$ref": "Length.schema.json"
+    }
+  ],
+  "@context": [
+    "Length.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "LondonPenetrationDepth": "qkind:LondonPenetrationDepth"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "LondonPenetrationDepth"
+      ]
+    }
+  }
+}

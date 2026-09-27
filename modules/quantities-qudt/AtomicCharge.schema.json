@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "AtomicCharge.schema.json",
+  "x-oold-uuid": "b3de57b2-dac6-51aa-a2f7-2a50ded04fb2",
+  "x-oold-version": "0.1.0",
+  "title": "AtomicCharge",
+  "x-oold-multilang-title": {
+    "en": "Atomic Charge"
+  },
+  "description": "The electric charge of an ion, equal to the number of electrons the atom has gained or lost in its ionization multiplied by the charge on one electron.",
+  "allOf": [
+    {
+      "$ref": "ElectricCharge.schema.json"
+    }
+  ],
+  "@context": [
+    "ElectricCharge.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "AtomicCharge": "qkind:AtomicCharge"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "AtomicCharge"
+      ]
+    }
+  }
+}

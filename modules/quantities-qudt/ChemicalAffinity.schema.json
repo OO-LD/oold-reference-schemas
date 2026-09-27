@@ -1,0 +1,48 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ChemicalAffinity.schema.json",
+  "x-oold-uuid": "697915ca-05ad-53cc-95b0-f14a3fd3fe5d",
+  "x-oold-version": "0.1.0",
+  "title": "ChemicalAffinity",
+  "x-oold-multilang-title": {
+    "en": "Chemical Affinity"
+  },
+  "description": "In chemical physics and physical chemistry, \"Chemical Affinity\" is the electronic property by which dissimilar chemical species are capable of forming chemical compounds. Chemical affinity can also refer to the tendency of an atom or compound to combine by chemical reaction with atoms or compounds of unlike composition.",
+  "examples": [
+    {
+      "type": [
+        "ChemicalAffinity"
+      ],
+      "value": 1.0,
+      "unit": "joule_per_mole"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ChemicalAffinity": "qkind:ChemicalAffinity",
+      "joule_per_mole": "qunit:J-PER-MOL",
+      "kilo_joule_per_mole": "qunit:KiloJ-PER-MOL"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ChemicalAffinity"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "joule_per_mole",
+        "kilo_joule_per_mole"
+      ],
+      "default": "joule_per_mole"
+    }
+  }
+}

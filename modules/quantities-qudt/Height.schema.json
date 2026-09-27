@@ -1,0 +1,42 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Height.schema.json",
+  "x-oold-uuid": "c1bdd6bc-fc95-5882-ba1d-068110ae41cc",
+  "x-oold-version": "0.1.0",
+  "title": "Height",
+  "x-oold-multilang-title": {
+    "en": "Height",
+    "de": "Höhe"
+  },
+  "description": "\"Height\" is the measurement of vertical distance, but has two meanings in common use. It can either indicate how \"tall\" something is, or how \"high up\" it is.",
+  "allOf": [
+    {
+      "$ref": "Length.schema.json"
+    }
+  ],
+  "@context": [
+    "Length.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Height": "qkind:Height"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Height"
+      ]
+    }
+  },
+  "x-oold-context": {
+    "Height": {
+      "http://dbpedia.org/resource/Height": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

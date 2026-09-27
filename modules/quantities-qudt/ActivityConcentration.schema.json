@@ -1,0 +1,54 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ActivityConcentration.schema.json",
+  "x-oold-uuid": "815fd908-9afe-56a9-9cdf-0e0ca0c04543",
+  "x-oold-version": "0.1.0",
+  "title": "ActivityConcentration",
+  "x-oold-multilang-title": {
+    "en": "Activity Concentration"
+  },
+  "description": "The \"Activity Concentration\", also known as volume activity, and activity density, is .",
+  "examples": [
+    {
+      "type": [
+        "ActivityConcentration"
+      ],
+      "value": 1.0,
+      "unit": "becquerel_per_meter_cubed"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ActivityConcentration": "qkind:ActivityConcentration",
+      "becquerel_per_meter_cubed": "qunit:BQ-PER-M3",
+      "nano_becquerel_per_liter": "qunit:NanoBQ-PER-L",
+      "micro_becquerel_per_liter": "qunit:MicroBQ-PER-L",
+      "milli_becquerel_per_liter": "qunit:MilliBQ-PER-L",
+      "becquerel_per_liter": "qunit:BQ-PER-L"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ActivityConcentration"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "becquerel_per_meter_cubed",
+        "nano_becquerel_per_liter",
+        "micro_becquerel_per_liter",
+        "milli_becquerel_per_liter",
+        "becquerel_per_liter"
+      ],
+      "default": "becquerel_per_meter_cubed"
+    }
+  }
+}

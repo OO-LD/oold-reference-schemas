@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "StructuralEfficiency.schema.json",
+  "x-oold-uuid": "5ba1cba5-d900-5434-a6f2-80a50b462591",
+  "x-oold-version": "0.1.0",
+  "title": "StructuralEfficiency",
+  "x-oold-multilang-title": {
+    "en": "Structural Efficiency"
+  },
+  "description": "Structural efficiency is a function of the weight of structure to the afforded vehicle's strength.",
+  "allOf": [
+    {
+      "$ref": "Dimensionless.schema.json"
+    }
+  ],
+  "@context": [
+    "Dimensionless.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "StructuralEfficiency": "qkind:StructuralEfficiency"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "StructuralEfficiency"
+      ]
+    }
+  }
+}

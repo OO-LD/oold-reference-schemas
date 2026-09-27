@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "OverRangeDistance.schema.json",
+  "x-oold-uuid": "2bfac452-578d-5a63-a9f5-6d0ce3c538e0",
+  "x-oold-version": "0.1.0",
+  "title": "OverRangeDistance",
+  "x-oold-multilang-title": {
+    "en": "Over-range distance"
+  },
+  "description": "Additional distance traveled by a rocket because Of excessive initial velocity.",
+  "allOf": [
+    {
+      "$ref": "Length.schema.json"
+    }
+  ],
+  "@context": [
+    "Length.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "OverRangeDistance": "qkind:OverRangeDistance"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "OverRangeDistance"
+      ]
+    }
+  }
+}

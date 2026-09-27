@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "StrainEnergyDensity.schema.json",
+  "x-oold-uuid": "6e6fb826-447c-5248-813f-8cad28ef53d7",
+  "x-oold-version": "0.1.0",
+  "title": "StrainEnergyDensity",
+  "x-oold-multilang-title": {
+    "en": "Strain Energy Density"
+  },
+  "description": "Defined as the 'work done' for a given strain, that is the area under the stress-strain curve after a specified eation. Source(s): http://www.prepol.com/product-range/product-subpages/terminology",
+  "allOf": [
+    {
+      "$ref": "EnergyDensity.schema.json"
+    }
+  ],
+  "@context": [
+    "EnergyDensity.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "StrainEnergyDensity": "qkind:StrainEnergyDensity"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "StrainEnergyDensity"
+      ]
+    }
+  }
+}

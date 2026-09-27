@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ModulusOfLinearSubgradeReaction.schema.json",
+  "x-oold-uuid": "ebf10f70-d777-5b28-ab44-f8fcecbd8b16",
+  "x-oold-version": "0.1.0",
+  "title": "ModulusOfLinearSubgradeReaction",
+  "x-oold-multilang-title": {
+    "en": "Modulus of Linear Subgrade Reaction"
+  },
+  "description": "Modulus of Linear Subgrade Reaction is a measure for modulus of linear subgrade reaction, which expresses the elastic bedding of a linear structural element per length, such as for a beam. It is typically measured in N/m^2",
+  "allOf": [
+    {
+      "$ref": "ForcePerArea.schema.json"
+    }
+  ],
+  "@context": [
+    "ForcePerArea.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ModulusOfLinearSubgradeReaction": "qkind:ModulusOfLinearSubgradeReaction"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ModulusOfLinearSubgradeReaction"
+      ]
+    }
+  }
+}

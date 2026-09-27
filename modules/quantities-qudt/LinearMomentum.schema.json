@@ -1,0 +1,65 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "LinearMomentum.schema.json",
+  "x-oold-uuid": "22f40c87-ac43-5474-b852-5e7268e7ca01",
+  "x-oold-version": "0.1.0",
+  "title": "LinearMomentum",
+  "x-oold-multilang-title": {
+    "en": "Linear Momentum"
+  },
+  "description": "Linear momentum is the quantity obtained by multiplying the mass of a body by its linear velocity. The momentum of a continuous medium is given by the integral of the velocity over the mass of the medium or by the product of the total mass of the medium and the velocity of the center of gravity of the medium.The SI unit for linear momentum is meter-kilogram per second ($m-kg/s$).",
+  "examples": [
+    {
+      "type": [
+        "LinearMomentum"
+      ],
+      "value": 1.0,
+      "unit": "newton_second"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "LinearMomentum": "qkind:LinearMomentum",
+      "newton_second": "qunit:N-SEC",
+      "centi_meter_gram_per_second": "qunit:GM-CentiM-PER-SEC",
+      "gram_meter_per_second": "qunit:GM-M-PER-SEC",
+      "centi_meter_kilo_gram_per_second": "qunit:KiloGM-CentiM-PER-SEC",
+      "kilo_gram_meter_per_second": "qunit:KiloGM-M-PER-SEC"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "LinearMomentum"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "newton_second",
+        "centi_meter_gram_per_second",
+        "gram_meter_per_second",
+        "centi_meter_kilo_gram_per_second",
+        "kilo_gram_meter_per_second"
+      ],
+      "default": "newton_second"
+    }
+  },
+  "x-oold-context": {
+    "LinearMomentum": {
+      "http://dbpedia.org/resource/Momentum": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ReflectanceFactor.schema.json",
+  "x-oold-uuid": "425d111a-8a3f-560e-b838-29730f7ad8a5",
+  "x-oold-version": "0.1.0",
+  "title": "ReflectanceFactor",
+  "x-oold-multilang-title": {
+    "en": "Reflectance Factor"
+  },
+  "description": "Reflectance Factor is the measure of the ability of a surface to reflect light or other electromagnetic radiation, equal to the ratio of the reflected flux to the incident flux.",
+  "examples": [
+    {
+      "type": [
+        "ReflectanceFactor"
+      ],
+      "value": 1.0,
+      "unit": "unitless"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ReflectanceFactor": "qkind:ReflectanceFactor",
+      "unitless": "qunit:UNITLESS"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ReflectanceFactor"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "unitless"
+      ],
+      "default": "unitless"
+    }
+  }
+}

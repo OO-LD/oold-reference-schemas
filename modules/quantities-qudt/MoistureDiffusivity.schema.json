@@ -1,0 +1,29 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MoistureDiffusivity.schema.json",
+  "x-oold-uuid": "fdce4feb-eb15-5bd2-9062-2a7a78f0fbba",
+  "x-oold-version": "0.1.0",
+  "title": "MoistureDiffusivity",
+  "x-oold-multilang-title": {
+    "en": "Moisture Diffusivity"
+  },
+  "allOf": [
+    {
+      "$ref": "VolumeFlowRate.schema.json"
+    }
+  ],
+  "@context": [
+    "VolumeFlowRate.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "MoistureDiffusivity": "qkind:MoistureDiffusivity"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "MoistureDiffusivity"
+      ]
+    }
+  }
+}

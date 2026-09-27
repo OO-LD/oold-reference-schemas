@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "TimeAveragedSoundIntensity.schema.json",
+  "x-oold-uuid": "ba1d28c2-642f-5d28-bd67-5412004bfc15",
+  "x-oold-version": "0.1.0",
+  "title": "TimeAveragedSoundIntensity",
+  "x-oold-multilang-title": {
+    "en": "Time averaged sound intensity"
+  },
+  "description": "Sound intensity or acoustic intensity ($I$) is defined as the sound power $P_a$ per unit area $A$. The usual context is the noise measurement of sound intensity in the air at a listener's location as a sound energy quantity.",
+  "allOf": [
+    {
+      "$ref": "SoundIntensity.schema.json"
+    }
+  ],
+  "@context": [
+    "SoundIntensity.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "TimeAveragedSoundIntensity": "qkind:TimeAveragedSoundIntensity"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "TimeAveragedSoundIntensity"
+      ]
+    }
+  }
+}

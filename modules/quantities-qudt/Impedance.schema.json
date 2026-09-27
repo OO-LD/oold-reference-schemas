@@ -1,0 +1,71 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Impedance.schema.json",
+  "x-oold-uuid": "3e38ca0e-a54e-5d02-917c-52434bcf41d6",
+  "x-oold-version": "0.1.0",
+  "title": "Impedance",
+  "x-oold-multilang-title": {
+    "en": "Impedance"
+  },
+  "description": "\"Impedance\" is the measure of the opposition that a circuit presents to the passage of a current when a voltage is applied. In quantitative terms, it is the complex ratio of the voltage to the current in an alternating current (AC) circuit. Impedance extends the concept of resistance to AC circuits, and possesses both magnitude and phase, unlike resistance, which has only magnitude. When a circuit is driven with direct current (DC), there is no distinction between impedance and resistance; the latter can be thought of as impedance with zero phase angle.",
+  "examples": [
+    {
+      "type": [
+        "Impedance"
+      ],
+      "value": 1.0,
+      "unit": "ohm"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Impedance": "qkind:Impedance",
+      "ohm": "qunit:OHM",
+      "nano_ohm": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/nano_ohm",
+      "micro_ohm": "qunit:MicroOHM",
+      "milli_ohm": "qunit:MilliOHM",
+      "kilo_ohm": "qunit:KiloOHM",
+      "mega_ohm": "qunit:MegaOHM",
+      "giga_ohm": "qunit:GigaOHM",
+      "tera_ohm": "qunit:TeraOHM"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Impedance"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "ohm",
+        "nano_ohm",
+        "micro_ohm",
+        "milli_ohm",
+        "kilo_ohm",
+        "mega_ohm",
+        "giga_ohm",
+        "tera_ohm"
+      ],
+      "default": "ohm"
+    }
+  },
+  "x-oold-context": {
+    "Impedance": {
+      "http://dbpedia.org/resource/Electrical_impedance": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

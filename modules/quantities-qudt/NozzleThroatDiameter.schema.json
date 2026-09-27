@@ -1,0 +1,29 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "NozzleThroatDiameter.schema.json",
+  "x-oold-uuid": "02b07b5b-2f09-5f45-afb5-157bce27379a",
+  "x-oold-version": "0.1.0",
+  "title": "NozzleThroatDiameter",
+  "x-oold-multilang-title": {
+    "en": "Nozzle Throat Diameter"
+  },
+  "allOf": [
+    {
+      "$ref": "Length.schema.json"
+    }
+  ],
+  "@context": [
+    "Length.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "NozzleThroatDiameter": "qkind:NozzleThroatDiameter"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "NozzleThroatDiameter"
+      ]
+    }
+  }
+}

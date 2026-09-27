@@ -1,0 +1,29 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "SpecificImpulseByMass.schema.json",
+  "x-oold-uuid": "50d86e51-0c6f-5ba8-9824-93f58e0ed602",
+  "x-oold-version": "0.1.0",
+  "title": "SpecificImpulseByMass",
+  "x-oold-multilang-title": {
+    "en": "Specific Impulse by Mass"
+  },
+  "allOf": [
+    {
+      "$ref": "Velocity.schema.json"
+    }
+  ],
+  "@context": [
+    "Velocity.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "SpecificImpulseByMass": "qkind:SpecificImpulseByMass"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "SpecificImpulseByMass"
+      ]
+    }
+  }
+}

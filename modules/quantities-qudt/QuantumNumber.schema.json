@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "QuantumNumber.schema.json",
+  "x-oold-uuid": "a35c06b3-0b77-50c4-9dd5-3768ffd9e756",
+  "x-oold-version": "0.1.0",
+  "title": "QuantumNumber",
+  "x-oold-multilang-title": {
+    "en": "Quantum Number"
+  },
+  "description": "The \"Quantum Number\" describes values of conserved quantities in the dynamics of the quantum system. Perhaps the most peculiar aspect of quantum mechanics is the quantization of observable quantities, since quantum numbers are discrete sets of integers or half-integers.",
+  "allOf": [
+    {
+      "$ref": "Dimensionless.schema.json"
+    }
+  ],
+  "@context": [
+    "Dimensionless.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "QuantumNumber": "qkind:QuantumNumber"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "QuantumNumber"
+      ]
+    }
+  }
+}

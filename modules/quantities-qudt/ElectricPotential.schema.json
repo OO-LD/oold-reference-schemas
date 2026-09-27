@@ -1,0 +1,73 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ElectricPotential.schema.json",
+  "x-oold-uuid": "e88cb448-2e6e-587d-922c-9004a3d73a8d",
+  "x-oold-version": "0.1.0",
+  "title": "ElectricPotential",
+  "x-oold-multilang-title": {
+    "en": "Electric potential",
+    "de": "Elektrisches Potenzial"
+  },
+  "description": "The Electric Potential is a scalar valued quantity associated with an electric field. The electric potential $\\phi(x)$ at a point, $x$, is formally defined as the line integral of the electric field taken along a path from x to the point at infinity. If the electric field is static, that is time independent, then the choice of the path is arbitrary; however if the electric field is time dependent, taking the integral a different paths will produce different results.",
+  "examples": [
+    {
+      "type": [
+        "ElectricPotential"
+      ],
+      "value": 1.0,
+      "unit": "volt"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ElectricPotential": "qkind:ElectricPotential",
+      "volt": "qunit:V",
+      "femto_volt": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/femto_volt",
+      "pico_volt": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/pico_volt",
+      "nano_volt": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/nano_volt",
+      "abvolt": "qunit:V_Ab",
+      "micro_volt": "qunit:MicroV",
+      "milli_volt": "qunit:MilliV",
+      "statvolt": "qunit:V_Stat",
+      "kilo_volt": "qunit:KiloV",
+      "mega_volt": "qunit:MegaV",
+      "giga_volt": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/giga_volt",
+      "tera_volt": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/tera_volt",
+      "peta_volt": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/peta_volt",
+      "exa_volt": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/exa_volt"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ElectricPotential"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "volt",
+        "femto_volt",
+        "pico_volt",
+        "nano_volt",
+        "abvolt",
+        "micro_volt",
+        "milli_volt",
+        "statvolt",
+        "kilo_volt",
+        "mega_volt",
+        "giga_volt",
+        "tera_volt",
+        "peta_volt",
+        "exa_volt"
+      ],
+      "default": "volt"
+    }
+  }
+}

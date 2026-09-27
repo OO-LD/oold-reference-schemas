@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "EccentricityOfOrbit.schema.json",
+  "x-oold-uuid": "577e79a6-dcff-5f1e-a297-ca5c75e2a4a6",
+  "x-oold-version": "0.1.0",
+  "title": "EccentricityOfOrbit",
+  "x-oold-multilang-title": {
+    "en": "Eccentricity Of Orbit"
+  },
+  "description": "The orbital eccentricity of an astronomical object is a parameter that determines the amount by which its orbit around another body deviates from a perfect circle. In a two-body problem with inverse-square-law force, every orbit is a Kepler orbit. The eccentricity of this Kepler orbit is a positive number that defines its shape.",
+  "allOf": [
+    {
+      "$ref": "DimensionlessRatio.schema.json"
+    }
+  ],
+  "@context": [
+    "DimensionlessRatio.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "EccentricityOfOrbit": "qkind:EccentricityOfOrbit"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "EccentricityOfOrbit"
+      ]
+    }
+  }
+}

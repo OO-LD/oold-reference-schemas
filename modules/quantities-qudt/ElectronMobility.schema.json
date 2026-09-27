@@ -1,0 +1,29 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ElectronMobility.schema.json",
+  "x-oold-uuid": "ab83a0c2-9273-584b-b426-7cdde76fb928",
+  "x-oold-version": "0.1.0",
+  "title": "ElectronMobility",
+  "x-oold-multilang-title": {
+    "en": "Electron mobility"
+  },
+  "allOf": [
+    {
+      "$ref": "Mobility.schema.json"
+    }
+  ],
+  "@context": [
+    "Mobility.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ElectronMobility": "qkind:ElectronMobility"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ElectronMobility"
+      ]
+    }
+  }
+}

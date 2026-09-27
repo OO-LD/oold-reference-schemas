@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "SourceVoltage.schema.json",
+  "x-oold-uuid": "ca26a95f-4320-52f3-b6e1-4fddf13e7fe7",
+  "x-oold-version": "0.1.0",
+  "title": "SourceVoltage",
+  "x-oold-multilang-title": {
+    "en": "Source Voltage"
+  },
+  "description": "The quantity kind $\\textit{Source Voltage}$, also referred to as $\\textit{Source Tension}$\n   is the voltage between the two terminals of a voltage source when there is no electric current through the source. \n  The name $\\text{electromotive force}$ with the abbreviation $\\textit{EMF}$ and the symbol $E$ is deprecated.",
+  "allOf": [
+    {
+      "$ref": "Voltage.schema.json"
+    }
+  ],
+  "@context": [
+    "Voltage.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "SourceVoltage": "qkind:SourceVoltage"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "SourceVoltage"
+      ]
+    }
+  }
+}

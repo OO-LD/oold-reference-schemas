@@ -1,0 +1,49 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "InverseSquareEnergy.schema.json",
+  "x-oold-uuid": "2ff0e06e-1f99-5bd0-82b2-fb855c1b8963",
+  "x-oold-version": "0.1.0",
+  "title": "InverseSquareEnergy",
+  "x-oold-multilang-title": {
+    "en": "Inverse Square Energy"
+  },
+  "examples": [
+    {
+      "type": [
+        "InverseSquareEnergy"
+      ],
+      "value": 1.0,
+      "unit": "per_joule_squared"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "InverseSquareEnergy": "qkind:InverseSquareEnergy",
+      "per_joule_squared": "qunit:PER-J2",
+      "per_giga_electron_volt_squared": "qunit:PER-GigaEV2",
+      "per_electron_volt_squared": "qunit:PER-EV2"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "InverseSquareEnergy"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "per_joule_squared",
+        "per_giga_electron_volt_squared",
+        "per_electron_volt_squared"
+      ],
+      "default": "per_joule_squared"
+    }
+  }
+}

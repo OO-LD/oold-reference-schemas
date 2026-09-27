@@ -1,0 +1,45 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "CubicElectricDipoleMomentPerSquareEnergy.schema.json",
+  "x-oold-uuid": "77e2a32e-5f30-591e-b679-a048742743e1",
+  "x-oold-version": "0.1.0",
+  "title": "CubicElectricDipoleMomentPerSquareEnergy",
+  "x-oold-multilang-title": {
+    "en": "Cubic Electric Dipole Moment per Square Energy"
+  },
+  "examples": [
+    {
+      "type": [
+        "CubicElectricDipoleMomentPerSquareEnergy"
+      ],
+      "value": 1.0,
+      "unit": "coulomb_cubed_meter_per_joule_squared"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "CubicElectricDipoleMomentPerSquareEnergy": "qkind:CubicElectricDipoleMomentPerSquareEnergy",
+      "coulomb_cubed_meter_per_joule_squared": "qunit:C3-M-PER-J2"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "CubicElectricDipoleMomentPerSquareEnergy"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "coulomb_cubed_meter_per_joule_squared"
+      ],
+      "default": "coulomb_cubed_meter_per_joule_squared"
+    }
+  }
+}

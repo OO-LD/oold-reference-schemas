@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "BetaDisintegrationEnergy.schema.json",
+  "x-oold-uuid": "532bab2a-81f4-51fb-9dc3-4122da50dca6",
+  "x-oold-version": "0.1.0",
+  "title": "BetaDisintegrationEnergy",
+  "x-oold-multilang-title": {
+    "en": "Beta Disintegration Energy"
+  },
+  "description": "\"Beta Disintegration Energy\" is the  energy released by a beta particle radioactive decay. It is the sum of the maximum beta-particle kinetic energy and the recoil energy of the atom produced in the reference frame in which the emitting nucleus is at rest before its disintegration.",
+  "allOf": [
+    {
+      "$ref": "Energy.schema.json"
+    }
+  ],
+  "@context": [
+    "Energy.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "BetaDisintegrationEnergy": "qkind:BetaDisintegrationEnergy"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "BetaDisintegrationEnergy"
+      ]
+    }
+  }
+}

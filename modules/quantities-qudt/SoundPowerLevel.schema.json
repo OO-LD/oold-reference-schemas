@@ -1,0 +1,50 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "SoundPowerLevel.schema.json",
+  "x-oold-uuid": "7f56c0da-dee6-5455-b206-ddbb22bb84f8",
+  "x-oold-version": "0.1.0",
+  "title": "SoundPowerLevel",
+  "x-oold-multilang-title": {
+    "en": "Sound power level"
+  },
+  "description": "Sound Power Level abbreviated as $SWL$ expresses sound power more practically as a relation to the threshold of hearing - 1 picoW - in a logarithmic scale.",
+  "examples": [
+    {
+      "type": [
+        "SoundPowerLevel"
+      ],
+      "value": 1.0,
+      "unit": "bel"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "SoundPowerLevel": "qkind:SoundPowerLevel",
+      "bel": "qunit:B",
+      "decibel": "qunit:DeciB",
+      "dbmw": "qunit:DeciB_M"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "SoundPowerLevel"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "bel",
+        "decibel",
+        "dbmw"
+      ],
+      "default": "bel"
+    }
+  }
+}

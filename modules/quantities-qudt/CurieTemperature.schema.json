@@ -1,0 +1,31 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "CurieTemperature.schema.json",
+  "x-oold-uuid": "0b0a3633-0fb3-5c46-b179-79e278ed3242",
+  "x-oold-version": "0.1.0",
+  "title": "CurieTemperature",
+  "x-oold-multilang-title": {
+    "en": "Curie temperature",
+    "de": "Curie-Temperatur"
+  },
+  "description": "\"Curie Temperature\" is the critical thermodynamic temperature of a ferromagnet.",
+  "allOf": [
+    {
+      "$ref": "Temperature.schema.json"
+    }
+  ],
+  "@context": [
+    "Temperature.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "CurieTemperature": "qkind:CurieTemperature"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "CurieTemperature"
+      ]
+    }
+  }
+}

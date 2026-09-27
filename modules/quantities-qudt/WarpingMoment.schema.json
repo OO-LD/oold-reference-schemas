@@ -1,0 +1,48 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "WarpingMoment.schema.json",
+  "x-oold-uuid": "9a57ea5f-a37f-59cf-a4eb-6ad9d2427c4e",
+  "x-oold-version": "0.1.0",
+  "title": "WarpingMoment",
+  "x-oold-multilang-title": {
+    "en": "Warping Moment"
+  },
+  "description": "The warping moment measure is a measure for the warping moment, which occurs in warping torsional analysis. It is usually measured in kNm².",
+  "examples": [
+    {
+      "type": [
+        "WarpingMoment"
+      ],
+      "value": 1.0,
+      "unit": "meter_squared_newton"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "WarpingMoment": "qkind:WarpingMoment",
+      "meter_squared_newton": "qunit:N-M2",
+      "kilo_newton_meter_squared": "qunit:KiloN-M2"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "WarpingMoment"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "meter_squared_newton",
+        "kilo_newton_meter_squared"
+      ],
+      "default": "meter_squared_newton"
+    }
+  }
+}

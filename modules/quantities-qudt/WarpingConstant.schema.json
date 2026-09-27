@@ -1,0 +1,48 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "WarpingConstant.schema.json",
+  "x-oold-uuid": "298b2f8a-4a01-55aa-951a-e75231e4343f",
+  "x-oold-version": "0.1.0",
+  "title": "WarpingConstant",
+  "x-oold-multilang-title": {
+    "en": "Warping Constant"
+  },
+  "description": "The \"Warping Constant\" is a measure for the warping constant or warping resistance of a cross section under torsional loading. It is usually measured in m⁶.",
+  "examples": [
+    {
+      "type": [
+        "WarpingConstant"
+      ],
+      "value": 1.0,
+      "unit": "meter_to_the_sixth"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "WarpingConstant": "qkind:WarpingConstant",
+      "meter_to_the_sixth": "qunit:M6",
+      "centi_meter_to_the_sixth": "qunit:CentiM6"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "WarpingConstant"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "meter_to_the_sixth",
+        "centi_meter_to_the_sixth"
+      ],
+      "default": "meter_to_the_sixth"
+    }
+  }
+}

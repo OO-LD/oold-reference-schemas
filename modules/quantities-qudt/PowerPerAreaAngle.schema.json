@@ -1,0 +1,45 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "PowerPerAreaAngle.schema.json",
+  "x-oold-uuid": "2d29c3f2-18f7-5d66-9b67-f8008851f82e",
+  "x-oold-version": "0.1.0",
+  "title": "PowerPerAreaAngle",
+  "x-oold-multilang-title": {
+    "en": "Power per Area Angle"
+  },
+  "examples": [
+    {
+      "type": [
+        "PowerPerAreaAngle"
+      ],
+      "value": 1.0,
+      "unit": "watt_per_meter_squared_per_steradian"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "PowerPerAreaAngle": "qkind:PowerPerAreaAngle",
+      "watt_per_meter_squared_per_steradian": "qunit:W-PER-M2-SR"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "PowerPerAreaAngle"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "watt_per_meter_squared_per_steradian"
+      ],
+      "default": "watt_per_meter_squared_per_steradian"
+    }
+  }
+}

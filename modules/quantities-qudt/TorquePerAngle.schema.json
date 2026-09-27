@@ -1,0 +1,49 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "TorquePerAngle.schema.json",
+  "x-oold-uuid": "38077176-ba8a-52f7-a9f4-01d782b4ffa8",
+  "x-oold-version": "0.1.0",
+  "title": "TorquePerAngle",
+  "x-oold-multilang-title": {
+    "en": "Torque per Angle"
+  },
+  "examples": [
+    {
+      "type": [
+        "TorquePerAngle"
+      ],
+      "value": 1.0,
+      "unit": "meter_newton_per_radian"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "TorquePerAngle": "qkind:TorquePerAngle",
+      "meter_newton_per_radian": "qunit:N-M-PER-RAD",
+      "meter_newton_per_degree": "qunit:N-M-PER-DEG",
+      "kilo_newton_meter_per_degree": "qunit:KiloN-M-PER-DEG"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "TorquePerAngle"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "meter_newton_per_radian",
+        "meter_newton_per_degree",
+        "kilo_newton_meter_per_degree"
+      ],
+      "default": "meter_newton_per_radian"
+    }
+  }
+}

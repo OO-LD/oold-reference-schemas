@@ -1,0 +1,82 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Capacitance.schema.json",
+  "x-oold-uuid": "6bad72aa-8283-5ea4-9eea-9bb061beae80",
+  "x-oold-version": "0.1.0",
+  "title": "Capacitance",
+  "x-oold-multilang-title": {
+    "en": "Capacitance"
+  },
+  "description": "\"Capacitance\" is the ability of a body to hold an electrical charge; it is quantified as the amount of electric charge stored for a given electric potential. Capacitance is a scalar-valued quantity.",
+  "examples": [
+    {
+      "type": [
+        "Capacitance"
+      ],
+      "value": 1.0,
+      "unit": "farad"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Capacitance": "qkind:Capacitance",
+      "farad": "qunit:FARAD",
+      "atto_farad": "qunit:AttoFARAD",
+      "statfarad": "qunit:FARAD_Stat",
+      "femto_farad": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/femto_farad",
+      "pico_farad": "qunit:PicoFARAD",
+      "nano_farad": "qunit:NanoFARAD",
+      "micro_farad": "qunit:MicroFARAD",
+      "milli_farad": "qunit:MilliFARAD",
+      "kilo_farad": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/kilo_farad",
+      "abfarad": "qunit:FARAD_Ab"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Capacitance"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "farad",
+        "atto_farad",
+        "statfarad",
+        "femto_farad",
+        "pico_farad",
+        "nano_farad",
+        "micro_farad",
+        "milli_farad",
+        "kilo_farad",
+        "abfarad"
+      ],
+      "default": "farad"
+    }
+  },
+  "x-oold-context": {
+    "Capacitance": {
+      "http://dbpedia.org/resource/Capacitance": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      },
+      "https://si-digital-framework.org/quantities/ELCA": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

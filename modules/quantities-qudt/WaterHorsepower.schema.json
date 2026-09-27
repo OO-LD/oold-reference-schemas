@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "WaterHorsepower.schema.json",
+  "x-oold-uuid": "0a6d4ab2-792f-569d-a06a-f40abdb83759",
+  "x-oold-version": "0.1.0",
+  "title": "WaterHorsepower",
+  "x-oold-multilang-title": {
+    "en": "Water Horsepower"
+  },
+  "description": "No pump can convert all of its mechanical power into water power. Mechanical power is lost in the pumping process due to friction losses and other physical losses. It is because of these losses that the horsepower going into the pump has to be greater than the water horsepower leaving the pump. The efficiency of any given pump is defined as the ratio of the water horsepower out of the pump compared to the mechanical horsepower into the pump.",
+  "allOf": [
+    {
+      "$ref": "Power.schema.json"
+    }
+  ],
+  "@context": [
+    "Power.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "WaterHorsepower": "qkind:WaterHorsepower"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "WaterHorsepower"
+      ]
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ThermodynamicTemperature.schema.json",
+  "x-oold-uuid": "69b648b4-fe1a-5607-b167-a699f899be87",
+  "x-oold-version": "0.1.0",
+  "title": "ThermodynamicTemperature",
+  "x-oold-multilang-title": {
+    "en": "Thermodynamic temperature",
+    "de": "Thermodynamische Temperatur"
+  },
+  "description": "Thermodynamic temperature is the absolute measure of temperature and is one of the principal parameters of thermodynamics.\nTemperature is a physical property of matter that quantitatively expresses the common notions of hot and cold.\nIn thermodynamics, in a system of which the entropy is considered as an independent externally controlled variable, absolute, or thermodynamic temperature is defined as the derivative of the internal energy with respect to the entropy. This is a base quantity in the International System of Quantities, ISQ, on which the International System of Units, SI, is based.",
+  "allOf": [
+    {
+      "$ref": "Temperature.schema.json"
+    }
+  ],
+  "@context": [
+    "Temperature.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ThermodynamicTemperature": "qkind:ThermodynamicTemperature"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ThermodynamicTemperature"
+      ]
+    }
+  },
+  "x-oold-context": {
+    "ThermodynamicTemperature": {
+      "http://dbpedia.org/page/Thermodynamic_temperature": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      },
+      "https://si-digital-framework.org/quantities/TEMT": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

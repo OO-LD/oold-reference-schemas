@@ -1,0 +1,29 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "BurnRate.schema.json",
+  "x-oold-uuid": "b48038c5-3db8-52e4-adb4-dabd954c764c",
+  "x-oold-version": "0.1.0",
+  "title": "BurnRate",
+  "x-oold-multilang-title": {
+    "en": "Burn Rate"
+  },
+  "allOf": [
+    {
+      "$ref": "Velocity.schema.json"
+    }
+  ],
+  "@context": [
+    "Velocity.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "BurnRate": "qkind:BurnRate"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "BurnRate"
+      ]
+    }
+  }
+}

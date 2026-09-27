@@ -1,0 +1,46 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "SpectralRadiantEnergyDensity.schema.json",
+  "x-oold-uuid": "8ec996b0-f248-559d-b27d-621ab9651953",
+  "x-oold-version": "0.1.0",
+  "title": "SpectralRadiantEnergyDensity",
+  "x-oold-multilang-title": {
+    "en": "Spectral Radiant Energy Density"
+  },
+  "description": "\"Spectral Radiant Energy Density\" is the spectral concentration of radiant energy density (in terms of wavelength), or the spectral radiant energy density (in terms of wave length).",
+  "examples": [
+    {
+      "type": [
+        "SpectralRadiantEnergyDensity"
+      ],
+      "value": 1.0,
+      "unit": "joule_per_meter_to_the_fourth"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "SpectralRadiantEnergyDensity": "qkind:SpectralRadiantEnergyDensity",
+      "joule_per_meter_to_the_fourth": "qunit:J-PER-M4"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "SpectralRadiantEnergyDensity"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "joule_per_meter_to_the_fourth"
+      ],
+      "default": "joule_per_meter_to_the_fourth"
+    }
+  }
+}

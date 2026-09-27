@@ -1,0 +1,45 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "LengthMolarEnergy.schema.json",
+  "x-oold-uuid": "cc185b33-860b-596a-82ed-bb6eae8f7377",
+  "x-oold-version": "0.1.0",
+  "title": "LengthMolarEnergy",
+  "x-oold-multilang-title": {
+    "en": "Length Molar Energy"
+  },
+  "examples": [
+    {
+      "type": [
+        "LengthMolarEnergy"
+      ],
+      "value": 1.0,
+      "unit": "joule_meter_per_mole"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "LengthMolarEnergy": "qkind:LengthMolarEnergy",
+      "joule_meter_per_mole": "qunit:J-M-PER-MOL"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "LengthMolarEnergy"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "joule_meter_per_mole"
+      ],
+      "default": "joule_meter_per_mole"
+    }
+  }
+}

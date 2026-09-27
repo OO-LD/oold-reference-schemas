@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "VerticalVelocity.schema.json",
+  "x-oold-uuid": "8d942272-7623-5715-9c76-6f3a5a7f29c5",
+  "x-oold-version": "0.1.0",
+  "title": "VerticalVelocity",
+  "x-oold-multilang-title": {
+    "en": "Vertical Velocity"
+  },
+  "description": "The rate at which a body moves upwards at an angle of 90 degrees to the ground. It is the component of a projectile's velocity which is concerned with lifting the projectile.",
+  "allOf": [
+    {
+      "$ref": "Velocity.schema.json"
+    }
+  ],
+  "@context": [
+    "Velocity.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "VerticalVelocity": "qkind:VerticalVelocity"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "VerticalVelocity"
+      ]
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "VentilationRatePerFloorArea.schema.json",
+  "x-oold-uuid": "8cf0ce0f-6ab8-5ec7-b70b-73d8f79577cd",
+  "x-oold-version": "0.1.0",
+  "title": "VentilationRatePerFloorArea",
+  "x-oold-multilang-title": {
+    "en": "Ventilation Rate per Floor Area"
+  },
+  "description": "Ventilation Rate is often expressed by the volumetric flowrate of outdoor air introduced to a building. However, ASHRAE now recommends ventilation rates dependent upon floor area.",
+  "examples": [
+    {
+      "type": [
+        "VentilationRatePerFloorArea"
+      ],
+      "value": 1.0,
+      "unit": "liter_per_meter_squared_per_second"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "VentilationRatePerFloorArea": "qkind:VentilationRatePerFloorArea",
+      "liter_per_meter_squared_per_second": "qunit:L-PER-SEC-M2"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "VentilationRatePerFloorArea"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "liter_per_meter_squared_per_second"
+      ],
+      "default": "liter_per_meter_squared_per_second"
+    }
+  }
+}

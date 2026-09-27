@@ -1,0 +1,29 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "AbsoluteTypographicMeasurement.schema.json",
+  "x-oold-uuid": "b6919e9f-2e94-555a-8a7d-56a7cc3d9c85",
+  "x-oold-version": "0.1.0",
+  "title": "AbsoluteTypographicMeasurement",
+  "x-oold-multilang-title": {
+    "en": "Absolute typographic measurement"
+  },
+  "allOf": [
+    {
+      "$ref": "Length.schema.json"
+    }
+  ],
+  "@context": [
+    "Length.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "AbsoluteTypographicMeasurement": "qkind:AbsoluteTypographicMeasurement"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "AbsoluteTypographicMeasurement"
+      ]
+    }
+  }
+}

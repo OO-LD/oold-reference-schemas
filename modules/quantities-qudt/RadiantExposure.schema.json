@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "RadiantExposure.schema.json",
+  "x-oold-uuid": "db037d62-fb0c-5294-8d59-44b910ec7e40",
+  "x-oold-version": "0.1.0",
+  "title": "RadiantExposure",
+  "x-oold-multilang-title": {
+    "en": "Radiant Exposure"
+  },
+  "description": "Radiant exposure is a measure of the total radiant energy incident on a surface per unit area; equal to the integral over time of the radiant flux density. Also known as exposure.",
+  "allOf": [
+    {
+      "$ref": "EnergyPerArea.schema.json"
+    }
+  ],
+  "@context": [
+    "EnergyPerArea.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "RadiantExposure": "qkind:RadiantExposure"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "RadiantExposure"
+      ]
+    }
+  }
+}

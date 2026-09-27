@@ -1,0 +1,48 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "RadiantEnergyDensity.schema.json",
+  "x-oold-uuid": "1769676f-fcbf-5891-9475-1d0e0bb05902",
+  "x-oold-version": "0.1.0",
+  "title": "RadiantEnergyDensity",
+  "x-oold-multilang-title": {
+    "en": "Radiant Energy Density"
+  },
+  "description": "\"Radiant Energy Density\", or radiant power, is the radiant energy per unit volume.",
+  "examples": [
+    {
+      "type": [
+        "RadiantEnergyDensity"
+      ],
+      "value": 1.0,
+      "unit": "joule_per_meter_cubed"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "RadiantEnergyDensity": "qkind:RadiantEnergyDensity",
+      "joule_per_meter_cubed": "qunit:J-PER-M3",
+      "mega_joule_per_meter_cubed": "qunit:MegaJ-PER-M3"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "RadiantEnergyDensity"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "joule_per_meter_cubed",
+        "mega_joule_per_meter_cubed"
+      ],
+      "default": "joule_per_meter_cubed"
+    }
+  }
+}

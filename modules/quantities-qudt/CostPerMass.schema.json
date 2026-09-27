@@ -1,0 +1,49 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "CostPerMass.schema.json",
+  "x-oold-uuid": "d5e8eafc-bbde-58b8-bedf-83cd39c4a0d5",
+  "x-oold-version": "0.1.0",
+  "title": "CostPerMass",
+  "x-oold-multilang-title": {
+    "en": "Cost per mass",
+    "de": "Kosten pro Masse"
+  },
+  "description": "Represents the cost associated with a unit mass of a substance or material. It is typically used in economic and engineering contexts to evaluate the expense incurred per kilogram, gram, or other units of mass. This measure helps in comparing the economic efficiency of different materials or substances based on their mass.",
+  "examples": [
+    {
+      "type": [
+        "CostPerMass"
+      ],
+      "value": 1.0,
+      "unit": "chf_per_kg"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "CostPerMass": "qkind:CostPerMass",
+      "chf_per_kg": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/chf_per_kg",
+      "chf_per_g": "qunit:CCY_CHF-PER-GM"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "CostPerMass"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "chf_per_kg",
+        "chf_per_g"
+      ],
+      "default": "chf_per_kg"
+    }
+  }
+}

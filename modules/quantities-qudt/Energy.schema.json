@@ -1,0 +1,133 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Energy.schema.json",
+  "x-oold-uuid": "c87ddd4a-7d11-59f0-a75b-686a61ef4e8e",
+  "x-oold-version": "0.1.0",
+  "title": "Energy",
+  "x-oold-multilang-title": {
+    "en": "Energy",
+    "de": "Energie"
+  },
+  "description": "Energy is the quantity characterizing the ability of a system to do work.",
+  "examples": [
+    {
+      "type": [
+        "Energy"
+      ],
+      "value": 1.0,
+      "unit": "joule"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Energy": "qkind:Energy",
+      "joule": "qunit:J",
+      "electron_volt": "qunit:EV",
+      "atto_joule": "qunit:AttoJ",
+      "kilo_electron_volt": "qunit:KiloEV",
+      "femto_joule": "qunit:FemtoJ",
+      "mega_electron_volt": "qunit:MegaEV",
+      "pico_joule": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/pico_joule",
+      "giga_electron_volt": "qunit:GigaEV",
+      "nano_joule": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/nano_joule",
+      "micro_joule": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/micro_joule",
+      "milli_joule": "qunit:MilliJ",
+      "second_watt": "qunit:W-SEC",
+      "calorie": "qunit:CAL",
+      "cal_to_the_15_degree_celsius": "qunit:CAL_15DEG_C",
+      "international_calorie": "qunit:CAL_IT",
+      "mean_calorie": "qunit:CAL_MEAN",
+      "kilo_joule": "qunit:KiloJ",
+      "hour_volt_ampere": "qunit:VA-HR",
+      "hour_watt": "qunit:W-HR",
+      "kilo_calorie": "qunit:KiloCAL",
+      "kilo_international_calorie": "qunit:KiloCAL_IT",
+      "mega_joule": "qunit:MegaJ",
+      "hour_kilo_volt_ampere": "qunit:KiloVA-HR",
+      "hour_kilo_watt": "qunit:KiloW-HR",
+      "giga_joule": "qunit:GigaJ",
+      "hour_mega_volt_ampere": "qunit:MegaVA-HR",
+      "hour_mega_watt": "qunit:MegaW-HR",
+      "metric_ton_per_force_pound": "qunit:TonEnergy",
+      "tera_joule": "qunit:TeraJ",
+      "giga_watt_hour": "qunit:GigaW-HR",
+      "peta_joule": "qunit:PetaJ",
+      "hour_tera_watt": "qunit:TeraW-HR",
+      "exa_joule": "qunit:ExaJ",
+      "quad": "qunit:QUAD",
+      "ha": "qunit:E_h"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Energy"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "joule",
+        "electron_volt",
+        "atto_joule",
+        "ha",
+        "kilo_electron_volt",
+        "femto_joule",
+        "mega_electron_volt",
+        "pico_joule",
+        "giga_electron_volt",
+        "nano_joule",
+        "micro_joule",
+        "milli_joule",
+        "second_watt",
+        "calorie",
+        "cal_to_the_15_degree_celsius",
+        "international_calorie",
+        "mean_calorie",
+        "kilo_joule",
+        "hour_volt_ampere",
+        "hour_watt",
+        "kilo_calorie",
+        "kilo_international_calorie",
+        "mega_joule",
+        "hour_kilo_volt_ampere",
+        "hour_kilo_watt",
+        "giga_joule",
+        "hour_mega_volt_ampere",
+        "hour_mega_watt",
+        "metric_ton_per_force_pound",
+        "tera_joule",
+        "giga_watt_hour",
+        "peta_joule",
+        "hour_tera_watt",
+        "exa_joule",
+        "quad"
+      ],
+      "default": "joule"
+    }
+  },
+  "x-oold-context": {
+    "Energy": {
+      "http://dbpedia.org/resource/Energy": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      },
+      "https://si-digital-framework.org/quantities/ENGY": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "SeebeckCoefficient.schema.json",
+  "x-oold-uuid": "bade8d0a-825f-5900-be44-268cec649801",
+  "x-oold-version": "0.1.0",
+  "title": "SeebeckCoefficient",
+  "x-oold-multilang-title": {
+    "en": "Seebeck Coefficient"
+  },
+  "description": "\"Seebeck Coefficient\", or thermopower, or thermoelectric power of a material is a measure of the magnitude of an induced thermoelectric voltage in response to a temperature difference across that material.",
+  "examples": [
+    {
+      "type": [
+        "SeebeckCoefficient"
+      ],
+      "value": 1.0,
+      "unit": "volt_per_kelvin"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "SeebeckCoefficient": "qkind:SeebeckCoefficient",
+      "volt_per_kelvin": "qunit:V-PER-K"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "SeebeckCoefficient"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "volt_per_kelvin"
+      ],
+      "default": "volt_per_kelvin"
+    }
+  }
+}

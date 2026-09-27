@@ -1,0 +1,46 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "LossFactor.schema.json",
+  "x-oold-uuid": "4028a89b-345d-5b9d-93dc-ba07a853c334",
+  "x-oold-version": "0.1.0",
+  "title": "LossFactor",
+  "x-oold-multilang-title": {
+    "en": "Loss Factor"
+  },
+  "description": "Loss Factor is the inverse of Quality Factor and is the ratio of the resistance and modulus of reactance.",
+  "examples": [
+    {
+      "type": [
+        "LossFactor"
+      ],
+      "value": 1.0,
+      "unit": "unitless"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "LossFactor": "qkind:LossFactor",
+      "unitless": "qunit:UNITLESS"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "LossFactor"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "unitless"
+      ],
+      "default": "unitless"
+    }
+  }
+}

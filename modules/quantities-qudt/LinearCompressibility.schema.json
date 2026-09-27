@@ -1,0 +1,48 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "LinearCompressibility.schema.json",
+  "x-oold-uuid": "d15c0a83-636b-5e12-93aa-ef6b1e619c4f",
+  "x-oold-version": "0.1.0",
+  "title": "LinearCompressibility",
+  "x-oold-multilang-title": {
+    "en": "Linear Compressibility"
+  },
+  "description": "Linear Compressibility is a measure of the relative length change of a solid as a response to a normal force change.",
+  "examples": [
+    {
+      "type": [
+        "LinearCompressibility"
+      ],
+      "value": 1.0,
+      "unit": "meter_per_newton"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "LinearCompressibility": "qkind:LinearCompressibility",
+      "meter_per_newton": "qunit:M-PER-N",
+      "micro_meter_per_newton": "qunit:MicroM-PER-N"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "LinearCompressibility"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "meter_per_newton",
+        "micro_meter_per_newton"
+      ],
+      "default": "meter_per_newton"
+    }
+  }
+}

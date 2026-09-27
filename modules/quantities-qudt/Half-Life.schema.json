@@ -1,0 +1,31 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Half-Life.schema.json",
+  "x-oold-uuid": "22e788fd-36bc-5f8d-9007-e46b1b874413",
+  "x-oold-version": "0.1.0",
+  "title": "Half-Life",
+  "x-oold-multilang-title": {
+    "en": "Half-life",
+    "de": "Halbwertszeit"
+  },
+  "description": "The \"Half-Life\" is the average duration required for the decay of one half of the atoms or nuclei.",
+  "allOf": [
+    {
+      "$ref": "Time.schema.json"
+    }
+  ],
+  "@context": [
+    "Time.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Half-Life": "qkind:Half-Life"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Half-Life"
+      ]
+    }
+  }
+}

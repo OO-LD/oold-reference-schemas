@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "SoundEnergyDensity.schema.json",
+  "x-oold-uuid": "62dc17a8-4c9e-546a-9139-735645505a35",
+  "x-oold-version": "0.1.0",
+  "title": "SoundEnergyDensity",
+  "x-oold-multilang-title": {
+    "en": "Sound energy density"
+  },
+  "description": "Sound energy density is the time-averaged sound energy in a given volume divided by that volume. The sound energy density or sound density (symbol $E$ or $w$) is an adequate measure to describe the sound field at a given point as a sound energy value.",
+  "allOf": [
+    {
+      "$ref": "EnergyDensity.schema.json"
+    }
+  ],
+  "@context": [
+    "EnergyDensity.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "SoundEnergyDensity": "qkind:SoundEnergyDensity"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "SoundEnergyDensity"
+      ]
+    }
+  }
+}

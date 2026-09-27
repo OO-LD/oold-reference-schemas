@@ -1,0 +1,67 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "AngularMomentum.schema.json",
+  "x-oold-uuid": "11c230fd-fd06-5eee-822d-39afdc9fba80",
+  "x-oold-version": "0.1.0",
+  "title": "AngularMomentum",
+  "x-oold-multilang-title": {
+    "en": "Angular Momentum"
+  },
+  "description": "Angular Momentum of an object rotating about some reference point is the measure of the extent to which the object will continue to rotate about that point unless acted upon by an external torque. In particular, if a point mass rotates about an axis, then the angular momentum with respect to a point on the axis is related to the mass of the object, the velocity and the distance of the mass to the axis. While the motion associated with linear momentum has no absolute frame of reference, the rotation associated with angular momentum is sometimes spoken of as being measured relative to the fixed stars.  $\\textit{Angular Momentum}$, $\\textit{Moment of Momentum}, or $\\textit{Rotational Momentum\", is a vector quantity that represents the product of a body's rotational inertia and rotational velocity about a particular axis.",
+  "examples": [
+    {
+      "type": [
+        "AngularMomentum"
+      ],
+      "value": 1.0,
+      "unit": "joule_second"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "AngularMomentum": "qkind:AngularMomentum",
+      "joule_second": "qunit:J-SEC",
+      "electron_volt_second": "qunit:EV-SEC",
+      "atto_joule_second": "qunit:AttoJ-SEC",
+      "meter_newton_second": "qunit:N-M-SEC",
+      "kilo_gram_meter_squared_per_second": "qunit:KiloGM-M2-PER-SEC",
+      "gram_meter_squared_per_second": "qunit:GM-M2-PER-SEC"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "AngularMomentum"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "joule_second",
+        "electron_volt_second",
+        "atto_joule_second",
+        "meter_newton_second",
+        "kilo_gram_meter_squared_per_second",
+        "gram_meter_squared_per_second"
+      ],
+      "default": "joule_second"
+    }
+  },
+  "x-oold-context": {
+    "AngularMomentum": {
+      "http://dbpedia.org/resource/Angular_momentum": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

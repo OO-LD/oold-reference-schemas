@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Width.schema.json",
+  "x-oold-uuid": "f8e82967-34a7-59de-b817-315f69a78fb9",
+  "x-oold-version": "0.1.0",
+  "title": "Width",
+  "x-oold-multilang-title": {
+    "en": "Width"
+  },
+  "description": "\"Width\" is the middle of three dimensions: length, width, thickness.",
+  "allOf": [
+    {
+      "$ref": "Length.schema.json"
+    }
+  ],
+  "@context": [
+    "Length.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Width": "qkind:Width"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Width"
+      ]
+    }
+  }
+}

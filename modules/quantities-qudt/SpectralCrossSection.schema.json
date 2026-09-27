@@ -1,0 +1,46 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "SpectralCrossSection.schema.json",
+  "x-oold-uuid": "eec705c7-a600-5269-8e01-058732a6d8de",
+  "x-oold-version": "0.1.0",
+  "title": "SpectralCrossSection",
+  "x-oold-multilang-title": {
+    "en": "Spectral Cross-section"
+  },
+  "description": "\"Spectral Cross-section\" is the cross-section for a process in which the energy of the ejected or scattered particle is in an interval of energy, divided by the range $dE$ of this interval.",
+  "examples": [
+    {
+      "type": [
+        "SpectralCrossSection"
+      ],
+      "value": 1.0,
+      "unit": "meter_squared_per_joule"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "SpectralCrossSection": "qkind:SpectralCrossSection",
+      "meter_squared_per_joule": "qunit:M2-PER-J"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "SpectralCrossSection"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "meter_squared_per_joule"
+      ],
+      "default": "meter_squared_per_joule"
+    }
+  }
+}

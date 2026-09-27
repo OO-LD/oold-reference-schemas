@@ -1,0 +1,29 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "AreaRatio.schema.json",
+  "x-oold-uuid": "1e2d83c5-660e-5082-8bd1-4194ea5d5717",
+  "x-oold-version": "0.1.0",
+  "title": "AreaRatio",
+  "x-oold-multilang-title": {
+    "en": "Area Ratio"
+  },
+  "allOf": [
+    {
+      "$ref": "DimensionlessRatio.schema.json"
+    }
+  ],
+  "@context": [
+    "DimensionlessRatio.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "AreaRatio": "qkind:AreaRatio"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "AreaRatio"
+      ]
+    }
+  }
+}

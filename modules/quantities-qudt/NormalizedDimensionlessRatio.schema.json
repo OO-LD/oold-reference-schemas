@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "NormalizedDimensionlessRatio.schema.json",
+  "x-oold-uuid": "a76d2144-0d01-543a-aa63-a7e8d97c0438",
+  "x-oold-version": "0.1.0",
+  "title": "NormalizedDimensionlessRatio",
+  "x-oold-multilang-title": {
+    "en": "Positive Dimensionless Ratio"
+  },
+  "description": "A \"Normalized Dimensionless Ratio\" is a dimensionless ratio ranging from 0.0 to 1.0",
+  "allOf": [
+    {
+      "$ref": "DimensionlessRatio.schema.json"
+    }
+  ],
+  "@context": [
+    "DimensionlessRatio.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "NormalizedDimensionlessRatio": "qkind:NormalizedDimensionlessRatio"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "NormalizedDimensionlessRatio"
+      ]
+    }
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "AmountOfSubstanceFraction.schema.json",
+  "x-oold-uuid": "8db802bc-96bb-5e84-b745-867483f6accb",
+  "x-oold-version": "0.1.0",
+  "title": "AmountOfSubstanceFraction",
+  "x-oold-multilang-title": {
+    "en": "Fractional Amount of Substance"
+  },
+  "description": "\"Fractional Amount of Substance\" is defined as tthe amount of a constituent divided by the total amount of all constituents in a mixture.",
+  "examples": [
+    {
+      "type": [
+        "AmountOfSubstanceFraction"
+      ],
+      "value": 1.0,
+      "unit": "dimensionless"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "AmountOfSubstanceFraction": "qkind:AmountOfSubstanceFraction",
+      "dimensionless": "qunit:NUM",
+      "ppq": "qunit:PPQ",
+      "parts_per_trillion": "qunit:PPT",
+      "ppb": "qunit:PPB",
+      "ppm": "qunit:PPM",
+      "permille": "qunit:PPTH",
+      "pptm": "qunit:PPTM"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "AmountOfSubstanceFraction"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "dimensionless",
+        "ppq",
+        "parts_per_trillion",
+        "ppb",
+        "pptm",
+        "ppm",
+        "permille"
+      ],
+      "default": "dimensionless"
+    }
+  }
+}

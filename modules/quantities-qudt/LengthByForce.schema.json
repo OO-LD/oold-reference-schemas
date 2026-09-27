@@ -1,0 +1,29 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "LengthByForce.schema.json",
+  "x-oold-uuid": "34752151-7697-54e8-8b1f-878b2b2b7bea",
+  "x-oold-version": "0.1.0",
+  "title": "LengthByForce",
+  "x-oold-multilang-title": {
+    "en": "Length Force"
+  },
+  "allOf": [
+    {
+      "$ref": "Work.schema.json"
+    }
+  ],
+  "@context": [
+    "Work.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "LengthByForce": "qkind:LengthByForce"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "LengthByForce"
+      ]
+    }
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MassSpecificBiogeochemicalRate.schema.json",
+  "x-oold-uuid": "fde2a071-8a7c-5aec-a158-2631aec8f5e1",
+  "x-oold-version": "0.1.0",
+  "title": "MassSpecificBiogeochemicalRate",
+  "x-oold-multilang-title": {
+    "en": "Mass Specific Biogeochemical Rate"
+  },
+  "description": "the rate at which a specific chemical element or compound is processed or transformed within an ecosystem, calculated per unit mass of the relevant biological material. Unreduced, SI unit is g * g-1 * s-1",
+  "examples": [
+    {
+      "type": [
+        "MassSpecificBiogeochemicalRate"
+      ],
+      "value": 1.0,
+      "unit": "per_day"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "MassSpecificBiogeochemicalRate": "qkind:MassSpecificBiogeochemicalRate",
+      "per_day": "qunit:GM-PER-GM-DAY",
+      "milli_gram_per_day_per_kilo_gram": "qunit:MilliGM-PER-KiloGM-DAY",
+      "micro_gram_per_day_per_gram": "qunit:MicroGM-PER-GM-DAY",
+      "micro_gram_per_gram_per_hour": "qunit:MicroGM-PER-GM-HR",
+      "milli_gram_per_gram_per_hour": "qunit:MilliGM-PER-GM-HR",
+      "per_hour": "qunit:GM-PER-GM-HR"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "MassSpecificBiogeochemicalRate"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "per_day",
+        "milli_gram_per_day_per_kilo_gram",
+        "micro_gram_per_day_per_gram",
+        "micro_gram_per_gram_per_hour",
+        "milli_gram_per_gram_per_hour",
+        "per_hour"
+      ],
+      "default": "per_day"
+    }
+  }
+}

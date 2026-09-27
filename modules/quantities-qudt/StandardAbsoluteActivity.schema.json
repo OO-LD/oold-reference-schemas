@@ -1,0 +1,46 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "StandardAbsoluteActivity.schema.json",
+  "x-oold-uuid": "25452f4f-1c1c-5655-a91d-63cc59d90f5f",
+  "x-oold-version": "0.1.0",
+  "title": "StandardAbsoluteActivity",
+  "x-oold-multilang-title": {
+    "en": "Standard Absolute Activity"
+  },
+  "description": "The \"Standard Absolute Activity\" is proportional to the absoulte activity of the pure substance $B$ at the same temperature and pressure multiplied by the standard pressure.",
+  "examples": [
+    {
+      "type": [
+        "StandardAbsoluteActivity"
+      ],
+      "value": 1.0,
+      "unit": "unitless"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "StandardAbsoluteActivity": "qkind:StandardAbsoluteActivity",
+      "unitless": "qunit:UNITLESS"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "StandardAbsoluteActivity"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "unitless"
+      ],
+      "default": "unitless"
+    }
+  }
+}

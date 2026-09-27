@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "EffectiveMass.schema.json",
+  "x-oold-uuid": "4a5b46b7-3675-5f22-ab06-881a142f62e6",
+  "x-oold-version": "0.1.0",
+  "title": "EffectiveMass",
+  "x-oold-multilang-title": {
+    "en": "Effective Mass"
+  },
+  "description": "\"Effective Mass\" is used in the motional equation for electrons in solid state bodies, depending on the wavenumber and corresponding to its velocity and energy level.",
+  "allOf": [
+    {
+      "$ref": "Mass.schema.json"
+    }
+  ],
+  "@context": [
+    "Mass.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "EffectiveMass": "qkind:EffectiveMass"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "EffectiveMass"
+      ]
+    }
+  }
+}

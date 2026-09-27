@@ -1,0 +1,46 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "RelativeMassRatioOfVapour.schema.json",
+  "x-oold-uuid": "5adf01eb-7606-53aa-ac5f-14e4de35b391",
+  "x-oold-version": "0.1.0",
+  "title": "RelativeMassRatioOfVapour",
+  "x-oold-multilang-title": {
+    "en": "Relative Mass Ratio of Vapour"
+  },
+  "description": "Relative Mass Ratio of Vapour is one of a number of Relative Concentration quantities defined by ISO 80000.",
+  "examples": [
+    {
+      "type": [
+        "RelativeMassRatioOfVapour"
+      ],
+      "value": 1.0,
+      "unit": "unitless"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "RelativeMassRatioOfVapour": "qkind:RelativeMassRatioOfVapour",
+      "unitless": "qunit:UNITLESS"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "RelativeMassRatioOfVapour"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "unitless"
+      ],
+      "default": "unitless"
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "RadiusOfCurvature.schema.json",
+  "x-oold-uuid": "b9fc44a8-68dd-5936-9128-bda6e511507d",
+  "x-oold-version": "0.1.0",
+  "title": "RadiusOfCurvature",
+  "x-oold-multilang-title": {
+    "en": "Radius of Curvature"
+  },
+  "description": "In geometry, the \"Radius of Curvature\", R, of a curve at a point is a measure of the radius of the circular arc which best approximates the curve at that point.",
+  "allOf": [
+    {
+      "$ref": "Length.schema.json"
+    }
+  ],
+  "@context": [
+    "Length.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "RadiusOfCurvature": "qkind:RadiusOfCurvature"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "RadiusOfCurvature"
+      ]
+    }
+  }
+}

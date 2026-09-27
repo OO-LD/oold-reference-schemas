@@ -1,0 +1,46 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ElectricChargePerAmountOfSubstance.schema.json",
+  "x-oold-uuid": "bc5a62d9-8afe-5e14-906c-ac7af329389e",
+  "x-oold-version": "0.1.0",
+  "title": "ElectricChargePerAmountOfSubstance",
+  "x-oold-multilang-title": {
+    "en": "Electric charge per amount of substance"
+  },
+  "description": "\"Electric Charge Per Amount Of Substance\" is the charge assocated with a given amount of substance. Un the ISO and SI systems this is $1 mol$.",
+  "examples": [
+    {
+      "type": [
+        "ElectricChargePerAmountOfSubstance"
+      ],
+      "value": 1.0,
+      "unit": "coulomb_per_mole"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ElectricChargePerAmountOfSubstance": "qkind:ElectricChargePerAmountOfSubstance",
+      "coulomb_per_mole": "qunit:C-PER-MOL"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ElectricChargePerAmountOfSubstance"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "coulomb_per_mole"
+      ],
+      "default": "coulomb_per_mole"
+    }
+  }
+}

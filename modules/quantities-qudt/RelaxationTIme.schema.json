@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "RelaxationTIme.schema.json",
+  "x-oold-uuid": "63d2744b-1442-52ec-a779-5fec18656d3f",
+  "x-oold-version": "0.1.0",
+  "title": "RelaxationTIme",
+  "x-oold-multilang-title": {
+    "en": "Relaxation TIme"
+  },
+  "description": "\"Relaxation TIme\" is a time constant for exponential decay towards equilibrium.",
+  "allOf": [
+    {
+      "$ref": "Time.schema.json"
+    }
+  ],
+  "@context": [
+    "Time.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "RelaxationTIme": "qkind:RelaxationTIme"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "RelaxationTIme"
+      ]
+    }
+  }
+}

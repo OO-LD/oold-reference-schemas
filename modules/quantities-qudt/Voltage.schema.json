@@ -1,0 +1,72 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Voltage.schema.json",
+  "x-oold-uuid": "19bdaead-0e98-52b6-8da7-9f45423f2b58",
+  "x-oold-version": "0.1.0",
+  "title": "Voltage",
+  "x-oold-multilang-title": {
+    "en": "Voltage"
+  },
+  "description": "$\\textit{Voltage}$, also referred to as $\\textit{Electric Tension}$, is the difference between electrical potentials of two points. For an electric field within a medium, $U_{ab} = - \\int_{r_a}^{r_b} E . {dr}$, where $E$ is electric field strength.\nFor an irrotational electric field, the voltage is independent of the path between the two points $a$ and $b$.",
+  "examples": [
+    {
+      "type": [
+        "Voltage"
+      ],
+      "value": 1.0,
+      "unit": "volt"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Voltage": "qkind:Voltage",
+      "volt": "qunit:V",
+      "femto_volt": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/femto_volt",
+      "pico_volt": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/pico_volt",
+      "nano_volt": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/nano_volt",
+      "abvolt": "qunit:V_Ab",
+      "micro_volt": "qunit:MicroV",
+      "milli_volt": "qunit:MilliV",
+      "statvolt": "qunit:V_Stat",
+      "kilo_volt": "qunit:KiloV",
+      "mega_volt": "qunit:MegaV",
+      "giga_volt": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/giga_volt",
+      "tera_volt": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/tera_volt",
+      "peta_volt": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/peta_volt",
+      "exa_volt": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/exa_volt"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Voltage"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "volt",
+        "femto_volt",
+        "pico_volt",
+        "nano_volt",
+        "abvolt",
+        "micro_volt",
+        "milli_volt",
+        "statvolt",
+        "kilo_volt",
+        "mega_volt",
+        "giga_volt",
+        "tera_volt",
+        "peta_volt",
+        "exa_volt"
+      ],
+      "default": "volt"
+    }
+  }
+}

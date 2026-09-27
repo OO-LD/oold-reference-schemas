@@ -1,0 +1,45 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "AngularMomentumPerAngle.schema.json",
+  "x-oold-uuid": "313d97b5-a268-5dd6-8666-86c37b62a259",
+  "x-oold-version": "0.1.0",
+  "title": "AngularMomentumPerAngle",
+  "x-oold-multilang-title": {
+    "en": "Angular Momentum per Angle"
+  },
+  "examples": [
+    {
+      "type": [
+        "AngularMomentumPerAngle"
+      ],
+      "value": 1.0,
+      "unit": "meter_newton_second_per_radian"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "AngularMomentumPerAngle": "qkind:AngularMomentumPerAngle",
+      "meter_newton_second_per_radian": "qunit:N-M-SEC-PER-RAD"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "AngularMomentumPerAngle"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "meter_newton_second_per_radian"
+      ],
+      "default": "meter_newton_second_per_radian"
+    }
+  }
+}

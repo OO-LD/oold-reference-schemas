@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "CoherenceLength.schema.json",
+  "x-oold-uuid": "4fdc07e1-0e35-54b4-a1bf-ec197dab94ba",
+  "x-oold-version": "0.1.0",
+  "title": "CoherenceLength",
+  "x-oold-multilang-title": {
+    "en": "Coherence Length"
+  },
+  "description": "\"Coherence Length\" characterizes the distance in a superconductor over which the effect of a perturbation is appreciable.",
+  "allOf": [
+    {
+      "$ref": "Length.schema.json"
+    }
+  ],
+  "@context": [
+    "Length.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "CoherenceLength": "qkind:CoherenceLength"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "CoherenceLength"
+      ]
+    }
+  }
+}

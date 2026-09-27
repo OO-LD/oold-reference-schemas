@@ -1,0 +1,46 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MassRatioOfWaterToDryMatter.schema.json",
+  "x-oold-uuid": "3f7f94e0-ebca-5ff2-a0e5-467635d13433",
+  "x-oold-version": "0.1.0",
+  "title": "MassRatioOfWaterToDryMatter",
+  "x-oold-multilang-title": {
+    "en": "Mass Concentration of Water To Dry Matter"
+  },
+  "description": "Mass Ratio of Water to Dry Matter is one of a number of Concentration Ratio quantities defined by ISO 80000.",
+  "examples": [
+    {
+      "type": [
+        "MassRatioOfWaterToDryMatter"
+      ],
+      "value": 1.0,
+      "unit": "unitless"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "MassRatioOfWaterToDryMatter": "qkind:MassRatioOfWaterToDryMatter",
+      "unitless": "qunit:UNITLESS"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "MassRatioOfWaterToDryMatter"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "unitless"
+      ],
+      "default": "unitless"
+    }
+  }
+}

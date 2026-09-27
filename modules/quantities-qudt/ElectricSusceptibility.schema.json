@@ -1,0 +1,58 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ElectricSusceptibility.schema.json",
+  "x-oold-uuid": "b9af704c-91fc-54a3-9428-fceb4052d840",
+  "x-oold-version": "0.1.0",
+  "title": "ElectricSusceptibility",
+  "x-oold-multilang-title": {
+    "en": "Electric susceptibility",
+    "de": "Elektrische Suszeptibilität"
+  },
+  "description": "\"Electric Susceptibility\" is the ratio of electric polarization to electric field strength, normalized to the electric constant. The definition applies to an isotropic medium. For an anisotropic medium, electric susceptibility is a second order tensor.",
+  "examples": [
+    {
+      "type": [
+        "ElectricSusceptibility"
+      ],
+      "value": 1.0,
+      "unit": "unitless"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ElectricSusceptibility": "qkind:ElectricSusceptibility",
+      "unitless": "qunit:UNITLESS"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ElectricSusceptibility"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "unitless"
+      ],
+      "default": "unitless"
+    }
+  },
+  "x-oold-context": {
+    "ElectricSusceptibility": {
+      "http://dbpedia.org/resource/Permittivity": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

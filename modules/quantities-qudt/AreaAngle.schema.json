@@ -1,0 +1,45 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "AreaAngle.schema.json",
+  "x-oold-uuid": "ada45563-0bff-528d-bbf6-5f20a630212b",
+  "x-oold-version": "0.1.0",
+  "title": "AreaAngle",
+  "x-oold-multilang-title": {
+    "en": "Area Angle"
+  },
+  "examples": [
+    {
+      "type": [
+        "AreaAngle"
+      ],
+      "value": 1.0,
+      "unit": "meter_squared_steradian"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "AreaAngle": "qkind:AreaAngle",
+      "meter_squared_steradian": "qunit:M2-SR"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "AreaAngle"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "meter_squared_steradian"
+      ],
+      "default": "meter_squared_steradian"
+    }
+  }
+}

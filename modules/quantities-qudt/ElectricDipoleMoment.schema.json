@@ -1,0 +1,49 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ElectricDipoleMoment.schema.json",
+  "x-oold-uuid": "e21f6c5e-4c5e-5b5b-9f86-920aec0eaae7",
+  "x-oold-version": "0.1.0",
+  "title": "ElectricDipoleMoment",
+  "x-oold-multilang-title": {
+    "en": "Electric dipole moment",
+    "de": "Elektrisches Dipolmoment"
+  },
+  "description": "\"Electric Dipole Moment\" is a measure of the separation of positive and negative electrical charges in a system of (discrete or continuous) charges. It is a vector-valued quantity. If the system of charges is neutral, that is if the sum of all charges is zero, then the dipole moment of the system is independent of the choice of a reference frame; however in a non-neutral system, such as the dipole moment of a single proton, a dependence on the choice of reference point arises. In such cases it is conventional to choose the reference point to be the center of mass of the system or the center of charge, not some arbitrary origin. This convention ensures that the dipole moment is an intrinsic property of the system. The electric dipole moment of a substance within a domain is the vector sum of electric dipole moments of all electric dipoles included in the domain.",
+  "examples": [
+    {
+      "type": [
+        "ElectricDipoleMoment"
+      ],
+      "value": 1.0,
+      "unit": "coulomb_meter"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ElectricDipoleMoment": "qkind:ElectricDipoleMoment",
+      "coulomb_meter": "qunit:C-M",
+      "debye": "qunit:DEBYE"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ElectricDipoleMoment"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "coulomb_meter",
+        "debye"
+      ],
+      "default": "coulomb_meter"
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "CONTRACT-END-ITEM-SPECIFICATION-MASS.schema.json",
+  "x-oold-uuid": "28dfaf74-a031-5d0c-82f6-e6faaaa25e9e",
+  "x-oold-version": "0.1.0",
+  "title": "CONTRACT-END-ITEM-SPECIFICATION-MASS",
+  "x-oold-multilang-title": {
+    "en": "Contract End Item (CEI) Specification Mass."
+  },
+  "description": "Contractual mass requirement of a delivered item. Note that The term 'control mass' is sometimes utilized as a limit in lieu of CEI mass when a CEI mass does not exist. The term 'Interface Control Document Mass' is another alternative for specifying a contractual mass requirement.",
+  "allOf": [
+    {
+      "$ref": "Mass.schema.json"
+    }
+  ],
+  "@context": [
+    "Mass.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "CONTRACT-END-ITEM-SPECIFICATION-MASS": "qkind:CONTRACT-END-ITEM-SPECIFICATION-MASS"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "CONTRACT-END-ITEM-SPECIFICATION-MASS"
+      ]
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Torque.schema.json",
+  "x-oold-uuid": "77f25284-632d-50b0-ae2b-e064592412ce",
+  "x-oold-version": "0.1.0",
+  "title": "Torque",
+  "x-oold-multilang-title": {
+    "en": "Torque",
+    "de": "Torsionmoment"
+  },
+  "description": "In physics, a torque ($\\tau$) is a vector that measures the tendency of a force to rotate an object about some axis. The magnitude of a torque is defined as force times its lever arm. Just as a force is a push or a pull, a torque can be thought of as a twist. The SI unit for torque is newton meters ($N m$). In U.S. customary units, it is measured in foot pounds (ft lbf) (also known as \"pounds feet\").\nMathematically, the torque on a particle (which has the position r in some reference frame) can be defined as the cross product: $τ = r x F$\nwhere,\nr is the particle's position vector relative to the fulcrum\nF is the force acting on the particles,\nor, more generally, torque can be defined as the rate of change of angular momentum: $τ = dL/dt$\nwhere,\nL is the angular momentum vector\nt stands for time.",
+  "examples": [
+    {
+      "type": [
+        "Torque"
+      ],
+      "value": 1.0,
+      "unit": "meter_newton"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Torque": "qkind:Torque",
+      "meter_newton": "qunit:N-M",
+      "meter_micro_newton": "qunit:MicroN-M",
+      "meter_milli_newton": "qunit:MilliN-M",
+      "centi_meter_newton": "qunit:N-CentiM",
+      "centi_newton_meter": "qunit:CentiN-M",
+      "deci_newton_meter": "qunit:DeciN-M",
+      "kilo_newton_meter": "qunit:KiloN-M",
+      "mega_newton_meter": "qunit:MegaN-M"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Torque"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "meter_newton",
+        "meter_micro_newton",
+        "meter_milli_newton",
+        "centi_meter_newton",
+        "centi_newton_meter",
+        "deci_newton_meter",
+        "kilo_newton_meter",
+        "mega_newton_meter"
+      ],
+      "default": "meter_newton"
+    }
+  },
+  "x-oold-context": {
+    "Torque": {
+      "http://dbpedia.org/resource/Torque": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

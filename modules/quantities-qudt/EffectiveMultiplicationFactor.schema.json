@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "EffectiveMultiplicationFactor.schema.json",
+  "x-oold-uuid": "45efec6e-e204-5adf-89ba-4f99556738d2",
+  "x-oold-version": "0.1.0",
+  "title": "EffectiveMultiplicationFactor",
+  "x-oold-multilang-title": {
+    "en": "Effective Multiplication Factor"
+  },
+  "description": "The \"Effective Multiplication Factor\" is the multiplication factor for a finite medium.",
+  "allOf": [
+    {
+      "$ref": "MultiplicationFactor.schema.json"
+    }
+  ],
+  "@context": [
+    "MultiplicationFactor.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "EffectiveMultiplicationFactor": "qkind:EffectiveMultiplicationFactor"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "EffectiveMultiplicationFactor"
+      ]
+    }
+  }
+}

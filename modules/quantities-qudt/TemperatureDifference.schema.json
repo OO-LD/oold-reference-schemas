@@ -1,0 +1,31 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "TemperatureDifference.schema.json",
+  "x-oold-uuid": "0ec63b28-8571-5618-b4e7-ffdba2987af8",
+  "x-oold-version": "0.1.0",
+  "title": "TemperatureDifference",
+  "x-oold-multilang-title": {
+    "en": "Temperature difference",
+    "de": "Temperaturdifferenz"
+  },
+  "description": "Temperature difference (Delta T) is the difference of temperatures between two measuring points",
+  "allOf": [
+    {
+      "$ref": "Temperature.schema.json"
+    }
+  ],
+  "@context": [
+    "Temperature.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "TemperatureDifference": "qkind:TemperatureDifference"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "TemperatureDifference"
+      ]
+    }
+  }
+}

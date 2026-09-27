@@ -1,0 +1,29 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "SerumOrPlasmaLevel.schema.json",
+  "x-oold-uuid": "ce7f2aa6-168b-5625-9752-f6165989e137",
+  "x-oold-version": "0.1.0",
+  "title": "SerumOrPlasmaLevel",
+  "x-oold-multilang-title": {
+    "en": "Serum or Plasma Level"
+  },
+  "allOf": [
+    {
+      "$ref": "AmountOfSubstancePerVolume.schema.json"
+    }
+  ],
+  "@context": [
+    "AmountOfSubstancePerVolume.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "SerumOrPlasmaLevel": "qkind:SerumOrPlasmaLevel"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "SerumOrPlasmaLevel"
+      ]
+    }
+  }
+}

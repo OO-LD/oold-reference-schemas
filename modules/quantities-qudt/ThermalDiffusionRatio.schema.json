@@ -1,0 +1,46 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ThermalDiffusionRatio.schema.json",
+  "x-oold-uuid": "9b960a08-985a-560c-af48-bbf39412b48c",
+  "x-oold-version": "0.1.0",
+  "title": "ThermalDiffusionRatio",
+  "x-oold-multilang-title": {
+    "en": "Thermal Diffusion Ratio"
+  },
+  "description": "The \"Thermal Diffusion Ratio\" is proportional to the product of the component concentrations.",
+  "examples": [
+    {
+      "type": [
+        "ThermalDiffusionRatio"
+      ],
+      "value": 1.0,
+      "unit": "unitless"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ThermalDiffusionRatio": "qkind:ThermalDiffusionRatio",
+      "unitless": "qunit:UNITLESS"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ThermalDiffusionRatio"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "unitless"
+      ],
+      "default": "unitless"
+    }
+  }
+}

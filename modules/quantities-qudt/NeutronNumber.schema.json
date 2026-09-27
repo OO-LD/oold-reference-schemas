@@ -1,0 +1,31 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "NeutronNumber.schema.json",
+  "x-oold-uuid": "6bbe0ce5-74cc-56d0-8a60-5c6011d82e6c",
+  "x-oold-version": "0.1.0",
+  "title": "NeutronNumber",
+  "x-oold-multilang-title": {
+    "en": "Neutron number",
+    "de": "Neutronenzahl"
+  },
+  "description": "\"Neutron Number\", symbol $N$, is the number of neutrons in a nuclide. Nuclides with the same value of $N$ but different values of $Z$ are called isotones. $N - Z$ is called the neutron excess number.",
+  "allOf": [
+    {
+      "$ref": "Count.schema.json"
+    }
+  ],
+  "@context": [
+    "Count.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "NeutronNumber": "qkind:NeutronNumber"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "NeutronNumber"
+      ]
+    }
+  }
+}

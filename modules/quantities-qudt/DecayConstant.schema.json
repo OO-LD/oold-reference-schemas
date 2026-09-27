@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "DecayConstant.schema.json",
+  "x-oold-uuid": "71632403-ff76-5a32-b2e5-1f57d38fd64d",
+  "x-oold-version": "0.1.0",
+  "title": "DecayConstant",
+  "x-oold-multilang-title": {
+    "en": "Decay Constant"
+  },
+  "description": "The \"Decay Constant\" is the proportionality between the size of a population of radioactive atoms and the rate at which the population decreases because of radioactive decay.",
+  "allOf": [
+    {
+      "$ref": "InverseTime.schema.json"
+    }
+  ],
+  "@context": [
+    "InverseTime.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "DecayConstant": "qkind:DecayConstant"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "DecayConstant"
+      ]
+    }
+  }
+}

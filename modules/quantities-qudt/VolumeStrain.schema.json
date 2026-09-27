@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "VolumeStrain.schema.json",
+  "x-oold-uuid": "14e89dba-d13a-5ae0-81bf-fbd4dc8641a6",
+  "x-oold-version": "0.1.0",
+  "title": "VolumeStrain",
+  "x-oold-multilang-title": {
+    "en": "Volume Strain"
+  },
+  "description": "Volume, or volumetric, Strain, or dilatation (the relative variation of the volume) is the trace of the tensor $\\vartheta$.",
+  "allOf": [
+    {
+      "$ref": "Strain.schema.json"
+    }
+  ],
+  "@context": [
+    "Strain.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "VolumeStrain": "qkind:VolumeStrain"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "VolumeStrain"
+      ]
+    }
+  }
+}

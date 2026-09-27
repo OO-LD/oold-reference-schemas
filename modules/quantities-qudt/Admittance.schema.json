@@ -1,0 +1,62 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Admittance.schema.json",
+  "x-oold-uuid": "6dd896b0-8fd5-5c6a-9ea1-a7270bb59d48",
+  "x-oold-version": "0.1.0",
+  "title": "Admittance",
+  "x-oold-multilang-title": {
+    "en": "Admittance"
+  },
+  "description": "\"Admittance\" is a measure of how easily a circuit or device will allow a current to flow. It is defined as the inverse of the impedance ($Z$).",
+  "examples": [
+    {
+      "type": [
+        "Admittance"
+      ],
+      "value": 1.0,
+      "unit": "siemens"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Admittance": "qkind:Admittance",
+      "siemens": "qunit:S",
+      "pico_siemens": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/pico_siemens",
+      "nano_siemens": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/nano_siemens",
+      "micro_siemens": "qunit:MicroS",
+      "micro_n": "qunit:MicroMHO",
+      "milli_siemens": "qunit:MilliS",
+      "deci_siemens": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/deci_siemens",
+      "kilo_siemens": "qunit:KiloS",
+      "mega_siemens": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/mega_siemens"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Admittance"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "siemens",
+        "pico_siemens",
+        "nano_siemens",
+        "micro_siemens",
+        "micro_n",
+        "milli_siemens",
+        "deci_siemens",
+        "kilo_siemens",
+        "mega_siemens"
+      ],
+      "default": "siemens"
+    }
+  }
+}

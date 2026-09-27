@@ -1,0 +1,42 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ElectromotiveForce.schema.json",
+  "x-oold-uuid": "2ea2a195-a92e-5232-854d-eeb78edf3b6f",
+  "x-oold-version": "0.1.0",
+  "title": "ElectromotiveForce",
+  "x-oold-multilang-title": {
+    "en": "Electromotive force",
+    "de": "Elektromotorische Kraft"
+  },
+  "description": "In physics, $\\textit{Electromotive Force}$, or most commonly $emf$ (seldom capitalized), or (occasionally) electromotance is that which tends to cause current (actual electrons and ions) to flow. \n  More formally, $emf$ is the external work expended per unit of charge to produce an electric potential difference across two open-circuited terminals.\n  $\\textit{Electromotive Force}$ is deprecated in the ISO System of Quantities.",
+  "allOf": [
+    {
+      "$ref": "EnergyPerElectricCharge.schema.json"
+    }
+  ],
+  "@context": [
+    "EnergyPerElectricCharge.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ElectromotiveForce": "qkind:ElectromotiveForce"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ElectromotiveForce"
+      ]
+    }
+  },
+  "x-oold-context": {
+    "ElectromotiveForce": {
+      "http://dbpedia.org/resource/Electromotive_force": {
+        "x-oold-sssom": {
+          "predicate_id": "skos:closeMatch",
+          "mapping_set_id": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/mappings/osw-quantities.sssom.tsv",
+          "comment": "carried over from the OSW characteristic definition"
+        }
+      }
+    }
+  }
+}

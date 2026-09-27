@@ -1,0 +1,48 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "SecondOrderReactionRateConstant.schema.json",
+  "x-oold-uuid": "ec4a0bb9-cee1-55e3-a799-94b906fbd3a7",
+  "x-oold-version": "0.1.0",
+  "title": "SecondOrderReactionRateConstant",
+  "x-oold-multilang-title": {
+    "en": "Reaction Rate Constant"
+  },
+  "description": "A quantity kind that is a proportionality constant that quantifies the relationship between the molar concentrations of the reactants and the rate of a second order chemical reaction.",
+  "examples": [
+    {
+      "type": [
+        "SecondOrderReactionRateConstant"
+      ],
+      "value": 1.0,
+      "unit": "meter_cubed_per_mole_per_second"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "SecondOrderReactionRateConstant": "qkind:SecondOrderReactionRateConstant",
+      "meter_cubed_per_mole_per_second": "qunit:M3-PER-MOL-SEC",
+      "centi_meter_cubed_per_mole_per_second": "qunit:CentiM3-PER-MOL-SEC"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "SecondOrderReactionRateConstant"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "meter_cubed_per_mole_per_second",
+        "centi_meter_cubed_per_mole_per_second"
+      ],
+      "default": "meter_cubed_per_mole_per_second"
+    }
+  }
+}

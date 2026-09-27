@@ -1,0 +1,48 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "LuminousIntensityDistribution.schema.json",
+  "x-oold-uuid": "9882e317-01b2-5fa1-8ff6-9a38f57debf5",
+  "x-oold-version": "0.1.0",
+  "title": "LuminousIntensityDistribution",
+  "x-oold-multilang-title": {
+    "en": "Ion Concentration"
+  },
+  "description": "\"Luminous Intensity Distribution\" is a measure of the luminous intensity of a light source that changes according to the direction of the ray. It is normally based on some standardized distribution light distribution curves. Usually measured in Candela/Lumen (cd/lm) or (cd/klm).",
+  "examples": [
+    {
+      "type": [
+        "LuminousIntensityDistribution"
+      ],
+      "value": 1.0,
+      "unit": "candela_per_lumen"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "LuminousIntensityDistribution": "qkind:LuminousIntensityDistribution",
+      "candela_per_lumen": "qunit:CD-PER-LM",
+      "candela_per_kilo_lumen": "qunit:CD-PER-KiloLM"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "LuminousIntensityDistribution"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "candela_per_lumen",
+        "candela_per_kilo_lumen"
+      ],
+      "default": "candela_per_lumen"
+    }
+  }
+}

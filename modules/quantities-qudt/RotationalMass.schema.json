@@ -1,0 +1,52 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "RotationalMass.schema.json",
+  "x-oold-uuid": "e1ce3c92-78dd-5766-b37e-01a7c94e5445",
+  "x-oold-version": "0.1.0",
+  "title": "RotationalMass",
+  "x-oold-multilang-title": {
+    "en": "Rotational Mass"
+  },
+  "description": "\"Rotational Mass\" denotes the inertia of a body with respect to angular acceleration. It is usually measured in kg*m^2.",
+  "examples": [
+    {
+      "type": [
+        "RotationalMass"
+      ],
+      "value": 1.0,
+      "unit": "kilo_gram_meter_squared"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "RotationalMass": "qkind:RotationalMass",
+      "kilo_gram_meter_squared": "qunit:KiloGM-M2",
+      "kilo_gram_milli_meter_squared": "qunit:KiloGM-MilliM2",
+      "centi_meter_squared_kilo_gram": "qunit:KiloGM-CentiM2",
+      "gram_meter_squared": "qunit:GM-M2"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "RotationalMass"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "kilo_gram_meter_squared",
+        "kilo_gram_milli_meter_squared",
+        "centi_meter_squared_kilo_gram",
+        "gram_meter_squared"
+      ],
+      "default": "kilo_gram_meter_squared"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "ElectricCurrentPerLength.schema.json",
+  "x-oold-uuid": "8ba7ac8b-06c4-53e2-885c-c41c9d9ee0bb",
+  "x-oold-version": "0.1.0",
+  "title": "ElectricCurrentPerLength",
+  "x-oold-multilang-title": {
+    "en": "Electric Current per Length"
+  },
+  "allOf": [
+    {
+      "$ref": "LinearElectricCurrentDensity.schema.json"
+    }
+  ],
+  "@context": [
+    "LinearElectricCurrentDensity.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "ElectricCurrentPerLength": "qkind:ElectricCurrentPerLength"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "ElectricCurrentPerLength"
+      ]
+    }
+  }
+}

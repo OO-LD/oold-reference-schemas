@@ -1,0 +1,29 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "AreaChargeDensity.schema.json",
+  "x-oold-uuid": "634ec6da-c47f-5f43-9bd6-f64e9243351c",
+  "x-oold-version": "0.1.0",
+  "title": "AreaChargeDensity",
+  "x-oold-multilang-title": {
+    "en": "Areic charge density"
+  },
+  "allOf": [
+    {
+      "$ref": "ElectricChargePerArea.schema.json"
+    }
+  ],
+  "@context": [
+    "ElectricChargePerArea.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "AreaChargeDensity": "qkind:AreaChargeDensity"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "AreaChargeDensity"
+      ]
+    }
+  }
+}

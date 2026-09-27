@@ -1,0 +1,45 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "QuarticElectricDipoleMomentPerCubicEnergy.schema.json",
+  "x-oold-uuid": "2d0da104-d005-5869-98d5-11764fbb2517",
+  "x-oold-version": "0.1.0",
+  "title": "QuarticElectricDipoleMomentPerCubicEnergy",
+  "x-oold-multilang-title": {
+    "en": "Quartic Electric Dipole Moment per Cubic Energy"
+  },
+  "examples": [
+    {
+      "type": [
+        "QuarticElectricDipoleMomentPerCubicEnergy"
+      ],
+      "value": 1.0,
+      "unit": "coulomb_to_the_fourth_meter_to_the_fourth_per_joule_cubed"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "QuarticElectricDipoleMomentPerCubicEnergy": "qkind:QuarticElectricDipoleMomentPerCubicEnergy",
+      "coulomb_to_the_fourth_meter_to_the_fourth_per_joule_cubed": "qunit:C4-M4-PER-J3"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "QuarticElectricDipoleMomentPerCubicEnergy"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "coulomb_to_the_fourth_meter_to_the_fourth_per_joule_cubed"
+      ],
+      "default": "coulomb_to_the_fourth_meter_to_the_fourth_per_joule_cubed"
+    }
+  }
+}

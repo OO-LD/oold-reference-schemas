@@ -1,0 +1,46 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "AtomScatteringFactor.schema.json",
+  "x-oold-uuid": "83187ab3-c749-592a-98b2-62e479fc2524",
+  "x-oold-version": "0.1.0",
+  "title": "AtomScatteringFactor",
+  "x-oold-multilang-title": {
+    "en": "Atom Scattering Factor"
+  },
+  "description": "\"Atom Scattering Factor\" is measure of the scattering power of an isolated atom.",
+  "examples": [
+    {
+      "type": [
+        "AtomScatteringFactor"
+      ],
+      "value": 1.0,
+      "unit": "unitless"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "AtomScatteringFactor": "qkind:AtomScatteringFactor",
+      "unitless": "qunit:UNITLESS"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "AtomScatteringFactor"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "unitless"
+      ],
+      "default": "unitless"
+    }
+  }
+}

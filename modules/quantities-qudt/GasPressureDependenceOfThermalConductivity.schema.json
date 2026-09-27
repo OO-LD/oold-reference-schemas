@@ -1,0 +1,47 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "GasPressureDependenceOfThermalConductivity.schema.json",
+  "x-oold-uuid": "3c6ec25a-667c-55dd-bcab-8b5f53efea6e",
+  "x-oold-version": "0.1.0",
+  "title": "GasPressureDependenceOfThermalConductivity",
+  "x-oold-multilang-title": {
+    "en": "Gas Pressure Dependence Of Thermal Conductivity"
+  },
+  "description": "Slope of the thermal conductivity with respect to gas pressure.",
+  "examples": [
+    {
+      "type": [
+        "GasPressureDependenceOfThermalConductivity"
+      ],
+      "value": 1.0,
+      "unit": "watt_per_kelvin_per_meter_per_pascal"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "GasPressureDependenceOfThermalConductivity": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/GasPressureDependenceOfThermalConductivity.schema.json",
+      "watt_per_kelvin_per_meter_per_pascal": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/watt_per_kelvin_per_meter_per_pascal",
+      "milli_watt_per_kelvin_per_meter_per_milli_bar": "https://w3id.org/oo-ld/schemas/quantities-qudt/0.1/units/milli_watt_per_kelvin_per_meter_per_milli_bar"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "GasPressureDependenceOfThermalConductivity"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "watt_per_kelvin_per_meter_per_pascal",
+        "milli_watt_per_kelvin_per_meter_per_milli_bar"
+      ],
+      "default": "watt_per_kelvin_per_meter_per_pascal"
+    }
+  }
+}

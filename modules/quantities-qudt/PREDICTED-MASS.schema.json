@@ -1,0 +1,30 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "PREDICTED-MASS.schema.json",
+  "x-oold-uuid": "265b3829-c9da-5f26-bdf3-17a973c6ceca",
+  "x-oold-version": "0.1.0",
+  "title": "PREDICTED-MASS",
+  "x-oold-multilang-title": {
+    "en": "Predicted Mass"
+  },
+  "description": "Sum of the basic mass and the MGA. Current prediction of the final mass based on the current requirements and design.",
+  "allOf": [
+    {
+      "$ref": "Mass.schema.json"
+    }
+  ],
+  "@context": [
+    "Mass.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "PREDICTED-MASS": "qkind:PREDICTED-MASS"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "PREDICTED-MASS"
+      ]
+    }
+  }
+}

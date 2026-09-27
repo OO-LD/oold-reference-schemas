@@ -1,0 +1,52 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "VapourPermeance.schema.json",
+  "x-oold-uuid": "c95523dc-3a32-59a6-8e78-e89f44b2f07a",
+  "x-oold-version": "0.1.0",
+  "title": "VapourPermeance",
+  "x-oold-multilang-title": {
+    "en": "Vapour Permeance"
+  },
+  "description": "A material's \"permeance\", is dependent on thickness much like the R-value in heat transmission. Dividing the permeability of a material by its thickness gives the material's permeance. Permeance is the number that should be used to compare various products in regard to moisture transmission resistance.",
+  "examples": [
+    {
+      "type": [
+        "VapourPermeance"
+      ],
+      "value": 1.0,
+      "unit": "second_per_meter"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "VapourPermeance": "qkind:VapourPermeance",
+      "second_per_meter": "qunit:SEC-PER-M",
+      "nano_gram_per_meter_squared_per_pascal_per_second": "qunit:NanoGM-PER-M2-PA-SEC",
+      "gram_per_meter_squared_per_pascal_per_second": "qunit:GM-PER-M2-PA-SEC",
+      "kilo_gram_per_meter_squared_per_pascal_per_second": "qunit:KiloGM-PER-M2-PA-SEC"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "VapourPermeance"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "second_per_meter",
+        "nano_gram_per_meter_squared_per_pascal_per_second",
+        "gram_per_meter_squared_per_pascal_per_second",
+        "kilo_gram_per_meter_squared_per_pascal_per_second"
+      ],
+      "default": "second_per_meter"
+    }
+  }
+}

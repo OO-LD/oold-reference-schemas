@@ -1,0 +1,46 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MolarOpticalRotatoryPower.schema.json",
+  "x-oold-uuid": "fd98416f-9f0b-5cb6-8157-6143d2d4ab05",
+  "x-oold-version": "0.1.0",
+  "title": "MolarOpticalRotatoryPower",
+  "x-oold-multilang-title": {
+    "en": "Molar Optical Rotatory Power"
+  },
+  "description": "The \"Molar Optical Rotatory Power\" Angle of optical rotation divided by the optical path length through the medium and by the amount concentration giving the molar optical rotatory power.",
+  "examples": [
+    {
+      "type": [
+        "MolarOpticalRotatoryPower"
+      ],
+      "value": 1.0,
+      "unit": "meter_squared_radian_per_mole"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "MolarOpticalRotatoryPower": "qkind:MolarOpticalRotatoryPower",
+      "meter_squared_radian_per_mole": "qunit:RAD-M2-PER-MOL"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "MolarOpticalRotatoryPower"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "meter_squared_radian_per_mole"
+      ],
+      "default": "meter_squared_radian_per_mole"
+    }
+  }
+}

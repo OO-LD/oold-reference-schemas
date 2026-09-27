@@ -1,0 +1,64 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "Period.schema.json",
+  "x-oold-uuid": "651ad868-6676-5ae7-9d27-02fffa50f4d8",
+  "x-oold-version": "0.1.0",
+  "title": "Period",
+  "x-oold-multilang-title": {
+    "en": "Period"
+  },
+  "description": "Duration of one cycle of a periodic phenomenon.",
+  "examples": [
+    {
+      "type": [
+        "Period"
+      ],
+      "value": 1.0,
+      "unit": "second"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "Period": "qkind:Period",
+      "second": "qunit:SEC",
+      "atto_second": "qunit:AttoSEC",
+      "femto_second": "qunit:FemtoSEC",
+      "pico_second": "qunit:PicoSEC",
+      "nano_second": "qunit:NanoSEC",
+      "micro_second": "qunit:MicroSEC",
+      "milli_second": "qunit:MilliSEC",
+      "deci_second": "qunit:DeciSEC",
+      "kilo_second": "qunit:KiloSEC",
+      "mega_second": "qunit:MegaSEC"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "Period"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "second",
+        "atto_second",
+        "femto_second",
+        "pico_second",
+        "nano_second",
+        "micro_second",
+        "milli_second",
+        "deci_second",
+        "kilo_second",
+        "mega_second"
+      ],
+      "default": "second"
+    }
+  }
+}

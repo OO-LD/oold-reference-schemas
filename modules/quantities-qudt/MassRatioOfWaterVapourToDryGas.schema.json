@@ -1,0 +1,46 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "MassRatioOfWaterVapourToDryGas.schema.json",
+  "x-oold-uuid": "7777e542-c338-5059-bd70-b9483a24baf3",
+  "x-oold-version": "0.1.0",
+  "title": "MassRatioOfWaterVapourToDryGas",
+  "x-oold-multilang-title": {
+    "en": "Mass Ratio of Water Vapour to Dry Gas"
+  },
+  "description": "Mass Ratio of Water Vapour to Dry Gas is one of a number of Concentration Ratio quantities defined by ISO 80000.",
+  "examples": [
+    {
+      "type": [
+        "MassRatioOfWaterVapourToDryGas"
+      ],
+      "value": 1.0,
+      "unit": "unitless"
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json"
+    }
+  ],
+  "@context": [
+    "https://w3id.org/oo-ld/schemas/quantities/0.2/QuantityValue.schema.json",
+    {
+      "qkind": "http://qudt.org/vocab/quantitykind/",
+      "MassRatioOfWaterVapourToDryGas": "qkind:MassRatioOfWaterVapourToDryGas",
+      "unitless": "qunit:UNITLESS"
+    }
+  ],
+  "properties": {
+    "type": {
+      "default": [
+        "MassRatioOfWaterVapourToDryGas"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "unitless"
+      ],
+      "default": "unitless"
+    }
+  }
+}
