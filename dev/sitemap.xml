@@ -4,7 +4,43 @@
         <loc>https://schemas.oo-ld.org/dev/</loc>
       </url>
       <url>
+        <loc>https://schemas.oo-ld.org/dev/conformance/</loc>
+      </url>
+      <url>
+        <loc>https://schemas.oo-ld.org/dev/contributing/</loc>
+      </url>
+      <url>
+        <loc>https://schemas.oo-ld.org/dev/datasets/0.1.0/</loc>
+      </url>
+      <url>
+        <loc>https://schemas.oo-ld.org/dev/datasets/0.1/</loc>
+      </url>
+      <url>
         <loc>https://schemas.oo-ld.org/dev/how-it-works/</loc>
+      </url>
+      <url>
+        <loc>https://schemas.oo-ld.org/dev/mapping-sets/</loc>
+      </url>
+      <url>
+        <loc>https://schemas.oo-ld.org/dev/mappings/consensus/</loc>
+      </url>
+      <url>
+        <loc>https://schemas.oo-ld.org/dev/mappings/crosswalks/</loc>
+      </url>
+      <url>
+        <loc>https://schemas.oo-ld.org/dev/mappings/emmo/</loc>
+      </url>
+      <url>
+        <loc>https://schemas.oo-ld.org/dev/mappings/pmdco/</loc>
+      </url>
+      <url>
+        <loc>https://schemas.oo-ld.org/dev/mappings/schemaorg/</loc>
+      </url>
+      <url>
+        <loc>https://schemas.oo-ld.org/dev/materials/0.2.0/</loc>
+      </url>
+      <url>
+        <loc>https://schemas.oo-ld.org/dev/materials/0.2/</loc>
       </url>
       <url>
         <loc>https://schemas.oo-ld.org/dev/modules/</loc>
@@ -64,33 +100,15 @@
         <loc>https://schemas.oo-ld.org/dev/modules/quantities/quantityvalue/voltage/</loc>
       </url>
       <url>
-        <loc>https://schemas.oo-ld.org/dev/mapping-sets/</loc>
-      </url>
-      <url>
-        <loc>https://schemas.oo-ld.org/dev/mappings/consensus/</loc>
-      </url>
-      <url>
-        <loc>https://schemas.oo-ld.org/dev/mappings/emmo/</loc>
-      </url>
-      <url>
-        <loc>https://schemas.oo-ld.org/dev/mappings/pmdco/</loc>
-      </url>
-      <url>
-        <loc>https://schemas.oo-ld.org/dev/mappings/schemaorg/</loc>
-      </url>
-      <url>
-        <loc>https://schemas.oo-ld.org/dev/mappings/crosswalks/</loc>
-      </url>
-      <url>
-        <loc>https://schemas.oo-ld.org/dev/versioning/</loc>
-      </url>
-      <url>
-        <loc>https://schemas.oo-ld.org/dev/conformance/</loc>
-      </url>
-      <url>
         <loc>https://schemas.oo-ld.org/dev/ontologies/</loc>
       </url>
       <url>
-        <loc>https://schemas.oo-ld.org/dev/contributing/</loc>
+        <loc>https://schemas.oo-ld.org/dev/quantities/0.3.0/</loc>
+      </url>
+      <url>
+        <loc>https://schemas.oo-ld.org/dev/quantities/0.3/</loc>
+      </url>
+      <url>
+        <loc>https://schemas.oo-ld.org/dev/versioning/</loc>
       </url>
 </urlset>
