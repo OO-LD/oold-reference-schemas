@@ -251,12 +251,20 @@
   "label": "table schema",
   "source": "csvw/2015-12-17/csvw.ttl"
  },
+ "http://www.w3.org/ns/dcat#DataService": {
+  "label": "Data service",
+  "source": "dcat/3/dcat.ttl"
+ },
  "http://www.w3.org/ns/dcat#Dataset": {
   "label": "Dataset",
   "source": "dcat/3/dcat.ttl"
  },
  "http://www.w3.org/ns/dcat#Distribution": {
   "label": "Distribution",
+  "source": "dcat/3/dcat.ttl"
+ },
+ "http://www.w3.org/ns/dcat#accessService": {
+  "label": "data access service",
   "source": "dcat/3/dcat.ttl"
  },
  "http://www.w3.org/ns/dcat#accessURL": {
@@ -275,6 +283,14 @@
   "label": "download URL",
   "source": "dcat/3/dcat.ttl"
  },
+ "http://www.w3.org/ns/dcat#endpointDescription": {
+  "label": "description of service end-point",
+  "source": "dcat/3/dcat.ttl"
+ },
+ "http://www.w3.org/ns/dcat#endpointURL": {
+  "label": "service end-point",
+  "source": "dcat/3/dcat.ttl"
+ },
  "http://www.w3.org/ns/dcat#mediaType": {
   "label": "media type",
   "source": "dcat/3/dcat.ttl"
@@ -282,6 +298,10 @@
  "http://www.w3.org/ns/dcat#packageFormat": {
   "label": "packaging format",
   "source": "dcat/3/dcat.ttl"
+ },
+ "http://www.w3.org/ns/odrl/2/hasPolicy": {
+  "label": "Target Policy",
+  "source": "odrl/2.2/ODRL22.ttl"
  },
  "http://www.w3.org/ns/prov#wasGeneratedBy": {
   "label": "wasGeneratedBy",

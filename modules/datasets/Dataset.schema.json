@@ -42,6 +42,14 @@
       "type": "string",
       "format": "iri-reference"
     },
+    "has_policy": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri-reference"
+      },
+      "description": "IRIs of the ODRL Offers that govern use of this dataset. The dataset is the odrl:Asset: odrl:hasPolicy has that domain, so a policy attaches here and never to a distribution or to the bytes."
+    },
     "about": {
       "type": "string",
       "format": "iri-reference",
@@ -90,6 +98,7 @@
       "emmo": "https://w3id.org/emmo#",
       "echem": "https://w3id.org/emmo/domain/electrochemistry#",
       "obo": "http://purl.obolibrary.org/obo/",
+      "odrl": "http://www.w3.org/ns/odrl/2/",
       "xsd": "http://www.w3.org/2001/XMLSchema#",
       "dataset": {
         "@id": "https://w3id.org/oo-ld/schemas/datasets/0.1/Dataset.schema.json#",
@@ -110,6 +119,11 @@
       "license": {
         "@id": "dcterms:license",
         "@type": "@id"
+      },
+      "has_policy": {
+        "@id": "odrl:hasPolicy",
+        "@type": "@id",
+        "@container": "@set"
       },
       "about": {
         "@id": "schema:about",

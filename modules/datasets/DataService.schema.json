@@ -1,0 +1,80 @@
+{
+  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$id": "DataService.schema.json",
+  "x-oold-uuid": "6d0ead06-00aa-5909-9d87-62b3e4e1e661",
+  "x-oold-version": "0.1.0",
+  "title": "DataService",
+  "description": "A service through which datasets are reached. In a data space the connector publishes the instance, since the endpoint depends on who is asking and over which protocol; this schema states what such an entry looks like.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "DataService"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "endpoint_url": {
+      "type": "string",
+      "format": "iri-reference",
+      "description": "The root location of the service."
+    },
+    "endpoint_description": {
+      "type": "string",
+      "format": "iri-reference",
+      "description": "IRI of a description of the service, for example an OpenAPI document."
+    }
+  },
+  "required": [
+    "type",
+    "endpoint_url"
+  ],
+  "examples": [
+    {
+      "type": [
+        "DataService"
+      ],
+      "title": "Cycling data endpoint",
+      "endpoint_url": "https://example.org/api/"
+    }
+  ],
+  "@context": {
+    "@version": 1.1,
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "prov": "http://www.w3.org/ns/prov#",
+    "csvw": "http://www.w3.org/ns/csvw#",
+    "schema": "http://schema.org/",
+    "qudt": "http://qudt.org/schema/qudt/",
+    "qunit": "http://qudt.org/vocab/unit/",
+    "qkind": "http://qudt.org/vocab/quantitykind/",
+    "emmo": "https://w3id.org/emmo#",
+    "echem": "https://w3id.org/emmo/domain/electrochemistry#",
+    "obo": "http://purl.obolibrary.org/obo/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dataservice": {
+      "@id": "https://w3id.org/oo-ld/schemas/datasets/0.1/DataService.schema.json#",
+      "@prefix": true
+    },
+    "id": "@id",
+    "type": {
+      "@id": "@type",
+      "@container": "@set"
+    },
+    "DataService": "dcat:DataService",
+    "title": "dcterms:title",
+    "endpoint_url": {
+      "@id": "dcat:endpointURL",
+      "@type": "@id"
+    },
+    "endpoint_description": {
+      "@id": "dcat:endpointDescription",
+      "@type": "@id"
+    }
+  }
+}

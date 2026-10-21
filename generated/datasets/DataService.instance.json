@@ -1,0 +1,10 @@
+{
+  "$schema": "DataService.schema.json",
+  "@context": "DataService.schema.json",
+  "@id": "https://example.org/instance",
+  "type": [
+    "DataService"
+  ],
+  "title": "Cycling data endpoint",
+  "endpoint_url": "https://example.org/api/"
+}
