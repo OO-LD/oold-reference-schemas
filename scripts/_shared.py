@@ -85,6 +85,18 @@ def set_name(iri: str) -> str:
     return iri.rstrip("/").rsplit("/", 1)[-1].removesuffix(".sssom.tsv")
 
 
+def line(version: str) -> str:
+    """The compatibility line an exact version belongs to.
+
+    Below 1.0 a break raises the minor, so the line is `major.minor`. From 1.0 a break
+    raises the major, so the line is `major`. Every script and the site read this one rule.
+    """
+    parts = version.split(".")
+    if len(parts) != 3 or not all(p.isdigit() for p in parts):
+        raise ValueError(f"not an exact version: {version!r}")
+    return ".".join(parts[:2]) if parts[0] == "0" else parts[0]
+
+
 def module_version(module: str, full: bool = False) -> str:
     """The version a module publishes under.
 
@@ -93,7 +105,7 @@ def module_version(module: str, full: bool = False) -> str:
     """
     path = MODULES / module / "module.json"
     version = read(path).get("version", "0.1.0") if path.exists() else "0.1.0"
-    return version if full else ".".join(version.split(".")[:2])
+    return version if full else line(version)
 
 
 def context_of(schema: dict) -> dict:

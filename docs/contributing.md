@@ -112,7 +112,7 @@ so a forgotten bump fails the deploy rather than changing what someone already f
 
 Between releases, schemas may run ahead of their module. That state is published at
 `<module>/dev/`, which is explicitly not a conformance target. A released version is
-written once at `<module>/<major.minor>/` and is never rewritten by anything above a patch,
+written once at `<module>/<line>/` and is never rewritten by anything above a patch,
 because a conformance IRI that changes meaning is worse than no IRI at all.
 
 ## Style

@@ -548,6 +548,14 @@ def _read(path):
         return json.load(fh)
 
 
+def line(version):
+    """The compatibility line of an exact version: major.minor below 1.0, else major."""
+    parts = version.split(".")
+    if len(parts) != 3 or not all(p.isdigit() for p in parts):
+        raise ValueError(f"not an exact version: {version!r}")
+    return ".".join(parts[:2]) if parts[0] == "0" else parts[0]
+
+
 def module_version(module, full=False):
     """The version a module publishes under, from its module.json.
 
@@ -562,7 +570,7 @@ def module_version(module, full=False):
         versions = [_read(os.path.join(base, f)).get("x-oold-version") or ""
                     for f in sorted(os.listdir(base)) if f.endswith(".schema.json")]
         version = max([v for v in versions if v] or ["0.1.0"])
-    return version if full else ".".join(version.split(".")[:2])
+    return version if full else line(version)
 
 
 def _parents(module, name):
@@ -613,7 +621,7 @@ def _module_versions(module, page):
     if os.path.exists(path):
         with open(path, encoding="utf-8") as fh:
             for entry in json.load(fh).get(module) or []:
-                short = ".".join(entry["module"].split(".")[:2])
+                short = line(entry["module"])
                 entries.append((short, f"/{entry['docs']}/{url}/"))
     entries.append(("dev", f"/dev/{url}/"))
     current = "dev" if _channel() == "dev" else module_version(module)
@@ -631,8 +639,8 @@ def _earlier(module, version):
         return []
     with open(path, encoding="utf-8") as fh:
         entries = json.load(fh).get(module) or []
-    short = ".".join(version.split(".")[:2])
-    return [e for e in entries if ".".join(e["module"].split(".")[:2]) != short]
+    short = line(version)
+    return [e for e in entries if line(e["module"]) != short]
 
 
 def _walkthrough(module, name, from_page):

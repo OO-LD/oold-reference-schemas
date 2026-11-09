@@ -103,6 +103,8 @@ jobs:
         run: |
           uv run scripts/level.py --check
           uv run scripts/release.py --check
+      - name: Unit tests
+        run: python -m unittest discover -s tests
       - name: Check the generated artefacts are up to date
         run: git diff --exit-code generated/ docs/ zensical.toml
 
@@ -198,7 +200,7 @@ jobs:
           # compatibility line only moves within itself.
           uv run scripts/check_publish.py /tmp/pages
           # Three kinds of path. <module>/<x.y.z>/ is an exact release, written once and
-          # never rewritten. <module>/<x.y>/ is an alias for the newest patch of that
+          # never rewritten. <module>/<line>/ is an alias for the newest patch of that
           # compatibility line, which is what a conformance IRI names. <module>/dev/ is the
           # tip of main and no conformance target at all, so merging work does not stake
           # out an official path.

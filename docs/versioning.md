@@ -5,7 +5,7 @@ The rules for setting versions are in [Contributing](contributing.md).
 
 ## What an identifier names
 
-```
+```text
 https://w3id.org/oo-ld/schemas/quantities/0.1
   resolves to
 https://schemas.oo-ld.org/quantities/0.1/QuantityValue.schema.json
@@ -18,11 +18,24 @@ meaningless apart from it.
 Four things are published, and they move at different speeds:
 
 | identifier | what it is | stability |
-|---|---|---|
+| --- | --- | --- |
 | `<module>/<major.minor.patch>/` | one exact release | written once, never rewritten |
-| `<module>/<major.minor>/` | the newest patch of that line | moves only within a compatibility line |
+| `<module>/<line>/` | the newest patch of that line | moves only within a compatibility line |
 | `<module>/dev/` | the current state of the main branch | changes without notice |
 | `/mappings/<set>.sssom.tsv` | a mapping set as SSSOM | replaced on release, version inside the file |
+
+The **line** is the part of a version that a break changes:
+
+| version | line | why |
+| --- | --- | --- |
+| `0.2.3` | `0.2` | below 1.0 a break raises the minor |
+| `1.4.2` | `1` | from 1.0 a break raises the major |
+
+A reference to `quantities/0.2/` therefore never meets a break, and the
+same holds for `quantities/1/` once the module reaches 1.0. From 1.0 on only
+`<module>/<major>/` and the exact path are published, so a module has one
+moving alias at any time. The rule is one function, `line` in
+`scripts/_shared.py`, which every script and the site read.
 
 Released versions are the pin target. `dev` shows what is coming before it is frozen and is
 explicitly not a conformance target. A module that has never been released has only a `dev`
@@ -40,6 +53,10 @@ module underwent:
 - **Minor.** Something was added. An optional property, a permitted value, a new community
   mapping, a new schema in the module. Documents valid against the old version stay valid.
 - **Patch.** Descriptions, comments, examples. Nothing an instance can observe.
+
+Below 1.0 nothing is promised yet, so a major change raises the minor and a
+minor change raises it too. A `0.x` line therefore receives patches only,
+and anything else moves a dependent to a new line on purpose.
 
 A patch release keeps the same path, so `quantities/0.1` can gain a clearer description
 without moving. Anything above patch gets its own path, and the old one keeps serving the

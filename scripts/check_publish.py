@@ -6,7 +6,9 @@ An exact release, `<module>/<major.minor.patch>/`, is written once. Anyone may h
 it, cited it or pinned it, so rewriting it would change the meaning of a citation after the
 fact. Republishing identical bytes is fine; anything else is refused.
 
-A compatibility line, `<module>/<major.minor>/`, moves, but only where movement is invisible
+The line is `major.minor` below 1.0 and `major` from 1.0 on (see `_shared.line`).
+
+A compatibility line, `<module>/<line>/`, moves, but only where movement is invisible
 to an instance: a clearer description, a fixed typo. If what is about to replace it differs
 at minor or major level, the line is being used to smuggle a change that deserves its own
 version, and that is refused too.

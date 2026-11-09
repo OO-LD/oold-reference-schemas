@@ -17,8 +17,8 @@ import re
 import shutil
 from pathlib import Path
 
-from _shared import (chain, context_of, mapping_sets, module_version, read, resolve,
-                     set_name)
+from _shared import (chain, context_of, line as line_of, mapping_sets, module_version, read,
+                     resolve, set_name)
 
 ROOT = Path(__file__).resolve().parent.parent
 DOCS = ROOT / "docs"
@@ -406,7 +406,7 @@ def write_module_versions() -> int:
     for module in module_names():
         if not any((MODULES / module).glob("*.schema.json")):
             continue
-        entries = [{"label": ".".join(e["module"].split(".")[:2]), "docs": e["docs"]}
+        entries = [{"label": line_of(e["module"]), "docs": e["docs"]}
                    for e in index.get(module, [])]
         entries.append({"label": "dev", "docs": "dev"})
         catalogue[module] = {"current": module_version(module), "versions": entries}
@@ -440,7 +440,7 @@ def main() -> None:
             continue
         # Two paths, one immutable and one moving. The exact release is written once and
         # never rewritten, so a consumer who needs reproducibility can pin it. The
-        # major.minor path is an alias for the newest patch of that compatibility line,
+        # line path is an alias for the newest patch of that compatibility line,
         # which is what a conformance IRI names, so a typo fix reaches everyone pinned to
         # it without minting a version nobody asked for.
         exact = module_version(module, full=True)
