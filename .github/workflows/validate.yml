@@ -91,6 +91,8 @@ jobs:
       # tree that disagrees with itself.
       - name: Bundle the mapping sets
         run: uv run scripts/build_mappings.py
+      - name: Pin the closure of each module
+        run: uv run scripts/lock.py
       - name: Publish the schemas and render the RDF readings
         run: uv run --with pyld --with rdflib scripts/build_docs.py
       - name: Seed and check the schema pages
@@ -108,7 +110,10 @@ jobs:
       - name: Unit tests
         run: python -m unittest discover -s tests
       - name: Check the generated artefacts are up to date
-        run: git diff --exit-code generated/ docs/ zensical.toml
+        run: |
+          git diff --exit-code generated/ docs/ zensical.toml
+          # a lock that was never committed is untracked, which a diff does not see
+          test -z "$(git status --porcelain generated/)"
 
       - name: Build the site
         run: uvx --with pyyaml==6.0.2 zensical@${{ env.ZENSICAL_VERSION }} build --clean
@@ -202,7 +207,7 @@ jobs:
           # compatibility line only moves within itself.
           uv run scripts/check_publish.py /tmp/pages
           # Three kinds of path. <module>/<x.y.z>/ is an exact release, written once and
-          # never rewritten. <module>/<line>/ is an alias for the newest patch of that
+          # never rewritten. <module>/<line>/ is an alias for the newest release of that
           # compatibility line, which is what a conformance IRI names. <module>/dev/ is the
           # tip of main and no conformance target at all, so merging work does not stake
           # out an official path.

@@ -15,7 +15,7 @@ VALIDATOR ?= .oold-schema
 OOLD_PY_VERSION ?= 2.0.0
 OOLD := uvx --from "oold[validation]==$(OOLD_PY_VERSION)" oold
 
-.PHONY: all generate mappings docs pages ontologies labels bump check validate serve clean release help
+.PHONY: all generate mappings locks docs pages ontologies labels bump check validate serve clean release help
 
 help:
 	@echo "generate  regenerate everything derived from the schemas"
@@ -30,10 +30,14 @@ all: generate
 
 # Order matters: the mapping sets are read by the schema pages, and the navigation is
 # generated from what exists after both.
-generate: mappings docs pages
+generate: mappings locks docs pages
 
 mappings:
 	python scripts/build_mappings.py
+
+# Before docs: the published copies of a module carry its lock.
+locks:
+	python scripts/lock.py
 
 docs:
 	$(PY) scripts/build_docs.py
@@ -75,6 +79,7 @@ bump:
 check: $(RENDER_STAMP)
 	@before=$$(git status --porcelain); \
 	python scripts/build_mappings.py >/dev/null; \
+	python scripts/lock.py >/dev/null; \
 	$(PY) scripts/build_docs.py >/dev/null; \
 	test "$$before" = "$$(git status --porcelain)" || { \
 		echo 'generated artefacts are stale: run make generate' >&2; exit 1; }

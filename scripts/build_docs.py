@@ -440,7 +440,7 @@ def main() -> None:
             continue
         # Two paths, one immutable and one moving. The exact release is written once and
         # never rewritten, so a consumer who needs reproducibility can pin it. The
-        # line path is an alias for the newest patch of that compatibility line,
+        # line path is an alias for the newest release of that compatibility line,
         # which is what a conformance IRI names, so a typo fix reaches everyone pinned to
         # it without minting a version nobody asked for.
         exact = module_version(module, full=True)
@@ -451,6 +451,9 @@ def main() -> None:
             for f in files:
                 shutil.copy2(f, target / f.name)
                 published += 1
+            lock = ROOT / "generated" / "locks" / module / "oold.lock.json"
+            if lock.exists():
+                shutil.copy2(lock, target / lock.name)
         version = line
         title = (read(MODULES / module / "module.json").get("title", module)
                  if (MODULES / module / "module.json").exists() else module)
@@ -458,7 +461,7 @@ def main() -> None:
             f"# {title} {exact}",
             "",
             f"Referenced by the conformance IRI",
-            f"`https://w3id.org/oo-ld/schemas/{module}/{line}`, which tracks the newest patch of",
+            f"`https://w3id.org/oo-ld/schemas/{module}/{line}`, which tracks the newest release of",
             f"{line}. A release publishes these files at `https://schemas.oo-ld.org/{module}/{line}/`",
             f"and, immutably, at `https://schemas.oo-ld.org/{module}/{exact}/`; until then the tip",
             f"of main is served at `https://schemas.oo-ld.org/{module}/dev/`.",
