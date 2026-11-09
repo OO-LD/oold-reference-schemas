@@ -62,6 +62,19 @@ A patch release keeps the same path, so `quantities/0.1` can gain a clearer desc
 without moving. Anything above patch gets its own path, and the old one keeps serving the
 bytes it always served.
 
+## Spec edition
+
+Every schema names the OO-LD specification edition it is written in, as an exact
+version in `$schema`, for example
+`https://oo-ld.org/1.0.1/meta/oold-meta-schema.json`.
+
+- `latest` is refused, because a frozen release would change meaning when the
+  spec moves.
+- A module uses one edition for all its schemas.
+- Moving to another edition is at least a minor change.
+- `python scripts/spec_edition.py --set <edition>` repins every schema, and
+  `make check` verifies the pins.
+
 ## Documentation for an older version
 
 The site is released by date rather than by semantic version, because it covers modules
