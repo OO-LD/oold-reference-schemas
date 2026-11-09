@@ -21,3 +21,5 @@ generated/mappings/
 # carried: they belong to other projects and nothing in the build reads them, since the
 # labels they supply are committed.
 .ontologies/
+.vscode
+.ign
