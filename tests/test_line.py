@@ -38,5 +38,20 @@ class LineRule(unittest.TestCase):
             self.assertEqual(macros.line(version), expected)
 
 
+class LatestPerLine(unittest.TestCase):
+    ENTRIES = [{"module": "0.1.0", "docs": "a"}, {"module": "0.2.0", "docs": "b"},
+               {"module": "0.2.1", "docs": "c"}, {"module": "1.0.0", "docs": "d"},
+               {"module": "1.1.0", "docs": "e"}]
+
+    def test_one_entry_per_line_keeping_the_newest(self):
+        want = [{"module": "0.1.0", "docs": "a"}, {"module": "0.2.1", "docs": "c"},
+                {"module": "1.1.0", "docs": "e"}]
+        self.assertEqual(_shared.latest_per_line(self.ENTRIES), want)
+        self.assertEqual(macros.latest_per_line(self.ENTRIES), want)
+
+    def test_empty(self):
+        self.assertEqual(_shared.latest_per_line([]), [])
+
+
 if __name__ == "__main__":
     unittest.main()

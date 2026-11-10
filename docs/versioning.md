@@ -1,28 +1,37 @@
 # Versions and identifiers
 
-What each identifier names, and what a version change means for documents already written.
-The rules for setting versions are in [Contributing](contributing.md).
+What each identifier names, what a version change means for documents already
+written, and how a chain of references stays resolvable. The rules for setting
+versions are in [Contributing](contributing.md).
 
 ## What an identifier names
 
 ```text
-https://w3id.org/oo-ld/schemas/quantities/0.1
+https://w3id.org/oo-ld/schemas/quantities/0.2
   resolves to
-https://schemas.oo-ld.org/quantities/0.1/QuantityValue.schema.json
+https://schemas.oo-ld.org/quantities/0.2/QuantityValue.schema.json
 ```
 
-A conformance identifier names a **module at a version**, not a single schema. That is the unit to
-validate against, cite and pin, because the schemas in a module share a context and are
-meaningless apart from it.
+A conformance identifier names a **module at a version**, not a single schema.
+That is the unit to validate against, cite and pin, because the schemas in a
+module share a context and are meaningless apart from it.
 
-Four things are published, and they move at different speeds:
+What is published, and how fast each thing moves:
 
-| identifier | what it is | stability |
+| path | what it is | stability |
 | --- | --- | --- |
-| `<module>/<major.minor.patch>/` | one exact release | written once, never rewritten |
-| `<module>/<line>/` | the newest release of that line | moves only within a compatibility line |
-| `<module>/dev/` | the current state of the main branch | changes without notice |
-| `/mappings/<set>.sssom.tsv` | a mapping set as SSSOM | replaced on release, version inside the file |
+| `<module>/<x.y.z>/` | one exact release | written once |
+| `<module>/<line>/` | newest release of a line | moves within its line |
+| `<module>/<x.y.z>/oold.lock.json` | exact pins of that release | written once |
+| `packages/<module>-<x.y.z>.zip` | offline package | written once |
+| `<module>/dev/` | tip of the main branch | changes without notice |
+| `mappings/<set>.sssom.tsv` | a mapping set | replaced on release |
+
+Released versions are the pin target. `dev` shows what is coming and is not a
+conformance target. A module that was never released has only a `dev` path:
+merging work does not mint a version, cutting a release does.
+
+## The line
 
 The **line** is the part of a version that a break changes:
 
@@ -31,49 +40,69 @@ The **line** is the part of a version that a break changes:
 | `0.2.3` | `0.2` | below 1.0 a break raises the minor |
 | `1.4.2` | `1` | from 1.0 a break raises the major |
 
-A reference to `quantities/0.2/` therefore never meets a break, and the
-same holds for `quantities/1/` once the module reaches 1.0. From 1.0 on only
-`<module>/<major>/` and the exact path are published, so a module has one
-moving alias at any time.
+A schema cites a dependency by line, for example `quantities/0.2/`, so patches
+reach it and breaks never do. From 1.0 only `<module>/<major>/` and the exact
+path are published, so a module has one moving alias at any time.
 
-What the alias may carry follows from the line. `0.2/` takes patches only,
-because below 1.0 an addition raises the minor. `1/` also takes additions, so
-a new optional property reaches everyone on `1/`, and only a break is refused.
-The deploy enforces this before it publishes.
+What the alias may carry follows from the line:
 
-The rule is one function, `line` in
-`scripts/_shared.py`, which every script and the site read.
+- `0.2/` takes patches only, because below 1.0 an addition raises the minor.
+- `1/` also takes additions, so a new optional property reaches everyone on
+  `1/`. Only a break is refused.
 
-Released versions are the pin target. `dev` shows what is coming before it is frozen and is
-explicitly not a conformance target. A module that has never been released has only a `dev`
-path: merging work does not mint a version, cutting a release does.
+The deploy enforces this before it publishes. The rule is one function,
+`line` in `scripts/_shared.py`, which every script and the site read.
 
 ## What a version change means
 
-Modules use semantic versioning, and the level is the strongest change any schema in the
-module underwent:
+Modules use semantic versioning, and the level is the strongest change any
+schema in the module underwent:
 
-- **Major.** Something that was valid is not any more, or means something else. A removed
-  property, a newly required one, a narrowed type, a removed permitted value. Also a
-  changed consensus mapping: the structure survives, but instances now say something
-  different in RDF, which is a break even though no validator would notice.
-- **Minor.** Something was added. An optional property, a permitted value, a new community
-  mapping, a new schema in the module. Documents valid against the old version stay valid.
+- **Major.** Something that was valid is not any more, or means something
+  else. A removed property, a newly required one, a narrowed type, a removed
+  permitted value. Also a changed consensus mapping: the structure survives,
+  but instances now say something different in RDF, which is a break even
+  though no validator would notice.
+- **Minor.** Something was added. An optional property, a permitted value, a
+  new community mapping, a new schema in the module. Documents valid against
+  the old version stay valid. A new spec edition counts as minor.
 - **Patch.** Descriptions, comments, examples. Nothing an instance can observe.
 
-Below 1.0 nothing is promised yet, so a major change raises the minor and a
-minor change raises it too. A `0.x` line therefore receives patches only,
-and anything else moves a dependent to a new line on purpose.
+Below 1.0 nothing is promised yet, so both a major and a minor change raise the
+minor. A `0.x` line therefore receives patches only, and anything else moves a
+dependent to a new line on purpose.
 
-A patch release keeps the same path, so `quantities/0.1` can gain a clearer description
-without moving. Anything above patch gets its own path, and the old one keeps serving the
-bytes it always served.
+A patch keeps the same path, so `quantities/0.2` can gain a clearer description
+without moving. Anything above a patch on a `0.x` line gets its own path, and
+the old one keeps serving the bytes it always served.
+
+## How a reference resolves
+
+Validating a `Material` instance that cites `materials/0.2.0/`:
+
+| step | request | named by |
+| --- | --- | --- |
+| 1 | `materials/0.2.0/Material.schema.json` | the instance `$schema` |
+| 2 | `materials/0.2.0/Composition.schema.json` | relative `$ref` |
+| 3 | `quantities/0.2/MassFraction.schema.json` | cross-module `$ref`, a line |
+| 4 | `quantities/0.2/QuantityValue.schema.json` | relative `$ref` |
+
+Steps 1 and 2 are exact, so they never change. Steps 3 and 4 name a line, so
+they follow its newest release. The lock records which exact version that was
+when `materials 0.2.0` was released, and the package holds those documents so no
+request is needed at all.
+
+| you want | use |
+| --- | --- |
+| patches to flow in | cite the line |
+| the same bytes years later | cite the exact version, or keep the package |
+| to work offline | unpack the package |
 
 ## The lock
 
-A schema cites a dependency by line, so patches reach it. The lock records
-which exact version the line was resolved to when the release was made.
-It is published beside the schemas at `<module>/<x.y.z>/oold.lock.json`.
+The lock records which exact version each line was resolved to when the release
+was made. It is published beside the schemas at
+`<module>/<x.y.z>/oold.lock.json`.
 
 ```json
 {
@@ -89,9 +118,9 @@ It is published beside the schemas at `<module>/<x.y.z>/oold.lock.json`.
 - `requires` is transitive and holds exact versions only.
 - `ontologies` lists the ontology versions the mappings were checked against.
 - It is generated by `make generate`, never typed, and checked by `make check`.
-- Plain validators ignore it. The offline package and the release checks use it.
-- The deploy refuses to rewrite a published lock, and refuses a lock that pins a
-  version which is neither published nor part of the same release.
+- Plain validators ignore it. The package and the release checks use it.
+- The deploy refuses to rewrite a published lock. It also refuses a lock that
+  pins a version which is neither published nor part of the same release.
 
 ## The offline package
 
@@ -116,12 +145,12 @@ is the member `quantities/0.2/MassFraction.schema.json`. In Python with the
 - Only a release publishes a package, and a published package is never
   rewritten.
 - Spec meta-schemas are not in the zip, because validation does not read them.
-- Each package is checked in CI by validating every instance from the zip alone.
+- CI validates every instance from its package alone.
 
 ## Spec edition
 
-Every schema names the OO-LD specification edition it is written in, as an exact
-version in `$schema`, for example
+Every schema names the OO-LD specification edition it is written in, as an
+exact version in `$schema`, for example
 `https://oo-ld.org/1.0.1/meta/oold-meta-schema.json`.
 
 - `latest` is refused, because a frozen release would change meaning when the
@@ -133,18 +162,19 @@ version in `$schema`, for example
 
 ## Documentation for an older version
 
-The site is released by date rather than by semantic version, because it covers modules
-that version independently and one number cannot describe all of them at once. Every module
-version that ever existed was current in some dated release, so the prose for it is still
-online: each schema page names the module version it documents and links the releases
-where earlier versions were current.
+The site is released by date rather than by semantic version, because it covers
+modules that version independently and one number cannot describe all of them
+at once. Every module version that ever existed was current in some dated
+release, so the prose for it is still online. Each schema page names the module
+version it documents and links the releases where earlier lines were current.
+The version picker lists one entry per line, the newest release on it.
 
 ## Mapping sets
 
-A set is identified by the file it is published as, and carries its version inside as
-`mapping_set_version`. A schema therefore needs no edit when the sets are
-released, and a downloaded set states which release it came from.
+A set is identified by the file it is published as, and carries its version
+inside as `mapping_set_version`. A schema therefore needs no edit when the sets
+are released, and a downloaded set states which release it came from.
 
-Derived crosswalks between two communities live under `/mappings/crosswalks/` and are
-regenerated with every release. They are chained, not curated, which their
-`mapping_justification` records.
+Derived crosswalks between two communities live under `/mappings/crosswalks/`
+and are regenerated with every release. They are chained, not curated, which
+their `mapping_justification` records.

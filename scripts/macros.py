@@ -556,6 +556,14 @@ def line(version):
     return ".".join(parts[:2]) if parts[0] == "0" else parts[0]
 
 
+def latest_per_line(entries):
+    """One release entry per compatibility line, the newest, in order of first appearance."""
+    newest = {}
+    for entry in entries:
+        newest[line(entry["module"])] = entry
+    return list(newest.values())
+
+
 def module_version(module, full=False):
     """The version a module publishes under, from its module.json.
 
@@ -620,7 +628,7 @@ def _module_versions(module, page):
     path = os.path.join(GENERATED, "versions.json")
     if os.path.exists(path):
         with open(path, encoding="utf-8") as fh:
-            for entry in json.load(fh).get(module) or []:
+            for entry in latest_per_line(json.load(fh).get(module) or []):
                 short = line(entry["module"])
                 entries.append((short, f"/{entry['docs']}/{url}/"))
     entries.append(("dev", f"/dev/{url}/"))

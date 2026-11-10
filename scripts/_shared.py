@@ -97,6 +97,18 @@ def line(version: str) -> str:
     return ".".join(parts[:2]) if parts[0] == "0" else parts[0]
 
 
+def latest_per_line(entries: list[dict]) -> list[dict]:
+    """One release entry per compatibility line, the newest, in order of first appearance.
+
+    Documentation for a line is best read from the newest release on it, and a reader
+    choosing a version should not see the same line once per patch.
+    """
+    newest: dict[str, dict] = {}
+    for entry in entries:
+        newest[line(entry["module"])] = entry
+    return list(newest.values())
+
+
 def module_version(module: str, full: bool = False) -> str:
     """The version a module publishes under.
 

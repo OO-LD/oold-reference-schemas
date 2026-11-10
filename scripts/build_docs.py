@@ -17,8 +17,8 @@ import re
 import shutil
 from pathlib import Path
 
-from _shared import (chain, context_of, line as line_of, mapping_sets, module_version, read,
-                     resolve, set_name)
+from _shared import (chain, context_of, latest_per_line, line as line_of, mapping_sets,
+                     module_version, read, resolve, set_name)
 
 ROOT = Path(__file__).resolve().parent.parent
 DOCS = ROOT / "docs"
@@ -407,7 +407,7 @@ def write_module_versions() -> int:
         if not any((MODULES / module).glob("*.schema.json")):
             continue
         entries = [{"label": line_of(e["module"]), "docs": e["docs"]}
-                   for e in index.get(module, [])]
+                   for e in latest_per_line(index.get(module, []))]
         entries.append({"label": "dev", "docs": "dev"})
         catalogue[module] = {"current": module_version(module), "versions": entries}
     (DOCS / "module-versions.json").write_text(json.dumps(catalogue, indent=2) + "\n",

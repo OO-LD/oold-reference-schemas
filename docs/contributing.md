@@ -88,32 +88,56 @@ rewrites the hashes once you have decided the mappings still hold. See
 Three number lines, each with a different job:
 
 - **Schemas** carry `x-oold-version`, their own semver.
-- **Modules** carry the version in `modules/<module>/module.json`. A module is the unit
-  that is published and conformed to, so its bump level is the highest level found among
-  its schemas: a removed property or a changed consensus mapping is major, an added
-  optional property or a new synonym is minor, a description is a patch. A removed schema
-  is major, an added one minor.
-- **The repository** is released by date, because it aggregates modules that version
-  independently and no single semver level could describe eleven of them at once.
+- **Modules** carry the version in `modules/<module>/module.json`. A module is
+  the unit that is published and conformed to, so its bump level is the highest
+  level found among its schemas: a removed property or a changed consensus
+  mapping is major, an added optional property, a new synonym or a new spec
+  edition is minor, a description is a patch. A removed schema is major, an
+  added one minor.
+- **The repository** is released by date, because it aggregates modules that
+  version independently and no single semver level could describe all of them.
 
-`make bump` computes the versions rather than incrementing them: it reads the last release,
-raises each schema by the level of what changed since, and raises the module by the highest
-level among its schemas. Running it twice therefore lands on the same number, which is what
-makes it safe in a pre-commit hook. `make check` verifies the same floors, so a bump that is
-too small fails review rather than shipping.
+What each path means, and how references resolve, is in
+[Versions and identifiers](versioning.md). Here is the working routine.
 
-`make release` stamps the dated release, records which module version it documents in
-`generated/versions.json`, and regenerates. The schema pages read that index back, which is
-how a reader finds the documentation for a module version that is no longer current.
+### Changing a schema
 
-Publishing checks both promises before it writes: `scripts/check_publish.py` refuses to
-rewrite an exact release and refuses to move a compatibility line with anything above a patch,
-so a forgotten bump fails the deploy rather than changing what someone already fetched.
+1. Edit the schema. Cite another module by line, for example
+   `https://w3id.org/oo-ld/schemas/quantities/0.2/Time.schema.json`.
+2. Run `make bump`. It computes the versions rather than incrementing them: it
+   reads the last release, raises each schema by the level of what changed
+   since, and raises the module by the highest level among its schemas. Running
+   it twice lands on the same number.
+3. Run `make generate`. It rebuilds the lock and the offline package of every
+   module along with the other derived files.
+4. Run `make check` and `make validate`. `make check` also verifies the version
+   floors, the spec edition pins and the unit tests.
 
-Between releases, schemas may run ahead of their module. That state is published at
-`<module>/dev/`, which is explicitly not a conformance target. A released version is
-written once at `<module>/<line>/` and is never rewritten by anything above a patch,
-because a conformance IRI that changes meaning is worse than no IRI at all.
+### Spec edition
+
+All schemas of a module name one exact edition in `$schema`. To move to another
+one, run `python scripts/spec_edition.py --set <edition>`, then `make bump`,
+because a repin is at least a minor change.
+
+### Releasing
+
+`make release` stamps the dated release, records which module version it
+documents in `generated/versions.json`, and regenerates. Then tag `v<date>`.
+The deploy publishes the exact paths, the lines, each lock and each package.
+
+Publishing checks its promises before it writes. `scripts/check_publish.py`
+refuses to:
+
+- rewrite an exact release, its lock or its package;
+- move a line with a change the line does not allow, which is anything above a
+  patch below 1.0 and a break from 1.0;
+- publish a lock that pins a version which does not exist.
+
+A forgotten bump therefore fails the deploy rather than changing what someone
+already fetched.
+
+Between releases, schemas may run ahead of their module. That state is
+published at `<module>/dev/`, which is explicitly not a conformance target.
 
 ## Style
 
