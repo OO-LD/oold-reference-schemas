@@ -16,7 +16,8 @@ it and only a break is refused. Either way, a change the line does not allow is 
 smuggled in and deserves its own version.
 
 A lock may only pin versions that exist, either already published or published by the same
-release.
+release. The package of an exact release is written once, judged by its documents rather
+than its bytes, since compression may differ between machines.
 
 Run against a checkout of the published branch, before anything is copied into it.
 
@@ -30,6 +31,7 @@ import sys
 from pathlib import Path
 
 import level
+import package
 from _shared import MODULES, module_version
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -91,6 +93,19 @@ def lock_problems(module: str, exact: str, published_root: Path,
     return problems
 
 
+def package_problems(module: str, exact: str, published_root: Path,
+                     staged_root: Path) -> list[str]:
+    """A published package is written once."""
+    name = Path("packages") / f"{module}-{exact}.zip"
+    published, staged = published_root / name, staged_root / name
+    if not (published.is_file() and staged.is_file()):
+        return []
+    if package.same_documents(published.read_bytes(), staged.read_bytes()):
+        return []
+    return [f"{name} is already published with different documents. "
+            "An exact release is written once; bump the version."]
+
+
 def main() -> None:
     if len(sys.argv) < 2:
         sys.exit(__doc__)
@@ -119,6 +134,11 @@ def main() -> None:
         problems += found
         if not found and (STAGED / module / exact / LOCK).is_file():
             print(f"  ok   {module} {exact} lock pins versions that exist")
+
+        found = package_problems(module, exact, published_root, STAGED)
+        problems += found
+        if not found and (STAGED / "packages" / f"{module}-{exact}.zip").is_file():
+            print(f"  ok   {module} {exact} package holds the documents it did")
 
         published = published_root / module / line
         staged = STAGED / module / line

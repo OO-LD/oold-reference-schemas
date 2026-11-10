@@ -91,5 +91,33 @@ class Locks(unittest.TestCase):
         self.assertEqual(self.run_check(None, self.LOCK, staged=[("q", "0.2.0")]), [])
 
 
+class Packages(unittest.TestCase):
+    def zip_of(self, root: Path, name: str, content: bytes) -> None:
+        import zipfile
+        (root / "packages").mkdir(parents=True, exist_ok=True)
+        with zipfile.ZipFile(root / "packages" / name, "w") as z:
+            z.writestr("m/0.2.0/A.schema.json", content)
+
+    def run_check(self, published, staged):
+        with tempfile.TemporaryDirectory() as tmp:
+            old, new = Path(tmp) / "old", Path(tmp) / "new"
+            old.mkdir()
+            new.mkdir()
+            if published is not None:
+                self.zip_of(old, "m-0.2.0.zip", published)
+            if staged is not None:
+                self.zip_of(new, "m-0.2.0.zip", staged)
+            return guard.package_problems("m", "0.2.0", old, new)
+
+    def test_same_documents_republish(self):
+        self.assertEqual(self.run_check(b"{}", b"{}"), [])
+
+    def test_a_published_package_is_never_rewritten(self):
+        self.assertEqual(len(self.run_check(b"{}", b'{"a": 1}')), 1)
+
+    def test_a_new_package_is_fine(self):
+        self.assertEqual(self.run_check(None, b"{}"), [])
+
+
 if __name__ == "__main__":
     unittest.main()

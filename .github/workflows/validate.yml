@@ -93,6 +93,10 @@ jobs:
         run: uv run scripts/build_mappings.py
       - name: Pin the closure of each module
         run: uv run scripts/lock.py
+      - name: Build the offline packages
+        run: uv run scripts/package.py
+      - name: Every instance validates from its package alone
+        run: uv run --with jsonschema --with referencing scripts/check_package.py
       - name: Publish the schemas and render the RDF readings
         run: uv run --with pyld --with rdflib scripts/build_docs.py
       - name: Seed and check the schema pages
@@ -166,6 +170,7 @@ jobs:
 
       - run: uv run scripts/build_mappings.py
       - run: uv run --with pyld --with rdflib scripts/build_docs.py
+      - run: uv run scripts/package.py
 
       - name: Publish the docs version
         run: |
@@ -229,6 +234,14 @@ jobs:
           # The mapping sets resolve at the identifier their mapping_set_id names.
           # The sets themselves, at the paths their mapping_set_id names. The pages about
           # them are documentation and are published with the rest of it.
+          # An offline package is part of an exact release, so only a tag publishes one,
+          # and one that is already there is left alone rather than recompressed.
+          if [[ "${GITHUB_REF}" == refs/tags/v* ]]; then
+            mkdir -p /tmp/pages/packages
+            for archive in docs/packages/*.zip; do
+              [ -e "/tmp/pages/packages/$(basename "$archive")" ] || cp "$archive" /tmp/pages/packages/
+            done
+          fi
           mkdir -p /tmp/pages/mappings/crosswalks
           cp docs/mappings/*.sssom.tsv /tmp/pages/mappings/
           cp docs/mappings/crosswalks/*.sssom.tsv /tmp/pages/mappings/crosswalks/

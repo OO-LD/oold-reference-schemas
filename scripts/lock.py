@@ -17,6 +17,7 @@ from __future__ import annotations
 
 import json
 import re
+import subprocess
 import sys
 from collections.abc import Iterable
 from pathlib import Path
@@ -172,9 +173,11 @@ class Repository:
         current = self.tree_version(module)
         return sorted(found | ({current} if current else set()), key=order)
 
-    def schemas(self, module: str, version: str) -> dict[str, dict]:
+    def files(self, module: str, version: str) -> dict[str, bytes]:
+        """The schema files of a module version, byte for byte as they were released."""
         if version == self.tree_version(module):
-            return {p.name: read(p) for p in sorted((MODULES / module).glob("*.schema.json"))}
+            return {p.name: p.read_bytes()
+                    for p in sorted((MODULES / module).glob("*.schema.json"))}
         docs = next((e["docs"] for e in self.released.get(module, [])
                      if e["module"] == version), None)
         if docs is None:
@@ -184,8 +187,13 @@ class Repository:
         names = [n for n in listing.split() if n.endswith(".schema.json")]
         if not names:
             raise LockError(f"{module} {version} has no schemas at {tag}")
-        return {n.rsplit("/", 1)[-1]: json.loads(level.git("show", f"{tag}:{n}") or "{}")
+        return {n.rsplit("/", 1)[-1]: subprocess.run(
+                    ["git", "show", f"{tag}:{n}"], cwd=ROOT, check=True,
+                    capture_output=True).stdout
                 for n in names}
+
+    def schemas(self, module: str, version: str) -> dict[str, dict]:
+        return {name: json.loads(data) for name, data in self.files(module, version).items()}
 
 
 def modules() -> list[str]:

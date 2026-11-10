@@ -93,6 +93,31 @@ It is published beside the schemas at `<module>/<x.y.z>/oold.lock.json`.
 - The deploy refuses to rewrite a published lock, and refuses a lock that pins a
   version which is neither published nor part of the same release.
 
+## The offline package
+
+`packages/<module>-<x.y.z>.zip` holds a module and every module its lock pins,
+as unmodified documents at the paths the host serves. It carries both the exact
+and the line directory, because the line is what a schema cites.
+
+```text
+materials/0.2.0/Material.schema.json
+materials/0.2/Material.schema.json
+materials/0.2.0/oold.lock.json
+quantities/0.2/MassFraction.schema.json
+quantities/0.2.0/MassFraction.schema.json
+```
+
+To validate with no network, map the identity IRI to a member: the IRI
+`https://w3id.org/oo-ld/schemas/quantities/0.2/MassFraction.schema.json`
+is the member `quantities/0.2/MassFraction.schema.json`. In Python with the
+`referencing` library that is one `retrieve` function, as in
+`scripts/check_package.py`.
+
+- Only a release publishes a package, and a published package is never
+  rewritten.
+- Spec meta-schemas are not in the zip, because validation does not read them.
+- Each package is checked in CI by validating every instance from the zip alone.
+
 ## Spec edition
 
 Every schema names the OO-LD specification edition it is written in, as an exact
