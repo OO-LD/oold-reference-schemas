@@ -97,7 +97,8 @@ Three number lines, each with a different job:
 - **The repository** is released by date, because it aggregates modules that
   version independently and no single semver level could describe all of them.
 
-What each path means, and how references resolve, is in
+New to this? Start with the [Versioning guide](versioning-guide.md). What each
+path means, and how references resolve, is in
 [Versions and identifiers](versioning.md). Here is the working routine.
 
 ### Changing a schema

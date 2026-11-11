@@ -2,7 +2,8 @@
 
 What each identifier names, what a version change means for documents already
 written, and how a chain of references stays resolvable. The rules for setting
-versions are in [Contributing](contributing.md).
+versions are in [Contributing](contributing.md), and a short version for
+newcomers is the [Versioning guide](versioning-guide.md).
 
 ## What an identifier names
 
