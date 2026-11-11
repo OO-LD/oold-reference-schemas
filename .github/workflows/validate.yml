@@ -142,7 +142,7 @@ jobs:
   # readable after the schemas move on.
   #
   # The schema files are published at the site ROOT, not inside a docs version, because a
-  # conformance IRI must never move: /quantities/1.0/QuantityValue.schema.json is permanent and
+  # conformance IRI must never move: /quantities/0.1/QuantityValue.schema.json is permanent and
   # carries its own version, independent of how the surrounding prose is versioned.
   deploy:
     if: github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/tags/v')
