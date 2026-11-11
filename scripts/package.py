@@ -75,10 +75,11 @@ def same_documents(a: bytes, b: bytes) -> bool:
 
 
 def main() -> None:
-    repo = lock.Repository()
+    index = lock.Repository().released
     OUT.mkdir(parents=True, exist_ok=True)
     for module in lock.modules():
-        version = repo.tree_version(module)
+        version = lock.Repository().tree_version(module)
+        repo = lock.Repository(lock.released_docs(index, module, version))
         path = OUT / f"{module}-{version}.zip"
         path.write_bytes(build(module, version, repo))
         print(f"  {path.relative_to(ROOT)}: {len(read(path.read_bytes()))} documents")

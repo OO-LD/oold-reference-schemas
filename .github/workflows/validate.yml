@@ -245,6 +245,11 @@ jobs:
           mkdir -p /tmp/pages/mappings/crosswalks
           cp docs/mappings/*.sssom.tsv /tmp/pages/mappings/
           cp docs/mappings/crosswalks/*.sssom.tsv /tmp/pages/mappings/crosswalks/
+          # Releases published before locks existed gain one, built as of their own release.
+          # A published lock is never rewritten, so this only ever adds.
+          if [[ "${GITHUB_REF}" == refs/tags/v* ]]; then
+            uv run scripts/lock.py --backfill /tmp/pages
+          fi
           cp docs/CNAME /tmp/pages/CNAME
           touch /tmp/pages/.nojekyll
           cd /tmp/pages

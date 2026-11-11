@@ -8,9 +8,14 @@ the ontology versions the mappings were checked against.
 Plain JSON Schema validators ignore it. It serves the offline package, the release checks
 and any tool that wants a reproducible closure.
 
+A lock is a pure function of the module version and its release: a dependency is resolved
+among the versions released no later than the module itself. Regenerating it later, after a
+dependency has had a patch, gives the same bytes, which is what lets a release stay frozen.
+
 Usage:
-  python scripts/lock.py            write generated/locks/<module>/oold.lock.json
-  python scripts/lock.py --check    fail if a committed lock is stale
+  python scripts/lock.py                  write generated/locks/<module>/oold.lock.json
+  python scripts/lock.py --check          fail if a committed lock is stale
+  python scripts/lock.py --backfill ROOT  add the lock to released versions published without
 """
 
 from __future__ import annotations
@@ -19,7 +24,7 @@ import json
 import re
 import subprocess
 import sys
-from collections.abc import Iterable
+from collections.abc import Callable, Iterable
 from pathlib import Path
 from typing import Protocol
 
@@ -83,6 +88,29 @@ def resolve_line(module: str, wanted: str, versions: Iterable[str]) -> str:
     return max(fits, key=order)
 
 
+def docs_key(docs: str) -> tuple[str, int]:
+    """Order of dated releases: `2026.08.24-2` is the second release of that day."""
+    base, _, suffix = docs.partition("-")
+    return (base, int(suffix) if suffix else 1)
+
+
+def visible(entries: list[dict], as_of: str | None, tree: str | None) -> list[str]:
+    """The versions of a module a lock may resolve to.
+
+    Without a cutoff every release and the version in the tree. With one, only releases up
+    to and including it, so a module released before a dependency's patch keeps its pins.
+    """
+    found = [e["module"] for e in entries
+             if as_of is None or docs_key(e["docs"]) <= docs_key(as_of)]
+    if as_of is None and tree:
+        found.append(tree)
+    return sorted(set(found), key=order)
+
+
+def released_docs(released: dict, module: str, version: str) -> str | None:
+    return next((e["docs"] for e in released.get(module, []) if e["module"] == version), None)
+
+
 def sources(schemas: Iterable[dict]) -> set[str]:
     """Ontology versions named by the mappings of these schemas."""
     found = set()
@@ -96,14 +124,21 @@ def sources(schemas: Iterable[dict]) -> set[str]:
     return found
 
 
-def edition(module: str, schemas: Iterable[dict]) -> str:
+def edition(module: str, schemas: Iterable[dict], lenient: bool = False) -> str | None:
+    """The one edition a module is pinned to.
+
+    A release made before editions were pinned pointed at `latest`, which names no edition.
+    Only a backfill may record that, as None, and only when nothing is pinned at all.
+    """
     editions = {edition_of(s.get("$schema")) for s in schemas}
+    if lenient and editions == {None}:
+        return None
     if len(editions) != 1 or None in editions:
         raise LockError(f"{module} is not pinned to one exact spec edition")
     return editions.pop()
 
 
-def build(module: str, version: str, catalog: Catalog) -> dict:
+def build(module: str, version: str, catalog: Catalog, lenient: bool = False) -> dict:
     """The lock of one module version."""
     own = list(catalog.schemas(module, version).values())
     pinned: dict[str, str] = {}
@@ -126,7 +161,7 @@ def build(module: str, version: str, catalog: Catalog) -> dict:
         "lock_version": LOCK_VERSION,
         "module": module,
         "version": version,
-        "spec_edition": edition(module, own),
+        "spec_edition": edition(module, own, lenient),
         "requires": dict(sorted(pinned.items())),
         "ontologies": sorted(sources(s for group in closure.values() for s in group)),
     }
@@ -145,9 +180,12 @@ def validate(lock: dict) -> list[str]:
         return problems
     if lock["lock_version"] != LOCK_VERSION:
         problems.append(f"unknown lock_version {lock['lock_version']}")
-    for key in ("version", "spec_edition"):
-        if not isinstance(lock[key], str) or not re.match(r"^\d+\.\d+\.\d+", lock[key]):
-            problems.append(f"{key} is not an exact version: {lock[key]!r}")
+    if not isinstance(lock["version"], str) or not EXACT.match(lock["version"]):
+        problems.append(f"version is not an exact version: {lock['version']!r}")
+    if lock["spec_edition"] is not None and (
+            not isinstance(lock["spec_edition"], str)
+            or not re.match(r"^\d+\.\d+\.\d+", lock["spec_edition"])):
+        problems.append(f"spec_edition is not an exact version: {lock['spec_edition']!r}")
     for name, pinned in (lock["requires"] or {}).items():
         if not EXACT.match(str(pinned)):
             problems.append(f"requires {name} is not an exact version: {pinned!r}")
@@ -159,9 +197,10 @@ def validate(lock: dict) -> list[str]:
 class Repository:
     """The working tree for the version being edited, git tags for released ones."""
 
-    def __init__(self) -> None:
+    def __init__(self, as_of: str | None = None) -> None:
         index = ROOT / "generated" / "versions.json"
         self.released = read(index) if index.exists() else {}
+        self.as_of = as_of
 
     def tree_version(self, module: str) -> str | None:
         if any((MODULES / module).glob("*.schema.json")):
@@ -169,9 +208,7 @@ class Repository:
         return None
 
     def versions(self, module: str) -> list[str]:
-        found = {entry["module"] for entry in self.released.get(module, [])}
-        current = self.tree_version(module)
-        return sorted(found | ({current} if current else set()), key=order)
+        return visible(self.released.get(module, []), self.as_of, self.tree_version(module))
 
     def files(self, module: str, version: str) -> dict[str, bytes]:
         """The schema files of a module version, byte for byte as they were released."""
@@ -201,12 +238,45 @@ def modules() -> list[str]:
                   if d.is_dir() and any(d.glob("*.schema.json")))
 
 
+def backfill(root: Path, released: dict, catalog_for: Callable[[str], Catalog]) -> list[Path]:
+    """Add a lock to released versions that were published without one.
+
+    The lock is built as of the version's own release, so it says what it would have said
+    then. A version that already has a lock is left alone: a published lock is never
+    rewritten. The line directory gets it too when it still holds that version.
+    """
+    written = []
+    for module, entries in sorted(released.items()):
+        for entry in entries:
+            version = entry["module"]
+            exact = root / module / version
+            if not exact.is_dir() or (exact / FILE).exists():
+                continue
+            text = render(build(module, version, catalog_for(entry["docs"]), lenient=True))
+            targets = [exact]
+            alias = root / module / line(version)
+            newest = resolve_line(module, line(version), [e["module"] for e in entries])
+            if alias.is_dir() and not (alias / FILE).exists() and newest == version:
+                targets.append(alias)
+            for directory in targets:
+                (directory / FILE).write_text(text, encoding="utf-8", newline="\n")
+                written.append(directory / FILE)
+    return written
+
+
 def main() -> None:
+    if "--backfill" in sys.argv:
+        root = Path(sys.argv[sys.argv.index("--backfill") + 1])
+        released = Repository().released
+        for path in backfill(root, released, lambda docs: Repository(as_of=docs)):
+            print(f"  added {path.relative_to(root)}")
+        return
     check = "--check" in sys.argv
-    repo = Repository()
+    index = Repository().released
     stale = []
     for module in modules():
-        built = build(module, module_version(module, full=True), repo)
+        version = module_version(module, full=True)
+        built = build(module, version, Repository(released_docs(index, module, version)))
         problems = validate(built)
         if problems:
             sys.exit(f"{module}: " + "; ".join(problems))

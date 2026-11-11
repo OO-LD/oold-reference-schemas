@@ -135,6 +135,33 @@ class Build(unittest.TestCase):
         self.assertTrue(text.endswith("}\n"))
 
 
+class Visible(unittest.TestCase):
+    ENTRIES = [{"module": "0.2.0", "docs": "2026.08.17"}, {"module": "0.2.1", "docs": "2026.08.24"},
+               {"module": "0.3.0", "docs": "2026.08.24-2"}, {"module": "0.4.0", "docs": "2026.09.01"}]
+
+    def test_without_a_cutoff_everything_and_the_tree_version_is_visible(self):
+        self.assertEqual(lock.visible(self.ENTRIES, None, "0.5.0"),
+                         ["0.2.0", "0.2.1", "0.3.0", "0.4.0", "0.5.0"])
+
+    def test_a_cutoff_hides_later_releases_and_the_tree_version(self):
+        self.assertEqual(lock.visible(self.ENTRIES, "2026.08.24", "0.5.0"), ["0.2.0", "0.2.1"])
+
+    def test_a_same_day_second_release_comes_after_the_first(self):
+        self.assertEqual(lock.visible(self.ENTRIES, "2026.08.24-2", None),
+                         ["0.2.0", "0.2.1", "0.3.0"])
+
+
+class Lenient(unittest.TestCase):
+    def test_an_unpinned_edition_is_an_error_unless_lenient(self):
+        catalog = Catalog({"m": {"0.1.0": {"A": schema(spec="https://oo-ld.org/latest/meta/"
+                                                            "oold-meta-schema.json")}}})
+        with self.assertRaises(lock.LockError):
+            lock.build("m", "0.1.0", catalog)
+        built = lock.build("m", "0.1.0", catalog, lenient=True)
+        self.assertIsNone(built["spec_edition"])
+        self.assertEqual(lock.validate(built), [])
+
+
 class Validate(unittest.TestCase):
     GOOD = {"lock_version": 1, "module": "m", "version": "0.2.0", "spec_edition": "1.0.1",
             "requires": {"q": "0.2.0"}, "ontologies": ["https://w3id.org/emmo/1.0.4"]}

@@ -106,6 +106,26 @@ def package_problems(module: str, exact: str, published_root: Path,
             "An exact release is written once; bump the version."]
 
 
+def module_problems(module: str, exact: str, line: str, published_root: Path,
+                    staged_root: Path) -> list[str]:
+    """Everything refused for one module, empty when its release is safe to write."""
+    problems: list[str] = []
+    published, staged = published_root / module / exact, staged_root / module / exact
+    if published.is_dir() and staged.is_dir():
+        changed = [name for name, schema in schemas_in(staged).items()
+                   if schemas_in(published).get(name) != schema]
+        if changed:
+            problems.append(f"{module} {exact} is already published and would change: "
+                            + ", ".join(changed)
+                            + ". An exact release is written once; bump the version.")
+    problems += lock_problems(module, exact, published_root, staged_root)
+    problems += package_problems(module, exact, published_root, staged_root)
+    published, staged = published_root / module / line, staged_root / module / line
+    if published.is_dir() and staged.is_dir():
+        problems += line_problems(module, line, published, staged)
+    return problems
+
+
 def main() -> None:
     if len(sys.argv) < 2:
         sys.exit(__doc__)
@@ -117,36 +137,10 @@ def main() -> None:
         if not any(module_dir.glob("*.schema.json")):
             continue
         exact, line = module_version(module, full=True), module_version(module)
-
-        published = published_root / module / exact
-        staged = STAGED / module / exact
-        if published.is_dir() and staged.is_dir():
-            changed = [name for name, schema in schemas_in(staged).items()
-                       if schemas_in(published).get(name) != schema]
-            if changed:
-                problems.append(f"{module} {exact} is already published and would change: "
-                                + ", ".join(changed)
-                                + ". An exact release is written once; bump the version.")
-            else:
-                print(f"  ok   {module} {exact} republishes identical bytes")
-
-        found = lock_problems(module, exact, published_root, STAGED)
+        found = module_problems(module, exact, line, published_root, STAGED)
         problems += found
-        if not found and (STAGED / module / exact / LOCK).is_file():
-            print(f"  ok   {module} {exact} lock pins versions that exist")
-
-        found = package_problems(module, exact, published_root, STAGED)
-        problems += found
-        if not found and (STAGED / "packages" / f"{module}-{exact}.zip").is_file():
-            print(f"  ok   {module} {exact} package holds the documents it did")
-
-        published = published_root / module / line
-        staged = STAGED / module / line
-        if published.is_dir() and staged.is_dir():
-            found = line_problems(module, line, published, staged)
-            problems += found
-            if not found:
-                print(f"  ok   {module} {line} moves within its compatibility line")
+        if not found:
+            print(f"  ok   {module} {exact} may be published over {line}")
 
     for problem in problems:
         print(f"  ! {problem}")
