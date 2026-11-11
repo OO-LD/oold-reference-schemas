@@ -17,8 +17,8 @@ import re
 import shutil
 from pathlib import Path
 
-from _shared import (chain, context_of, mapping_sets, module_version, read, resolve,
-                     set_name)
+from _shared import (chain, context_of, latest_per_line, line as line_of, mapping_sets,
+                     module_version, read, resolve, set_name)
 
 ROOT = Path(__file__).resolve().parent.parent
 DOCS = ROOT / "docs"
@@ -406,8 +406,8 @@ def write_module_versions() -> int:
     for module in module_names():
         if not any((MODULES / module).glob("*.schema.json")):
             continue
-        entries = [{"label": ".".join(e["module"].split(".")[:2]), "docs": e["docs"]}
-                   for e in index.get(module, [])]
+        entries = [{"label": line_of(e["module"]), "docs": e["docs"]}
+                   for e in latest_per_line(index.get(module, []))]
         entries.append({"label": "dev", "docs": "dev"})
         catalogue[module] = {"current": module_version(module), "versions": entries}
     (DOCS / "module-versions.json").write_text(json.dumps(catalogue, indent=2) + "\n",
@@ -440,7 +440,7 @@ def main() -> None:
             continue
         # Two paths, one immutable and one moving. The exact release is written once and
         # never rewritten, so a consumer who needs reproducibility can pin it. The
-        # major.minor path is an alias for the newest patch of that compatibility line,
+        # line path is an alias for the newest release of that compatibility line,
         # which is what a conformance IRI names, so a typo fix reaches everyone pinned to
         # it without minting a version nobody asked for.
         exact = module_version(module, full=True)
@@ -451,6 +451,9 @@ def main() -> None:
             for f in files:
                 shutil.copy2(f, target / f.name)
                 published += 1
+            lock = ROOT / "generated" / "locks" / module / "oold.lock.json"
+            if lock.exists():
+                shutil.copy2(lock, target / lock.name)
         version = line
         title = (read(MODULES / module / "module.json").get("title", module)
                  if (MODULES / module / "module.json").exists() else module)
@@ -458,7 +461,7 @@ def main() -> None:
             f"# {title} {exact}",
             "",
             f"Referenced by the conformance IRI",
-            f"`https://w3id.org/oo-ld/schemas/{module}/{line}`, which tracks the newest patch of",
+            f"`https://w3id.org/oo-ld/schemas/{module}/{line}`, which tracks the newest release of",
             f"{line}. A release publishes these files at `https://schemas.oo-ld.org/{module}/{line}/`",
             f"and, immutably, at `https://schemas.oo-ld.org/{module}/{exact}/`; until then the tip",
             f"of main is served at `https://schemas.oo-ld.org/{module}/dev/`.",

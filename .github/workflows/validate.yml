@@ -16,7 +16,7 @@ on:
 # Pinned so a docs build is reproducible and a bump is a visible change.
 env:
   # The validator and the specification these schemas conform to are one release.
-  OOLD_PY_VERSION: "0.18.1"
+  OOLD_PY_VERSION: "2.0.0"
   ZENSICAL_VERSION: "0.0.46"
   MIKE_SPEC: "git+https://github.com/squidfunk/mike.git@2.2.0+zensical-0.1.0"
 
@@ -91,6 +91,12 @@ jobs:
       # tree that disagrees with itself.
       - name: Bundle the mapping sets
         run: uv run scripts/build_mappings.py
+      - name: Pin the closure of each module
+        run: uv run scripts/lock.py
+      - name: Build the offline packages
+        run: uv run scripts/package.py
+      - name: Every instance validates from its package alone
+        run: uv run --with jsonschema --with referencing scripts/check_package.py
       - name: Publish the schemas and render the RDF readings
         run: uv run --with pyld --with rdflib scripts/build_docs.py
       - name: Seed and check the schema pages
@@ -103,8 +109,15 @@ jobs:
         run: |
           uv run scripts/level.py --check
           uv run scripts/release.py --check
+      - name: Schemas are pinned to one spec edition
+        run: python scripts/spec_edition.py --check
+      - name: Unit tests
+        run: python -m unittest discover -s tests
       - name: Check the generated artefacts are up to date
-        run: git diff --exit-code generated/ docs/ zensical.toml
+        run: |
+          git diff --exit-code generated/ docs/ zensical.toml
+          # a lock that was never committed is untracked, which a diff does not see
+          test -z "$(git status --porcelain generated/)"
 
       - name: Build the site
         run: uvx --with pyyaml==6.0.2 zensical@${{ env.ZENSICAL_VERSION }} build --clean
@@ -129,7 +142,7 @@ jobs:
   # readable after the schemas move on.
   #
   # The schema files are published at the site ROOT, not inside a docs version, because a
-  # conformance IRI must never move: /quantities/1.0/QuantityValue.schema.json is permanent and
+  # conformance IRI must never move: /quantities/0.1/QuantityValue.schema.json is permanent and
   # carries its own version, independent of how the surrounding prose is versioned.
   deploy:
     if: github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/tags/v')
@@ -157,6 +170,7 @@ jobs:
 
       - run: uv run scripts/build_mappings.py
       - run: uv run --with pyld --with rdflib scripts/build_docs.py
+      - run: uv run scripts/package.py
 
       - name: Publish the docs version
         run: |
@@ -198,7 +212,7 @@ jobs:
           # compatibility line only moves within itself.
           uv run scripts/check_publish.py /tmp/pages
           # Three kinds of path. <module>/<x.y.z>/ is an exact release, written once and
-          # never rewritten. <module>/<x.y>/ is an alias for the newest patch of that
+          # never rewritten. <module>/<line>/ is an alias for the newest release of that
           # compatibility line, which is what a conformance IRI names. <module>/dev/ is the
           # tip of main and no conformance target at all, so merging work does not stake
           # out an official path.
@@ -220,9 +234,22 @@ jobs:
           # The mapping sets resolve at the identifier their mapping_set_id names.
           # The sets themselves, at the paths their mapping_set_id names. The pages about
           # them are documentation and are published with the rest of it.
+          # An offline package is part of an exact release, so only a tag publishes one,
+          # and one that is already there is left alone rather than recompressed.
+          if [[ "${GITHUB_REF}" == refs/tags/v* ]]; then
+            mkdir -p /tmp/pages/packages
+            for archive in docs/packages/*.zip; do
+              [ -e "/tmp/pages/packages/$(basename "$archive")" ] || cp "$archive" /tmp/pages/packages/
+            done
+          fi
           mkdir -p /tmp/pages/mappings/crosswalks
           cp docs/mappings/*.sssom.tsv /tmp/pages/mappings/
           cp docs/mappings/crosswalks/*.sssom.tsv /tmp/pages/mappings/crosswalks/
+          # Releases published before locks existed gain one, built as of their own release.
+          # A published lock is never rewritten, so this only ever adds.
+          if [[ "${GITHUB_REF}" == refs/tags/v* ]]; then
+            uv run scripts/lock.py --backfill /tmp/pages
+          fi
           cp docs/CNAME /tmp/pages/CNAME
           touch /tmp/pages/.nojekyll
           cd /tmp/pages

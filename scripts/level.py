@@ -94,6 +94,7 @@ def surface(schema: dict) -> dict:
                 }
     return {
         "id": schema.get("$id"),
+        "spec": schema.get("$schema"),
         "extends": [r.get("$ref") for r in (schema.get("allOf") or []) if isinstance(r, dict)],
         "properties": props,
         "context": {t: (d.get("@id") if isinstance(d, dict) else d)
@@ -109,6 +110,8 @@ def compare(old: dict, new: dict) -> tuple[str, list[str]]:
 
     if before["id"] != after["id"]:
         reasons.append("major: $id changed")
+    if before["spec"] != after["spec"]:
+        reasons.append("minor: spec edition changed")
     if before["extends"] != after["extends"]:
         reasons.append("major: what it extends changed")
 

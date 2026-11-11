@@ -82,7 +82,8 @@ are generated from it, so a schema is edited in one place.
 4. Run `make check` and `make validate` before opening a pull request.
 
 Versions are computed rather than typed: `make bump` raises each schema and its module by the
-level of what changed since the last release. The full guide is
+level of what changed since the last release. A release also publishes an `oold.lock.json` that pins the exact
+versions it resolved, and an offline zip that holds them. The full guide is
 [schemas.oo-ld.org/contributing](https://schemas.oo-ld.org/contributing/).
 
 ## Licence

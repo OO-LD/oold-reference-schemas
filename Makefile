@@ -15,7 +15,7 @@ VALIDATOR ?= .oold-schema
 OOLD_PY_VERSION ?= 2.0.0
 OOLD := uvx --from "oold[validation]==$(OOLD_PY_VERSION)" oold
 
-.PHONY: all generate mappings docs pages ontologies labels bump check validate serve clean release help
+.PHONY: all generate mappings locks packages docs pages ontologies labels bump check validate serve clean release help
 
 help:
 	@echo "generate  regenerate everything derived from the schemas"
@@ -30,10 +30,18 @@ all: generate
 
 # Order matters: the mapping sets are read by the schema pages, and the navigation is
 # generated from what exists after both.
-generate: mappings docs pages
+generate: mappings locks packages docs pages
 
 mappings:
 	python scripts/build_mappings.py
+
+# Before docs: the published copies of a module carry its lock.
+locks:
+	python scripts/lock.py
+
+# One offline zip per module version, built from the locks. Not committed.
+packages: locks
+	python scripts/package.py
 
 docs:
 	$(PY) scripts/build_docs.py
@@ -75,18 +83,21 @@ bump:
 check: $(RENDER_STAMP)
 	@before=$$(git status --porcelain); \
 	python scripts/build_mappings.py >/dev/null; \
+	python scripts/lock.py >/dev/null; \
 	$(PY) scripts/build_docs.py >/dev/null; \
 	test "$$before" = "$$(git status --porcelain)" || { \
 		echo 'generated artefacts are stale: run make generate' >&2; exit 1; }
 	python scripts/build_pages.py --check
 	python scripts/check_enums.py
+	python scripts/spec_edition.py --check
 	python scripts/level.py --check
 	python scripts/release.py --check
+	python -m unittest discover -s tests
 	$(ZENSICAL) build --clean
 	@# A macro that raises is swallowed by the renderer and published as text.
 	@if grep -rnE '\{\{+ *(oold_|inline_file|example|vocabulary|render_schema|sssom_|mapping_|download)' site/; then 		echo "unrendered macro call in the built site" >&2; exit 1; 	fi
 
-validate:
+validate: packages
 	@for dir in modules/*/; do \
 		ls $$dir*.schema.json >/dev/null 2>&1 || continue; \
 		$(OOLD) validate $$dir || exit 1; \
@@ -96,6 +107,7 @@ validate:
 		done; \
 		uv run --with pyld scripts/effective_views.py $$dir || exit 1; \
 	done
+	uv run --with jsonschema --with referencing scripts/check_package.py
 
 release:
 	python scripts/check_identifiers.py --require
@@ -106,4 +118,4 @@ serve: generate $(RENDER_STAMP)
 	$(ZENSICAL) serve -a 127.0.0.1:8042
 
 clean:
-	rm -rf site docs/*/[0-9]*/ docs/mappings/*.sssom.tsv docs/mappings/crosswalks
+	rm -rf site docs/*/[0-9]*/ docs/packages docs/mappings/*.sssom.tsv docs/mappings/crosswalks
