@@ -19,7 +19,6 @@ Usage: python scripts/build_mappings.py
 
 from __future__ import annotations
 
-import json
 import re
 from pathlib import Path
 
@@ -186,8 +185,9 @@ def collect() -> tuple[dict[str, list[dict]], dict[str, str]]:
                 "object_id": obj,
                 "object_label": entry.get("label", ""),
                 "mapping_justification": "semapv:ManualMappingCuration",
-                "subject_source": subject_source,
-                "subject_source_version": subject_version,
+                # the loop variables are read in the iteration that defines `row`, never later
+                "subject_source": subject_source,  # noqa: B023
+                "subject_source_version": subject_version,  # noqa: B023
                 "object_source": source,
                 "object_source_version": version,
                 "comment": comment,
@@ -204,7 +204,7 @@ def collect() -> tuple[dict[str, list[dict]], dict[str, str]]:
             """
             iri = expand(target(ctx.get(term)) or "", curie_map)
             if not iri.startswith(f"{IRI_BASE}/"):
-                return f"{subject_source}#{term}"
+                return f"{subject_source}#{term}"  # noqa: B023
             # without the version, for the reason the module subject drops it: a term keeps
             # its identity across releases, and the version has its own SSSOM column
             return re.sub(rf"^({re.escape(IRI_BASE)}/[^/]+)/[^/]+/", r"/", iri)
@@ -264,7 +264,7 @@ def write_set(name: str, rows: list[dict], curie_map: dict[str, str],
     ]
     preamble += [f"#   {p}: {known[p]}" for p in used if p in known]
 
-    lines = preamble + ["\t".join(COLUMNS)]
+    lines = [*preamble, "\t".join(COLUMNS)]
     for row in sorted(rows, key=lambda r: (r["subject_label"], r["object_id"])):
         lines.append("\t".join(str(row[c]).replace("\t", " ") for c in COLUMNS))
 

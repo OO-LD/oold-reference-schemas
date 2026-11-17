@@ -13,12 +13,12 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
 
-from config import CONFIG  # noqa: E402
-import check_publish as guard  # noqa: E402
-import level  # noqa: E402
-import lock  # noqa: E402
-import package  # noqa: E402
-from _shared import line  # noqa: E402
+import check_publish as guard
+import level
+import lock
+import package
+from _shared import line
+from config import CONFIG
 
 BASE = CONFIG.namespace
 SPEC = "https://oo-ld.org/1.0.1/meta/oold-meta-schema.json"
@@ -151,7 +151,8 @@ class Rehearsal(unittest.TestCase):
                          [])
 
         # 6. promotion to 1.0: the dependent cites the major line from now on
-        self.assertEqual(self.release("2026.05.01", ("1.0.0", quantity("stable", ("value", "unit"))),
+        stable = quantity("stable", ("value", "unit"))
+        self.assertEqual(self.release("2026.05.01", ("1.0.0", stable),
                                       ("0.2.0", material("1"))), [])
         self.assertTrue((self.published / "quantities" / "1").is_dir())
         self.assertFalse((self.published / "quantities" / "1.0").exists())

@@ -14,13 +14,23 @@ Usage: python scripts/build_docs.py
 
 from __future__ import annotations
 
+import contextlib
 import json
 import re
 import shutil
 from pathlib import Path
 
-from _shared import (chain, context_of, latest_per_line, line as line_of, mapping_sets,
-                     module_version, read, resolve, set_name)
+from _shared import (
+    chain,
+    context_of,
+    latest_per_line,
+    mapping_sets,
+    module_version,
+    read,
+    resolve,
+    set_name,
+)
+from _shared import line as line_of
 from config import CONFIG
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -96,7 +106,7 @@ def mermaid(graph, labels: dict, prefixes: dict | None = None) -> str:
     the pinned ontologies, so a node reads as SingleComponentComposition rather than as an
     opaque identifier.
     """
-    from rdflib import RDF, Literal  # noqa: PLC0415
+    from rdflib import RDF, Literal
 
     def name(term) -> str:
         text = str(term)
@@ -298,7 +308,7 @@ def named_namespaces(graph, context: dict) -> dict:
     part of the pointer that carries meaning, keeps a reading legible and stable:
     `chem_components:` rather than `ns4:`, and the same name in every regeneration.
     """
-    from rdflib import URIRef  # noqa: PLC0415
+    from rdflib import URIRef
 
     declared = namespaces(context)
     found: dict[str, str] = {}
@@ -341,8 +351,8 @@ def write_rdf(module: str, name: str, schema_files: list[Path], instance: Path |
     so a plain `python scripts/build_docs.py` still works.
     """
     try:
-        from pyld import jsonld  # noqa: PLC0415
-        from rdflib import Graph, URIRef  # noqa: PLC0415
+        from pyld import jsonld
+        from rdflib import Graph, URIRef
     except ImportError:
         return 0
 
@@ -383,10 +393,9 @@ def write_rdf(module: str, name: str, schema_files: list[Path], instance: Path |
             # sorted order first pins that numbering to the data, not to the traversal.
             for term in sorted({str(t) for triple in graph for t in triple
                                 if isinstance(t, URIRef)}):
-                try:
+                # a term with no split point stays full
+                with contextlib.suppress(Exception):
                     graph.namespace_manager.compute_qname(term)
-                except Exception:  # noqa: BLE001 - a term with no split point stays full
-                    pass
             ttl = graph.serialize(format="longturtle")
         except Exception as exc:  # a broken mapping should fail loudly in CI, not here
             print(f"  ! {module}/{name} [{label}]: {exc}")
@@ -463,7 +472,7 @@ def main() -> None:
         listing = [
             f"# {title} {exact}",
             "",
-            f"Referenced by the conformance IRI",
+            "Referenced by the conformance IRI",
             f"`{IRI_BASE}/{module}/{line}`, which tracks the newest release of",
             f"{line}. A release publishes these files at `{CONFIG.host}/{module}/{line}/`",
             f"and, immutably, at `{CONFIG.host}/{module}/{exact}/`; until then the tip",

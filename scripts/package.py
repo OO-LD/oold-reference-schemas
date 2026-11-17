@@ -5,8 +5,8 @@ serves them, under the exact directory and under the line directory. The line di
 what a schema cites, so it is what a consumer reads. Nothing is rewritten, so a document
 in the zip is byte for byte the one at its published path.
 
-A consumer maps the identity IRI `<namespace>/<path>` to the member `<path>` and validates with no network. Spec meta-schemas are not part of it: they are not
-read when validating.
+A consumer maps the identity IRI `<namespace>/<path>` to the member `<path>` and validates
+with no network. Spec meta-schemas are not part of it: they are not read when validating.
 
 The build is deterministic. Timestamps and permissions are fixed and members are sorted, so
 the same input gives the same bytes, and two packages are compared by their documents.
@@ -20,7 +20,6 @@ from __future__ import annotations
 import io
 import sys
 import zipfile
-from pathlib import Path
 from typing import Protocol
 
 import lock

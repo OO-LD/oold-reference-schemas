@@ -7,7 +7,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
 
-import level  # noqa: E402
+import level
 
 SPEC = "https://oo-ld.org/1.0.1/meta/oold-meta-schema.json"
 
@@ -41,7 +41,7 @@ class Breaks(unittest.TestCase):
         self.assertEqual(changed(lambda s: s["properties"]["note"].update(pattern="^x")), "major")
 
     def test_a_property_gaining_a_ref_is_major(self):
-        edit = lambda s: s["properties"]["note"].update(  # noqa: E731
+        edit = lambda s: s["properties"]["note"].update(
             {"$ref": "B.schema.json"})
         self.assertEqual(changed(edit), "major")
 
@@ -68,7 +68,7 @@ class Breaks(unittest.TestCase):
         self.assertEqual(changed(lambda s: s["properties"]["note"].update(default="x")), "major")
 
     def test_a_context_coercion_change_is_major(self):
-        edit = lambda s: s["@context"]["unit"].update({"@type": "@id"})  # noqa: E731
+        edit = lambda s: s["@context"]["unit"].update({"@type": "@id"})
         self.assertEqual(changed(edit), "major")
 
     def test_a_property_becoming_optional_is_major(self):

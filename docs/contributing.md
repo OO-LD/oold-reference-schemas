@@ -105,6 +105,13 @@ New to this? Start with the [Versioning guide](versioning-guide.md). What each
 path means, and how references resolve, is in
 [Versions and identifiers](versioning.md). Here is the working routine.
 
+### Code quality
+
+The scripts and tests are linted with ruff, and files are checked for whitespace, valid
+JSON, YAML and TOML. `make lint` runs it, `make hooks` installs it as a git hook, and `make
+check` includes it. Pre-commit, its hooks and ruff are pinned in the `Makefile` and
+`.pre-commit-config.yaml`, and the rules are in `ruff.toml`, so a local run and CI agree. Commit messages follow Conventional Commits.
+
 ### Changing a schema
 
 1. Edit the schema. Cite another module by line, for example

@@ -13,13 +13,16 @@ VALIDATOR ?= .oold-schema
 # $$ref through its redirect, which the Node validator does not, and cross-module references
 # are how a module reuses another one's schemas.
 OOLD_PY_VERSION ?= 2.0.0
+PRE_COMMIT_VERSION ?= 4.7.0
 OOLD := uvx --from "oold[validation]==$(OOLD_PY_VERSION)" oold
 
-.PHONY: all generate mappings locks packages docs pages ontologies labels bump check validate serve clean release help
+.PHONY: all generate mappings locks packages docs pages ontologies labels bump lint hooks check validate serve clean release help
 
 help:
 	@echo "generate  regenerate everything derived from the schemas"
 	@echo "bump      raise the versions the changes since the last release require"
+	@echo "lint      lint the scripts and tests with the pinned tools"
+	@echo "hooks     install the git hooks (pre-commit and commit-msg)"
 	@echo "check     verify the tree is consistent with the schemas (what CI runs)"
 	@echo "release   stamp a dated release and record which module versions it documents"
 	@echo "ontologies fetch the pinned ontology snapshots and verify their hashes"
@@ -76,11 +79,21 @@ labels: ontologies
 bump:
 	python scripts/level.py --apply
 
+# pre-commit, its hooks and ruff are pinned (here and in .pre-commit-config.yaml), so a local
+# run and CI judge the same way. Untracked files are included, which `--all-files` alone
+# would skip, and names are passed NUL separated so spaces in a name are safe.
+lint:
+	@git ls-files -z --cached --others --exclude-standard | xargs -0 uvx pre-commit@$(PRE_COMMIT_VERSION) run --files
+
+hooks:
+	@uv tool install pre-commit@$(PRE_COMMIT_VERSION) >/dev/null
+	@pre-commit install
+
 # Mirrors the CI job. CI diffs a clean checkout; here the question is whether regenerating
 # changes anything that was not already changed, so the target stays usable with work in
 # progress. It deliberately does not seed pages, or a missing page would be created instead
 # of reported.
-check: $(RENDER_STAMP)
+check: lint $(RENDER_STAMP)
 	@before=$$(git status --porcelain); \
 	python scripts/build_mappings.py >/dev/null; \
 	python scripts/lock.py >/dev/null; \

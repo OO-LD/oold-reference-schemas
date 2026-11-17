@@ -3,11 +3,12 @@
 import sys
 import unittest
 from pathlib import Path
+from typing import ClassVar
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
 
-from config import CONFIG  # noqa: E402
-import lock  # noqa: E402
+import lock
+from config import CONFIG
 
 BASE = CONFIG.namespace
 SPEC = "https://oo-ld.org/1.0.1/meta/oold-meta-schema.json"
@@ -137,8 +138,9 @@ class Build(unittest.TestCase):
 
 
 class Visible(unittest.TestCase):
-    ENTRIES = [{"module": "0.2.0", "docs": "2026.08.17"}, {"module": "0.2.1", "docs": "2026.08.24"},
-               {"module": "0.3.0", "docs": "2026.08.24-2"}, {"module": "0.4.0", "docs": "2026.09.01"}]
+    ENTRIES: ClassVar[list[dict]] = [
+        {"module": "0.2.0", "docs": "2026.08.17"}, {"module": "0.2.1", "docs": "2026.08.24"},
+        {"module": "0.3.0", "docs": "2026.08.24-2"}, {"module": "0.4.0", "docs": "2026.09.01"}]
 
     def test_without_a_cutoff_everything_and_the_tree_version_is_visible(self):
         self.assertEqual(lock.visible(self.ENTRIES, None, "0.5.0"),
@@ -164,8 +166,9 @@ class Lenient(unittest.TestCase):
 
 
 class Validate(unittest.TestCase):
-    GOOD = {"lock_version": 1, "module": "m", "version": "0.2.0", "spec_edition": "1.0.1",
-            "requires": {"q": "0.2.0"}, "ontologies": ["https://w3id.org/emmo/1.0.4"]}
+    GOOD: ClassVar[dict] = {
+        "lock_version": 1, "module": "m", "version": "0.2.0", "spec_edition": "1.0.1",
+        "requires": {"q": "0.2.0"}, "ontologies": ["https://w3id.org/emmo/1.0.4"]}
 
     def test_accepts_a_built_lock(self):
         self.assertEqual(lock.validate(self.GOOD), [])

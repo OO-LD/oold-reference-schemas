@@ -5,10 +5,11 @@ import sys
 import tempfile
 import unittest
 from pathlib import Path
+from typing import ClassVar
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
 
-import check_publish as guard  # noqa: E402
+import check_publish as guard
 
 SPEC = "https://oo-ld.org/1.0.1/meta/oold-meta-schema.json"
 BASE = {"$schema": SPEC, "$id": "Time.schema.json", "type": "object",
@@ -60,7 +61,7 @@ class Lines(unittest.TestCase):
 
 
 class Locks(unittest.TestCase):
-    LOCK = {"module": "m", "version": "0.2.0", "requires": {"q": "0.2.0"}}
+    LOCK: ClassVar[dict] = {"module": "m", "version": "0.2.0", "requires": {"q": "0.2.0"}}
 
     def run_check(self, published_lock, staged_lock, published=(), staged=()):
         with tempfile.TemporaryDirectory() as tmp:

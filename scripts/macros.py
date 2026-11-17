@@ -344,7 +344,7 @@ def _sssom(name):
     if not lines:
         return [], []
     header = lines[0].split("\t")
-    return header, [dict(zip(header, ln.split("\t"))) for ln in lines[1:] if ln]
+    return header, [dict(zip(header, ln.split("\t"), strict=False)) for ln in lines[1:] if ln]
 
 
 def _set_page(name):
@@ -410,7 +410,7 @@ def sssom_table(name):
     Reads the generated set by name rather than a path, because the columns rendered here
     are SSSOM slots: subject, predicate, object and the version the object came from.
     """
-    header, rows = _sssom(name)
+    _header, rows = _sssom(name)
     if not rows:
         return f"No mappings are declared for `{name}`."
     ctx = _all_contexts()
@@ -548,10 +548,9 @@ def _identity():
     """
     import sys  # noqa: PLC0415
 
-    if sys.version_info < (3, 11):
+    if sys.version_info < (3, 11):  # noqa: UP036 - the message is the point
         raise RuntimeError("the documentation macros need Python 3.11 or newer (tomllib)")
     import tomllib  # noqa: PLC0415
-
     from urllib.parse import urlsplit  # noqa: PLC0415
 
     path = os.path.join(ROOT, "reference-schemas.toml")
@@ -1258,7 +1257,6 @@ def _page_source(page):
         flat = os.path.join(ROOT, "docs", text[: -len("/index.md")] + ".md")
         if os.path.exists(flat):
             return flat
-    import sys as _s2; print(os.path.join(ROOT, "docs", text), file=_s2.stderr)
     return os.path.join(ROOT, "docs", text)
 
 

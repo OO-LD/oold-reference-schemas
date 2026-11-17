@@ -85,7 +85,7 @@ def strip(node):
     names = node.get("x-enum-varnames")
     values = node.get("enum")
     if isinstance(names, list) and isinstance(values, list) and len(names) == len(values):
-        out["x-enum-varnames"] = {canonical(v): n for v, n in zip(values, names)}
+        out["x-enum-varnames"] = {canonical(v): n for v, n in zip(values, names, strict=True)}
     return out
 
 
@@ -310,7 +310,7 @@ def module_report(module: str, ref: str) -> dict:
 def below(declared: str, floor: str) -> bool:
     """True when a declared version does not reach the floor."""
     def parts(v):
-        return tuple(int(p) for p in (v.split(".") + ["0", "0", "0"])[:3])
+        return tuple(int(p) for p in [*v.split("."), "0", "0", "0"][:3])
     return parts(declared) < parts(floor)
 
 

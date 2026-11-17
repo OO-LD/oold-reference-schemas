@@ -18,12 +18,27 @@ env:
   # The validator and the specification these schemas conform to are one release.
   OOLD_PY_VERSION: "2.0.0"
   ZENSICAL_VERSION: "0.0.46"
+  PRE_COMMIT_VERSION: "4.7.0"
   MIKE_SPEC: "git+https://github.com/squidfunk/mike.git@2.2.0+zensical-0.1.0"
 
 permissions:
   contents: read
 
 jobs:
+  # Same pinned pre-commit, hooks and ruff as `make lint`: .pre-commit-config.yaml and
+  # PRE_COMMIT_VERSION below. The actions themselves are pinned by major tag, like the rest.
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - uses: actions/cache@v4
+        with:
+          path: ~/.cache/pre-commit
+          key: pre-commit-${{ hashFiles('.pre-commit-config.yaml') }}
+      - name: Lint
+        run: uvx pre-commit@${{ env.PRE_COMMIT_VERSION }} run --all-files --show-diff-on-failure
+
   schemas:
     runs-on: ubuntu-latest
     steps:

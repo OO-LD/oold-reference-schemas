@@ -1,0 +1,27 @@
+# Lint for the engine (scripts/), its tests and the examples. A standalone file rather than
+# pyproject.toml, so uv never mistakes this repository for a Python project.
+target-version = "py311"
+line-length = 100
+
+# Schemas, generated output and the built site are data, not code.
+extend-exclude = ["modules", "generated", "docs", "site", ".cache", ".ontologies", ".ign"]
+
+[lint]
+select = [
+    "E", "W",  # pycodestyle
+    "F",       # pyflakes
+    "I",       # isort
+    "UP",      # pyupgrade
+    "B",       # bugbear
+    "SIM",     # simplify
+    "C4",      # comprehensions
+    "RUF",     # ruff
+]
+ignore = [
+    "E731",    # a lambda assigned to a name reads better than a def in short tests
+]
+
+[lint.per-file-ignores]
+# macros.py is shared with the OO-LD core. Its HTML f-strings are long, and its noqa comments
+# name rules of the core's lint config that this selection does not run: keep them.
+"scripts/macros.py" = ["E501", "RUF100"]

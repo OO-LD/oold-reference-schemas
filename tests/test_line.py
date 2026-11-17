@@ -3,11 +3,12 @@
 import sys
 import unittest
 from pathlib import Path
+from typing import ClassVar
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
 
-import _shared  # noqa: E402
-import macros  # noqa: E402
+import _shared
+import macros
 
 CASES = {
     "0.0.1": "0.0",
@@ -39,9 +40,10 @@ class LineRule(unittest.TestCase):
 
 
 class LatestPerLine(unittest.TestCase):
-    ENTRIES = [{"module": "0.1.0", "docs": "a"}, {"module": "0.2.0", "docs": "b"},
-               {"module": "0.2.1", "docs": "c"}, {"module": "1.0.0", "docs": "d"},
-               {"module": "1.1.0", "docs": "e"}]
+    ENTRIES: ClassVar[list[dict]] = [
+        {"module": "0.1.0", "docs": "a"}, {"module": "0.2.0", "docs": "b"},
+        {"module": "0.2.1", "docs": "c"}, {"module": "1.0.0", "docs": "d"},
+        {"module": "1.1.0", "docs": "e"}]
 
     def test_one_entry_per_line_keeping_the_newest(self):
         want = [{"module": "0.1.0", "docs": "a"}, {"module": "0.2.1", "docs": "c"},

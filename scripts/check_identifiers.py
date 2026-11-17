@@ -37,7 +37,7 @@ def resolves(url: str) -> tuple[bool, str]:
             return 200 <= response.status < 300, f"{response.status} {response.url}"
     except urllib.error.HTTPError as error:
         return False, f"{error.code}"
-    except Exception as error:  # noqa: BLE001 - a name that does not resolve is a result
+    except Exception as error:
         return False, str(error)
 
 

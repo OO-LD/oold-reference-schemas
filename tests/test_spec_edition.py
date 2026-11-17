@@ -8,8 +8,8 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
 
-import level  # noqa: E402
-import spec_edition  # noqa: E402
+import level
+import spec_edition
 
 
 def meta(edition: str) -> str:

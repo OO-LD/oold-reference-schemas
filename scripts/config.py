@@ -9,13 +9,13 @@ from __future__ import annotations
 
 import sys
 
-if sys.version_info < (3, 11):
+if sys.version_info < (3, 11):  # noqa: UP036 - the message is the point
     raise SystemExit("error: the engine needs Python 3.11 or newer (it reads TOML with tomllib)")
 
-import tomllib  # noqa: E402
-from dataclasses import dataclass  # noqa: E402
-from pathlib import Path  # noqa: E402
-from urllib.parse import urlsplit  # noqa: E402
+import tomllib
+from dataclasses import dataclass
+from pathlib import Path
+from urllib.parse import urlsplit
 
 ROOT = Path(__file__).resolve().parent.parent
 FILE = ROOT / "reference-schemas.toml"

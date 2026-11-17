@@ -89,7 +89,7 @@ def mapped_iris() -> set[str]:
 
 def ontology_iri(graph) -> str:
     """The IRI of the ontology a file defines, for attributing a label to its owner."""
-    from rdflib import OWL, RDF  # noqa: PLC0415
+    from rdflib import OWL, RDF
 
     for subject in graph.subjects(RDF.type, OWL.Ontology):
         return str(subject)
@@ -103,7 +103,7 @@ def harvest(path: Path) -> tuple[dict[str, str], str]:
     escapes and prefix scoping, and a regex over it silently drops terms whose comment
     happens to contain a line starting at column zero.
     """
-    from rdflib import Graph  # noqa: PLC0415
+    from rdflib import Graph
 
     graph = Graph()
     graph.parse(str(path), format="xml" if path.suffix == ".owl" else "turtle")
@@ -118,8 +118,8 @@ def harvest(path: Path) -> tuple[dict[str, str], str]:
 
 def fetch_missing(labels: dict[str, dict[str, str]]) -> None:
     """Resolve mapped IRIs that no pinned snapshot carries, from OLS."""
-    import urllib.parse  # noqa: PLC0415
-    import urllib.request  # noqa: PLC0415
+    import urllib.parse
+    import urllib.request
 
     for iri in sorted(mapped_iris() - set(labels)):
         if iri.startswith(OWN):

@@ -9,8 +9,8 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
 
-from config import CONFIG  # noqa: E402
-import package  # noqa: E402
+import package
+from config import CONFIG
 
 BASE = CONFIG.namespace
 SPEC = "https://oo-ld.org/1.0.1/meta/oold-meta-schema.json"
@@ -92,7 +92,8 @@ class Determinism(unittest.TestCase):
         self.assertTrue(package.same_documents(a, a))
         other = package.build("materials", "0.2.0", Source({
             **source().modules,
-            "quantities": {"0.2.0": {"Time.schema.json": doc([f"{BASE}/unrelated/1/X.schema.json"])}}}))
+            "quantities": {"0.2.0": {"Time.schema.json":
+                                     doc([f"{BASE}/unrelated/1/X.schema.json"])}}}))
         self.assertFalse(package.same_documents(a, other))
 
 
