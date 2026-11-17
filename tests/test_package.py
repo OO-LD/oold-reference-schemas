@@ -9,9 +9,10 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
 
+from config import CONFIG  # noqa: E402
 import package  # noqa: E402
 
-BASE = "https://w3id.org/oo-ld/schemas"
+BASE = CONFIG.namespace
 SPEC = "https://oo-ld.org/1.0.1/meta/oold-meta-schema.json"
 
 

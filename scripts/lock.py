@@ -72,7 +72,8 @@ def strings(node, key: str) -> Iterable[str]:
 def dependencies(module: str, schema: dict,
                  namespace: str | None = None) -> set[tuple[str, str]]:
     """The (module, line) pairs a schema reaches by `$ref` or `@context`."""
-    pattern = re.compile(rf"^{re.escape(namespace or CONFIG.namespace)}/([a-z0-9_-]+)/"
+    base = (namespace or CONFIG.namespace).rstrip("/")
+    pattern = re.compile(rf"^{re.escape(base)}/([a-z0-9_-]+)/"
                          r"(\d+(?:\.\d+)?)/[^/#]+\.schema\.json")
     found = set()
     for text in (*strings(schema, "$ref"), *strings(schema, "@context")):

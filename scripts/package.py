@@ -5,8 +5,7 @@ serves them, under the exact directory and under the line directory. The line di
 what a schema cites, so it is what a consumer reads. Nothing is rewritten, so a document
 in the zip is byte for byte the one at its published path.
 
-A consumer maps the identity IRI `https://w3id.org/oo-ld/schemas/<path>` to the member
-`<path>` and validates with no network. Spec meta-schemas are not part of it: they are not
+A consumer maps the identity IRI `<namespace>/<path>` to the member `<path>` and validates with no network. Spec meta-schemas are not part of it: they are not
 read when validating.
 
 The build is deterministic. Timestamps and permissions are fixed and members are sorted, so

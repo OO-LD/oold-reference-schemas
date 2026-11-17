@@ -17,6 +17,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "examples" / "versioning"))
 
+from config import CONFIG  # noqa: E402
 from validate_offline import validate  # noqa: E402
 
 
@@ -26,7 +27,7 @@ def main() -> None:
     for package in sorted((ROOT / "docs" / "packages").glob("*.zip")):
         module = package.stem.rpartition("-")[0]
         for instance in sorted((ROOT / "modules" / module).glob("*.instance.json")):
-            problems = validate(package, instance)
+            problems = validate(package, instance, base=CONFIG.namespace + "/")
             checked += 1
             print(f"  {'ok  ' if not problems else 'FAIL'} {package.name} {instance.name}")
             failures += [f"{instance.name}: {problem}" for problem in problems]

@@ -546,10 +546,35 @@ def _identity():
     Read here rather than through scripts/config.py: this file is written to move into the
     OO-LD core unchanged, so it imports no repository-local helper.
     """
-    import tomllib  # noqa: PLC0415 - Python 3.11+, only needed once
+    import sys  # noqa: PLC0415
 
-    with open(os.path.join(ROOT, "reference-schemas.toml"), "rb") as fh:
-        return tomllib.load(fh)["namespace"]["iri"].rstrip("/")
+    if sys.version_info < (3, 11):
+        raise RuntimeError("the documentation macros need Python 3.11 or newer (tomllib)")
+    import tomllib  # noqa: PLC0415
+
+    from urllib.parse import urlsplit  # noqa: PLC0415
+
+    path = os.path.join(ROOT, "reference-schemas.toml")
+    try:
+        with open(path, "rb") as fh:
+            section = tomllib.load(fh).get("namespace")
+    except FileNotFoundError:
+        raise RuntimeError("reference-schemas.toml not found at the repository root") from None
+    except (OSError, UnicodeDecodeError, tomllib.TOMLDecodeError) as error:
+        raise RuntimeError(f"reference-schemas.toml cannot be read: {error}") from None
+    iri = section.get("iri") if isinstance(section, dict) else None
+    problem = "needs namespace.iri as an https IRI with a host, without query or fragment"
+    if (not isinstance(iri, str) or iri[:8].lower() != "https://" or "?" in iri or "#" in iri
+            or any(c.isspace() or ord(c) < 32 or ord(c) == 127 for c in iri)):
+        raise RuntimeError(f"reference-schemas.toml {problem}")
+    try:
+        parts = urlsplit(iri)
+        host, _ = parts.hostname, parts.port
+    except ValueError:
+        raise RuntimeError(f"reference-schemas.toml {problem}") from None
+    if not host or parts.username is not None or parts.password is not None:
+        raise RuntimeError(f"reference-schemas.toml {problem}")
+    return "https://" + iri[8:].rstrip("/")
 
 
 IRI_BASE = _identity()

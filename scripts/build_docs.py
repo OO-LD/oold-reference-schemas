@@ -5,7 +5,9 @@ paraphrasing them, so nothing about a schema is retyped into prose. The one thin
 be derived is this: a conformance IRI has to resolve to the schema JSON itself, so every schema is
 copied to its versioned path under the site root before the site is built.
 
-    https://schemas.oo-ld.org/<module>/<version>/<Name>.schema.json
+    <host>/<module>/<version>/<Name>.schema.json
+
+The host comes from reference-schemas.toml.
 
 Usage: python scripts/build_docs.py
 """

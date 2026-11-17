@@ -32,7 +32,7 @@ def resolve(origin: Path, target: str, namespace: str | None = None) -> Path:
     truth, so a published IRI of a module kept here is read from disk rather than fetched:
     the checks stay offline and see the version being edited.
     """
-    base = (namespace or CONFIG.namespace) + "/"
+    base = (namespace or CONFIG.namespace).rstrip("/") + "/"
     if target.startswith(base):
         parts = target[len(base):].split("/")
         if len(parts) == 3:
