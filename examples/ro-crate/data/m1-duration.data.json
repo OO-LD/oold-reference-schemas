@@ -1,6 +1,6 @@
 {
-  "@context": "https://schemas.oo-ld.org/quantities/1.0/Time.schema.json",
-  "$schema": "https://schemas.oo-ld.org/quantities/1.0/Time.schema.json",
+  "@context": "https://w3id.org/oo-ld/schemas/quantities/0.1/Time.schema.json",
+  "$schema": "https://w3id.org/oo-ld/schemas/quantities/0.1/Time.schema.json",
   "@id": "https://example.org/m1-duration",
   "type": ["Time"],
   "value": 12.7,

@@ -1,0 +1,14 @@
+{
+  "lock_version": 1,
+  "module": "datasets",
+  "version": "0.1.0",
+  "spec_edition": "1.0.1",
+  "requires": {
+    "quantities": "0.2.0"
+  },
+  "ontologies": [
+    "https://w3id.org/emmo/1.0.4",
+    "https://w3id.org/emmo/domain/electrochemistry/0.37.2",
+    "https://w3id.org/pmd/co/3.1.0"
+  ]
+}

@@ -4,7 +4,7 @@
     {
       "ElectrochemicalTest": "https://w3id.org/emmo/domain/electrochemistry#electrochemistry_435b22d4_c441_45ea_8c79_0cbec11fd287",
       "BatteryCell": "https://w3id.org/emmo/domain/battery#battery_68ed592a_7924_45d0_a108_94d6275d57f0",
-      "BatteryCyclingDataset": "https://schemas.oo-ld.org/quantities/1.0/BatteryCyclingDataset"
+      "ElectrochemicalCyclingDataset": "https://w3id.org/oo-ld/schemas/datasets/0.1/ElectrochemicalCyclingDataset.schema.json"
     }
   ],
   "@graph": [
@@ -37,9 +37,9 @@
     },
     {
       "@id": "#dataset-cell42",
-      "@type": ["Dataset", "BatteryCyclingDataset"],
+      "@type": ["Dataset", "ElectrochemicalCyclingDataset"],
       "about": { "@id": "#cell42" },
-      "conformsTo": { "@id": "https://schemas.oo-ld.org/quantities/1.0/BatteryCyclingDataset" },
+      "conformsTo": { "@id": "https://w3id.org/oo-ld/schemas/datasets/0.1/ElectrochemicalCyclingDataset.schema.json" },
       "hasPart": [{ "@id": "cell42-raw.csv" }]
     },
     {
@@ -47,7 +47,7 @@
       "@type": "File",
       "name": "cell42-raw.csv",
       "encodingFormat": "text/csv",
-      "conformsTo": { "@id": "https://schemas.oo-ld.org/quantities/1.0/CyclingDataRow" }
+      "conformsTo": { "@id": "https://w3id.org/oo-ld/schemas/datasets/0.1/ElectrochemicalCyclingDataset.schema.json#/$defs/ElectrochemicalCyclingDataRow" }
     },
     {
       "@id": "https://creativecommons.org/licenses/by/4.0/",

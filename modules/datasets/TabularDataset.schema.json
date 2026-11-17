@@ -1,5 +1,5 @@
 {
-  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$schema": "https://oo-ld.org/1.0.1/meta/oold-meta-schema.json",
   "$id": "TabularDataset.schema.json",
   "x-oold-uuid": "042a8f90-b41d-5381-a7d1-97d507c404b1",
   "x-oold-version": "0.1.0",

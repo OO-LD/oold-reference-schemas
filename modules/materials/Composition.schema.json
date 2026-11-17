@@ -1,5 +1,5 @@
 {
-  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$schema": "https://oo-ld.org/1.0.1/meta/oold-meta-schema.json",
   "$id": "Composition.schema.json",
   "x-oold-uuid": "21e7c9d7-bf27-5c8f-a02d-03ae1075d090",
   "x-oold-version": "0.2.0",

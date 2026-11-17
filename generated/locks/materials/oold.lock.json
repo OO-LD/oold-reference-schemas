@@ -1,0 +1,13 @@
+{
+  "lock_version": 1,
+  "module": "materials",
+  "version": "0.2.0",
+  "spec_edition": "1.0.1",
+  "requires": {
+    "quantities": "0.2.0"
+  },
+  "ontologies": [
+    "https://w3id.org/emmo/1.0.4",
+    "https://w3id.org/pmd/co/3.1.0"
+  ]
+}

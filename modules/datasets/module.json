@@ -1,0 +1,7 @@
+{
+  "name": "datasets",
+  "title": "Datasets",
+  "version": "0.1.0",
+  "status": "draft",
+  "scope": "Dataset, Distribution, storage modes, tabular data and the cycling dataset built on them. Neutral at the core: a dataset with a distribution means the same in any domain."
+}

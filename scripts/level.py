@@ -37,6 +37,62 @@ MODULES = ROOT / "modules"
 
 LEVELS = ["patch", "minor", "major"]
 
+# Prose and provenance: changing them is a patch. Everything else in a schema is
+# treated as part of what a consumer can break against.
+ANNOTATIONS = {"title", "description", "examples", "$comment"}
+# Maps of name to subschema: the keys are names, never keywords, so a property called
+# `description` must survive stripping.
+SCHEMA_MAPS = {"properties", "patternProperties", "$defs", "definitions", "dependentSchemas"}
+# Values that are data, not schema: a `title` inside a default is not prose.
+DATA = {"const", "default"}
+# Lists whose order means nothing: alternatives, conjunctions, sets of names
+UNORDERED = {"allOf", "anyOf", "oneOf", "required", "type"}
+# Handled by their own comparisons in `surface`
+HANDLED_ROOT = {"$id", "$schema", "x-oold-version", "x-oold-uuid", "@context",
+                "x-oold-context", "properties", "required"}
+HANDLED_PROPERTY = {"type", "format", "enum"}
+
+
+def canonical(value) -> str:
+    return json.dumps(value, sort_keys=True)
+
+
+def strip(node):
+    """A schema without its prose, keeping every keyword a consumer can observe.
+
+    Lists whose order means nothing are sorted, so reordering them is not a change. An
+    enum is paired with its `x-enum-varnames`: what matters is which name a value has, not
+    where it sits in the list.
+    """
+    if isinstance(node, list):
+        return [strip(item) for item in node]
+    if not isinstance(node, dict):
+        return node
+    out = {}
+    for key, value in node.items():
+        if key in ANNOTATIONS:
+            continue
+        if key in DATA:
+            out[key] = value
+        elif key in SCHEMA_MAPS and isinstance(value, dict):
+            out[key] = {name: strip(spec) for name, spec in value.items()}
+        elif key in UNORDERED and isinstance(value, list):
+            out[key] = sorted((strip(item) for item in value), key=canonical)
+        elif key == "enum" and isinstance(value, list):
+            out[key] = sorted(value, key=canonical)
+        else:
+            out[key] = strip(value)
+    names = node.get("x-enum-varnames")
+    values = node.get("enum")
+    if isinstance(names, list) and isinstance(values, list) and len(names) == len(values):
+        out["x-enum-varnames"] = {canonical(v): n for v, n in zip(values, names)}
+    return out
+
+
+def differing(old: dict, new: dict) -> list[str]:
+    """Keywords whose value differs, for the reason a change is reported with."""
+    return sorted(k for k in old.keys() | new.keys() if old.get(k) != new.get(k))
+
 
 def git(*args: str) -> str | None:
     try:
@@ -66,7 +122,9 @@ def surface(schema: dict) -> dict:
     """The parts of a schema a consumer can break against.
 
     Descriptions, titles and examples are deliberately absent: changing them is a patch,
-    and including them here would inflate every prose fix into a minor release.
+    and including them here would inflate every prose fix into a minor release. Every other
+    keyword is present in `rest`, so a change nobody thought to classify still shows up
+    and fails towards major.
     """
     required = set(schema.get("required") or [])
     props = {}
@@ -76,10 +134,12 @@ def surface(schema: dict) -> dict:
         if not isinstance(spec, dict) or not spec:
             continue
         props[name] = {
-            "type": spec.get("type"),
+            "type": (sorted(spec["type"]) if isinstance(spec.get("type"), list)
+                     else spec.get("type")),
             "format": spec.get("format"),
             "enum": sorted(spec["enum"]) if isinstance(spec.get("enum"), list) else None,
             "required": name in required,
+            "rest": {k: v for k, v in strip(spec).items() if k not in HANDLED_PROPERTY},
         }
     synonyms = {}
     for term, entries in (schema.get("x-oold-context") or {}).items():
@@ -91,14 +151,25 @@ def surface(schema: dict) -> dict:
                     # which set a mapping belongs to is what a consumer selects by, so
                     # moving it between sets is a change they can observe
                     "set": meta.get("mapping_set_id", ""),
+                    # how the term coerces its values changes the RDF under that set;
+                    # provenance (justification, confidence) does not
+                    "definition": strip({k: v for k, v in fragment.items()
+                                         if k != "x-oold-sssom"}),
                 }
     return {
         "id": schema.get("$id"),
-        "extends": [r.get("$ref") for r in (schema.get("allOf") or []) if isinstance(r, dict)],
+        "uuid": schema.get("x-oold-uuid"),
+        "spec": schema.get("$schema"),
+        "extends": sorted(r["$ref"] for r in (schema.get("allOf") or [])
+                          if isinstance(r, dict) and r.get("$ref")),
         "properties": props,
         "context": {t: (d.get("@id") if isinstance(d, dict) else d)
                     for t, d in context_of(schema).items()},
+        "definitions": {t: strip(d) for t, d in context_of(schema).items()},
         "synonyms": synonyms,
+        "rest": strip({k: v for k, v in schema.items() if k not in HANDLED_ROOT}),
+        # required names the schema does not define itself, for example inherited ones
+        "inherited": sorted(required - set(props)),
     }
 
 
@@ -109,6 +180,11 @@ def compare(old: dict, new: dict) -> tuple[str, list[str]]:
 
     if before["id"] != after["id"]:
         reasons.append("major: $id changed")
+    # An identifier may be added, but one that exists is part of the schema's identity
+    if before["uuid"] and before["uuid"] != after["uuid"]:
+        reasons.append("major: x-oold-uuid changed or was removed")
+    if before["spec"] != after["spec"]:
+        reasons.append("minor: spec edition changed")
     if before["extends"] != after["extends"]:
         reasons.append("major: what it extends changed")
 
@@ -119,6 +195,11 @@ def compare(old: dict, new: dict) -> tuple[str, list[str]]:
             continue
         if not spec["required"] and now["required"]:
             reasons.append(f"major: property {name} became required")
+        elif spec["required"] and not now["required"]:
+            reasons.append(f"major: property {name} became optional")
+        if spec["rest"] != now["rest"]:
+            reasons.append(f"major: property {name} changed "
+                           + ", ".join(differing(spec["rest"], now["rest"])))
         if spec["type"] != now["type"] or spec["format"] != now["format"]:
             reasons.append(f"major: property {name} changed its type or format")
         old_enum, new_enum = spec["enum"], now["enum"]
@@ -133,6 +214,12 @@ def compare(old: dict, new: dict) -> tuple[str, list[str]]:
             level = "major" if spec["required"] else "minor"
             reasons.append(f"{level}: property {name} added")
 
+    if before["rest"] != after["rest"]:
+        reasons.append("major: schema keywords changed: "
+                       + ", ".join(differing(before["rest"], after["rest"])))
+    if before["inherited"] != after["inherited"]:
+        reasons.append("major: required names it does not define changed")
+
     # The semantic half: a term that maps somewhere else means the same document says
     # something different, which is a break even though nothing structural moved.
     for term, target in before["context"].items():
@@ -140,6 +227,8 @@ def compare(old: dict, new: dict) -> tuple[str, list[str]]:
             reasons.append(f"major: context term {term} removed")
         elif after["context"][term] != target:
             reasons.append(f"major: context term {term} now maps to another IRI")
+        elif after["definitions"][term] != before["definitions"][term]:
+            reasons.append(f"major: context term {term} changed its definition")
     for term in after["context"]:
         if term not in before["context"]:
             reasons.append(f"minor: context term {term} added")
@@ -153,6 +242,8 @@ def compare(old: dict, new: dict) -> tuple[str, list[str]]:
             reasons.append(f"minor: mapping {key} changed its predicate")
         if now["set"] != entry["set"]:
             reasons.append(f"minor: mapping {key} moved to another set")
+        if now["definition"] != entry["definition"]:
+            reasons.append(f"major: mapping {key} changed its term definition")
     for key in after["synonyms"]:
         if key not in before["synonyms"]:
             reasons.append(f"minor: mapping {key} added")

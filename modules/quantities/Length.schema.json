@@ -1,8 +1,8 @@
 {
-  "$schema": "https://oo-ld.org/latest/meta/oold-meta-schema.json",
+  "$schema": "https://oo-ld.org/1.0.1/meta/oold-meta-schema.json",
   "$id": "Length.schema.json",
   "x-oold-uuid": "7c1d5a80-b42f-5dd5-ace8-3ae6841f3faf",
-  "x-oold-version": "0.2.0",
+  "x-oold-version": "0.3.0",
   "title": "Length",
   "description": "QuantityValue restricted to length units.",
   "examples": [

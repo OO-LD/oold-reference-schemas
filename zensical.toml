@@ -72,6 +72,7 @@ nav = [
         { "Pinned ontologies" = "ontologies.md" },
     ]},
     { "Contributing" = "contributing.md" },
+    { "Versioning guide" = "versioning-guide.md" },
 ]
 
 [project.extra]
