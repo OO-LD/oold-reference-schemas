@@ -69,6 +69,9 @@ schema in the module underwent:
   the old version stay valid. A new spec edition counts as minor.
 - **Patch.** Descriptions, comments, examples. Nothing an instance can observe.
 
+A change the tool does not recognise counts as major, so a break can never pass as a
+patch. Only prose (titles, descriptions, examples) and mapping provenance are patches.
+
 Below 1.0 nothing is promised yet, so both a major and a minor change raise the
 minor. A `0.x` line therefore receives patches only, and anything else moves a
 dependent to a new line on purpose.
