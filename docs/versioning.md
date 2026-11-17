@@ -71,6 +71,8 @@ schema in the module underwent:
 
 A change the tool does not recognise counts as major, so a break can never pass as a
 patch. Only prose (titles, descriptions, examples) and mapping provenance are patches.
+Reordering lists where order means nothing (`allOf`, `anyOf`, `oneOf`, `required`, enums) is
+not a change.
 
 Below 1.0 nothing is promised yet, so both a major and a minor change raise the
 minor. A `0.x` line therefore receives patches only, and anything else moves a

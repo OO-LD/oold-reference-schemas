@@ -145,6 +145,76 @@ class Safe(unittest.TestCase):
         self.assertEqual(level.compare(base, new)[0], "patch")
 
 
+class Order(unittest.TestCase):
+    """Order is ignored where it carries no meaning, and kept where it does."""
+
+    def pair(self, key, before, after):
+        base = copy.deepcopy(BASE)
+        base["properties"]["note"][key] = before
+        new = copy.deepcopy(base)
+        new["properties"]["note"][key] = after
+        return level.compare(base, new)[0]
+
+    def test_reordering_alternatives_is_a_patch(self):
+        a, b = {"type": "string"}, {"type": "number"}
+        for key in ("anyOf", "oneOf", "allOf"):
+            self.assertEqual(self.pair(key, [a, b], [b, a]), "patch", key)
+
+    def test_reordering_a_type_list_is_a_patch(self):
+        self.assertEqual(self.pair("type", ["string", "null"], ["null", "string"]), "patch")
+
+    def test_reordering_nested_required_is_a_patch(self):
+        base = copy.deepcopy(BASE)
+        base["properties"]["obj"] = {"type": "object", "required": ["a", "b"]}
+        new = copy.deepcopy(base)
+        new["properties"]["obj"]["required"] = ["b", "a"]
+        self.assertEqual(level.compare(base, new)[0], "patch")
+
+    def test_reordering_root_allof_parents_is_a_patch(self):
+        base = copy.deepcopy(BASE)
+        base["allOf"] = [{"$ref": "B.schema.json"}, {"$ref": "C.schema.json"}]
+        new = copy.deepcopy(base)
+        new["allOf"] = list(reversed(new["allOf"]))
+        self.assertEqual(level.compare(base, new)[0], "patch")
+
+    def test_changing_the_members_of_alternatives_is_still_major(self):
+        a, b, c = {"type": "string"}, {"type": "number"}, {"type": "boolean"}
+        self.assertEqual(self.pair("anyOf", [a, b], [a, c]), "major")
+
+    def test_enum_reordered_together_with_its_names_is_a_patch(self):
+        base = copy.deepcopy(BASE)
+        base["properties"]["unit"]["x-enum-varnames"] = ["alpha", "beta"]
+        new = copy.deepcopy(base)
+        new["properties"]["unit"]["enum"] = ["b", "a"]
+        new["properties"]["unit"]["x-enum-varnames"] = ["beta", "alpha"]
+        self.assertEqual(level.compare(base, new)[0], "patch")
+
+    def test_a_new_name_for_a_value_is_major(self):
+        base = copy.deepcopy(BASE)
+        base["properties"]["unit"]["x-enum-varnames"] = ["alpha", "beta"]
+        new = copy.deepcopy(base)
+        new["properties"]["unit"]["x-enum-varnames"] = ["alpha", "gamma"]
+        self.assertEqual(level.compare(base, new)[0], "major")
+
+    def test_enum_reordered_without_its_names_is_major(self):
+        base = copy.deepcopy(BASE)
+        base["properties"]["unit"]["x-enum-varnames"] = ["alpha", "beta"]
+        new = copy.deepcopy(base)
+        new["properties"]["unit"]["enum"] = ["b", "a"]
+        self.assertEqual(level.compare(base, new)[0], "major")
+
+    def test_prefix_items_order_is_kept(self):
+        a, b = {"type": "string"}, {"type": "number"}
+        self.assertEqual(self.pair("prefixItems", [a, b], [b, a]), "major")
+
+    def test_context_list_order_is_kept(self):
+        base = copy.deepcopy(BASE)
+        base["@context"] = ["A.schema.json", {"value": "qudt:value"}]
+        new = copy.deepcopy(base)
+        new["@context"] = [{"value": "qudt:value"}, "A.schema.json"]
+        self.assertNotEqual(level.compare(base, new)[0], "none")
+
+
 class Reasons(unittest.TestCase):
     def test_the_reason_names_what_changed(self):
         schema = copy.deepcopy(BASE)

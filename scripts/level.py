@@ -44,15 +44,26 @@ ANNOTATIONS = {"title", "description", "examples", "$comment"}
 # `description` must survive stripping.
 SCHEMA_MAPS = {"properties", "patternProperties", "$defs", "definitions", "dependentSchemas"}
 # Values that are data, not schema: a `title` inside a default is not prose.
-DATA = {"enum", "const", "default"}
+DATA = {"const", "default"}
+# Lists whose order means nothing: alternatives, conjunctions, sets of names
+UNORDERED = {"allOf", "anyOf", "oneOf", "required", "type"}
 # Handled by their own comparisons in `surface`
 HANDLED_ROOT = {"$id", "$schema", "x-oold-version", "x-oold-uuid", "@context",
                 "x-oold-context", "properties", "required"}
 HANDLED_PROPERTY = {"type", "format", "enum"}
 
 
+def canonical(value) -> str:
+    return json.dumps(value, sort_keys=True)
+
+
 def strip(node):
-    """A schema without its prose, keeping every keyword a consumer can observe."""
+    """A schema without its prose, keeping every keyword a consumer can observe.
+
+    Lists whose order means nothing are sorted, so reordering them is not a change. An
+    enum is paired with its `x-enum-varnames`: what matters is which name a value has, not
+    where it sits in the list.
+    """
     if isinstance(node, list):
         return [strip(item) for item in node]
     if not isinstance(node, dict):
@@ -65,8 +76,16 @@ def strip(node):
             out[key] = value
         elif key in SCHEMA_MAPS and isinstance(value, dict):
             out[key] = {name: strip(spec) for name, spec in value.items()}
+        elif key in UNORDERED and isinstance(value, list):
+            out[key] = sorted((strip(item) for item in value), key=canonical)
+        elif key == "enum" and isinstance(value, list):
+            out[key] = sorted(value, key=canonical)
         else:
             out[key] = strip(value)
+    names = node.get("x-enum-varnames")
+    values = node.get("enum")
+    if isinstance(names, list) and isinstance(values, list) and len(names) == len(values):
+        out["x-enum-varnames"] = {canonical(v): n for v, n in zip(values, names)}
     return out
 
 
@@ -115,11 +134,12 @@ def surface(schema: dict) -> dict:
         if not isinstance(spec, dict) or not spec:
             continue
         props[name] = {
-            "type": spec.get("type"),
+            "type": (sorted(spec["type"]) if isinstance(spec.get("type"), list)
+                     else spec.get("type")),
             "format": spec.get("format"),
             "enum": sorted(spec["enum"]) if isinstance(spec.get("enum"), list) else None,
             "required": name in required,
-            "rest": strip({k: v for k, v in spec.items() if k not in HANDLED_PROPERTY}),
+            "rest": {k: v for k, v in strip(spec).items() if k not in HANDLED_PROPERTY},
         }
     synonyms = {}
     for term, entries in (schema.get("x-oold-context") or {}).items():
@@ -140,7 +160,8 @@ def surface(schema: dict) -> dict:
         "id": schema.get("$id"),
         "uuid": schema.get("x-oold-uuid"),
         "spec": schema.get("$schema"),
-        "extends": [r.get("$ref") for r in (schema.get("allOf") or []) if isinstance(r, dict)],
+        "extends": sorted(r["$ref"] for r in (schema.get("allOf") or [])
+                          if isinstance(r, dict) and r.get("$ref")),
         "properties": props,
         "context": {t: (d.get("@id") if isinstance(d, dict) else d)
                     for t, d in context_of(schema).items()},
