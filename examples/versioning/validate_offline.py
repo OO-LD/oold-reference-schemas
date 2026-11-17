@@ -12,7 +12,7 @@ The instance names its schema in `$schema`. That can be an identity IRI, for exa
 https://w3id.org/oo-ld/schemas/materials/0.2/Material.schema.json, or a bare file name,
 which is read from the module the package is named after. Pass --schema to override it.
 
-The one rule: the IRI minus https://w3id.org/oo-ld/schemas/ is a member of the zip. The
+The one rule: the IRI without its https:// is a member of the zip. The
 registry below has no other way to fetch a document, so a missing one is an error and
 never a request.
 """
@@ -42,15 +42,18 @@ def validate(package: Path, instance: Path, schema: str | None = None,
     members = set(archive.namelist())
 
     def retrieve(iri: str) -> Resource:
-        member = iri[len(base):] if iri.startswith(base) else ""
-        if member not in members:
+        # a member is the IRI without its scheme; older packages name it relative to the
+        # namespace instead
+        member = next((m for m in (iri.removeprefix("https://"), iri.removeprefix(base))
+                       if m in members), None)
+        if member is None:
             raise LookupError(f"not in the package: {iri}")
         return Resource.from_contents(json.loads(archive.read(member)),
                                       default_specification=DRAFT202012)
 
     data = json.loads(instance.read_text(encoding="utf-8"))
     iri = schema or data["$schema"]
-    if not iri.startswith(base):
+    if "://" not in iri:  # a bare file name, read from the module the package is named after
         module, _, version = package.stem.rpartition("-")
         iri = f"{base}{module}/{version}/{iri}"
     validator = Draft202012Validator({"$ref": iri}, registry=Registry(retrieve=retrieve))

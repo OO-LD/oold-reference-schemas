@@ -14,6 +14,10 @@ BASE = CONFIG.namespace
 SPEC = "https://oo-ld.org/1.0.1/meta/oold-meta-schema.json"
 
 
+def ident(module: str) -> str:
+    return f"{BASE}/{module}"
+
+
 def ref(module: str, line: str, name: str) -> str:
     return f"{BASE}/{module}/{line}/{name}.schema.json"
 
@@ -32,28 +36,30 @@ class Catalog:
     def __init__(self, modules):
         self.modules = modules
 
-    def versions(self, module):
-        return list(self.modules.get(module, {}))
+    """Test data is keyed by module name, the code under test by identity."""
 
-    def schemas(self, module, version):
-        return self.modules[module][version]
+    def versions(self, identity):
+        return list(self.modules.get(identity.rsplit("/", 1)[-1], {}))
+
+    def schemas(self, identity, version):
+        return self.modules[identity.rsplit("/", 1)[-1]][version]
 
 
 class Dependencies(unittest.TestCase):
     def test_finds_refs_and_contexts_of_other_modules(self):
         s = schema(refs=[ref("quantities", "0.2", "Time")],
                    contexts=[ref("devices", "1", "Cell"), "Local.schema.json"])
-        self.assertEqual(lock.dependencies("materials", s),
-                         {("quantities", "0.2"), ("devices", "1")})
+        self.assertEqual(lock.dependencies(ident("materials"), s),
+                         {(ident("quantities"), "0.2"), (ident("devices"), "1")})
 
     def test_ignores_own_module_relative_refs_and_mapping_sets(self):
         s = schema(refs=[ref("materials", "0.2", "Composition"), "Composition.schema.json",
                          f"{BASE}/mappings/emmo.sssom.tsv"])
-        self.assertEqual(lock.dependencies("materials", s), set())
+        self.assertEqual(lock.dependencies(ident("materials"), s), set())
 
     def test_finds_refs_nested_in_defs(self):
         s = {"$defs": {"A": {"items": {"$ref": ref("quantities", "0.2", "Time")}}}}
-        self.assertEqual(lock.dependencies("m", s), {("quantities", "0.2")})
+        self.assertEqual(lock.dependencies(ident("m"), s), {(ident("quantities"), "0.2")})
 
 
 class Resolve(unittest.TestCase):
@@ -85,24 +91,25 @@ class Build(unittest.TestCase):
         })
 
     def test_pins_exact_versions_from_the_line(self):
-        built = lock.build("materials", "0.2.0", self.catalog())
-        self.assertEqual(built["requires"], {"quantities": "0.2.0"})
+        built = lock.build(ident("materials"), "0.2.0", self.catalog())
+        self.assertEqual(built["requires"], {ident("quantities"): {"version": "0.2.0"}})
         self.assertEqual(built["version"], "0.2.0")
         self.assertEqual(built["spec_edition"], "1.0.1")
-        self.assertEqual(built["lock_version"], 1)
+        self.assertEqual(built["lock_version"], 2)
 
     def test_closure_is_transitive(self):
         catalog = self.catalog()
         catalog.modules["quantities"]["0.2.0"]["Time"] = schema(
             refs=[ref("units", "1", "Unit")])
-        built = lock.build("materials", "0.2.0", catalog)
-        self.assertEqual(built["requires"], {"quantities": "0.2.0", "units": "1.0.0"})
+        built = lock.build(ident("materials"), "0.2.0", catalog)
+        self.assertEqual(built["requires"], {ident("quantities"): {"version": "0.2.0"},
+                                             ident("units"): {"version": "1.0.0"}})
 
     def test_ontologies_are_collected_over_the_closure(self):
         catalog = self.catalog()
         catalog.modules["quantities"]["0.2.0"]["Time"] = schema(
             refs=[ref("units", "1", "Unit")], sources=["https://w3id.org/emmo/1.0.4"])
-        built = lock.build("materials", "0.2.0", catalog)
+        built = lock.build(ident("materials"), "0.2.0", catalog)
         self.assertEqual(built["ontologies"],
                          ["https://w3id.org/emmo/1.0.4", "https://w3id.org/pmd/co/3.1.0"])
 
@@ -111,7 +118,7 @@ class Build(unittest.TestCase):
         catalog.modules["materials"]["0.2.0"]["Other"] = schema(
             refs=[ref("quantities", "0.3", "Time")])
         with self.assertRaises(lock.LockError):
-            lock.build("materials", "0.2.0", catalog)
+            lock.build(ident("materials"), "0.2.0", catalog)
 
     def test_a_cycle_does_not_loop(self):
         catalog = self.catalog()
@@ -120,18 +127,18 @@ class Build(unittest.TestCase):
         catalog.modules["materials"]["0.0.1"] = {}
         catalog.modules["materials"]["0.2.0"]["Material"] = schema(
             refs=[ref("quantities", "0.2", "Time")])
-        built = lock.build("materials", "0.2.0", catalog)
-        self.assertNotIn("materials", built["requires"])
+        built = lock.build(ident("materials"), "0.2.0", catalog)
+        self.assertNotIn(ident("materials"), built["requires"])
 
     def test_a_module_mixing_editions_is_an_error(self):
         catalog = self.catalog()
         catalog.modules["materials"]["0.2.0"]["Other"] = schema(
             spec="https://oo-ld.org/1.0.0/meta/oold-meta-schema.json")
         with self.assertRaises(lock.LockError):
-            lock.build("materials", "0.2.0", catalog)
+            lock.build(ident("materials"), "0.2.0", catalog)
 
     def test_output_is_deterministic(self):
-        built = lock.build("materials", "0.2.0", self.catalog())
+        built = lock.build(ident("materials"), "0.2.0", self.catalog())
         text = lock.render(built)
         self.assertEqual(text, lock.render(dict(reversed(list(built.items())))))
         self.assertTrue(text.endswith("}\n"))
@@ -159,8 +166,8 @@ class Lenient(unittest.TestCase):
         catalog = Catalog({"m": {"0.1.0": {"A": schema(spec="https://oo-ld.org/latest/meta/"
                                                             "oold-meta-schema.json")}}})
         with self.assertRaises(lock.LockError):
-            lock.build("m", "0.1.0", catalog)
-        built = lock.build("m", "0.1.0", catalog, lenient=True)
+            lock.build(ident("m"), "0.1.0", catalog)
+        built = lock.build(ident("m"), "0.1.0", catalog, lenient=True)
         self.assertIsNone(built["spec_edition"])
         self.assertEqual(lock.validate(built), [])
 

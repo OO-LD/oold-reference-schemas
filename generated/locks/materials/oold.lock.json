@@ -1,10 +1,13 @@
 {
-  "lock_version": 1,
+  "lock_version": 2,
+  "namespace": "https://w3id.org/oo-ld/schemas",
   "module": "materials",
   "version": "0.2.0",
   "spec_edition": "1.0.1",
   "requires": {
-    "quantities": "0.2.0"
+    "https://w3id.org/oo-ld/schemas/quantities": {
+      "version": "0.2.0"
+    }
   },
   "ontologies": [
     "https://w3id.org/emmo/1.0.4",

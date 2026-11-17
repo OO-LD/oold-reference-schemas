@@ -127,7 +127,7 @@ jobs:
       - name: Schemas are pinned to one spec edition
         run: python scripts/spec_edition.py --check
       - name: Unit tests
-        run: python -m unittest discover -s tests
+        run: uv run --with jsonschema --with referencing python -m unittest discover -s tests
       - name: Check the generated artefacts are up to date
         run: |
           git diff --exit-code generated/ docs/ zensical.toml

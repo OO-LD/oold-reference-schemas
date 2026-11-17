@@ -1,5 +1,6 @@
 {
-  "lock_version": 1,
+  "lock_version": 2,
+  "namespace": "https://w3id.org/oo-ld/schemas",
   "module": "quantities",
   "version": "0.3.0",
   "spec_edition": "1.0.1",

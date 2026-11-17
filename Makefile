@@ -105,7 +105,7 @@ check: lint $(RENDER_STAMP)
 	python scripts/spec_edition.py --check
 	python scripts/level.py --check
 	python scripts/release.py --check
-	python -m unittest discover -s tests
+	uv run --with jsonschema --with referencing python -m unittest discover -s tests
 	$(ZENSICAL) build --clean
 	@# A macro that raises is swallowed by the renderer and published as text.
 	@if grep -rnE '\{\{+ *(oold_|inline_file|example|vocabulary|render_schema|sssom_|mapping_|download)' site/; then 		echo "unrendered macro call in the built site" >&2; exit 1; 	fi

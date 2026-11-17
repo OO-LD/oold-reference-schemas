@@ -61,7 +61,10 @@ class Lines(unittest.TestCase):
 
 
 class Locks(unittest.TestCase):
-    LOCK: ClassVar[dict] = {"module": "m", "version": "0.2.0", "requires": {"q": "0.2.0"}}
+    # a v1 lock, as the first releases published them
+    LOCK: ClassVar[dict] = {"lock_version": 1, "module": "m", "version": "0.2.0",
+                            "spec_edition": "1.0.1", "requires": {"q": "0.2.0"},
+                            "ontologies": []}
 
     def run_check(self, published_lock, staged_lock, published=(), staged=()):
         with tempfile.TemporaryDirectory() as tmp:

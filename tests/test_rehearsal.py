@@ -34,6 +34,15 @@ def material(cites: str, spec=SPEC) -> dict:
             "properties": {"time": {"$ref": f"{BASE}/quantities/{cites}/Time.schema.json"}}}
 
 
+def ident(module: str) -> str:
+    return f"{BASE}/{module}"
+
+
+def pins(**versions: str) -> dict:
+    """The `requires` a lock records for dependencies of this repository."""
+    return {ident(module): {"version": version} for module, version in versions.items()}
+
+
 class World:
     """Module versions by number, the release index, and what each release stages."""
 
@@ -48,16 +57,22 @@ class World:
     def catalog(self, as_of=None):
         world = self
 
+        def module(identity):
+            return identity.rsplit("/", 1)[-1]
+
         class Catalog:
-            def versions(self, module):
-                return lock.visible(world.released.get(module, []), as_of, world.tree.get(module))
+            """Test data is keyed by module name, the code under test by identity."""
 
-            def schemas(self, module, version):
-                return world.documents[module][version]
+            def versions(self, identity):
+                name = module(identity)
+                return lock.visible(world.released.get(name, []), as_of, world.tree.get(name))
 
-            def files(self, module, version):
+            def schemas(self, identity, version):
+                return world.documents[module(identity)][version]
+
+            def files(self, identity, version):
                 return {n: json.dumps(d, indent=2).encode() + b"\n"
-                        for n, d in world.documents[module][version].items()}
+                        for n, d in world.documents[module(identity)][version].items()}
 
         return Catalog()
 
@@ -67,16 +82,17 @@ def stage(world: World, root: Path) -> None:
     for module, version in world.tree.items():
         docs = lock.released_docs(world.released, module, version)
         catalog = world.catalog(docs)
-        text = lock.render(lock.build(module, version, catalog))
+        name = ident(module)
+        text = lock.render(lock.build(name, version, catalog))
         for directory in (version, line(version)):
             target = root / module / directory
             target.mkdir(parents=True, exist_ok=True)
-            for name, data in catalog.files(module, version).items():
-                (target / name).write_bytes(data)
+            for file, data in catalog.files(name, version).items():
+                (target / file).write_bytes(data)
             (target / lock.FILE).write_text(text, encoding="utf-8")
         (root / "packages").mkdir(exist_ok=True)
         (root / "packages" / f"{module}-{version}.zip").write_bytes(
-            package.build(module, version, catalog))
+            package.build(name, version, catalog))
 
 
 def publish(world: World, docs: str, published: Path) -> list[str]:
@@ -126,16 +142,16 @@ class Rehearsal(unittest.TestCase):
         # 1. first release: materials cites the 0.2 line of quantities
         self.assertEqual(self.release("2026.01.01", ("0.2.0", quantity("first")),
                                       ("0.1.0", material("0.2"))), [])
-        self.assertEqual(self.lock_of("materials", "0.1.0")["requires"], {"quantities": "0.2.0"})
+        self.assertEqual(self.lock_of("materials", "0.1.0")["requires"], pins(quantities="0.2.0"))
 
         # 2. a patch moves the line and leaves the released materials lock frozen
         self.assertEqual(self.release("2026.02.01", ("0.2.1", quantity("clearer"))), [])
         self.assertEqual(self.lock_of("quantities", "0.2")["version"], "0.2.1")
-        self.assertEqual(self.lock_of("materials", "0.1.0")["requires"], {"quantities": "0.2.0"})
+        self.assertEqual(self.lock_of("materials", "0.1.0")["requires"], pins(quantities="0.2.0"))
 
         # 3. a patch of materials picks the newer pin up
         self.assertEqual(self.release("2026.03.01", None, ("0.1.1", material("0.2"))), [])
-        self.assertEqual(self.lock_of("materials", "0.1.1")["requires"], {"quantities": "0.2.1"})
+        self.assertEqual(self.lock_of("materials", "0.1.1")["requires"], pins(quantities="0.2.1"))
 
         # 4. an addition below 1.0 may not ride on the 0.2 line
         self.world.add("quantities", "0.2.2", quantity("sneaky", ("value", "unit")))
@@ -156,13 +172,13 @@ class Rehearsal(unittest.TestCase):
                                       ("0.2.0", material("1"))), [])
         self.assertTrue((self.published / "quantities" / "1").is_dir())
         self.assertFalse((self.published / "quantities" / "1.0").exists())
-        self.assertEqual(self.lock_of("materials", "0.2.0")["requires"], {"quantities": "1.0.0"})
+        self.assertEqual(self.lock_of("materials", "0.2.0")["requires"], pins(quantities="1.0.0"))
 
         # 7. an addition reaches everyone on the major line
         self.assertEqual(self.release("2026.06.01",
                                       ("1.1.0", quantity("grown", ("value", "unit", "scale")))), [])
         self.assertEqual(self.lock_of("quantities", "1")["version"], "1.1.0")
-        self.assertEqual(self.lock_of("materials", "0.2.0")["requires"], {"quantities": "1.0.0"})
+        self.assertEqual(self.lock_of("materials", "0.2.0")["requires"], pins(quantities="1.0.0"))
 
         # 8. a break may not ride on the major line, whatever it is called
         self.world.add("quantities", "1.2.0", quantity("broken", ("scale",)))
@@ -217,7 +233,7 @@ class Backfill(unittest.TestCase):
                                      "quantities/0.2/oold.lock.json"])
             old = json.loads((root / "materials/0.1.0/oold.lock.json").read_text())
             self.assertIsNone(old["spec_edition"])
-            self.assertEqual(old["requires"], {"quantities": "0.2.0"})
+            self.assertEqual(old["requires"], pins(quantities="0.2.0"))
             line_lock = json.loads((root / "quantities/0.2/oold.lock.json").read_text())
             self.assertEqual(line_lock["version"], "0.2.1")
             self.assertEqual(lock.backfill(root, world.released, world.catalog), [])

@@ -73,8 +73,9 @@ class OtherNamespace(unittest.TestCase):
         ours = "https://example.org/ns/quantities/0.2/T.schema.json"
         theirs = "https://w3id.org/oo-ld/schemas/units/1/U.schema.json"
         schema = {"properties": {"a": {"$ref": ours}, "b": {"$ref": theirs}}}
-        self.assertEqual(lock.dependencies("m", schema, "https://example.org/ns"),
-                         {("quantities", "0.2")})
+        self.assertEqual(lock.dependencies("https://example.org/ns/m", schema,
+                                           ["https://example.org/ns"]),
+                         {("https://example.org/ns/quantities", "0.2")})
 
     def test_resolve_reads_a_module_of_this_tree_by_its_configured_iri(self):
         origin = ROOT / "modules" / "materials" / "Material.schema.json"
@@ -189,7 +190,9 @@ class Validation(unittest.TestCase):
 
     def test_an_override_with_a_trailing_slash_still_works(self):
         schema = {"properties": {"a": {"$ref": "https://example.org/ns/q/0.2/T.schema.json"}}}
-        self.assertEqual(lock.dependencies("m", schema, "https://example.org/ns/"), {("q", "0.2")})
+        self.assertEqual(lock.dependencies("https://example.org/ns/m", schema,
+                                           ["https://example.org/ns/"]),
+                         {("https://example.org/ns/q", "0.2")})
         origin = ROOT / "modules" / "materials" / "Material.schema.json"
         iri = "https://example.org/ns/quantities/0.2/Time.schema.json"
         self.assertEqual(_shared.resolve(origin, iri, "https://example.org/ns/"),
