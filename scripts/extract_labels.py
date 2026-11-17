@@ -24,12 +24,14 @@ import json
 import sys
 from pathlib import Path
 
+from config import CONFIG
+
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "generated" / "labels.json"
 
 # A term of this repository has no ontology label to find: it is a placeholder for a
 # vocabulary that does not exist yet, and the schema is where it is described.
-OWN = "https://w3id.org/oo-ld/schemas/"
+OWN = CONFIG.namespace + "/"
 
 QUERY = """
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>

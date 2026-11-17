@@ -8,6 +8,7 @@ it, and the build fails if a committed artefact disagrees with what the schemas 
 | what | where | who writes it |
 |---|---|---|
 | schemas, module metadata | `modules/<module>/` | you |
+| identity: namespace, host, title | `reference-schemas.toml` | you, once |
 | prose about a schema | `docs/modules/<module>/.../index.md` | you, in a seeded page |
 | site pages and assets | `docs/*.md`, `docs/stylesheets`, `docs/javascripts` | you |
 | RDF readings, instances, labels | `generated/` | `make generate` |
@@ -15,6 +16,9 @@ it, and the build fails if a committed artefact disagrees with what the schemas 
 | schema page tree and nav | `docs/modules/`, `zensical.toml` nav region | `make generate` |
 | schemas at their published paths | `docs/<module>/<version>/` | `make generate`, not committed |
 | mapping sets at their published paths | `docs/mappings/**.sssom.tsv` | `make generate`, not committed |
+
+`reference-schemas.toml` is the only place the repository names itself. The scripts read the
+namespace schemas cite and the host that serves them from it, and need Python 3.11 or newer.
 
 Run `make generate` after touching a schema, and `make check` before opening a pull
 request. `make check` is what CI runs.

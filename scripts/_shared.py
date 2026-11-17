@@ -14,6 +14,8 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
+from config import CONFIG
+
 ROOT = Path(__file__).resolve().parent.parent
 MODULES = ROOT / "modules"
 
@@ -22,7 +24,7 @@ def read(path: Path) -> dict:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
-def resolve(origin: Path, target: str) -> Path:
+def resolve(origin: Path, target: str, namespace: str | None = None) -> Path:
     """Where a reference lives in this tree.
 
     A cross-module reference names the published IRI, since that is what resolves for a
@@ -30,8 +32,9 @@ def resolve(origin: Path, target: str) -> Path:
     truth, so a published IRI of a module kept here is read from disk rather than fetched:
     the checks stay offline and see the version being edited.
     """
-    if target.startswith("https://w3id.org/oo-ld/schemas/"):
-        parts = target[len("https://w3id.org/oo-ld/schemas/"):].split("/")
+    base = (namespace or CONFIG.namespace) + "/"
+    if target.startswith(base):
+        parts = target[len(base):].split("/")
         if len(parts) == 3:
             module, _version, name = parts
             candidate = MODULES / module / name

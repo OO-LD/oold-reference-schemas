@@ -24,8 +24,9 @@ import urllib.error
 import urllib.request
 
 from _shared import MODULES, module_version
+from config import CONFIG
 
-IRI_BASE = "https://w3id.org/oo-ld/schemas"
+IRI_BASE = CONFIG.namespace
 TIMEOUT = 30
 
 

@@ -540,7 +540,19 @@ def download(path, note=""):
 # page cannot claim a parent the schema does not have.
 
 
-IRI_BASE = "https://w3id.org/oo-ld/schemas"
+def _identity():
+    """The namespace this repository publishes under, from reference-schemas.toml.
+
+    Read here rather than through scripts/config.py: this file is written to move into the
+    OO-LD core unchanged, so it imports no repository-local helper.
+    """
+    import tomllib  # noqa: PLC0415 - Python 3.11+, only needed once
+
+    with open(os.path.join(ROOT, "reference-schemas.toml"), "rb") as fh:
+        return tomllib.load(fh)["namespace"]["iri"].rstrip("/")
+
+
+IRI_BASE = _identity()
 
 
 def _read(path):
@@ -941,8 +953,8 @@ def _refs(spec):
 
 def _schema_file(document, origin):
     """The file a reference names: a sibling, or a module of this repository."""
-    if document.startswith("https://w3id.org/oo-ld/schemas/"):
-        parts = document[len("https://w3id.org/oo-ld/schemas/"):].split("/")
+    if document.startswith(IRI_BASE + "/"):
+        parts = document[len(IRI_BASE) + 1:].split("/")
         if len(parts) == 3:
             candidate = Path(ROOT) / "modules" / parts[0] / parts[2]
             return candidate if candidate.is_file() else None

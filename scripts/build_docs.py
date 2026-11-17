@@ -19,6 +19,7 @@ from pathlib import Path
 
 from _shared import (chain, context_of, latest_per_line, line as line_of, mapping_sets,
                      module_version, read, resolve, set_name)
+from config import CONFIG
 
 ROOT = Path(__file__).resolve().parent.parent
 DOCS = ROOT / "docs"
@@ -67,7 +68,7 @@ def own(names: dict) -> dict:
     happens to be spelled that way.
     """
     return {iri: name for iri, name in names.items()
-            if iri.startswith("https://w3id.org/oo-ld/schemas/")}
+            if CONFIG.owns(iri)}
 
 
 def namespaces(context: dict) -> dict:
@@ -279,8 +280,8 @@ def synth_instance(name: str, schema: dict, schemas: list[dict]) -> dict | None:
             "@id": "https://example.org/instance", **doc}
 
 
-IRI_BASE = "https://w3id.org/oo-ld/schemas"
-GENID = "https://schemas.oo-ld.org/.well-known/genid/"
+IRI_BASE = CONFIG.namespace
+GENID = CONFIG.genid
 # a pointer into a schema is a path: `properties` and `$defs` are how the path is written,
 # while `items` says which thing it reaches and keeps two pointers apart
 POINTER_NOISE = ("properties", "$defs", "definitions")
@@ -368,7 +369,7 @@ def write_rdf(module: str, name: str, schema_files: list[Path], instance: Path |
             # siblings by it, so the canonical labels are turned into IRIs first: the
             # reading then comes out byte-identical every time
             nq = re.sub(r"_:(c14n\d+)",
-                        lambda m: f"<https://schemas.oo-ld.org/.well-known/genid/{m[1]}>", nq)
+                        lambda m: f"<{GENID}{m[1]}>", nq)
             graph = Graph().parse(data=nq, format="nquads")
             declared = {**namespaces(base_ctx), **namespaces(payload["@context"])}
             for iri, prefix in declared.items():
@@ -461,10 +462,10 @@ def main() -> None:
             f"# {title} {exact}",
             "",
             f"Referenced by the conformance IRI",
-            f"`https://w3id.org/oo-ld/schemas/{module}/{line}`, which tracks the newest release of",
-            f"{line}. A release publishes these files at `https://schemas.oo-ld.org/{module}/{line}/`",
-            f"and, immutably, at `https://schemas.oo-ld.org/{module}/{exact}/`; until then the tip",
-            f"of main is served at `https://schemas.oo-ld.org/{module}/dev/`.",
+            f"`{IRI_BASE}/{module}/{line}`, which tracks the newest release of",
+            f"{line}. A release publishes these files at `{CONFIG.host}/{module}/{line}/`",
+            f"and, immutably, at `{CONFIG.host}/{module}/{exact}/`; until then the tip",
+            f"of main is served at `{CONFIG.host}/{module}/dev/`.",
             "",
             "| file |",
             "|---|",
@@ -488,7 +489,7 @@ def main() -> None:
                 "version": "owl:versionInfo",
                 "schemas": {"@id": "rdfs:member", "@type": "@id"},
             },
-            "@id": f"https://w3id.org/oo-ld/schemas/{module}/{line}",
+            "@id": f"{IRI_BASE}/{module}/{line}",
             "title": f"{title} {line}",
             "version": exact,
             "description": read(meta_file).get("scope", "") if meta_file.exists() else "",

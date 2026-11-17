@@ -30,14 +30,13 @@ from typing import Protocol
 
 import level
 from _shared import MODULES, ROOT, line, module_version, read
+from config import CONFIG
 from spec_edition import edition_of
 
 LOCK_VERSION = 1
 OUT = ROOT / "generated" / "locks"
 FILE = "oold.lock.json"
 
-DEPENDENCY = re.compile(r"^https://w3id\.org/oo-ld/schemas/([a-z0-9_-]+)/(\d+(?:\.\d+)?)/"
-                        r"[^/#]+\.schema\.json")
 EXACT = re.compile(r"^\d+\.\d+\.\d+$")
 FIELDS = ("lock_version", "module", "version", "spec_edition", "requires", "ontologies")
 KEYS = set(FIELDS)
@@ -70,11 +69,14 @@ def strings(node, key: str) -> Iterable[str]:
             yield from strings(value, key)
 
 
-def dependencies(module: str, schema: dict) -> set[tuple[str, str]]:
+def dependencies(module: str, schema: dict,
+                 namespace: str | None = None) -> set[tuple[str, str]]:
     """The (module, line) pairs a schema reaches by `$ref` or `@context`."""
+    pattern = re.compile(rf"^{re.escape(namespace or CONFIG.namespace)}/([a-z0-9_-]+)/"
+                         r"(\d+(?:\.\d+)?)/[^/#]+\.schema\.json")
     found = set()
     for text in (*strings(schema, "$ref"), *strings(schema, "@context")):
-        match = DEPENDENCY.match(text)
+        match = pattern.match(text)
         if match and match.group(1) != module:
             found.add((match.group(1), match.group(2)))
     return found

@@ -24,13 +24,14 @@ import re
 from pathlib import Path
 
 from _shared import context_of, module_version, read, set_name
+from config import CONFIG
 
 ROOT = Path(__file__).resolve().parent.parent
 MODULES = ROOT / "modules"
 GENERATED = ROOT / "generated"
 OUT = GENERATED / "mappings"
 
-IRI_BASE = "https://w3id.org/oo-ld/schemas"
+IRI_BASE = CONFIG.namespace
 LICENSE = "https://creativecommons.org/publicdomain/zero/1.0/"
 
 
@@ -254,11 +255,11 @@ def write_set(name: str, rows: list[dict], curie_map: dict[str, str],
     preamble = [
         f"# mapping_set_id: {IRI_BASE}/mappings/{'crosswalks/' if derived else ''}{name}.sssom.tsv",
         f"# mapping_set_version: {release()}",
-        f"# mapping_set_title: {name} mappings for the OO-LD reference schemas",
+        f"# mapping_set_title: {name} mappings for the {CONFIG.title}",
         *(["# comment: derived by chaining the curated sets, not curated"]
           if derived else []),
         f"# license: {LICENSE}",
-        "# mapping_provider: https://github.com/OO-LD/oold-reference-schemas",
+        f"# mapping_provider: {CONFIG.repository}",
         "# curie_map:",
     ]
     preamble += [f"#   {p}: {known[p]}" for p in used if p in known]

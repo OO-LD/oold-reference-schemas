@@ -1,0 +1,12 @@
+# The identity of this collection of reference schemas. The engine in scripts/ reads it
+# and carries no identity of its own.
+
+[project]
+title = "OO-LD reference schemas"
+repository = "https://github.com/OO-LD/oold-reference-schemas"
+
+[namespace]
+# what schemas cite: permanent, redirects one to one to the host
+iri = "https://w3id.org/oo-ld/schemas"
+# where the files, packages and documentation are served
+host = "https://schemas.oo-ld.org"
