@@ -16,11 +16,12 @@ OOLD_PY_VERSION ?= 2.0.0
 PRE_COMMIT_VERSION ?= 4.7.0
 OOLD := uvx --from "oold[validation]==$(OOLD_PY_VERSION)" oold
 
-.PHONY: all generate mappings locks packages docs pages ontologies labels bump lint hooks check validate serve clean release help
+.PHONY: all generate mappings locks packages docs pages ontologies labels bump bump-check lint hooks check validate serve clean release help
 
 help:
 	@echo "generate  regenerate everything derived from the schemas"
 	@echo "bump      raise the versions the changes since the last release require"
+	@echo "bump-check fail if the commits since the last release imply a smaller version than the schemas need"
 	@echo "lint      lint the scripts and tests with the pinned tools"
 	@echo "hooks     install the git hooks (pre-commit and commit-msg)"
 	@echo "check     verify the tree is consistent with the schemas (what CI runs)"
@@ -78,6 +79,10 @@ labels: ontologies
 # Computed from the last release rather than incremented, so running it twice is a no-op.
 bump:
 	python scripts/level.py --apply
+
+# For a repository released by semantic-release: the commits must reach what the schemas need.
+bump-check:
+	python scripts/bump.py --check
 
 # pre-commit, its hooks and ruff are pinned (here and in .pre-commit-config.yaml), so a local
 # run and CI judge the same way. Untracked files are included, which `--all-files` alone

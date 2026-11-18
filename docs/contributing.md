@@ -131,6 +131,26 @@ All schemas of a module name one exact edition in `$schema`. To move to another
 one, run `python scripts/spec_edition.py --set <edition>`, then `make bump`,
 because a repin is at least a minor change.
 
+### Releasing a repository with one module
+
+A repository released by semantic-release follows this order, and each step fails the release
+rather than weakening it:
+
+1. **Pull request:** `make bump-check` fails when the commits imply a smaller version than the
+   schema changes need, for example a `fix:` on a change that breaks documents.
+2. **Release candidate:** semantic-release writes the version, then `python scripts/level.py
+   --apply` raises each schema to its floor and `make check` verifies the result.
+3. **Prepare:** `make generate`, then `python scripts/publish.py prepare <module>` records every
+   file of the release with its digest, before anything is tagged or uploaded.
+4. **Tag, then publish:** `python scripts/publish.py publish <record> <target>` copies the
+   release. Fixed paths are written once, the line directory moves last.
+
+An interrupted release is finished by running step 4 again: it reads the record, not the
+commits, so a tag that already exists does not matter. Files already in place with the recorded
+content are skipped, and a fixed path holding other content stops it. Keep the record and the files it lists together as one
+build artifact: publish refuses files that changed since the record was made, so a record cannot
+be resumed against a tree that has moved on to another release.
+
 ### Releasing
 
 `make release` stamps the dated release, records which module version it

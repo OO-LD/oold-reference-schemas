@@ -15,6 +15,9 @@ docs/module-versions.json
 # Offline packages, built by scripts/package.py from the locks and published on release.
 docs/packages/
 
+# The record of a prepared release, handed from the build to the publish step.
+dist/
+
 # The SSSOM sets: a row is the schema's own mapping metadata transposed into columns, so
 # committing them would put a mechanical restatement in every review beside the change it
 # restates. The build writes them before anything reads them.
