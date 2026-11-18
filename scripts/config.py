@@ -12,6 +12,7 @@ import sys
 if sys.version_info < (3, 11):  # noqa: UP036 - the message is the point
     raise SystemExit("error: the engine needs Python 3.11 or newer (it reads TOML with tomllib)")
 
+import re
 import tomllib
 from dataclasses import dataclass
 from pathlib import Path
@@ -20,9 +21,28 @@ from urllib.parse import urlsplit
 ROOT = Path(__file__).resolve().parent.parent
 FILE = ROOT / "reference-schemas.toml"
 
+EXACT = re.compile(r"\d+\.\d+\.\d+")
+NAME = re.compile(r"[a-z0-9_-]+")
+SHA256 = re.compile(r"[0-9a-f]{64}")
+
 
 class ConfigError(Exception):
     """A missing or malformed reference-schemas.toml."""
+
+
+@dataclass(frozen=True)
+class Dependency:
+    """A module of another repository, pinned to one version of its published package."""
+
+    namespace: str
+    module: str
+    version: str
+    package: str
+    sha256: str
+
+    @property
+    def identity(self) -> str:
+        return f"{self.namespace}/{self.module}"
 
 
 @dataclass(frozen=True)
@@ -31,6 +51,7 @@ class Config:
     repository: str
     namespace: str
     host: str
+    dependencies: tuple[Dependency, ...] = ()
 
     @property
     def genid(self) -> str:
@@ -91,7 +112,31 @@ def load(path: Path = FILE) -> Config:
         repository=base_iri(value("project", "repository"), "project.repository"),
         namespace=base_iri(value("namespace", "iri"), "namespace.iri"),
         host=base_iri(value("namespace", "host"), "namespace.host"),
+        dependencies=dependencies(data.get("dependency", []), path.name),
     )
+
+
+def dependencies(tables, where: str) -> tuple[Dependency, ...]:
+    """The `[[dependency]]` pins: each names a module, one exact version, and the digest of
+    the package that holds it. Nothing is looked up: what is pinned is all that is used."""
+    if not isinstance(tables, list):
+        raise ConfigError(f"{where}: dependency must be an array of tables")
+    found: dict[str, Dependency] = {}
+    for table in tables:
+        fields = {k: table.get(k) for k in ("namespace", "module", "version", "package", "sha256")}
+        for key, pattern in (("module", NAME), ("version", EXACT), ("sha256", SHA256)):
+            if not isinstance(fields[key], str) or not pattern.fullmatch(fields[key]):
+                raise ConfigError(f"{where}: dependency {key} is invalid: {fields[key]!r}")
+        fields["namespace"] = base_iri(str(fields["namespace"]), "dependency.namespace")
+        package = urlsplit(str(fields["package"]))
+        if package.scheme != "https" or not package.hostname or package.fragment:
+            raise ConfigError(f"{where}: dependency package must be an https URL: "
+                              f"{fields['package']!r}")
+        pin = Dependency(**fields)
+        if pin.identity in found:
+            raise ConfigError(f"{where}: {pin.identity} is pinned twice")
+        found[pin.identity] = pin
+    return tuple(found.values())
 
 
 def _default() -> Config:

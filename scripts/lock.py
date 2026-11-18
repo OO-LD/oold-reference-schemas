@@ -29,27 +29,20 @@ from pathlib import Path
 from typing import Protocol
 
 import level
-from _shared import MODULES, ROOT, line, module_version, read
-from config import CONFIG
+from _shared import MODULES, ROOT, LockError, line, module_version, read
+from config import CONFIG, EXACT, NAME, SHA256
 from spec_edition import edition_of
 
 LOCK_VERSION = 2
 OUT = ROOT / "generated" / "locks"
 FILE = "oold.lock.json"
 
-EXACT = re.compile(r"\d+\.\d+\.\d+")
 EDITION = re.compile(r"\d+\.\d+\.\d+(?:-[0-9A-Za-z.]+)?")
-NAME = re.compile(r"[a-z0-9_-]+")
-SHA256 = re.compile(r"[0-9a-f]{64}")
 BASE = r"https://[^/?#\s]+(?:/[^?#\s]*[^/?#\s])?"  # an https base IRI, no trailing slash
 IDENTITY = re.compile(rf"{BASE}/[a-z0-9_-]+")
 FIELDS = ("lock_version", "namespace", "module", "version", "spec_edition", "requires",
           "ontologies")
 V1_FIELDS = tuple(f for f in FIELDS if f != "namespace")
-
-
-class LockError(Exception):
-    """A closure that cannot be pinned."""
 
 
 class Catalog(Protocol):
@@ -129,7 +122,7 @@ def resolve_line(name: str, wanted: str, versions: Iterable[str]) -> str:
         return wanted
     fits = [v for v in versions if EXACT.fullmatch(v) and line(v) == wanted]
     if not fits:
-        raise LockError(f"no version of {name} on line {wanted}")
+        raise LockError(f"no version of {name} on line {wanted} among {sorted(versions)}")
     return max(fits, key=order)
 
 
@@ -205,13 +198,25 @@ def build(name: str, version: str, catalog: Catalog, lenient: bool = False,
                 if dep not in closure:
                     closure[dep] = list(catalog.schemas(dep, exact).values())
                     pending.append((dep, closure[dep]))
+    requires = {}
+    for dep, exact in sorted(pinned.items()):
+        digest = catalog.digest(dep) if hasattr(catalog, "digest") else None
+        requires[dep] = {"version": exact, **({"sha256": digest} if digest else {})}
+    # what a pinned package was itself locked against has to be what is pinned here
+    for dep in requires if hasattr(catalog, "requires_of") else ():
+        for other, theirs in catalog.requires_of(dep).items():
+            mine = requires.get(other, {})
+            if (mine.get("version"), mine.get("sha256")) != (
+                    theirs["version"], theirs.get("sha256", mine.get("sha256"))):
+                raise LockError(f"{dep} {requires[dep]['version']} was locked against {other} "
+                                f"{theirs['version']}, which is not what is pinned here")
     return {
         "lock_version": LOCK_VERSION,
         "namespace": namespace,
         "module": module,
         "version": version,
         "spec_edition": edition(name, own, lenient),
-        "requires": {dep: {"version": exact} for dep, exact in sorted(pinned.items())},
+        "requires": requires,
         "ontologies": sorted(sources(s for group in closure.values() for s in group)),
     }
 
@@ -359,13 +364,17 @@ def main() -> None:
         for path in backfill(root, released, lambda docs: Repository(as_of=docs)):
             print(f"  added {path.relative_to(root)}")
         return
+    from pins import Combined, Pinned  # pins imports this module, so not at the top
+
     check = "--check" in sys.argv
     index = Repository().released
+    pinned = Pinned(CONFIG.dependencies)
     stale = []
     for module in modules():
         version = module_version(module, full=True)
-        built = build(identity(CONFIG.namespace, module), version,
-                      Repository(released_docs(index, module, version)))
+        catalog = Combined(Repository(released_docs(index, module, version)), pinned)
+        built = build(identity(CONFIG.namespace, module), version, catalog,
+                      namespaces=catalog.namespaces)
         problems = validate(built)
         if problems:
             sys.exit(f"{module}: " + "; ".join(problems))
@@ -385,4 +394,7 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except LockError as error:
+        sys.exit(str(error))

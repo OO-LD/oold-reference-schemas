@@ -103,7 +103,11 @@ def lock_problems(module: str, exact: str, published_root: Path,
     for dep, entry in seen["requires"].items():
         namespace, name = lock.split(dep)
         if namespace != CONFIG.namespace:
-            continue  # published elsewhere: phase 2b pins it by digest
+            # published elsewhere, so not ours to look for: the digest is what ties it down
+            if "sha256" not in entry:
+                problems.append(f"{module} {exact} requires {dep} from another namespace "
+                                "without a digest.")
+            continue
         version = entry["version"]
         if not ((published_root / name / version).is_dir()
                 or (staged_root / name / version).is_dir()):

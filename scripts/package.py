@@ -27,6 +27,7 @@ from collections.abc import Iterable
 from typing import Protocol
 
 import lock
+import pins
 from _shared import ROOT, line
 from config import CONFIG
 
@@ -81,12 +82,15 @@ def same_documents(a: bytes, b: bytes) -> bool:
 
 def main() -> None:
     index = lock.Repository()
+    pinned = pins.Pinned(CONFIG.dependencies)
     OUT.mkdir(parents=True, exist_ok=True)
     for module in lock.modules():
         version = index.tree_version(module)
-        repo = lock.Repository(lock.released_docs(index.released, module, version))
+        catalog = pins.Combined(lock.Repository(lock.released_docs(index.released, module,
+                                                                   version)), pinned)
         path = OUT / f"{module}-{version}.zip"
-        path.write_bytes(build(lock.identity(CONFIG.namespace, module), version, repo))
+        path.write_bytes(build(lock.identity(CONFIG.namespace, module), version, catalog,
+                               catalog.namespaces))
         print(f"  {path.relative_to(ROOT)}: {len(read(path.read_bytes()))} documents")
 
 

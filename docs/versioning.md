@@ -143,6 +143,28 @@ was made. It is published beside the schemas at
 - Releases made before locks existed gain one at the next release. Their
   `spec_edition` is `null`, because their schemas pointed at `latest`.
 
+## Depending on another repository
+
+A module of another repository is a dependency only if `reference-schemas.toml` pins it:
+
+```toml
+[[dependency]]
+namespace = "https://w3id.org/oo-ld/schemas"
+module = "quantities"
+version = "0.2.0"
+package = "https://schemas.oo-ld.org/packages/quantities-0.2.0.zip"
+sha256 = "<digest of that zip>"
+```
+
+- Nothing is discovered. A module a schema cites from a pinned namespace but that has no pin
+  is an error, and so is a pin that does not satisfy the cited line.
+- The package is downloaded only when needed, and only if its sha256 matches the pin. It is
+  cached by that digest, so a changed file at the same URL is refused, not trusted.
+- Downloads are limited to public `https` addresses (redirects included), a size limit and
+  an archive size limit.
+- The lock records the digest, and what a pinned package was itself locked against has to be
+  pinned here at the same version. Its documents go into your package unchanged.
+
 ## The offline package
 
 `packages/<module>-<x.y.z>.zip` holds a module and every module its lock pins,

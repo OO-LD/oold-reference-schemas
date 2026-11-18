@@ -20,6 +20,11 @@ ROOT = Path(__file__).resolve().parent.parent
 MODULES = ROOT / "modules"
 
 
+class LockError(Exception):
+    """A closure that cannot be pinned. Defined here so a script run as `__main__` and the
+    modules it imports raise one and the same class."""
+
+
 def read(path: Path) -> dict:
     return json.loads(path.read_text(encoding="utf-8"))
 
