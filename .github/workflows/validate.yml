@@ -116,6 +116,8 @@ jobs:
         run: uv run --with pyld --with rdflib scripts/build_docs.py
       - name: Seed and check the schema pages
         run: uv run scripts/build_pages.py --check
+      - name: Verify the components and write their catalog
+        run: uv run scripts/components.py
 
       # A version is a compatibility promise, so the level is computed from the diff and
       # the declared bump has to reach it. The floor is provable; the level is the
@@ -186,6 +188,7 @@ jobs:
       - run: uv run scripts/build_mappings.py
       - run: uv run --with pyld --with rdflib scripts/build_docs.py
       - run: uv run scripts/package.py
+      - run: uv run scripts/components.py
 
       - name: Publish the docs version
         run: |

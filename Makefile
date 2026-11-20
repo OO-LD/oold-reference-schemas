@@ -16,7 +16,7 @@ OOLD_PY_VERSION ?= 2.0.0
 PRE_COMMIT_VERSION ?= 4.7.0
 OOLD := uvx --from "oold[validation]==$(OOLD_PY_VERSION)" oold
 
-.PHONY: all generate mappings locks packages docs pages ontologies labels bump bump-check lint hooks check validate serve clean release help
+.PHONY: all generate mappings locks packages docs pages components ontologies labels bump bump-check lint hooks check validate serve clean release help
 
 help:
 	@echo "generate  regenerate everything derived from the schemas"
@@ -34,7 +34,7 @@ all: generate
 
 # Order matters: the mapping sets are read by the schema pages, and the navigation is
 # generated from what exists after both.
-generate: mappings locks packages docs pages
+generate: mappings locks packages docs pages components
 
 mappings:
 	python scripts/build_mappings.py
@@ -62,6 +62,10 @@ $(RENDER_STAMP): scripts/macros.py
 
 pages:
 	python scripts/build_pages.py
+
+# The catalog of components: downloads each pinned package, checks it, writes docs/components/.
+components:
+	python scripts/components.py
 
 # Labels are fetched from the pinned ontologies and, for the few OBO terms no snapshot
 # carries, from OLS. Deliberately not part of `generate`: refreshing them is tied to an
@@ -107,6 +111,7 @@ check: lint $(RENDER_STAMP)
 		echo 'generated artefacts are stale: run make generate' >&2; exit 1; }
 	python scripts/build_pages.py --check
 	python scripts/check_enums.py
+	python scripts/components.py
 	python scripts/spec_edition.py --check
 	python scripts/level.py --check
 	python scripts/release.py --check
@@ -136,4 +141,4 @@ serve: generate $(RENDER_STAMP)
 	$(ZENSICAL) serve -a 127.0.0.1:8042
 
 clean:
-	rm -rf site docs/*/[0-9]*/ docs/packages docs/mappings/*.sssom.tsv docs/mappings/crosswalks
+	rm -rf site docs/components docs/*/[0-9]*/ docs/packages docs/mappings/*.sssom.tsv docs/mappings/crosswalks

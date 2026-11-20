@@ -12,6 +12,10 @@ docs/*/[0-9]*/
 docs/mappings/**/*.sssom.tsv
 docs/module-versions.json
 
+# The catalog of components, written by scripts/components.py from the registry and the
+# packages it pins, so a listed component is never reviewed twice.
+docs/components/
+
 # Offline packages, built by scripts/package.py from the locks and published on release.
 docs/packages/
 
