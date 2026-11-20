@@ -16,8 +16,11 @@ it and only a break is refused. Either way, a change the line does not allow is 
 smuggled in and deserves its own version.
 
 A lock may only pin versions that exist, either already published or published by the same
-release. The package of an exact release is written once, judged by its documents rather
-than its bytes, since compression may differ between machines.
+release. That is checked for dependencies in this repository's namespace; one in another
+namespace is published elsewhere and is not looked for here.
+
+The package of an exact release is written once, judged by its documents rather than its
+bytes, since compression may differ between machines.
 
 Run against a checkout of the published branch, before anything is copied into it.
 
@@ -31,12 +34,14 @@ import sys
 from pathlib import Path
 
 import level
+import lock
 import package
 from _shared import MODULES, module_version
+from config import CONFIG
 
 ROOT = Path(__file__).resolve().parent.parent
 STAGED = ROOT / "docs"
-LOCK = "oold.lock.json"
+LOCK = lock.FILE
 
 
 def schemas_in(directory: Path) -> dict[str, dict]:
@@ -85,9 +90,27 @@ def lock_problems(module: str, exact: str, published_root: Path,
     if published.is_file() and published.read_bytes() != staged.read_bytes():
         problems.append(f"{module} {exact} is already published with a different {LOCK}. "
                         "An exact release is written once; bump the version.")
-    for dep, version in json.loads(staged.read_text(encoding="utf-8"))["requires"].items():
-        if not ((published_root / dep / version).is_dir()
-                or (staged_root / dep / version).is_dir()):
+    try:
+        data = json.loads(staged.read_text(encoding="utf-8"))
+    except ValueError as error:
+        return [*problems, f"{module} {exact} has an unreadable {LOCK}: {error}"]
+    malformed = lock.validate(data)
+    if malformed:
+        return [*problems, f"{module} {exact} has a malformed {LOCK}: {malformed[0]}"]
+    seen = lock.read_lock(data)
+    if (seen["module"], seen["version"], seen["namespace"]) != (module, exact, CONFIG.namespace):
+        return [*problems, f"{module} {exact} has a {LOCK} that belongs to another release."]
+    for dep, entry in seen["requires"].items():
+        namespace, name = lock.split(dep)
+        if namespace != CONFIG.namespace:
+            # published elsewhere, so not ours to look for: the digest is what ties it down
+            if "sha256" not in entry:
+                problems.append(f"{module} {exact} requires {dep} from another namespace "
+                                "without a digest.")
+            continue
+        version = entry["version"]
+        if not ((published_root / name / version).is_dir()
+                or (staged_root / name / version).is_dir()):
             problems.append(f"{module} {exact} requires {dep} {version}, "
                             "which is neither published nor part of this release.")
     return problems

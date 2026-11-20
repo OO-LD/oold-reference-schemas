@@ -344,7 +344,7 @@ def _sssom(name):
     if not lines:
         return [], []
     header = lines[0].split("\t")
-    return header, [dict(zip(header, ln.split("\t"))) for ln in lines[1:] if ln]
+    return header, [dict(zip(header, ln.split("\t"), strict=False)) for ln in lines[1:] if ln]
 
 
 def _set_page(name):
@@ -410,7 +410,7 @@ def sssom_table(name):
     Reads the generated set by name rather than a path, because the columns rendered here
     are SSSOM slots: subject, predicate, object and the version the object came from.
     """
-    header, rows = _sssom(name)
+    _header, rows = _sssom(name)
     if not rows:
         return f"No mappings are declared for `{name}`."
     ctx = _all_contexts()
@@ -540,7 +540,43 @@ def download(path, note=""):
 # page cannot claim a parent the schema does not have.
 
 
-IRI_BASE = "https://w3id.org/oo-ld/schemas"
+def _identity():
+    """The namespace this repository publishes under, from reference-schemas.toml.
+
+    Read here rather than through scripts/config.py: this file is written to move into the
+    OO-LD core unchanged, so it imports no repository-local helper.
+    """
+    import sys  # noqa: PLC0415
+
+    if sys.version_info < (3, 11):  # noqa: UP036 - the message is the point
+        raise RuntimeError("the documentation macros need Python 3.11 or newer (tomllib)")
+    import tomllib  # noqa: PLC0415
+    from urllib.parse import urlsplit  # noqa: PLC0415
+
+    path = os.path.join(ROOT, "reference-schemas.toml")
+    try:
+        with open(path, "rb") as fh:
+            section = tomllib.load(fh).get("namespace")
+    except FileNotFoundError:
+        raise RuntimeError("reference-schemas.toml not found at the repository root") from None
+    except (OSError, UnicodeDecodeError, tomllib.TOMLDecodeError) as error:
+        raise RuntimeError(f"reference-schemas.toml cannot be read: {error}") from None
+    iri = section.get("iri") if isinstance(section, dict) else None
+    problem = "needs namespace.iri as an https IRI with a host, without query or fragment"
+    if (not isinstance(iri, str) or iri[:8].lower() != "https://" or "?" in iri or "#" in iri
+            or any(c.isspace() or ord(c) < 32 or ord(c) == 127 for c in iri)):
+        raise RuntimeError(f"reference-schemas.toml {problem}")
+    try:
+        parts = urlsplit(iri)
+        host, _ = parts.hostname, parts.port
+    except ValueError:
+        raise RuntimeError(f"reference-schemas.toml {problem}") from None
+    if not host or parts.username is not None or parts.password is not None:
+        raise RuntimeError(f"reference-schemas.toml {problem}")
+    return "https://" + iri[8:].rstrip("/")
+
+
+IRI_BASE = _identity()
 
 
 def _read(path):
@@ -941,8 +977,8 @@ def _refs(spec):
 
 def _schema_file(document, origin):
     """The file a reference names: a sibling, or a module of this repository."""
-    if document.startswith("https://w3id.org/oo-ld/schemas/"):
-        parts = document[len("https://w3id.org/oo-ld/schemas/"):].split("/")
+    if document.startswith(IRI_BASE + "/"):
+        parts = document[len(IRI_BASE) + 1:].split("/")
         if len(parts) == 3:
             candidate = Path(ROOT) / "modules" / parts[0] / parts[2]
             return candidate if candidate.is_file() else None
@@ -1221,7 +1257,6 @@ def _page_source(page):
         flat = os.path.join(ROOT, "docs", text[: -len("/index.md")] + ".md")
         if os.path.exists(flat):
             return flat
-    import sys as _s2; print(os.path.join(ROOT, "docs", text), file=_s2.stderr)
     return os.path.join(ROOT, "docs", text)
 
 

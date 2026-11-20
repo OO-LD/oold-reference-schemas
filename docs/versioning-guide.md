@@ -32,7 +32,8 @@ uv run validate_offline.py materials-0.2.0.zip my-material.json
 
 It reads every schema from the zip and has no other way to fetch one, so
 nothing leaves your machine. To use another validator, map an IRI to the zip
-member by removing the prefix above.
+member by dropping its `https://`. For a package from another namespace, pass
+`--base <namespace>/`.
 
 [recipe]: https://github.com/OO-LD/oold-reference-schemas/blob/main/examples/versioning/validate_offline.py
 

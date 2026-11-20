@@ -19,18 +19,18 @@ Usage: python scripts/build_mappings.py
 
 from __future__ import annotations
 
-import json
 import re
 from pathlib import Path
 
 from _shared import context_of, module_version, read, set_name
+from config import CONFIG
 
 ROOT = Path(__file__).resolve().parent.parent
 MODULES = ROOT / "modules"
 GENERATED = ROOT / "generated"
 OUT = GENERATED / "mappings"
 
-IRI_BASE = "https://w3id.org/oo-ld/schemas"
+IRI_BASE = CONFIG.namespace
 LICENSE = "https://creativecommons.org/publicdomain/zero/1.0/"
 
 
@@ -185,8 +185,9 @@ def collect() -> tuple[dict[str, list[dict]], dict[str, str]]:
                 "object_id": obj,
                 "object_label": entry.get("label", ""),
                 "mapping_justification": "semapv:ManualMappingCuration",
-                "subject_source": subject_source,
-                "subject_source_version": subject_version,
+                # the loop variables are read in the iteration that defines `row`, never later
+                "subject_source": subject_source,  # noqa: B023
+                "subject_source_version": subject_version,  # noqa: B023
                 "object_source": source,
                 "object_source_version": version,
                 "comment": comment,
@@ -203,7 +204,7 @@ def collect() -> tuple[dict[str, list[dict]], dict[str, str]]:
             """
             iri = expand(target(ctx.get(term)) or "", curie_map)
             if not iri.startswith(f"{IRI_BASE}/"):
-                return f"{subject_source}#{term}"
+                return f"{subject_source}#{term}"  # noqa: B023
             # without the version, for the reason the module subject drops it: a term keeps
             # its identity across releases, and the version has its own SSSOM column
             return re.sub(rf"^({re.escape(IRI_BASE)}/[^/]+)/[^/]+/", r"/", iri)
@@ -254,16 +255,16 @@ def write_set(name: str, rows: list[dict], curie_map: dict[str, str],
     preamble = [
         f"# mapping_set_id: {IRI_BASE}/mappings/{'crosswalks/' if derived else ''}{name}.sssom.tsv",
         f"# mapping_set_version: {release()}",
-        f"# mapping_set_title: {name} mappings for the OO-LD reference schemas",
+        f"# mapping_set_title: {name} mappings for the {CONFIG.title}",
         *(["# comment: derived by chaining the curated sets, not curated"]
           if derived else []),
         f"# license: {LICENSE}",
-        "# mapping_provider: https://github.com/OO-LD/oold-reference-schemas",
+        f"# mapping_provider: {CONFIG.repository}",
         "# curie_map:",
     ]
     preamble += [f"#   {p}: {known[p]}" for p in used if p in known]
 
-    lines = preamble + ["\t".join(COLUMNS)]
+    lines = [*preamble, "\t".join(COLUMNS)]
     for row in sorted(rows, key=lambda r: (r["subject_label"], r["object_id"])):
         lines.append("\t".join(str(row[c]).replace("\t", " ") for c in COLUMNS))
 

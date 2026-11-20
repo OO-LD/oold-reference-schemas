@@ -8,6 +8,7 @@ it, and the build fails if a committed artefact disagrees with what the schemas 
 | what | where | who writes it |
 |---|---|---|
 | schemas, module metadata | `modules/<module>/` | you |
+| identity: namespace, host, title | `reference-schemas.toml` | you, once |
 | prose about a schema | `docs/modules/<module>/.../index.md` | you, in a seeded page |
 | site pages and assets | `docs/*.md`, `docs/stylesheets`, `docs/javascripts` | you |
 | RDF readings, instances, labels | `generated/` | `make generate` |
@@ -15,6 +16,9 @@ it, and the build fails if a committed artefact disagrees with what the schemas 
 | schema page tree and nav | `docs/modules/`, `zensical.toml` nav region | `make generate` |
 | schemas at their published paths | `docs/<module>/<version>/` | `make generate`, not committed |
 | mapping sets at their published paths | `docs/mappings/**.sssom.tsv` | `make generate`, not committed |
+
+`reference-schemas.toml` is the only place the repository names itself. The scripts read the
+namespace schemas cite and the host that serves them from it, and need Python 3.11 or newer.
 
 Run `make generate` after touching a schema, and `make check` before opening a pull
 request. `make check` is what CI runs.
@@ -101,6 +105,13 @@ New to this? Start with the [Versioning guide](versioning-guide.md). What each
 path means, and how references resolve, is in
 [Versions and identifiers](versioning.md). Here is the working routine.
 
+### Code quality
+
+The scripts and tests are linted with ruff, and files are checked for whitespace, valid
+JSON, YAML and TOML. `make lint` runs it, `make hooks` installs it as a git hook, and `make
+check` includes it. Pre-commit, its hooks and ruff are pinned in the `Makefile` and
+`.pre-commit-config.yaml`, and the rules are in `ruff.toml`, so a local run and CI agree. Commit messages follow Conventional Commits.
+
 ### Changing a schema
 
 1. Edit the schema. Cite another module by line, for example
@@ -119,6 +130,26 @@ path means, and how references resolve, is in
 All schemas of a module name one exact edition in `$schema`. To move to another
 one, run `python scripts/spec_edition.py --set <edition>`, then `make bump`,
 because a repin is at least a minor change.
+
+### Releasing a repository with one module
+
+A repository released by semantic-release follows this order, and each step fails the release
+rather than weakening it:
+
+1. **Pull request:** `make bump-check` fails when the commits imply a smaller version than the
+   schema changes need, for example a `fix:` on a change that breaks documents.
+2. **Release candidate:** semantic-release writes the version, then `python scripts/level.py
+   --apply` raises each schema to its floor and `make check` verifies the result.
+3. **Prepare:** `make generate`, then `python scripts/publish.py prepare <module>` records every
+   file of the release with its digest, before anything is tagged or uploaded.
+4. **Tag, then publish:** `python scripts/publish.py publish <record> <target>` copies the
+   release. Fixed paths are written once, the line directory moves last.
+
+An interrupted release is finished by running step 4 again: it reads the record, not the
+commits, so a tag that already exists does not matter. Files already in place with the recorded
+content are skipped, and a fixed path holding other content stops it. Keep the record and the files it lists together as one
+build artifact: publish refuses files that changed since the record was made, so a record cannot
+be resumed against a tree that has moved on to another release.
 
 ### Releasing
 

@@ -1,0 +1,16 @@
+# Components: reference schemas kept in other repositories and listed in the catalog.
+# An entry pins one version of one module by the sha256 of its published package, so what is
+# listed is exactly what was reviewed. Maintainers add an entry after a request (see the docs).
+# The title and description are written here, by hand, and reviewed with the entry.
+#
+# [[component]]
+# title = "Schema.org"
+# description = "The schema.org vocabulary as OO-LD schemas."
+# repository = "https://github.com/OO-LD/oold-schemaorg"
+# site = "https://schemaorg.oo-ld.org"
+# license = "MIT"
+# namespace = "https://w3id.org/oo-ld/schemaorg"
+# module = "schemaorg"
+# version = "1.0.0"
+# package = "https://schemaorg.oo-ld.org/packages/schemaorg-1.0.0.zip"
+# sha256 = "<sha256 of the package>"

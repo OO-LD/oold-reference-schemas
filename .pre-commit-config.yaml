@@ -1,0 +1,34 @@
+# Install the pre-commit and commit-msg hooks with a plain `pre-commit install`.
+default_install_hook_types: [pre-commit, commit-msg]
+
+# Data, not code: the schemas are formatted by hand and generated output has to stay
+# byte-stable, so the hooks that rewrite whitespace skip modules/, generated/ and the
+# ontology lock. `check-json` still validates them without rewriting.
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: "v6.0.0"
+    hooks:
+      - id: check-case-conflict
+      - id: check-merge-conflict
+      - id: check-toml
+      - id: check-yaml
+      - id: check-json
+      - id: end-of-file-fixer
+        exclude: ^(modules/|generated/|ontologies\.lock\.json$)
+      - id: trailing-whitespace
+        exclude: ^(modules/|generated/|ontologies\.lock\.json$)
+        args: [--markdown-linebreak-ext=md]
+
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: "v0.17.5"
+    hooks:
+      - id: ruff-check
+        args: [--exit-non-zero-on-fix]
+
+  # Conventional commits, which the release tooling and the changelog will rely on.
+  - repo: https://github.com/compilerla/conventional-pre-commit
+    rev: "v4.0.0"
+    hooks:
+      - id: conventional-pre-commit
+        stages: [commit-msg]

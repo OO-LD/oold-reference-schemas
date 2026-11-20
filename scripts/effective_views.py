@@ -21,7 +21,7 @@ from pathlib import Path
 from _shared import context_of, mapping_sets, set_name
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from build_docs import chain, inline_scoped, promote  # noqa: E402
+from build_docs import chain, inline_scoped, promote
 
 
 def canonical(value):
@@ -53,7 +53,7 @@ def undefined_terms(node, context: dict) -> set:
 
 
 def views(module_dir: Path) -> int:
-    from pyld import jsonld  # noqa: PLC0415
+    from pyld import jsonld
 
     instances = sorted(module_dir.glob("*.instance.json"))
     if not instances:

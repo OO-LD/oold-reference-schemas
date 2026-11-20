@@ -180,7 +180,7 @@ def check_links(problems: list[str]) -> None:
     leaves it empty and every lineage link silently becomes plain text. Nothing raises,
     the build stays green, and the pages quietly lose their navigation.
     """
-    import macros  # noqa: PLC0415 - imported here so the check follows the real renderer
+    import macros
 
     for module in modules():
         chains = lineage(module)

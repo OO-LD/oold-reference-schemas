@@ -5,20 +5,33 @@ paraphrasing them, so nothing about a schema is retyped into prose. The one thin
 be derived is this: a conformance IRI has to resolve to the schema JSON itself, so every schema is
 copied to its versioned path under the site root before the site is built.
 
-    https://schemas.oo-ld.org/<module>/<version>/<Name>.schema.json
+    <host>/<module>/<version>/<Name>.schema.json
+
+The host comes from reference-schemas.toml.
 
 Usage: python scripts/build_docs.py
 """
 
 from __future__ import annotations
 
+import contextlib
 import json
 import re
 import shutil
 from pathlib import Path
 
-from _shared import (chain, context_of, latest_per_line, line as line_of, mapping_sets,
-                     module_version, read, resolve, set_name)
+from _shared import (
+    chain,
+    context_of,
+    latest_per_line,
+    mapping_sets,
+    module_version,
+    read,
+    resolve,
+    set_name,
+)
+from _shared import line as line_of
+from config import CONFIG
 
 ROOT = Path(__file__).resolve().parent.parent
 DOCS = ROOT / "docs"
@@ -67,7 +80,7 @@ def own(names: dict) -> dict:
     happens to be spelled that way.
     """
     return {iri: name for iri, name in names.items()
-            if iri.startswith("https://w3id.org/oo-ld/schemas/")}
+            if CONFIG.owns(iri)}
 
 
 def namespaces(context: dict) -> dict:
@@ -93,7 +106,7 @@ def mermaid(graph, labels: dict, prefixes: dict | None = None) -> str:
     the pinned ontologies, so a node reads as SingleComponentComposition rather than as an
     opaque identifier.
     """
-    from rdflib import RDF, Literal  # noqa: PLC0415
+    from rdflib import RDF, Literal
 
     def name(term) -> str:
         text = str(term)
@@ -279,8 +292,8 @@ def synth_instance(name: str, schema: dict, schemas: list[dict]) -> dict | None:
             "@id": "https://example.org/instance", **doc}
 
 
-IRI_BASE = "https://w3id.org/oo-ld/schemas"
-GENID = "https://schemas.oo-ld.org/.well-known/genid/"
+IRI_BASE = CONFIG.namespace
+GENID = CONFIG.genid
 # a pointer into a schema is a path: `properties` and `$defs` are how the path is written,
 # while `items` says which thing it reaches and keeps two pointers apart
 POINTER_NOISE = ("properties", "$defs", "definitions")
@@ -295,7 +308,7 @@ def named_namespaces(graph, context: dict) -> dict:
     part of the pointer that carries meaning, keeps a reading legible and stable:
     `chem_components:` rather than `ns4:`, and the same name in every regeneration.
     """
-    from rdflib import URIRef  # noqa: PLC0415
+    from rdflib import URIRef
 
     declared = namespaces(context)
     found: dict[str, str] = {}
@@ -338,8 +351,8 @@ def write_rdf(module: str, name: str, schema_files: list[Path], instance: Path |
     so a plain `python scripts/build_docs.py` still works.
     """
     try:
-        from pyld import jsonld  # noqa: PLC0415
-        from rdflib import Graph, URIRef  # noqa: PLC0415
+        from pyld import jsonld
+        from rdflib import Graph, URIRef
     except ImportError:
         return 0
 
@@ -368,7 +381,7 @@ def write_rdf(module: str, name: str, schema_files: list[Path], instance: Path |
             # siblings by it, so the canonical labels are turned into IRIs first: the
             # reading then comes out byte-identical every time
             nq = re.sub(r"_:(c14n\d+)",
-                        lambda m: f"<https://schemas.oo-ld.org/.well-known/genid/{m[1]}>", nq)
+                        lambda m: f"<{GENID}{m[1]}>", nq)
             graph = Graph().parse(data=nq, format="nquads")
             declared = {**namespaces(base_ctx), **namespaces(payload["@context"])}
             for iri, prefix in declared.items():
@@ -380,10 +393,9 @@ def write_rdf(module: str, name: str, schema_files: list[Path], instance: Path |
             # sorted order first pins that numbering to the data, not to the traversal.
             for term in sorted({str(t) for triple in graph for t in triple
                                 if isinstance(t, URIRef)}):
-                try:
+                # a term with no split point stays full
+                with contextlib.suppress(Exception):
                     graph.namespace_manager.compute_qname(term)
-                except Exception:  # noqa: BLE001 - a term with no split point stays full
-                    pass
             ttl = graph.serialize(format="longturtle")
         except Exception as exc:  # a broken mapping should fail loudly in CI, not here
             print(f"  ! {module}/{name} [{label}]: {exc}")
@@ -460,11 +472,11 @@ def main() -> None:
         listing = [
             f"# {title} {exact}",
             "",
-            f"Referenced by the conformance IRI",
-            f"`https://w3id.org/oo-ld/schemas/{module}/{line}`, which tracks the newest release of",
-            f"{line}. A release publishes these files at `https://schemas.oo-ld.org/{module}/{line}/`",
-            f"and, immutably, at `https://schemas.oo-ld.org/{module}/{exact}/`; until then the tip",
-            f"of main is served at `https://schemas.oo-ld.org/{module}/dev/`.",
+            "Referenced by the conformance IRI",
+            f"`{IRI_BASE}/{module}/{line}`, which tracks the newest release of",
+            f"{line}. A release publishes these files at `{CONFIG.host}/{module}/{line}/`",
+            f"and, immutably, at `{CONFIG.host}/{module}/{exact}/`; until then the tip",
+            f"of main is served at `{CONFIG.host}/{module}/dev/`.",
             "",
             "| file |",
             "|---|",
@@ -488,7 +500,7 @@ def main() -> None:
                 "version": "owl:versionInfo",
                 "schemas": {"@id": "rdfs:member", "@type": "@id"},
             },
-            "@id": f"https://w3id.org/oo-ld/schemas/{module}/{line}",
+            "@id": f"{IRI_BASE}/{module}/{line}",
             "title": f"{title} {line}",
             "version": exact,
             "description": read(meta_file).get("scope", "") if meta_file.exists() else "",

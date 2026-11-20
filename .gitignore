@@ -12,8 +12,15 @@ docs/*/[0-9]*/
 docs/mappings/**/*.sssom.tsv
 docs/module-versions.json
 
+# The catalog of components, written by scripts/components.py from the registry and the
+# packages it pins, so a listed component is never reviewed twice.
+docs/components/
+
 # Offline packages, built by scripts/package.py from the locks and published on release.
 docs/packages/
+
+# The record of a prepared release, handed from the build to the publish step.
+dist/
 
 # The SSSOM sets: a row is the schema's own mapping metadata transposed into columns, so
 # committing them would put a mechanical restatement in every review beside the change it

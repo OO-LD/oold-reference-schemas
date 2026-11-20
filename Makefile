@@ -13,13 +13,17 @@ VALIDATOR ?= .oold-schema
 # $$ref through its redirect, which the Node validator does not, and cross-module references
 # are how a module reuses another one's schemas.
 OOLD_PY_VERSION ?= 2.0.0
+PRE_COMMIT_VERSION ?= 4.7.0
 OOLD := uvx --from "oold[validation]==$(OOLD_PY_VERSION)" oold
 
-.PHONY: all generate mappings locks packages docs pages ontologies labels bump check validate serve clean release help
+.PHONY: all generate mappings locks packages docs pages components ontologies labels bump bump-check lint hooks check validate serve clean release help
 
 help:
 	@echo "generate  regenerate everything derived from the schemas"
 	@echo "bump      raise the versions the changes since the last release require"
+	@echo "bump-check fail if the commits since the last release imply a smaller version than the schemas need"
+	@echo "lint      lint the scripts and tests with the pinned tools"
+	@echo "hooks     install the git hooks (pre-commit and commit-msg)"
 	@echo "check     verify the tree is consistent with the schemas (what CI runs)"
 	@echo "release   stamp a dated release and record which module versions it documents"
 	@echo "ontologies fetch the pinned ontology snapshots and verify their hashes"
@@ -30,7 +34,7 @@ all: generate
 
 # Order matters: the mapping sets are read by the schema pages, and the navigation is
 # generated from what exists after both.
-generate: mappings locks packages docs pages
+generate: mappings locks packages docs pages components
 
 mappings:
 	python scripts/build_mappings.py
@@ -59,6 +63,10 @@ $(RENDER_STAMP): scripts/macros.py
 pages:
 	python scripts/build_pages.py
 
+# The catalog of components: downloads each pinned package, checks it, writes docs/components/.
+components:
+	python scripts/components.py
+
 # Labels are fetched from the pinned ontologies and, for the few OBO terms no snapshot
 # carries, from OLS. Deliberately not part of `generate`: refreshing them is tied to an
 # ontology version bump, not to an ordinary edit.
@@ -76,11 +84,25 @@ labels: ontologies
 bump:
 	python scripts/level.py --apply
 
+# For a repository released by semantic-release: the commits must reach what the schemas need.
+bump-check:
+	python scripts/bump.py --check
+
+# pre-commit, its hooks and ruff are pinned (here and in .pre-commit-config.yaml), so a local
+# run and CI judge the same way. Untracked files are included, which `--all-files` alone
+# would skip, and names are passed NUL separated so spaces in a name are safe.
+lint:
+	@git ls-files -z --cached --others --exclude-standard | xargs -0 uvx pre-commit@$(PRE_COMMIT_VERSION) run --files
+
+hooks:
+	@uv tool install pre-commit@$(PRE_COMMIT_VERSION) >/dev/null
+	@pre-commit install
+
 # Mirrors the CI job. CI diffs a clean checkout; here the question is whether regenerating
 # changes anything that was not already changed, so the target stays usable with work in
 # progress. It deliberately does not seed pages, or a missing page would be created instead
 # of reported.
-check: $(RENDER_STAMP)
+check: lint $(RENDER_STAMP)
 	@before=$$(git status --porcelain); \
 	python scripts/build_mappings.py >/dev/null; \
 	python scripts/lock.py >/dev/null; \
@@ -89,10 +111,11 @@ check: $(RENDER_STAMP)
 		echo 'generated artefacts are stale: run make generate' >&2; exit 1; }
 	python scripts/build_pages.py --check
 	python scripts/check_enums.py
+	python scripts/components.py
 	python scripts/spec_edition.py --check
 	python scripts/level.py --check
 	python scripts/release.py --check
-	python -m unittest discover -s tests
+	uv run --with jsonschema --with referencing python -m unittest discover -s tests
 	$(ZENSICAL) build --clean
 	@# A macro that raises is swallowed by the renderer and published as text.
 	@if grep -rnE '\{\{+ *(oold_|inline_file|example|vocabulary|render_schema|sssom_|mapping_|download)' site/; then 		echo "unrendered macro call in the built site" >&2; exit 1; 	fi
@@ -118,4 +141,4 @@ serve: generate $(RENDER_STAMP)
 	$(ZENSICAL) serve -a 127.0.0.1:8042
 
 clean:
-	rm -rf site docs/*/[0-9]*/ docs/packages docs/mappings/*.sssom.tsv docs/mappings/crosswalks
+	rm -rf site docs/components docs/*/[0-9]*/ docs/packages docs/mappings/*.sssom.tsv docs/mappings/crosswalks

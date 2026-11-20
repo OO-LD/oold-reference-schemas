@@ -24,8 +24,9 @@ import urllib.error
 import urllib.request
 
 from _shared import MODULES, module_version
+from config import CONFIG
 
-IRI_BASE = "https://w3id.org/oo-ld/schemas"
+IRI_BASE = CONFIG.namespace
 TIMEOUT = 30
 
 
@@ -36,12 +37,12 @@ def resolves(url: str) -> tuple[bool, str]:
             return 200 <= response.status < 300, f"{response.status} {response.url}"
     except urllib.error.HTTPError as error:
         return False, f"{error.code}"
-    except Exception as error:  # noqa: BLE001 - a name that does not resolve is a result
+    except Exception as error:
         return False, str(error)
 
 
 def redirect_works() -> bool:
-    """Whether the w3id redirect resolves at all, tested on a path that always exists.
+    """Whether the identity redirect resolves at all, tested on a path that always exists.
 
     A released version and the redirect fail the same way, with a 404, and the fix for
     each is different: one waits for a release, the other for a namespace change.
@@ -75,15 +76,16 @@ def main() -> None:
             failures += not ok
 
     if failures and redirect:
-        print(f"{failures} identifier(s) do not resolve, though the w3id redirect itself does: "
-              "these versions have not been released yet, so only <module>/dev/ is published.")
+        print(f"{failures} identifier(s) do not resolve, though the redirect for {IRI_BASE} "
+              "itself does: these versions have not been released yet, so only "
+              "<module>/dev/ is published.")
     elif failures:
-        print(f"{failures} identifier(s) do not resolve, and neither does the redirect itself. "
-              "Check the oo-ld namespace at https://github.com/perma-id/w3id.org.")
+        print(f"{failures} identifier(s) do not resolve, and neither does the redirect for "
+              f"{IRI_BASE} itself. Check the redirect that maps it to {CONFIG.host}.")
     if require and not redirect:
-        print("the w3id redirect does not resolve, so a release would mint identifiers that "
-              "answer nothing. Check the oo-ld namespace at "
-              "https://github.com/perma-id/w3id.org.")
+        print(f"the redirect for {IRI_BASE} does not resolve, so a release would mint "
+              f"identifiers that answer nothing. Check the redirect that maps it to "
+              f"{CONFIG.host}.")
         sys.exit(1)
     if verify and failures:
         sys.exit(1)

@@ -1,13 +1,15 @@
 """Build the offline package of a module version: a zip of unmodified documents.
 
-The zip holds the module and every module its lock pins, laid out exactly as the host
-serves them, under the exact directory and under the line directory. The line directory is
-what a schema cites, so it is what a consumer reads. Nothing is rewritten, so a document
-in the zip is byte for byte the one at its published path.
+The zip holds the module and every module its lock pins, under the exact directory and
+under the line directory. The line directory is what a schema cites, so it is what a
+consumer reads. Nothing is rewritten, so a document in the zip is byte for byte the one at
+its published path.
 
-A consumer maps the identity IRI `https://w3id.org/oo-ld/schemas/<path>` to the member
-`<path>` and validates with no network. Spec meta-schemas are not part of it: they are not
-read when validating.
+A member is named by the IRI of its document without the scheme, so
+`<host>/<namespace path>/<module>/<line>/<file>`. Two namespaces may both hold a module of
+the same name and still sit side by side. A consumer maps an IRI to a member by dropping
+`https://`, and validates with no network. Spec meta-schemas are not part of it: they are
+not read when validating.
 
 The build is deterministic. Timestamps and permissions are fixed and members are sorted, so
 the same input gives the same bytes, and two packages are compared by their documents.
@@ -21,43 +23,47 @@ from __future__ import annotations
 import io
 import sys
 import zipfile
-from pathlib import Path
+from collections.abc import Iterable
 from typing import Protocol
 
 import lock
+import pins
 from _shared import ROOT, line
+from config import CONFIG
 
 OUT = ROOT / "docs" / "packages"
 STAMP = (1980, 1, 1, 0, 0, 0)
 
 
 class Source(lock.Catalog, Protocol):
-    def files(self, module: str, version: str) -> dict[str, bytes]: ...
+    def files(self, identity: str, version: str) -> dict[str, bytes]: ...
 
 
-def members(module: str, version: str, source: Source) -> dict[str, bytes]:
-    """Every document of the package, by path."""
-    built = lock.build(module, version, source)
+def members(name: str, version: str, source: Source,
+            namespaces: Iterable[str] | None = None) -> dict[str, bytes]:
+    """Every document of the package, by path. `name` is the module's identity."""
+    built = lock.build(name, version, source, namespaces=namespaces)
     found: dict[str, bytes] = {}
 
-    def place(name: str, pinned: str, documents: dict[str, bytes]) -> None:
+    def place(identity: str, pinned: str, documents: dict[str, bytes]) -> None:
         for directory in (pinned, line(pinned)):
             for file, data in documents.items():
-                found[f"{name}/{directory}/{file}"] = data
+                found[f"{identity.removeprefix('https://')}/{directory}/{file}"] = data
 
-    own = source.files(module, version)
+    own = source.files(name, version)
     own[lock.FILE] = lock.render(built).encode("utf-8")
-    place(module, version, own)
-    for dep, pinned in built["requires"].items():
-        place(dep, pinned, source.files(dep, pinned))
+    place(name, version, own)
+    for dep, entry in built["requires"].items():
+        place(dep, entry["version"], source.files(dep, entry["version"]))
     return found
 
 
-def build(module: str, version: str, source: Source) -> bytes:
+def build(name: str, version: str, source: Source,
+          namespaces: Iterable[str] | None = None) -> bytes:
     buffer = io.BytesIO()
     with zipfile.ZipFile(buffer, "w", zipfile.ZIP_DEFLATED) as archive:
-        for name, data in sorted(members(module, version, source).items()):
-            info = zipfile.ZipInfo(name, STAMP)
+        for member, data in sorted(members(name, version, source, namespaces).items()):
+            info = zipfile.ZipInfo(member, STAMP)
             info.compress_type = zipfile.ZIP_DEFLATED
             info.external_attr = 0o644 << 16
             archive.writestr(info, data)
@@ -75,13 +81,16 @@ def same_documents(a: bytes, b: bytes) -> bool:
 
 
 def main() -> None:
-    index = lock.Repository().released
+    index = lock.Repository()
+    pinned = pins.Pinned(CONFIG.dependencies)
     OUT.mkdir(parents=True, exist_ok=True)
     for module in lock.modules():
-        version = lock.Repository().tree_version(module)
-        repo = lock.Repository(lock.released_docs(index, module, version))
+        version = index.tree_version(module)
+        catalog = pins.Combined(lock.Repository(lock.released_docs(index.released, module,
+                                                                   version)), pinned)
         path = OUT / f"{module}-{version}.zip"
-        path.write_bytes(build(module, version, repo))
+        path.write_bytes(build(lock.identity(CONFIG.namespace, module), version, catalog,
+                               catalog.namespaces))
         print(f"  {path.relative_to(ROOT)}: {len(read(path.read_bytes()))} documents")
 
 

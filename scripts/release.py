@@ -65,7 +65,7 @@ def main() -> None:
                 # A version ahead of the newest release is the normal state between
                 # releases: the bump lands with the change, the release mints the path.
                 # What is wrong is a declared version the release cannot reach any more.
-                order = lambda v: tuple(int(part) for part in v.split("."))  # noqa: E731
+                order = lambda v: tuple(int(part) for part in v.split("."))
                 if order(declared) <= max(order(v) for v in recorded):
                     problems.append(f"{module} is at {declared}, behind or beside "
                                     f"the released {sorted(recorded, key=order)[-1]}")

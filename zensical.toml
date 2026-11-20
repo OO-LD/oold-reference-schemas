@@ -71,6 +71,7 @@ nav = [
         { "Conformance" = "conformance.md" },
         { "Pinned ontologies" = "ontologies.md" },
     ]},
+    { "Components" = "components/index.md" },
     { "Contributing" = "contributing.md" },
     { "Versioning guide" = "versioning-guide.md" },
 ]
