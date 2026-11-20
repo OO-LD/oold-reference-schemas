@@ -1,5 +1,6 @@
 # The labels below are read by scripts/components.py (FORM), and each id is the field of the
-# registry entry it fills, so a link can prefill the form: ...&template=include-component.yml&module=x
+# registry entry it fills (`title` is GitHub's own parameter for the issue title, so the card title
+# is component_title), so a link can prefill the form: ...&template=include-component.yml&module=x
 name: Include a component
 description: Ask for reference schemas from your own repository to be listed in the catalog
 title: "Include a component: "
@@ -31,7 +32,7 @@ body:
     validations:
       required: true
   - type: input
-    id: title
+    id: component_title
     attributes:
       label: Title
       description: A short name for the card, 80 characters at most.

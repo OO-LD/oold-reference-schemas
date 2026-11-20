@@ -211,7 +211,8 @@ class Request(unittest.TestCase):
     def test_the_issue_form_and_the_parser_agree(self):
         form = (ROOT / ".github" / "ISSUE_TEMPLATE" / "include-component.yml").read_text()
         self.assertEqual(re.findall(r"^      label: (.+)$", form, re.M), list(components.FORM))
-        self.assertEqual(re.findall(r"^    id: (\w+)$", form, re.M), list(components.FORM.values()))
+        ids = ["component_title" if key == "title" else key for key in components.FORM.values()]
+        self.assertEqual(re.findall(r"^    id: (\w+)$", form, re.M), ids)
 
     def test_an_emoji_in_the_text_still_gives_a_valid_entry(self):
         report = self.check(body(self.data, title="Acme 🚀 widgets"))
