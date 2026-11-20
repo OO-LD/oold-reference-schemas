@@ -1,0 +1,81 @@
+# The labels below are read by scripts/components.py (FORM), and each id is the field of the
+# registry entry it fills, so a link can prefill the form: ...&template=include-component.yml&module=x
+name: Include a component
+description: Ask for reference schemas from your own repository to be listed in the catalog
+title: "Include a component: "
+labels: ["component-request"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Components are reference schemas kept in their own repository, with their own namespace and
+        documentation. They cite modules of this repository and are listed here with a card and a
+        link. A bot checks the request when you save it, and again when you edit it. Maintainers
+        decide on inclusion. Listing a component does not make its identifiers resolve: that is the
+        component's own work.
+
+        Easiest is `make request-inclusion` in a repository made from the template: it prints a
+        link that fills this form.
+  - type: input
+    id: repository
+    attributes:
+      label: Repository
+      description: A public GitHub repository with a licence, for example https://github.com/acme/widgets
+    validations:
+      required: true
+  - type: input
+    id: site
+    attributes:
+      label: Documentation site
+      description: Where the component documentation is published (https).
+    validations:
+      required: true
+  - type: input
+    id: title
+    attributes:
+      label: Title
+      description: A short name for the card, 80 characters at most.
+    validations:
+      required: true
+  - type: input
+    id: description
+    attributes:
+      label: Description
+      description: One line, 400 characters at most.
+    validations:
+      required: true
+  - type: input
+    id: namespace
+    attributes:
+      label: Namespace
+      description: The IRI your schemas cite. It must not overlap this repository or a listed component.
+    validations:
+      required: true
+  - type: input
+    id: module
+    attributes:
+      label: Module
+      description: The module name, as in its lock.
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: The exact released version, for example 1.0.0.
+    validations:
+      required: true
+  - type: input
+    id: package
+    attributes:
+      label: Package URL
+      description: The https URL of the published package zip.
+    validations:
+      required: true
+  - type: input
+    id: sha256
+    attributes:
+      label: SHA-256 of the package
+      description: 64 hexadecimal characters. `sha256sum` of the zip.
+    validations:
+      required: true

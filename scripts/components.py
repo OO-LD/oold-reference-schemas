@@ -9,9 +9,15 @@ A package is untrusted input. It is read as data only, never executed, and nothi
 shown except what is validated here: the lock's identity, version, specification edition and the
 modules it cites. Titles and descriptions come from the registry, which maintainers review.
 
+A request to be listed arrives as an issue (the form in .github/ISSUE_TEMPLATE). `--request`
+checks it the same way, plus the licence of the repository, and prints a report for the issue and
+the entry a maintainer would add. The issue text is untrusted: it is read from the environment,
+never from a command line or a shell.
+
 Usage:
   python scripts/components.py           verify every entry and write docs/components/index.md
   python scripts/components.py --check   verify every entry, write nothing
+  ISSUE_BODY=... python scripts/components.py --request   report on a request, write nothing
 """
 
 from __future__ import annotations
@@ -19,9 +25,12 @@ from __future__ import annotations
 import hashlib
 import html
 import json
+import os
 import re
 import sys
 import tomllib
+import urllib.error
+import urllib.request
 from collections.abc import Callable
 from dataclasses import dataclass
 from pathlib import Path
@@ -40,6 +49,13 @@ LICENSE = re.compile(r"[A-Za-z0-9][A-Za-z0-9.+-]{0,63}")
 LIMITS = {"title": 80, "description": 400}
 # What a rendered link may contain: nothing that could end a Markdown link or an HTML attribute.
 SAFE_URL = re.compile(r"https://[^\s<>\"'`()\\]+")
+
+
+# The labels of the issue form, and the entry field each fills.
+FORM = {"Repository": "repository", "Documentation site": "site", "Title": "title",
+        "Description": "description", "Namespace": "namespace", "Module": "module",
+        "Version": "version", "Package URL": "package", "SHA-256 of the package": "sha256"}
+GITHUB = re.compile(r"https://github\.com/([A-Za-z0-9-]+)/([A-Za-z0-9._-]+)")
 
 
 class ComponentError(Exception):
@@ -197,19 +213,92 @@ def render(entries: list[tuple[Component, Package]]) -> str:
     return "\n".join(lines)
 
 
-def build(components: tuple[Component, ...],
-          get: Callable[[Dependency], bytes] | None = None) -> str:
-    def fetch(pin: Dependency) -> bytes:
-        try:
-            return remote.fetch(pin.package, pin.sha256, CACHE)
-        except remote.RemoteError as error:
-            raise ComponentError(f"{pin.identity}: {error}") from None
+def fetch(pin: Dependency) -> bytes:
+    try:
+        return remote.fetch(pin.package, pin.sha256, CACHE)
+    except remote.RemoteError as error:
+        raise ComponentError(f"{pin.identity}: {error}") from None
 
-    get = get or fetch
+
+def build(components: tuple[Component, ...],
+          get: Callable[[Dependency], bytes] = fetch) -> str:
     return render([(c, verify(c, get(c.pin))) for c in components])
 
 
+def sections(body: str) -> dict[str, str]:
+    """The answers of an issue form, by entry field. An empty answer is absent."""
+    found = {}
+    for label, value in re.findall(r"^### (.+?)[ \t]*\n\n(.*?)(?=\n### |\Z)",
+                                   body.replace("\r\n", "\n"), re.S | re.M):
+        value = value.strip()
+        if label in FORM and value and value != "_No response_":
+            found[FORM[label]] = value
+    return found
+
+
+def github_license(repository: str, urlopen=urllib.request.urlopen) -> str:
+    """The SPDX identifier GitHub detects for a repository. Only api.github.com is asked."""
+    match = GITHUB.fullmatch(repository)
+    if not match:
+        raise ComponentError("the repository must be https://github.com/<owner>/<name>")
+    request = urllib.request.Request(
+        f"https://api.github.com/repos/{match[1]}/{match[2]}/license",
+        headers={"User-Agent": "oold-reference-schemas", "Accept": "application/vnd.github+json"})
+    try:
+        with urlopen(request, timeout=15) as response:
+            found = json.loads(response.read(100_000))["license"]["spdx_id"]
+    except urllib.error.HTTPError as error:
+        if error.code in (403, 429):  # a limit, not an answer: ask again later
+            raise ComponentError("GitHub is limiting requests right now: edit the issue later"
+                                 " to check again") from None
+        raise ComponentError("GitHub reports no licence for the repository") from None
+    except (OSError, ValueError, KeyError, TypeError):
+        raise ComponentError("GitHub could not be asked about the licence: edit the issue later"
+                             " to check again") from None
+    if found == "NOASSERTION":  # a custom or dual licence: a maintainer reads the file
+        return "LicenseRef-other"
+    if not isinstance(found, str) or not LICENSE.fullmatch(found):
+        raise ComponentError("GitHub reports no licence for the repository")
+    return found
+
+
+def check_request(body: str, listed: list[dict], get: Callable[[Dependency], bytes] = fetch,
+                  licence: Callable[[str], str] = github_license) -> str:
+    """The report for a request, or a ComponentError naming the first thing that is wrong."""
+    table: dict = sections(body)
+    missing = sorted(set(FORM.values()) - set(table))
+    if missing:
+        raise ComponentError(f"these answers are missing: {', '.join(missing)}")
+    table["license"] = licence(table["repository"])
+    found = parse({"component": [*listed, table]})[-1]
+    package = verify(found, get(found.pin))
+    keys = ("title", "description", "repository", "site", "license", "namespace", "module",
+            "version", "package", "sha256")
+    entry = "\n".join(["[[component]]",
+                       *(f"{k} = {json.dumps(table[k], ensure_ascii=False)}" for k in keys)])
+    return "\n".join([
+        "All checks passed: the package matches its digest, its lock agrees with the request,"
+        " it cites only modules of this repository, the namespace is free and the licence is"
+        f" {md(found.license)}"
+        + (" (GitHub does not recognise it: a maintainer reads the LICENSE file)."
+           if found.license == "LicenseRef-other" else "."), "",
+        f"It builds on {md(', '.join(package.requires)) or 'no module'} and pins"
+        f" specification {package.spec_edition}. A maintainer reviews the entry and adds it to"
+        " `components.toml`:", "", "```toml", entry, "```", ""])
+
+
+def request() -> None:
+    try:
+        listed = tomllib.loads(FILE.read_text(encoding="utf-8")).get("component", [])
+        print(check_request(os.environ.get("ISSUE_BODY", ""), listed))
+    except (ComponentError, OSError, tomllib.TOMLDecodeError) as error:
+        print(f"This request does not pass yet: {md(str(error))}\n\nEdit the issue to fix it, the"
+              " check runs again.")
+
+
 def main() -> None:
+    if "--request" in sys.argv[1:]:
+        return request()
     try:
         components = load()
         page = build(components)

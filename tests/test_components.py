@@ -3,8 +3,11 @@
 import hashlib
 import io
 import json
+import re
 import sys
+import tomllib
 import unittest
+import urllib.error
 import zipfile
 from pathlib import Path
 
@@ -173,6 +176,127 @@ class Page(unittest.TestCase):
 
     def test_the_shipped_registry_is_valid(self):
         components.load()
+
+
+def body(data: bytes, **changes) -> str:
+    """An issue as GitHub renders the form: a heading per field, then the answer."""
+    answers = table(data, **changes)
+    answers.pop("license")
+    return "\n\n".join(f"### {label}\n\n{answers[key]}" for label, key in components.FORM.items()
+                       if key in answers and answers[key] is not None)
+
+
+class Request(unittest.TestCase):
+    def setUp(self):
+        self.data = package()
+
+    def check(self, text: str, listed=(), licence=lambda repository: "MIT") -> str:
+        return components.check_request(text, list(listed), get=lambda pin: self.data,
+                                        licence=licence)
+
+    def test_the_answers_of_the_form_are_read(self):
+        text = ("### Title\r\n\r\nAcme\r\n\r\n### Description\r\n\r\n_No response_\r\n\r\n"
+                "### Other\r\n\r\nx")
+        self.assertEqual(components.sections(text), {"title": "Acme"})
+
+    def test_a_good_request_gets_the_entry_for_the_maintainer(self):
+        report = self.check(body(self.data))
+        self.assertIn("All checks passed", report)
+        self.assertIn('[[component]]\ntitle = "Acme widgets"', report)
+        self.assertIn('license = "MIT"', report)
+        entry = report.split("```toml\n")[1].split("```")[0]
+        (found,) = components.parse(tomllib.loads(entry))
+        self.assertEqual(found.pin.sha256, hashlib.sha256(self.data).hexdigest())
+
+    def test_the_issue_form_and_the_parser_agree(self):
+        form = (ROOT / ".github" / "ISSUE_TEMPLATE" / "include-component.yml").read_text()
+        self.assertEqual(re.findall(r"^      label: (.+)$", form, re.M), list(components.FORM))
+        self.assertEqual(re.findall(r"^    id: (\w+)$", form, re.M), list(components.FORM.values()))
+
+    def test_an_emoji_in_the_text_still_gives_a_valid_entry(self):
+        report = self.check(body(self.data, title="Acme 🚀 widgets"))
+        entry = report.split("```toml\n")[1].split("```")[0]
+        self.assertEqual(components.parse(tomllib.loads(entry))[0].title, "Acme 🚀 widgets")
+
+    def test_a_github_limit_is_not_reported_as_a_missing_licence(self):
+        def limited(request, timeout):
+            raise urllib.error.HTTPError(request.full_url, 403, "rate limit", {}, None)
+
+        def missing(request, timeout):
+            raise urllib.error.HTTPError(request.full_url, 404, "not found", {}, None)
+
+        with self.assertRaisesRegex(components.ComponentError, "limiting requests"):
+            components.github_license("https://github.com/acme/widgets", limited)
+        with self.assertRaisesRegex(components.ComponentError, "no licence"):
+            components.github_license("https://github.com/acme/widgets", missing)
+
+    def test_a_licence_github_does_not_recognise_goes_to_the_maintainer(self):
+        report = self.check(body(self.data), licence=lambda repository: "LicenseRef-other")
+        self.assertIn("a maintainer reads the LICENSE file", report)
+        self.assertIn('license = "LicenseRef-other"', report)
+
+    def test_a_missing_answer_is_named(self):
+        text = body(self.data).replace("### Module\n\nwidgets", "### Module\n\n_No response_")
+        with self.assertRaisesRegex(components.ComponentError, "missing: module"):
+            self.check(text)
+
+    def test_a_namespace_that_is_listed_is_not_free(self):
+        with self.assertRaisesRegex(components.ComponentError, "share a namespace"):
+            self.check(body(self.data, module="gadgets"), listed=[table(self.data)])
+
+    def test_a_package_that_does_not_match_the_digest_is_refused(self):
+        with self.assertRaisesRegex(components.ComponentError, "digest"):
+            self.check(body(self.data, sha256="0" * 64))
+
+    def test_a_licence_that_cannot_be_found_is_refused(self):
+        def none(repository):
+            raise components.ComponentError("GitHub reports no licence for the repository")
+
+        with self.assertRaisesRegex(components.ComponentError, "no licence"):
+            self.check(body(self.data), licence=none)
+
+    def test_the_report_cannot_inject_markup(self):
+        report = self.check(body(self.data, title="<img src=x onerror=y>"))
+        before, fenced, after = report.partition("```toml")
+        self.assertTrue(fenced)
+        self.assertNotIn("<img", before + after.split("```")[1])  # outside the code block
+        self.assertIn("<img", after.split("```")[0])  # inside it the text stays literal
+
+    def test_the_licence_comes_from_the_github_api_only(self):
+        class Reply:
+            def __init__(self, payload):
+                self.payload = payload
+
+            def __enter__(self):
+                return self
+
+            def __exit__(self, *exc):
+                return False
+
+            def read(self, limit):
+                return json.dumps(self.payload).encode()
+
+        def asked(payload):
+            seen = []
+
+            def urlopen(request, timeout):
+                seen.append(request.full_url)
+                return Reply(payload)
+
+            return urlopen, seen
+
+        urlopen, seen = asked({"license": {"spdx_id": "Apache-2.0"}})
+        self.assertEqual(components.github_license("https://github.com/acme/widgets", urlopen),
+                         "Apache-2.0")
+        self.assertEqual(seen, ["https://api.github.com/repos/acme/widgets/license"])
+        other = asked({"license": {"spdx_id": "NOASSERTION"}})[0]
+        self.assertEqual(components.github_license("https://github.com/acme/widgets", other),
+                         "LicenseRef-other")
+        for payload in ({"license": None}, {}):
+            with self.subTest(payload=payload), self.assertRaises(components.ComponentError):
+                components.github_license("https://github.com/acme/widgets", asked(payload)[0])
+        with self.assertRaises(components.ComponentError):
+            components.github_license("https://gitlab.com/acme/widgets", urlopen)
 
 
 if __name__ == "__main__":

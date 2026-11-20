@@ -1,0 +1,54 @@
+name: component request
+
+# Checks a request to list a component and comments the result on the issue. The issue text is
+# untrusted: it reaches the script only through an environment variable. The check job reads with no
+# secrets, only the comment job can write, and it runs nothing from the issue.
+
+on:
+  issues:
+    types: [opened, edited]
+
+permissions: {}
+
+# An older check must not finish after a newer one and overwrite its comment.
+concurrency:
+  group: component-request-${{ github.event.issue.number }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    if: contains(github.event.issue.labels.*.name, 'component-request')
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Check the request
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+        run: python scripts/components.py --request > report.md
+      - uses: actions/upload-artifact@v4
+        with:
+          name: report
+          path: report.md
+          retention-days: 1
+
+  comment:
+    needs: check
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      issues: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: report
+      - name: Post the result
+        env:
+          GH_TOKEN: ${{ github.token }}
+          NUMBER: ${{ github.event.issue.number }}
+          REPO: ${{ github.repository }}
+        run: gh issue comment "$NUMBER" --repo "$REPO" --body-file report.md --edit-last --create-if-none
